@@ -6200,6 +6200,11 @@ spriteTypes = {
 		name = "GFX_goal_focus_prussia_dreyse_rifle"
 		texturefile = "gfx/interface/goals/prussia/focus_prussia_dreyse_rifle.dds"
 	}
+	
+	SpriteType = {
+		name = "GFX_goal_focus_prussia_auswartiges_amt"
+		texturefile = "gfx/interface/goals/prussia/focus_prussia_auswartiges_amt.dds"
+	}
 
 	SpriteType = { 
 		name = "GFX_focus_generic_befriend_communist_spain_focus"
@@ -7339,6 +7344,10 @@ SpriteType = {
 	texturefile = "gfx/interface/goals/general/industrial_worker/Focus_State_of_the_People.dds"
 }
 
+SpriteType = {
+	name = "GFX_Focus_Industrial_Complex"
+	texturefile = "gfx/interface/goals/general/industrial_worker/Focus_Industrial_Complex.dds"
+}
 
 #----------------------------------------------------------------------------------------------
 # MARITIME
