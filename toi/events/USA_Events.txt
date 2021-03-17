@@ -145,6 +145,8 @@ country_event = {
 		name = usa_panic_of_1857.1.a
 		trigger = { tag = USA }
 		add_ideas = USA_1857Panic0
+		hidden_effect = { set_country_flag = na_b_monthly_economic_panic_countdown_flag }
+		activate_decision = na_b_monthly_economic_panic_countdown
 		hidden_effect = {
 			complete_national_focus = USA_under_panic
 			set_global_flag = Panic_of_1857
@@ -627,6 +629,7 @@ country_event = {
 		name = usa_panic.6.a
 		remove_ideas = USA_1857Panic5
 		set_country_flag = USA_panic_recovery_flag
+		clr_country_flag = na_b_monthly_economic_panic_countdown_flag
 	}
 }
 

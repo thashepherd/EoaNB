@@ -2,7 +2,159 @@
 add_namespace = egy_debt_system_test
 add_namespace = egy_debt_system_managed
 add_namespace = SPR_bankruptcy_events
+add_namespace = na_b_monthly_economic_panic_report
 
+country_event = { 
+	id = na_b_monthly_economic_panic_report.1
+	title = na_b_monthly_economic_panic_report.1.t
+	desc = na_b_monthly_economic_panic_report.1.d 
+	
+	is_triggered_only = yes
+	
+	immediate = { 
+		hidden_effect = {
+			ROOT = {
+				random_list = {
+					35 = {
+						set_country_flag = na_b_economic_panic_report_industrial_complex_inactive_flag
+						modifier = {
+							factor = 0
+							all_owned_state = { industrial_complex < 1 }
+						}
+						modifier = {
+							add = -5
+							has_country_flag = na_b_economic_panic_temporary_tax_relief_flag
+						}
+						modifier = {
+							add = -10
+							has_country_flag = na_b_economic_panic_industry_bankruptcy_protections_flag
+						}
+					}
+					20 = {
+						set_country_flag = na_b_economic_panic_report_arms_factory_inactive_flag
+						modifier = {
+							factor = 0
+							all_owned_state = { arms_factory < 1 }
+						}
+						modifier = {
+							add = -5
+							has_country_flag = na_b_economic_panic_temporary_tax_relief_flag
+						}
+						modifier = {
+							add = -10
+							has_country_flag = na_b_economic_panic_industry_bankruptcy_protections_flag
+						}
+					}
+					40 = {
+						set_country_flag = na_b_economic_panic_report_infrastructure_inactive_flag
+						modifier = {
+							factor = 0
+							all_owned_state = { infrastructure < 1 }
+						}
+						modifier = {
+							add = -5
+							has_country_flag = na_b_economic_panic_temporary_tax_relief_flag
+						}
+						modifier = {
+							add = -10
+							has_country_flag = na_b_economic_panic_industry_bankruptcy_protections_flag
+						}
+					}
+					5 = {
+						set_country_flag = na_b_economic_panic_no_industry_closed_flag
+						modifier = {
+							add = 5
+							has_country_flag = na_b_economic_panic_temporary_tax_relief_flag
+						}
+						modifier = {
+							add = 10
+							has_country_flag = na_b_economic_panic_industry_bankruptcy_protections_flag
+						}
+					}
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = na_b_monthly_economic_panic_report.1.a
+		ai_chance = { factor = 100 }
+		if = {
+			limit = { has_country_flag = na_b_economic_panic_report_industrial_complex_inactive_flag }
+			clr_country_flag = na_b_economic_panic_report_industrial_complex_inactive_flag
+			random_owned_controlled_state = {
+				limit = { industrial_complex > 0 }
+				custom_effect_tooltip = na_b_economic_panic_report_industrial_complex_inactive_tooltip
+				hidden_effect = {
+					damage_building = {
+						type = industrial_complex
+						damage = 1
+					}
+					#remove_building = {
+					#	type = industrial_complex_inactive
+					#	level = 1
+					#}
+					#add_building_construction = {
+					#	type = industrial_complex_inactive
+					#	level = 1
+					#	instant_build = yes
+					#}
+				}
+			}
+		}
+		else_if = {
+			limit = { has_country_flag = na_b_economic_panic_report_arms_factory_inactive_flag }
+			clr_country_flag = na_b_economic_panic_report_arms_factory_inactive_flag
+			random_owned_controlled_state = {
+				limit = { arms_factory > 0 }
+				custom_effect_tooltip = na_b_economic_panic_report_arms_factory_inactive_tooltip
+				hidden_effect = {
+					damage_building = {
+						type = arms_factory
+						damage = 1
+					}
+					#remove_building = {
+					#	type = industrial_complex_inactive
+					#	level = 1
+					#}
+					#add_building_construction = {
+					#	type = industrial_complex_inactive
+					#	level = 1
+					#	instant_build = yes
+					#}
+				}
+			}
+		}
+		else_if = {
+			limit = { has_country_flag = na_b_economic_panic_report_infrastructure_inactive_flag }
+			clr_country_flag = na_b_economic_panic_report_infrastructure_inactive_flag
+			random_owned_controlled_state = {
+				limit = { infrastructure > 0 }
+				custom_effect_tooltip = na_b_economic_panic_report_infrastructure_inactive_tooltip
+				hidden_effect = {
+					damage_building = {
+						type = infrastructure
+						damage = 1
+					}
+					#remove_building = {
+					#	type = industrial_complex_inactive
+					#	level = 1
+					#}
+					#add_building_construction = {
+					#	type = industrial_complex_inactive
+					#	level = 1
+					#	instant_build = yes
+					#}
+				}
+			}
+		}
+		else_if = {
+			limit = { has_country_flag = na_b_economic_panic_no_industry_closed_flag }
+			clr_country_flag = na_b_economic_panic_no_industry_closed_flag
+			custom_effect_tooltip = na_b_economic_panic_no_industry_closed_tooltip
+		}
+	}
+}
 
 country_event = { 
 	id = egy_debt_system_test.1

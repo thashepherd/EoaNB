@@ -1,4 +1,31 @@
 
+NA_B_transcontinental_railways_category = {
+	allowed = { 
+		OR = {
+			NA_B_is_american_allowed = yes 
+			TAG = USA
+			TAG = CSA
+			TAG = SEM
+			TAG = APA
+			TAG = NAV
+			TAG = COM
+			TAG = CHY
+			TAG = SIX
+			TAG = CRW
+			TAG = SHO
+			TAG = BFT
+			TAG = NEZ
+		}
+	}
+}
+
+NA_B_economic_panic_category = {
+	icon = generic_political_actions
+	visible = {
+		has_country_flag = na_b_monthly_economic_panic_countdown_flag
+	}
+}
+
 American_Grant_Statehood_Decisions = {
 	icon = generic_political_actions
 
