@@ -1148,10 +1148,12 @@ ideas = {
 		################### Civil War Modifiers ###################
 		USA_sherman_march = {
 			allowed = {
-				tag = USA
-				tag = CAL
-				tag = NEG
-				tag = ASA
+				OR = {
+					tag = USA
+					tag = CAL
+					tag = NEG
+					tag = ASA
+				}
 			}
 			available = { has_global_flag = ACW_American_Civil_War }
 			allowed_civil_war = {	always = no }
@@ -1166,11 +1168,14 @@ ideas = {
 		}
 		USA_the_march_to_the_sea = {
 			allowed = {
-				tag = USA
-				tag = GRL
-				tag = ASA
+				OR = {
+					tag = USA
+					tag = GRL
+					tag = NEG
+					tag = ASA
+				}
 			}
-			allowed_civil_war = { always = yes }
+			allowed_civil_war = { always = no }
 			picture = usa_march_to_the_sea_idea
 			removal_cost = 0
 
@@ -1182,7 +1187,7 @@ ideas = {
 		}
 		USA_plea_for_order_1 = {
 			allowed = { tag = USA }
-			allowed_civil_war = {	always = no }
+			allowed_civil_war = { always = no }
 			picture = chi_war_of_resistance2
 			removal_cost = -1
 
