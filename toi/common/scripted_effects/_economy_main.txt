@@ -10,25 +10,42 @@
 				add_to_variable = { global.years_passed = 1 }
 			}
 			clear_array = global.econ_order_array
-			add_to_array = { global.econ_order_array = ENG }
+			#add_to_array = { global.econ_order_array = ENG }
 			add_to_array = { global.econ_order_array = USA }
-			add_to_array = { global.econ_order_array = BRA }
+			#add_to_array = { global.econ_order_array = BRA }
 			add_to_array = { global.econ_order_array = MEX }
-			add_to_array = { global.econ_order_array = COL }
-			add_to_array = { global.econ_order_array = VEN }
+			#add_to_array = { global.econ_order_array = COL }
+			#add_to_array = { global.econ_order_array = VEN }
 			add_to_array = { global.econ_order_array = CAN }
-			add_to_array = { global.econ_order_array = CHL }
-			add_to_array = { global.econ_order_array = BOL }
-			add_to_array = { global.econ_order_array = PRU }
-			add_to_array = { global.econ_order_array = ARG }
-			add_to_array = { global.econ_order_array = BUE }
+			#add_to_array = { global.econ_order_array = CHL }
+			#add_to_array = { global.econ_order_array = BOL }
+			#add_to_array = { global.econ_order_array = PRU }
+			#add_to_array = { global.econ_order_array = ARG }
+			#add_to_array = { global.econ_order_array = BUE }
 			add_to_array = { global.econ_order_array = HBC }
-			add_to_array = { global.econ_order_array = URG }
-			add_to_array = { global.econ_order_array = PAR }
-
-			add_to_array = { global.econ_order_array = ECU }
-
+			#add_to_array = { global.econ_order_array = URG }
+			#add_to_array = { global.econ_order_array = PAR }
+			#
+			#add_to_array = { global.econ_order_array = ECU }
+			#
 			add_to_array = { global.econ_order_array = UTA }
+			add_to_array = { global.econ_order_array = NVS }
+			add_to_array = { global.econ_order_array = VAN }
+			add_to_array = { global.econ_order_array = BRK }
+			add_to_array = { global.econ_order_array = NFL }
+			add_to_array = { global.econ_order_array = BCO }
+			add_to_array = { global.econ_order_array = QCI }
+			add_to_array = { global.econ_order_array = NWT }
+			#
+			add_to_array = { global.econ_order_array = GUA }
+			add_to_array = { global.econ_order_array = HON }
+			add_to_array = { global.econ_order_array = NIC }
+			add_to_array = { global.econ_order_array = COS }
+			add_to_array = { global.econ_order_array = ELS }
+			add_to_array = { global.econ_order_array = DOM }
+			add_to_array = { global.econ_order_array = HAI }
+			#
+			#Primitives
 			add_to_array = { global.econ_order_array = CHY }
 			add_to_array = { global.econ_order_array = COM }
 			add_to_array = { global.econ_order_array = SHO }
@@ -197,6 +214,7 @@
 			set_variable = { total_money = 0 }
 			set_variable = { previous_annual_gdp_amount = 0 }
 			set_variable = { annual_gdp_amount = 0 }
+			set_variable = { industrial_power = 0 }
 			every_controlled_state = {
 				#Pops get paid
 					add_to_variable = { pops_money = pops_earnings }
@@ -1737,7 +1755,7 @@
 								var:exporter_capital = {
 									set_variable = { PREV.shipping_cost = distance_to@PREV.capital } #This needs to be a normal variable
 								}
-								divide_variable = { transport_cost = 2000 }
+								divide_variable = { shipping_cost = 2000 }
 								set_temp_variable = { modifier_temp = shipping_cost_effect }
 								add_to_temp_variable = { modifier_temp = 1 }
 								multiply_variable = { shipping_cost = modifier_temp }
@@ -1827,7 +1845,7 @@
 								var:exporter_capital = {
 									set_variable = { PREV.shipping_cost = distance_to@PREV.capital } #This needs to be a normal variable
 								}
-								divide_variable = { transport_cost = 2000 }
+								divide_variable = { shipping_cost = 2000 }
 								set_temp_variable = { modifier_temp = shipping_cost_effect }
 								add_to_temp_variable = { modifier_temp = 1 }
 								multiply_variable = { shipping_cost = modifier_temp }
@@ -1918,7 +1936,7 @@
 								var:exporter_capital = {
 									set_variable = { PREV.shipping_cost = distance_to@PREV.capital } #This needs to be a normal variable
 								}
-								divide_variable = { transport_cost = 2000 }
+								divide_variable = { shipping_cost = 2000 }
 								set_temp_variable = { modifier_temp = shipping_cost_effect }
 								add_to_temp_variable = { modifier_temp = 1 }
 								multiply_variable = { shipping_cost = modifier_temp }
@@ -2009,7 +2027,7 @@
 								var:exporter_capital = {
 									set_variable = { PREV.shipping_cost = distance_to@PREV.capital } #This needs to be a normal variable
 								}
-								divide_variable = { transport_cost = 2000 }
+								divide_variable = { shipping_cost = 2000 }
 								set_temp_variable = { modifier_temp = shipping_cost_effect }
 								add_to_temp_variable = { modifier_temp = 1 }
 								multiply_variable = { shipping_cost = modifier_temp }
@@ -2100,7 +2118,7 @@
 								var:exporter_capital = {
 									set_variable = { PREV.shipping_cost = distance_to@PREV.capital } #This needs to be a normal variable
 								}
-								divide_variable = { transport_cost = 2000 }
+								divide_variable = { shipping_cost = 2000 }
 								set_temp_variable = { modifier_temp = shipping_cost_effect }
 								add_to_temp_variable = { modifier_temp = 1 }
 								multiply_variable = { shipping_cost = modifier_temp }
@@ -2191,7 +2209,7 @@
 								var:exporter_capital = {
 									set_variable = { PREV.shipping_cost = distance_to@PREV.capital } #This needs to be a normal variable
 								}
-								divide_variable = { transport_cost = 2000 }
+								divide_variable = { shipping_cost = 2000 }
 								set_temp_variable = { modifier_temp = shipping_cost_effect }
 								add_to_temp_variable = { modifier_temp = 1 }
 								multiply_variable = { shipping_cost = modifier_temp }
@@ -3805,16 +3823,21 @@
 						limit = {
 							check_variable = { pops_annual_life_goods_fulfilled_percentage < 0.1 } #Starvation
 						}
-						set_temp_variable = { pops_starvation_death_amount_temp = pops_amount }
-						divide_temp_variable = { pops_starvation_death_amount_temp = 100 }
-						multiply_temp_variable = { pops_starvation_death_amount_temp = global.pops_maximum_starvation_death_rate }
-						divide_temp_variable = { pops_starvation_death_amount_temp = 12 }
+						if = {
+							limit = {
+								check_variable = { pops_amount > 10 } #Low pop amounts may lead to them not getting goods by default
+							}
+							set_temp_variable = { pops_starvation_death_amount_temp = pops_amount }
+							divide_temp_variable = { pops_starvation_death_amount_temp = 100 }
+							multiply_temp_variable = { pops_starvation_death_amount_temp = global.pops_maximum_starvation_death_rate }
+							divide_temp_variable = { pops_starvation_death_amount_temp = 12 }
 
-						set_temp_variable = { percentage_applied_temp = 0.1 }
-						subtract_from_temp_variable = { percentage_applied_temp = pops_annual_life_goods_fulfilled_percentage }
-						multiply_temp_variable = { percentage_applied_temp = 10 }
-						multiply_temp_variable = { pops_starvation_death_amount_temp = percentage_applied_temp }
-						add_to_variable = { pops_other_death_amount = pops_starvation_death_amount_temp }
+							set_temp_variable = { percentage_applied_temp = 0.1 }
+							subtract_from_temp_variable = { percentage_applied_temp = pops_annual_life_goods_fulfilled_percentage }
+							multiply_temp_variable = { percentage_applied_temp = 10 }
+							multiply_temp_variable = { pops_starvation_death_amount_temp = percentage_applied_temp }
+							add_to_variable = { pops_other_death_amount = pops_starvation_death_amount_temp }
+						}
 					}
 
 					set_variable = { pops_net_change_amount = pops_natural_birth_amount }
@@ -3840,42 +3863,95 @@
 						if = {
 							limit = {
 								check_variable = { factory_employment_amount < factory_employment_amount_max }
+								check_variable = { craftsmen_percentage < 100 }
+								check_variable = { rgos_percentage > 0 }
 							}
 							#RGOs Promote into Craftsmen
 							add_to_variable = { rgo_promotion_demotion_change = -0.01 }
+							add_to_variable = { rgos_percentage = -0.01 }
 							add_to_variable = { craftsmen_promotion_demotion_change = 0.01 }
+							add_to_variable = { craftsmen_percentage = 0.01 }
+
+							set_temp_variable = { factory_employment_temp = factory_employment_amount_max }
+							multiply_temp_variable = { factory_employment_temp = 0.9 }
+							if = {
+								limit = {
+									check_variable = { factory_employment_amount < factory_employment_temp }
+									check_variable = { craftsmen_percentage < 100 }
+									check_variable = { rgos_percentage > 0 }
+								}
+								#RGOs Promote into Craftsmen
+								add_to_variable = { rgo_promotion_demotion_change = -0.01 }
+								add_to_variable = { rgos_percentage = -0.01 }
+								add_to_variable = { craftsmen_promotion_demotion_change = 0.01 }
+								add_to_variable = { craftsmen_percentage = 0.01 }
+
+								set_temp_variable = { factory_employment_temp = factory_employment_amount_max }
+								multiply_temp_variable = { factory_employment_temp = 0.9 }
+								if = {
+									limit = {
+										check_variable = { factory_employment_amount < factory_employment_temp }
+										check_variable = { craftsmen_percentage < 100 }
+										check_variable = { rgos_percentage > 0 }
+									}
+									#RGOs Promote into Craftsmen
+									add_to_variable = { rgo_promotion_demotion_change = -0.01 }
+									add_to_variable = { rgos_percentage = -0.01 }
+									add_to_variable = { craftsmen_promotion_demotion_change = 0.01 }
+									add_to_variable = { craftsmen_percentage = 0.01 }
+
+									set_temp_variable = { factory_employment_temp = factory_employment_amount_max }
+									multiply_temp_variable = { factory_employment_temp = 0.9 }
+									if = {
+										limit = {
+											check_variable = { factory_employment_amount < factory_employment_temp }
+											check_variable = { craftsmen_percentage < 100 }
+											check_variable = { rgos_percentage > 0 }
+										}
+										#RGOs Promote into Craftsmen
+										add_to_variable = { rgo_promotion_demotion_change = -0.01 }
+										add_to_variable = { rgos_percentage = -0.01 }
+										add_to_variable = { craftsmen_promotion_demotion_change = 0.01 }
+										add_to_variable = { craftsmen_percentage = 0.01 }
+									}
+								}
+							}
 						}
 						if = {
 							limit = {
 								check_variable = { craftsmen_unemployment_percentage > 0  }
+								check_variable = { rgos_percentage < 100 }
+								check_variable = { craftsmen_percentage > 0 }
 							}
 							#Craftsmen Demote into RGOs
 							add_to_variable = { craftsmen_promotion_demotion_change = -0.01 }
+							add_to_variable = { craftsmen_percentage = -0.01 }
 							add_to_variable = { rgo_promotion_demotion_change = 0.01 }
+							add_to_variable = { rgos_percentage = 0.01 }
 							if = {
 								limit = {
 									check_variable = { craftsmen_unemployment_percentage > 5  }
+									check_variable = { rgos_percentage < 100 }
+									check_variable = { craftsmen_percentage > 0 }
 								}
 								#Craftsmen Demote into RGOs
 								add_to_variable = { craftsmen_promotion_demotion_change = -0.01 }
+								add_to_variable = { craftsmen_percentage = -0.01 }
 								add_to_variable = { rgo_promotion_demotion_change = 0.01 }
+								add_to_variable = { rgos_percentage = 0.01 }
 								if = {
 									limit = {
 										check_variable = { craftsmen_unemployment_percentage > 10  }
+										check_variable = { rgos_percentage < 100 }
+										check_variable = { craftsmen_percentage > 0 }
 									}
 									#Craftsmen Demote into RGOs
 									add_to_variable = { craftsmen_promotion_demotion_change = -0.01 }
+									add_to_variable = { craftsmen_percentage = -0.01 }
 									add_to_variable = { rgo_promotion_demotion_change = 0.01 }
+									add_to_variable = { rgos_percentage = 0.01 }
 								}
 							}
-						}
-						if = {
-							limit = {
-								check_variable = { factory_employment_amount < factory_employment_amount_max }
-							}
-							#RGOs Promote into Craftsmen
-							add_to_variable = { rgo_promotion_demotion_change = -0.01 }
-							add_to_variable = { craftsmen_promotion_demotion_change = 0.01 }
 						}
 					#
 				#
@@ -3885,6 +3961,8 @@
 			every_controlled_state = {
 				calculate_base_price = yes
 				calculate_price = yes
+				pops_update = yes
+				factories_update = yes
 				pops_update = yes
 				factories_update = yes
 
@@ -4177,6 +4255,22 @@
 						}
 						remove_from_array = { array = annual_gdp_amount_array index = 0 }
 					}
+
+					#Industrial Power
+					set_variable = { industrial_power = 0 }
+
+					set_temp_variable = { everyday_goods_industrial_power = factory_everyday_goods_production }
+					divide_temp_variable = { everyday_goods_industrial_power = global.factory_everyday_goods_base_production }
+					set_temp_variable = { luxury_goods_industrial_power = factory_luxury_goods_production }
+					divide_temp_variable = { luxury_goods_industrial_power = global.factory_luxury_goods_base_production }
+					set_temp_variable = { industrial_goods_industrial_power = factory_industrial_goods_production }
+					divide_temp_variable = { industrial_goods_industrial_power = global.factory_industrial_goods_base_production }
+
+					add_to_variable = { industrial_power = everyday_goods_industrial_power }
+					add_to_variable = { industrial_power = luxury_goods_industrial_power }
+					add_to_variable = { industrial_power = industrial_goods_industrial_power }
+
+					add_to_variable = { PREV.industrial_power = industrial_power }
 				#
 			}
 
@@ -4184,6 +4278,48 @@
 			add_to_variable = { total_factory_amount = num_of_military_factories }
 			add_to_variable = { total_factory_amount = num_of_naval_factories }
 			add_to_variable = { total_factory_amount = private_factory_amount }
+
+			set_temp_variable = { industrial_power_temp = num_of_civilian_factories }
+			multiply_temp_variable = { industrial_power_temp = global.factory_jobs_base_amount }
+			divide_temp_variable = { industrial_power_temp = 50 }
+			set_temp_variable = { modifier_temp = modifier@production_speed_buildings_factor }
+			add_to_temp_variable = { modifier_temp = 1 }
+			if = {
+				limit = { 
+					check_variable = { modifier_temp < 0 }
+				}
+				set_temp_variable = { modifier_temp = 0 }
+			}
+			multiply_temp_variable = { industrial_power_temp = modifier_temp }
+			add_to_variable = { industrial_power = industrial_power_temp }
+
+			set_temp_variable = { industrial_power_temp = num_of_military_factories }
+			multiply_temp_variable = { industrial_power_temp = global.factory_jobs_base_amount }
+			divide_temp_variable = { industrial_power_temp = 50 }
+			set_temp_variable = { modifier_temp = modifier@industrial_capacity_factory  }
+			add_to_temp_variable = { modifier_temp = 1 }
+			if = {
+				limit = { 
+					check_variable = { modifier_temp < 0 }
+				}
+				set_temp_variable = { modifier_temp = 0 }
+			}
+			multiply_temp_variable = { industrial_power_temp = modifier_temp }
+			add_to_variable = { industrial_power = industrial_power_temp }
+
+			set_temp_variable = { industrial_power_temp = num_of_naval_factories }
+			multiply_temp_variable = { industrial_power_temp = global.factory_jobs_base_amount }
+			divide_temp_variable = { industrial_power_temp = 50 }
+			set_temp_variable = { modifier_temp = modifier@industrial_capacity_dockyard  }
+			add_to_temp_variable = { modifier_temp = 1 }
+			if = {
+				limit = { 
+					check_variable = { modifier_temp < 0 }
+				}
+				set_temp_variable = { modifier_temp = 0 }
+			}
+			multiply_temp_variable = { industrial_power_temp = modifier_temp }
+			add_to_variable = { industrial_power = industrial_power_temp }
 
 			divide_variable = { annual_gdp_amount = 1000 }
 			divide_variable = { previous_annual_gdp_amount = 1000 }
@@ -4309,13 +4445,13 @@
 						set_variable =  { global.officers_percentage = 0.5 }
 
 				#Lower Strata
-					set_variable = { global.pops_lower_strata_life_goods_base_need = 1 }
-					set_variable = { global.pops_lower_strata_everyday_goods_base_need = 0.5 }
-					set_variable = { global.pops_lower_strata_luxury_goods_base_need = 0.10 }
+					set_variable = { global.pops_lower_strata_life_goods_base_need = 2 }
+					set_variable = { global.pops_lower_strata_everyday_goods_base_need = 1 }
+					set_variable = { global.pops_lower_strata_luxury_goods_base_need = 0.20 }
 					
 					#RGOs
 						set_variable =  { global.rgos_percentage = 74 }
-						set_variable = { global.pops_rgos_life_goods_base_production = 10 } #Every 100k RGOs
+						set_variable = { global.pops_rgos_life_goods_base_production = 25 } #Every 100k RGOs
 						set_variable = { global.pops_rgos_raw_goods_base_production = 10 }
 						set_variable = { global.pops_rgos_valuable_goods_base_production = 40 }
 
@@ -4331,7 +4467,7 @@
 
 			#
 			#Factories
-				set_variable = { global.factory_industrial_goods_base_need = 0.125 }
+				set_variable = { global.factory_industrial_goods_base_need = 0.075 }
 
 				set_variable = { global.factory_raw_goods_spending = 0.25 } #Minimum Spending
 				set_variable = { global.factory_industrial_goods_spending = 0.15 }
@@ -4346,19 +4482,19 @@
 				set_variable = { global.factory_wages_max_money_percentage = 0.02 } #Adjusted by % of employment
 
 				#Everyday Goods Factory
-					set_variable = { global.factory_everyday_goods_base_production = 30 } #These are for every 100k employees
+					set_variable = { global.factory_everyday_goods_base_production = 20 } #These are for every 100k employees
 					set_variable = { global.factory_everyday_goods_raw_goods_base_need = 0.5 } #Per Good Produced
 					#Construction
 						set_variable = { global.factory_everyday_goods_construction_industrial_goods_base_need = 30 } #Per 100K Employees per Factory
 
 				#Luxury Goods Factory
-					set_variable = { global.factory_luxury_goods_base_production = 15 }
+					set_variable = { global.factory_luxury_goods_base_production = 10 }
 					set_variable = { global.factory_luxury_goods_raw_goods_base_need = 0.5 }
 					#Construction
 						set_variable = { global.factory_luxury_goods_construction_industrial_goods_base_need = 30 } #Per 100K Employees per Factory
 
 				#Industrial Goods Factory
-					set_variable = { global.factory_industrial_goods_base_production = 15 }
+					set_variable = { global.factory_industrial_goods_base_production = 10 }
 					set_variable = { global.factory_industrial_goods_raw_goods_base_need = 1 }
 					#Construction
 						set_variable = { global.factory_industrial_goods_construction_industrial_goods_base_need = 45 } #Per 100K Employees per Factory
@@ -4414,6 +4550,128 @@
 		#
 
 		clear_array = global.econ_order_array
+
+		clear_array = global.raw_goods_states
+		#USA
+		add_to_array = { global.raw_goods_states = 961 }
+		add_to_array = { global.raw_goods_states = 960 }
+		add_to_array = { global.raw_goods_states = 959 }
+		add_to_array = { global.raw_goods_states = 358 }
+		add_to_array = { global.raw_goods_states = 360 }
+		add_to_array = { global.raw_goods_states = 746 }
+		add_to_array = { global.raw_goods_states = 369 }
+		add_to_array = { global.raw_goods_states = 362 }
+		add_to_array = { global.raw_goods_states = 363 }
+		add_to_array = { global.raw_goods_states = 364 }
+		add_to_array = { global.raw_goods_states = 365 }
+		add_to_array = { global.raw_goods_states = 367 }
+		add_to_array = { global.raw_goods_states = 368 }
+		add_to_array = { global.raw_goods_states = 370 }
+		add_to_array = { global.raw_goods_states = 1358 }
+		add_to_array = { global.raw_goods_states = 394 }
+		add_to_array = { global.raw_goods_states = 391 }
+		add_to_array = { global.raw_goods_states = 386 }
+		add_to_array = { global.raw_goods_states = 1073 }
+		add_to_array = { global.raw_goods_states = 1076 }
+		add_to_array = { global.raw_goods_states = 385 }
+		add_to_array = { global.raw_goods_states = 378 }
+		add_to_array = { global.raw_goods_states = 1297 }
+		add_to_array = { global.raw_goods_states = 1285 }
+		add_to_array = { global.raw_goods_states = 1303 }
+
+		add_to_array = { global.valuable_goods_states = 1342 }
+
+		#States in the Continental US but not owned by USA
+		add_to_array = { global.raw_goods_states = 1047 }
+		add_to_array = { global.raw_goods_states = 381 }
+		add_to_array = { global.raw_goods_states = 1291 }
+		add_to_array = { global.raw_goods_states = 1292 }
+		add_to_array = { global.raw_goods_states = 1074 }
+		add_to_array = { global.raw_goods_states = 1289 }
+		add_to_array = { global.raw_goods_states = 1092 }
+		add_to_array = { global.raw_goods_states = 382 }
+		add_to_array = { global.raw_goods_states = 380 }
+		add_to_array = { global.raw_goods_states = 1286 }
+		add_to_array = { global.raw_goods_states = 1287 }
+		add_to_array = { global.raw_goods_states = 1288 }
+		add_to_array = { global.raw_goods_states = 1302 }
+		add_to_array = { global.raw_goods_states = 1301 }
+		add_to_array = { global.raw_goods_states = 1295 }
+		add_to_array = { global.raw_goods_states = 376 }
+		
+		add_to_array = { global.valuable_goods_states = 379 }
+
+		#Canada & Alaska
+		add_to_array = { global.raw_goods_states = 331 }
+		add_to_array = { global.raw_goods_states = 332 }
+		add_to_array = { global.raw_goods_states = 466 }
+		add_to_array = { global.raw_goods_states = 682 }
+		add_to_array = { global.raw_goods_states = 683 }
+		add_to_array = { global.raw_goods_states = 472 }
+		add_to_array = { global.raw_goods_states = 1137 }
+		add_to_array = { global.raw_goods_states = 471 }
+		add_to_array = { global.raw_goods_states = 473 }
+		add_to_array = { global.raw_goods_states = 463}
+
+		#Mexico
+		add_to_array = { global.raw_goods_states = 480 }
+		add_to_array = { global.raw_goods_states = 1112 }
+		add_to_array = { global.raw_goods_states = 478 }
+		add_to_array = { global.raw_goods_states = 1114 }
+		add_to_array = { global.raw_goods_states = 474 }
+		add_to_array = { global.raw_goods_states = 475 }
+		add_to_array = { global.raw_goods_states = 481 }
+		add_to_array = { global.raw_goods_states = 1125 }
+
+		add_to_array = { global.valuable_goods_states = 482 }
+		add_to_array = { global.valuable_goods_states = 485 }
+
+		#Central America/Carribean
+		add_to_array = { global.raw_goods_states = 1155 }
+		add_to_array = { global.raw_goods_states = 1350 }
+		add_to_array = { global.raw_goods_states = 315 }
+		add_to_array = { global.raw_goods_states = 690 }
+		add_to_array = { global.raw_goods_states = 693 }
+		add_to_array = { global.raw_goods_states = 689 }
+		add_to_array = { global.raw_goods_states = 318 }
+		add_to_array = { global.raw_goods_states = 790 }
+		add_to_array = { global.raw_goods_states = 319 }
+		add_to_array = { global.raw_goods_states = 1318 }
+		add_to_array = { global.raw_goods_states = 686 }
+		add_to_array = { global.raw_goods_states = 1357 }
+		add_to_array = { global.raw_goods_states = 694 }
+		add_to_array = { global.raw_goods_states = 308 }
+		add_to_array = { global.raw_goods_states = 692 }
+		add_to_array = { global.raw_goods_states = 691 }
+		add_to_array = { global.raw_goods_states = 695 }
+
+		#Grand Colombia/Guyanas
+
+		#Brazil
+
+		#Peru
+		
+		#Bolivia
+		
+		#Paraguay
+
+		#Chile
+
+		#Uruguay
+
+		#Argentina
+
+
+
+
+		for_each_scope_loop = {
+			array = global.raw_goods_states
+			set_state_flag = pops_rgos_raw_goods_flag
+		}
+		for_each_scope_loop = {
+			array = global.valuable_goods_states
+			set_state_flag = pops_rgos_valuable_goods_flag
+		}
 
 		#Country Setup
 		every_country = {
@@ -4903,8 +5161,6 @@
 
 				pops_update = yes
 
-				factories_update = yes
-
 				#MODIFIERS (To get true production amount)
 
 				#Starting Factory Distribution:
@@ -4937,11 +5193,12 @@
 					set_variable = { total_factory_amount = private_factory_amount }
 					add_to_variable = { total_factory_amount = govt_factories }
 
+					factories_update = yes
 
 					#For setting different weights for each type. 0 is none, <1 is less, 1 is normal, >1 is more 
 					set_temp_variable = { factory_everyday_goods_distribution_adjust_temp = 1 }
 					set_temp_variable = { factory_luxury_goods_distribution_adjust_temp = 1 }
-					set_temp_variable = { factory_industrial_goods_distribution_adjust_temp = 5 }
+					set_temp_variable = { factory_industrial_goods_distribution_adjust_temp = 1 }
 
 					#Change weights here
 
@@ -4949,17 +5206,15 @@
 					#
 
 					#Get Needs Amount adjusted by factory prodution
-					set_temp_variable = { factory_everyday_goods_distribution_temp = pops_everyday_goods_need }
+					set_temp_variable = { factory_everyday_goods_distribution_temp = everyday_goods_need }
 					divide_temp_variable = { factory_everyday_goods_distribution_temp = global.factory_everyday_goods_base_production } #TOOD - Use actual factory production amount, not the base one
 					multiply_temp_variable = { factory_everyday_goods_distribution_temp = factory_everyday_goods_distribution_adjust_temp }
 
-					set_temp_variable = { factory_luxury_goods_distribution_temp = pops_luxury_goods_need }
+					set_temp_variable = { factory_luxury_goods_distribution_temp = luxury_goods_need }
 					divide_temp_variable = { factory_luxury_goods_distribution_temp = global.factory_luxury_goods_base_production } #TOOD
 					multiply_temp_variable = { factory_luxury_goods_distribution_temp = factory_luxury_goods_distribution_adjust_temp }
 
-					set_temp_variable = { factory_industrial_goods_distribution_temp = private_factory_amount }
-					multiply_temp_variable = { factory_industrial_goods_distribution_temp = global.factory_industrial_goods_base_need }
-					#TODO - Add modifiers for industrial goods base need
+					set_temp_variable = { factory_industrial_goods_distribution_temp = industrial_goods_need }
 					divide_temp_variable = { factory_industrial_goods_distribution_temp = global.factory_industrial_goods_base_production } #TOOD
 					multiply_temp_variable = { factory_industrial_goods_distribution_temp = factory_industrial_goods_distribution_adjust_temp }
 
@@ -7934,9 +8189,9 @@
 			}
 			if = {
 				limit = {
-					check_variable = { life_goods_price < 0.02 }
+					check_variable = { life_goods_price < 0.01 }
 				}
-				set_variable = { life_goods_price = 0.02 }
+				set_variable = { life_goods_price = 0.01 }
 			}
 			else_if = {
 				limit = {
@@ -7944,7 +8199,7 @@
 					multiply_temp_variable = { price_temp = 10 }
 					check_variable = { life_goods_price > price_temp }
 				}
-				set_variable = { life_goods_price = life_goods_base_price }
+				set_variable = { life_goods_price = price_temp }
 			}
 
 		#everyday_goods
@@ -7976,9 +8231,9 @@
 			}
 			if = {
 				limit = {
-					check_variable = { everyday_goods_price < 0.02 }
+					check_variable = { everyday_goods_price < 0.01 }
 				}
-				set_variable = { everyday_goods_price = 0.02 }
+				set_variable = { everyday_goods_price = 0.01 }
 			}
 			else_if = {
 				limit = {
@@ -7986,7 +8241,7 @@
 					multiply_temp_variable = { price_temp = 10 }
 					check_variable = { everyday_goods_price > price_temp }
 				}
-				set_variable = { everyday_goods_price = everyday_goods_base_price }
+				set_variable = { everyday_goods_price = price_temp }
 			}
 
 		#luxury_goods
@@ -8018,9 +8273,9 @@
 			}
 			if = {
 				limit = {
-					check_variable = { luxury_goods_price < 0.02 }
+					check_variable = { luxury_goods_price < 0.01 }
 				}
-				set_variable = { luxury_goods_price = 0.02 }
+				set_variable = { luxury_goods_price = 0.01 }
 			}
 			else_if = {
 				limit = {
@@ -8028,7 +8283,7 @@
 					multiply_temp_variable = { price_temp = 10 }
 					check_variable = { luxury_goods_price > price_temp }
 				}
-				set_variable = { luxury_goods_price = luxury_goods_base_price }
+				set_variable = { luxury_goods_price = price_temp }
 			}
 
 		#services
@@ -8060,9 +8315,9 @@
 			}
 			if = {
 				limit = {
-					check_variable = { services_price < 0.02 }
+					check_variable = { services_price < 0.01 }
 				}
-				set_variable = { services_price = 0.02 }
+				set_variable = { services_price = 0.01 }
 			}
 			else_if = {
 				limit = {
@@ -8070,7 +8325,7 @@
 					multiply_temp_variable = { price_temp = 10 }
 					check_variable = { services_price > price_temp }
 				}
-				set_variable = { services_price = services_base_price }
+				set_variable = { services_price = price_temp }
 			}
 
 		#raw_goods
@@ -8102,9 +8357,9 @@
 			}
 			if = {
 				limit = {
-					check_variable = { raw_goods_price < 0.02 }
+					check_variable = { raw_goods_price < 0.01 }
 				}
-				set_variable = { raw_goods_price = 0.02 }
+				set_variable = { raw_goods_price = 0.01 }
 			}
 			else_if = {
 				limit = {
@@ -8112,7 +8367,7 @@
 					multiply_temp_variable = { price_temp = 10 }
 					check_variable = { raw_goods_price > price_temp }
 				}
-				set_variable = { raw_goods_price = raw_goods_base_price }
+				set_variable = { raw_goods_price = price_temp }
 			}
 
 		#industrial_goods
@@ -8144,9 +8399,9 @@
 			}
 			if = {
 				limit = {
-					check_variable = { industrial_goods_price < 0.02 }
+					check_variable = { industrial_goods_price < 0.01 }
 				}
-				set_variable = { industrial_goods_price = 0.02 }
+				set_variable = { industrial_goods_price = 0.01 }
 			}
 			else_if = {
 				limit = {
@@ -8154,7 +8409,7 @@
 					multiply_temp_variable = { price_temp = 10 }
 					check_variable = { industrial_goods_price > price_temp }
 				}
-				set_variable = { industrial_goods_price = industrial_goods_base_price }
+				set_variable = { industrial_goods_price = price_temp }
 			}
 	}
 	calculate_base_priced = {
