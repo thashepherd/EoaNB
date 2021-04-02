@@ -47,6 +47,22 @@ Vars:
         pops_rgos_raw_goods_flag #State flag - If the flag exists, it's raw goods. if not, life goods.
         pops_rgos_valuable_goods_flag #State flag - If the flag exists, it's valuable goods. Overrides raw goods.
 
+        pops_rgos_cash_crops_flag #State flag - Provides a bonus to raw/life goods production
+        pops_rgos_coal_flag #State flag - Provides a bonus to raw goods production
+        pops_rgos_metals_flag #State flag - Provides a bonus to raw goods production
+        pops_rgos_petroleum_flag #State flag - Provides a bonus to raw goods production
+
+        Differents stages of valuable goods:
+            Untapped - 3.0x - pops_rgos_valuable_goods_untapped_flag
+            Plentiful - 2.0x - pops_rgos_valuable_goods_plentiful_flag
+            Exploited - 1.0x - (Default)
+            Depleted - 0.5x - pops_rgos_valuable_goods_depleted_flag
+
+            Untapped -> 5 Years -> Plentiful
+            Plentiful -> 20 Years -> Exploited
+            Exploited -> 50 Years -> Depleted
+            Depleted -> 25 Years -> Valuable Goods Deposit removed
+
     Derived:
         #These are variables that are derived from other variables or are set during the game, so therefore manually setting is not required
         
