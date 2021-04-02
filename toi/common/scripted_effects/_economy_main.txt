@@ -1094,7 +1094,7 @@
                                             check_variable = { state_temp:life_goods_price < life_goods_price }
                                             check_variable = { buy_amount_left > 0 }
 											check_variable = { state_temp:life_goods_supply_min < state_temp:life_goods_supply }
-                                            NOT = { state = state_temp }
+                                            
                                         }
 										#Transport Cost
 										var:state_temp = {
@@ -1203,7 +1203,7 @@
                                             check_variable = { state_temp:everyday_goods_price < everyday_goods_price }
                                             check_variable = { buy_amount_left > 0 }
 											check_variable = { state_temp:everyday_goods_supply_min < state_temp:everyday_goods_supply }
-                                            NOT = { state = state_temp }
+                                            
                                         }
 										#Transport Cost
 										var:state_temp = {
@@ -1312,7 +1312,7 @@
                                             check_variable = { state_temp:luxury_goods_price < luxury_goods_price }
                                             check_variable = { buy_amount_left > 0 }
 											check_variable = { state_temp:luxury_goods_supply_min < state_temp:luxury_goods_supply }
-                                            NOT = { state = state_temp }
+                                            
                                         }
 										#Transport Cost
 										var:state_temp = {
@@ -1422,7 +1422,7 @@
                                             check_variable = { state_temp:services_price < services_price }
                                             check_variable = { buy_amount_left > 0 }
 											check_variable = { state_temp:services_supply_min < state_temp:services_supply }
-                                            NOT = { state = state_temp }
+                                            
                                         }
 										#Transport Cost
 										var:state_temp = {
@@ -1531,7 +1531,7 @@
                                             check_variable = { state_temp:raw_goods_price < raw_goods_price }
                                             check_variable = { buy_amount_left > 0 }
 											check_variable = { state_temp:raw_goods_supply_min < state_temp:raw_goods_supply }
-                                            NOT = { state = state_temp }
+                                            
                                         }
 										#Transport Cost
 										var:state_temp = {
@@ -1640,7 +1640,7 @@
                                             check_variable = { state_temp:industrial_goods_price < industrial_goods_price }
                                             check_variable = { buy_amount_left > 0 }
 											check_variable = { state_temp:industrial_goods_supply_min < state_temp:industrial_goods_supply }
-                                            NOT = { state = state_temp }
+                                            
                                         }
 										#Transport Cost
 										var:state_temp = {
@@ -1749,7 +1749,7 @@
 									check_variable = { country_temp:life_goods_price < life_goods_price }
 									check_variable = { buy_amount_left > 0 }
 									check_variable = { country_temp:life_goods_supply_min < country_temp:life_goods_supply }
-									NOT = { tag = country_temp }
+									
 								}
 
 								#Shipping Cost
@@ -1840,7 +1840,7 @@
 									check_variable = { country_temp:everyday_goods_price < everyday_goods_price }
 									check_variable = { buy_amount_left > 0 }
 									check_variable = { country_temp:everyday_goods_supply_min < country_temp:everyday_goods_supply }
-									NOT = { tag = country_temp }
+									
 								}
 								#Shipping Cost
 								set_temp_variable = { exporter_capital = country_temp:capital }
@@ -1931,7 +1931,7 @@
 									check_variable = { country_temp:luxury_goods_price < luxury_goods_price }
 									check_variable = { buy_amount_left > 0 }
 									check_variable = { country_temp:luxury_goods_supply_min < country_temp:luxury_goods_supply }
-									NOT = { tag = country_temp }
+									
 								}
 								#Shipping Cost
 								set_temp_variable = { exporter_capital = country_temp:capital }
@@ -2022,7 +2022,7 @@
 									check_variable = { country_temp:services_price < services_price }
 									check_variable = { buy_amount_left > 0 }
 									check_variable = { country_temp:services_supply_min < country_temp:services_supply }
-									NOT = { tag = country_temp }
+									
 								}
 								#Shipping Cost
 								set_temp_variable = { exporter_capital = country_temp:capital }
@@ -2119,7 +2119,7 @@
 									check_variable = { country_temp:raw_goods_price < raw_goods_price }
 									check_variable = { buy_amount_left > 0 }
 									check_variable = { country_temp:raw_goods_supply_min < country_temp:raw_goods_supply }
-									NOT = { tag = country_temp }
+									
 								}
 								#Shipping Cost
 								set_temp_variable = { exporter_capital = country_temp:capital }
@@ -2210,7 +2210,7 @@
 									check_variable = { country_temp:industrial_goods_price < industrial_goods_price }
 									check_variable = { buy_amount_left > 0 }
 									check_variable = { country_temp:industrial_goods_supply_min < country_temp:industrial_goods_supply }
-									NOT = { tag = country_temp }
+									
 								}
 								#Shipping Cost
 								set_temp_variable = { exporter_capital = country_temp:capital }
