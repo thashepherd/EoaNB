@@ -474,12 +474,12 @@ focus_tree = {
 			hidden_effect={
 				country_event ={id = arab_events.29}#finalise our foreign policy towards the west
 			}
-			hidden_effect={
-				load_focus_tree = {
-					tree = Oman_victorian
-					keep_completed = yes
-				}
-			}
+			# hidden_effect={
+				# load_focus_tree = {
+					# tree = Oman_victorian
+					# keep_completed = yes
+				# }
+			# }
 		}
 		select_effect = {
 			country_event ={id = arab_events.23 days = 15}#choose british policy
@@ -987,10 +987,10 @@ focus_tree = {
 			}
 			custom_effect_tooltip = OMA_unlocks_isolation_branch
 			hidden_effect={
-				load_focus_tree = {
-					tree = Oman_victorian
-					keep_completed = yes
-				}
+				# load_focus_tree = {
+					# tree = Oman_victorian
+					# keep_completed = yes
+				# }
 				unlock_national_focus = oma_vic_omani_practises
 			}
 		}
@@ -2169,7 +2169,7 @@ focus_tree = {
 		x = 15
 		y = 20
 		completion_reward = {
-			#load_focus_tree = { tree = OMA_mac_open keep_completed = yes }
+			load_focus_tree = { tree = OMA_mac_open keep_completed = yes }
 		}
 		available={
 			has_country_leader = {

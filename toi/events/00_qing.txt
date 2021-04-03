@@ -139,6 +139,7 @@ news_event = { #death of xianfang
 				}
 				clr_country_flag = QNG_xianjing_tree
 				set_country_flag = QNG_xianjing_transition_tree
+				mark_focus_tree_layout_dirty = yes
 			}
 		}
 	}
@@ -173,6 +174,7 @@ news_event = { #Xinyou Coup
 				}
 				clr_country_flag = QNG_xianjing_transition_tree
 				set_country_flag = QNG_tongzhi_transition_tree
+				mark_focus_tree_layout_dirty = yes
 			}
 			hidden_effect={
 				swap_ideas ={ 
