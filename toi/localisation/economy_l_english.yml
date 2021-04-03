@@ -13,6 +13,9 @@
   BUILDING_TYPE_MERCHANDISING_STORE:0 "store"
   BUILDING_TYPE_SERVICE_INDUSTRY:0 "service"
 
+  treasury_amount_loc:0 "[?treasury][GetCurrencyTextIcon]"
+  income_amount_loc:0 "§G+[?actual_revenue]§![GetCurrencyTextIcon]"
+
   #State Economy Screen
     state_economy_button_tt:0 "State Economy Screen"
     state_economy_button_tt_d:0 "A menu providing detailed information about the economy in this state."
@@ -298,6 +301,54 @@
 
       corporation_name_industrial_goods_generic_zz:0 "[This.GetName] Industries"
     #
+  #Country Economy Screen
+    country_economy_title:0 "[ROOT.GetName] Economy"
+
+    #Government Finances Area
+      govt_finances_title:0 "Finances"
+      #Revenue Area
+        govt_revenue_title:0 "Revenue"
+        #Income Taxes
+          govt_income_taxes_title:0 "Income Tax"
+
+          govt_upper_strata_income_taxes_title:0 "Upper Strata Income Tax"
+          govt_upper_strata_income_tax_percentage_loc:0 "[?income_tax_upper_strata_percentage|0]%"
+          govt_upper_strata_income_tax_amount_loc:0 "§G[?income_tax_upper_strata_revenue]§![GetCurrencyTextIcon]"
+          govt_middle_strata_income_taxes_title:0 "Middle Strata Income Tax"
+          govt_middle_strata_income_tax_percentage_loc:0 "[?income_tax_middle_strata_percentage|0]%"
+          govt_middle_strata_income_tax_amount_loc:0 "§G[?income_tax_middle_strata_revenue]§![GetCurrencyTextIcon]"
+          govt_lower_strata_income_taxes_title:0 "Lower Strata Income Tax"
+          govt_lower_strata_income_tax_percentage_loc:0 "[?income_tax_lower_strata_percentage|0]%"
+          govt_lower_strata_income_tax_amount_loc:0 "§G[?income_tax_lower_strata_revenue]§![GetCurrencyTextIcon]"
+
+          govt_income_taxes_amount_loc:0 "Revenue: §G[?income_tax_revenue]§![GetCurrencyTextIcon]"
+        #
+        #Sales Tax
+          govt_sales_tax_title:0 "Sales Tax"
+          govt_sales_tax_percentage_loc:0 "[?sales_tax_percentage|0]%"
+          govt_sales_tax_amount_loc:0 "§G[?sales_tax_revenue]§![GetCurrencyTextIcon]"
+        #
+        #Value Added Tax
+          govt_corporate_tax_title:0 "Corporate Tax"
+          govt_corporate_tax_percentage_loc:0 "[?corporate_tax_percentage|0]%"
+          govt_corporate_tax_amount_loc:0 "§G[?corporate_tax_revenue]§![GetCurrencyTextIcon]"
+        #
+        #Tariffs
+          govt_tariffs_title:0 "Tariffs"
+          govt_import_tariff_title:0 "Import"
+          govt_import_tariff_percentage_loc:0 "[?import_tariff_percentage|0]%"
+          govt_import_tariff_amount_loc:0 "§G[?import_tariff_revenue]§![GetCurrencyTextIcon]"
+          govt_export_tariff_title:0 "Export"
+          govt_export_tariff_percentage_loc:0 "[?export_tariff_percentage|0]%"
+          govt_export_tariff_amount_loc:0 "§G[?export_tariff_revenue]§![GetCurrencyTextIcon]"
+        #
+        govt_revenue_amount_loc:0 "§G[?revenue]§![GetCurrencyTextIcon]"
+      #
+      #Expenses Area
+        govt_expenses_title:0 "Expenditure"
+      #
+    #
+  #
 
   #DATED
     pops_life_needs_loc:0 "Life Needs: §Y[?pops_life_goods_need]§!"

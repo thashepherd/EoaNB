@@ -316,7 +316,7 @@ scripted_gui = {
 		}
 		triggers = {
 			country_view_economy_button_click_enabled = {
-				always = no
+				always = yes
 			}
 		}
 	}
@@ -337,6 +337,247 @@ scripted_gui = {
 				}
 			}
 
+			#Upper Strata Income Tax
+				govt_decrease_upper_strata_income_tax_button_click = {
+					set_temp_variable = { percent_change_temp = -1 }
+					change_upper_strata_income_tax = yes
+				}
+				govt_decrease_upper_strata_income_tax_button_shift_click = {
+					set_temp_variable = { percent_change_temp = -5 }
+					change_upper_strata_income_tax = yes
+				}
+				govt_decrease_upper_strata_income_tax_button_control_click = {
+					set_temp_variable = { percent_change_temp = -10 }
+					change_upper_strata_income_tax = yes
+				}
+				govt_decrease_upper_strata_income_tax_button_control_shift_click = {
+					set_temp_variable = { percent_change_temp = -25 }
+					change_upper_strata_income_tax = yes
+				}
+				govt_increase_upper_strata_income_tax_button_click = {
+					set_temp_variable = { percent_change_temp = 1 }
+					change_upper_strata_income_tax = yes
+				}
+				govt_increase_upper_strata_income_tax_button_shift_click = {
+					set_temp_variable = { percent_change_temp = 5 }
+					change_upper_strata_income_tax = yes
+				}
+				govt_increase_upper_strata_income_tax_button_control_click = {
+					set_temp_variable = { percent_change_temp = 10 }
+					change_upper_strata_income_tax = yes
+				}
+				govt_increase_upper_strata_income_tax_button_control_shift_click = {
+					set_temp_variable = { percent_change_temp = 25 }
+					change_upper_strata_income_tax = yes
+				}
+			#
+			#Middle Strata Income Tax
+				govt_decrease_middle_strata_income_tax_button_click = {
+					set_temp_variable = { percent_change_temp = -1 }
+					change_middle_strata_income_tax = yes
+				}
+				govt_decrease_middle_strata_income_tax_button_shift_click = {
+					set_temp_variable = { percent_change_temp = -5 }
+					change_middle_strata_income_tax = yes
+				}
+				govt_decrease_middle_strata_income_tax_button_control_click = {
+					set_temp_variable = { percent_change_temp = -10 }
+					change_middle_strata_income_tax = yes
+				}
+				govt_decrease_middle_strata_income_tax_button_control_shift_click = {
+					set_temp_variable = { percent_change_temp = -25 }
+					change_middle_strata_income_tax = yes
+				}
+				govt_increase_middle_strata_income_tax_button_click = {
+					set_temp_variable = { percent_change_temp = 1 }
+					change_middle_strata_income_tax = yes
+				}
+				govt_increase_middle_strata_income_tax_button_shift_click = {
+					set_temp_variable = { percent_change_temp = 5 }
+					change_middle_strata_income_tax = yes
+				}
+				govt_increase_middle_strata_income_tax_button_control_click = {
+					set_temp_variable = { percent_change_temp = 10 }
+					change_middle_strata_income_tax = yes
+				}
+				govt_increase_middle_strata_income_tax_button_control_shift_click = {
+					set_temp_variable = { percent_change_temp = 25 }
+					change_middle_strata_income_tax = yes
+				}
+			#
+			#Lower Strata Income Tax
+				govt_decrease_lower_strata_income_tax_button_click = {
+					set_temp_variable = { percent_change_temp = -1 }
+					change_lower_strata_income_tax = yes
+				}
+				govt_decrease_lower_strata_income_tax_button_shift_click = {
+					set_temp_variable = { percent_change_temp = -5 }
+					change_lower_strata_income_tax = yes
+				}
+				govt_decrease_lower_strata_income_tax_button_control_click = {
+					set_temp_variable = { percent_change_temp = -10 }
+					change_lower_strata_income_tax = yes
+				}
+				govt_decrease_lower_strata_income_tax_button_control_shift_click = {
+					set_temp_variable = { percent_change_temp = -25 }
+					change_lower_strata_income_tax = yes
+				}
+				govt_increase_lower_strata_income_tax_button_click = {
+					set_temp_variable = { percent_change_temp = 1 }
+					change_lower_strata_income_tax = yes
+				}
+				govt_increase_lower_strata_income_tax_button_shift_click = {
+					set_temp_variable = { percent_change_temp = 5 }
+					change_lower_strata_income_tax = yes
+				}
+				govt_increase_lower_strata_income_tax_button_control_click = {
+					set_temp_variable = { percent_change_temp = 10 }
+					change_lower_strata_income_tax = yes
+				}
+				govt_increase_lower_strata_income_tax_button_control_shift_click = {
+					set_temp_variable = { percent_change_temp = 25 }
+					change_lower_strata_income_tax = yes
+				}
+			#
+
+			#Sales Tax
+				govt_decrease_sales_tax_button_click = {
+					set_temp_variable = { percent_change_temp = -1 }
+					change_sales_tax = yes
+				}
+				govt_decrease_sales_tax_button_shift_click = {
+					set_temp_variable = { percent_change_temp = -5 }
+					change_sales_tax = yes
+				}
+				govt_decrease_sales_tax_button_control_click = {
+					set_temp_variable = { percent_change_temp = -10 }
+					change_sales_tax = yes
+				}
+				govt_decrease_sales_tax_button_control_shift_click = {
+					set_temp_variable = { percent_change_temp = -25 }
+					change_sales_tax = yes
+				}
+				govt_increase_sales_tax_button_click = {
+					set_temp_variable = { percent_change_temp = 1 }
+					change_sales_tax = yes
+				}
+				govt_increase_sales_tax_button_shift_click = {
+					set_temp_variable = { percent_change_temp = 5 }
+					change_sales_tax = yes
+				}
+				govt_increase_sales_tax_button_control_click = {
+					set_temp_variable = { percent_change_temp = 10 }
+					change_sales_tax = yes
+				}
+				govt_increase_sales_tax_button_control_shift_click = {
+					set_temp_variable = { percent_change_temp = 25 }
+					change_sales_tax = yes
+				}
+			#
+			#Corporate Tax
+				govt_decrease_corporate_tax_button_click = {
+					set_temp_variable = { percent_change_temp = -1 }
+					change_corporate_tax = yes
+				}
+				govt_decrease_corporate_tax_button_shift_click = {
+					set_temp_variable = { percent_change_temp = -5 }
+					change_corporate_tax = yes
+				}
+				govt_decrease_corporate_tax_button_control_click = {
+					set_temp_variable = { percent_change_temp = -10 }
+					change_corporate_tax = yes
+				}
+				govt_decrease_corporate_tax_button_control_shift_click = {
+					set_temp_variable = { percent_change_temp = -25 }
+					change_corporate_tax = yes
+				}
+				govt_increase_corporate_tax_button_click = {
+					set_temp_variable = { percent_change_temp = 1 }
+					change_corporate_tax = yes
+				}
+				govt_increase_corporate_tax_button_shift_click = {
+					set_temp_variable = { percent_change_temp = 5 }
+					change_corporate_tax = yes
+				}
+				govt_increase_corporate_tax_button_control_click = {
+					set_temp_variable = { percent_change_temp = 10 }
+					change_corporate_tax = yes
+				}
+				govt_increase_corporate_tax_button_control_shift_click = {
+					set_temp_variable = { percent_change_temp = 25 }
+					change_corporate_tax = yes
+				}
+			#
+			#Import Tariffs
+				govt_decrease_import_tariff_button_click = {
+					set_temp_variable = { percent_change_temp = -1 }
+					change_import_tariff = yes
+				}
+				govt_decrease_import_tariff_button_shift_click = {
+					set_temp_variable = { percent_change_temp = -5 }
+					change_import_tariff = yes
+				}
+				govt_decrease_import_tariff_button_control_click = {
+					set_temp_variable = { percent_change_temp = -10 }
+					change_import_tariff = yes
+				}
+				govt_decrease_import_tariff_button_control_shift_click = {
+					set_temp_variable = { percent_change_temp = -25 }
+					change_import_tariff = yes
+				}
+				govt_increase_import_tariff_button_click = {
+					set_temp_variable = { percent_change_temp = 1 }
+					change_import_tariff = yes
+				}
+				govt_increase_import_tariff_button_shift_click = {
+					set_temp_variable = { percent_change_temp = 5 }
+					change_import_tariff = yes
+				}
+				govt_increase_import_tariff_button_control_click = {
+					set_temp_variable = { percent_change_temp = 10 }
+					change_import_tariff = yes
+				}
+				govt_increase_import_tariff_button_control_shift_click = {
+					set_temp_variable = { percent_change_temp = 25 }
+					change_import_tariff = yes
+				}
+			#
+			#Export Tariffs
+				govt_decrease_export_tariff_button_click = {
+					set_temp_variable = { percent_change_temp = -1 }
+					change_export_tariff = yes
+				}
+				govt_decrease_export_tariff_button_shift_click = {
+					set_temp_variable = { percent_change_temp = -5 }
+					change_export_tariff = yes
+				}
+				govt_decrease_export_tariff_button_control_click = {
+					set_temp_variable = { percent_change_temp = -10 }
+					change_export_tariff = yes
+				}
+				govt_decrease_export_tariff_button_control_shift_click = {
+					set_temp_variable = { percent_change_temp = -25 }
+					change_export_tariff = yes
+				}
+				govt_increase_export_tariff_button_click = {
+					set_temp_variable = { percent_change_temp = 1 }
+					change_export_tariff = yes
+				}
+				govt_increase_export_tariff_button_shift_click = {
+					set_temp_variable = { percent_change_temp = 5 }
+					change_export_tariff = yes
+				}
+				govt_increase_export_tariff_button_control_click = {
+					set_temp_variable = { percent_change_temp = 10 }
+					change_export_tariff = yes
+				}
+				govt_increase_export_tariff_button_control_shift_click = {
+					set_temp_variable = { percent_change_temp = 25 }
+					change_export_tariff = yes
+				}
+			#
+
+
 			time_button_click = {
 				advance_time = yes
 			}
@@ -345,6 +586,29 @@ scripted_gui = {
 			}
 			extra_button_click = {
 
+			}
+		}
+        properties = {
+			govt_upper_strata_income_tax_icon = {
+				x = income_tax_upper_strata_percentage
+			}
+			govt_middle_strata_income_tax_icon = {
+				x = income_tax_middle_strata_percentage
+			}
+			govt_lower_strata_income_tax_icon = {
+				x = income_tax_lower_strata_percentage
+			}
+			govt_sales_tax_icon = {
+				x = sales_tax_percentage
+			}
+			govt_corporate_tax_icon = {
+				x = corporate\_tax_percentage
+			}
+			govt_import_tariff_icon = {
+				x = import_tariff_percentage
+			}
+			govt_export_tariff_icon = {
+				x = export_tariff_percentage
 			}
 		}
 	}

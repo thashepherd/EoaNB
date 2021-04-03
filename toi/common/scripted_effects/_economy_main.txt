@@ -213,13 +213,50 @@
 				reset_supply = yes
 				reset_demand = yes
 			#
+			set_variable = { actual_revenue = 0 }
+			set_variable = { actual_income_tax_revenue = 0 }
+
 			set_variable = { total_money = 0 }
+			set_variable = { gdp_amount = 0 }
 			set_variable = { previous_annual_gdp_amount = 0 }
 			set_variable = { annual_gdp_amount = 0 }
 			set_variable = { industrial_power = 0 }
 			every_controlled_state = {
-				#Pops get paid
+				#Pops/Govt get paid
+					set_variable = { pops_spending = 0 }
+
 					add_to_variable = { pops_money = pops_earnings }
+					#Upper Strata
+					set_temp_variable = { tax_temp = aristocrats_earnings }
+					add_to_temp_variable = { tax_temp = capitalists_earnings }
+					multiply_temp_variable = { tax_temp = PREV.income_tax_upper_strata_percentage }
+					divide_temp_variable = { tax_temp = 100 }
+					subtract_from_variable = { pops_money = tax_temp }
+					add_to_variable = { pops_spending = tax_temp }
+					add_to_variable = { PREV.treasury = tax_temp }
+					add_to_variable = { PREV.actual_income_tax_revenue = tax_temp }
+
+					#Middle Strata
+					set_temp_variable = { tax_temp = artisans_earnings }
+					add_to_temp_variable = { tax_temp = professionals_earnings }
+					add_to_temp_variable = { tax_temp = specialists_earnings }
+					multiply_temp_variable = { tax_temp = PREV.income_tax_middle_strata_percentage }
+					divide_temp_variable = { tax_temp = 100 }
+					subtract_from_variable = { pops_money = tax_temp }
+					add_to_variable = { pops_spending = tax_temp }
+					add_to_variable = { PREV.treasury = tax_temp }
+					add_to_variable = { PREV.actual_income_tax_revenue = tax_temp }
+
+					#Lower Strata
+					set_temp_variable = { tax_temp = rgos_earnings }
+					add_to_temp_variable = { tax_temp = craftsmen_earnings }
+					add_to_temp_variable = { tax_temp = clerks_earnings }
+					multiply_temp_variable = { tax_temp = PREV.income_tax_lower_strata_percentage }
+					divide_temp_variable = { tax_temp = 100 }
+					subtract_from_variable = { pops_money = tax_temp }
+					add_to_variable = { pops_spending = tax_temp }
+					add_to_variable = { PREV.treasury = tax_temp }
+					add_to_variable = { PREV.actual_income_tax_revenue = tax_temp }
 				#
 				#Reset
 					set_variable = { life_goods_trade_amount = 0 } #Positive: Goods Bought / Negative: Goods Sold - Note, this only applies in this effect. It's always positive elsewhere.
@@ -241,17 +278,27 @@
 					set_variable = { industrial_goods_trade_value = 0 }
 
 					set_variable = { pops_earnings = 0 }
-					set_variable = { pops_spending = 0 }
 
 					set_variable = { artisans_earnings = 0 }
 					set_variable = { pops_artisans_everyday_goods_sold = 0 }
 					set_variable = { pops_artisans_luxury_goods_sold = 0 }
 					set_variable = { pops_artisans_industrial_goods_sold = 0 }
 
+					#set_variable = { aristocrats_earnings = 0 }
 					set_variable = { rgos_earnings = 0 }
 					set_variable = { pops_rgos_life_goods_sold = 0 }
 					set_variable = { pops_rgos_raw_goods_sold = 0 }
+
 					set_variable = { pops_services_sold = 0 }
+
+					set_variable = { craftsmen_earnings = 0 }
+					set_variable = { specialists_earnings = 0 }
+					set_variable = { clerks_earnings = 0 }
+					set_variable = { professionals_earnings = 0 }
+					set_variable = { capitalists_earnings = 0 }
+
+					set_variable = { soldiers_earnings = 0 }
+					set_variable = { officers_earnings = 0 }
 
 					set_variable = { factory_earnings = 0 }
 					set_variable = { factory_spending = 0 }
@@ -3126,7 +3173,7 @@
 							limit = {
 								check_variable = { life_goods_trade_amount < 0 }
 							}
-							#Revenue & goods sold absorbed by RGOs 
+							#Revenue & goods sold absorbed by RGOs/Aristocrats 
 							#add_to_variable = { pops_money = life_goods_trade_value } #Add to either earnings or money. Never both
 							add_to_variable = { pops_earnings = life_goods_trade_value }
 							add_to_variable = { rgos_earnings = life_goods_trade_value }
@@ -3334,11 +3381,40 @@
 							limit = {
 								check_variable = { services_trade_amount < 0 }
 							}
-							#Revenue & goods sold absorbed by factories/artisans 
-							add_to_variable = { factory_money = services_trade_value }
-							add_to_variable = { factory_earnings = services_trade_value }
-							subtract_from_variable = { pops_services_sold = services_trade_amount }
+							#Revenue & goods sold absorbed by pops
+							add_to_variable = { pops_earnings = services_trade_value }
 
+							set_temp_variable = { capitalists_share = pops_services_production }
+							multiply_temp_variable = { capitalists_share = 50 }
+							set_temp_variable = { clerks_share = pops_clerks_services_production }
+							multiply_temp_variable = { clerks_share = 100 }
+							set_temp_variable = { professionals_share = pops_professionals_services_production }
+							multiply_temp_variable = { professionals_share = 100 }
+
+							set_temp_variable = { share_total = capitalists_share }
+							add_to_temp_variable = { share_total = clerks_share }
+							add_to_temp_variable = { share_total = professionals_share }
+							divide_temp_variable = { share_total = 100 }
+
+							divide_temp_variable = { capitalists_share = share_total }
+							divide_temp_variable = { clerks_share = share_total }
+							divide_temp_variable = { professionals_share = share_total }
+
+							set_temp_variable = { capitalists_value = services_trade_value }
+							multiply_temp_variable = { capitalists_value = capitalists_share }
+							divide_temp_variable = { capitalists_value = 100 }
+							set_temp_variable = { clerks_value = services_trade_value }
+							multiply_temp_variable = { clerks_value = clerks_share }
+							divide_temp_variable = { clerks_value = 100 }
+							set_temp_variable = { professionals_value = services_trade_value }
+							multiply_temp_variable = { professionals_value = professionals_share }
+							divide_temp_variable = { professionals_value = 100 }
+
+							add_to_variable = { capitalists_earnings = capitalists_value }
+							add_to_variable = { clerks_earnings = clerks_value }
+							add_to_variable = { professionals_earnings = professionals_value }
+
+							subtract_from_variable = { pops_services_sold = services_trade_amount }
 							add_to_variable = { gdp_amount = services_trade_value }
 						}
 
@@ -3425,6 +3501,7 @@
 							#add_to_variable = { pops_money = raw_goods_trade_value } #Add to either earnings or money. Never both
 							add_to_variable = { pops_earnings = raw_goods_trade_value }
 							add_to_variable = { rgos_earnings = raw_goods_trade_value }
+
 							subtract_from_variable = { pops_rgos_raw_goods_sold = raw_goods_trade_amount }
 
 							add_to_variable = { gdp_amount = raw_goods_trade_value }
@@ -3786,6 +3863,39 @@
 						set_variable = { factory_money = 0 }
 					}
 					add_to_variable = { pops_earnings = factory_wages }
+
+					set_temp_variable = { capitalists_share = capitalists_percentage }
+					multiply_temp_variable = { capitalists_share = 900 }
+					set_temp_variable = { craftsmen_share = craftsmen_percentage }
+					multiply_temp_variable = { craftsmen_share = 100 }
+					set_temp_variable = { specialists_share = specialists_percentage }
+					multiply_temp_variable = { specialists_share = 100 }
+					set_temp_variable = { modifier_temp = global.pops_specialists_production_bonus }
+					add_to_temp_variable = { modifier_temp = 1 }
+					multiply_temp_variable = { specialists_share = modifier_temp }
+
+					set_temp_variable = { share_total = capitalists_share }
+					add_to_temp_variable = { share_total = craftsmen_share }
+					add_to_temp_variable = { share_total = specialists_share }
+					divide_temp_variable = { share_total = 100 }
+
+					divide_temp_variable = { capitalists_share = share_total }
+					divide_temp_variable = { craftsmen_share = share_total }
+					divide_temp_variable = { specialists_share = share_total }
+
+					set_temp_variable = { capitalists_value = factory_wages }
+					multiply_temp_variable = { capitalists_value = capitalists_share }
+					divide_temp_variable = { capitalists_value = 100 }
+					set_temp_variable = { craftsmen_value = factory_wages }
+					multiply_temp_variable = { craftsmen_value = craftsmen_share }
+					divide_temp_variable = { craftsmen_value = 100 }
+					set_temp_variable = { specialists_value = factory_wages }
+					multiply_temp_variable = { specialists_value = specialists_share }
+					divide_temp_variable = { specialists_value = 100 }
+
+					add_to_variable = { capitalists_earnings = capitalists_value }
+					add_to_variable = { craftsmen_earnings = craftsmen_value }
+					add_to_variable = { specialists_earnings = specialists_value }
 					
 					if = {
 						limit = {
@@ -3794,12 +3904,51 @@
 						set_temp_variable = { excess_temp = factory_money }
 						subtract_from_temp_variable = { excess_temp = factory_money_limit }
 						add_to_variable = { pops_earnings = excess_temp }
+						set_temp_variable = { capitalists_value = excess_temp }
+						multiply_temp_variable = { capitalists_value = capitalists_share }
+						divide_temp_variable = { capitalists_value = 100 }
+						set_temp_variable = { craftsmen_value = excess_temp }
+						multiply_temp_variable = { craftsmen_value = craftsmen_share }
+						divide_temp_variable = { craftsmen_value = 100 }
+						set_temp_variable = { specialists_value = excess_temp }
+						multiply_temp_variable = { specialists_value = specialists_share }
+						divide_temp_variable = { specialists_value = 100 }
+
+						add_to_variable = { capitalists_earnings = capitalists_value }
+						add_to_variable = { craftsmen_earnings = craftsmen_value }
+						add_to_variable = { specialists_earnings = specialists_value }
+
 						subtract_from_variable = { factory_money = excess_temp }
 					}
 				#
 
 				add_to_variable = { pops_earnings = pops_rgos_valuable_goods_production } #Gold in dem hills
 				add_to_variable = { rgos_earnings = pops_rgos_valuable_goods_production }
+
+				#RGO Revenue into Aristocrats
+
+					set_temp_variable = { aristocrats_share = aristocrats_percentage }
+					multiply_temp_variable = { aristocrats_share = 900 }
+					set_temp_variable = { rgos_share = rgos_percentage }
+					multiply_temp_variable = { rgos_share = 100 }
+
+					set_temp_variable = { share_total = aristocrats_share }
+					add_to_temp_variable = { share_total = rgos_share }
+					divide_temp_variable = { share_total = 100 }
+
+					divide_temp_variable = { aristocrats_share = share_total }
+					divide_temp_variable = { rgos_share = share_total }
+
+					set_temp_variable = { aristocrats_value = rgos_earnings }
+					multiply_temp_variable = { aristocrats_value = aristocrats_share }
+					divide_temp_variable = { aristocrats_value = 100 }
+					set_temp_variable = { rgos_value = rgos_earnings }
+					multiply_temp_variable = { rgos_value = rgos_share }
+					divide_temp_variable = { rgos_value = 100 }
+
+					set_variable = { aristocrats_earnings = aristocrats_value }
+					set_variable = { rgos_earnings = rgos_value }
+				#
 
 				#Pop Demographics
 					set_variable = { pops_natural_birth_amount = pops_amount }
@@ -4259,6 +4408,7 @@
 					
 					
 					add_to_variable = { gdp_amount = pops_spending }
+					add_to_variable = { PREV.gdp_amount = gdp_amount }
 					add_to_array = { gdp_amount_array = gdp_amount }
 					if = {
 						limit = {
@@ -4330,6 +4480,7 @@
 					add_to_variable = { PREV.industrial_power = industrial_power }
 				#
 			}
+			taxes_update = yes
 
 			set_variable = { total_factory_amount = num_of_civilian_factories }
 			add_to_variable = { total_factory_amount = num_of_military_factories }
@@ -4385,6 +4536,8 @@
 			multiply_variable = { annual_gdp_growth = 100 }
 			divide_variable = { annual_gdp_growth = previous_annual_gdp_amount }
 			subtract_from_variable = { annual_gdp_growth = 100 }
+
+			set_variable = { actual_revenue = actual_income_tax_revenue }
 
 			every_controlled_state = {
 				create_pie_chart_pop_type = yes
@@ -4816,6 +4969,9 @@
 					}
 				#
 			#
+
+			set_variable = { treasury = 0 }
+
 			reset_supply = yes
 			reset_demand = yes
 
@@ -5791,6 +5947,37 @@
 			#Resolve
 			#add_to_variable = { pops_money = cost_temp }
 			add_to_variable = { pops_earnings = cost_temp }
+
+			set_temp_variable = { capitalists_share = pops_services_production }
+			multiply_temp_variable = { capitalists_share = 50 }
+			set_temp_variable = { clerks_share = pops_clerks_services_production }
+			multiply_temp_variable = { clerks_share = 100 }
+			set_temp_variable = { professionals_share = pops_professionals_services_production }
+			multiply_temp_variable = { professionals_share = 100 }
+
+			set_temp_variable = { share_total = capitalists_share }
+			add_to_temp_variable = { share_total = clerks_share }
+			add_to_temp_variable = { share_total = professionals_share }
+			divide_temp_variable = { share_total = 100 }
+
+			divide_temp_variable = { capitalists_share = share_total }
+			divide_temp_variable = { clerks_share = share_total }
+			divide_temp_variable = { professionals_share = share_total }
+
+			set_temp_variable = { capitalists_value = cost_temp }
+			multiply_temp_variable = { capitalists_value = capitalists_share }
+			divide_temp_variable = { capitalists_value = 100 }
+			set_temp_variable = { clerks_value = cost_temp }
+			multiply_temp_variable = { clerks_value = clerks_share }
+			divide_temp_variable = { clerks_value = 100 }
+			set_temp_variable = { professionals_value = cost_temp }
+			multiply_temp_variable = { professionals_value = professionals_share }
+			divide_temp_variable = { professionals_value = 100 }
+
+			add_to_variable = { capitalists_earnings = capitalists_value }
+			add_to_variable = { clerks_earnings = clerks_value }
+			add_to_variable = { professionals_earnings = professionals_value }
+
 			add_to_variable = { pops_services_sold = buy_amount }
 
 			subtract_from_variable = { pops_money = cost_temp }
@@ -7314,6 +7501,185 @@
 		add_to_variable = { update_state_econ_window = 1 }
 	}
 
+
+	taxes_update = {
+		#Country Scope
+
+		#Income Taxes
+		set_variable = { income_tax_upper_strata_revenue = 0 }
+		set_variable = { income_tax_middle_strata_revenue = 0 }
+		set_variable = { income_tax_lower_strata_revenue = 0 }
+
+		every_controlled_state = {
+			#Upper Strata
+			set_temp_variable = { tax_temp = aristocrats_earnings }
+			add_to_temp_variable = { tax_temp = capitalists_earnings }
+			multiply_temp_variable = { tax_temp = PREV.income_tax_upper_strata_percentage }
+			add_to_variable = { PREV.income_tax_upper_strata_revenue = tax_temp }
+
+			#Middle Strata
+			set_temp_variable = { tax_temp = artisans_earnings }
+			add_to_temp_variable = { tax_temp = professionals_earnings }
+			add_to_temp_variable = { tax_temp = specialists_earnings }
+			multiply_temp_variable = { tax_temp = PREV.income_tax_middle_strata_percentage }
+			add_to_variable = { PREV.income_tax_middle_strata_revenue = tax_temp }
+
+			#Lower Strata
+			set_temp_variable = { tax_temp = rgos_earnings }
+			add_to_temp_variable = { tax_temp = craftsmen_earnings }
+			add_to_temp_variable = { tax_temp = clerks_earnings }
+			multiply_temp_variable = { tax_temp = PREV.income_tax_lower_strata_percentage }
+			add_to_variable = { PREV.income_tax_lower_strata_revenue = tax_temp }
+		}
+		divide_variable = { income_tax_upper_strata_revenue = 100 }
+		divide_variable = { income_tax_middle_strata_revenue = 100 }
+		divide_variable = { income_tax_lower_strata_revenue = 100 }
+
+		set_variable = { income_tax_revenue = income_tax_upper_strata_revenue }
+		add_to_variable = { income_tax_revenue = income_tax_middle_strata_revenue }
+		add_to_variable = { income_tax_revenue = income_tax_lower_strata_revenue }
+
+		#Sales Tax
+			set_variable = { sales_tax_revenue = gdp_amount }
+			subtract_from_variable = { sales_tax_revenue = life_goods_global_trade_value }
+			subtract_from_variable = { sales_tax_revenue = everyday_goods_global_trade_value }
+			subtract_from_variable = { sales_tax_revenue = luxury_goods_global_trade_value }
+			subtract_from_variable = { sales_tax_revenue = services_global_trade_value }
+			subtract_from_variable = { sales_tax_revenue = raw_goods_global_trade_value }
+			subtract_from_variable = { sales_tax_revenue = industrial_goods_global_trade_value }
+			multiply_variable = { sales_tax_revenue = sales_tax_percentage }
+			divide_variable = { sales_tax_revenue = 100 }
+		#
+
+		#Corporate
+		#
+
+		#Tariffs
+			set_variable = { export_tariff_revenue = 0 }
+			set_variable = { import_tariff_revenue = 0 }
+			#life_goods
+				if = {
+					limit = {
+						check_variable = { life_goods_global_trade_value < 0 }
+					}
+					set_temp_variable = { tax_temp = life_goods_global_trade_value }
+					multiply_temp_variable = { tax_temp = -1 }
+					multiply_temp_variable = { tax_temp = import_tariff_percentage }
+					add_to_variable = { import_tariff_revenue = tax_temp }
+				}
+				else_if = {
+					limit = {
+						check_variable = { life_goods_global_trade_value > 0 }
+					}
+					set_temp_variable = { tax_temp = life_goods_global_trade_value }
+					multiply_temp_variable = { tax_temp = export_tariff_percentage }
+					add_to_variable = { export_tariff_revenue = tax_temp }
+				}
+			#
+			#everyday_goods
+				if = {
+					limit = {
+						check_variable = { everyday_goods_global_trade_value < 0 }
+					}
+					set_temp_variable = { tax_temp = everyday_goods_global_trade_value }
+					multiply_temp_variable = { tax_temp = -1 }
+					multiply_temp_variable = { tax_temp = import_tariff_percentage }
+					add_to_variable = { import_tariff_revenue = tax_temp }
+				}
+				else_if = {
+					limit = {
+						check_variable = { everyday_goods_global_trade_value > 0 }
+					}
+					set_temp_variable = { tax_temp = everyday_goods_global_trade_value }
+					multiply_temp_variable = { tax_temp = export_tariff_percentage }
+					add_to_variable = { export_tariff_revenue = tax_temp }
+				}
+			#
+			#luxury_goods
+				if = {
+					limit = {
+						check_variable = { luxury_goods_global_trade_value < 0 }
+					}
+					set_temp_variable = { tax_temp = luxury_goods_global_trade_value }
+					multiply_temp_variable = { tax_temp = -1 }
+					multiply_temp_variable = { tax_temp = import_tariff_percentage }
+					add_to_variable = { import_tariff_revenue = tax_temp }
+				}
+				else_if = {
+					limit = {
+						check_variable = { luxury_goods_global_trade_value > 0 }
+					}
+					set_temp_variable = { tax_temp = luxury_goods_global_trade_value }
+					multiply_temp_variable = { tax_temp = export_tariff_percentage }
+					add_to_variable = { export_tariff_revenue = tax_temp }
+				}
+			#
+			#services
+				if = {
+					limit = {
+						check_variable = { services_global_trade_value < 0 }
+					}
+					set_temp_variable = { tax_temp = services_global_trade_value }
+					multiply_temp_variable = { tax_temp = -1 }
+					multiply_temp_variable = { tax_temp = import_tariff_percentage }
+					add_to_variable = { import_tariff_revenue = tax_temp }
+				}
+				else_if = {
+					limit = {
+						check_variable = { services_global_trade_value > 0 }
+					}
+					set_temp_variable = { tax_temp = services_global_trade_value }
+					multiply_temp_variable = { tax_temp = export_tariff_percentage }
+					add_to_variable = { export_tariff_revenue = tax_temp }
+				}
+			#
+			#raw_goods
+				if = {
+					limit = {
+						check_variable = { raw_goods_global_trade_value < 0 }
+					}
+					set_temp_variable = { tax_temp = raw_goods_global_trade_value }
+					multiply_temp_variable = { tax_temp = -1 }
+					multiply_temp_variable = { tax_temp = import_tariff_percentage }
+					add_to_variable = { import_tariff_revenue = tax_temp }
+				}
+				else_if = {
+					limit = {
+						check_variable = { raw_goods_global_trade_value > 0 }
+					}
+					set_temp_variable = { tax_temp = raw_goods_global_trade_value }
+					multiply_temp_variable = { tax_temp = export_tariff_percentage }
+					add_to_variable = { export_tariff_revenue = tax_temp }
+				}
+			#
+			#industrial_goods
+				if = {
+					limit = {
+						check_variable = { industrial_goods_global_trade_value < 0 }
+					}
+					set_temp_variable = { tax_temp = industrial_goods_global_trade_value }
+					multiply_temp_variable = { tax_temp = -1 }
+					multiply_temp_variable = { tax_temp = import_tariff_percentage }
+					add_to_variable = { import_tariff_revenue = tax_temp }
+				}
+				else_if = {
+					limit = {
+						check_variable = { industrial_goods_global_trade_value > 0 }
+					}
+					set_temp_variable = { tax_temp = industrial_goods_global_trade_value }
+					multiply_temp_variable = { tax_temp = export_tariff_percentage }
+					add_to_variable = { export_tariff_revenue = tax_temp }
+				}
+			#
+			divide_variable = { import_tariff_revenue = 100 }
+			divide_variable = { export_tariff_revenue = 100 }
+		#
+
+		set_variable = { revenue = income_tax_revenue }
+		add_to_variable = { revenue = import_tariff_revenue }
+		add_to_variable = { revenue = export_tariff_revenue }
+	}
+
 #
 
 #Functions (With Inputs & Outputs)
@@ -7600,6 +7966,254 @@
 			set_variable = { infrastructure_investment_money = 0 }
 			set_variable = { infrastructure_construction_industrial_goods_need = 0 }
 		}
+	}
+
+
+	change_upper_strata_income_tax = {
+		#Scope: Country
+		#Increases/Decreases the Upper Strata Income Tax level
+		#INPUT:
+			#percent_change_temp - Amount to decrease it by. 1.0 increases it by 1%,  -10.0 decreases it by 10%
+		
+		add_to_variable = { income_tax_upper_strata_percentage = percent_change_temp }
+		if = {
+			limit = {
+				check_variable = { percent_change_temp > 0 }
+			}
+			#TODO - Upper class get angerry
+
+			if = {
+				limit = {
+					check_variable = { income_tax_upper_strata_percentage > 100 }
+				}
+				set_variable = { income_tax_upper_strata_percentage = 100 }
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = { percent_change_temp < 0 }
+			}
+			#TODO - Upper Class become happy
+
+			if = {
+				limit = {
+					check_variable = { income_tax_upper_strata_percentage < 0 }
+				}
+				set_variable = { income_tax_upper_strata_percentage = 0 }
+			}
+		}
+		taxes_update = yes
+	}
+	change_middle_strata_income_tax = {
+		#Scope: Country
+		#Increases/Decreases the Middle Strata Income Tax level
+		#INPUT:
+			#percent_change_temp - Amount to decrease it by. 1.0 increases it by 1%,  -10.0 decreases it by 10%
+		
+		add_to_variable = { income_tax_middle_strata_percentage = percent_change_temp }
+		if = {
+			limit = {
+				check_variable = { percent_change_temp > 0 }
+			}
+			#TODO - Middle class get angerry
+
+			if = {
+				limit = {
+					check_variable = { income_tax_middle_strata_percentage > 100 }
+				}
+				set_variable = { income_tax_middle_strata_percentage = 100 }
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = { percent_change_temp < 0 }
+			}
+			#TODO - Middle Class become happy
+
+			if = {
+				limit = {
+					check_variable = { income_tax_middle_strata_percentage < 0 }
+				}
+				set_variable = { income_tax_middle_strata_percentage = 0 }
+			}
+		}
+		taxes_update = yes
+	}
+	change_lower_strata_income_tax = {
+		#Scope: Country
+		#Increases/Decreases the Lower Strata Income Tax level
+		#INPUT:
+			#percent_change_temp - Amount to decrease it by. 1.0 increases it by 1%,  -10.0 decreases it by 10%
+		
+		add_to_variable = { income_tax_lower_strata_percentage = percent_change_temp }
+		if = {
+			limit = {
+				check_variable = { percent_change_temp > 0 }
+			}
+			#TODO - Lower class get angerry
+
+			if = {
+				limit = {
+					check_variable = { income_tax_lower_strata_percentage > 100 }
+				}
+				set_variable = { income_tax_lower_strata_percentage = 100 }
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = { percent_change_temp < 0 }
+			}
+			#TODO - Lower Class become happy
+
+			if = {
+				limit = {
+					check_variable = { income_tax_lower_strata_percentage < 0 }
+				}
+				set_variable = { income_tax_lower_strata_percentage = 0 }
+			}
+		}
+		taxes_update = yes
+	}
+	
+	change_sales_tax = {
+		#Scope: Country
+		#Increases/Decreases the Sales Tax level
+		#INPUT:
+			#percent_change_temp - Amount to decrease it by. 1.0 increases it by 1%,  -10.0 decreases it by 10%
+		
+		add_to_variable = { sales_tax_percentage = percent_change_temp }
+		if = {
+			limit = {
+				check_variable = { percent_change_temp > 0 }
+			}
+			#TODO - People get angerry
+
+			if = {
+				limit = {
+					check_variable = { sales_tax_percentage > 100 }
+				}
+				set_variable = { sales_tax_percentage = 100 }
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = { percent_change_temp < 0 }
+			}
+			#TODO - People become happy
+
+			if = {
+				limit = {
+					check_variable = { sales_tax_percentage < 0 }
+				}
+				set_variable = { sales_tax_percentage = 0 }
+			}
+		}
+		taxes_update = yes
+	}
+	change_corporate_tax = {
+		#Scope: Country
+		#Increases/Decreases the Corporate Tax level
+		#INPUT:
+			#percent_change_temp - Amount to decrease it by. 1.0 increases it by 1%,  -10.0 decreases it by 10%
+		
+		add_to_variable = { corporate_tax_percentage = percent_change_temp }
+		if = {
+			limit = {
+				check_variable = { percent_change_temp > 0 }
+			}
+			#TODO - Corporations get angerry
+
+			if = {
+				limit = {
+					check_variable = { corporate_tax_percentage > 100 }
+				}
+				set_variable = { corporate_tax_percentage = 100 }
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = { percent_change_temp < 0 }
+			}
+			#TODO - Corporations become happy
+
+			if = {
+				limit = {
+					check_variable = { corporate_tax_percentage < 0 }
+				}
+				set_variable = { corporate_tax_percentage = 0 }
+			}
+		}
+		taxes_update = yes
+	}
+	change_import_tariff = {
+		#Scope: Country
+		#Increases/Decreases the Import Tariff level
+		#INPUT:
+			#percent_change_temp - Amount to decrease it by. 1.0 increases it by 1%,  -10.0 decreases it by 10%
+		
+		add_to_variable = { import_tariff_percentage = percent_change_temp }
+		if = {
+			limit = {
+				check_variable = { percent_change_temp > 0 }
+			}
+			#TODO - People get angerry
+
+			if = {
+				limit = {
+					check_variable = { import_tariff_percentage > 100 }
+				}
+				set_variable = { import_tariff_percentage = 100 }
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = { percent_change_temp < 0 }
+			}
+			#TODO - People become happy
+
+			if = {
+				limit = {
+					check_variable = { import_tariff_percentage < 0 }
+				}
+				set_variable = { import_tariff_percentage = 0 }
+			}
+		}
+		taxes_update = yes
+	}
+	change_export_tariff = {
+		#Scope: Country
+		#Increases/Decreases the Export Tariff level
+		#INPUT:
+			#percent_change_temp - Amount to decrease it by. 1.0 increases it by 1%,  -10.0 decreases it by 10%
+		
+		add_to_variable = { export_tariff_percentage = percent_change_temp }
+		if = {
+			limit = {
+				check_variable = { percent_change_temp > 0 }
+			}
+			#TODO - People get angerry
+
+			if = {
+				limit = {
+					check_variable = { export_tariff_percentage > 100 }
+				}
+				set_variable = { export_tariff_percentage = 100 }
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = { percent_change_temp < 0 }
+			}
+			#TODO - People become happy
+
+			if = {
+				limit = {
+					check_variable = { export_tariff_percentage < 0 }
+				}
+				set_variable = { export_tariff_percentage = 0 }
+			}
+		}
+		taxes_update = yes
 	}
 #
 
