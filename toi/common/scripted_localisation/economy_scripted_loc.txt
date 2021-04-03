@@ -1028,6 +1028,36 @@ defined_text = {
             localization_key = "GFX_life_goods"
         }
     }
+    defined_text = {
+        name = GetRGOGoodsTypeIcon
+        text = {
+            trigger = {
+                has_state_flag = pops_rgos_cash_crops_flag
+            }
+            localization_key = "GFX_cash_crops_icon"
+        }
+        text = {
+            trigger = {
+                has_state_flag = pops_rgos_coal_flag
+            }
+            localization_key = "GFX_coal_icon"
+        }
+        text = {
+            trigger = {
+                has_state_flag = pops_rgos_metals_flag
+            }
+            localization_key = "GFX_metals_icon"
+        }
+        text = {
+            trigger = {
+                has_state_flag = pops_rgos_petroleum_flag
+            }
+            localization_key = "GFX_petroleum_icon"
+        }
+        text = {
+            localization_key = "GFX_life_goods"
+        }
+    }
 
 #Life Goods
     defined_text = {

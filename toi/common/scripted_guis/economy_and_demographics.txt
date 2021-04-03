@@ -76,6 +76,14 @@ scripted_gui = {
 			trade_infra_under_construction_icon_visible = {
 				has_state_flag = infrastructure_in_construction
 			}
+			rgos_type_icon_visible = {
+				OR = {
+					has_state_flag = pops_rgos_cash_crops_flag
+					has_state_flag = pops_rgos_coal_flag
+					has_state_flag = pops_rgos_metals_flag
+					has_state_flag = pops_rgos_petroleum_flag
+				}
+			}
 		}
 
 		effects = {
@@ -160,6 +168,9 @@ scripted_gui = {
         properties = {
 			rgos_output_icon = {
 				image = "[GetRGOsOutputIcon]"
+			}
+			rgos_type_icon = {
+				image = "[GetRGOGoodsTypeIcon]"
 			}
 			factory_corporation_good = {
 				image = "[?factory_corporations_state_array^i.GetCorporationIcon]"
