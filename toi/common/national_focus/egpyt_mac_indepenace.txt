@@ -5,8 +5,8 @@ focus_tree = {
 		modifier = {
 			add = 12
 			tag = EGY
-			date > 1873.1.1
-			date < 1887.1.1
+			date > "1873.1.1"
+			date < "1887.1.1"
 		}
 	}
 	default = no
@@ -71,7 +71,25 @@ focus_tree = {
 			focus = EGY_mac_take_dafur
 		}
 		completion_reward = {
-			
+			if={
+				limit={
+					817={controlled_by = ETH}
+				}
+				817={add_claim_by = EGY}
+			}
+			if={
+				limit={
+					815={controlled_by = ETH}
+					MED={
+						OR={
+							is_subject_of = EGY
+							is_puppet_of = EGY
+						}
+					}
+				}
+				815={add_claim_by = MED}
+			}
+			816={add_claim_by = EGY}
 		}
 	}
 	focus = {
@@ -121,6 +139,9 @@ focus_tree = {
 		prerequisite = {
 			focus = EGY_mac_into_gondar
 		}
+		mutually_exclusive={
+			focus = EGY_mac_fortify_blue_nile_source
+		}
 		completion_reward = {
 			
 		}
@@ -134,6 +155,12 @@ focus_tree = {
 		available_if_capitulated = no
 		ai_will_do = {
 			factor = 1
+		}
+		available={
+			816={is_owned_by = EGY}
+		}
+		mutually_exclusive={
+			focus = EGY_mac_recovering_from_failure
 		}
 		prerequisite = {
 			focus = EGY_mac_into_gondar
@@ -1328,7 +1355,7 @@ focus_tree = {
 			focus = EGY_mac_continue_industrialisation
 		}
 		completion_reward = {
-			
+			navy_experience = 25
 		}
 	}
 	focus = {
@@ -1458,7 +1485,7 @@ focus_tree = {
 			focus = EGY_mac_continue_industrialisation
 		}
 		completion_reward = {
-			
+			army_experience = 25
 		}
 	}
 	focus = {
@@ -1478,7 +1505,8 @@ focus_tree = {
 			focus = EGY_mac_rethinking_our_army_standards
 		}
 		completion_reward = {
-			
+			debt_level_decrease_by_1 = yes
+			add_manpower = -10000
 		}
 	}
 	focus = {
@@ -1495,7 +1523,25 @@ focus_tree = {
 			focus = EGY_mac_army_reductions
 		}
 		completion_reward = {
-			
+			if = {
+				limit = {
+					has_idea = two_percent
+				},
+				swap_ideas={
+					remove_idea = two_percent
+					add_idea = one_percent
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = three_percent
+				}
+				swap_ideas={
+					remove_idea = three_percent
+					add_idea = two_percent
+				}
+			}
+			debt_level_decrease_by_1 = yes
 		}
 	}
 	focus = {
@@ -1532,7 +1578,7 @@ focus_tree = {
 			focus = EGY_mac_greater_army_standards
 		}
 		completion_reward = {
-			
+			debt_level_increase_by_1 = yes
 		}
 	}
 }
