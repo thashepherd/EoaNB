@@ -4009,8 +4009,8 @@
 					}
 				#
 
-				#add_to_variable = { pops_earnings = pops_rgos_valuable_goods_production } #Gold in dem hills
-				#add_to_variable = { rgos_earnings = pops_rgos_valuable_goods_production }
+				add_to_variable = { pops_earnings = pops_rgos_valuable_goods_production } #Gold in dem hills
+				add_to_variable = { rgos_earnings = pops_rgos_valuable_goods_production }
 
 				#RGO Revenue into Aristocrats
 
