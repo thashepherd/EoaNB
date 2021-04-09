@@ -1,8 +1,6 @@
 PHL_power_struggle_category = {
     icon = placeholder
 
-    allowed = { tag = PHL }
-
     available = {
         has_completed_focus = PHL_The_Power_Struggle_focus
     }
@@ -14,8 +12,6 @@ PHL_power_struggle_category = {
 
 PHL_Federalization = {
     icon = placeholder
-
-    allowed = { tag = PHL }
 
     available = {
         has_completed_focus = PHL_Anarchists_Win
@@ -47,5 +43,17 @@ PHL_Communization = {
 
     visible = {
         has_completed_focus = PHL_Marxists_Win
+    }
+}
+
+PHL_PNS_Liberty = {
+    icon = placeholder
+
+    available = {
+        has_completed_focus = PHL_Begin_Construction_On_The_PNS_Liberty
+    }
+
+    visible = {
+        has_completed_focus = PHL_Begin_Construction_On_The_PNS_Liberty
     }
 }
