@@ -105,36 +105,42 @@
 
 					set_variable = { global.life_goods_global_trade_amount = 0 }
 					set_variable = { global.life_goods_global_trade_value = 0 }
-					
+					set_variable = { global.life_goods_global_trade_actual_value = 0 }
+
 					clear_array = global.everyday_goods_global_trade_price_array
 					clear_array = global.everyday_goods_global_trade_country_array
 
 					set_variable = { global.everyday_goods_global_trade_amount = 0 }
 					set_variable = { global.everyday_goods_global_trade_value = 0 }
-					
+					set_variable = { global.everyday_goods_global_trade_actual_value = 0 }
+
 					clear_array = global.luxury_goods_global_trade_price_array
 					clear_array = global.luxury_goods_global_trade_country_array
 
 					set_variable = { global.luxury_goods_global_trade_amount = 0 }
 					set_variable = { global.luxury_goods_global_trade_value = 0 }
-					
+					set_variable = { global.luxury_goods_global_trade_actual_value = 0 }
+
 					clear_array = global.services_global_trade_price_array
 					clear_array = global.services_global_trade_country_array
 
 					set_variable = { global.services_global_trade_amount = 0 }
 					set_variable = { global.services_global_trade_value = 0 }
-					
+					set_variable = { global.services_global_trade_actual_value = 0 }
+
 					clear_array = global.raw_goods_global_trade_price_array
 					clear_array = global.raw_goods_global_trade_country_array
 
 					set_variable = { global.raw_goods_global_trade_amount = 0 }
 					set_variable = { global.raw_goods_global_trade_value = 0 }
-					
+					set_variable = { global.raw_goods_global_trade_actual_value = 0 }
+
 					clear_array = global.industrial_goods_global_trade_price_array
 					clear_array = global.industrial_goods_global_trade_country_array
 
-					set_variable = { industrial_goods_global_trade_amount = 0 }
-					set_variable = { industrial_goods_global_trade_value = 0 }
+					set_variable = { global.industrial_goods_global_trade_amount = 0 }
+					set_variable = { global.industrial_goods_global_trade_value = 0 }
+					set_variable = { global.industrial_goods_global_trade_actual_value = 0 }
 				#
 				#Goods
 					set_variable = { global.life_goods_supply = 0 }
@@ -216,21 +222,27 @@
 				#Reset Global Trade Stuff
 					set_variable = { life_goods_global_trade_amount = 0 } #Positive: Goods Bought / Negative: Goods Sold - Note, this only applies in this effect. It's always positive elsewhere.
 					set_variable = { life_goods_global_trade_value = 0 } #Positive: Amount Recieved / Negative: Amount Paid
+					set_variable = { life_goods_global_trade_actual_value = 0 }
 
 					set_variable = { everyday_goods_global_trade_amount = 0 }
 					set_variable = { everyday_goods_global_trade_value = 0 }
-					
+					set_variable = { everyday_goods_global_trade_actual_value = 0 }
+
 					set_variable = { luxury_goods_global_trade_amount = 0 }
 					set_variable = { luxury_goods_global_trade_value = 0 }
-					
+					set_variable = { luxury_goods_global_trade_actual_value = 0 }
+
 					set_variable = { services_global_trade_amount = 0 }
 					set_variable = { services_global_trade_value = 0 }
-					
+					set_variable = { services_global_trade_actual_value = 0 }
+
 					set_variable = { raw_goods_global_trade_amount = 0 }
 					set_variable = { raw_goods_global_trade_value = 0 }
-					
+					set_variable = { raw_goods_global_trade_actual_value = 0 }
+
 					set_variable = { industrial_goods_global_trade_amount = 0 }
 					set_variable = { industrial_goods_global_trade_value = 0 }
+					set_variable = { industrial_goods_global_trade_actual_value = 0 }
 				#
 				set_variable = { life_goods_base_price = 0 }
 				set_variable = { life_goods_price = 0 }
@@ -1711,6 +1723,7 @@
 				#Countries with excess demand to supply will try to buy goods. Countries in the order of the "Great Powers List" go first. 
 				#It is assumed that all imported and exported supply/demand will be fulfilled. This will be fulfilled in order of cheapest states to most expensive in exports and most expensive to cheapest in imports.
 
+				set_variable = { actual_tariff_revenue = 0 }
 
                 #life_goods
 					#Checks if the country actually has more demand than supply. If it doesn't, this is pointless
@@ -1797,6 +1810,9 @@
 
 									subtract_from_variable = { country_temp:life_goods_supply = buy_amount }
 									subtract_from_variable = { country_temp:life_goods_global_trade_amount = buy_amount }
+									add_to_variable = { country_temp:life_goods_global_trade_actual_value = cost_temp }
+									subtract_from_variable = { life_goods_global_trade_actual_value = cost_temp }
+									add_to_variable = { global.life_goods_global_trade_actual_value = cost_temp }
 
 									multiply_temp_variable = { buy_amount = 100 }
 									divide_temp_variable = { buy_amount = shipping_cost }
@@ -1821,6 +1837,26 @@
 
 									add_to_temp_variable = { cost_temp = export_value_temp }
 									add_to_temp_variable = { cost_temp = import_value_temp }
+									add_to_variable = { country_temp:treasury = export_value_temp }
+									add_to_variable = { treasury = import_value_temp }
+									if = {
+										limit = {
+											check_variable = { export_value_temp > 0 }
+										}
+										add_to_variable = { country_temp:actual_tariff_revenue = export_value_temp }
+									}
+									else = {
+										subtract_from_variable = { country_temp:actual_subsidy_expense = export_value_temp }
+									}
+									if = {
+										limit = {
+											check_variable = { import_value_temp > 0 }
+										}
+										add_to_variable = { actual_tariff_revenue = import_value_temp }
+									}
+									else = {
+										subtract_from_variable = { actual_subsidy_expense = import_value_temp }
+									}
 
 									add_to_variable = { life_goods_supply = buy_amount }
 									add_to_variable = { life_goods_global_trade_amount = buy_amount }
@@ -1878,8 +1914,23 @@
 								multiply_variable = { shipping_cost = modifier_temp }
 								add_to_variable = { shipping_cost = 1 }
 
+								#Tariffs/Subsidies
+								set_temp_variable = { net_tariff_percentage_temp = import_tariff_percentage }
+								add_to_temp_variable = { net_tariff_percentage_temp = country_temp:export_tariff_percentage }
+								subtract_from_temp_variable = { net_tariff_percentage_temp = import_subsidy_percentage }
+								subtract_from_temp_variable = { net_tariff_percentage_temp = country_temp:export_subsidy_percentage }
+								add_to_temp_variable = { net_tariff_percentage_temp = 100 }
+								if = {
+									limit = {
+										check_variable = { net_tariff_percentage_temp < 10 }
+									}
+									set_temp_variable = { net_tariff_percentage_temp = 10 }
+								}
+
 								set_temp_variable = { true_price = country_temp:everyday_goods_price }
 								multiply_temp_variable = { true_price = shipping_cost }
+								multiply_temp_variable = { true_price = net_tariff_percentage_temp }
+								divide_temp_variable = { true_price = 100 }
 								if = {
 									limit = {
 										check_variable = { true_price < everyday_goods_price }
@@ -1898,7 +1949,9 @@
 									
 									multiply_temp_variable = { buy_amount = 0.8 }
 
-									multiply_variable = { buy_amount = shipping_cost }
+									multiply_temp_variable = { buy_amount = shipping_cost }
+									multiply_temp_variable = { buy_amount = net_tariff_percentage_temp }
+									divide_temp_variable = { buy_amount = 100 }
 
 									set_temp_variable = { money_temp = buy_amount }
 									multiply_temp_variable = { money_temp = country_temp:everyday_goods_price }
@@ -1910,9 +1963,53 @@
 
 									subtract_from_variable = { country_temp:everyday_goods_supply = buy_amount }
 									subtract_from_variable = { country_temp:everyday_goods_global_trade_amount = buy_amount }
-									add_to_variable = { country_temp:everyday_goods_global_trade_value = cost_temp }
+									add_to_variable = { country_temp:everyday_goods_global_trade_actual_value = cost_temp }
+									subtract_from_variable = { everyday_goods_global_trade_actual_value = cost_temp }
+									add_to_variable = { global.everyday_goods_global_trade_actual_value = cost_temp }
 
+									multiply_temp_variable = { buy_amount = 100 }
 									divide_temp_variable = { buy_amount = shipping_cost }
+									divide_temp_variable = { buy_amount = net_tariff_percentage_temp }
+
+									#Tariffs/Subsidies
+									set_temp_variable = { export_cost_temp = 100 }
+									add_to_temp_variable = { export_cost_temp = country_temp:export_tariff_percentage }
+									subtract_from_temp_variable = { export_cost_temp = country_temp:export_subsidy_percentage }
+									multiply_temp_variable = { export_cost_temp = cost_temp }
+									divide_temp_variable = { export_cost_temp = 100 }
+									set_temp_variable = { export_value_temp = export_cost_temp }
+									subtract_from_temp_variable = { export_value_temp = cost_temp }
+
+									set_temp_variable = { import_cost_temp = 100 }
+									add_to_temp_variable = { import_cost_temp = import_tariff_percentage }
+									subtract_from_temp_variable = { import_cost_temp = import_subsidy_percentage }
+									multiply_temp_variable = { import_cost_temp = cost_temp }
+									divide_temp_variable = { import_cost_temp = 100 }
+									set_temp_variable = { import_value_temp = import_cost_temp }
+									subtract_from_temp_variable = { import_value_temp = cost_temp }
+
+									add_to_temp_variable = { cost_temp = export_value_temp }
+									add_to_temp_variable = { cost_temp = import_value_temp }
+									add_to_variable = { country_temp:treasury = export_value_temp }
+									add_to_variable = { treasury = import_value_temp }
+									if = {
+										limit = {
+											check_variable = { export_value_temp > 0 }
+										}
+										add_to_variable = { country_temp:actual_tariff_revenue = export_value_temp }
+									}
+									else = {
+										subtract_from_variable = { country_temp:actual_subsidy_expense = export_value_temp }
+									}
+									if = {
+										limit = {
+											check_variable = { import_value_temp > 0 }
+										}
+										add_to_variable = { actual_tariff_revenue = import_value_temp }
+									}
+									else = {
+										subtract_from_variable = { actual_subsidy_expense = import_value_temp }
+									}
 
 									add_to_variable = { everyday_goods_supply = buy_amount }
 									add_to_variable = { everyday_goods_global_trade_amount = buy_amount }
@@ -1920,6 +2017,7 @@
 									subtract_from_temp_variable = { buy_amount_left = buy_amount }
 									subtract_from_variable = { everyday_goods_global_trade_value = cost_temp }
 									add_to_variable = { global.everyday_goods_global_trade_value = cost_temp }
+									add_to_variable = { country_temp:everyday_goods_global_trade_value = cost_temp }
 								}
 							}
 							else_if = {
@@ -1969,8 +2067,23 @@
 								multiply_variable = { shipping_cost = modifier_temp }
 								add_to_variable = { shipping_cost = 1 }
 
+								#Tariffs/Subsidies
+								set_temp_variable = { net_tariff_percentage_temp = import_tariff_percentage }
+								add_to_temp_variable = { net_tariff_percentage_temp = country_temp:export_tariff_percentage }
+								subtract_from_temp_variable = { net_tariff_percentage_temp = import_subsidy_percentage }
+								subtract_from_temp_variable = { net_tariff_percentage_temp = country_temp:export_subsidy_percentage }
+								add_to_temp_variable = { net_tariff_percentage_temp = 100 }
+								if = {
+									limit = {
+										check_variable = { net_tariff_percentage_temp < 10 }
+									}
+									set_temp_variable = { net_tariff_percentage_temp = 10 }
+								}
+
 								set_temp_variable = { true_price = country_temp:luxury_goods_price }
 								multiply_temp_variable = { true_price = shipping_cost }
+								multiply_temp_variable = { true_price = net_tariff_percentage_temp }
+								divide_temp_variable = { true_price = 100 }
 								if = {
 									limit = {
 										check_variable = { true_price < luxury_goods_price }
@@ -1990,6 +2103,8 @@
 									multiply_temp_variable = { buy_amount = 0.8 }
 
 									multiply_temp_variable = { buy_amount = shipping_cost }
+									multiply_temp_variable = { buy_amount = net_tariff_percentage_temp }
+									divide_temp_variable = { buy_amount = 100 }
 
 									set_temp_variable = { money_temp = buy_amount }
 									multiply_temp_variable = { money_temp = country_temp:luxury_goods_price }
@@ -2001,9 +2116,53 @@
 
 									subtract_from_variable = { country_temp:luxury_goods_supply = buy_amount }
 									subtract_from_variable = { country_temp:luxury_goods_global_trade_amount = buy_amount }
-									add_to_variable = { country_temp:luxury_goods_global_trade_value = cost_temp }
+									add_to_variable = { country_temp:luxury_goods_global_trade_actual_value = cost_temp }
+									subtract_from_variable = { luxury_goods_global_trade_actual_value = cost_temp }
+									add_to_variable = { global.luxury_goods_global_trade_actual_value = cost_temp }
 
+									multiply_temp_variable = { buy_amount = 100 }
 									divide_temp_variable = { buy_amount = shipping_cost }
+									divide_temp_variable = { buy_amount = net_tariff_percentage_temp }
+
+									#Tariffs/Subsidies
+									set_temp_variable = { export_cost_temp = 100 }
+									add_to_temp_variable = { export_cost_temp = country_temp:export_tariff_percentage }
+									subtract_from_temp_variable = { export_cost_temp = country_temp:export_subsidy_percentage }
+									multiply_temp_variable = { export_cost_temp = cost_temp }
+									divide_temp_variable = { export_cost_temp = 100 }
+									set_temp_variable = { export_value_temp = export_cost_temp }
+									subtract_from_temp_variable = { export_value_temp = cost_temp }
+
+									set_temp_variable = { import_cost_temp = 100 }
+									add_to_temp_variable = { import_cost_temp = import_tariff_percentage }
+									subtract_from_temp_variable = { import_cost_temp = import_subsidy_percentage }
+									multiply_temp_variable = { import_cost_temp = cost_temp }
+									divide_temp_variable = { import_cost_temp = 100 }
+									set_temp_variable = { import_value_temp = import_cost_temp }
+									subtract_from_temp_variable = { import_value_temp = cost_temp }
+
+									add_to_temp_variable = { cost_temp = export_value_temp }
+									add_to_temp_variable = { cost_temp = import_value_temp }
+									add_to_variable = { country_temp:treasury = export_value_temp }
+									add_to_variable = { treasury = import_value_temp }
+									if = {
+										limit = {
+											check_variable = { export_value_temp > 0 }
+										}
+										add_to_variable = { country_temp:actual_tariff_revenue = export_value_temp }
+									}
+									else = {
+										subtract_from_variable = { country_temp:actual_subsidy_expense = export_value_temp }
+									}
+									if = {
+										limit = {
+											check_variable = { import_value_temp > 0 }
+										}
+										add_to_variable = { actual_tariff_revenue = import_value_temp }
+									}
+									else = {
+										subtract_from_variable = { actual_subsidy_expense = import_value_temp }
+									}
 
 									add_to_variable = { luxury_goods_supply = buy_amount }
 									add_to_variable = { luxury_goods_global_trade_amount = buy_amount }
@@ -2011,6 +2170,7 @@
 									subtract_from_temp_variable = { buy_amount_left = buy_amount }
 									subtract_from_variable = { luxury_goods_global_trade_value = cost_temp }
 									add_to_variable = { global.luxury_goods_global_trade_value = cost_temp }
+									add_to_variable = { country_temp:luxury_goods_global_trade_value = cost_temp }
 								}
 							}
 							else_if = {
@@ -2060,8 +2220,23 @@
 								multiply_variable = { shipping_cost = modifier_temp }
 								add_to_variable = { shipping_cost = 1 }
 
+								#Tariffs/Subsidies
+								set_temp_variable = { net_tariff_percentage_temp = import_tariff_percentage }
+								add_to_temp_variable = { net_tariff_percentage_temp = country_temp:export_tariff_percentage }
+								subtract_from_temp_variable = { net_tariff_percentage_temp = import_subsidy_percentage }
+								subtract_from_temp_variable = { net_tariff_percentage_temp = country_temp:export_subsidy_percentage }
+								add_to_temp_variable = { net_tariff_percentage_temp = 100 }
+								if = {
+									limit = {
+										check_variable = { net_tariff_percentage_temp < 10 }
+									}
+									set_temp_variable = { net_tariff_percentage_temp = 10 }
+								}
+
 								set_temp_variable = { true_price = country_temp:services_price }
 								multiply_temp_variable = { true_price = shipping_cost }
+								multiply_temp_variable = { true_price = net_tariff_percentage_temp }
+								divide_temp_variable = { true_price = 100 }
 								if = {
 									limit = {
 										check_variable = { true_price < services_price }
@@ -2081,6 +2256,8 @@
 									multiply_temp_variable = { buy_amount = 0.8 }
 
 									multiply_temp_variable = { buy_amount = shipping_cost }
+									multiply_temp_variable = { buy_amount = net_tariff_percentage_temp }
+									divide_temp_variable = { buy_amount = 100 }
 
 									set_temp_variable = { money_temp = buy_amount }
 									multiply_temp_variable = { money_temp = country_temp:services_price }
@@ -2092,9 +2269,53 @@
 
 									subtract_from_variable = { country_temp:services_supply = buy_amount }
 									subtract_from_variable = { country_temp:services_global_trade_amount = buy_amount }
-									add_to_variable = { country_temp:services_global_trade_value = cost_temp }
+									add_to_variable = { country_temp:services_global_trade_actual_value = cost_temp }
+									subtract_from_variable = { services_global_trade_actual_value = cost_temp }
+									add_to_variable = { global.services_global_trade_actual_value = cost_temp }
 
+									multiply_temp_variable = { buy_amount = 100 }
 									divide_temp_variable = { buy_amount = shipping_cost }
+									divide_temp_variable = { buy_amount = net_tariff_percentage_temp }
+
+									#Tariffs/Subsidies
+									set_temp_variable = { export_cost_temp = 100 }
+									add_to_temp_variable = { export_cost_temp = country_temp:export_tariff_percentage }
+									subtract_from_temp_variable = { export_cost_temp = country_temp:export_subsidy_percentage }
+									multiply_temp_variable = { export_cost_temp = cost_temp }
+									divide_temp_variable = { export_cost_temp = 100 }
+									set_temp_variable = { export_value_temp = export_cost_temp }
+									subtract_from_temp_variable = { export_value_temp = cost_temp }
+
+									set_temp_variable = { import_cost_temp = 100 }
+									add_to_temp_variable = { import_cost_temp = import_tariff_percentage }
+									subtract_from_temp_variable = { import_cost_temp = import_subsidy_percentage }
+									multiply_temp_variable = { import_cost_temp = cost_temp }
+									divide_temp_variable = { import_cost_temp = 100 }
+									set_temp_variable = { import_value_temp = import_cost_temp }
+									subtract_from_temp_variable = { import_value_temp = cost_temp }
+
+									add_to_temp_variable = { cost_temp = export_value_temp }
+									add_to_temp_variable = { cost_temp = import_value_temp }
+									add_to_variable = { country_temp:treasury = export_value_temp }
+									add_to_variable = { treasury = import_value_temp }
+									if = {
+										limit = {
+											check_variable = { export_value_temp > 0 }
+										}
+										add_to_variable = { country_temp:actual_tariff_revenue = export_value_temp }
+									}
+									else = {
+										subtract_from_variable = { country_temp:actual_subsidy_expense = export_value_temp }
+									}
+									if = {
+										limit = {
+											check_variable = { import_value_temp > 0 }
+										}
+										add_to_variable = { actual_tariff_revenue = import_value_temp }
+									}
+									else = {
+										subtract_from_variable = { actual_subsidy_expense = import_value_temp }
+									}
 
 									add_to_variable = { services_supply = buy_amount }
 									add_to_variable = { services_global_trade_amount = buy_amount }
@@ -2102,6 +2323,7 @@
 									subtract_from_temp_variable = { buy_amount_left = buy_amount }
 									subtract_from_variable = { services_global_trade_value = cost_temp }
 									add_to_variable = { global.services_global_trade_value = cost_temp }
+									add_to_variable = { country_temp:services_global_trade_value = cost_temp }
 								}
 							}
 							else_if = {
@@ -2157,8 +2379,23 @@
 								multiply_variable = { shipping_cost = modifier_temp }
 								add_to_variable = { shipping_cost = 1 }
 
+								#Tariffs/Subsidies
+								set_temp_variable = { net_tariff_percentage_temp = import_tariff_percentage }
+								add_to_temp_variable = { net_tariff_percentage_temp = country_temp:export_tariff_percentage }
+								subtract_from_temp_variable = { net_tariff_percentage_temp = import_subsidy_percentage }
+								subtract_from_temp_variable = { net_tariff_percentage_temp = country_temp:export_subsidy_percentage }
+								add_to_temp_variable = { net_tariff_percentage_temp = 100 }
+								if = {
+									limit = {
+										check_variable = { net_tariff_percentage_temp < 10 }
+									}
+									set_temp_variable = { net_tariff_percentage_temp = 10 }
+								}
+
 								set_temp_variable = { true_price = country_temp:raw_goods_price }
 								multiply_temp_variable = { true_price = shipping_cost }
+								multiply_temp_variable = { true_price = net_tariff_percentage_temp }
+								divide_temp_variable = { true_price = 100 }
 								if = {
 									limit = {
 										check_variable = { true_price < raw_goods_price }
@@ -2178,6 +2415,8 @@
 									multiply_temp_variable = { buy_amount = 0.8 }
 
 									multiply_temp_variable = { buy_amount = shipping_cost }
+									multiply_temp_variable = { buy_amount = net_tariff_percentage_temp }
+									divide_temp_variable = { buy_amount = 100 }
 
 									set_temp_variable = { money_temp = buy_amount }
 									multiply_temp_variable = { money_temp = country_temp:raw_goods_price }
@@ -2189,9 +2428,53 @@
 
 									subtract_from_variable = { country_temp:raw_goods_supply = buy_amount }
 									subtract_from_variable = { country_temp:raw_goods_global_trade_amount = buy_amount }
-									add_to_variable = { country_temp:raw_goods_global_trade_value = cost_temp }
+									add_to_variable = { country_temp:raw_goods_global_trade_actual_value = cost_temp }
+									subtract_from_variable = { raw_goods_global_trade_actual_value = cost_temp }
+									add_to_variable = { global.raw_goods_global_trade_actual_value = cost_temp }
 
+									multiply_temp_variable = { buy_amount = 100 }
 									divide_temp_variable = { buy_amount = shipping_cost }
+									divide_temp_variable = { buy_amount = net_tariff_percentage_temp }
+
+									#Tariffs/Subsidies
+									set_temp_variable = { export_cost_temp = 100 }
+									add_to_temp_variable = { export_cost_temp = country_temp:export_tariff_percentage }
+									subtract_from_temp_variable = { export_cost_temp = country_temp:export_subsidy_percentage }
+									multiply_temp_variable = { export_cost_temp = cost_temp }
+									divide_temp_variable = { export_cost_temp = 100 }
+									set_temp_variable = { export_value_temp = export_cost_temp }
+									subtract_from_temp_variable = { export_value_temp = cost_temp }
+
+									set_temp_variable = { import_cost_temp = 100 }
+									add_to_temp_variable = { import_cost_temp = import_tariff_percentage }
+									subtract_from_temp_variable = { import_cost_temp = import_subsidy_percentage }
+									multiply_temp_variable = { import_cost_temp = cost_temp }
+									divide_temp_variable = { import_cost_temp = 100 }
+									set_temp_variable = { import_value_temp = import_cost_temp }
+									subtract_from_temp_variable = { import_value_temp = cost_temp }
+
+									add_to_temp_variable = { cost_temp = export_value_temp }
+									add_to_temp_variable = { cost_temp = import_value_temp }
+									add_to_variable = { country_temp:treasury = export_value_temp }
+									add_to_variable = { treasury = import_value_temp }
+									if = {
+										limit = {
+											check_variable = { export_value_temp > 0 }
+										}
+										add_to_variable = { country_temp:actual_tariff_revenue = export_value_temp }
+									}
+									else = {
+										subtract_from_variable = { country_temp:actual_subsidy_expense = export_value_temp }
+									}
+									if = {
+										limit = {
+											check_variable = { import_value_temp > 0 }
+										}
+										add_to_variable = { actual_tariff_revenue = import_value_temp }
+									}
+									else = {
+										subtract_from_variable = { actual_subsidy_expense = import_value_temp }
+									}
 
 									add_to_variable = { raw_goods_supply = buy_amount }
 									add_to_variable = { raw_goods_global_trade_amount = buy_amount }
@@ -2199,6 +2482,7 @@
 									subtract_from_temp_variable = { buy_amount_left = buy_amount }
 									subtract_from_variable = { raw_goods_global_trade_value = cost_temp }
 									add_to_variable = { global.raw_goods_global_trade_value = cost_temp }
+									add_to_variable = { country_temp:raw_goods_global_trade_value = cost_temp }
 								}
 							}
 							else_if = {
@@ -2248,8 +2532,23 @@
 								multiply_variable = { shipping_cost = modifier_temp }
 								add_to_variable = { shipping_cost = 1 }
 
+								#Tariffs/Subsidies
+								set_temp_variable = { net_tariff_percentage_temp = import_tariff_percentage }
+								add_to_temp_variable = { net_tariff_percentage_temp = country_temp:export_tariff_percentage }
+								subtract_from_temp_variable = { net_tariff_percentage_temp = import_subsidy_percentage }
+								subtract_from_temp_variable = { net_tariff_percentage_temp = country_temp:export_subsidy_percentage }
+								add_to_temp_variable = { net_tariff_percentage_temp = 100 }
+								if = {
+									limit = {
+										check_variable = { net_tariff_percentage_temp < 10 }
+									}
+									set_temp_variable = { net_tariff_percentage_temp = 10 }
+								}
+
 								set_temp_variable = { true_price = country_temp:industrial_goods_price }
 								multiply_temp_variable = { true_price = shipping_cost }
+								multiply_temp_variable = { true_price = net_tariff_percentage_temp }
+								divide_temp_variable = { true_price = 100 }
 								if = {
 									limit = {
 										check_variable = { true_price < industrial_goods_price }
@@ -2268,6 +2567,8 @@
 									multiply_temp_variable = { buy_amount = 0.8 }
 
 									multiply_temp_variable = { buy_amount = shipping_cost }
+									multiply_temp_variable = { buy_amount = net_tariff_percentage_temp }
+									divide_temp_variable = { buy_amount = 100 }
 
 									set_temp_variable = { money_temp = buy_amount }
 									multiply_temp_variable = { money_temp = country_temp:industrial_goods_price }
@@ -2279,9 +2580,53 @@
 
 									subtract_from_variable = { country_temp:industrial_goods_supply = buy_amount }
 									subtract_from_variable = { country_temp:industrial_goods_global_trade_amount = buy_amount }
-									add_to_variable = { country_temp:industrial_goods_global_trade_value = cost_temp }
+									add_to_variable = { country_temp:industrial_goods_global_trade_actual_value = cost_temp }
+									subtract_from_variable = { industrial_goods_global_trade_actual_value = cost_temp }
+									add_to_variable = { global.industrial_goods_global_trade_actual_value = cost_temp }
 
+									multiply_temp_variable = { buy_amount = 100 }
 									divide_temp_variable = { buy_amount = shipping_cost }
+									divide_temp_variable = { buy_amount = net_tariff_percentage_temp }
+
+									#Tariffs/Subsidies
+									set_temp_variable = { export_cost_temp = 100 }
+									add_to_temp_variable = { export_cost_temp = country_temp:export_tariff_percentage }
+									subtract_from_temp_variable = { export_cost_temp = country_temp:export_subsidy_percentage }
+									multiply_temp_variable = { export_cost_temp = cost_temp }
+									divide_temp_variable = { export_cost_temp = 100 }
+									set_temp_variable = { export_value_temp = export_cost_temp }
+									subtract_from_temp_variable = { export_value_temp = cost_temp }
+
+									set_temp_variable = { import_cost_temp = 100 }
+									add_to_temp_variable = { import_cost_temp = import_tariff_percentage }
+									subtract_from_temp_variable = { import_cost_temp = import_subsidy_percentage }
+									multiply_temp_variable = { import_cost_temp = cost_temp }
+									divide_temp_variable = { import_cost_temp = 100 }
+									set_temp_variable = { import_value_temp = import_cost_temp }
+									subtract_from_temp_variable = { import_value_temp = cost_temp }
+
+									add_to_temp_variable = { cost_temp = export_value_temp }
+									add_to_temp_variable = { cost_temp = import_value_temp }
+									add_to_variable = { country_temp:treasury = export_value_temp }
+									add_to_variable = { treasury = import_value_temp }
+									if = {
+										limit = {
+											check_variable = { export_value_temp > 0 }
+										}
+										add_to_variable = { country_temp:actual_tariff_revenue = export_value_temp }
+									}
+									else = {
+										subtract_from_variable = { country_temp:actual_subsidy_expense = export_value_temp }
+									}
+									if = {
+										limit = {
+											check_variable = { import_value_temp > 0 }
+										}
+										add_to_variable = { actual_tariff_revenue = import_value_temp }
+									}
+									else = {
+										subtract_from_variable = { actual_subsidy_expense = import_value_temp }
+									}
 
 									add_to_variable = { industrial_goods_supply = buy_amount }
 									add_to_variable = { industrial_goods_global_trade_amount = buy_amount }
@@ -2289,6 +2634,7 @@
 									subtract_from_temp_variable = { buy_amount_left = buy_amount }
 									subtract_from_variable = { industrial_goods_global_trade_value = cost_temp }
 									add_to_variable = { global.industrial_goods_global_trade_value = cost_temp }
+									add_to_variable = { country_temp:industrial_goods_global_trade_value = cost_temp }
 								}
 							}
 							else_if = {
@@ -2438,7 +2784,7 @@
 
 										set_temp_variable = { trade_value_temp = trade_amount_temp }
 										multiply_temp_variable = { trade_value_temp = price_temp }
-										divide_temp_variable = { trade_value_temp = -100 }
+										divide_temp_variable = { trade_value_temp = 100 }
 										if = {
 											limit = {
 												check_variable = { trade_value_temp > PREV.cost_amount_left }
@@ -2591,7 +2937,7 @@
 
 										set_temp_variable = { trade_value_temp = trade_amount_temp }
 										multiply_temp_variable = { trade_value_temp = price_temp }
-										divide_temp_variable = { trade_value_temp = -100 }
+										divide_temp_variable = { trade_value_temp = 100 }
 										if = {
 											limit = {
 												check_variable = { trade_value_temp > PREV.cost_amount_left }
@@ -2744,7 +3090,7 @@
 
 										set_temp_variable = { trade_value_temp = trade_amount_temp }
 										multiply_temp_variable = { trade_value_temp = price_temp }
-										divide_temp_variable = { trade_value_temp = -100 }
+										divide_temp_variable = { trade_value_temp = 100 }
 										if = {
 											limit = {
 												check_variable = { trade_value_temp > PREV.cost_amount_left }
@@ -2897,7 +3243,7 @@
 
 										set_temp_variable = { trade_value_temp = trade_amount_temp }
 										multiply_temp_variable = { trade_value_temp = price_temp }
-										divide_temp_variable = { trade_value_temp = -100 }
+										divide_temp_variable = { trade_value_temp = 100 }
 										if = {
 											limit = {
 												check_variable = { trade_value_temp > PREV.cost_amount_left }
@@ -3050,7 +3396,7 @@
 
 										set_temp_variable = { trade_value_temp = trade_amount_temp }
 										multiply_temp_variable = { trade_value_temp = price_temp }
-										divide_temp_variable = { trade_value_temp = -100 }
+										divide_temp_variable = { trade_value_temp = 100 }
 										if = {
 											limit = {
 												check_variable = { trade_value_temp > PREV.cost_amount_left }
@@ -3203,7 +3549,7 @@
 
 										set_temp_variable = { trade_value_temp = trade_amount_temp }
 										multiply_temp_variable = { trade_value_temp = price_temp }
-										divide_temp_variable = { trade_value_temp = -100 }
+										divide_temp_variable = { trade_value_temp = 100 }
 										if = {
 											limit = {
 												check_variable = { trade_value_temp > PREV.cost_amount_left }
@@ -4626,6 +4972,7 @@
 			subtract_from_variable = { annual_gdp_growth = 100 }
 
 			set_variable = { actual_revenue = actual_income_tax_revenue }
+			add_to_variable = { actual_revenue = actual_tariff_revenue }
 
 			every_controlled_state = {
 				create_pie_chart_pop_type = yes
@@ -7780,18 +8127,18 @@
 			#life_goods
 				if = {
 					limit = {
-						check_variable = { life_goods_global_trade_value < 0 }
+						check_variable = { life_goods_global_trade_actual_value < 0 }
 					}
-					set_temp_variable = { tax_temp = life_goods_global_trade_value }
+					set_temp_variable = { tax_temp = life_goods_global_trade_actual_value }
 					multiply_temp_variable = { tax_temp = -1 }
 					multiply_temp_variable = { tax_temp = import_tariff_percentage }
 					add_to_variable = { import_tariff_revenue = tax_temp }
 				}
 				else_if = {
 					limit = {
-						check_variable = { life_goods_global_trade_value > 0 }
+						check_variable = { life_goods_global_trade_actual_value > 0 }
 					}
-					set_temp_variable = { tax_temp = life_goods_global_trade_value }
+					set_temp_variable = { tax_temp = life_goods_global_trade_actual_value }
 					multiply_temp_variable = { tax_temp = export_tariff_percentage }
 					add_to_variable = { export_tariff_revenue = tax_temp }
 				}
@@ -7799,18 +8146,18 @@
 			#everyday_goods
 				if = {
 					limit = {
-						check_variable = { everyday_goods_global_trade_value < 0 }
+						check_variable = { everyday_goods_global_trade_actual_value < 0 }
 					}
-					set_temp_variable = { tax_temp = everyday_goods_global_trade_value }
+					set_temp_variable = { tax_temp = everyday_goods_global_trade_actual_value }
 					multiply_temp_variable = { tax_temp = -1 }
 					multiply_temp_variable = { tax_temp = import_tariff_percentage }
 					add_to_variable = { import_tariff_revenue = tax_temp }
 				}
 				else_if = {
 					limit = {
-						check_variable = { everyday_goods_global_trade_value > 0 }
+						check_variable = { everyday_goods_global_trade_actual_value > 0 }
 					}
-					set_temp_variable = { tax_temp = everyday_goods_global_trade_value }
+					set_temp_variable = { tax_temp = everyday_goods_global_trade_actual_value }
 					multiply_temp_variable = { tax_temp = export_tariff_percentage }
 					add_to_variable = { export_tariff_revenue = tax_temp }
 				}
@@ -7818,18 +8165,18 @@
 			#luxury_goods
 				if = {
 					limit = {
-						check_variable = { luxury_goods_global_trade_value < 0 }
+						check_variable = { luxury_goods_global_trade_actual_value < 0 }
 					}
-					set_temp_variable = { tax_temp = luxury_goods_global_trade_value }
+					set_temp_variable = { tax_temp = luxury_goods_global_trade_actual_value }
 					multiply_temp_variable = { tax_temp = -1 }
 					multiply_temp_variable = { tax_temp = import_tariff_percentage }
 					add_to_variable = { import_tariff_revenue = tax_temp }
 				}
 				else_if = {
 					limit = {
-						check_variable = { luxury_goods_global_trade_value > 0 }
+						check_variable = { luxury_goods_global_trade_actual_value > 0 }
 					}
-					set_temp_variable = { tax_temp = luxury_goods_global_trade_value }
+					set_temp_variable = { tax_temp = luxury_goods_global_trade_actual_value }
 					multiply_temp_variable = { tax_temp = export_tariff_percentage }
 					add_to_variable = { export_tariff_revenue = tax_temp }
 				}
@@ -7837,18 +8184,18 @@
 			#services
 				if = {
 					limit = {
-						check_variable = { services_global_trade_value < 0 }
+						check_variable = { services_global_trade_actual_value < 0 }
 					}
-					set_temp_variable = { tax_temp = services_global_trade_value }
+					set_temp_variable = { tax_temp = services_global_trade_actual_value }
 					multiply_temp_variable = { tax_temp = -1 }
 					multiply_temp_variable = { tax_temp = import_tariff_percentage }
 					add_to_variable = { import_tariff_revenue = tax_temp }
 				}
 				else_if = {
 					limit = {
-						check_variable = { services_global_trade_value > 0 }
+						check_variable = { services_global_trade_actual_value > 0 }
 					}
-					set_temp_variable = { tax_temp = services_global_trade_value }
+					set_temp_variable = { tax_temp = services_global_trade_actual_value }
 					multiply_temp_variable = { tax_temp = export_tariff_percentage }
 					add_to_variable = { export_tariff_revenue = tax_temp }
 				}
@@ -7856,18 +8203,18 @@
 			#raw_goods
 				if = {
 					limit = {
-						check_variable = { raw_goods_global_trade_value < 0 }
+						check_variable = { raw_goods_global_trade_actual_value < 0 }
 					}
-					set_temp_variable = { tax_temp = raw_goods_global_trade_value }
+					set_temp_variable = { tax_temp = raw_goods_global_trade_actual_value }
 					multiply_temp_variable = { tax_temp = -1 }
 					multiply_temp_variable = { tax_temp = import_tariff_percentage }
 					add_to_variable = { import_tariff_revenue = tax_temp }
 				}
 				else_if = {
 					limit = {
-						check_variable = { raw_goods_global_trade_value > 0 }
+						check_variable = { raw_goods_global_trade_actual_value > 0 }
 					}
-					set_temp_variable = { tax_temp = raw_goods_global_trade_value }
+					set_temp_variable = { tax_temp = raw_goods_global_trade_actual_value }
 					multiply_temp_variable = { tax_temp = export_tariff_percentage }
 					add_to_variable = { export_tariff_revenue = tax_temp }
 				}
@@ -7875,18 +8222,18 @@
 			#industrial_goods
 				if = {
 					limit = {
-						check_variable = { industrial_goods_global_trade_value < 0 }
+						check_variable = { industrial_goods_global_trade_actual_value < 0 }
 					}
-					set_temp_variable = { tax_temp = industrial_goods_global_trade_value }
+					set_temp_variable = { tax_temp = industrial_goods_global_trade_actual_value }
 					multiply_temp_variable = { tax_temp = -1 }
 					multiply_temp_variable = { tax_temp = import_tariff_percentage }
 					add_to_variable = { import_tariff_revenue = tax_temp }
 				}
 				else_if = {
 					limit = {
-						check_variable = { industrial_goods_global_trade_value > 0 }
+						check_variable = { industrial_goods_global_trade_actual_value > 0 }
 					}
-					set_temp_variable = { tax_temp = industrial_goods_global_trade_value }
+					set_temp_variable = { tax_temp = industrial_goods_global_trade_actual_value }
 					multiply_temp_variable = { tax_temp = export_tariff_percentage }
 					add_to_variable = { export_tariff_revenue = tax_temp }
 				}
@@ -7896,6 +8243,7 @@
 		#
 
 		set_variable = { revenue = income_tax_revenue }
+		add_to_variable = { revenue = sales_tax_revenue }
 		add_to_variable = { revenue = import_tariff_revenue }
 		add_to_variable = { revenue = export_tariff_revenue }
 	}
@@ -7933,6 +8281,14 @@
 			set_temp_variable = { cost_temp = money_temp }
 			set_temp_variable = { buy_amount = money_temp }
 			divide_temp_variable = { buy_amount = good_price_temp }
+			clamp_temp_variable = {
+				var = buy_amount
+				max = good_max_temp
+			}
+			clamp_temp_variable = {
+				var = buy_amount
+				min = 0
+			}
 		}
 	}
 
