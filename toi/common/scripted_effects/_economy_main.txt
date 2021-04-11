@@ -276,6 +276,7 @@
 			every_controlled_state = {
 				#Pops/Govt get paid
 					set_variable = { pops_spending = 0 }
+					set_variable = { pops_goods_spending = 0 }
 
 					add_to_variable = { pops_money = pops_earnings }
 					#Upper Strata
@@ -1718,8 +1719,7 @@
 		for_each_scope_loop = {
 			array = global.econ_order_array
 
-			#Trade	
-				#INTERNATIONAL TRADE
+			#INTERNATIONAL TRADE
 				#Countries with excess demand to supply will try to buy goods. Countries in the order of the "Great Powers List" go first. 
 				#It is assumed that all imported and exported supply/demand will be fulfilled. This will be fulfilled in order of cheapest states to most expensive in exports and most expensive to cheapest in imports.
 
@@ -2649,7 +2649,7 @@
 						}
 					}
 				
-				#
+			#
 		}
 		for_each_scope_loop = {
 			array = global.econ_order_array
@@ -3590,7 +3590,7 @@
 							}
 							#Costs & goods absorbed by pops 
 							add_to_variable = { pops_money = life_goods_trade_value }
-							subtract_from_variable = { pops_spending = life_goods_trade_value }
+							subtract_from_variable = { pops_goods_spending = life_goods_trade_value }
 							set_temp_variable = { needs_fulfilled_temp = life_goods_trade_amount }
 							divide_temp_variable = { needs_fulfilled_temp = pops_life_goods_need }
 							add_to_variable = { pops_life_goods_fulfilled_percentage = needs_fulfilled_temp }
@@ -3622,7 +3622,7 @@
 							}
 							#Costs & goods absorbed by pops 
 							add_to_variable = { pops_money = everyday_goods_trade_value }
-							subtract_from_variable = { pops_spending = everyday_goods_trade_value }
+							subtract_from_variable = { pops_goods_spending = everyday_goods_trade_value }
 							set_temp_variable = { needs_fulfilled_temp = everyday_goods_trade_amount }
 							divide_temp_variable = { needs_fulfilled_temp = pops_everyday_goods_need }
 							add_to_variable = { pops_everyday_goods_fulfilled_percentage = needs_fulfilled_temp }
@@ -3710,7 +3710,7 @@
 							}
 							#Costs & goods absorbed by pops 
 							add_to_variable = { pops_money = luxury_goods_trade_value }
-							subtract_from_variable = { pops_spending = luxury_goods_trade_value }
+							subtract_from_variable = { pops_goods_spending = luxury_goods_trade_value }
 							set_temp_variable = { needs_fulfilled_temp = luxury_goods_trade_amount }
 							divide_temp_variable = { needs_fulfilled_temp = pops_luxury_goods_need }
 							add_to_variable = { pops_luxury_goods_fulfilled_percentage = needs_fulfilled_temp }
@@ -3798,7 +3798,7 @@
 							}
 							#Costs & goods absorbed by pops 
 							add_to_variable = { pops_money = services_trade_value }
-							subtract_from_variable = { pops_spending = services_trade_value }
+							subtract_from_variable = { pops_goods_spending = services_trade_value }
 							set_temp_variable = { needs_fulfilled_temp = services_trade_amount }
 							divide_temp_variable = { needs_fulfilled_temp = pops_services_demand }
 							add_to_variable = { pops_services_fulfilled_percentage = needs_fulfilled_temp }
@@ -4139,6 +4139,10 @@
 									subtract_from_variable = { factory_spending = infrastructure_construction_investment_money }
 									set_variable = { infrastructure_construction_investment_money = 0 }
 								}
+								subtract_from_variable = { gdp_amount = construction_everyday_goods_trade_value }
+								subtract_from_variable = { gdp_amount = construction_luxury_goods_trade_value }
+								subtract_from_variable = { gdp_amount = construction_industrial_goods_trade_value }
+								subtract_from_variable = { gdp_amount = construction_infrastructure_trade_value }
 
 							}
 							else = {
@@ -4840,8 +4844,8 @@
 
 					add_to_variable = { PREV.private_factory_amount = private_factory_amount }
 					
-					
-					add_to_variable = { gdp_amount = pops_spending }
+					#GDP
+					add_to_variable = { gdp_amount = pops_goods_spending }
 					add_to_variable = { PREV.gdp_amount = gdp_amount }
 					add_to_array = { gdp_amount_array = gdp_amount }
 					if = {
@@ -4912,6 +4916,9 @@
 					add_to_variable = { industrial_power = industrial_goods_industrial_power }
 
 					add_to_variable = { PREV.industrial_power = industrial_power }
+
+					#Pop Spending
+					add_to_variable = { pops_spending = pops_goods_spending }
 				#
 			}
 			taxes_update = yes
@@ -5103,17 +5110,17 @@
 						set_variable =  { global.rgos_percentage = 74 }
 						set_variable = { global.pops_rgos_life_goods_base_production = 15 } #Every 100k RGOs
 						set_variable = { global.pops_rgos_raw_goods_base_production = 5 }
-						set_variable = { global.pops_rgos_valuable_goods_base_production = 40 }
+						set_variable = { global.pops_rgos_valuable_goods_base_production = 20 }
 
 						set_variable = { global.pops_rgos_cash_crops_output_multiplier = 1.2 } #Applies to Life/Raw Goods
 						set_variable = { global.pops_rgos_coal_output_multiplier = 1.25 } #Only to Raw
 						set_variable = { global.pops_rgos_metals_output_multiplier = 1.33 } #Only to Raw
 						set_variable = { global.pops_rgos_petroleum_output_multiplier = 1.25 } #Only to Raw
 
-						set_variable = { global.pops_rgos_valuable_goods_untapped_output_multiplier = 4 }
-						set_variable = { global.pops_rgos_valuable_goods_plentiful_output_multiplier = 2 }
+						set_variable = { global.pops_rgos_valuable_goods_untapped_output_multiplier = 10 }
+						set_variable = { global.pops_rgos_valuable_goods_plentiful_output_multiplier = 3 }
 						set_variable = { global.pops_rgos_valuable_goods_exploited_output_multiplier = 1 }
-						set_variable = { global.pops_rgos_valuable_goods_depleted_output_multiplier = 0.5 }
+						set_variable = { global.pops_rgos_valuable_goods_depleted_output_multiplier = 0.3 }
 
 						set_variable = { global.pops_rgos_valuable_goods_untapped_decay_max = 60 } #How many months until the valuable goods decays?
 						set_variable = { global.pops_rgos_valuable_goods_plentiful_decay_max = 240 }
@@ -5274,7 +5281,7 @@
 
 			add_to_array = { global.valuable_goods_states = 1342 }
 			add_to_array = { global.raw_goods_states = 1342 }
-			1342 = { set_state_flag = pops_rgos_valuable_goods_plentiful_flag }
+			1342 = { set_state_flag = pops_rgos_valuable_goods_untapped_flag }
 
 			#States in the Continental US but not owned by USA
 			add_to_array = { global.raw_goods_states = 1047 }
@@ -5305,7 +5312,7 @@
 			
 			add_to_array = { global.valuable_goods_states = 379 }
 			add_to_array = { global.raw_goods_states = 379 }
-			379 = { set_state_flag = pops_rgos_valuable_goods_plentiful_flag }
+			379 = { set_state_flag = pops_rgos_valuable_goods_untapped_flag }
 
 			#Canada & Alaska
 			add_to_array = { global.raw_goods_states = 331 }
@@ -5529,8 +5536,11 @@
 					set_variable = { industrial_goods_trade_amount = 0 }
 					set_variable = { industrial_goods_trade_value = 0 }
 
+					clear_variable = pops_rgos_valuable_goods_decay
+
 					set_variable = { pops_earnings = 0 }
 					set_variable = { pops_spending = 0 }
+					set_variable = { pops_goods_spending = 0 }
 
 					set_variable = { factory_earnings = 0 }
 					set_variable = { factory_spending = 0 }
@@ -6258,7 +6268,7 @@
 			add_to_variable = { pops_rgos_life_goods_sold = buy_amount }
 
 			subtract_from_variable = { pops_money = cost_temp }
-			add_to_variable = { pops_spending = cost_temp }
+			add_to_variable = { pops_goods_spending = cost_temp }
 			set_temp_variable = { needs_fulfilled_temp = buy_amount }
 			divide_temp_variable = { needs_fulfilled_temp = pops_life_goods_need }
 			add_to_variable = { pops_life_goods_fulfilled_percentage = needs_fulfilled_temp }
@@ -6367,7 +6377,7 @@
 			add_to_variable = { pops_artisans_everyday_goods_sold = artisan_buy_amount }
 
 			subtract_from_variable = { pops_money = cost_temp }
-			add_to_variable = { pops_spending = cost_temp }
+			add_to_variable = { pops_goods_spending = cost_temp }
 			set_temp_variable = { needs_fulfilled_temp = buy_amount }
 			divide_temp_variable = { needs_fulfilled_temp = pops_everyday_goods_need }
 			add_to_variable = { pops_everyday_goods_fulfilled_percentage = needs_fulfilled_temp }
@@ -6452,7 +6462,7 @@
 			add_to_variable = { pops_artisans_luxury_goods_sold = artisan_buy_amount }
 
 			subtract_from_variable = { pops_money = cost_temp }
-			add_to_variable = { pops_spending = cost_temp }
+			add_to_variable = { pops_goods_spending = cost_temp }
 			set_temp_variable = { needs_fulfilled_temp = buy_amount }
 			divide_temp_variable = { needs_fulfilled_temp = pops_luxury_goods_need }
 			add_to_variable = { pops_luxury_goods_fulfilled_percentage = needs_fulfilled_temp }
@@ -6516,7 +6526,7 @@
 			add_to_variable = { pops_services_sold = buy_amount }
 
 			subtract_from_variable = { pops_money = cost_temp }
-			add_to_variable = { pops_spending = cost_temp }
+			add_to_variable = { pops_goods_spending = cost_temp }
 			set_temp_variable = { needs_fulfilled_temp = buy_amount }
 			divide_temp_variable = { needs_fulfilled_temp = pops_services_demand }
 			add_to_variable = { pops_services_fulfilled_percentage = needs_fulfilled_temp }
@@ -6721,6 +6731,7 @@
 
 				subtract_from_variable = { factory_everyday_goods_construction_investment_money = cost_temp }
 				subtract_from_variable = { factory_everyday_goods_construction_industrial_goods_need = buy_amount }
+				add_to_variable = { gdp_amount = cost_temp }
 
 			#
 			#Luxury Goods Factory
@@ -6800,6 +6811,7 @@
 
 				subtract_from_variable = { factory_luxury_goods_construction_investment_money = cost_temp }
 				subtract_from_variable = { factory_luxury_goods_construction_industrial_goods_need = buy_amount }
+				add_to_variable = { gdp_amount = cost_temp }
 
 			#
 			#Industrial Goods Factory
@@ -6879,6 +6891,7 @@
 
 				subtract_from_variable = { factory_industrial_goods_construction_investment_money = cost_temp }
 				subtract_from_variable = { factory_industrial_goods_construction_industrial_goods_need = buy_amount }
+				add_to_variable = { gdp_amount = cost_temp }
 			#
 		#
 	}
@@ -6992,6 +7005,7 @@
 
 				subtract_from_variable = { infrastructure_construction_investment_money = cost_temp }
 				subtract_from_variable = { infrastructure_construction_industrial_goods_need = buy_amount }
+				add_to_variable = { gdp_amount = cost_temp }
 
 			#
 		#
@@ -8966,11 +8980,17 @@
 		#Pop Demand is a factor of A: How much they want the resource and B: How much they are willing to spend
 
 		#
+		set_temp_variable = { sales_tax_temp = controller:sales_tax_percentage }
+		add_to_temp_variable = { sales_tax_temp = 100 }
 		#Life Goods
 			set_temp_variable = { money_life_goods_temp = money_left_temp }
 			multiply_temp_variable = { money_life_goods_temp = global.pops_life_goods_spending } #Pops will spend up to 75% of their money on Life Goods
 
-			set_temp_variable = { price_temp = life_goods_price }
+			set_temp_variable = { actual_price_temp = life_goods_price }
+			multiply_temp_variable = { actual_price_temp = sales_tax_temp }
+			divide_temp_variable = { actual_price_temp = 100 }
+
+			set_temp_variable = { price_temp = actual_price_temp }
 			set_temp_variable = { magnitude_temp = 1 }
 			if = {
 				limit = {
@@ -9004,7 +9024,7 @@
 			}
 
 			set_variable = { pops_life_goods_demand = money_life_goods_temp }
-			divide_variable = { pops_life_goods_demand = life_goods_price }
+			divide_variable = { pops_life_goods_demand = actual_price_temp }
 			multiply_variable = { pops_life_goods_demand = 0.99 }
 
 			if = {
@@ -9020,7 +9040,7 @@
 				set_variable = { pops_life_goods_demand = 0 }
 			}
 			set_temp_variable = { cost_temp = pops_life_goods_demand }
-			multiply_temp_variable = { cost_temp = life_goods_price }
+			multiply_temp_variable = { cost_temp = actual_price_temp }
 
 			subtract_from_temp_variable = { money_left_temp = cost_temp }
 			subtract_from_temp_variable = { money_life_goods_temp = cost_temp }
@@ -9142,7 +9162,11 @@
 				set_temp_variable = { money_everyday_goods_temp = money_everyday_goods_max_temp }
 			}
 
-			set_temp_variable = { price_temp = everyday_goods_price }
+			set_temp_variable = { actual_price_temp = everyday_goods_price }
+			multiply_temp_variable = { actual_price_temp = sales_tax_temp }
+			divide_temp_variable = { actual_price_temp = 100 }
+
+			set_temp_variable = { price_temp = actual_price_temp }
 			set_temp_variable = { magnitude_temp = 1 }
 			if = {
 				limit = {
@@ -9176,7 +9200,7 @@
 			}
 
 			set_variable = { pops_everyday_goods_demand = money_everyday_goods_temp }
-			divide_variable = { pops_everyday_goods_demand = everyday_goods_price }
+			divide_variable = { pops_everyday_goods_demand = actual_price_temp }
 			multiply_variable = { pops_everyday_goods_demand = 0.99 }
 
 			if = {
@@ -9192,7 +9216,7 @@
 				set_variable = { pops_everyday_goods_demand = 0 }
 			}
 			set_temp_variable = { cost_temp = pops_everyday_goods_demand }
-			multiply_temp_variable = { cost_temp = everyday_goods_price }
+			multiply_temp_variable = { cost_temp = actual_price_temp }
 
 			subtract_from_temp_variable = { money_left_temp = cost_temp }
 			subtract_from_temp_variable = { money_everyday_goods_temp = cost_temp }
@@ -9212,7 +9236,11 @@
 				set_temp_variable = { money_luxury_goods_temp = money_luxury_goods_max_temp }
 			}
 
-			set_temp_variable = { price_temp = luxury_goods_price }
+			set_temp_variable = { actual_price_temp = luxury_goods_price }
+			multiply_temp_variable = { actual_price_temp = sales_tax_temp }
+			divide_temp_variable = { actual_price_temp = 100 }
+
+			set_temp_variable = { price_temp = actual_price_temp }
 			set_temp_variable = { magnitude_temp = 1 }
 			if = {
 				limit = {
@@ -9246,7 +9274,7 @@
 			}
 
 			set_variable = { pops_luxury_goods_demand = money_luxury_goods_temp }
-			divide_variable = { pops_luxury_goods_demand = luxury_goods_price }
+			divide_variable = { pops_luxury_goods_demand = actual_price_temp }
 			multiply_variable = { pops_luxury_goods_demand = 0.99 }
 
 			if = {
@@ -9262,7 +9290,7 @@
 				set_variable = { pops_luxury_goods_demand = 0 }
 			}
 			set_temp_variable = { cost_temp = pops_luxury_goods_demand }
-			multiply_temp_variable = { cost_temp = luxury_goods_price }
+			multiply_temp_variable = { cost_temp = actual_price_temp }
 
 			subtract_from_temp_variable = { money_left_temp = cost_temp }
 			subtract_from_temp_variable = { money_luxury_goods_temp = cost_temp }
@@ -9282,7 +9310,11 @@
 				set_temp_variable = { money_services_temp = money_services_max_temp }
 			}
 
-			set_temp_variable = { price_temp = services_price }
+			set_temp_variable = { actual_price_temp = services_price }
+			multiply_temp_variable = { actual_price_temp = sales_tax_temp }
+			divide_temp_variable = { actual_price_temp = 100 }
+
+			set_temp_variable = { price_temp = actual_price_temp }
 			set_temp_variable = { magnitude_temp = 1 }
 			if = {
 				limit = {
@@ -9316,7 +9348,7 @@
 			}
 
 			set_variable = { pops_services_demand = money_services_temp }
-			divide_variable = { pops_services_demand = services_price }
+			divide_variable = { pops_services_demand = actual_price_temp }
 			multiply_variable = { pops_services_demand = 0.99 }
 
 			if = {
@@ -9326,7 +9358,7 @@
 				set_variable = { pops_services_demand = 0 }
 			}
 			set_temp_variable = { cost_temp = pops_services_demand }
-			multiply_temp_variable = { cost_temp = services_price }
+			multiply_temp_variable = { cost_temp = actual_price_temp }
 
 			subtract_from_temp_variable = { money_left_temp = cost_temp }
 			subtract_from_temp_variable = { money_services_temp = cost_temp }
@@ -9336,7 +9368,7 @@
 		#Construction
 			set_temp_variable = { max_demand_temp = global.infrastructure_construction_industrial_goods_base_need }
 			divide_temp_variable = { max_demand_temp = 10 }
-			#Everyday Goods Factory
+			#Infrastructure
 				set_variable = { infrastructure_construction_industrial_goods_demand = infrastructure_construction_investment_money }
 				divide_variable = { infrastructure_construction_industrial_goods_demand = industrial_goods_price }
 				divide_variable = { infrastructure_construction_industrial_goods_demand = 2 }
