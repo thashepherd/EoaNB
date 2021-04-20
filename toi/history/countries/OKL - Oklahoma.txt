@@ -57,7 +57,7 @@
   }
 
   set_politics = {
-	  ruling_party = fundamentalism
+	  ruling_party = traditional_conservatism
 }
 
 set_popularities = {
@@ -66,11 +66,11 @@ set_popularities = {
     collectivist_socialism = 0
     social_egalitarianism = 0
     centrism = 0
-    traditional_conservatism = 0
+    traditional_conservatism = 100
     radical_democracy = 0
     chauvinist_populism = 0
     autocracy = 0
-    fundamentalism = 100
+    fundamentalism = 0
 }
   
   set_technology = {
@@ -89,6 +89,15 @@ set_popularities = {
   }
 
   # POLITICAL LEADERS
+
+create_country_leader = {
+	name = "James W. Denver"
+	desc = ""
+	picture = ""
+	expire = "1858.11.1"
+	ideology = conserv
+	traits = {
+	}
 
 create_country_leader = {
 	name = "Great Five Council"
