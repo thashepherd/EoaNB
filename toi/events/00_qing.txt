@@ -1512,6 +1512,8 @@ country_event = { #Qing shattered
 					add_state_core = 283
 					transfer_state = 1226
 					add_state_core = 1226
+					transfer_state = 1430
+					add_state_core = 1430
 					if={
 						limit={
 							SIK={exists=yes}
@@ -1545,7 +1547,13 @@ country_event = { #Qing shattered
 						ROOT={owns_state=621}
 					}
 					add_state_core = 621
-				}				
+				}	
+				if={
+					limit={
+						ROOT={owns_state=1294}
+					}
+					add_state_core = 1294
+				}					
 			}
 			release = MON
 			
@@ -1626,6 +1634,13 @@ country_event = { #Qing shattered
 						}
 						transfer_state = 1394
 						add_state_core = 1394		
+					}
+					if={
+						limit={
+							ROOT={owns_state=1429}
+						}
+						transfer_state = 1429
+						add_state_core = 1429		
 					}
 					clr_country_flag = rebel_uprisisng
 				}
@@ -2667,6 +2682,8 @@ country_event = { #shatter china
 						add_state_core = 283
 						transfer_state = 1226
 						add_state_core = 1226
+						transfer_state = 1430
+						add_state_core = 1430	
 						if={
 							limit={
 								SIK={exists=yes}
@@ -2686,7 +2703,8 @@ country_event = { #shatter china
 					load_focus_tree = CHI_warlords_1872	
 					add_state_core = 329
 					add_state_core = 612
-					add_state_core = 621				
+					add_state_core = 621	
+					add_state_core = 1294	
 				}
 				release = MON
 				
@@ -2752,7 +2770,9 @@ country_event = { #shatter china
 						transfer_state = 601
 						add_state_core = 601
 						transfer_state = 1394
-						add_state_core = 1394							
+						add_state_core = 1394	
+						transfer_state = 1429
+						add_state_core = 1429							
 						clr_country_flag = rebel_uprisisng
 					}
 				}
