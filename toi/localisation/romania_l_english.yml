@@ -90,8 +90,12 @@
  wallachia_focustree.3.t:0 "The Start of Industrialization"
  wallachia_focustree.3.d:0 "After so much preparation, we are finally ready to begin the long process of industrialization. Wallachia will finally enter the 19th Century and will no longer be stuck in the past of povertyand misery. It is indeed a moment which will be forever remembered in Vlach history."
  wallachia_focustree.3.a:0 "Finally, progress."
- 
- 
+ wallachia_focustree.5.t:0 "Elections!"
+ wallachia_focustree.5.d:0 "Finally after so much time, the Ottomans have finally been forced to let us, the People,elect our new Domnitor. It is finally time to decide the future of the Principality ofWallachia. The candidates are Moldavian Minister of War Alexandru Ioan Cuza and boyar Gheorghe Bibescu."
+ wallachia_focustree.5.a:0 "Cuza wins the people!"
+ wallachia_focustree.5.b:0 "Bibescu wins by a thin margin!"
+
+
  ROM_industralziation:0 "Picked Starting Industralizing" 
  ROM_agriculture:0 "Picked Reviwing Agriculture"
  
