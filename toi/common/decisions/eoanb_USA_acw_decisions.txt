@@ -71,7 +71,7 @@ USA_Slavery_Debate_Decision_Category = {
 					news_event = usa_slavery_debate_secession.100
 				}
 				else = {
-
+					news_event = usa_slavery_debate_secession.20
 				}
 			}
 			else = {

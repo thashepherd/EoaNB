@@ -9581,26 +9581,6 @@ country_event = { # Slavery expansion executive order leaked # Jan 18
 	immediate = {
 		hidden_effect = {
 			country_event = {
-				id = usa_slavery_debate_secession.22
-				days = 1
-			}
-			country_event = {
-				id = usa_slavery_debate_secession.21
-				days = 2
-			}
-			country_event = {
-				id = usa_slavery_debate_secession.25
-				days = 3
-			}
-			country_event = {
-				id = usa_slavery_debate_secession.24
-				days = 3
-			}
-			country_event = {
-				id = usa_slavery_debate_secession.20
-				days = 4
-			}
-			country_event = {
 				id = acw_breckinridge.16
 				days = 3
 			}
