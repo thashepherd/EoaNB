@@ -18,17 +18,16 @@ state={
 			arms_factory = 1
 			
 			4904 = {
-				naval_base = 2
+				naval_base = 4
 			}
-			4965 = {
-				naval_base = 3
-			}
+			#4965 = {
+			#	naval_base = 3
+			#}
 		}
 		add_core_of = MEX
 	}
 
 	provinces={
-		4904 4965 12715 
+		4904 4965 12715 14076
 	}
-	
 }
