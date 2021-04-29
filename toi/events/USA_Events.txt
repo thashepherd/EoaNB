@@ -40,7 +40,6 @@ country_event = {
 	}
 	option = {
 		name = usa_intro.1.e
-             
 		add_political_power = -5
 		hidden_effect = {
 			360 = { OWNER = { country_event = { id = usa_flavor.2 days = 300 random_days = 100 } } }
@@ -85,8 +84,7 @@ country_event = {
 	is_triggered_only = yes
 
 	option = {
-            name = usa_intro.4.a
-            trigger = { is_ai = no }
+            name = usa_intro.4.
             country_event = usa_intro.1
     }
 }
