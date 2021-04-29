@@ -84,7 +84,7 @@ country_event = {
 	is_triggered_only = yes
 
 	option = {
-            name = usa_intro.4.
+            name = usa_intro.4.a
             country_event = usa_intro.1
     }
 }
