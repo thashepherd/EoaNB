@@ -23,32 +23,29 @@ country_event = {
 
 	is_triggered_only = yes
 	
-	immediate = {
-        add_political_power = -5
-        hidden_effect = {
-            360 = { OWNER = { country_event = { id = usa_flavor.2 days = 300 random_days = 100 } } }
-        }
-    }
-
 	option = {
             name = usa_intro.1.a
             trigger = { is_ai = no }
             country_event = usa_intro.2 # Seminole War
-    }
-    option = {
+	}
+	option = {
             name = usa_intro.1.b
             trigger = { is_ai = no }
             country_event = usa_intro.3 # Slavery Debate
 	}
-    option = {
+	option = {
              name = usa_intro.1.c
              trigger = { is_ai = no }
              country_event = usa_intro.4 # Mormons
-    }
-    option = {
-             name = usa_intro.1.e
-             # Nah
-    }
+	}
+	option = {
+		name = usa_intro.1.e
+             
+		add_political_power = -5
+		hidden_effect = {
+			360 = { OWNER = { country_event = { id = usa_flavor.2 days = 300 random_days = 100 } } }
+		}
+	}
 }
 # 1857 — Seminole War
 country_event = {
@@ -57,9 +54,10 @@ country_event = {
 	desc = usa_intro.2.d
 	picture = GFX_report_event_usa_election_generic
 	
+	is_triggered_only = yes
+
 	option = {
             name = usa_intro.2.a
-            trigger = { is_ai = no }
             country_event = usa_intro.1
     }
 }
@@ -70,9 +68,10 @@ country_event = {
 	desc = usa_intro.3.d
 	picture = GFX_report_event_usa_election_generic
 	
+	is_triggered_only = yes
+
 	option = {
             name = usa_intro.3.a
-            trigger = { is_ai = no }
             country_event = usa_intro.1
     }
 }
@@ -83,6 +82,8 @@ country_event = {
 	desc = usa_intro.4.d
 	picture = GFX_report_event_usa_election_generic
 	
+	is_triggered_only = yes
+
 	option = {
             name = usa_intro.4.a
             trigger = { is_ai = no }
