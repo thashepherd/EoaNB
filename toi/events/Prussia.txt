@@ -943,6 +943,76 @@ country_event = {
 	}
 }
 
+#Wilhelm Stieber Event 1/3 - Spying on Subversives
+country_event = {
+	id = prussia.33
+	title = prussia.33.t
+	desc = prussia.33.d
+	picture = GFX_event_stieber_marx
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = prussia.33.a 
+		ai_chance = { base = 100 }
+		add_popularity = {
+			ideology = social_egalitarianism
+			popularity = -0.01
+		}
+		add_popularity = {
+			ideology = vanguard_communism
+			popularity = -0.01
+		}
+		add_popularity = {
+			ideology = collectivist_socialism
+			popularity = -0.01
+		}
+		hidden_effect = {
+			PRS = { country_event = { days = 30 id = prussia.34 } }
+		}
+	}
+}
+
+#Wilhelm Stieber Event 2/3 - Scientific Rectification
+country_event = {
+	id = prussia.34
+	title = prussia.34.t
+	desc = prussia.34.d
+	picture = GFX_event_stieber_academy
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = prussia.34.a 
+		ai_chance = { base = 100 }
+		add_political_power = 5
+		hidden_effect = {
+			PRS = { country_event = { days = 30 id = prussia.35 } }
+		}
+	}
+}
+
+#Wilhelm Stieber Event 3/3 - Gang Crasher
+country_event = {
+	id = prussia.35
+	title = prussia.35.t
+	desc = prussia.35.d
+	picture = GFX_event_stieber_counterfeit
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = prussia.35.a 
+		ai_chance = { base = 100 }
+		add_political_power = 10
+	}
+}
+
+#PLACEHOLDER - prussia.36
+
 #Lessons from the Austro-Sardinian War
 country_event = {
 	id = prussia.37
@@ -4462,7 +4532,10 @@ country_event = {
 		else_if = {
 			limit = {
 				PRS = { 
-					has_active_mission = PRS_mission_roons_reform_bill
+					AND = {
+						has_manpower > 1599
+						has_active_mission = PRS_mission_roons_reform_bill
+					}
 				}
 			}
 			custom_effect_tooltip = PRS_prussiareformtroops_first_roon_effect_tt
@@ -4478,15 +4551,23 @@ country_event = {
 					disband = yes
 				}
 				load_oob = PRS_roon_reform_1
-				add_manpower = -15000
+				add_manpower = -16600
 				PRS = { country_event = { days = 180 id = prussiareformtroops.2 } } 
 			}
 		}
 		else_if = {
 			limit = {
 				PRS = { 
-					has_active_mission = PRS_mission_parliamentary_reform_bill
-					has_manpower < 11000
+					OR = {
+						AND = {	
+							has_active_mission = PRS_mission_parliamentary_reform_bill
+							has_manpower < 11000
+						}
+						AND = {
+							has_active_mission = PRS_mission_roons_reform_bill
+							has_manpower < 1600
+						}
+					}
 				}
 			}
 			custom_effect_tooltip = PRS_prussiareformtroops_postponed_effect_tt
@@ -4543,7 +4624,7 @@ country_event = {
 		else_if = {
 			limit = {
 				PRS = { 
-					has_manpower > 14999
+					has_manpower > 14599
 					has_active_mission = PRS_mission_roons_reform_bill
 				}
 			}
@@ -4556,7 +4637,7 @@ country_event = {
 			}
 			hidden_effect = { 
 				load_oob = PRS_roon_reform_2
-				add_manpower = -15000
+				add_manpower = -14600
 				PRS = { country_event = { days = 180 id = prussiareformtroops.3 } } 
 			}
 		}
@@ -4570,7 +4651,7 @@ country_event = {
 						}
 						AND = {
 							has_active_mission = PRS_mission_roons_reform_bill
-							has_manpower < 15000
+							has_manpower < 14600
 						}
 					}
 				}
@@ -4619,7 +4700,7 @@ country_event = {
 		else_if = {
 			limit = {
 				PRS = { 
-					has_manpower > 14999
+					has_manpower > 14599
 					has_active_mission = PRS_mission_roons_reform_bill
 				}
 			}
@@ -4632,7 +4713,7 @@ country_event = {
 			}
 			hidden_effect = { 
 				load_oob = PRS_roon_reform_3
-				add_manpower = -15000
+				add_manpower = -14600
 				PRS = { country_event = { days = 180 id = prussiareformtroops.4 } } 
 			}
 		}
@@ -4646,7 +4727,7 @@ country_event = {
 						}
 						AND = {
 							has_active_mission = PRS_mission_roons_reform_bill
-							has_manpower < 15000
+							has_manpower < 14600
 						}
 					}
 				}
@@ -4695,7 +4776,7 @@ country_event = {
 		else_if = {
 			limit = {
 				PRS = { 
-					has_manpower > 14999
+					has_manpower > 14599
 					has_active_mission = PRS_mission_roons_reform_bill
 				}
 			}
@@ -4708,7 +4789,7 @@ country_event = {
 			}
 			hidden_effect = { 
 				load_oob = PRS_roon_reform_4
-				add_manpower = -15000
+				add_manpower = -14600
 				PRS = { country_event = { days = 180 id = prussiareformtroops.5 } } 
 			}
 		}
@@ -4722,7 +4803,7 @@ country_event = {
 						}
 						AND = {
 							has_active_mission = PRS_mission_roons_reform_bill
-							has_manpower < 15000
+							has_manpower < 14600
 						}
 					}
 				}
@@ -4771,7 +4852,7 @@ country_event = {
 		else_if = {
 			limit = {
 				PRS = { 
-					has_manpower > 14999
+					has_manpower > 14599
 					has_active_mission = PRS_mission_roons_reform_bill
 				}
 			}
@@ -4784,7 +4865,7 @@ country_event = {
 			}
 			hidden_effect = { 
 				load_oob = PRS_roon_reform_5
-				add_manpower = -15000
+				add_manpower = -14600
 				set_country_flag = PRS_army_expansion_finished
 			}
 		}
@@ -4798,7 +4879,7 @@ country_event = {
 						}
 						AND = {
 							has_active_mission = PRS_mission_roons_reform_bill
-							has_manpower < 15000
+							has_manpower < 14600
 						}
 					}
 				}

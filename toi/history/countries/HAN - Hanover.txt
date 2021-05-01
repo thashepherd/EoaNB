@@ -37,7 +37,7 @@
 		cl_legal
 		fourteen_hour_work_day
 		lp_land_purchase
-		two_percent
+		civilian_economy
 		
 		#DEMOGRAPHICS
 		stagnation_growth
@@ -52,7 +52,7 @@
 		law_police_force
 		inframain_no_subsidies_infrastructure
 		navinfra_no_naval_infrastructure
-		civilian_economy
+		two_percent
 		sfund_private_ventures_only
 
         #NATIONAL SPIRITS
@@ -70,11 +70,11 @@
 		vanguard_communism = 0
 		collectivist_socialism = 0
 		social_egalitarianism = 0
-		centrism = 50
-		traditional_conservatism = 50
+		centrism = 35
+		traditional_conservatism = 35
 		radical_democracy = 0
 		chauvinist_populism = 0
-		autocracy = 0
+		autocracy = 30
 		fundamentalism = 0
 	}
 

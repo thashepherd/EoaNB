@@ -260,6 +260,15 @@ dynmod_PRS_SSW_holstein_supply = {
 	local_supplies = -0.5
 }
 
+dynmod_PRS_urbanization = {
+	enable = { always = yes }
+
+	icon = "GFX_idea_water_infrastructure_reliance"
+	
+	state_production_speed_infrastructure_factor = 0.15
+	state_production_speed_industrial_complex_factor = 0.05
+}
+
 	
 legitimacy_dynamic_modifier = {
 
@@ -286,10 +295,12 @@ dynmod_ITA_resistance_southern_menace = {
 dynmod_ITA_regional_economic_benefits = {
 	enable = { always = yes }
 
-	icon = "generic_foreign_capital"
+	icon = "GFX_idea_ITA_Regional_Economic_Idea"
 
 	state_production_speed_buildings_factor = 0.25
-	PIE_Southern_Unrest_Modifier = -1
+	resistance_decay = 0.3
+	compliance_gain = 0.01
+	
 }
 
 ## 1-3% of state population infected
