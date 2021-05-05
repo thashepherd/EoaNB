@@ -58,6 +58,7 @@
 
   SRS = {
 	create_faction = SRS_reb
+	set_country_flag = ENG_sepoy_rebellious_state_diplomacy_flag
   }
 
 set_popularities = {
