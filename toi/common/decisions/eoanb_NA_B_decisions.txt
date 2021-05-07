@@ -859,7 +859,7 @@ NA_B_economic_panic_category = {
 			hidden_effect = { clr_country_flag = na_b_economic_panic_industry_bankruptcy_protections_flag }
 		}
 		ai_will_do = {
-			factor = 10
+			factor = 50
 		}
 	}
 	
