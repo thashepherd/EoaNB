@@ -965,7 +965,7 @@ ideas = {
 
 			removal_cost = -1
 
-			picture = money_bad
+			picture = generic_production_bonus
 
 			modifier = {
 				industrial_capacity_dockyard  = 0.25
@@ -1100,7 +1100,7 @@ ideas = {
 
 			removal_cost = -1
 
-			picture = FRA_matignon_agreements
+			picture = generic_navy_bonus
 
 			modifier = {
 			    navy_capital_ship_attack_factor = 0.05
@@ -1120,7 +1120,7 @@ ideas = {
 
 			removal_cost = -1
 
-			picture = FRA_matignon_agreements
+			picture = generic_navy_bonus
 
 			modifier = {
                 experience_gain_navy = 0.05
@@ -1140,7 +1140,7 @@ ideas = {
 
 			removal_cost = -1
 
-			picture = FRA_matignon_agreements
+			picture = generic_navy_bonus
 
 			modifier = {
 				naval_speed_factor = 0.05
@@ -1160,7 +1160,7 @@ ideas = {
 
 			removal_cost = -1
 
-			picture = FRA_matignon_agreements
+			picture = generic_navy_bonus
 
 			modifier = {
                    experience_gain_navy = 0.05
@@ -1278,7 +1278,43 @@ ideas = {
 				production_speed_farm_factor = 0.05
 			}
 		}
+		
+		ENG_equatorial_guinea_purchase = {
 
+			allowed = {
+				tag = ENG
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				consumer_goods_factor = 0.1
+			}
+		}
+		
+		ENG_idea_britannia_rules_the_waves = {
+			allowed = {
+				always = yes
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			picture = ENG_sun_never_sets
+
+			modifier = {
+				experience_gain_navy = 0.05
+				production_speed_dockyard_factor = 0.05
+				industrial_capacity_dockyard = 0.05
+			}
+		}
 	}
 	political_advisor = {
 		ENG_political_advisor_crawshay_bailey = {
@@ -1546,20 +1582,6 @@ ideas = {
 			}
 
 			traits = { friend_of_capitalism traditional_conservatism_alignment }
-		}
-		
-		ENG_equatorial_guinea_purchase = {
-
-			allowed = {
-				tag = ENG
-			}
-
-			available = {
-			}
-
-			modifier = {
-				consumer_goods_factor = 0.1
-			}
 		}
 		
 	}
