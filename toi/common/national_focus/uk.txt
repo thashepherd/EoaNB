@@ -3734,7 +3734,7 @@ focus_tree = {
 	
 	focus = {
 		id = ENG_focus_royal_commission_working_conditions
-		icon = GFX_goal_focus_britannia_rules_waves
+		icon = GFX_Focus_Worker_Appeal
 		x = 67
 		y = 7
 		cost = 60
@@ -4038,7 +4038,7 @@ focus_tree = {
 	
 	focus = {
 		id = ENG_focus_assist_the_poor
-		icon = GFX_goal_focus_broken_democracy
+		icon = GFX_Focus_Worker_Pact
 		x = 67
 		y = 13
 		cost = 60
@@ -4164,7 +4164,7 @@ focus_tree = {
 	
 	focus = {
 		id = ENG_focus_provide_false_promises
-		icon = GFX_goal_generic_military_deal
+		icon = GFX_Focus_Worker_Manipulation
 		x = 73
 		y = 7
 		cost = 60
@@ -4190,7 +4190,7 @@ focus_tree = {
 	
 	focus = {
 		id = ENG_focus_justify_child_workers
-		icon = GFX_goal_focus_government_glass
+		icon = GFX_Focus_State_of_the_People
 		x = 71
 		y = 8
 		cost = 60
@@ -4441,7 +4441,7 @@ focus_tree = {
 	
 	focus = {
 		id = ENG_focus_crackdown_on_strikes
-		icon = GFX_goal_demand_sudetenland
+		icon = GFX_Focus_Worker_Strike_2
 		x = 75
 		y = 9
 		cost = 60
@@ -4494,7 +4494,7 @@ focus_tree = {
 	
 	focus = {
 		id = ENG_focus_pro_employer_legislation
-		icon = GFX_focus_generic_self_management
+		icon = GFX_Focus_Refugee_Forced_Labor
 		x = 73
 		y = 11
 		cost = 60
@@ -4523,7 +4523,7 @@ focus_tree = {
 	
 	focus = {
 		id = ENG_focus_end_worker_rights
-		icon = GFX_goal_generic_political_pressure
+		icon = GFX_Focus_Working_Hours
 		x = 73
 		y = 12
 		cost = 60
@@ -4689,7 +4689,7 @@ focus_tree = {
 	
 	focus = {
 		id = ENG_focus_begin_naval_drills
-		icon = GFX_goal_molotov_ribbentrop_pact
+		icon = GFX_goal_generic_navy_battleship
 		x = 83
 		y = 4
 		cost = 50
@@ -4706,7 +4706,7 @@ focus_tree = {
 
 	focus = {
 		id = ENG_focus_naval_arms_race
-		icon = GFX_goal_molotov_ribbentrop_pact
+		icon = GFX_goal_generic_construct_naval_dockyard
 		x = 83
 		y = 5
 		cost = 50
@@ -4742,7 +4742,7 @@ focus_tree = {
 	
     focus = {
 		id = ENG_focus_lesson_acw
-		icon = GFX_goal_molotov_ribbentrop_pact
+		icon = GFX_goal_focus_american_civil_war
 		x = 83
 		y = 6
 		cost = 50
@@ -4982,7 +4982,7 @@ focus_tree = {
 
 	focus = {
 		id = ENG_focus_coles_turrets
-		icon = GFX_goal_focus_mass_produce_ships
+		icon = GFX_Focus_Turret_Early
 		x = 78
 		y = 9
 		cost = 50
@@ -5001,7 +5001,7 @@ focus_tree = {
 
 	focus = {
 		id = ENG_focus_ericsson_turrets
-		#icon = GFX_goal_generic_air_naval_bomber
+		icon = GFX_goal_generic_air_naval_bomber
 		x = 82
 		y = 9
 		cost = 50
@@ -5077,7 +5077,7 @@ focus_tree = {
 
 	focus = {
 		id = ENG_focus_player_choice_2
-		#icon = GFX_goal_focus_mass_produce_ships
+		icon = GFX_goal_focus_mass_produce_ships
 		x = 82
 		y = 10
 		cost = 50
@@ -5134,7 +5134,7 @@ focus_tree = {
 	
 	focus = {
 		id = ENG_focus_maintain_naval_race
-		icon = GFX_focus_gunboat_basic
+		icon = GFX_focus_generic_navy_battleship2
 		x = 83
 		y = 11
 		cost = 50
@@ -5157,7 +5157,7 @@ focus_tree = {
 	
 	focus = {
 		id = ENG_focus_britannia_rules_the_waves
-		icon = GFX_focus_gunboat_basic
+		icon = GFX_goal_focus_britannia_rules_waves
 		x = 83
 		y = 12
 		cost = 50
