@@ -1793,7 +1793,30 @@ country_event = {
 
 #TSH denies the port (on hold)
 
-#Parliamentary Debates: Child Labour
+#The royal consort's stance on workers rights
+country_event = {
+	id = britainfocus.20
+	title = britainfocus.20.t
+	desc = britainfocus.20.d
+	picture = GFX_report_event_prince_albert_1848
+
+	is_triggered_only = yes
+
+option = {
+		name = britainfocus.20.a
+		ai_chance = { factor = 60 }
+		add_political_power = -50
+		add_stability = 0.15
+	}
+	
+option = {
+		name = britainfocus.20.b
+		ai_chance = { factor = 60 }
+		add_political_power = 50
+		add_stability = -0.15
+	}
+
+#Parliamentary Debates: Child Labour (Now unused)
 country_event = {
 	id = britainfocus.6
 	title = britainfocus.6.t
