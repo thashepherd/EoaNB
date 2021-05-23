@@ -97,7 +97,14 @@
  wallachia_focustree.6.t:0 "The Vlach Situation"
  wallachia_focustree.6.d:0 "Ever since the 1848 Revolution, led by Nicolae Balcescu and Dimitrie Makedonski,Romanian nationslism has only kept rising and the Vlach people are more than readyto finally unite with their Moldavian brethren.¸"
  wallachia_focustree.6.a:0 "Onwards!"
-
+ wallachia_focustree.7.t:0 "Unionist Woes"
+ wallachia_focustree.7.d:0 "As expected, ever since 1848, the Romanian people's desire for unfication with their brothers in north and westgrew more and more. It is our duty to decide how we will solve this situation. Some of the advisors say we shouldcrack down on unionists, starting with the crackdown on the secret society named "The Brotherhood" while others saythat we should just turn a blind eye to them."
+ wallachia_focustree.7.a:0 "We need to weaken the Unionists"
+ wallachia_focustree.7.b:0 "There is nothing to worry about!"¸
+ wallachia_focustree.8.t:0 "Preparations for Elections"
+ wallachia_focustree.8.d:0 "Preparations for the election of the electors which will elect the new Domnitor have begun. As expected, unionist partiesare gonna win and get a majority in the Divan under Constantin A. Crețulescu and his National Party. Still, we canstill gain the needed number of electors to possibly force the National Party on the candidate which will be soonelected."
+ wallachia_focustree.8.a:0 "Let the majority win"
+ 
 
  ROM_industralziation:0 "Picked Starting Industralizing" 
  ROM_agriculture:0 "Picked Reviwing Agriculture"
