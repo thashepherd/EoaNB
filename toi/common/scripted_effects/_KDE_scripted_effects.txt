@@ -97,6 +97,7 @@ KDE_bi_yearly_event_fire_1858 = {
 	}
 	USA = {
 		country_event = { id = usa_flavor.5 days = 8 } ###1858.01.9
+		country_event = { id = usaPolitics.2 days = 311 } ###1858.11.8
 	}
 }
 
