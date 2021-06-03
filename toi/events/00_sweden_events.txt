@@ -1677,7 +1677,7 @@ country_event = { # Pressure Jørgen Herman Vogt to resign
 		}
 
 		NOR = {
-			country_event = { id = eoanb_norway.7 days = 14 random_days = 5 }
+			country_event = { id = eoanb_norway.7 days = 7 }
 		}
 	}
 }

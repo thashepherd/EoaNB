@@ -245,6 +245,10 @@ focus_tree = {
 		available = {
 			custom_trigger_tooltip = {
 				tooltip = "Completed by event"
+				OR = {
+					has_country_flag = NOR_flag_vogt_stay
+					has_country_flag = NOR_flag_vogt_resign
+				}
 			}
 			hidden_trigger = {
 				always = no
@@ -269,13 +273,7 @@ focus_tree = {
 			factor = 160
 		}
 		available = {
-			custom_trigger_tooltip = {
-				tooltip = "Rejected the call to abdicate"
-				has_country_flag = NOR_flag_vogt_stay
-			}
-			hidden_trigger = {
-				has_country_flag = NOR_flag_vogt_stay
-			}
+			has_country_flag = NOR_flag_vogt_stay
 		}
 		completion_reward = {
 			add_political_power = 30
@@ -405,13 +403,7 @@ focus_tree = {
 			}
 		}
 		available = {
-			custom_trigger_tooltip = {
-				tooltip = "Vogt has resigned"
-				has_country_flag = NOR_flag_vogt_resign
-			}
-			hidden_trigger = {
-				has_country_flag = NOR_flag_vogt_resign
-			}
+			has_country_flag = NOR_flag_vogt_resign
 		}
 		completion_reward = {
 			add_political_power = 20
