@@ -1183,7 +1183,7 @@ swedish_decision_category_industry = {
     }
 }
 
-swedish_decision_category_economy = {
+economic_decisions = {
 	SWE_decision_swedish_stockholms_enskilda_bank = {
 
 		icon = money

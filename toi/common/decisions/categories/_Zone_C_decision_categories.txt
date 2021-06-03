@@ -921,18 +921,6 @@ swedish_decision_category_industry = {
 	allowed = { tag = SWE }
 }
 
-swedish_decision_category_economy = {
-	icon = generic_industry
-	
-	allowed = {
-        tag = SWE
-    }
-	
-	visible = {
-		has_completed_focus = SWE_economy
-	}
-}
-
 #### Great Game Decision Categories ####
 
 great_game_category = {
