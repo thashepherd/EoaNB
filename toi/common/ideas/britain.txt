@@ -1307,7 +1307,7 @@ ideas = {
 
 			removal_cost = -1
 
-			picture = ENG_sun_never_sets
+			picture = generic_constitutional_guarantees
 
 			modifier = {
 				experience_gain_navy = 0.05
