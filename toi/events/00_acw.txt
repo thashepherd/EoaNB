@@ -9705,6 +9705,16 @@ country_event = { # Boston Harbor Incident (ACW Starts!)
 		add_political_power = 35
 		hidden_effect = { news_event = { id = acw_generic.2 days = 5 } }
 	}
+    #     set_global_flag = ACW_American_Civil_War
+    #     news_event = { id = acw_beckenridge_news.1 }
+    #     country_event = { hours = 1 id = acw_beckenridge.8 } #end union mobilization
+    #     country_event = { days = 4 id = acw.5 } #end south generals leave
+    #     country_event = { days = 7 id = acw.6 } #end acw starts
+		# country_event = { id = usa_event_check.6 days = 1 }
+    #   }
+    #   CSA = {
+    #     add_stability = 0.3
+    #     add_war_support = 0.3
 
 	option = {
 		name = acw_breckinridge.19.b

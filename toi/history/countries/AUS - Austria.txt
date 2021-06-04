@@ -16,6 +16,12 @@
 	set_research_slots = 4
 
 	add_to_variable = { prestige_score = 15 }
+	
+	create_import = {
+		resource = cotton
+		amount = 8
+		exporter = OTO
+	}
 
 	add_ideas = { 
 		#POLITICS
@@ -69,6 +75,7 @@
 		GER_general_idea_ger_confed
 		BAD_currency_reform
 		AUS_hungarian_revolution
+		AUS_idea_army_spending_cuts
 		AUS_HUN_Separatism
 		AUS_SLA_Separatism
 	}
@@ -200,6 +207,11 @@
 		var = SLA_REVOLT_RISK
 		value = 2  
 	}
+	
+	#How to set up initial debt_level
+	#AUS = {
+	#	add_to_variable = {var = debt_level value = 1} #Austria's National Debt amounted to 1970.7m Gulden (excl. Lombardy-Venetia; = 192.26m Pound Sterling) at the end of 1857; income per year 274.5m Gulden (= 26.78m Pound Sterling) = 7.18 GDP of debt
+	#}
 	
 	create_intelligence_agency = {
 		name = "Evidenzbureau"
