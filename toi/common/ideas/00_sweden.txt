@@ -2220,6 +2220,24 @@ ideas = {
 			}
 		}
 		
+		SWE_Andre_Oscar_Wallenberg = {
+
+			
+			allowed = {
+				original_tag = SWE
+			}
+
+			available = {
+				has_country_flag = SWE_invite_andre_oscar_wallenberg_gov_flag
+			}
+			
+			traits = { clever_buisnessman centrist }
+
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		
 		SWE_Johan_August_Gripenstedt = {
 
 			

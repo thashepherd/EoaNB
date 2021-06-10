@@ -397,7 +397,9 @@
  SWE_liberal_opposition:0 "Liberal Opposition"
  SWE_artillery_for_every_unit_tt:0 "The reward from this focus will be displayed once the decision between Flexibility and Firepower has been made\n"
  SWE_financial_investment_ongoing_effect_tt:0 "§GWe will start the process of financial investment.§!\n\n§RWhile it lasts, we cannot invest in other ventures.§!\n"
- SWE_financial_investment_ongoing_flag:0 " §GFinancial Investment in Progress§!"
+ SWE_financial_investment_ongoing_flag:0 "§GFinancial Investment in Progress§!"
+ SWE_invite_andre_oscar_wallenberg_gov_tt:0 "§GAndré Oscar Wallenberg will be unlocked as an advisor.§!"
+ SWE_invite_andre_oscar_wallenberg_gov_flag:0 "André Oscar Wallenberg as been invited to the government"
  
 ###Events###
  eoanb_sweden.0.t:0 "The Kingdom of Sweden-Norway"
@@ -652,3 +654,5 @@
  swedish_decision_category_economy_desc:0 ""
  SWE_decision_swedish_stockholms_enskilda_bank:0 "Found the Stockholms Enskilda Bank"
  SWE_decision_swedish_stockholms_enskilda_bank_desc:0 ""
+ SWE_invite_andre_oscar_wallenberg_gov:0 "Invite Andre Oscar Wallenberg to the government"
+ SWE_invite_andre_oscar_wallenberg_gov_desc:0 ""
