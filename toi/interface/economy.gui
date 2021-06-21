@@ -2706,7 +2706,7 @@ guiTypes = {
 					spriteType = "GFX_buildings_strip"
 					position = { x = 116 y = 6 }
 					frame = 3
-					scale = 0.6
+					scale = 0.9
 					pdx_tooltip = trade_infra_tt
 				}
 				instantTextBoxType = {
@@ -3872,7 +3872,7 @@ guiTypes = {
 			containerWindowType = { #Revenue
 				name = "govt_revenue_container"
 				position = {x = 0 y = 38 }
-				size = { width = 663 height = 280 }
+				size = { width = 350 height = 580 } #size = { width = 620 height = 280 }
 				Orientation = upper_left
 			
 				background = {
@@ -4084,11 +4084,22 @@ guiTypes = {
 						}
 					}
 					instantTextBoxType = {
-						name = "govt_income_taxes_amount_loc"
+						name = "govt_income_taxes_total_loc"
 						position = { x = 27 y = 177 }
 						font = "hoi_18mbs"
 						format = left
-						maxWidth = 300
+						maxWidth = 158
+						text = "govt_income_taxes_total_loc"
+						maxHeight = 24
+						fixedsize = yes
+						#alwaystransparent = yes
+					}
+					instantTextBoxType = {
+						name = "govt_income_taxes_amount_loc"
+						position = { x = 243 y = 177 }
+						font = "hoi_18mbs"
+						format = left
+						maxWidth = 100
 						text = "govt_income_taxes_amount_loc"
 						maxHeight = 24
 						fixedsize = yes
@@ -4097,7 +4108,7 @@ guiTypes = {
 				}
 				containerWindowType = { #Sales Tax
 					name = "govt_sales_tax_container"
-					position = {x = 360 y = 8 }
+					position = {x = 57 y = 244 }
 					size = { width = 300 height = 50 }
 					Orientation = upper_left
 					instantTextBoxType = {
@@ -4155,7 +4166,7 @@ guiTypes = {
 				}
 				containerWindowType = { #Corporate
 					name = "govt_corporate_tax_container"
-					position = {x = 360 y = 58 }
+					position = {x = 57 y = 300 }
 					size = { width = 300 height = 50 }
 					Orientation = upper_left
 					instantTextBoxType = {
@@ -4213,7 +4224,7 @@ guiTypes = {
 				}
 				containerWindowType = { #Tariffs
 					name = "govt_tariffs_container"
-					position = {x = 350 y = 112 }
+					position = {x = 47 y = 362 }
 					size = { width = 300 height = 50 }
 					Orientation = upper_left
 					instantTextBoxType = {
@@ -4343,23 +4354,45 @@ guiTypes = {
 							#alwaystransparent = yes
 						}
 					}
+					instantTextBoxType = {
+						name = "govt_tariffs_total_loc"
+						position = { x = -20 y = 122 }
+						font = "hoi_18mbs"
+						format = left
+						maxWidth = 158
+						text = "govt_tariffs_total_loc"
+						maxHeight = 24
+						fixedsize = yes
+						#alwaystransparent = yes
+					}
+					instantTextBoxType = {
+						name = "govt_tariffs_amount_loc"
+						position = { x = 196 y = 122 }
+						font = "hoi_18mbs"
+						format = left
+						maxWidth = 100
+						text = "govt_tariffs_amount_loc"
+						maxHeight = 24
+						fixedsize = yes
+						#alwaystransparent = yes
+					}
 				}
 				instantTextBoxType = {
 					name = "govt_revenue_amount_loc"
-					position = { x = 350 y = 240 }
+					position = { x = 20 y = 530 }
 					font = "hoi_24header"
 					format = right
-					maxWidth = 250
+					maxWidth = 300
 					text = "govt_revenue_amount_loc"
 					maxHeight = 24
 					fixedsize = yes
 					#alwaystransparent = yes
 				}
 			}
-			containerWindowType = { #Expenses
-				name = "govt_expenses_container"
-				position = {x = 0 y = 316 }
-				size = { width = 623 height = 300 }
+			containerWindowType = { #Discretionary Spending
+				name = "govt_discretionary_spending_container"
+				position = {x = 349 y = 38 }
+				size = { width = 350 height = 580 }
 				Orientation = upper_left
 			
 				background = {
@@ -4368,12 +4401,526 @@ guiTypes = {
 				}
 				
 				instantTextBoxType = {
-					name = "govt_expenses_title"
+					name = "govt_discretionary_spending_title"
 					position = { x = 7 y = 7 }
 					font = "hoi_24header"
 					format = center
-					maxWidth = 140
-					text = "govt_expenses_title"
+					maxWidth = 270
+					text = "govt_discretionary_spending_title"
+					maxHeight = 24
+					fixedsize = yes
+					#alwaystransparent = yes
+				}
+				containerWindowType = { #Military Spending
+					name = "govt_military_spending_container"
+					position = {x = 57 y = 32 }
+					size = { width = 300 height = 50 }
+					Orientation = upper_left
+					instantTextBoxType = {
+						name = "govt_military_spending_title"
+						position = { x = -30 y = 4 }
+						font = "hoi_18mbs"
+						format = left
+						maxWidth = 300
+						text = "govt_military_spending_title"
+						maxHeight = 24
+						fixedsize = yes
+						#alwaystransparent = yes
+					}
+					
+					buttonType = {
+						name = "govt_decrease_military_spending_button"
+						position = { x = -27 y = 24 }
+						quadTextureSprite ="GFX_zoom_out"
+						clicksound = click_close
+					}
+					iconType ={
+						name ="govt_military_spending_icon"
+						spriteType = "GFX_internal_politics_party_colors"
+						position = { x = 0 y = 30 }
+						frame = 5
+					}
+					buttonType = {
+						name = "govt_increase_military_spending_button"
+						position = { x = 116 y = 24 }
+						quadTextureSprite ="GFX_zoom_in"
+						clicksound = click_close
+					}
+					instantTextBoxType = {
+						name = "govt_military_spending_percentage_loc"
+						position = { x = 146 y = 27 }
+						font = "hoi_18mbs"
+						format = left
+						maxWidth = 60
+						text = "govt_military_spending_percentage_loc"
+						maxHeight = 24
+						fixedsize = yes
+						#alwaystransparent = yes
+					}
+					instantTextBoxType = {
+						name = "govt_military_spending_amount_loc"
+						position = { x = 186 y = 27 }
+						font = "hoi_18mbs"
+						format = left
+						maxWidth = 100
+						text = "govt_military_spending_amount_loc"
+						maxHeight = 24
+						fixedsize = yes
+						#alwaystransparent = yes
+					}
+				}
+				containerWindowType = { #Intelligence Spending
+					name = "govt_intelligence_spending_container"
+					position = {x = 57 y = 82 }
+					size = { width = 300 height = 50 }
+					Orientation = upper_left
+					instantTextBoxType = {
+						name = "govt_intelligence_spending_title"
+						position = { x = -30 y = 4 }
+						font = "hoi_18mbs"
+						format = left
+						maxWidth = 300
+						text = "govt_intelligence_spending_title"
+						maxHeight = 24
+						fixedsize = yes
+						#alwaystransparent = yes
+					}
+					
+					buttonType = {
+						name = "govt_decrease_intelligence_spending_button"
+						position = { x = -27 y = 24 }
+						quadTextureSprite ="GFX_zoom_out"
+						clicksound = click_close
+					}
+					iconType ={
+						name ="govt_intelligence_spending_icon"
+						spriteType = "GFX_internal_politics_party_colors"
+						position = { x = 0 y = 30 }
+						frame = 5
+					}
+					buttonType = {
+						name = "govt_increase_intelligence_spending_button"
+						position = { x = 116 y = 24 }
+						quadTextureSprite ="GFX_zoom_in"
+						clicksound = click_close
+					}
+					instantTextBoxType = {
+						name = "govt_intelligence_spending_percentage_loc"
+						position = { x = 146 y = 27 }
+						font = "hoi_18mbs"
+						format = left
+						maxWidth = 60
+						text = "govt_intelligence_spending_percentage_loc"
+						maxHeight = 24
+						fixedsize = yes
+						#alwaystransparent = yes
+					}
+					instantTextBoxType = {
+						name = "govt_intelligence_spending_amount_loc"
+						position = { x = 186 y = 27 }
+						font = "hoi_18mbs"
+						format = left
+						maxWidth = 100
+						text = "govt_intelligence_spending_amount_loc"
+						maxHeight = 24
+						fixedsize = yes
+						#alwaystransparent = yes
+					}
+				}
+				containerWindowType = { #Construction Spending
+					name = "govt_construction_spending_container"
+					position = {x = 57 y = 132 }
+					size = { width = 300 height = 50 }
+					Orientation = upper_left
+					instantTextBoxType = {
+						name = "govt_construction_spending_title"
+						position = { x = -30 y = 4 }
+						font = "hoi_18mbs"
+						format = left
+						maxWidth = 300
+						text = "govt_construction_spending_title"
+						maxHeight = 24
+						fixedsize = yes
+						#alwaystransparent = yes
+					}
+					
+					buttonType = {
+						name = "govt_decrease_construction_spending_button"
+						position = { x = -27 y = 24 }
+						quadTextureSprite ="GFX_zoom_out"
+						clicksound = click_close
+					}
+					iconType ={
+						name ="govt_construction_spending_icon"
+						spriteType = "GFX_internal_politics_party_colors"
+						position = { x = 0 y = 30 }
+						frame = 5
+					}
+					buttonType = {
+						name = "govt_increase_construction_spending_button"
+						position = { x = 116 y = 24 }
+						quadTextureSprite ="GFX_zoom_in"
+						clicksound = click_close
+					}
+					instantTextBoxType = {
+						name = "govt_construction_spending_percentage_loc"
+						position = { x = 146 y = 27 }
+						font = "hoi_18mbs"
+						format = left
+						maxWidth = 60
+						text = "govt_construction_spending_percentage_loc"
+						maxHeight = 24
+						fixedsize = yes
+						#alwaystransparent = yes
+					}
+					instantTextBoxType = {
+						name = "govt_construction_spending_amount_loc"
+						position = { x = 186 y = 27 }
+						font = "hoi_18mbs"
+						format = left
+						maxWidth = 100
+						text = "govt_construction_spending_amount_loc"
+						maxHeight = 24
+						fixedsize = yes
+						#alwaystransparent = yes
+					}
+				}
+				containerWindowType = { #Subsidies
+					name = "govt_subsidies_container"
+					position = {x = 47 y = 210 }
+					size = { width = 300 height = 50 }
+					Orientation = upper_left
+					instantTextBoxType = {
+						name = "govt_subsidies_title"
+						position = { x = -30 y = 4 }
+						font = "hoi_18mbs"
+						format = left
+						maxWidth = 300
+						text = "govt_subsidies_title"
+						maxHeight = 24
+						fixedsize = yes
+						#alwaystransparent = yes
+					}
+					containerWindowType = { #Import Subsidy
+						name = "govt_import_subsidy_container"
+						position = {x = 10 y = 20 }
+						size = { width = 300 height = 50 }
+						Orientation = upper_left
+						instantTextBoxType = {
+							name = "govt_import_subsidy_title"
+							position = { x = -30 y = 4 }
+							font = "hoi_18mbs"
+							format = left
+							maxWidth = 300
+							text = "govt_import_subsidy_title"
+							maxHeight = 24
+							fixedsize = yes
+							#alwaystransparent = yes
+						}
+						
+						buttonType = {
+							name = "govt_decrease_import_subsidy_button"
+							position = { x = -27 y = 24 }
+							quadTextureSprite ="GFX_zoom_out"
+							clicksound = click_close
+						}
+						iconType ={
+							name ="govt_import_subsidy_icon"
+							spriteType = "GFX_internal_politics_party_colors"
+							position = { x = 0 y = 30 }
+							frame = 5
+						}
+						buttonType = {
+							name = "govt_increase_import_subsidy_button"
+							position = { x = 116 y = 24 }
+							quadTextureSprite ="GFX_zoom_in"
+							clicksound = click_close
+						}
+						instantTextBoxType = {
+							name = "govt_import_subsidy_percentage_loc"
+							position = { x = 146 y = 27 }
+							font = "hoi_18mbs"
+							format = left
+							maxWidth = 60
+							text = "govt_import_subsidy_percentage_loc"
+							maxHeight = 24
+							fixedsize = yes
+							#alwaystransparent = yes
+						}
+						instantTextBoxType = {
+							name = "govt_import_subsidy_amount_loc"
+							position = { x = 186 y = 27 }
+							font = "hoi_18mbs"
+							format = left
+							maxWidth = 100
+							text = "govt_import_subsidy_amount_loc"
+							maxHeight = 24
+							fixedsize = yes
+							#alwaystransparent = yes
+						}
+					}
+					containerWindowType = { #Export Subsidy
+						name = "govt_export_subsidy_container"
+						position = {x = 10 y = 70 }
+						size = { width = 300 height = 50 }
+						Orientation = upper_left
+						instantTextBoxType = {
+							name = "govt_export_subsidy_title"
+							position = { x = -30 y = 4 }
+							font = "hoi_18mbs"
+							format = left
+							maxWidth = 300
+							text = "govt_export_subsidy_title"
+							maxHeight = 24
+							fixedsize = yes
+							#alwaystransparent = yes
+						}
+						
+						buttonType = {
+							name = "govt_decrease_export_subsidy_button"
+							position = { x = -27 y = 24 }
+							quadTextureSprite ="GFX_zoom_out"
+							clicksound = click_close
+						}
+						iconType ={
+							name ="govt_export_subsidy_icon"
+							spriteType = "GFX_internal_politics_party_colors"
+							position = { x = 0 y = 30 }
+							frame = 5
+						}
+						buttonType = {
+							name = "govt_increase_export_subsidy_button"
+							position = { x = 116 y = 24 }
+							quadTextureSprite ="GFX_zoom_in"
+							clicksound = click_close
+						}
+						instantTextBoxType = {
+							name = "govt_export_subsidy_percentage_loc"
+							position = { x = 146 y = 27 }
+							font = "hoi_18mbs"
+							format = left
+							maxWidth = 60
+							text = "govt_export_subsidy_percentage_loc"
+							maxHeight = 24
+							fixedsize = yes
+							#alwaystransparent = yes
+						}
+						instantTextBoxType = {
+							name = "govt_export_subsidy_amount_loc"
+							position = { x = 186 y = 27 }
+							font = "hoi_18mbs"
+							format = left
+							maxWidth = 100
+							text = "govt_export_subsidy_amount_loc"
+							maxHeight = 24
+							fixedsize = yes
+							#alwaystransparent = yes
+						}
+					}
+					containerWindowType = { #Research Subsidy
+						name = "govt_research_subsidy_container"
+						position = {x = 10 y = 120 }
+						size = { width = 300 height = 50 }
+						Orientation = upper_left
+						instantTextBoxType = {
+							name = "govt_research_subsidy_title"
+							position = { x = -30 y = 4 }
+							font = "hoi_18mbs"
+							format = left
+							maxWidth = 300
+							text = "govt_research_subsidy_title"
+							maxHeight = 24
+							fixedsize = yes
+							#alwaystransparent = yes
+						}
+						
+						buttonType = {
+							name = "govt_decrease_research_subsidy_button"
+							position = { x = -27 y = 24 }
+							quadTextureSprite ="GFX_zoom_out"
+							clicksound = click_close
+						}
+						iconType ={
+							name ="govt_research_subsidy_icon"
+							spriteType = "GFX_internal_politics_party_colors"
+							position = { x = 0 y = 30 }
+							frame = 5
+						}
+						buttonType = {
+							name = "govt_increase_research_subsidy_button"
+							position = { x = 116 y = 24 }
+							quadTextureSprite ="GFX_zoom_in"
+							clicksound = click_close
+						}
+						instantTextBoxType = {
+							name = "govt_research_subsidy_percentage_loc"
+							position = { x = 146 y = 27 }
+							font = "hoi_18mbs"
+							format = left
+							maxWidth = 60
+							text = "govt_research_subsidy_percentage_loc"
+							maxHeight = 24
+							fixedsize = yes
+							#alwaystransparent = yes
+						}
+						instantTextBoxType = {
+							name = "govt_research_subsidy_amount_loc"
+							position = { x = 186 y = 27 }
+							font = "hoi_18mbs"
+							format = left
+							maxWidth = 100
+							text = "govt_research_subsidy_amount_loc"
+							maxHeight = 24
+							fixedsize = yes
+							#alwaystransparent = yes
+						}
+					}
+					containerWindowType = { #Industrial Subsidy
+						name = "govt_industrial_subsidy_container"
+						position = {x = 10 y = 170 }
+						size = { width = 300 height = 50 }
+						Orientation = upper_left
+						instantTextBoxType = {
+							name = "govt_industrial_subsidy_title"
+							position = { x = -30 y = 4 }
+							font = "hoi_18mbs"
+							format = left
+							maxWidth = 300
+							text = "govt_industrial_subsidy_title"
+							maxHeight = 24
+							fixedsize = yes
+							#alwaystransparent = yes
+						}
+						
+						buttonType = {
+							name = "govt_decrease_industrial_subsidy_button"
+							position = { x = -27 y = 24 }
+							quadTextureSprite ="GFX_zoom_out"
+							clicksound = click_close
+						}
+						iconType ={
+							name ="govt_industrial_subsidy_icon"
+							spriteType = "GFX_internal_politics_party_colors"
+							position = { x = 0 y = 30 }
+							frame = 5
+						}
+						buttonType = {
+							name = "govt_increase_industrial_subsidy_button"
+							position = { x = 116 y = 24 }
+							quadTextureSprite ="GFX_zoom_in"
+							clicksound = click_close
+						}
+						instantTextBoxType = {
+							name = "govt_industrial_subsidy_percentage_loc"
+							position = { x = 146 y = 27 }
+							font = "hoi_18mbs"
+							format = left
+							maxWidth = 60
+							text = "govt_industrial_subsidy_percentage_loc"
+							maxHeight = 24
+							fixedsize = yes
+							#alwaystransparent = yes
+						}
+						instantTextBoxType = {
+							name = "govt_industrial_subsidy_amount_loc"
+							position = { x = 186 y = 27 }
+							font = "hoi_18mbs"
+							format = left
+							maxWidth = 100
+							text = "govt_industrial_subsidy_amount_loc"
+							maxHeight = 24
+							fixedsize = yes
+							#alwaystransparent = yes
+						}
+					}
+					containerWindowType = { #Infrastructure Subsidy
+						name = "govt_infrastructure_subsidy_container"
+						position = {x = 10 y = 220 }
+						size = { width = 300 height = 50 }
+						Orientation = upper_left
+						instantTextBoxType = {
+							name = "govt_infrastructure_subsidy_title"
+							position = { x = -30 y = 4 }
+							font = "hoi_18mbs"
+							format = left
+							maxWidth = 300
+							text = "govt_infrastructure_subsidy_title"
+							maxHeight = 24
+							fixedsize = yes
+							#alwaystransparent = yes
+						}
+						
+						buttonType = {
+							name = "govt_decrease_infrastructure_subsidy_button"
+							position = { x = -27 y = 24 }
+							quadTextureSprite ="GFX_zoom_out"
+							clicksound = click_close
+						}
+						iconType ={
+							name ="govt_infrastructure_subsidy_icon"
+							spriteType = "GFX_internal_politics_party_colors"
+							position = { x = 0 y = 30 }
+							frame = 5
+						}
+						buttonType = {
+							name = "govt_increase_infrastructure_subsidy_button"
+							position = { x = 116 y = 24 }
+							quadTextureSprite ="GFX_zoom_in"
+							clicksound = click_close
+						}
+						instantTextBoxType = {
+							name = "govt_infrastructure_subsidy_percentage_loc"
+							position = { x = 146 y = 27 }
+							font = "hoi_18mbs"
+							format = left
+							maxWidth = 60
+							text = "govt_infrastructure_subsidy_percentage_loc"
+							maxHeight = 24
+							fixedsize = yes
+							#alwaystransparent = yes
+						}
+						instantTextBoxType = {
+							name = "govt_infrastructure_subsidy_amount_loc"
+							position = { x = 186 y = 27 }
+							font = "hoi_18mbs"
+							format = left
+							maxWidth = 100
+							text = "govt_infrastructure_subsidy_amount_loc"
+							maxHeight = 24
+							fixedsize = yes
+							#alwaystransparent = yes
+						}
+					}
+					instantTextBoxType = {
+						name = "govt_subsidies_total_loc"
+						position = { x = -17 y = 272 }
+						font = "hoi_18mbs"
+						format = left
+						maxWidth = 158
+						text = "govt_subsidies_total_loc"
+						maxHeight = 24
+						fixedsize = yes
+						#alwaystransparent = yes
+					}
+					instantTextBoxType = {
+						name = "govt_subsidies_amount_loc"
+						position = { x = 196 y = 272 }
+						font = "hoi_18mbs"
+						format = left
+						maxWidth = 100
+						text = "govt_subsidies_amount_loc"
+						maxHeight = 24
+						fixedsize = yes
+						#alwaystransparent = yes
+					}
+				}
+				instantTextBoxType = {
+					name = "govt_discretionary_spending_amount_loc"
+					position = { x = 20 y = 530 }
+					font = "hoi_24header"
+					format = right
+					maxWidth = 300
+					text = "govt_discretionary_spending_amount_loc"
 					maxHeight = 24
 					fixedsize = yes
 					#alwaystransparent = yes
