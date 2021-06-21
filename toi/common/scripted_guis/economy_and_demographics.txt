@@ -128,19 +128,39 @@ scripted_gui = {
 			}
 
 			everyday_goods_factory_build_button_click = {
-				set_temp_variable = { investment_money_temp = 500 }
+				set_temp_variable = { investment_money_temp = global.factory_everyday_goods_construction_base_speed }
+				multiply_temp_variable = { investment_money_temp = everyday_goods_price }
+				
+				subtract_from_variable = { PREV.treasury = investment_money_temp }
+
+				set_state_flag = factory_everyday_goods_construction_government_subsidized
 				start_everyday_goods_factory_construction = yes
 			}
 			luxury_goods_factory_build_button_click = {
-				set_temp_variable = { investment_money_temp = 500 }
+				set_temp_variable = { investment_money_temp = global.factory_luxury_goods_construction_base_speed }
+				multiply_temp_variable = { investment_money_temp = luxury_goods_price }
+				
+				subtract_from_variable = { PREV.treasury = investment_money_temp }
+
+				set_state_flag = factory_luxury_goods_construction_government_subsidized
 				start_luxury_goods_factory_construction = yes
 			}
 			industrial_goods_factory_build_button_click = {
-				set_temp_variable = { investment_money_temp = 500 }
+				set_temp_variable = { investment_money_temp = global.factory_industrial_goods_construction_base_speed }
+				multiply_temp_variable = { investment_money_temp = industrial_goods_price }
+				
+				subtract_from_variable = { PREV.treasury = investment_money_temp }
+
+				set_state_flag = factory_industrial_goods_construction_government_subsidized
 				start_industrial_goods_factory_construction = yes
 			}
 			trade_infra_build_button_click = {
-				set_temp_variable = { investment_money_temp = 500 }
+				set_temp_variable = { investment_money_temp = global.infrastructure_construction_industrial_goods_base_speed }
+				multiply_temp_variable = { investment_money_temp = industrial_goods_price }
+				
+				subtract_from_variable = { PREV.treasury = investment_money_temp }
+
+				set_state_flag = infrastructure_construction_government_subsidized
 				start_infrastructure_construction = yes
 			}
 		}
@@ -587,6 +607,144 @@ scripted_gui = {
 					change_export_tariff = yes
 				}
 			#
+			
+			#Military Spending
+				govt_decrease_military_spending_button_click = {
+					set_temp_variable = { percent_change_temp = -1 }
+					change_military_spending = yes
+				}
+				govt_decrease_military_spending_button_shift_click = {
+					set_temp_variable = { percent_change_temp = -5 }
+					change_military_spending = yes
+				}
+				govt_decrease_military_spending_button_control_click = {
+					set_temp_variable = { percent_change_temp = -10 }
+					change_military_spending = yes
+				}
+				govt_decrease_military_spending_button_control_shift_click = {
+					set_temp_variable = { percent_change_temp = -25 }
+					change_military_spending = yes
+				}
+				govt_increase_military_spending_button_click = {
+					set_temp_variable = { percent_change_temp = 1 }
+					change_military_spending = yes
+				}
+				govt_increase_military_spending_button_shift_click = {
+					set_temp_variable = { percent_change_temp = 5 }
+					change_military_spending = yes
+				}
+				govt_increase_military_spending_button_control_click = {
+					set_temp_variable = { percent_change_temp = 10 }
+					change_military_spending = yes
+				}
+				govt_increase_military_spending_button_control_shift_click = {
+					set_temp_variable = { percent_change_temp = 25 }
+					change_military_spending = yes
+				}
+			#
+			#Intelligence Spending
+				govt_decrease_intelligence_spending_button_click = {
+					set_temp_variable = { percent_change_temp = -1 }
+					change_intelligence_spending = yes
+				}
+				govt_decrease_intelligence_spending_button_shift_click = {
+					set_temp_variable = { percent_change_temp = -5 }
+					change_intelligence_spending = yes
+				}
+				govt_decrease_intelligence_spending_button_control_click = {
+					set_temp_variable = { percent_change_temp = -10 }
+					change_intelligence_spending = yes
+				}
+				govt_decrease_intelligence_spending_button_control_shift_click = {
+					set_temp_variable = { percent_change_temp = -25 }
+					change_intelligence_spending = yes
+				}
+				govt_increase_intelligence_spending_button_click = {
+					set_temp_variable = { percent_change_temp = 1 }
+					change_intelligence_spending = yes
+				}
+				govt_increase_intelligence_spending_button_shift_click = {
+					set_temp_variable = { percent_change_temp = 5 }
+					change_intelligence_spending = yes
+				}
+				govt_increase_intelligence_spending_button_control_click = {
+					set_temp_variable = { percent_change_temp = 10 }
+					change_intelligence_spending = yes
+				}
+				govt_increase_intelligence_spending_button_control_shift_click = {
+					set_temp_variable = { percent_change_temp = 25 }
+					change_intelligence_spending = yes
+				}
+			#
+			#Construction Spending
+				govt_decrease_construction_spending_button_click = {
+					set_temp_variable = { percent_change_temp = -1 }
+					change_construction_spending = yes
+				}
+				govt_decrease_construction_spending_button_shift_click = {
+					set_temp_variable = { percent_change_temp = -5 }
+					change_construction_spending = yes
+				}
+				govt_decrease_construction_spending_button_control_click = {
+					set_temp_variable = { percent_change_temp = -10 }
+					change_construction_spending = yes
+				}
+				govt_decrease_construction_spending_button_control_shift_click = {
+					set_temp_variable = { percent_change_temp = -25 }
+					change_construction_spending = yes
+				}
+				govt_increase_construction_spending_button_click = {
+					set_temp_variable = { percent_change_temp = 1 }
+					change_construction_spending = yes
+				}
+				govt_increase_construction_spending_button_shift_click = {
+					set_temp_variable = { percent_change_temp = 5 }
+					change_construction_spending = yes
+				}
+				govt_increase_construction_spending_button_control_click = {
+					set_temp_variable = { percent_change_temp = 10 }
+					change_construction_spending = yes
+				}
+				govt_increase_construction_spending_button_control_shift_click = {
+					set_temp_variable = { percent_change_temp = 25 }
+					change_construction_spending = yes
+				}
+			#
+
+			#Infrastructure Subsidies
+				govt_decrease_infrastructure_subsidy_button_click = {
+					set_temp_variable = { percent_change_temp = -1 }
+					change_infrastructure_subsidy = yes
+				}
+				govt_decrease_infrastructure_subsidy_button_shift_click = {
+					set_temp_variable = { percent_change_temp = -5 }
+					change_infrastructure_subsidy = yes
+				}
+				govt_decrease_infrastructure_subsidy_button_control_click = {
+					set_temp_variable = { percent_change_temp = -10 }
+					change_infrastructure_subsidy = yes
+				}
+				govt_decrease_infrastructure_subsidy_button_control_shift_click = {
+					set_temp_variable = { percent_change_temp = -25 }
+					change_infrastructure_subsidy = yes
+				}
+				govt_increase_infrastructure_subsidy_button_click = {
+					set_temp_variable = { percent_change_temp = 1 }
+					change_infrastructure_subsidy = yes
+				}
+				govt_increase_infrastructure_subsidy_button_shift_click = {
+					set_temp_variable = { percent_change_temp = 5 }
+					change_infrastructure_subsidy = yes
+				}
+				govt_increase_infrastructure_subsidy_button_control_click = {
+					set_temp_variable = { percent_change_temp = 10 }
+					change_infrastructure_subsidy = yes
+				}
+				govt_increase_infrastructure_subsidy_button_control_shift_click = {
+					set_temp_variable = { percent_change_temp = 25 }
+					change_infrastructure_subsidy = yes
+				}
+			#
 
 
 			time_button_click = {
@@ -620,6 +778,19 @@ scripted_gui = {
 			}
 			govt_export_tariff_icon = {
 				x = export_tariff_percentage
+			}
+			
+			govt_military_spending_icon = {
+				x = military_spending_percentage
+			}
+			govt_intelligence_spending_icon = {
+				x = intelligence_spending_percentage
+			}
+			govt_construction_spending_icon = {
+				x = construction_spending_percentage
+			}
+			govt_infrastructure_subsidy_icon = {
+				x = infrastructure_subsidy_percentage
 			}
 		}
 	}

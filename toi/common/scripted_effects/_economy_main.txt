@@ -267,6 +267,9 @@
 			#
 			set_variable = { actual_revenue = 0 }
 			set_variable = { actual_income_tax_revenue = 0 }
+			set_variable = { actual_spending = 0 }
+			set_variable = { actual_infrastructure_spending = 0 }
+			set_variable = { actual_construction_spending = 0 }
 
 			set_variable = { total_money = 0 }
 			set_variable = { gdp_amount = 0 }
@@ -398,8 +401,82 @@
 
 					set_variable = { infrastructure_money = infrastructure_industrial_goods_demand }
 					multiply_variable = { infrastructure_money = industrial_goods_price }
-					subtract_from_variable = { pops_money = infrastructure_money }
-					add_to_variable = { pops_spending = infrastructure_money }
+
+					set_temp_variable = { govt_payment_temp = PREV.infrastructure_subsidy_percentage }
+					multiply_temp_variable = { govt_payment_temp = infrastructure_money }
+					divide_temp_variable = { govt_payment_temp = 100 }
+
+					set_temp_variable = { pop_payment_temp = infrastructure_money }
+					subtract_from_temp_variable = { pop_payment_temp = govt_payment_temp }
+
+					subtract_from_variable = { pops_money = pop_payment_temp }
+					add_to_variable = { pops_spending = pop_payment_temp }
+					subtract_from_variable = { PREV.treasury = govt_payment_temp }
+					add_to_variable = { PREV.actual_infrastructure_spending = govt_payment_temp }
+
+				#
+				
+				#Construction
+					#Infrastructure
+						if = {
+							limit = {
+								has_state_flag = infrastructure_construction_government_subsidized
+							}
+							set_temp_variable = { infra_construction_funds_temp = global.infrastructure_construction_base_speed }
+							multiply_temp_variable = { infra_construction_funds_temp = industrial_goods_price }
+							multiply_temp_variable = { infra_construction_funds_temp = PREV.construction_spending_percentage }
+							divide_temp_variable = { infra_construction_funds_temp = 100 }
+							
+							add_to_variable = { infrastructure_construction_investment_money = infra_construction_funds_temp }
+							subtract_from_variable = { PREV.treasury = infra_construction_funds_temp }
+							add_to_variable = { PREV.actual_construction_spending = infra_construction_funds_temp }
+						}
+					#
+					#Everyday Goods Factory
+						if = {
+							limit = {
+								has_state_flag = factory_everyday_goods_construction_government_subsidized
+							}
+							set_temp_variable = { construction_funds_temp = global.factory_everyday_goods_construction_base_speed }
+							multiply_temp_variable = { construction_funds_temp = industrial_goods_price }
+							multiply_temp_variable = { construction_funds_temp = PREV.construction_spending_percentage }
+							divide_temp_variable = { construction_funds_temp = 100 }
+							
+							add_to_variable = { factory_everyday_goods_construction_investment_money = construction_funds_temp }
+							subtract_from_variable = { PREV.treasury = construction_funds_temp }
+							add_to_variable = { PREV.actual_construction_spending = construction_funds_temp }
+						}
+					#
+					#Luxury Goods Factory
+						if = {
+							limit = {
+								has_state_flag = factory_luxury_goods_construction_government_subsidized
+							}
+							set_temp_variable = { construction_funds_temp = global.factory_luxury_goods_construction_base_speed }
+							multiply_temp_variable = { construction_funds_temp = industrial_goods_price }
+							multiply_temp_variable = { construction_funds_temp = PREV.construction_spending_percentage }
+							divide_temp_variable = { construction_funds_temp = 100 }
+							
+							add_to_variable = { factory_luxury_goods_construction_investment_money = construction_funds_temp }
+							subtract_from_variable = { PREV.treasury = construction_funds_temp }
+							add_to_variable = { PREV.actual_construction_spending = construction_funds_temp }
+						}
+					#
+					#Industrial Goods Factory
+						if = {
+							limit = {
+								has_state_flag = factory_industrial_goods_construction_government_subsidized
+							}
+							set_temp_variable = { construction_funds_temp = global.factory_industrial_goods_construction_base_speed }
+							multiply_temp_variable = { construction_funds_temp = industrial_goods_price }
+							multiply_temp_variable = { construction_funds_temp = PREV.construction_spending_percentage }
+							divide_temp_variable = { construction_funds_temp = 100 }
+							
+							add_to_variable = { factory_industrial_goods_construction_investment_money = construction_funds_temp }
+							subtract_from_variable = { PREV.treasury = construction_funds_temp }
+							add_to_variable = { PREV.actual_construction_spending = construction_funds_temp }
+						}
+					#
 				#
 
 				#Minimum goods supply to be in a state
@@ -4922,6 +4999,7 @@
 				#
 			}
 			taxes_update = yes
+			spending_update = yes
 
 			set_variable = { total_factory_amount = num_of_civilian_factories }
 			add_to_variable = { total_factory_amount = num_of_military_factories }
@@ -4980,6 +5058,11 @@
 
 			set_variable = { actual_revenue = actual_income_tax_revenue }
 			add_to_variable = { actual_revenue = actual_tariff_revenue }
+			set_variable = { actual_subsidy_expense = actual_infrastructure_spending }
+			set_variable = { actual_spending = actual_subsidy_expense }
+			add_to_variable = { actual_spending = actual_construction_spending }
+			set_variable = { net_budget = actual_revenue }
+			subtract_from_variable = { net_budget = actual_spending }
 
 			every_controlled_state = {
 				create_pie_chart_pop_type = yes
@@ -5158,19 +5241,22 @@
 					set_variable = { global.factory_everyday_goods_raw_goods_base_need = 0.5 } #Per Good Produced
 					#Construction
 						set_variable = { global.factory_everyday_goods_construction_industrial_goods_base_need = 30 } #Per 100K Employees per Factory
+						set_variable = { global.factory_everyday_goods_construction_base_speed = 2 } #How fast construction is
 
 				#Luxury Goods Factory
 					set_variable = { global.factory_luxury_goods_base_production = 10 }
 					set_variable = { global.factory_luxury_goods_raw_goods_base_need = 0.5 }
 					#Construction
 						set_variable = { global.factory_luxury_goods_construction_industrial_goods_base_need = 30 } #Per 100K Employees per Factory
+						set_variable = { global.factory_luxury_goods_construction_base_speed = 2 } #How fast construction is
 
 				#Industrial Goods Factory
 					set_variable = { global.factory_industrial_goods_base_production = 10 }
 					set_variable = { global.factory_industrial_goods_raw_goods_base_need = 1 }
 					#Construction
 						set_variable = { global.factory_industrial_goods_construction_industrial_goods_base_need = 45 } #Per 100K Employees per Factory
-			
+						set_variable = { global.factory_industrial_goods_construction_base_speed = 2 } #How fast construction is
+
 			#
 			#Resources
 				clear_array = global.resources_array #Used for code
@@ -5210,6 +5296,7 @@
 
 				set_variable = { global.infrastructure_construction_industrial_goods_base_need = 20 } #Per level
 				set_variable = { global.infrastructure_construction_industrial_goods_base_need_increase_per_level = 2 } #Per level
+				set_variable = { global.infrastructure_construction_base_speed = 2 } #How fast construction is
 
 				set_variable = { global.infrastructure_rgo_output_modifier = 0.025 } #per level
 				set_variable = { global.infrastructure_factory_throughput_modifier = 0.025 } #per level
@@ -8254,12 +8341,73 @@
 			#
 			divide_variable = { import_tariff_revenue = 100 }
 			divide_variable = { export_tariff_revenue = 100 }
+
+			set_variable = { tariff_revenue = import_tariff_revenue }
+			add_to_variable = { tariff_revenue = export_tariff_revenue }
 		#
 
 		set_variable = { revenue = income_tax_revenue }
 		add_to_variable = { revenue = sales_tax_revenue }
 		add_to_variable = { revenue = import_tariff_revenue }
 		add_to_variable = { revenue = export_tariff_revenue }
+	}
+	spending_update = {
+		set_variable = { construction_spending_expense = 0 }
+
+		set_variable = { infrastructure_subsidy_expense = 0 }
+		every_controlled_state = {
+			set_temp_variable = { infrastructure_money_temp = infrastructure_industrial_goods_demand }
+			multiply_temp_variable = { infrastructure_money_temp = industrial_goods_price }
+			multiply_temp_variable = { infrastructure_money_temp = PREV.infrastructure_subsidy_percentage }
+			divide_temp_variable = { infrastructure_money_temp = 100 }
+			add_to_variable = { PREV.infrastructure_subsidy_expense = infrastructure_money_temp }
+
+			if = {
+				limit = {
+					has_state_flag = infrastructure_construction_government_subsidized
+				}
+				set_temp_variable = { infra_construction_funds_temp = global.infrastructure_construction_base_speed }
+				multiply_temp_variable = { infra_construction_funds_temp = industrial_goods_price }
+				multiply_temp_variable = { infra_construction_funds_temp = PREV.construction_spending_percentage }
+				divide_temp_variable = { infra_construction_funds_temp = 100 }
+				add_to_variable = { PREV.construction_spending_expense = infra_construction_funds_temp }
+			}
+			if = {
+				limit = {
+					has_state_flag = factory_everyday_goods_construction_government_subsidized
+				}
+				set_temp_variable = { infra_construction_funds_temp = global.factory_everyday_goods_construction_base_speed }
+				multiply_temp_variable = { infra_construction_funds_temp = industrial_goods_price }
+				multiply_temp_variable = { infra_construction_funds_temp = PREV.construction_spending_percentage }
+				divide_temp_variable = { infra_construction_funds_temp = 100 }
+				add_to_variable = { PREV.construction_spending_expense = infra_construction_funds_temp }
+			}
+			if = {
+				limit = {
+					has_state_flag = factory_luxury_goods_construction_government_subsidized
+				}
+				set_temp_variable = { infra_construction_funds_temp = global.factory_luxury_goods_construction_base_speed }
+				multiply_temp_variable = { infra_construction_funds_temp = industrial_goods_price }
+				multiply_temp_variable = { infra_construction_funds_temp = PREV.construction_spending_percentage }
+				divide_temp_variable = { infra_construction_funds_temp = 100 }
+				add_to_variable = { PREV.construction_spending_expense = infra_construction_funds_temp }
+			}
+			if = {
+				limit = {
+					has_state_flag = factory_industrial_goods_construction_government_subsidized
+				}
+				set_temp_variable = { infra_construction_funds_temp = global.factory_industrial_goods_construction_base_speed }
+				multiply_temp_variable = { infra_construction_funds_temp = industrial_goods_price }
+				multiply_temp_variable = { infra_construction_funds_temp = PREV.construction_spending_percentage }
+				divide_temp_variable = { infra_construction_funds_temp = 100 }
+				add_to_variable = { PREV.construction_spending_expense = infra_construction_funds_temp }
+			}
+		}
+
+		set_variable = { subsidy_expense = infrastructure_subsidy_expense }
+
+		set_variable = { discretionary_spending = subsidy_expense }
+		add_to_variable = { discretionary_spending = construction_spending_expense }
 	}
 
 #
@@ -8804,6 +8952,147 @@
 			}
 		}
 		taxes_update = yes
+	}
+	
+	change_military_spending = {
+		#Scope: Country
+		#Increases/Decreases the Military Spending level
+		#INPUT:
+			#percent_change_temp - Amount to decrease it by. 1.0 increases it by 1%,  -10.0 decreases it by 10%
+		
+		add_to_variable = { military_spending_percentage = percent_change_temp }
+		if = {
+			limit = {
+				check_variable = { percent_change_temp > 0 }
+			}
+			#TODO - People get angerry
+
+			if = {
+				limit = {
+					check_variable = { military_spending_percentage > 100 }
+				}
+				set_variable = { military_spending_percentage = 100 }
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = { percent_change_temp < 0 }
+			}
+			#TODO - People become happy
+
+			if = {
+				limit = {
+					check_variable = { military_spending_percentage < 0 }
+				}
+				set_variable = { military_spending_percentage = 0 }
+			}
+		}
+		spending_update = yes
+	}
+	change_intelligence_spending = {
+		#Scope: Country
+		#Increases/Decreases the Intelligence Spending level
+		#INPUT:
+			#percent_change_temp - Amount to decrease it by. 1.0 increases it by 1%,  -10.0 decreases it by 10%
+		
+		add_to_variable = { intelligence_spending_percentage = percent_change_temp }
+		if = {
+			limit = {
+				check_variable = { percent_change_temp > 0 }
+			}
+			#TODO - People get angerry
+
+			if = {
+				limit = {
+					check_variable = { intelligence_spending_percentage > 100 }
+				}
+				set_variable = { intelligence_spending_percentage = 100 }
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = { percent_change_temp < 0 }
+			}
+			#TODO - People become happy
+
+			if = {
+				limit = {
+					check_variable = { intelligence_spending_percentage < 0 }
+				}
+				set_variable = { intelligence_spending_percentage = 0 }
+			}
+		}
+		spending_update = yes
+	}
+	change_construction_spending = {
+		#Scope: Country
+		#Increases/Decreases the Construction Spending level
+		#INPUT:
+			#percent_change_temp - Amount to decrease it by. 1.0 increases it by 1%,  -10.0 decreases it by 10%
+		
+		add_to_variable = { construction_spending_percentage = percent_change_temp }
+		if = {
+			limit = {
+				check_variable = { percent_change_temp > 0 }
+			}
+			#TODO - People get angerry
+
+			if = {
+				limit = {
+					check_variable = { construction_spending_percentage > 100 }
+				}
+				set_variable = { construction_spending_percentage = 100 }
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = { percent_change_temp < 0 }
+			}
+			#TODO - People become happy
+
+			if = {
+				limit = {
+					check_variable = { construction_spending_percentage < 0 }
+				}
+				set_variable = { construction_spending_percentage = 0 }
+			}
+		}
+		spending_update = yes
+	}
+	change_infrastructure_subsidy = {
+		#Scope: Country
+		#Increases/Decreases the Infrastructure Subsidy level
+		#INPUT:
+			#percent_change_temp - Amount to decrease it by. 1.0 increases it by 1%,  -10.0 decreases it by 10%
+		
+		add_to_variable = { infrastructure_subsidy_percentage = percent_change_temp }
+		if = {
+			limit = {
+				check_variable = { percent_change_temp > 0 }
+			}
+			#TODO - People get angerry
+
+			if = {
+				limit = {
+					check_variable = { infrastructure_subsidy_percentage > 100 }
+				}
+				set_variable = { infrastructure_subsidy_percentage = 100 }
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = { percent_change_temp < 0 }
+			}
+			#TODO - People become happy
+
+			if = {
+				limit = {
+					check_variable = { infrastructure_subsidy_percentage < 0 }
+				}
+				set_variable = { infrastructure_subsidy_percentage = 0 }
+			}
+		}
+		spending_update = yes
 	}
 #
 
@@ -9366,8 +9655,7 @@
 		#
 
 		#Construction
-			set_temp_variable = { max_demand_temp = global.infrastructure_construction_industrial_goods_base_need }
-			divide_temp_variable = { max_demand_temp = 10 }
+			set_temp_variable = { max_demand_temp = global.infrastructure_construction_base_speed }
 			#Infrastructure
 				set_variable = { infrastructure_construction_industrial_goods_demand = infrastructure_construction_investment_money }
 				divide_variable = { infrastructure_construction_industrial_goods_demand = industrial_goods_price }
