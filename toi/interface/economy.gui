@@ -1,0 +1,4505 @@
+guiTypes = {
+	containerWindowType = {
+		name = "state_view_economy_container"
+		position = { x = 0 y = 0 }
+		size = { width=1108 height=720 }	
+		clipping = no
+		
+		buttonType = {
+			name = "state_view_economy_button"
+			position = { x = 29 y = 325 }
+			quadTextureSprite ="GFX_state_economy_button"
+			Orientation = "UPPER_LEFT"
+			clicksound = click_close
+			oversound = ui_menu_over
+			
+			pdx_tooltip = state_economy_button_tt
+			pdx_tooltip_delayed = state_economy_button_tt_d
+		}
+	}
+	containerWindowType = {
+		name = "topbar_economy_container"
+		position = { x = 0 y = 0 }
+		size = { width=1108 height=720 }	
+		clipping = no
+		
+		buttonType = {
+			name = "country_view_economy_button"
+			position = { x = 930 y = 6 }
+			quadTextureSprite ="GFX_state_economy_button"
+			Orientation = "UPPER_LEFT"
+			clicksound = click_close
+			oversound = ui_menu_over
+			
+			#pdx_tooltip = "ECONOMY_TOOLTIP"
+			#pdx_tooltip_delayed = "ECONOMY_TOOLTIP_DELAYED"
+		}
+
+		iconType ={
+			name ="money_amount_bg"
+			spriteType = "GFX_generic_box_96"
+			position = { x = 1050 y = 6 }
+		}
+		instantTextBoxType = {
+			name = "treasury_amount"
+			position = { x = 1054 y = 10 }
+			font = "hoi_18mbs"
+			format = center
+			maxWidth = 90
+			text = "treasury_amount_loc"
+			maxHeight = 24
+			fixedsize = yes
+			#alwaystransparent = yes
+		}
+		iconType ={
+			name ="income_amount_bg"
+			spriteType = "GFX_generic_box_96"
+			position = { x = 1150 y = 6 }
+		}
+		instantTextBoxType = {
+			name = "income_amount"
+			position = { x = 1154 y = 10 }
+			font = "hoi_18mbs"
+			format = center
+			maxWidth = 90
+			text = "income_amount_loc"
+			maxHeight = 24
+			fixedsize = yes
+			#alwaystransparent = yes
+		}
+	}
+
+
+	containerWindowType = {
+		name = "state_economy_window_container"
+		position = {x=250 y=125}
+		size = { width=1076 height=616 }
+		
+		fade_time = 300
+		fade_type = linear
+		moveable = yes
+		
+		background = {
+			name = "Background"
+			spriteType = "GFX_state_economy_screen_background"
+		}
+		
+		instantTextboxType = {
+			name = "state_economy_title"
+			position = { x = 25 y = 6 }
+			textureFile = ""
+			font = "hoi_36header"
+			borderSize = {x = 0 y = 0}
+			text = "state_economy_title"
+			maxWidth = 1000
+			maxHeight = 20
+			fixedsize = yes
+		}
+
+		
+		containerWindowType = {
+			name = "pops_container"
+			position = {x = 10 y = 50 }
+			size = { width = 623 height = 340 }
+			Orientation = upper_left
+			
+			instantTextBoxType = {
+				name = "pops_title"
+				position = { x = 7 y = 5 }
+				font = "hoi_24header"
+				format = center
+				maxWidth = 120
+				text = "pops_title"
+				maxHeight = 24
+				fixedsize = yes
+				#alwaystransparent = yes
+			}
+
+			#Pie Chart
+				containerWindowType = {
+					name = "piechart_pop_types"
+					position = { x = 52 y = 72 }
+					clipping = no
+					#Orientation = center
+					#origo = center
+
+					containerWindowType = {
+						name = "pie_scale_container"
+						clipping = no
+						#Orientation = center
+						#origo = center
+						scale = 0.0613359 # scale = 1 = 1024px x 1024px
+
+						iconType = {
+							name = "pie0"
+							quadTextureSprite = "GFX_pie_chart_segment"
+							centerPosition = yes
+							alwaystransparent = yes
+							rotation = 0
+						}
+
+						iconType = {
+							name = "pie1"
+							quadTextureSprite = "GFX_pie_chart_segment"
+							centerPosition = yes
+							alwaystransparent = yes
+							rotation = 0.0628318531
+						}
+
+
+						iconType = {
+							name = "pie2"
+							quadTextureSprite = "GFX_pie_chart_segment"
+							centerPosition = yes
+							alwaystransparent = yes
+							rotation = 0.1256637061
+						}
+
+
+						iconType = {
+							name = "pie3"
+							quadTextureSprite = "GFX_pie_chart_segment"
+							centerPosition = yes
+							alwaystransparent = yes
+							rotation = 0.1884955592
+						}
+
+
+						iconType = {
+							name = "pie4"
+							quadTextureSprite = "GFX_pie_chart_segment"
+							centerPosition = yes
+							alwaystransparent = yes
+							rotation = 0.2513274123
+						}
+
+
+						iconType = {
+							name = "pie5"
+							quadTextureSprite = "GFX_pie_chart_segment"
+							centerPosition = yes
+							alwaystransparent = yes
+							rotation = 0.3141592654
+						}
+
+
+						iconType = {
+							name = "pie6"
+							quadTextureSprite = "GFX_pie_chart_segment"
+							centerPosition = yes
+							alwaystransparent = yes
+							rotation = 0.3769911184
+						}
+
+
+						iconType = {
+							name = "pie7"
+							quadTextureSprite = "GFX_pie_chart_segment"
+							centerPosition = yes
+							alwaystransparent = yes
+							rotation = 0.4398229715
+						}
+
+
+						iconType = {
+							name = "pie8"
+							quadTextureSprite = "GFX_pie_chart_segment"
+							centerPosition = yes
+							alwaystransparent = yes
+							rotation = 0.5026548246
+						}
+
+
+						iconType = {
+							name = "pie9"
+							quadTextureSprite = "GFX_pie_chart_segment"
+							centerPosition = yes
+							alwaystransparent = yes
+							rotation = 0.5654866776
+						}
+
+
+						iconType = {
+							name = "pie10"
+							quadTextureSprite = "GFX_pie_chart_segment"
+							centerPosition = yes
+							alwaystransparent = yes
+							rotation = 0.6283185307
+						}
+
+
+						iconType = {
+							name = "pie11"
+							quadTextureSprite = "GFX_pie_chart_segment"
+							centerPosition = yes
+							alwaystransparent = yes
+							rotation = 0.6911503838
+						}
+
+
+						iconType = {
+							name = "pie12"
+							quadTextureSprite = "GFX_pie_chart_segment"
+							centerPosition = yes
+							alwaystransparent = yes
+							rotation = 0.7539822369
+						}
+
+
+						iconType = {
+							name = "pie13"
+							quadTextureSprite = "GFX_pie_chart_segment"
+							centerPosition = yes
+							alwaystransparent = yes
+							rotation = 0.8168140899
+						}
+
+
+						iconType = {
+							name = "pie14"
+							quadTextureSprite = "GFX_pie_chart_segment"
+							centerPosition = yes
+							alwaystransparent = yes
+							rotation = 0.8796459430
+						}
+
+
+						iconType = {
+							name = "pie15"
+							quadTextureSprite = "GFX_pie_chart_segment"
+							centerPosition = yes
+							alwaystransparent = yes
+							rotation = 0.9424777961
+						}
+
+
+						iconType = {
+							name = "pie16"
+							quadTextureSprite = "GFX_pie_chart_segment"
+							centerPosition = yes
+							alwaystransparent = yes
+							rotation = 1.0053096491
+						}
+
+
+						iconType = {
+							name = "pie17"
+							quadTextureSprite = "GFX_pie_chart_segment"
+							centerPosition = yes
+							alwaystransparent = yes
+							rotation = 1.0681415022
+						}
+
+
+						iconType = {
+							name = "pie18"
+							quadTextureSprite = "GFX_pie_chart_segment"
+							centerPosition = yes
+							alwaystransparent = yes
+							rotation = 1.1309733553
+						}
+
+
+						iconType = {
+							name = "pie19"
+							quadTextureSprite = "GFX_pie_chart_segment"
+							centerPosition = yes
+							alwaystransparent = yes
+							rotation = 1.1938052084
+						}
+
+
+						iconType = {
+							name = "pie20"
+							quadTextureSprite = "GFX_pie_chart_segment"
+							centerPosition = yes
+							alwaystransparent = yes
+							rotation = 1.2566370614
+						}
+
+
+						iconType = {
+							name = "pie21"
+							quadTextureSprite = "GFX_pie_chart_segment"
+							centerPosition = yes
+							alwaystransparent = yes
+							rotation = 1.3194689145
+						}
+
+
+						iconType = {
+							name = "pie22"
+							quadTextureSprite = "GFX_pie_chart_segment"
+							centerPosition = yes
+							alwaystransparent = yes
+							rotation = 1.3823007676
+						}
+
+
+						iconType = {
+							name = "pie23"
+							quadTextureSprite = "GFX_pie_chart_segment"
+							centerPosition = yes
+							alwaystransparent = yes
+							rotation = 1.4451326207
+						}
+
+
+						iconType = {
+							name = "pie24"
+							quadTextureSprite = "GFX_pie_chart_segment"
+							centerPosition = yes
+							alwaystransparent = yes
+							rotation = 1.5079644737
+						}
+
+
+						iconType = {
+							name = "pie25"
+							quadTextureSprite = "GFX_pie_chart_segment"
+							centerPosition = yes
+							alwaystransparent = yes
+							rotation = 1.5707963268
+						}
+
+
+						iconType = {
+							name = "pie26"
+							quadTextureSprite = "GFX_pie_chart_segment"
+							centerPosition = yes
+							alwaystransparent = yes
+							rotation = 1.6336281799
+						}
+
+
+						iconType = {
+							name = "pie27"
+							quadTextureSprite = "GFX_pie_chart_segment"
+							centerPosition = yes
+							alwaystransparent = yes
+							rotation = 1.6964600329
+						}
+
+
+						iconType = {
+							name = "pie28"
+							quadTextureSprite = "GFX_pie_chart_segment"
+							centerPosition = yes
+							alwaystransparent = yes
+							rotation = 1.7592918860
+						}
+
+
+						iconType = {
+							name = "pie29"
+							quadTextureSprite = "GFX_pie_chart_segment"
+							centerPosition = yes
+							alwaystransparent = yes
+							rotation = 1.8221237391
+						}
+
+
+						iconType = {
+							name = "pie30"
+							quadTextureSprite = "GFX_pie_chart_segment"
+							centerPosition = yes
+							alwaystransparent = yes
+							rotation = 1.8849555922
+						}
+
+
+						iconType = {
+							name = "pie31"
+							quadTextureSprite = "GFX_pie_chart_segment"
+							centerPosition = yes
+							alwaystransparent = yes
+							rotation = 1.9477874452
+						}
+
+
+						iconType = {
+							name = "pie32"
+							quadTextureSprite = "GFX_pie_chart_segment"
+							centerPosition = yes
+							alwaystransparent = yes
+							rotation = 2.0106192983
+						}
+
+
+						iconType = {
+							name = "pie33"
+							quadTextureSprite = "GFX_pie_chart_segment"
+							centerPosition = yes
+							alwaystransparent = yes
+							rotation = 2.0734511514
+						}
+
+
+						iconType = {
+							name = "pie34"
+							quadTextureSprite = "GFX_pie_chart_segment"
+							centerPosition = yes
+							alwaystransparent = yes
+							rotation = 2.1362830044
+						}
+
+
+						iconType = {
+							name = "pie35"
+							quadTextureSprite = "GFX_pie_chart_segment"
+							centerPosition = yes
+							alwaystransparent = yes
+							rotation = 2.1991148575
+						}
+
+
+						iconType = {
+							name = "pie36"
+							quadTextureSprite = "GFX_pie_chart_segment"
+							centerPosition = yes
+							alwaystransparent = yes
+							rotation = 2.2619467106
+						}
+
+
+						iconType = {
+							name = "pie37"
+							quadTextureSprite = "GFX_pie_chart_segment"
+							centerPosition = yes
+							alwaystransparent = yes
+							rotation = 2.3247785637
+						}
+
+
+						iconType = {
+							name = "pie38"
+							quadTextureSprite = "GFX_pie_chart_segment"
+							centerPosition = yes
+							alwaystransparent = yes
+							rotation = 2.3876104167
+						}
+
+
+						iconType = {
+							name = "pie39"
+							quadTextureSprite = "GFX_pie_chart_segment"
+							centerPosition = yes
+							alwaystransparent = yes
+							rotation = 2.4504422698
+						}
+
+
+						iconType = {
+							name = "pie40"
+							quadTextureSprite = "GFX_pie_chart_segment"
+							centerPosition = yes
+							alwaystransparent = yes
+							rotation = 2.5132741229
+						}
+
+
+						iconType = {
+							name = "pie41"
+							quadTextureSprite = "GFX_pie_chart_segment"
+							centerPosition = yes
+							alwaystransparent = yes
+							rotation = 2.5761059759
+						}
+
+
+						iconType = {
+							name = "pie42"
+							quadTextureSprite = "GFX_pie_chart_segment"
+							centerPosition = yes
+							alwaystransparent = yes
+							rotation = 2.6389378290
+						}
+
+
+						iconType = {
+							name = "pie43"
+							quadTextureSprite = "GFX_pie_chart_segment"
+							centerPosition = yes
+							alwaystransparent = yes
+							rotation = 2.7017696821
+						}
+
+
+						iconType = {
+							name = "pie44"
+							quadTextureSprite = "GFX_pie_chart_segment"
+							centerPosition = yes
+							alwaystransparent = yes
+							rotation = 2.7646015352
+						}
+
+
+						iconType = {
+							name = "pie45"
+							quadTextureSprite = "GFX_pie_chart_segment"
+							centerPosition = yes
+							alwaystransparent = yes
+							rotation = 2.8274333882
+						}
+
+
+						iconType = {
+							name = "pie46"
+							quadTextureSprite = "GFX_pie_chart_segment"
+							centerPosition = yes
+							alwaystransparent = yes
+							rotation = 2.8902652413
+						}
+
+
+						iconType = {
+							name = "pie47"
+							quadTextureSprite = "GFX_pie_chart_segment"
+							centerPosition = yes
+							alwaystransparent = yes
+							rotation = 2.9530970944
+						}
+
+
+						iconType = {
+							name = "pie48"
+							quadTextureSprite = "GFX_pie_chart_segment"
+							centerPosition = yes
+							alwaystransparent = yes
+							rotation = 3.0159289474
+						}
+
+
+						iconType = {
+							name = "pie49"
+							quadTextureSprite = "GFX_pie_chart_segment"
+							centerPosition = yes
+							alwaystransparent = yes
+							rotation = 3.0787608005
+						}
+
+
+						iconType = {
+							name = "pie50"
+							quadTextureSprite = "GFX_pie_chart_segment"
+							centerPosition = yes
+							alwaystransparent = yes
+							rotation = 3.1415926536
+						}
+
+
+						iconType = {
+							name = "pie51"
+							quadTextureSprite = "GFX_pie_chart_segment"
+							centerPosition = yes
+							alwaystransparent = yes
+							rotation = 3.2044245067
+						}
+
+
+						iconType = {
+							name = "pie52"
+							quadTextureSprite = "GFX_pie_chart_segment"
+							centerPosition = yes
+							alwaystransparent = yes
+							rotation = 3.2672563597
+						}
+
+
+						iconType = {
+							name = "pie53"
+							quadTextureSprite = "GFX_pie_chart_segment"
+							centerPosition = yes
+							alwaystransparent = yes
+							rotation = 3.3300882128
+						}
+
+
+						iconType = {
+							name = "pie54"
+							quadTextureSprite = "GFX_pie_chart_segment"
+							centerPosition = yes
+							alwaystransparent = yes
+							rotation = 3.3929200659
+						}
+
+
+						iconType = {
+							name = "pie55"
+							quadTextureSprite = "GFX_pie_chart_segment"
+							centerPosition = yes
+							alwaystransparent = yes
+							rotation = 3.4557519189
+						}
+
+
+						iconType = {
+							name = "pie56"
+							quadTextureSprite = "GFX_pie_chart_segment"
+							centerPosition = yes
+							alwaystransparent = yes
+							rotation = 3.5185837720
+						}
+
+
+						iconType = {
+							name = "pie57"
+							quadTextureSprite = "GFX_pie_chart_segment"
+							centerPosition = yes
+							alwaystransparent = yes
+							rotation = 3.5814156251
+						}
+
+
+						iconType = {
+							name = "pie58"
+							quadTextureSprite = "GFX_pie_chart_segment"
+							centerPosition = yes
+							alwaystransparent = yes
+							rotation = 3.6442474782
+						}
+
+
+						iconType = {
+							name = "pie59"
+							quadTextureSprite = "GFX_pie_chart_segment"
+							centerPosition = yes
+							alwaystransparent = yes
+							rotation = 3.7070793312
+						}
+
+
+						iconType = {
+							name = "pie60"
+							quadTextureSprite = "GFX_pie_chart_segment"
+							centerPosition = yes
+							alwaystransparent = yes
+							rotation = 3.7699111843
+						}
+
+
+						iconType = {
+							name = "pie61"
+							quadTextureSprite = "GFX_pie_chart_segment"
+							centerPosition = yes
+							alwaystransparent = yes
+							rotation = 3.8327430374
+						}
+
+
+						iconType = {
+							name = "pie62"
+							quadTextureSprite = "GFX_pie_chart_segment"
+							centerPosition = yes
+							alwaystransparent = yes
+							rotation = 3.8955748905
+						}
+
+
+						iconType = {
+							name = "pie63"
+							quadTextureSprite = "GFX_pie_chart_segment"
+							centerPosition = yes
+							alwaystransparent = yes
+							rotation = 3.9584067435
+						}
+
+
+						iconType = {
+							name = "pie64"
+							quadTextureSprite = "GFX_pie_chart_segment"
+							centerPosition = yes
+							alwaystransparent = yes
+							rotation = 4.0212385966
+						}
+
+
+						iconType = {
+							name = "pie65"
+							quadTextureSprite = "GFX_pie_chart_segment"
+							centerPosition = yes
+							alwaystransparent = yes
+							rotation = 4.0840704497
+						}
+
+
+						iconType = {
+							name = "pie66"
+							quadTextureSprite = "GFX_pie_chart_segment"
+							centerPosition = yes
+							alwaystransparent = yes
+							rotation = 4.1469023027
+						}
+
+
+						iconType = {
+							name = "pie67"
+							quadTextureSprite = "GFX_pie_chart_segment"
+							centerPosition = yes
+							alwaystransparent = yes
+							rotation = 4.2097341558
+						}
+
+
+						iconType = {
+							name = "pie68"
+							quadTextureSprite = "GFX_pie_chart_segment"
+							centerPosition = yes
+							alwaystransparent = yes
+							rotation = 4.2725660089
+						}
+
+
+						iconType = {
+							name = "pie69"
+							quadTextureSprite = "GFX_pie_chart_segment"
+							centerPosition = yes
+							alwaystransparent = yes
+							rotation = 4.3353978620
+						}
+
+
+						iconType = {
+							name = "pie70"
+							quadTextureSprite = "GFX_pie_chart_segment"
+							centerPosition = yes
+							alwaystransparent = yes
+							rotation = 4.3982297150
+						}
+
+
+						iconType = {
+							name = "pie71"
+							quadTextureSprite = "GFX_pie_chart_segment"
+							centerPosition = yes
+							alwaystransparent = yes
+							rotation = 4.4610615681
+						}
+
+
+						iconType = {
+							name = "pie72"
+							quadTextureSprite = "GFX_pie_chart_segment"
+							centerPosition = yes
+							alwaystransparent = yes
+							rotation = 4.5238934212
+						}
+
+
+						iconType = {
+							name = "pie73"
+							quadTextureSprite = "GFX_pie_chart_segment"
+							centerPosition = yes
+							alwaystransparent = yes
+							rotation = 4.5867252742
+						}
+
+
+						iconType = {
+							name = "pie74"
+							quadTextureSprite = "GFX_pie_chart_segment"
+							centerPosition = yes
+							alwaystransparent = yes
+							rotation = 4.6495571273
+						}
+
+
+						iconType = {
+							name = "pie75"
+							quadTextureSprite = "GFX_pie_chart_segment"
+							centerPosition = yes
+							alwaystransparent = yes
+							rotation = 4.7123889804
+						}
+
+
+						iconType = {
+							name = "pie76"
+							quadTextureSprite = "GFX_pie_chart_segment"
+							centerPosition = yes
+							alwaystransparent = yes
+							rotation = 4.7752208335
+						}
+
+
+						iconType = {
+							name = "pie77"
+							quadTextureSprite = "GFX_pie_chart_segment"
+							centerPosition = yes
+							alwaystransparent = yes
+							rotation = 4.8380526865
+						}
+
+
+						iconType = {
+							name = "pie78"
+							quadTextureSprite = "GFX_pie_chart_segment"
+							centerPosition = yes
+							alwaystransparent = yes
+							rotation = 4.9008845396
+						}
+
+
+						iconType = {
+							name = "pie79"
+							quadTextureSprite = "GFX_pie_chart_segment"
+							centerPosition = yes
+							alwaystransparent = yes
+							rotation = 4.9637163927
+						}
+
+
+						iconType = {
+							name = "pie80"
+							quadTextureSprite = "GFX_pie_chart_segment"
+							centerPosition = yes
+							alwaystransparent = yes
+							rotation = 5.0265482457
+						}
+
+
+						iconType = {
+							name = "pie81"
+							quadTextureSprite = "GFX_pie_chart_segment"
+							centerPosition = yes
+							alwaystransparent = yes
+							rotation = 5.0893800988
+						}
+
+
+						iconType = {
+							name = "pie82"
+							quadTextureSprite = "GFX_pie_chart_segment"
+							centerPosition = yes
+							alwaystransparent = yes
+							rotation = 5.1522119519
+						}
+
+
+						iconType = {
+							name = "pie83"
+							quadTextureSprite = "GFX_pie_chart_segment"
+							centerPosition = yes
+							alwaystransparent = yes
+							rotation = 5.2150438050
+						}
+
+
+						iconType = {
+							name = "pie84"
+							quadTextureSprite = "GFX_pie_chart_segment"
+							centerPosition = yes
+							alwaystransparent = yes
+							rotation = 5.2778756580
+						}
+
+
+						iconType = {
+							name = "pie85"
+							quadTextureSprite = "GFX_pie_chart_segment"
+							centerPosition = yes
+							alwaystransparent = yes
+							rotation = 5.3407075111
+						}
+
+
+						iconType = {
+							name = "pie86"
+							quadTextureSprite = "GFX_pie_chart_segment"
+							centerPosition = yes
+							alwaystransparent = yes
+							rotation = 5.4035393642
+						}
+
+
+						iconType = {
+							name = "pie87"
+							quadTextureSprite = "GFX_pie_chart_segment"
+							centerPosition = yes
+							alwaystransparent = yes
+							rotation = 5.4663712172
+						}
+
+
+						iconType = {
+							name = "pie88"
+							quadTextureSprite = "GFX_pie_chart_segment"
+							centerPosition = yes
+							alwaystransparent = yes
+							rotation = 5.5292030703
+						}
+
+
+						iconType = {
+							name = "pie89"
+							quadTextureSprite = "GFX_pie_chart_segment"
+							centerPosition = yes
+							alwaystransparent = yes
+							rotation = 5.5920349234
+						}
+
+
+						iconType = {
+							name = "pie90"
+							quadTextureSprite = "GFX_pie_chart_segment"
+							centerPosition = yes
+							alwaystransparent = yes
+							rotation = 5.6548667765
+						}
+
+
+						iconType = {
+							name = "pie91"
+							quadTextureSprite = "GFX_pie_chart_segment"
+							centerPosition = yes
+							alwaystransparent = yes
+							rotation = 5.7176986295
+						}
+
+
+						iconType = {
+							name = "pie92"
+							quadTextureSprite = "GFX_pie_chart_segment"
+							centerPosition = yes
+							alwaystransparent = yes
+							rotation = 5.7805304826
+						}
+
+
+						iconType = {
+							name = "pie93"
+							quadTextureSprite = "GFX_pie_chart_segment"
+							centerPosition = yes
+							alwaystransparent = yes
+							rotation = 5.8433623357
+						}
+
+
+						iconType = {
+							name = "pie94"
+							quadTextureSprite = "GFX_pie_chart_segment"
+							centerPosition = yes
+							alwaystransparent = yes
+							rotation = 5.9061941887
+						}
+
+
+						iconType = {
+							name = "pie95"
+							quadTextureSprite = "GFX_pie_chart_segment"
+							centerPosition = yes
+							alwaystransparent = yes
+							rotation = 5.9690260418
+						}
+
+
+						iconType = {
+							name = "pie96"
+							quadTextureSprite = "GFX_pie_chart_segment"
+							centerPosition = yes
+							alwaystransparent = yes
+							rotation = 6.0318578949
+						}
+
+
+						iconType = {
+							name = "pie97"
+							quadTextureSprite = "GFX_pie_chart_segment"
+							centerPosition = yes
+							alwaystransparent = yes
+							rotation = 6.0946897480
+						}
+
+
+						iconType = {
+							name = "pie98"
+							quadTextureSprite = "GFX_pie_chart_segment"
+							centerPosition = yes
+							alwaystransparent = yes
+							rotation = 6.1575216010
+						}
+
+
+						iconType = {
+							name = "pie99"
+							quadTextureSprite = "GFX_pie_chart_segment"
+							centerPosition = yes
+							alwaystransparent = yes
+							rotation = 6.2203534541
+						}
+					}
+
+					iconType = {
+						name = "pie_overlay"
+						quadTextureSprite = "GFX_dark_piechart_overlay"
+						centerPosition = yes
+						alwaystransparent = yes
+					}
+				}
+			#
+
+			#Population Amount Area
+				iconType ={
+					name ="population_icon"
+					spriteType = "GFX_population_icon"
+					position = { x = 126 y = 2 }
+				}
+
+				instantTextBoxType = {
+					name = "pops_amount"
+					position = { x = 163 y = 5 }
+					font = "hoi_24header"
+					format = left
+					maxWidth = 132
+					text = "pops_amount_loc"
+					maxHeight = 24
+					fixedsize = yes
+					#alwaystransparent = yes
+				}
+
+				iconType ={
+					name ="population_trend_icon"
+					spriteType = "GFX_green_arrow_trend_up"
+					position = { x = 297 y = 2 }
+				}
+			#
+
+			#Money Area
+				iconType ={
+					name ="pops_money_icon"
+					spriteType = "GFX_currency_icons"
+					position = { x = 95 y = 45 }
+				}
+				instantTextBoxType = {
+					name = "pops_money"
+					position = { x = 117 y = 46 }
+					font = "hoi_18mbs"
+					format = left
+					maxWidth = 93
+					text = "pops_money_loc"
+					maxHeight = 24
+					fixedsize = yes
+					#alwaystransparent = yes
+				}
+				instantTextBoxType = {
+					name = "pops_earnings"
+					position = { x = 110 y = 62 }
+					font = "hoi_18mbs"
+					format = left
+					maxWidth = 100
+					text = "pops_earnings_loc"
+					maxHeight = 24
+					fixedsize = yes
+					#alwaystransparent = yes
+				}
+				instantTextBoxType = {
+					name = "pops_spending"
+					position = { x = 112 y = 78 }
+					font = "hoi_18mbs"
+					format = left
+					maxWidth = 100
+					text = "pops_spending_loc"
+					maxHeight = 24
+					fixedsize = yes
+					#alwaystransparent = yes
+				}
+			#
+
+			#Needs Fulfilled Area
+				iconType ={
+					name ="pops_life_needs_fulfilled_strip"
+					spriteType = "GFX_pops_life_needs_fulfilled_strip"
+					position = { x = 220 y = 75 }
+					frame = 1
+				}
+				iconType ={
+					name ="pops_everyday_needs_fulfilled_strip"
+					spriteType = "GFX_pops_everyday_needs_fulfilled_strip"
+					position = { x = 242 y = 75 }
+					frame = 1
+				}
+				iconType ={
+					name ="pops_luxury_needs_fulfilled_strip"
+					spriteType = "GFX_pops_luxury_needs_fulfilled_strip"
+					position = { x = 266 y = 75 }
+					frame = 1
+				}
+				iconType ={
+					name ="pops_services"
+					spriteType = "GFX_services"
+					position = { x = 218 y = 40 }
+				}
+			#
+
+			#Education Area
+				iconType ={
+					name ="pops_literacy_icon"
+					spriteType = "GFX_literacy_icon"
+					position = { x = 258 y = 39 }
+				}
+				instantTextBoxType = {
+					name = "pops_literacy_percentage"
+					position = { x = 285 y = 41 }
+					font = "hoi_18mbs"
+					format = left
+					maxWidth = 55
+					text = "pops_literacy_percentage_loc"
+					maxHeight = 24
+					fixedsize = yes
+					#alwaystransparent = yes
+				}
+
+				iconType ={
+					name ="pops_education_icon"
+					spriteType = "GFX_education_icon"
+					position = { x = 337 y = 40 }
+				}
+				instantTextBoxType = {
+					name = "pops_education_percentage"
+					position = { x = 364 y = 41 }
+					font = "hoi_18mbs"
+					format = left
+					maxWidth = 55
+					text = "pops_education_percentage_loc"
+					maxHeight = 24
+					fixedsize = yes
+					#alwaystransparent = yes
+				}
+			#
+
+			#National Bank Area
+				iconType ={
+					name ="national_bank_icon"
+					spriteType = "GFX_national_bank_icon"
+					position = { x = 288 y = 74 }
+				}
+				instantTextBoxType = {
+					name = "pops_savings"
+					position = { x = 315 y = 71 }
+					font = "hoi_18mbs"
+					format = left
+					maxWidth = 100
+					text = "pops_savings_loc"
+					maxHeight = 24
+					fixedsize = yes
+					#alwaystransparent = yes
+				}
+				instantTextBoxType = {
+					name = "pops_debt"
+					position = { x = 315 y = 86 }
+					font = "hoi_18mbs"
+					format = left
+					maxWidth = 100
+					text = "pops_debt_loc"
+					maxHeight = 24
+					fixedsize = yes
+					#alwaystransparent = yes
+				}
+
+
+			#
+
+			#Militancy Area
+				iconType ={
+					name ="militancy_icon"
+					spriteType = "GFX_militancy_icon"
+					position = { x = 341 y = 7 }
+				}
+
+				instantTextBoxType = {
+					name = "pops_militancy_loc"
+					position = { x = 365 y = 10 }
+					font = "hoi_18mbs"
+					format = left
+					maxWidth = 60
+					text = "pops_militancy_loc"
+					maxHeight = 24
+					fixedsize = yes
+					#alwaystransparent = yes
+				}
+			#
+
+			#Pop Data Chart
+				#Titles
+				instantTextBoxType = {
+					name = "pop_types_name_title"
+					position = { x = 40 y = 117 }
+					font = "hoi_18mbs"
+					format = center
+					maxWidth = 90
+					text = "pop_types_name_title"
+					maxHeight = 24
+					fixedsize = yes
+					#alwaystransparent = yes
+				}
+				instantTextBoxType = {
+					name = "pop_types_size_title"
+					position = { x = 154 y = 117 }
+					font = "hoi_18mbs"
+					format = center
+					maxWidth = 78
+					text = "pop_types_size_title"
+					maxHeight = 24
+					fixedsize = yes
+					#alwaystransparent = yes
+				}
+				instantTextBoxType = {
+					name = "pop_types_percentage_title"
+					position = { x = 244 y = 117 }
+					font = "hoi_18mbs"
+					format = center
+					maxWidth = 26
+					text = "pop_types_percentage_title"
+					maxHeight = 24
+					fixedsize = yes
+					#alwaystransparent = yes
+				}
+				instantTextBoxType = {
+					name = "pop_types_workforce_title"
+					position = { x = 286 y = 117 }
+					font = "hoi_18mbs"
+					format = center
+					maxWidth = 78
+					text = "pop_types_workforce_title"
+					maxHeight = 24
+					fixedsize = yes
+					#alwaystransparent = yes
+				}
+				iconType ={
+					name ="pop_types_unemployment_title_icon"
+					spriteType = "GFX_unemployment_icon"
+					position = { x = 381 y = 118 }
+				}
+
+
+
+				#Pop Types
+				iconType ={
+					name ="pops_rgos_square_icon"
+					spriteType = "GFX_pops_piechart_rgos_square"
+					position = { x = 21 y = 140 }
+				}
+				instantTextBoxType = {
+					name = "pops_rgos_name_loc"
+					position = { x = 42 y = 139 }
+					font = "hoi_18mbs"
+					format = left
+					maxWidth = 100
+					text = "pops_rgos_name_loc"
+					maxHeight = 24
+					fixedsize = yes
+					#alwaystransparent = yes
+				}
+				instantTextBoxType = {
+					name = "pops_rgos_size_loc"
+					position = { x = 142 y = 139 }
+					font = "hoi_18mbs"
+					format = center
+					maxWidth = 94
+					text = "pops_rgos_size_loc"
+					maxHeight = 24
+					fixedsize = yes
+					#alwaystransparent = yes
+				}
+				instantTextBoxType = {
+					name = "pops_rgos_percentage_loc"
+					position = { x = 236 y = 139 }
+					font = "hoi_18mbs"
+					format = center
+					maxWidth = 40
+					text = "pops_rgos_percentage_loc"
+					maxHeight = 24
+					fixedsize = yes
+					#alwaystransparent = yes
+				}
+				instantTextBoxType = {
+					name = "pops_rgos_workforce_loc"
+					position = { x = 276 y = 139 }
+					font = "hoi_18mbs"
+					format = center
+					maxWidth = 94
+					text = "pops_rgos_workforce_loc"
+					maxHeight = 24
+					fixedsize = yes
+					#alwaystransparent = yes
+				}
+				instantTextBoxType = {
+					name = "pops_rgos_unemployment_loc"
+					position = { x = 370 y = 139 }
+					font = "hoi_18mbs"
+					format = center
+					maxWidth = 40
+					text = "pops_rgos_unemployment_loc"
+					maxHeight = 24
+					fixedsize = yes
+					#alwaystransparent = yes
+				}
+				
+				
+				
+				iconType ={
+					name ="pops_artisans_square_icon"
+					spriteType = "GFX_pops_piechart_artisans_square"
+					position = { x = 21 y = 158 }
+				}
+				instantTextBoxType = {
+					name = "pops_artisans_name_loc"
+					position = { x = 42 y = 157 }
+					font = "hoi_18mbs"
+					format = left
+					maxWidth = 100
+					text = "pops_artisans_name_loc"
+					maxHeight = 24
+					fixedsize = yes
+					#alwaystransparent = yes
+				}
+				instantTextBoxType = {
+					name = "pops_artisans_size_loc"
+					position = { x = 142 y = 157 }
+					font = "hoi_18mbs"
+					format = center
+					maxWidth = 94
+					text = "pops_artisans_size_loc"
+					maxHeight = 24
+					fixedsize = yes
+					#alwaystransparent = yes
+				}
+				instantTextBoxType = {
+					name = "pops_artisans_percentage_loc"
+					position = { x = 236 y = 157 }
+					font = "hoi_18mbs"
+					format = center
+					maxWidth = 40
+					text = "pops_artisans_percentage_loc"
+					maxHeight = 24
+					fixedsize = yes
+					#alwaystransparent = yes
+				}
+				instantTextBoxType = {
+					name = "pops_artisans_workforce_loc"
+					position = { x = 276 y = 157 }
+					font = "hoi_18mbs"
+					format = center
+					maxWidth = 94
+					text = "pops_artisans_workforce_loc"
+					maxHeight = 24
+					fixedsize = yes
+					#alwaystransparent = yes
+				}
+				instantTextBoxType = {
+					name = "pops_artisans_unemployment_loc"
+					position = { x = 370 y = 157 }
+					font = "hoi_18mbs"
+					format = center
+					maxWidth = 40
+					text = "pops_artisans_unemployment_loc"
+					maxHeight = 24
+					fixedsize = yes
+					#alwaystransparent = yes
+				}
+
+				iconType ={
+					name ="pops_craftsmen_square_icon"
+					spriteType = "GFX_pops_piechart_craftsmen_square"
+					position = { x = 21 y = 176 }
+				}
+				instantTextBoxType = {
+					name = "pops_craftsmen_name_loc"
+					position = { x = 42 y = 175 }
+					font = "hoi_18mbs"
+					format = left
+					maxWidth = 100
+					text = "pops_craftsmen_name_loc"
+					maxHeight = 24
+					fixedsize = yes
+					#alwaystransparent = yes
+				}
+				instantTextBoxType = {
+					name = "pops_craftsmen_size_loc"
+					position = { x = 142 y = 175 }
+					font = "hoi_18mbs"
+					format = center
+					maxWidth = 94
+					text = "pops_craftsmen_size_loc"
+					maxHeight = 24
+					fixedsize = yes
+					#alwaystransparent = yes
+				}
+				instantTextBoxType = {
+					name = "pops_craftsmen_percentage_loc"
+					position = { x = 236 y = 175 }
+					font = "hoi_18mbs"
+					format = center
+					maxWidth = 40
+					text = "pops_craftsmen_percentage_loc"
+					maxHeight = 24
+					fixedsize = yes
+					#alwaystransparent = yes
+				}
+				instantTextBoxType = {
+					name = "pops_craftsmen_workforce_loc"
+					position = { x = 276 y = 175 }
+					font = "hoi_18mbs"
+					format = center
+					maxWidth = 94
+					text = "pops_craftsmen_workforce_loc"
+					maxHeight = 24
+					fixedsize = yes
+					#alwaystransparent = yes
+				}
+				instantTextBoxType = {
+					name = "pops_craftsmen_unemployment_loc"
+					position = { x = 370 y = 175 }
+					font = "hoi_18mbs"
+					format = center
+					maxWidth = 40
+					text = "pops_craftsmen_unemployment_loc"
+					maxHeight = 24
+					fixedsize = yes
+					#alwaystransparent = yes
+				}
+
+				iconType ={
+					name ="pops_specialists_square_icon"
+					spriteType = "GFX_pops_piechart_specialists_square"
+					position = { x = 21 y = 194 }
+				}
+				instantTextBoxType = {
+					name = "pops_specialists_name_loc"
+					position = { x = 42 y = 193 }
+					font = "hoi_18mbs"
+					format = left
+					maxWidth = 100
+					text = "pops_specialists_name_loc"
+					maxHeight = 24
+					fixedsize = yes
+					#alwaystransparent = yes
+				}
+				instantTextBoxType = {
+					name = "pops_specialists_size_loc"
+					position = { x = 142 y = 193 }
+					font = "hoi_18mbs"
+					format = center
+					maxWidth = 94
+					text = "pops_specialists_size_loc"
+					maxHeight = 24
+					fixedsize = yes
+					#alwaystransparent = yes
+				}
+				instantTextBoxType = {
+					name = "pops_specialists_percentage_loc"
+					position = { x = 236 y = 193 }
+					font = "hoi_18mbs"
+					format = center
+					maxWidth = 40
+					text = "pops_specialists_percentage_loc"
+					maxHeight = 24
+					fixedsize = yes
+					#alwaystransparent = yes
+				}
+				instantTextBoxType = {
+					name = "pops_specialists_workforce_loc"
+					position = { x = 276 y = 193 }
+					font = "hoi_18mbs"
+					format = center
+					maxWidth = 94
+					text = "pops_specialists_workforce_loc"
+					maxHeight = 24
+					fixedsize = yes
+					#alwaystransparent = yes
+				}
+				instantTextBoxType = {
+					name = "pops_specialists_unemployment_loc"
+					position = { x = 370 y = 193 }
+					font = "hoi_18mbs"
+					format = center
+					maxWidth = 40
+					text = "pops_specialists_unemployment_loc"
+					maxHeight = 24
+					fixedsize = yes
+					#alwaystransparent = yes
+				}
+
+				iconType ={
+					name ="pops_clerks_square_icon"
+					spriteType = "GFX_pops_piechart_clerks_square"
+					position = { x = 21 y = 212 }
+				}
+				instantTextBoxType = {
+					name = "pops_clerks_name_loc"
+					position = { x = 42 y = 211 }
+					font = "hoi_18mbs"
+					format = left
+					maxWidth = 100
+					text = "pops_clerks_name_loc"
+					maxHeight = 24
+					fixedsize = yes
+					#alwaystransparent = yes
+				}
+				instantTextBoxType = {
+					name = "pops_clerks_size_loc"
+					position = { x = 142 y = 211 }
+					font = "hoi_18mbs"
+					format = center
+					maxWidth = 94
+					text = "pops_clerks_size_loc"
+					maxHeight = 24
+					fixedsize = yes
+					#alwaystransparent = yes
+				}
+				instantTextBoxType = {
+					name = "pops_clerks_percentage_loc"
+					position = { x = 236 y = 211 }
+					font = "hoi_18mbs"
+					format = center
+					maxWidth = 40
+					text = "pops_clerks_percentage_loc"
+					maxHeight = 24
+					fixedsize = yes
+					#alwaystransparent = yes
+				}
+				instantTextBoxType = {
+					name = "pops_clerks_workforce_loc"
+					position = { x = 276 y = 211 }
+					font = "hoi_18mbs"
+					format = center
+					maxWidth = 94
+					text = "pops_clerks_workforce_loc"
+					maxHeight = 24
+					fixedsize = yes
+					#alwaystransparent = yes
+				}
+				instantTextBoxType = {
+					name = "pops_clerks_unemployment_loc"
+					position = { x = 370 y = 211 }
+					font = "hoi_18mbs"
+					format = center
+					maxWidth = 40
+					text = "pops_clerks_unemployment_loc"
+					maxHeight = 24
+					fixedsize = yes
+					#alwaystransparent = yes
+				}
+
+				iconType ={
+					name ="pops_professionals_square_icon"
+					spriteType = "GFX_pops_piechart_professionals_square"
+					position = { x = 21 y = 230 }
+				}
+				instantTextBoxType = {
+					name = "pops_professionals_name_loc"
+					position = { x = 42 y = 229 }
+					font = "hoi_18mbs"
+					format = left
+					maxWidth = 100
+					text = "pops_professionals_name_loc"
+					maxHeight = 24
+					fixedsize = yes
+					#alwaystransparent = yes
+				}
+				instantTextBoxType = {
+					name = "pops_professionals_size_loc"
+					position = { x = 142 y = 229 }
+					font = "hoi_18mbs"
+					format = center
+					maxWidth = 94
+					text = "pops_professionals_size_loc"
+					maxHeight = 24
+					fixedsize = yes
+					#alwaystransparent = yes
+				}
+				instantTextBoxType = {
+					name = "pops_professionals_percentage_loc"
+					position = { x = 236 y = 229 }
+					font = "hoi_18mbs"
+					format = center
+					maxWidth = 40
+					text = "pops_professionals_percentage_loc"
+					maxHeight = 24
+					fixedsize = yes
+					#alwaystransparent = yes
+				}
+				instantTextBoxType = {
+					name = "pops_professionals_workforce_loc"
+					position = { x = 276 y = 229 }
+					font = "hoi_18mbs"
+					format = center
+					maxWidth = 94
+					text = "pops_professionals_workforce_loc"
+					maxHeight = 24
+					fixedsize = yes
+					#alwaystransparent = yes
+				}
+				instantTextBoxType = {
+					name = "pops_professionals_unemployment_loc"
+					position = { x = 370 y = 229 }
+					font = "hoi_18mbs"
+					format = center
+					maxWidth = 40
+					text = "pops_professionals_unemployment_loc"
+					maxHeight = 24
+					fixedsize = yes
+					#alwaystransparent = yes
+				}
+
+				iconType ={
+					name ="pops_soldiers_square_icon"
+					spriteType = "GFX_pops_piechart_soldiers_square"
+					position = { x = 21 y = 248 }
+				}
+				instantTextBoxType = {
+					name = "pops_soldiers_name_loc"
+					position = { x = 42 y = 247 }
+					font = "hoi_18mbs"
+					format = left
+					maxWidth = 100
+					text = "pops_soldiers_name_loc"
+					maxHeight = 24
+					fixedsize = yes
+					#alwaystransparent = yes
+				}
+				instantTextBoxType = {
+					name = "pops_soldiers_size_loc"
+					position = { x = 142 y = 247 }
+					font = "hoi_18mbs"
+					format = center
+					maxWidth = 94
+					text = "pops_soldiers_size_loc"
+					maxHeight = 24
+					fixedsize = yes
+					#alwaystransparent = yes
+				}
+				instantTextBoxType = {
+					name = "pops_soldiers_percentage_loc"
+					position = { x = 236 y = 247 }
+					font = "hoi_18mbs"
+					format = center
+					maxWidth = 40
+					text = "pops_soldiers_percentage_loc"
+					maxHeight = 24
+					fixedsize = yes
+					#alwaystransparent = yes
+				}
+				instantTextBoxType = {
+					name = "pops_soldiers_workforce_loc"
+					position = { x = 276 y = 247 }
+					font = "hoi_18mbs"
+					format = center
+					maxWidth = 94
+					text = "pops_soldiers_workforce_loc"
+					maxHeight = 24
+					fixedsize = yes
+					#alwaystransparent = yes
+				}
+				instantTextBoxType = {
+					name = "pops_soldiers_unemployment_loc"
+					position = { x = 370 y = 247 }
+					font = "hoi_18mbs"
+					format = center
+					maxWidth = 40
+					text = "pops_soldiers_unemployment_loc"
+					maxHeight = 24
+					fixedsize = yes
+					#alwaystransparent = yes
+				}
+
+				iconType ={
+					name ="pops_officers_square_icon"
+					spriteType = "GFX_pops_piechart_officers_square"
+					position = { x = 21 y = 266 }
+				}
+				instantTextBoxType = {
+					name = "pops_officers_name_loc"
+					position = { x = 42 y = 265 }
+					font = "hoi_18mbs"
+					format = left
+					maxWidth = 100
+					text = "pops_officers_name_loc"
+					maxHeight = 24
+					fixedsize = yes
+					#alwaystransparent = yes
+				}
+				instantTextBoxType = {
+					name = "pops_officers_size_loc"
+					position = { x = 142 y = 265 }
+					font = "hoi_18mbs"
+					format = center
+					maxWidth = 94
+					text = "pops_officers_size_loc"
+					maxHeight = 24
+					fixedsize = yes
+					#alwaystransparent = yes
+				}
+				instantTextBoxType = {
+					name = "pops_officers_percentage_loc"
+					position = { x = 236 y = 265 }
+					font = "hoi_18mbs"
+					format = center
+					maxWidth = 40
+					text = "pops_officers_percentage_loc"
+					maxHeight = 24
+					fixedsize = yes
+					#alwaystransparent = yes
+				}
+				instantTextBoxType = {
+					name = "pops_officers_workforce_loc"
+					position = { x = 276 y = 265 }
+					font = "hoi_18mbs"
+					format = center
+					maxWidth = 94
+					text = "pops_officers_workforce_loc"
+					maxHeight = 24
+					fixedsize = yes
+					#alwaystransparent = yes
+				}
+				instantTextBoxType = {
+					name = "pops_officers_unemployment_loc"
+					position = { x = 370 y = 265 }
+					font = "hoi_18mbs"
+					format = center
+					maxWidth = 40
+					text = "pops_officers_unemployment_loc"
+					maxHeight = 24
+					fixedsize = yes
+					#alwaystransparent = yes
+				}
+
+				iconType ={
+					name ="pops_capitalists_square_icon"
+					spriteType = "GFX_pops_piechart_capitalists_square"
+					position = { x = 21 y = 284 }
+				}
+				instantTextBoxType = {
+					name = "pops_capitalists_name_loc"
+					position = { x = 42 y = 283 }
+					font = "hoi_18mbs"
+					format = left
+					maxWidth = 100
+					text = "pops_capitalists_name_loc"
+					maxHeight = 24
+					fixedsize = yes
+					#alwaystransparent = yes
+				}
+				instantTextBoxType = {
+					name = "pops_capitalists_size_loc"
+					position = { x = 142 y = 283 }
+					font = "hoi_18mbs"
+					format = center
+					maxWidth = 94
+					text = "pops_capitalists_size_loc"
+					maxHeight = 24
+					fixedsize = yes
+					#alwaystransparent = yes
+				}
+				instantTextBoxType = {
+					name = "pops_capitalists_percentage_loc"
+					position = { x = 236 y = 283 }
+					font = "hoi_18mbs"
+					format = center
+					maxWidth = 40
+					text = "pops_capitalists_percentage_loc"
+					maxHeight = 24
+					fixedsize = yes
+					#alwaystransparent = yes
+				}
+				instantTextBoxType = {
+					name = "pops_capitalists_workforce_loc"
+					position = { x = 276 y = 283 }
+					font = "hoi_18mbs"
+					format = center
+					maxWidth = 94
+					text = "pops_capitalists_workforce_loc"
+					maxHeight = 24
+					fixedsize = yes
+					#alwaystransparent = yes
+				}
+				instantTextBoxType = {
+					name = "pops_capitalists_unemployment_loc"
+					position = { x = 370 y = 283 }
+					font = "hoi_18mbs"
+					format = center
+					maxWidth = 40
+					text = "pops_capitalists_unemployment_loc"
+					maxHeight = 24
+					fixedsize = yes
+					#alwaystransparent = yes
+				}
+
+				iconType ={
+					name ="pops_aristocrats_square_icon"
+					spriteType = "GFX_pops_piechart_aristocrats_square"
+					position = { x = 21 y = 302 }
+				}
+				instantTextBoxType = {
+					name = "pops_aristocrats_name_loc"
+					position = { x = 42 y = 301 }
+					font = "hoi_18mbs"
+					format = left
+					maxWidth = 100
+					text = "pops_aristocrats_name_loc"
+					maxHeight = 24
+					fixedsize = yes
+					#alwaystransparent = yes
+				}
+				instantTextBoxType = {
+					name = "pops_aristocrats_size_loc"
+					position = { x = 142 y = 301 }
+					font = "hoi_18mbs"
+					format = center
+					maxWidth = 94
+					text = "pops_aristocrats_size_loc"
+					maxHeight = 24
+					fixedsize = yes
+					#alwaystransparent = yes
+				}
+				instantTextBoxType = {
+					name = "pops_aristocrats_percentage_loc"
+					position = { x = 236 y = 301 }
+					font = "hoi_18mbs"
+					format = center
+					maxWidth = 40
+					text = "pops_aristocrats_percentage_loc"
+					maxHeight = 24
+					fixedsize = yes
+					#alwaystransparent = yes
+				}
+				instantTextBoxType = {
+					name = "pops_aristocrats_workforce_loc"
+					position = { x = 276 y = 301 }
+					font = "hoi_18mbs"
+					format = center
+					maxWidth = 94
+					text = "pops_aristocrats_workforce_loc"
+					maxHeight = 24
+					fixedsize = yes
+					#alwaystransparent = yes
+				}
+				instantTextBoxType = {
+					name = "pops_aristocrats_unemployment_loc"
+					position = { x = 370 y = 301 }
+					font = "hoi_18mbs"
+					format = center
+					maxWidth = 40
+					text = "pops_aristocrats_unemployment_loc"
+					maxHeight = 24
+					fixedsize = yes
+					#alwaystransparent = yes
+				}
+
+			#
+
+		}
+
+		containerWindowType = {
+			name = "production_container"
+			position = {x = 440 y = 50 }
+			size = { width = 623 height = 340 }
+			Orientation = upper_left
+			
+			instantTextBoxType = {
+				name = "production_title"
+				position = { x = 7 y = 5 }
+				font = "hoi_24header"
+				format = center
+				maxWidth = 120
+				text = "production_title"
+				maxHeight = 24
+				fixedsize = yes
+				#alwaystransparent = yes
+			}
+
+			#Factory Total
+				iconType ={
+					name ="factory_icon"
+					spriteType = "GFX_industrial_capacity_icon"
+					position = { x = 120 y = 5 }
+				}
+
+				instantTextBoxType = {
+					name = "factory_total"
+					position = { x = 154 y = 6 }
+					font = "hoi_24header"
+					format = center
+					maxWidth = 40
+					text = "factory_total_loc"
+					maxHeight = 24
+					fixedsize = yes
+					#alwaystransparent = yes
+				}
+			#
+
+			#Capitalists Percentage
+				iconType ={
+					name ="capitalists_icon"
+					spriteType = "GFX_capitalists_icon"
+					position = { x = 200 y = 4 }
+				}
+				instantTextBoxType = {
+					name = "capitalists_percentage_loc"
+					position = { x = 224 y = 9 }
+					font = "hoi_18mbs"
+					format = left
+					maxWidth = 40
+					text = "production_capitalists_percentage_loc"
+					maxHeight = 24
+					fixedsize = yes
+					#alwaystransparent = yes
+				}
+			#
+
+			#Worker Organization (AKA Trade Unions)
+				iconType ={
+					name ="worker_organization_icon"
+					spriteType = "GFX_worker_organization_icon"
+					position = { x = 270 y = 6 }
+				}
+				instantTextBoxType = {
+					name = "worker_organization_loc"
+					position = { x = 300 y = 9 }
+					font = "hoi_18mbs"
+					format = center
+					maxWidth = 50
+					text = "production_worker_organization_loc"
+					maxHeight = 24
+					fixedsize = yes
+					#alwaystransparent = yes
+				}
+			#
+
+			#Industry Input
+				iconType ={
+					name ="factory_input_raw_goods_icon"
+					spriteType = "GFX_raw_goods"
+					position = { x = 18 y = 39 }
+				}
+				instantTextBoxType = {
+					name = "factory_input_raw_goods_percentage_loc"
+					position = { x = 43 y = 43 }
+					font = "hoi_18mbs"
+					format = center
+					maxWidth = 55
+					text = "factory_input_raw_goods_percentage_loc"
+					maxHeight = 24
+					fixedsize = yes
+					#alwaystransparent = yes
+				}
+
+				iconType ={
+					name ="factory_input_industrial_goods_icon"
+					spriteType = "GFX_industrial_goods"
+					position = { x = 95 y = 40 }
+				}
+				instantTextBoxType = {
+					name = "factory_input_industrial_goods_percentage_loc"
+					position = { x = 120 y = 43 }
+					font = "hoi_18mbs"
+					format = center
+					maxWidth = 55
+					text = "factory_input_industrial_goods_percentage_loc"
+					maxHeight = 24
+					fixedsize = yes
+					#alwaystransparent = yes
+				}
+			#
+
+			#Employees
+				iconType ={
+					name ="factory_employment_icon"
+					spriteType = "GFX_workforce_icon"
+					position = { x = 192 y = 41 }
+				}
+				instantTextBoxType = {
+					name = "factory_employment_loc"
+					position = { x = 206 y = 43 }
+					font = "hoi_18mbs"
+					format = center
+					maxWidth = 146
+					text = "factory_employment_loc"
+					maxHeight = 24
+					fixedsize = yes
+					#alwaystransparent = yes
+				}
+			#
+
+			#Money Area
+				iconType ={
+					name ="factory_money_icon"
+					spriteType = "GFX_currency_icons"
+					position = { x = 356 y = 15 }
+				}
+				instantTextBoxType = {
+					name = "factory_money"
+					position = { x = 378 y = 16 }
+					font = "hoi_18mbs"
+					format = left
+					maxWidth = 93
+					text = "factory_money_loc"
+					maxHeight = 24
+					fixedsize = yes
+					#alwaystransparent = yes
+				}
+				instantTextBoxType = {
+					name = "factory_earnings"
+					position = { x = 371 y = 32 }
+					font = "hoi_18mbs"
+					format = left
+					maxWidth = 100
+					text = "factory_earnings_loc"
+					maxHeight = 24
+					fixedsize = yes
+					#alwaystransparent = yes
+				}
+				instantTextBoxType = {
+					name = "factory_spending"
+					position = { x = 373 y = 48 }
+					font = "hoi_18mbs"
+					format = left
+					maxWidth = 100
+					text = "factory_spending_loc"
+					maxHeight = 24
+					fixedsize = yes
+					#alwaystransparent = yes
+				}
+			#
+
+			#Corporations
+				
+				containerWindowType = {
+					name = "factory_corporations_container"
+					position = { x = 474 y = 12 }
+					size = { width = 143 height = 61 }
+					margin = { top = 0 bottom = 0 left = 8 right = 8 }
+					Orientation = upper_left
+
+					background = {
+						name = "Background"
+						spriteType = "GFX_small_frame"
+					}
+
+					horizontalScrollbar = "bottom_horizontal_slider"
+
+					gridboxtype = {
+						name = "factory_corporations_entries"
+						position = { x = 0 y = 7 }
+						size = { width = 90 height = 31 }
+						slotsize = { width = 87 height = 31 }
+						add_horizontal = yes
+					}
+				}
+			#
+
+			#Everyday Goods Factory
+
+				containerWindowType = {
+					name = "everyday_goods_factory_container"
+					position = {x = 10 y = 73 }
+					size = { width = 140 height = 100 }
+					Orientation = upper_left
+
+					buttonType = {
+						name = "everyday_goods_factory_build_button"
+						position = { x = 7 y = 6 }
+						quadTextureSprite ="GFX_building_construction_button"
+						clicksound = click_close
+					}
+					iconType ={
+						name ="everyday_goods_factory_under_construction_icon"
+						spriteType = "GFX_in_building_construction_button"
+						position = { x = 7 y = 6 }
+						pdx_tooltip = factory_everyday_goods_under_construction_tt
+					}
+
+					instantTextBoxType = {
+						name = "factory_everyday_goods_size_loc"
+						position = { x = 32 y = 6 }
+						font = "hoi_18mbs"
+						format = left
+						maxWidth = 30
+						text = "factory_everyday_goods_size_loc"
+						maxHeight = 24
+						fixedsize = yes
+						#alwaystransparent = yes
+					}
+					iconType ={
+						name ="everyday_goods_factory_icon"
+						spriteType = "GFX_everyday_goods"
+						position = { x = 64 y = 4 }
+					}
+
+					instantTextBoxType = {
+						name = "factory_everyday_goods_production_loc"
+						position = { x = 11 y = 34 }
+						font = "hoi_18mbs"
+						format = left
+						maxWidth = 80
+						text = "factory_everyday_goods_production_loc"
+						maxHeight = 24
+						fixedsize = yes
+						#alwaystransparent = yes
+					}
+				}
+
+			#
+
+			#Luxury Goods Factory
+
+				containerWindowType = {
+					name = "luxury_goods_factory_container"
+					position = {x = 111 y = 73 }
+					size = { width = 140 height = 100 }
+					Orientation = upper_left
+
+					buttonType = {
+						name = "luxury_goods_factory_build_button"
+						position = { x = 7 y = 6 }
+						quadTextureSprite ="GFX_building_construction_button"
+						clicksound = click_close
+					}
+					iconType ={
+						name ="luxury_goods_factory_under_construction_icon"
+						spriteType = "GFX_in_building_construction_button"
+						position = { x = 7 y = 6 }
+						pdx_tooltip = factory_luxury_goods_under_construction_tt
+					}
+
+					instantTextBoxType = {
+						name = "factory_luxury_goods_size_loc"
+						position = { x = 32 y = 6 }
+						font = "hoi_18mbs"
+						format = left
+						maxWidth = 30
+						text = "factory_luxury_goods_size_loc"
+						maxHeight = 24
+						fixedsize = yes
+						#alwaystransparent = yes
+					}
+					iconType ={
+						name ="luxury_goods_factory_icon"
+						spriteType = "GFX_luxury_goods"
+						position = { x = 64 y = 4 }
+					}
+
+					instantTextBoxType = {
+						name = "factory_luxury_goods_production_loc"
+						position = { x = 11 y = 34 }
+						font = "hoi_18mbs"
+						format = left
+						maxWidth = 80
+						text = "factory_luxury_goods_production_loc"
+						maxHeight = 24
+						fixedsize = yes
+						#alwaystransparent = yes
+					}
+				}
+
+			#
+
+			#Industrial Goods Factory
+
+				containerWindowType = {
+					name = "industrial_goods_factory_container"
+					position = {x = 212 y = 73 }
+					size = { width = 140 height = 100 }
+					Orientation = upper_left
+
+					buttonType = {
+						name = "industrial_goods_factory_build_button"
+						position = { x = 7 y = 6 }
+						quadTextureSprite ="GFX_building_construction_button"
+						clicksound = click_close
+					}
+					iconType ={
+						name ="industrial_goods_factory_under_construction_icon"
+						spriteType = "GFX_in_building_construction_button"
+						position = { x = 7 y = 6 }
+						pdx_tooltip = factory_industrial_goods_under_construction_tt
+					}
+
+					instantTextBoxType = {
+						name = "factory_industrial_goods_size_loc"
+						position = { x = 32 y = 6 }
+						font = "hoi_18mbs"
+						format = left
+						maxWidth = 30
+						text = "factory_industrial_goods_size_loc"
+						maxHeight = 24
+						fixedsize = yes
+						#alwaystransparent = yes
+					}
+					iconType ={
+						name ="industrial_goods_factory_icon"
+						spriteType = "GFX_industrial_goods"
+						position = { x = 64 y = 4 }
+					}
+
+					instantTextBoxType = {
+						name = "factory_industrial_goods_production_loc"
+						position = { x = 11 y = 34 }
+						font = "hoi_18mbs"
+						format = left
+						maxWidth = 80
+						text = "factory_industrial_goods_production_loc"
+						maxHeight = 24
+						fixedsize = yes
+						#alwaystransparent = yes
+					}
+				}
+
+			#
+
+			#Civilian Factory
+
+				containerWindowType = {
+					name = "civilian_factory_container"
+					position = {x = 313 y = 73 }
+					size = { width = 140 height = 100 }
+					Orientation = upper_left
+
+					buttonType = {
+						name = "civilian_factory_build_button"
+						position = { x = 7 y = 6 }
+						quadTextureSprite ="GFX_building_construction_button"
+						clicksound = click_close
+					}
+					iconType ={
+						name ="civilian_factory_under_construction_icon"
+						spriteType = "GFX_in_building_construction_button"
+						position = { x = 7 y = 6 }
+					}
+
+					instantTextBoxType = {
+						name = "factory_civilian_size_loc"
+						position = { x = 32 y = 6 }
+						font = "hoi_18mbs"
+						format = left
+						maxWidth = 30
+						text = "factory_civilian_size_loc"
+						maxHeight = 24
+						fixedsize = yes
+						#alwaystransparent = yes
+					}
+					iconType ={
+						name ="civilian_factory_icon"
+						spriteType = "GFX_non_available_factory_icon"
+						position = { x = 64 y = 4 }
+					}
+				}
+
+			#
+
+			#Military Factory
+
+				containerWindowType = {
+					name = "military_factory_container"
+					position = {x = 414 y = 73 }
+					size = { width = 140 height = 100 }
+					Orientation = upper_left
+
+					buttonType = {
+						name = "military_factory_build_button"
+						position = { x = 7 y = 6 }
+						quadTextureSprite ="GFX_building_construction_button"
+						clicksound = click_close
+					}
+					iconType ={
+						name ="military_factory_under_construction_icon"
+						spriteType = "GFX_in_building_construction_button"
+						position = { x = 7 y = 6 }
+					}
+
+					instantTextBoxType = {
+						name = "factory_military_size_loc"
+						position = { x = 32 y = 6 }
+						font = "hoi_18mbs"
+						format = left
+						maxWidth = 30
+						text = "factory_military_size_loc"
+						maxHeight = 24
+						fixedsize = yes
+						#alwaystransparent = yes
+					}
+					iconType ={
+						name ="military_factory_icon"
+						spriteType = "GFX_military_factory_icon"
+						position = { x = 64 y = 4 }
+					}
+				}
+
+			#
+
+			#Naval Dockyard
+
+				containerWindowType = {
+					name = "naval_factory_container"
+					position = {x = 515 y = 73 }
+					size = { width = 140 height = 100 }
+					Orientation = upper_left
+
+					buttonType = {
+						name = "naval_factory_build_button"
+						position = { x = 7 y = 6 }
+						quadTextureSprite ="GFX_building_construction_button"
+						clicksound = click_close
+					}
+					iconType ={
+						name ="naval_factory_under_construction_icon"
+						spriteType = "GFX_in_building_construction_button"
+						position = { x = 7 y = 6 }
+					}
+
+					instantTextBoxType = {
+						name = "factory_naval_size_loc"
+						position = { x = 32 y = 6 }
+						font = "hoi_18mbs"
+						format = left
+						maxWidth = 30
+						text = "factory_naval_size_loc"
+						maxHeight = 24
+						fixedsize = yes
+						#alwaystransparent = yes
+					}
+					iconType ={
+						name ="naval_factory_icon"
+						spriteType = "GFX_dockyard_icon"
+						position = { x = 64 y = 6 }
+					}
+				}
+
+			#
+
+
+			#RGOs
+				instantTextBoxType = {
+					name = "rgos_title"
+					position = { x = 40 y = 141 }
+					font = "hoi_18mbs"
+					format = center
+					maxWidth = 86
+					text = "rgos_title"
+					maxHeight = 24
+					fixedsize = yes
+					#alwaystransparent = yes
+				}
+
+				iconType ={
+					name ="rgos_employment_icon"
+					spriteType = "GFX_workforce_icon"
+					position = { x = 18 y = 170 }
+				}
+				instantTextBoxType = {
+					name = "rgos_employment_loc"
+					position = { x = 50 y = 172 }
+					font = "hoi_18mbs"
+					format = left
+					maxWidth = 100
+					text = "rgos_employment_loc"
+					maxHeight = 24
+					fixedsize = yes
+					#alwaystransparent = yes
+				}
+				
+				iconType ={
+					name ="rgos_output_icon"
+					spriteType = "GFX_life_goods"
+					position = { x = 18 y = 205 }
+				}
+				instantTextBoxType = {
+					name = "rgos_output_production_loc"
+					position = { x = 50 y = 207 }
+					font = "hoi_18mbs"
+					format = left
+					maxWidth = 100
+					text = "rgos_output_production_loc"
+					maxHeight = 24
+					fixedsize = yes
+					#alwaystransparent = yes
+				}
+				iconType ={
+					name ="rgos_type_icon"
+					spriteType = "GFX_life_goods"
+					position = { x = 120 y = 205 }
+				}
+				
+				iconType ={
+					name ="rgos_aristocrats_icon"
+					spriteType = "GFX_aristocrats_icon"
+					position = { x = 10 y = 232 }
+				}
+				instantTextBoxType = {
+					name = "rgos_aristocrats_percentage_loc"
+					position = { x = 40 y = 238 } #14, 2
+					font = "hoi_18mbs"
+					format = left
+					maxWidth = 100
+					text = "rgos_aristocrats_percentage_loc"
+					maxHeight = 24
+					fixedsize = yes
+					#alwaystransparent = yes
+				}
+
+				containerWindowType = {
+					name = "rgos_corporations_container"
+					position = { x = 10 y = 261 }
+					size = { width = 143 height = 61 }
+					margin = { top = 0 bottom = 0 left = 8 right = 8 }
+					Orientation = upper_left
+
+					background = {
+						name = "Background"
+						spriteType = "GFX_small_frame"
+					}
+
+					horizontalScrollbar = "bottom_horizontal_slider"
+
+					gridboxtype = {
+						name = "rgos_corporations_entries"
+						position = { x = 0 y = 7 }
+						size = { width = 90 height = 31 }
+						slotsize = { width = 87 height = 31 }
+						add_horizontal = yes
+					}
+				}
+			#
+
+			#Artisans
+				instantTextBoxType = {
+					name = "artisans_title"
+					position = { x = 266 y = 138 }
+					font = "hoi_18mbs"
+					format = center
+					maxWidth = 86
+					text = "artisans_title"
+					maxHeight = 24
+					fixedsize = yes
+					#alwaystransparent = yes
+				}
+
+				iconType ={
+					name ="artisans_employment_icon"
+					spriteType = "GFX_workforce_icon"
+					position = { x = 178 y = 170 }
+				}
+				instantTextBoxType = {
+					name = "artisans_employment_loc"
+					position = { x = 210 y = 172 }
+					font = "hoi_18mbs"
+					format = left
+					maxWidth = 100
+					text = "artisans_employment_loc"
+					maxHeight = 24
+					fixedsize = yes
+					#alwaystransparent = yes
+				}
+
+				iconType ={
+					name ="artisans_input_raw_goods_icon"
+					spriteType = "GFX_raw_goods"
+					position = { x = 176 y = 205 }
+				}
+				instantTextBoxType = {
+					name = "artisans_input_raw_goods_percentage_loc"
+					position = { x = 207 y = 208 }
+					font = "hoi_18mbs"
+					format = left
+					maxWidth = 55
+					text = "artisans_input_raw_goods_percentage_loc"
+					maxHeight = 24
+					fixedsize = yes
+					#alwaystransparent = yes
+				}
+
+				iconType ={
+					name ="artisans_everyday_goods_icon"
+					spriteType = "GFX_everyday_goods"
+					position = { x = 324 y = 177 }
+				}
+				instantTextBoxType = {
+					name = "artisans_everyday_goods_workforce_loc"
+					position = { x = 355 y = 170 }
+					font = "hoi_18mbs"
+					format = left
+					maxWidth = 95
+					text = "artisans_everyday_goods_workforce_loc"
+					maxHeight = 24
+					fixedsize = yes
+					#alwaystransparent = yes
+				}
+				instantTextBoxType = {
+					name = "artisans_everyday_goods_production_loc"
+					position = { x = 355 y = 190 }
+					font = "hoi_18mbs"
+					format = left
+					maxWidth = 95
+					text = "artisans_everyday_goods_production_loc"
+					maxHeight = 24
+					fixedsize = yes
+					#alwaystransparent = yes
+				}
+
+				iconType ={
+					name ="artisans_luxury_goods_icon"
+					spriteType = "GFX_luxury_goods"
+					position = { x = 324 y = 228 }
+				}
+				instantTextBoxType = {
+					name = "artisans_luxury_goods_workforce_loc"
+					position = { x = 355 y = 221 }
+					font = "hoi_18mbs"
+					format = left
+					maxWidth = 95
+					text = "artisans_luxury_goods_workforce_loc"
+					maxHeight = 24
+					fixedsize = yes
+					#alwaystransparent = yes
+				}
+				instantTextBoxType = {
+					name = "artisans_luxury_goods_production_loc"
+					position = { x = 355 y = 241 }
+					font = "hoi_18mbs"
+					format = left
+					maxWidth = 95
+					text = "artisans_luxury_goods_production_loc"
+					maxHeight = 24
+					fixedsize = yes
+					#alwaystransparent = yes
+				}
+
+				iconType ={
+					name ="artisans_industrial_goods_icon"
+					spriteType = "GFX_industrial_goods"
+					position = { x = 324 y = 279 }
+				}
+				instantTextBoxType = {
+					name = "artisans_industrial_goods_workforce_loc"
+					position = { x = 355 y = 272 }
+					font = "hoi_18mbs"
+					format = left
+					maxWidth = 95
+					text = "artisans_industrial_goods_workforce_loc"
+					maxHeight = 24
+					fixedsize = yes
+					#alwaystransparent = yes
+				}
+				instantTextBoxType = {
+					name = "artisans_industrial_goods_production_loc"
+					position = { x = 355 y = 292 }
+					font = "hoi_18mbs"
+					format = left
+					maxWidth = 95
+					text = "artisans_industrial_goods_production_loc"
+					maxHeight = 24
+					fixedsize = yes
+					#alwaystransparent = yes
+				}
+			#
+
+			#Services
+				instantTextBoxType = {
+					name = "services_title"
+					position = { x = 503 y = 141 } #40
+					font = "hoi_18mbs"
+					format = center
+					maxWidth = 86
+					text = "services_title"
+					maxHeight = 24
+					fixedsize = yes
+					#alwaystransparent = yes
+				}
+
+				iconType ={
+					name ="services_employment_icon"
+					spriteType = "GFX_workforce_icon"
+					position = { x = 481 y = 170 }
+				}
+				instantTextBoxType = {
+					name = "services_employment_loc"
+					position = { x = 513 y = 172 }
+					font = "hoi_18mbs"
+					format = left
+					maxWidth = 100
+					text = "services_employment_loc"
+					maxHeight = 24
+					fixedsize = yes
+					#alwaystransparent = yes
+				}
+				
+				iconType ={
+					name ="services_output_icon"
+					spriteType = "GFX_services"
+					position = { x = 481 y = 205 }
+				}
+				instantTextBoxType = {
+					name = "services_output_production_loc"
+					position = { x = 513 y = 207 }
+					font = "hoi_18mbs"
+					format = left
+					maxWidth = 100
+					text = "services_output_production_loc"
+					maxHeight = 24
+					fixedsize = yes
+					#alwaystransparent = yes
+				}
+				
+				iconType ={
+					name ="services_capitalists_icon"
+					spriteType = "GFX_capitalists_icon"
+					position = { x = 473 y = 232 }
+				}
+				instantTextBoxType = {
+					name = "services_capitalists_percentage_loc"
+					position = { x = 503 y = 238 } #14, 2
+					font = "hoi_18mbs"
+					format = left
+					maxWidth = 100
+					text = "services_capitalists_percentage_loc"
+					maxHeight = 24
+					fixedsize = yes
+					#alwaystransparent = yes
+				}
+
+				containerWindowType = {
+					name = "services_corporations_container"
+					position = { x = 473 y = 261 }
+					size = { width = 143 height = 61 }
+					margin = { top = 0 bottom = 0 left = 8 right = 8 }
+					Orientation = upper_left
+
+					background = {
+						name = "Background"
+						spriteType = "GFX_small_frame"
+					}
+
+					horizontalScrollbar = "bottom_horizontal_slider"
+
+					gridboxtype = {
+						name = "services_corporations_entries"
+						position = { x = 0 y = 7 }
+						size = { width = 90 height = 31 }
+						slotsize = { width = 87 height = 31 }
+						add_horizontal = yes
+					}
+				}
+			#
+		}
+
+		containerWindowType = {
+			name = "trade_container"
+			position = {x = 10 y = 383 }
+			size = { width = 623 height = 340 }
+			Orientation = upper_left
+			
+			instantTextBoxType = {
+				name = "trade_title"
+				position = { x = 11 y = 5 }
+				font = "hoi_24header"
+				format = center
+				maxWidth = 100
+				text = "trade_title"
+				maxHeight = 24
+				fixedsize = yes
+				#alwaystransparent = yes
+			}
+
+			#Infrastructure Area
+				iconType ={
+					name ="trade_infra_icon"
+					spriteType = "GFX_buildings_strip"
+					position = { x = 116 y = 6 }
+					frame = 3
+					scale = 0.6
+					pdx_tooltip = trade_infra_tt
+				}
+				instantTextBoxType = {
+					name = "trade_infra_title"
+					position = { x = 145 y = 9 }
+					font = "hoi_18mbs"
+					format = center
+					maxWidth = 60
+					text = "trade_infra_title"
+					maxHeight = 24
+					fixedsize = yes
+					#alwaystransparent = yes
+					pdx_tooltip = trade_infra_tt
+				}
+
+				buttonType = {
+					name = "trade_infra_build_button"
+					position = { x = 204 y = 8 }
+					quadTextureSprite ="GFX_building_construction_button"
+					clicksound = click_close
+				}
+				iconType ={
+					name ="trade_infra_under_construction_icon"
+					spriteType = "GFX_in_building_construction_button"
+					position = { x = 204 y = 8 }
+					pdx_tooltip = infrastructure_under_construction_tt
+				}
+			#
+
+			#Life Goods
+				containerWindowType = {
+					name = "trade_life_goods_container"
+					position = { x = 14 y = 37 }
+					size = { width = 233 height = 43 }
+					Orientation = upper_left
+					
+					iconType ={
+						name ="trade_life_goods_icon"
+						spriteType = "GFX_life_goods"
+						position = { x = 4 y = 7 }
+					}
+					instantTextBoxType = {
+						name = "trade_life_goods_title"
+						position = { x = 35 y = 3 }
+						font = "hoi_18mbs"
+						format = left
+						maxWidth = 120
+						text = "trade_life_goods_title"
+						maxHeight = 24
+						fixedsize = yes
+						#alwaystransparent = yes
+					}
+
+					instantTextBoxType = {
+						name = "trade_life_goods_price_loc"
+						position = { x = 150 y = 3 }
+						font = "hoi_18mbs"
+						format = right
+						maxWidth = 80
+						text = "trade_life_goods_price_loc"
+						maxHeight = 24
+						fixedsize = yes
+						#alwaystransparent = yes
+					}
+
+					instantTextBoxType = {
+						name = "trade_life_goods_trade_status_loc"
+						position = { x = 35 y = 22 }
+						font = "hoi_16mbs"
+						format = left
+						maxWidth = 65
+						text = "trade_life_goods_trade_status_loc"
+						maxHeight = 24
+						fixedsize = yes
+						#alwaystransparent = yes
+					}
+					instantTextBoxType = {
+						name = "trade_life_goods_trade_amount_loc"
+						position = { x = 100 y = 22 }
+						font = "hoi_16mbs"
+						format = center
+						maxWidth = 75
+						text = "trade_life_goods_trade_amount_loc"
+						maxHeight = 24
+						fixedsize = yes
+						#alwaystransparent = yes
+					}
+					instantTextBoxType = {
+						name = "trade_life_goods_trade_value_loc"
+						position = { x = 150 y = 22 }
+						font = "hoi_16mbs"
+						format = right
+						maxWidth = 80
+						text = "trade_life_goods_trade_value_loc"
+						maxHeight = 24
+						fixedsize = yes
+						#alwaystransparent = yes
+					}
+				}
+			#
+			#Everyday Goods
+				containerWindowType = {
+					name = "trade_everyday_goods_container"
+					position = { x = 14 y = 86 }
+					size = { width = 233 height = 43 }
+					Orientation = upper_left
+					
+					iconType ={
+						name ="trade_everyday_goods_icon"
+						spriteType = "GFX_everyday_goods"
+						position = { x = 4 y = 7 }
+					}
+					instantTextBoxType = {
+						name = "trade_everyday_goods_title"
+						position = { x = 35 y = 3 }
+						font = "hoi_18mbs"
+						format = left
+						maxWidth = 120
+						text = "trade_everyday_goods_title"
+						maxHeight = 24
+						fixedsize = yes
+						#alwaystransparent = yes
+					}
+
+					instantTextBoxType = {
+						name = "trade_everyday_goods_price_loc"
+						position = { x = 150 y = 3 }
+						font = "hoi_18mbs"
+						format = right
+						maxWidth = 80
+						text = "trade_everyday_goods_price_loc"
+						maxHeight = 24
+						fixedsize = yes
+						#alwaystransparent = yes
+					}
+
+					instantTextBoxType = {
+						name = "trade_everyday_goods_trade_status_loc"
+						position = { x = 35 y = 22 }
+						font = "hoi_16mbs"
+						format = left
+						maxWidth = 65
+						text = "trade_everyday_goods_trade_status_loc"
+						maxHeight = 24
+						fixedsize = yes
+						#alwaystransparent = yes
+					}
+					instantTextBoxType = {
+						name = "trade_everyday_goods_trade_amount_loc"
+						position = { x = 100 y = 22 }
+						font = "hoi_16mbs"
+						format = center
+						maxWidth = 75
+						text = "trade_everyday_goods_trade_amount_loc"
+						maxHeight = 24
+						fixedsize = yes
+						#alwaystransparent = yes
+					}
+					instantTextBoxType = {
+						name = "trade_everyday_goods_trade_value_loc"
+						position = { x = 150 y = 22 }
+						font = "hoi_16mbs"
+						format = right
+						maxWidth = 80
+						text = "trade_everyday_goods_trade_value_loc"
+						maxHeight = 24
+						fixedsize = yes
+						#alwaystransparent = yes
+					}
+				}
+			#
+			#Luxury Goods
+				containerWindowType = {
+					name = "trade_luxury_goods_container"
+					position = { x = 14 y = 135 }
+					size = { width = 233 height = 43 }
+					Orientation = upper_left
+					
+					iconType ={
+						name ="trade_luxury_goods_icon"
+						spriteType = "GFX_luxury_goods"
+						position = { x = 4 y = 7 }
+					}
+					instantTextBoxType = {
+						name = "trade_luxury_goods_title"
+						position = { x = 35 y = 3 }
+						font = "hoi_18mbs"
+						format = left
+						maxWidth = 120
+						text = "trade_luxury_goods_title"
+						maxHeight = 24
+						fixedsize = yes
+						#alwaystransparent = yes
+					}
+
+					instantTextBoxType = {
+						name = "trade_luxury_goods_price_loc"
+						position = { x = 150 y = 3 }
+						font = "hoi_18mbs"
+						format = right
+						maxWidth = 80
+						text = "trade_luxury_goods_price_loc"
+						maxHeight = 24
+						fixedsize = yes
+						#alwaystransparent = yes
+					}
+
+					instantTextBoxType = {
+						name = "trade_luxury_goods_trade_status_loc"
+						position = { x = 35 y = 22 }
+						font = "hoi_16mbs"
+						format = left
+						maxWidth = 65
+						text = "trade_luxury_goods_trade_status_loc"
+						maxHeight = 24
+						fixedsize = yes
+						#alwaystransparent = yes
+					}
+					instantTextBoxType = {
+						name = "trade_luxury_goods_trade_amount_loc"
+						position = { x = 100 y = 22 }
+						font = "hoi_16mbs"
+						format = center
+						maxWidth = 75
+						text = "trade_luxury_goods_trade_amount_loc"
+						maxHeight = 24
+						fixedsize = yes
+						#alwaystransparent = yes
+					}
+					instantTextBoxType = {
+						name = "trade_luxury_goods_trade_value_loc"
+						position = { x = 150 y = 22 }
+						font = "hoi_16mbs"
+						format = right
+						maxWidth = 80
+						text = "trade_luxury_goods_trade_value_loc"
+						maxHeight = 24
+						fixedsize = yes
+						#alwaystransparent = yes
+					}
+				}
+			#
+			#Services
+				containerWindowType = {
+					name = "trade_services_container"
+					position = { x = 254 y = 37 }
+					size = { width = 233 height = 43 }
+					Orientation = upper_left
+					
+					iconType ={
+						name ="trade_services_icon"
+						spriteType = "GFX_services"
+						position = { x = 4 y = 7 }
+					}
+					instantTextBoxType = {
+						name = "trade_services_title"
+						position = { x = 35 y = 3 }
+						font = "hoi_18mbs"
+						format = left
+						maxWidth = 120
+						text = "trade_services_title"
+						maxHeight = 24
+						fixedsize = yes
+						#alwaystransparent = yes
+					}
+
+					instantTextBoxType = {
+						name = "trade_services_price_loc"
+						position = { x = 150 y = 3 }
+						font = "hoi_18mbs"
+						format = right
+						maxWidth = 80
+						text = "trade_services_price_loc"
+						maxHeight = 24
+						fixedsize = yes
+						#alwaystransparent = yes
+					}
+
+					instantTextBoxType = {
+						name = "trade_services_trade_status_loc"
+						position = { x = 35 y = 22 }
+						font = "hoi_16mbs"
+						format = left
+						maxWidth = 65
+						text = "trade_services_trade_status_loc"
+						maxHeight = 24
+						fixedsize = yes
+						#alwaystransparent = yes
+					}
+					instantTextBoxType = {
+						name = "trade_services_trade_amount_loc"
+						position = { x = 100 y = 22 }
+						font = "hoi_16mbs"
+						format = center
+						maxWidth = 75
+						text = "trade_services_trade_amount_loc"
+						maxHeight = 24
+						fixedsize = yes
+						#alwaystransparent = yes
+					}
+					instantTextBoxType = {
+						name = "trade_services_trade_value_loc"
+						position = { x = 150 y = 22 }
+						font = "hoi_16mbs"
+						format = right
+						maxWidth = 80
+						text = "trade_services_trade_value_loc"
+						maxHeight = 24
+						fixedsize = yes
+						#alwaystransparent = yes
+					}
+				}
+			#
+			#Raw Goods
+				containerWindowType = {
+					name = "trade_raw_goods_container"
+					position = { x = 254 y = 86 }
+					size = { width = 233 height = 43 }
+					Orientation = upper_left
+					
+					iconType ={
+						name ="trade_raw_goods_icon"
+						spriteType = "GFX_raw_goods"
+						position = { x = 4 y = 7 }
+					}
+					instantTextBoxType = {
+						name = "trade_raw_goods_title"
+						position = { x = 35 y = 3 }
+						font = "hoi_18mbs"
+						format = left
+						maxWidth = 120
+						text = "trade_raw_goods_title"
+						maxHeight = 24
+						fixedsize = yes
+						#alwaystransparent = yes
+					}
+
+					instantTextBoxType = {
+						name = "trade_raw_goods_price_loc"
+						position = { x = 150 y = 3 }
+						font = "hoi_18mbs"
+						format = right
+						maxWidth = 80
+						text = "trade_raw_goods_price_loc"
+						maxHeight = 24
+						fixedsize = yes
+						#alwaystransparent = yes
+					}
+
+					instantTextBoxType = {
+						name = "trade_raw_goods_trade_status_loc"
+						position = { x = 35 y = 22 }
+						font = "hoi_16mbs"
+						format = left
+						maxWidth = 65
+						text = "trade_raw_goods_trade_status_loc"
+						maxHeight = 24
+						fixedsize = yes
+						#alwaystransparent = yes
+					}
+					instantTextBoxType = {
+						name = "trade_raw_goods_trade_amount_loc"
+						position = { x = 100 y = 22 }
+						font = "hoi_16mbs"
+						format = center
+						maxWidth = 75
+						text = "trade_raw_goods_trade_amount_loc"
+						maxHeight = 24
+						fixedsize = yes
+						#alwaystransparent = yes
+					}
+					instantTextBoxType = {
+						name = "trade_raw_goods_trade_value_loc"
+						position = { x = 150 y = 22 }
+						font = "hoi_16mbs"
+						format = right
+						maxWidth = 80
+						text = "trade_raw_goods_trade_value_loc"
+						maxHeight = 24
+						fixedsize = yes
+						#alwaystransparent = yes
+					}
+				}
+			#
+			#Industrial Goods
+				containerWindowType = {
+					name = "trade_industrial_goods_container"
+					position = { x = 254 y = 135 }
+					size = { width = 233 height = 43 }
+					Orientation = upper_left
+					
+					iconType ={
+						name ="trade_industrial_goods_icon"
+						spriteType = "GFX_industrial_goods"
+						position = { x = 4 y = 7 }
+					}
+					instantTextBoxType = {
+						name = "trade_industrial_goods_title"
+						position = { x = 35 y = 3 }
+						font = "hoi_18mbs"
+						format = left
+						maxWidth = 120
+						text = "trade_industrial_goods_title"
+						maxHeight = 24
+						fixedsize = yes
+						#alwaystransparent = yes
+					}
+
+					instantTextBoxType = {
+						name = "trade_industrial_goods_price_loc"
+						position = { x = 150 y = 3 }
+						font = "hoi_18mbs"
+						format = right
+						maxWidth = 80
+						text = "trade_industrial_goods_price_loc"
+						maxHeight = 24
+						fixedsize = yes
+						#alwaystransparent = yes
+					}
+
+					instantTextBoxType = {
+						name = "trade_industrial_goods_trade_status_loc"
+						position = { x = 35 y = 22 }
+						font = "hoi_16mbs"
+						format = left
+						maxWidth = 65
+						text = "trade_industrial_goods_trade_status_loc"
+						maxHeight = 24
+						fixedsize = yes
+						#alwaystransparent = yes
+					}
+					instantTextBoxType = {
+						name = "trade_industrial_goods_trade_amount_loc"
+						position = { x = 100 y = 22 }
+						font = "hoi_16mbs"
+						format = center
+						maxWidth = 75
+						text = "trade_industrial_goods_trade_amount_loc"
+						maxHeight = 24
+						fixedsize = yes
+						#alwaystransparent = yes
+					}
+					instantTextBoxType = {
+						name = "trade_industrial_goods_trade_value_loc"
+						position = { x = 150 y = 22 }
+						font = "hoi_16mbs"
+						format = right
+						maxWidth = 80
+						text = "trade_industrial_goods_trade_value_loc"
+						maxHeight = 24
+						fixedsize = yes
+						#alwaystransparent = yes
+					}
+				}
+			#
+
+			#Table Area
+				instantTextBoxType = {
+					name = "needs_title"
+					position = { x = 528 y = 18 }
+					font = "hoi_18mbs"
+					format = center
+					maxWidth = 60
+					text = "needs_title"
+					maxHeight = 24
+					fixedsize = yes
+					#alwaystransparent = yes
+				}
+				instantTextBoxType = {
+					name = "supply_title"
+					position = { x = 599 y = 18 }
+					font = "hoi_18mbs"
+					format = center
+					maxWidth = 60
+					text = "supply_title"
+					maxHeight = 24
+					fixedsize = yes
+					#alwaystransparent = yes
+				}
+				instantTextBoxType = {
+					name = "demand_title"
+					position = { x = 670 y = 18 }
+					font = "hoi_18mbs"
+					format = center
+					maxWidth = 60
+					text = "demand_title"
+					maxHeight = 24
+					fixedsize = yes
+					#alwaystransparent = yes
+				}
+				#Life Goods
+					containerWindowType = {
+						name = "table_life_goods_container"
+						position = { x = 503 y = 45 }
+						size = { width = 235 height = 22 }
+						Orientation = upper_left
+						
+						iconType ={
+							name ="table_life_goods_icon"
+							spriteType = "GFX_life_goods"
+							position = { x = 1 y = 1 }
+							scale = 0.6
+						}
+
+						instantTextBoxType = {
+							name = "table_life_goods_need_loc"
+							position = { x = 20 y = 1 }
+							font = "hoi_16mbs"
+							format = center
+							maxWidth = 70
+							text = "table_life_goods_need_loc"
+							maxHeight = 24
+							fixedsize = yes
+							#alwaystransparent = yes
+						}
+						instantTextBoxType = {
+							name = "table_life_goods_supply_loc"
+							position = { x = 91 y = 1 }
+							font = "hoi_16mbs"
+							format = center
+							maxWidth = 70
+							text = "table_life_goods_supply_loc"
+							maxHeight = 24
+							fixedsize = yes
+							#alwaystransparent = yes
+						}
+						instantTextBoxType = {
+							name = "table_life_goods_demand_loc"
+							position = { x = 162 y = 1 }
+							font = "hoi_16mbs"
+							format = center
+							maxWidth = 70
+							text = "table_life_goods_demand_loc"
+							maxHeight = 24
+							fixedsize = yes
+							#alwaystransparent = yes
+						}
+					}
+				#
+				#Everyday Goods
+					containerWindowType = {
+						name = "table_everyday_goods_container"
+						position = { x = 503 y = 67 }
+						size = { width = 235 height = 22 }
+						Orientation = upper_left
+						
+						iconType ={
+							name ="table_everyday_goods_icon"
+							spriteType = "GFX_everyday_goods"
+							position = { x = 1 y = 1 }
+							scale = 0.6
+						}
+
+						instantTextBoxType = {
+							name = "table_everyday_goods_need_loc"
+							position = { x = 20 y = 1 }
+							font = "hoi_16mbs"
+							format = center
+							maxWidth = 70
+							text = "table_everyday_goods_need_loc"
+							maxHeight = 24
+							fixedsize = yes
+							#alwaystransparent = yes
+						}
+						instantTextBoxType = {
+							name = "table_everyday_goods_supply_loc"
+							position = { x = 91 y = 1 }
+							font = "hoi_16mbs"
+							format = center
+							maxWidth = 70
+							text = "table_everyday_goods_supply_loc"
+							maxHeight = 24
+							fixedsize = yes
+							#alwaystransparent = yes
+						}
+						instantTextBoxType = {
+							name = "table_everyday_goods_demand_loc"
+							position = { x = 162 y = 1 }
+							font = "hoi_16mbs"
+							format = center
+							maxWidth = 70
+							text = "table_everyday_goods_demand_loc"
+							maxHeight = 24
+							fixedsize = yes
+							#alwaystransparent = yes
+						}
+					}
+				#
+				#Luxury Goods
+					containerWindowType = {
+						name = "table_luxury_goods_container"
+						position = { x = 503 y = 89 }
+						size = { width = 235 height = 22 }
+						Orientation = upper_left
+						
+						iconType ={
+							name ="table_luxury_goods_icon"
+							spriteType = "GFX_luxury_goods"
+							position = { x = 1 y = 1 }
+							scale = 0.6
+						}
+
+						instantTextBoxType = {
+							name = "table_luxury_goods_need_loc"
+							position = { x = 20 y = 1 }
+							font = "hoi_16mbs"
+							format = center
+							maxWidth = 70
+							text = "table_luxury_goods_need_loc"
+							maxHeight = 24
+							fixedsize = yes
+							#alwaystransparent = yes
+						}
+						instantTextBoxType = {
+							name = "table_luxury_goods_supply_loc"
+							position = { x = 91 y = 1 }
+							font = "hoi_16mbs"
+							format = center
+							maxWidth = 70
+							text = "table_luxury_goods_supply_loc"
+							maxHeight = 24
+							fixedsize = yes
+							#alwaystransparent = yes
+						}
+						instantTextBoxType = {
+							name = "table_luxury_goods_demand_loc"
+							position = { x = 162 y = 1 }
+							font = "hoi_16mbs"
+							format = center
+							maxWidth = 70
+							text = "table_luxury_goods_demand_loc"
+							maxHeight = 24
+							fixedsize = yes
+							#alwaystransparent = yes
+						}
+					}
+				#
+				#Services
+					containerWindowType = {
+						name = "table_services_container"
+						position = { x = 503 y = 111 }
+						size = { width = 235 height = 22 }
+						Orientation = upper_left
+						
+						iconType ={
+							name ="table_services_icon"
+							spriteType = "GFX_services"
+							position = { x = 1 y = 1 }
+							scale = 0.6
+						}
+
+						instantTextBoxType = {
+							name = "table_services_need_loc"
+							position = { x = 20 y = 1 }
+							font = "hoi_16mbs"
+							format = center
+							maxWidth = 70
+							text = "table_services_need_loc"
+							maxHeight = 24
+							fixedsize = yes
+							#alwaystransparent = yes
+						}
+						instantTextBoxType = {
+							name = "table_services_supply_loc"
+							position = { x = 91 y = 1 }
+							font = "hoi_16mbs"
+							format = center
+							maxWidth = 70
+							text = "table_services_supply_loc"
+							maxHeight = 24
+							fixedsize = yes
+							#alwaystransparent = yes
+						}
+						instantTextBoxType = {
+							name = "table_services_demand_loc"
+							position = { x = 162 y = 1 }
+							font = "hoi_16mbs"
+							format = center
+							maxWidth = 70
+							text = "table_services_demand_loc"
+							maxHeight = 24
+							fixedsize = yes
+							#alwaystransparent = yes
+						}
+					}
+				#
+				#Raw Goods
+					containerWindowType = {
+						name = "table_raw_goods_container"
+						position = { x = 503 y = 133 }
+						size = { width = 235 height = 22 }
+						Orientation = upper_left
+						
+						iconType ={
+							name ="table_raw_goods_icon"
+							spriteType = "GFX_raw_goods"
+							position = { x = 1 y = 1 }
+							scale = 0.6
+						}
+
+						instantTextBoxType = {
+							name = "table_raw_goods_need_loc"
+							position = { x = 20 y = 1 }
+							font = "hoi_16mbs"
+							format = center
+							maxWidth = 70
+							text = "table_raw_goods_need_loc"
+							maxHeight = 24
+							fixedsize = yes
+							#alwaystransparent = yes
+						}
+						instantTextBoxType = {
+							name = "table_raw_goods_supply_loc"
+							position = { x = 91 y = 1 }
+							font = "hoi_16mbs"
+							format = center
+							maxWidth = 70
+							text = "table_raw_goods_supply_loc"
+							maxHeight = 24
+							fixedsize = yes
+							#alwaystransparent = yes
+						}
+						instantTextBoxType = {
+							name = "table_raw_goods_demand_loc"
+							position = { x = 162 y = 1 }
+							font = "hoi_16mbs"
+							format = center
+							maxWidth = 70
+							text = "table_raw_goods_demand_loc"
+							maxHeight = 24
+							fixedsize = yes
+							#alwaystransparent = yes
+						}
+					}
+				#
+				#Industrial Goods
+					containerWindowType = {
+						name = "table_industrial_goods_container"
+						position = { x = 503 y = 155 }
+						size = { width = 235 height = 22 }
+						Orientation = upper_left
+						
+						iconType ={
+							name ="table_industrial_goods_icon"
+							spriteType = "GFX_industrial_goods"
+							position = { x = 1 y = 1 }
+							scale = 0.6
+						}
+
+						instantTextBoxType = {
+							name = "table_industrial_goods_need_loc"
+							position = { x = 20 y = 1 }
+							font = "hoi_16mbs"
+							format = center
+							maxWidth = 70
+							text = "table_industrial_goods_need_loc"
+							maxHeight = 24
+							fixedsize = yes
+							#alwaystransparent = yes
+						}
+						instantTextBoxType = {
+							name = "table_industrial_goods_supply_loc"
+							position = { x = 91 y = 1 }
+							font = "hoi_16mbs"
+							format = center
+							maxWidth = 70
+							text = "table_industrial_goods_supply_loc"
+							maxHeight = 24
+							fixedsize = yes
+							#alwaystransparent = yes
+						}
+						instantTextBoxType = {
+							name = "table_industrial_goods_demand_loc"
+							position = { x = 162 y = 1 }
+							font = "hoi_16mbs"
+							format = center
+							maxWidth = 70
+							text = "table_industrial_goods_demand_loc"
+							maxHeight = 24
+							fixedsize = yes
+							#alwaystransparent = yes
+						}
+					}
+				#
+			#
+		}
+
+		containerWindowType = {
+			name = "statistics_container"
+			position = {x = 765 y = 383 }
+			size = { width = 323 height = 340 }
+			Orientation = upper_left
+			
+			instantTextBoxType = {
+				name = "statistics_title"
+				position = { x = 11 y = 5 }
+				font = "hoi_24header"
+				format = center
+				maxWidth = 115
+				text = "statistics_title"
+				maxHeight = 24
+				fixedsize = yes
+				#alwaystransparent = yes
+			}
+
+			#GDP Amount Area
+				iconType ={
+					name ="statistics_gdp_icon"
+					spriteType = "GFX_gdp_icon"
+					position = { x = 132 y = 7 }
+				}
+				instantTextBoxType = {
+					name = "statistics_gdp_amount_loc"
+					position = { x = 165 y = 11 }
+					font = "hoi_18mbs"
+					format = left
+					maxWidth = 120
+					text = "statistics_gdp_amount_loc"
+					maxHeight = 24
+					fixedsize = yes
+					#alwaystransparent = yes
+				}
+			#
+			#GDP Graph
+				instantTextBoxType = {
+					name = "statistics_gdp_graph_max_loc"
+					position = { x = 9 y = 38 }
+					font = "hoi_16mbs"
+					format = right
+					maxWidth = 40
+					text = "statistics_gdp_graph_max_loc"
+					maxHeight = 24
+					fixedsize = yes
+					#alwaystransparent = yes
+				}
+				instantTextBoxType = {
+					name = "statistics_gdp_graph_min_loc"
+					position = { x = 9 y = 102 }
+					font = "hoi_16mbs"
+					format = right
+					maxWidth = 40
+					text = "statistics_gdp_graph_min_loc"
+					maxHeight = 24
+					fixedsize = yes
+					#alwaystransparent = yes
+				}
+
+				gridboxtype = {
+					name = "statistics_gdp_graph"
+					position = { x = 52 y = 38 }
+					size = { width = 0 height = 80 }
+					slotsize = { width = 5 height = 80 }
+					add_horizontal = yes
+				}
+			#
+			#Other Statistics Area
+				instantTextBoxType = {
+					name = "statistics_gdp_growth_loc"
+					position = { x = 14 y = 120 }
+					font = "hoi_18mbs"
+					format = left
+					maxWidth = 270
+					text = "statistics_gdp_growth_loc"
+					maxHeight = 24
+					fixedsize = yes
+					#alwaystransparent = yes
+				}
+				instantTextBoxType = {
+					name = "statistics_money_supply_loc"
+					position = { x = 14 y = 140 }
+					font = "hoi_18mbs"
+					format = left
+					maxWidth = 270
+					text = "statistics_money_supply_loc"
+					maxHeight = 24
+					fixedsize = yes
+					#alwaystransparent = yes
+				}
+				instantTextBoxType = {
+					name = "statistics_annual_inflation_loc"
+					position = { x = 14 y = 158 }
+					font = "hoi_18mbs"
+					format = left
+					maxWidth = 270
+					text = "statistics_annual_inflation_loc"
+					maxHeight = 24
+					fixedsize = yes
+					#alwaystransparent = yes
+				}
+			#
+		}
+		buttonType = {
+			name = "close_button"
+			position = { x = -43 y = 9 }
+			quadTextureSprite ="GFX_closebutton"
+			buttonFont = "Main_14_black"
+			shortcut = "ESCAPE"
+			Orientation = "UPPER_RIGHT"
+			clicksound = click_close
+			pdx_tooltip = "CLOSE"
+		}
+
+		containerWindowType = {
+			name = "time_button"
+			position = { x = 850 y = 580 }
+			size = { width = 221 height = 34 }
+			buttonType = {
+				name = "time_button"
+				position = { x = 0 y = 0 }
+				quadTextureSprite ="GFX_button_221x34"
+				buttonFont = "Main_14_black"
+				Orientation = "UPPER_LEFT"
+				clicksound = click_close
+				#shortcut = "A"
+			}
+			instantTextBoxType = {
+				name = "time_button_title"
+				position = { x = 0 y = 8 }
+				font = "hoi_18mbs"
+				format = center
+				maxWidth = 221
+				text = "Pass Time by One Month"
+				maxHeight = 24
+				fixedsize = yes
+				alwaystransparent = yes
+			}
+		}
+		containerWindowType = {
+			name = "reset_button"
+			position = { x = 630 y = 580 }
+			size = { width = 221 height = 34 }
+			buttonType = {
+				name = "reset_button"
+				position = { x = 0 y = 0 }
+				quadTextureSprite ="GFX_button_221x34"
+				buttonFont = "Main_14_black"
+				Orientation = "UPPER_LEFT"
+				clicksound = click_close
+				#shortcut = "A"
+			}
+			instantTextBoxType = {
+				name = "reset_button_title"
+				position = { x = 0 y = 8 }
+				font = "hoi_18mbs"
+				format = center
+				maxWidth = 221
+				text = "Reset the Matrix"
+				maxHeight = 24
+				fixedsize = yes
+				alwaystransparent = yes
+			}
+		}
+		containerWindowType = {
+			name = "extra_button"
+			position = { x = 410 y = 580 }
+			size = { width = 221 height = 34 }
+			buttonType = {
+				name = "extra_button"
+				position = { x = 0 y = 0 }
+				quadTextureSprite ="GFX_button_221x34"
+				buttonFont = "Main_14_black"
+				Orientation = "UPPER_LEFT"
+				clicksound = click_close
+				#shortcut = "A"
+			}
+			instantTextBoxType = {
+				name = "extra_button_title"
+				position = { x = 0 y = 8 }
+				font = "hoi_18mbs"
+				format = center
+				maxWidth = 221
+				text = "Extra Button"
+				maxHeight = 24
+				fixedsize = yes
+				alwaystransparent = yes
+			}
+		}
+	}
+	
+	containerWindowType = {
+		name = "factory_corporation_entry"
+		position = { x = 0 y = 0} 
+		size = { width = 87 height = 31 }
+		
+		instantTextBoxType = { 
+			name = "factory_corporation_title"
+			position = { x = 1 y = 0 }
+			font = "hoi_16mbs"
+			format = left
+			maxWidth = 85
+			text = "factory_corporation_title"
+			maxHeight = 24
+			fixedsize = yes
+			#alwaystransparent = yes
+		}
+		iconType ={
+			name ="factory_corporation_good"
+			spriteType = "GFX_everyday_goods"
+			position = { x = 1 y = 16 }
+			scale = 0.55
+		}
+
+		
+		instantTextBoxType = {
+			name = "factory_corporation_amount"
+			position = { x = 43 y = 14 }
+			font = "hoi_16mbs"
+			format = right
+			maxWidth = 40
+			text = "factory_corporation_amount_loc"
+			maxHeight = 24
+			fixedsize = yes
+			#alwaystransparent = yes
+		}
+		iconType ={
+			name ="factory_corporation_divider"
+			spriteType = "GFX_vertical_gray_line"
+			position = { x = 84 y = -1 }
+		}
+	}
+	containerWindowType = {
+		name = "rgo_corporation_entry"
+		position = { x = 0 y = 0} 
+		size = { width = 87 height = 31 } 
+		
+		instantTextBoxType = { 
+			name = "rgo_corporation_title"
+			position = { x = 1 y = 0 }
+			font = "hoi_16mbs"
+			format = left
+			maxWidth = 85
+			text = "rgo_corporation_title"
+			maxHeight = 24
+			fixedsize = yes
+			#alwaystransparent = yes
+		}
+		iconType ={
+			name ="rgo_corporation_good"
+			spriteType = "GFX_life_goods"
+			position = { x = 1 y = 16 }
+			scale = 0.55
+		}
+
+		
+		instantTextBoxType = {
+			name = "rgo_corporation_percentage"
+			position = { x = 43 y = 14 }
+			font = "hoi_16mbs"
+			format = right
+			maxWidth = 40
+			text = "rgo_corporation_percentage_loc"
+			maxHeight = 24
+			fixedsize = yes
+			#alwaystransparent = yes
+		}
+		iconType ={
+			name ="rgo_corporation_divider"
+			spriteType = "GFX_vertical_gray_line"
+			position = { x = 84 y = -1 }
+		}
+	}
+	containerWindowType = {
+		name = "service_corporation_entry"
+		position = { x = 0 y = 0} 
+		size = { width = 87 height = 31 }
+		
+		instantTextBoxType = { 
+			name = "service_corporation_title"
+			position = { x = 1 y = 0 }
+			font = "hoi_16mbs"
+			format = left
+			maxWidth = 85
+			text = "service_corporation_title"
+			maxHeight = 24
+			fixedsize = yes
+			#alwaystransparent = yes
+		}
+		iconType ={
+			name ="service_corporation_good"
+			spriteType = "GFX_services"
+			position = { x = 1 y = 16 }
+			scale = 0.55
+		}
+
+		
+		instantTextBoxType = {
+			name = "service_corporation_percentage"
+			position = { x = 43 y = 14 }
+			font = "hoi_16mbs"
+			format = right
+			maxWidth = 40
+			text = "service_corporation_percentage_loc"
+			maxHeight = 24
+			fixedsize = yes
+			#alwaystransparent = yes
+		}
+		iconType ={
+			name ="service_corporation_divider"
+			spriteType = "GFX_vertical_gray_line"
+			position = { x = 84 y = -1 }
+		}
+	}
+	containerWindowType = {
+		name = "state_gdp_point_entry"
+		position = { x = 0 y = 0 } 
+		size = { width = 10 height = 80 }
+		
+		iconType ={
+			name ="gdp_graph_point_icon"
+			spriteType = "GFX_gdp_graph_point_icon_strip"
+			position = { x = 0 y = 0 }
+		}
+	}
+
+	containerWindowType = {
+		name = "country_economy_window_container"
+		position = {x=250 y=125}
+		size = { width=1108 height=720 }	
+		
+		fade_time = 300
+		fade_type = linear
+		moveable = yes
+		
+		background = {
+			name = "Background"
+			spriteType = "GFX_browser_bg"
+		}
+		
+		instantTextboxType = {
+			name = "country_economy_title"
+			position = { x = 25 y = 12 }
+			textureFile = ""
+			font = "hoi_36header"
+			borderSize = {x = 0 y = 0}
+			text = "country_economy_title"
+			maxWidth = 1000
+			maxHeight = 20
+			fixedsize = yes
+		}
+
+		containerWindowType = { #Finances
+			name = "govt_finances_container"
+			position = {x = 18 y = 52 }
+			size = { width = 663 height = 618 }
+			Orientation = upper_left
+		
+			#background = {
+			#	name = "Background"
+			#	spriteType = "GFX_tiled_decisions_bg_small"
+			#}
+			
+			instantTextBoxType = {
+				name = "govt_finances_title"
+				position = { x = 7 y = 10 }
+				font = "hoi_24header"
+				format = center
+				maxWidth = 120
+				text = "govt_finances_title"
+				maxHeight = 24
+				fixedsize = yes
+				#alwaystransparent = yes
+			}
+			containerWindowType = { #Revenue
+				name = "govt_revenue_container"
+				position = {x = 0 y = 38 }
+				size = { width = 663 height = 280 }
+				Orientation = upper_left
+			
+				background = {
+					name = "Background"
+					spriteType = "GFX_tiled_decisions_bg_small"
+				}
+				
+				instantTextBoxType = {
+					name = "govt_revenue_title"
+					position = { x = 7 y = 7 }
+					font = "hoi_24header"
+					format = center
+					maxWidth = 100
+					text = "govt_revenue_title"
+					maxHeight = 24
+					fixedsize = yes
+					#alwaystransparent = yes
+				}
+
+				containerWindowType = { #Income Taxes
+					name = "govt_income_taxes_container"
+					position = {x = 0 y = 38 }
+					size = { width = 320 height = 100 }
+					Orientation = upper_left
+					
+					instantTextBoxType = {
+						name = "govt_income_taxes_title"
+						position = { x = 20 y = 7 }
+						font = "hoi_18mbs"
+						format = left
+						maxWidth = 300
+						text = "govt_income_taxes_title"
+						maxHeight = 24
+						fixedsize = yes
+						#alwaystransparent = yes
+					}
+					containerWindowType = { #Upper Strata Income Taxes
+						name = "govt_upper_strata_income_taxes_container"
+						position = {x = 57 y = 25 }
+						size = { width = 300 height = 50 }
+						Orientation = upper_left
+						instantTextBoxType = {
+							name = "govt_upper_strata_income_taxes_title"
+							position = { x = -30 y = 4 }
+							font = "hoi_18mbs"
+							format = left
+							maxWidth = 300
+							text = "govt_upper_strata_income_taxes_title"
+							maxHeight = 24
+							fixedsize = yes
+							#alwaystransparent = yes
+						}
+						
+						buttonType = {
+							name = "govt_decrease_upper_strata_income_tax_button"
+							position = { x = -27 y = 24 }
+							quadTextureSprite ="GFX_zoom_out"
+							clicksound = click_close
+						}
+						iconType ={
+							name ="govt_upper_strata_income_tax_icon"
+							spriteType = "GFX_internal_politics_party_colors"
+							position = { x = 0 y = 30 }
+							frame = 5
+						}
+						buttonType = {
+							name = "govt_increase_upper_strata_income_tax_button"
+							position = { x = 116 y = 24 }
+							quadTextureSprite ="GFX_zoom_in"
+							clicksound = click_close
+						}
+						instantTextBoxType = {
+							name = "govt_upper_strata_income_tax_percentage_loc"
+							position = { x = 146 y = 27 }
+							font = "hoi_18mbs"
+							format = left
+							maxWidth = 60
+							text = "govt_upper_strata_income_tax_percentage_loc"
+							maxHeight = 24
+							fixedsize = yes
+							#alwaystransparent = yes
+						}
+						instantTextBoxType = {
+							name = "govt_upper_strata_income_tax_amount_loc"
+							position = { x = 186 y = 27 }
+							font = "hoi_18mbs"
+							format = left
+							maxWidth = 100
+							text = "govt_upper_strata_income_tax_amount_loc"
+							maxHeight = 24
+							fixedsize = yes
+							#alwaystransparent = yes
+						}
+					}
+					containerWindowType = { #Middle Strata Income Taxes
+						name = "govt_middle_strata_income_taxes_container"
+						position = {x = 57 y = 75 }
+						size = { width = 300 height = 50 }
+						Orientation = upper_left
+						instantTextBoxType = {
+							name = "govt_middle_strata_income_taxes_title"
+							position = { x = -30 y = 4 }
+							font = "hoi_18mbs"
+							format = left
+							maxWidth = 300
+							text = "govt_middle_strata_income_taxes_title"
+							maxHeight = 24
+							fixedsize = yes
+							#alwaystransparent = yes
+						}
+						
+						buttonType = {
+							name = "govt_decrease_middle_strata_income_tax_button"
+							position = { x = -27 y = 24 }
+							quadTextureSprite ="GFX_zoom_out"
+							clicksound = click_close
+						}
+						iconType ={
+							name ="govt_middle_strata_income_tax_icon"
+							spriteType = "GFX_internal_politics_party_colors"
+							position = { x = 0 y = 30 }
+							frame = 5
+						}
+						buttonType = {
+							name = "govt_increase_middle_strata_income_tax_button"
+							position = { x = 116 y = 24 }
+							quadTextureSprite ="GFX_zoom_in"
+							clicksound = click_close
+						}
+						instantTextBoxType = {
+							name = "govt_middle_strata_income_tax_percentage_loc"
+							position = { x = 146 y = 27 }
+							font = "hoi_18mbs"
+							format = left
+							maxWidth = 60
+							text = "govt_middle_strata_income_tax_percentage_loc"
+							maxHeight = 24
+							fixedsize = yes
+							#alwaystransparent = yes
+						}
+						instantTextBoxType = {
+							name = "govt_middle_strata_income_tax_amount_loc"
+							position = { x = 186 y = 27 }
+							font = "hoi_18mbs"
+							format = left
+							maxWidth = 100
+							text = "govt_middle_strata_income_tax_amount_loc"
+							maxHeight = 24
+							fixedsize = yes
+							#alwaystransparent = yes
+						}
+					}
+					containerWindowType = { #Lower Strata Income Taxes
+						name = "govt_lower_strata_income_taxes_container"
+						position = {x = 57 y = 125  }
+						size = { width = 300 height = 50 }
+						Orientation = upper_left
+						instantTextBoxType = {
+							name = "govt_lower_strata_income_taxes_title"
+							position = { x = -30 y = 4 }
+							font = "hoi_18mbs"
+							format = left
+							maxWidth = 300
+							text = "govt_lower_strata_income_taxes_title"
+							maxHeight = 24
+							fixedsize = yes
+							#alwaystransparent = yes
+						}
+						
+						buttonType = {
+							name = "govt_decrease_lower_strata_income_tax_button"
+							position = { x = -27 y = 24 }
+							quadTextureSprite ="GFX_zoom_out"
+							clicksound = click_close
+						}
+						iconType ={
+							name ="govt_lower_strata_income_tax_icon"
+							spriteType = "GFX_internal_politics_party_colors"
+							position = { x = 0 y = 30 }
+							frame = 5
+						}
+						buttonType = {
+							name = "govt_increase_lower_strata_income_tax_button"
+							position = { x = 116 y = 24 }
+							quadTextureSprite ="GFX_zoom_in"
+							clicksound = click_close
+						}
+						instantTextBoxType = {
+							name = "govt_lower_strata_income_tax_percentage_loc"
+							position = { x = 146 y = 27 }
+							font = "hoi_18mbs"
+							format = left
+							maxWidth = 40
+							text = "govt_lower_strata_income_tax_percentage_loc"
+							maxHeight = 24
+							fixedsize = yes
+							#alwaystransparent = yes
+						}
+						instantTextBoxType = {
+							name = "govt_lower_strata_income_tax_amount_loc"
+							position = { x = 186 y = 27 }
+							font = "hoi_18mbs"
+							format = left
+							maxWidth = 100
+							text = "govt_lower_strata_income_tax_amount_loc"
+							maxHeight = 24
+							fixedsize = yes
+							#alwaystransparent = yes
+						}
+					}
+					instantTextBoxType = {
+						name = "govt_income_taxes_amount_loc"
+						position = { x = 27 y = 177 }
+						font = "hoi_18mbs"
+						format = left
+						maxWidth = 300
+						text = "govt_income_taxes_amount_loc"
+						maxHeight = 24
+						fixedsize = yes
+						#alwaystransparent = yes
+					}
+				}
+				containerWindowType = { #Sales Tax
+					name = "govt_sales_tax_container"
+					position = {x = 360 y = 8 }
+					size = { width = 300 height = 50 }
+					Orientation = upper_left
+					instantTextBoxType = {
+						name = "govt_sales_tax_title"
+						position = { x = -30 y = 4 }
+						font = "hoi_18mbs"
+						format = left
+						maxWidth = 300
+						text = "govt_sales_tax_title"
+						maxHeight = 24
+						fixedsize = yes
+						#alwaystransparent = yes
+					}
+					
+					buttonType = {
+						name = "govt_decrease_sales_tax_button"
+						position = { x = -27 y = 24 }
+						quadTextureSprite ="GFX_zoom_out"
+						clicksound = click_close
+					}
+					iconType ={
+						name ="govt_sales_tax_icon"
+						spriteType = "GFX_internal_politics_party_colors"
+						position = { x = 0 y = 30 }
+						frame = 5
+					}
+					buttonType = {
+						name = "govt_increase_sales_tax_button"
+						position = { x = 116 y = 24 }
+						quadTextureSprite ="GFX_zoom_in"
+						clicksound = click_close
+					}
+					instantTextBoxType = {
+						name = "govt_sales_tax_percentage_loc"
+						position = { x = 146 y = 27 }
+						font = "hoi_18mbs"
+						format = left
+						maxWidth = 60
+						text = "govt_sales_tax_percentage_loc"
+						maxHeight = 24
+						fixedsize = yes
+						#alwaystransparent = yes
+					}
+					instantTextBoxType = {
+						name = "govt_sales_tax_amount_loc"
+						position = { x = 186 y = 27 }
+						font = "hoi_18mbs"
+						format = left
+						maxWidth = 100
+						text = "govt_sales_tax_amount_loc"
+						maxHeight = 24
+						fixedsize = yes
+						#alwaystransparent = yes
+					}
+				}
+				containerWindowType = { #Corporate
+					name = "govt_corporate_tax_container"
+					position = {x = 360 y = 58 }
+					size = { width = 300 height = 50 }
+					Orientation = upper_left
+					instantTextBoxType = {
+						name = "govt_corporate_tax_title"
+						position = { x = -30 y = 4 }
+						font = "hoi_18mbs"
+						format = left
+						maxWidth = 300
+						text = "govt_corporate_tax_title"
+						maxHeight = 24
+						fixedsize = yes
+						#alwaystransparent = yes
+					}
+					
+					buttonType = {
+						name = "govt_decrease_corporate_tax_button"
+						position = { x = -27 y = 24 }
+						quadTextureSprite ="GFX_zoom_out"
+						clicksound = click_close
+					}
+					iconType ={
+						name ="govt_corporate_tax_icon"
+						spriteType = "GFX_internal_politics_party_colors"
+						position = { x = 0 y = 30 }
+						frame = 5
+					}
+					buttonType = {
+						name = "govt_increase_corporate_tax_button"
+						position = { x = 116 y = 24 }
+						quadTextureSprite ="GFX_zoom_in"
+						clicksound = click_close
+					}
+					instantTextBoxType = {
+						name = "govt_corporate_tax_percentage_loc"
+						position = { x = 146 y = 27 }
+						font = "hoi_18mbs"
+						format = left
+						maxWidth = 60
+						text = "govt_corporate_tax_percentage_loc"
+						maxHeight = 24
+						fixedsize = yes
+						#alwaystransparent = yes
+					}
+					instantTextBoxType = {
+						name = "govt_corporate_tax_amount_loc"
+						position = { x = 186 y = 27 }
+						font = "hoi_18mbs"
+						format = left
+						maxWidth = 100
+						text = "govt_corporate_tax_amount_loc"
+						maxHeight = 24
+						fixedsize = yes
+						#alwaystransparent = yes
+					}
+				}
+				containerWindowType = { #Tariffs
+					name = "govt_tariffs_container"
+					position = {x = 350 y = 112 }
+					size = { width = 300 height = 50 }
+					Orientation = upper_left
+					instantTextBoxType = {
+						name = "govt_tariffs_title"
+						position = { x = -30 y = 4 }
+						font = "hoi_18mbs"
+						format = left
+						maxWidth = 300
+						text = "govt_tariffs_title"
+						maxHeight = 24
+						fixedsize = yes
+						#alwaystransparent = yes
+					}
+					containerWindowType = { #Import Tariff
+						name = "govt_import_tariff_container"
+						position = {x = 10 y = 20 }
+						size = { width = 300 height = 50 }
+						Orientation = upper_left
+						instantTextBoxType = {
+							name = "govt_import_tariff_title"
+							position = { x = -30 y = 4 }
+							font = "hoi_18mbs"
+							format = left
+							maxWidth = 300
+							text = "govt_import_tariff_title"
+							maxHeight = 24
+							fixedsize = yes
+							#alwaystransparent = yes
+						}
+						
+						buttonType = {
+							name = "govt_decrease_import_tariff_button"
+							position = { x = -27 y = 24 }
+							quadTextureSprite ="GFX_zoom_out"
+							clicksound = click_close
+						}
+						iconType ={
+							name ="govt_import_tariff_icon"
+							spriteType = "GFX_internal_politics_party_colors"
+							position = { x = 0 y = 30 }
+							frame = 5
+						}
+						buttonType = {
+							name = "govt_increase_import_tariff_button"
+							position = { x = 116 y = 24 }
+							quadTextureSprite ="GFX_zoom_in"
+							clicksound = click_close
+						}
+						instantTextBoxType = {
+							name = "govt_import_tariff_percentage_loc"
+							position = { x = 146 y = 27 }
+							font = "hoi_18mbs"
+							format = left
+							maxWidth = 60
+							text = "govt_import_tariff_percentage_loc"
+							maxHeight = 24
+							fixedsize = yes
+							#alwaystransparent = yes
+						}
+						instantTextBoxType = {
+							name = "govt_import_tariff_amount_loc"
+							position = { x = 186 y = 27 }
+							font = "hoi_18mbs"
+							format = left
+							maxWidth = 100
+							text = "govt_import_tariff_amount_loc"
+							maxHeight = 24
+							fixedsize = yes
+							#alwaystransparent = yes
+						}
+					}
+					containerWindowType = { #Export Tariff
+						name = "govt_export_tariff_container"
+						position = {x = 10 y = 70 }
+						size = { width = 300 height = 50 }
+						Orientation = upper_left
+						instantTextBoxType = {
+							name = "govt_export_tariff_title"
+							position = { x = -30 y = 4 }
+							font = "hoi_18mbs"
+							format = left
+							maxWidth = 300
+							text = "govt_export_tariff_title"
+							maxHeight = 24
+							fixedsize = yes
+							#alwaystransparent = yes
+						}
+						
+						buttonType = {
+							name = "govt_decrease_export_tariff_button"
+							position = { x = -27 y = 24 }
+							quadTextureSprite ="GFX_zoom_out"
+							clicksound = click_close
+						}
+						iconType ={
+							name ="govt_export_tariff_icon"
+							spriteType = "GFX_internal_politics_party_colors"
+							position = { x = 0 y = 30 }
+							frame = 5
+						}
+						buttonType = {
+							name = "govt_increase_export_tariff_button"
+							position = { x = 116 y = 24 }
+							quadTextureSprite ="GFX_zoom_in"
+							clicksound = click_close
+						}
+						instantTextBoxType = {
+							name = "govt_export_tariff_percentage_loc"
+							position = { x = 146 y = 27 }
+							font = "hoi_18mbs"
+							format = left
+							maxWidth = 60
+							text = "govt_export_tariff_percentage_loc"
+							maxHeight = 24
+							fixedsize = yes
+							#alwaystransparent = yes
+						}
+						instantTextBoxType = {
+							name = "govt_export_tariff_amount_loc"
+							position = { x = 186 y = 27 }
+							font = "hoi_18mbs"
+							format = left
+							maxWidth = 100
+							text = "govt_export_tariff_amount_loc"
+							maxHeight = 24
+							fixedsize = yes
+							#alwaystransparent = yes
+						}
+					}
+				}
+				instantTextBoxType = {
+					name = "govt_revenue_amount_loc"
+					position = { x = 350 y = 240 }
+					font = "hoi_24header"
+					format = right
+					maxWidth = 250
+					text = "govt_revenue_amount_loc"
+					maxHeight = 24
+					fixedsize = yes
+					#alwaystransparent = yes
+				}
+			}
+			containerWindowType = { #Expenses
+				name = "govt_expenses_container"
+				position = {x = 0 y = 316 }
+				size = { width = 623 height = 300 }
+				Orientation = upper_left
+			
+				background = {
+					name = "Background"
+					spriteType = "GFX_tiled_decisions_bg_small"
+				}
+				
+				instantTextBoxType = {
+					name = "govt_expenses_title"
+					position = { x = 7 y = 7 }
+					font = "hoi_24header"
+					format = center
+					maxWidth = 140
+					text = "govt_expenses_title"
+					maxHeight = 24
+					fixedsize = yes
+					#alwaystransparent = yes
+				}
+			}
+		}
+
+		buttonType = {
+			name = "close_button"
+			position = { x = -52 y = 9 }
+			quadTextureSprite ="GFX_closebutton"
+			buttonFont = "Main_14_black"
+			shortcut = "ESCAPE"
+			Orientation = "UPPER_RIGHT"
+			clicksound = click_close
+			pdx_tooltip = "CLOSE"
+		}
+
+		containerWindowType = {
+			name = "time_button"
+			position = { x = 860 y = 670 }
+			size = { width = 221 height = 34 }
+			buttonType = {
+				name = "time_button"
+				position = { x = 0 y = 0 }
+				quadTextureSprite ="GFX_button_221x34"
+				buttonFont = "Main_14_black"
+				Orientation = "UPPER_LEFT"
+				clicksound = click_close
+				#shortcut = "A"
+			}
+			instantTextBoxType = {
+				name = "time_button_title"
+				position = { x = 0 y = 8 }
+				font = "hoi_18mbs"
+				format = center
+				maxWidth = 221
+				text = "Pass Time by One Month"
+				maxHeight = 24
+				fixedsize = yes
+				alwaystransparent = yes
+			}
+		}
+		containerWindowType = {
+			name = "reset_button"
+			position = { x = 640 y = 670 }
+			size = { width = 221 height = 34 }
+			buttonType = {
+				name = "reset_button"
+				position = { x = 0 y = 0 }
+				quadTextureSprite ="GFX_button_221x34"
+				buttonFont = "Main_14_black"
+				Orientation = "UPPER_LEFT"
+				clicksound = click_close
+				#shortcut = "A"
+			}
+			instantTextBoxType = {
+				name = "reset_button_title"
+				position = { x = 0 y = 8 }
+				font = "hoi_18mbs"
+				format = center
+				maxWidth = 221
+				text = "Reset the Matrix"
+				maxHeight = 24
+				fixedsize = yes
+				alwaystransparent = yes
+			}
+		}
+		containerWindowType = {
+			name = "extra_button"
+			position = { x = 420 y = 670 }
+			size = { width = 221 height = 34 }
+			buttonType = {
+				name = "extra_button"
+				position = { x = 0 y = 0 }
+				quadTextureSprite ="GFX_button_221x34"
+				buttonFont = "Main_14_black"
+				Orientation = "UPPER_LEFT"
+				clicksound = click_close
+				#shortcut = "A"
+			}
+			instantTextBoxType = {
+				name = "extra_button_title"
+				position = { x = 0 y = 8 }
+				font = "hoi_18mbs"
+				format = center
+				maxWidth = 221
+				text = "Extra Button"
+				maxHeight = 24
+				fixedsize = yes
+				alwaystransparent = yes
+			}
+		}
+	}
+	
+	containerWindowType = {
+		name = "factory"
+		position = { x = 0 y = 0} 
+		size = { width = 210 height = 200 }
+		 
+		background = {
+			name = "Background"
+			quadTextureSprite = "GFX_tiled_plain_bg"
+		}
+		 
+		instantTextBoxType = {
+			name = "name"
+			position = { x = 00 y = 10 }
+			font = "hoi_18mbs"
+			text = "FACTORY_TITLE"
+			format = center
+			maxWidth = 210
+			maxHeight = 24
+			fixedsize = yes
+		}
+		
+		instantTextBoxType = {
+			name = "size"
+			position = { x = 10 y = 35 }
+			font = "hoi_16mbs"
+			text = "Size: [?factories_size^i]"
+			format = left
+			maxWidth = 210
+			maxHeight = 24
+			fixedsize = yes
+		}
+	}
+	
+}

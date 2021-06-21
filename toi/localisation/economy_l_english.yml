@@ -1,0 +1,527 @@
+﻿l_english:
+  test_decision:0 "Buy Equipment"
+  buy_equipment_tt:0 "Buys Equipment from [FROM.GetName]\n"
+  buy_equipment_tt2:0 "Recieves $1"
+  mod.1.t:0 "Test Event"
+  mod.1.d:0 "[?t]"
+  mod.1.a:0 "Testing, Testing..." 
+  
+  FACTORY_TITLE:0 "[GetFactoryType]"
+  FACTORY_TYPE_STEEL:0 "Steel Mill"
+  BUILDING_TYPE_EXTRACTOR:0 "extractor"
+  BUILDING_TYPE_FACTORY:0 "factory"
+  BUILDING_TYPE_MERCHANDISING_STORE:0 "store"
+  BUILDING_TYPE_SERVICE_INDUSTRY:0 "service"
+
+  treasury_amount_loc:0 "[?treasury][GetCurrencyTextIcon]"
+  income_amount_loc:0 "§G+[?actual_revenue]§![GetCurrencyTextIcon]"
+
+  #State Economy Screen
+    state_economy_button_tt:0 "State Economy Screen"
+    state_economy_button_tt_d:0 "A menu providing detailed information about the economy in this state."
+
+    state_economy_title:0 "[THIS.GetName]'s Economy"
+    #Pops Area
+      pops_title:0 "Population"
+      pops_amount_loc:0 "§Y[?pops_amount|3]K§!"
+
+      pops_militancy_loc:0 "§R[?pops_militancy|1]%§!"
+
+      pops_money_loc:0 "§Y[?pops_money|3]§!"
+      pops_earnings_loc:0 "§G+[?pops_earnings|3]§!"
+      pops_spending_loc:0 "§R-[?pops_spending]§!"
+
+      pops_literacy_percentage_loc:0 "[?pops_literacy_percentage|1]%"
+      pops_education_percentage_loc:0 "[?pops_education_percentage|1]%"
+
+      pops_savings_loc:0 "§Y[?pops_savings|3]§![GetCurrencyTextIconState]"
+      pops_debt_loc:0 "§R[?pops_debt|3]§![GetCurrencyTextIconState]"
+
+      #Pop Table
+      pop_types_name_title:0 "Name"
+      pop_types_size_title:0 "Size"
+      pop_types_percentage_title:0 "%"
+      pop_types_workforce_title:0 "Workforce"
+
+      #rgos
+        pops_rgos_name_loc:0 "RGOs"
+        pops_rgos_size_loc:0 "§Y[?rgos_amount|3]K§!"
+        pops_rgos_percentage_loc:0 "[?rgos_percentage|1]"
+        pops_rgos_workforce_loc:0 "§C[?rgos_workforce_amount|3]K§!"
+        pops_rgos_unemployment_loc:0 "§R[?rgos_unemployment_percentage|1]§!"
+      #
+      #artisans
+        pops_artisans_name_loc:0 "Artisans"
+        pops_artisans_size_loc:0 "§Y[?artisans_amount|3]K§!"
+        pops_artisans_percentage_loc:0 "[?artisans_percentage|1]"
+        pops_artisans_workforce_loc:0 "§C[?artisans_workforce_amount|3]K§!"
+        pops_artisans_unemployment_loc:0 "§R[?artisans_unemployment_percentage|1]§!"
+      #
+      #craftsmen
+        pops_craftsmen_name_loc:0 "Craftsmen"
+        pops_craftsmen_size_loc:0 "§Y[?craftsmen_amount|3]K§!"
+        pops_craftsmen_percentage_loc:0 "[?craftsmen_percentage|1]"
+        pops_craftsmen_workforce_loc:0 "§C[?craftsmen_workforce_amount|3]K§!"
+        pops_craftsmen_unemployment_loc:0 "§R[?craftsmen_unemployment_percentage|1]§!"
+      #
+      #specialists
+        pops_specialists_name_loc:0 "Specialists"
+        pops_specialists_size_loc:0 "§Y[?specialists_amount|3]K§!"
+        pops_specialists_percentage_loc:0 "[?specialists_percentage|1]"
+        pops_specialists_workforce_loc:0 "§C[?specialists_workforce_amount|3]K§!"
+        pops_specialists_unemployment_loc:0 "§R[?specialists_unemployment_percentage|1]§!"
+      #
+      #clerks
+        pops_clerks_name_loc:0 "Clerks"
+        pops_clerks_size_loc:0 "§Y[?clerks_amount|3]K§!"
+        pops_clerks_percentage_loc:0 "[?clerks_percentage|1]"
+        pops_clerks_workforce_loc:0 "§C[?clerks_workforce_amount|3]K§!"
+        pops_clerks_unemployment_loc:0 "§R[?clerks_unemployment_percentage|1]§!"
+      #
+      #professionals
+        pops_professionals_name_loc:0 "Professionals"
+        pops_professionals_size_loc:0 "§Y[?professionals_amount|3]K§!"
+        pops_professionals_percentage_loc:0 "[?professionals_percentage|1]"
+        pops_professionals_workforce_loc:0 "§C[?professionals_workforce_amount|3]K§!"
+        pops_professionals_unemployment_loc:0 "§R[?professionals_unemployment_percentage|1]§!"
+      #
+      #soldiers
+        pops_soldiers_name_loc:0 "Soldiers"
+        pops_soldiers_size_loc:0 "§Y[?soldiers_amount|3]K§!"
+        pops_soldiers_percentage_loc:0 "[?soldiers_percentage|1]"
+        pops_soldiers_workforce_loc:0 "§C[?soldiers_workforce_amount|3]K§!"
+        pops_soldiers_unemployment_loc:0 "§R[?soldiers_unemployment_percentage|1]§!"
+      #
+      #officers
+        pops_officers_name_loc:0 "Officers"
+        pops_officers_size_loc:0 "§Y[?officers_amount|3]K§!"
+        pops_officers_percentage_loc:0 "[?officers_percentage|1]"
+        pops_officers_workforce_loc:0 "§C[?officers_workforce_amount|3]K§!"
+        pops_officers_unemployment_loc:0 "§R[?officers_unemployment_percentage|1]§!"
+      #
+      #capitalists
+        pops_capitalists_name_loc:0 "Capitalists"
+        pops_capitalists_size_loc:0 "§Y[?capitalists_amount|3]K§!"
+        pops_capitalists_percentage_loc:0 "[?capitalists_percentage|1]"
+        pops_capitalists_workforce_loc:0 "§C[?capitalists_workforce_amount|3]K§!"
+        pops_capitalists_unemployment_loc:0 "§R[?capitalists_unemployment_percentage|1]§!"
+      #
+      #aristocrats
+        pops_aristocrats_name_loc:0 "Aristocrats"
+        pops_aristocrats_size_loc:0 "§Y[?aristocrats_amount|3]K§!"
+        pops_aristocrats_percentage_loc:0 "[?aristocrats_percentage|1]"
+        pops_aristocrats_workforce_loc:0 "§C[?aristocrats_workforce_amount|3]K§!"
+        pops_aristocrats_unemployment_loc:0 "§R[?aristocrats_unemployment_percentage|1]§!"
+      #
+    #
+    #Production Area
+      production_title:0 "Production"
+      #Factory Area
+        factory_total_loc:0 "§Y[?total_factory_amount|0]§!"
+        
+        production_capitalists_percentage_loc:0 "[?capitalists_percentage|1]%"
+        production_worker_organization_loc:0 "0.0%" #TODO
+
+        factory_input_raw_goods_percentage_loc:0 "[?factory_raw_goods_fulfilled_percentage|1%]"
+        factory_input_industrial_goods_percentage_loc:0 "[?factory_industrial_goods_fulfilled_percentage|1%]"
+
+        factory_employment_loc:0 "§C[?factory_employment_amount]K/[?factory_employment_amount_max]K§!"
+
+        factory_money_loc:0 "§Y[?factory_money|3]§!"
+        factory_earnings_loc:0 "§G+[?factory_earnings|3]§!"
+        factory_spending_loc:0 "§R-[?factory_spending]§!"
+
+        factory_corporation_title:0 "[?factory_corporations_state_array^i.GetCorpName]"
+        factory_corporation_amount_loc:0 "[?factory_corporations_amount_array^i|0]"
+
+        factory_everyday_goods_size_loc:0 "[?factory_everyday_goods_amount]"
+        factory_everyday_goods_production_loc:0 "§Y[?factory_everyday_goods_production]§!"
+        factory_everyday_goods_under_construction_tt:0 "§YEveryday Goods Factory§! under construction:\n   Industrial Goods Needed: §Y[?factory_everyday_goods_construction_industrial_goods_need]§!\n   Current Investment: §Y[?factory_everyday_goods_construction_investment_money]§![GetCurrencyTextIconState]"
+
+        factory_luxury_goods_size_loc:0 "[?factory_luxury_goods_amount]"
+        factory_luxury_goods_production_loc:0 "§Y[?factory_luxury_goods_production]§!"
+        factory_luxury_goods_under_construction_tt:0 "§YLuxury Goods Factory§! under construction:\n   Industrial Goods Needed: §Y[?factory_luxury_goods_construction_industrial_goods_need]§!\n   Current Investment: §Y[?factory_luxury_goods_construction_investment_money]§![GetCurrencyTextIconState]"
+
+        factory_industrial_goods_size_loc:0 "[?factory_industrial_goods_amount]"
+        factory_industrial_goods_production_loc:0 "§Y[?factory_industrial_goods_production]§!"
+        factory_industrial_goods_under_construction_tt:0 "§YIndustrial Goods Factory§! under construction:\n   Industrial Goods Needed: §Y[?factory_industrial_goods_construction_industrial_goods_need]§!\n   Current Investment: §Y[?factory_industrial_goods_construction_investment_money]§![GetCurrencyTextIconState]"
+
+        factory_civilian_size_loc:0 "[?industrial_complex_level]"
+        
+        factory_military_size_loc:0 "[?arms_factory_level]"
+
+        factory_naval_size_loc:0 "[?building_level@dockyard]"
+
+
+
+
+      #RGO Area
+        rgos_title:0 "RGOs"
+        rgos_employment_loc:0 "§C[?rgos_workforce_amount]K§!"
+
+        rgos_output_title:0 "[GetRGOsOutputTitle]"
+        pops_rgos_valuable_goods_title:0 "Valuable Goods Extraction:"
+        pops_rgos_raw_goods_title:0 "Raw Goods Mining:"
+        pops_rgos_life_goods_title:0 "Life Goods Farming:"
+        rgos_output_production_loc:0 "[GetRGOsOutputProduction]"
+        pops_rgos_valuable_goods_production_loc:0 "§Y[?pops_rgos_valuable_goods_production]§!"
+        pops_rgos_raw_goods_production_loc:0 "§Y[?pops_rgos_raw_goods_production]§!"
+        pops_rgos_life_goods_production_loc:0 "§Y[?pops_rgos_life_goods_production]§!"
+        rgos_output_production_tt:0 "[GetRGOsOutputProductionTT]"
+        pops_rgos_valuable_goods_production_tt:0 "Pops Earnings: §G+[?pops_rgos_valuable_goods_production]§!"
+        pops_rgos_raw_goods_production_tt:0 "Goods Sold: §Y[?pops_rgos_raw_goods_sold]/[?pops_rgos_raw_goods_production]§!"
+        pops_rgos_life_goods_production_tt:0 "Goods Sold: §Y[?pops_rgos_life_goods_sold]/[?pops_rgos_life_goods_production]§!"
+
+        rgos_aristocrats_percentage_loc:0 "[?aristocrats_percentage|1]%"
+
+        rgo_corporation_title:0 "[?rgo_corporations_state_array^i.GetCorpName]"
+        rgo_corporation_percentage_loc:0 "[?rgo_corporations_percentage_array^i|0]%"
+        
+      #Artisan Area
+        artisans_title:0 "Artisans"
+        artisans_employment_loc:0 "§C[?artisans_workforce_amount]K§!"
+        artisans_input_raw_goods_percentage_loc:0 "[?pops_artisans_raw_goods_fulfilled_percentage|1%]"
+        artisans_everyday_goods_production_loc:0 "§Y[?pops_artisans_everyday_goods_production]§!"
+        artisans_everyday_goods_workforce_loc:0 "§C[?pops_artisans_everyday_goods_amount]K§!"
+        artisans_luxury_goods_production_loc:0 "§Y[?pops_artisans_luxury_goods_production]§!"
+        artisans_luxury_goods_workforce_loc:0 "§C[?pops_artisans_luxury_goods_amount]K§!"
+        artisans_industrial_goods_production_loc:0 "§Y[?pops_artisans_industrial_goods_production]§!"
+        artisans_industrial_goods_workforce_loc:0 "§C[?pops_artisans_industrial_goods_amount]K§!"
+
+      #Services Area
+        services_title:0 "Services"
+        services_employment_loc:0 "§C[?pops_services_workforce_amount]K§!"
+        services_output_production_loc:0 "§Y[?pops_services_production]§!"
+        services_capitalists_percentage_loc:0 "[?capitalists_percentage|1]%"
+
+        service_corporation_title:0 "[?service_corporations_state_array^i.GetCorpName]"
+        service_corporation_percentage_loc:0 "[?service_corporations_percentage_array^i|0]%"
+      #
+    #
+    #Trade Area
+      trade_title:0 "Trade"
+      
+      trade_infra_title:0 "[GetInfrastructureCrumblingColor][?infrastructure_level]/[?infrastructure_max_level]§!"
+      trade_infra_tt:0 "§YInfrastructure§!\n§YEffects:§!\nRGO Output: §G[?infrastructure_rgo_output_modifier|1%]§!\nFactory Throughput: §G[?infrastructure_factory_throughput_modifier|1%]§!\nBuild Cost: §G[?infrastructure_build_cost_modifier|1%]§!\nTransport Cost: §G[?infrastructure_transport_cost_modifier|1%]§!\nShipping Cost: §G[?infrastructure_shipping_cost_modifier|1%]§!\n\n§YMaintenance Requirement:§!\n   - Industrial Goods: §Y[?infrastructure_industrial_goods_need] ([?infrastructure_industrial_goods_fulfilled_percentage|%1])§![GetInfrastructureCrumbling]"
+      infrastructure_under_construction_tt:0 "§YInfrastructure§! under construction:\n   Industrial Goods Needed: §Y[?infrastructure_construction_industrial_goods_need]§!\n   Current Investment: §Y[?infrastructure_construction_investment_money]§![GetCurrencyTextIconState]"
+      infrastructure_crumbling_warning_tt:0 "\n\n§YWarning:§!\nThe §YInfrastructure§! in this state is §Rcrumbling!§!\n    Crumbling Ticks: §R[?infrastructure_crumbling_ticks]§!\n    Crumbling Threshold: §Y[?global.infrastructure_crumbling_ticks_bar]§!\n\nThe §YInfrastructure§! in this state will continue to §Rcrumble§! unless it fulfills at least §Y[?global.infrastructure_crumbling_threshold|1%]§! of its §Ymaintenance requirements!§!"
+      infrastructure_restoring_warning_tt:0 "\n\n§YRestoration:§!\nThe §YInfrastructure§! in this state is being §Grestored.§!\n    Crumbling Ticks: §R[?infrastructure_crumbling_ticks]§!\n    Crumbling Threshold: §Y[?global.infrastructure_crumbling_ticks_bar]§!\n\nThe §YInfrastructure§! in this state will continue to be §Grestored§! as long as it fulfills at least §Y[?global.infrastructure_crumbling_threshold|1%]§! of its §Ymaintenance requirements.§!"
+
+      trade_life_goods_title:0 "Life Goods"
+      trade_life_goods_price_loc:0 "§Y[?life_goods_price]§![GetCurrencyTextIconState]"
+      trade_life_goods_trade_status_loc:0 "[GetLifeGoodsResourceStatus]"
+      trade_life_goods_trade_amount_loc:0 "[?life_goods_trade_amount|3C]"
+      trade_life_goods_trade_value_loc:0 "[?life_goods_trade_value|=+3][GetCurrencyTextIconState]"
+
+      trade_everyday_goods_title:0 "Everyday Goods"
+      trade_everyday_goods_price_loc:0 "§Y[?everyday_goods_price]§![GetCurrencyTextIconState]"
+      trade_everyday_goods_trade_status_loc:0 "[GetEverydayGoodsResourceStatus]"
+      trade_everyday_goods_trade_amount_loc:0 "[?everyday_goods_trade_amount|3C]"
+      trade_everyday_goods_trade_value_loc:0 "[?everyday_goods_trade_value|=+3][GetCurrencyTextIconState]"
+
+      trade_luxury_goods_title:0 "Luxury Goods"
+      trade_luxury_goods_price_loc:0 "§Y[?luxury_goods_price]§![GetCurrencyTextIconState]"
+      trade_luxury_goods_trade_status_loc:0 "[GetLuxuryGoodsResourceStatus]"
+      trade_luxury_goods_trade_amount_loc:0 "[?luxury_goods_trade_amount|3C]"
+      trade_luxury_goods_trade_value_loc:0 "[?luxury_goods_trade_value|=+3][GetCurrencyTextIconState]"
+
+      trade_services_title:0 "Services"
+      trade_services_price_loc:0 "§Y[?services_price]§![GetCurrencyTextIconState]"
+      trade_services_trade_status_loc:0 "[GetServicesResourceStatus]"
+      trade_services_trade_amount_loc:0 "[?services_trade_amount|3C]"
+      trade_services_trade_value_loc:0 "[?services_trade_value|=+3][GetCurrencyTextIconState]"
+
+      trade_raw_goods_title:0 "Raw Goods"
+      trade_raw_goods_price_loc:0 "§Y[?raw_goods_price]§![GetCurrencyTextIconState]"
+      trade_raw_goods_trade_status_loc:0 "[GetRawGoodsResourceStatus]"
+      trade_raw_goods_trade_amount_loc:0 "[?raw_goods_trade_amount|3C]"
+      trade_raw_goods_trade_value_loc:0 "[?raw_goods_trade_value|=+3][GetCurrencyTextIconState]"
+
+      trade_industrial_goods_title:0 "Industrial Goods"
+      trade_industrial_goods_price_loc:0 "§Y[?industrial_goods_price]§![GetCurrencyTextIconState]"
+      trade_industrial_goods_trade_status_loc:0 "[GetIndustrialGoodsResourceStatus]"
+      trade_industrial_goods_trade_amount_loc:0 "[?industrial_goods_trade_amount|3C]"
+      trade_industrial_goods_trade_value_loc:0 "[?industrial_goods_trade_value|=+3][GetCurrencyTextIconState]"
+
+      #Table Area
+        needs_title:0 "Need"
+        supply_title:0 "Supply"
+        demand_title:0 "Demand"
+
+        table_life_goods_need_loc:0 "§Y[?life_goods_need|3]§!"
+        table_life_goods_supply_loc:0 "§G[?life_goods_supply|3]§!"
+        table_life_goods_demand_loc:0 "§R[?life_goods_demand|3]§!"
+
+        table_everyday_goods_need_loc:0 "§Y[?everyday_goods_need|3]§!"
+        table_everyday_goods_supply_loc:0 "§G[?everyday_goods_supply|3]§!"
+        table_everyday_goods_demand_loc:0 "§R[?everyday_goods_demand|3]§!"
+
+        table_luxury_goods_need_loc:0 "§Y[?luxury_goods_need|3]§!"
+        table_luxury_goods_supply_loc:0 "§G[?luxury_goods_supply|3]§!"
+        table_luxury_goods_demand_loc:0 "§R[?luxury_goods_demand|3]§!"
+
+        table_services_need_loc:0 "§Y[?services_need|3]§!"
+        table_services_supply_loc:0 "§G[?services_supply|3]§!"
+        table_services_demand_loc:0 "§R[?services_demand|3]§!"
+
+        table_raw_goods_need_loc:0 "§Y[?raw_goods_need|3]§!"
+        table_raw_goods_supply_loc:0 "§G[?raw_goods_supply|3]§!"
+        table_raw_goods_demand_loc:0 "§R[?raw_goods_demand|3]§!"
+
+        table_industrial_goods_need_loc:0 "§Y[?industrial_goods_need|3]§!"
+        table_industrial_goods_supply_loc:0 "§G[?industrial_goods_supply|3]§!"
+        table_industrial_goods_demand_loc:0 "§R[?industrial_goods_demand|3]§!"
+      #
+    #
+    #Statistics Area
+      statistics_title:0 "Statistics"
+
+      statistics_gdp_amount_loc:0 "§Y[?annual_gdp_amount]§![GetCurrencyTextIconState]"
+
+      statistics_gdp_graph_max_loc:0 "[?gdp_graph_max][GetStateGDPGraphThousands]"
+      statistics_gdp_graph_min_loc:0 "[?gdp_graph_min][GetStateGDPGraphThousands]"
+      statistics_gdp_graph_thousands_loc:0 "K"
+      
+      statistics_gdp_growth_loc:0 "GDP Growth: [GetStateGDPGrowthColor][?annual_gdp_growth|3=]%§! [GetStateRealGDPGrowthColor]([?annual_real_gdp_growth|3=]%)§!"
+      statistics_money_supply_loc:0 "Money Supply: §Y[?money_supply|3]§![GetCurrencyTextIconState]"
+      statistics_annual_inflation_loc:0 "Annual Inflation: §Y[?annual_inflation|=3]%§!"
+    #
+
+  #Corporations
+    #Corporation Names
+      corporation_name_life_goods_generic_zz:0 "[This.GetName] Farming"
+
+      corporation_name_everyday_goods_generic_zz:0 "[This.GetName] Corp"
+
+      corporation_name_luxury_goods_generic_zz:0 "[This.GetName] Luxuries"
+
+      corporation_name_services_generic_zz:0 "[This.GetName] Group"
+
+      corporation_name_raw_goods_generic_zz:0 "[This.GetName] Mining"
+
+      corporation_name_industrial_goods_generic_zz:0 "[This.GetName] Industries"
+    #
+  #Country Economy Screen
+    country_economy_title:0 "[ROOT.GetName] Economy"
+
+    #Government Finances Area
+      govt_finances_title:0 "Finances"
+      #Revenue Area
+        govt_revenue_title:0 "Revenue"
+        #Income Taxes
+          govt_income_taxes_title:0 "Income Tax"
+
+          govt_upper_strata_income_taxes_title:0 "Upper Strata Income Tax"
+          govt_upper_strata_income_tax_percentage_loc:0 "[?income_tax_upper_strata_percentage|0]%"
+          govt_upper_strata_income_tax_amount_loc:0 "§G[?income_tax_upper_strata_revenue]§![GetCurrencyTextIcon]"
+          govt_middle_strata_income_taxes_title:0 "Middle Strata Income Tax"
+          govt_middle_strata_income_tax_percentage_loc:0 "[?income_tax_middle_strata_percentage|0]%"
+          govt_middle_strata_income_tax_amount_loc:0 "§G[?income_tax_middle_strata_revenue]§![GetCurrencyTextIcon]"
+          govt_lower_strata_income_taxes_title:0 "Lower Strata Income Tax"
+          govt_lower_strata_income_tax_percentage_loc:0 "[?income_tax_lower_strata_percentage|0]%"
+          govt_lower_strata_income_tax_amount_loc:0 "§G[?income_tax_lower_strata_revenue]§![GetCurrencyTextIcon]"
+
+          govt_income_taxes_amount_loc:0 "Revenue: §G[?income_tax_revenue]§![GetCurrencyTextIcon]"
+        #
+        #Sales Tax
+          govt_sales_tax_title:0 "Sales Tax"
+          govt_sales_tax_percentage_loc:0 "[?sales_tax_percentage|0]%"
+          govt_sales_tax_amount_loc:0 "§G[?sales_tax_revenue]§![GetCurrencyTextIcon]"
+        #
+        #Value Added Tax
+          govt_corporate_tax_title:0 "Corporate Tax"
+          govt_corporate_tax_percentage_loc:0 "[?corporate_tax_percentage|0]%"
+          govt_corporate_tax_amount_loc:0 "§G[?corporate_tax_revenue]§![GetCurrencyTextIcon]"
+        #
+        #Tariffs
+          govt_tariffs_title:0 "Tariffs"
+          govt_import_tariff_title:0 "Import"
+          govt_import_tariff_percentage_loc:0 "[?import_tariff_percentage|0]%"
+          govt_import_tariff_amount_loc:0 "§G[?import_tariff_revenue]§![GetCurrencyTextIcon]"
+          govt_export_tariff_title:0 "Export"
+          govt_export_tariff_percentage_loc:0 "[?export_tariff_percentage|0]%"
+          govt_export_tariff_amount_loc:0 "§G[?export_tariff_revenue]§![GetCurrencyTextIcon]"
+        #
+        govt_revenue_amount_loc:0 "§G[?revenue]§![GetCurrencyTextIcon]"
+      #
+      #Expenses Area
+        govt_expenses_title:0 "Expenditure"
+      #
+    #
+  #
+
+  #DATED
+    pops_life_needs_loc:0 "Life Needs: §Y[?pops_life_goods_need]§!"
+    pops_life_needs_tt:0 "Fulfilled: §Y[?pops_life_goods_fulfilled_percentage|0%]§!\nDemand: §Y[?pops_life_goods_demand]§!"
+    pops_everyday_needs_loc:0 "Everyday Needs: §Y[?pops_everyday_goods_need]§!"
+    pops_everyday_needs_tt:0 "Fulfilled: §Y[?pops_everyday_goods_fulfilled_percentage|0%]§!\nDemand: §Y[?pops_everyday_goods_demand]§!"
+    pops_luxury_needs_loc:0 "Luxury Needs: §Y[?pops_luxury_goods_need]§!"
+    pops_luxury_needs_tt:0 "Fulfilled: §Y[?pops_luxury_goods_fulfilled_percentage|0%]§!\nDemand: §Y[?pops_luxury_goods_demand]§!"
+    
+
+    
+    everyday_goods_factory_amount_loc:0 "Amount: §Y[?factory_everyday_goods_amount]§!"
+    luxury_goods_factory_amount_loc:0 "Amount: §Y[?factory_luxury_goods_amount]§!"
+    industrial_goods_factory_amount_loc:0 "Amount: §Y[?factory_industrial_goods_amount]§!"
+    everyday_goods_factory_production_loc:0 "Production: §Y[?factory_everyday_goods_production]§!"
+    everyday_goods_factory_production_tt:0 "Goods Sold: §Y[?factory_everyday_goods_sold]/[?factory_everyday_goods_production]§!"
+    luxury_goods_factory_production_loc:0 "Production: §Y[?factory_luxury_goods_production]§!"
+    luxury_goods_factory_production_tt:0 "Goods Sold: §Y[?factory_luxury_goods_sold]/[?factory_luxury_goods_production]§!"
+    industrial_goods_factory_production_loc:0 "Production: §Y[?factory_industrial_goods_production]§!"
+    industrial_goods_factory_production_tt:0 "Goods Sold: §Y[?factory_industrial_goods_sold]/[?factory_industrial_goods_production]§!"
+
+    factories_money_loc:0 "Money: §Y[?factory_money]§![GetCurrencyTextIconState]"
+    factories_earnings_loc:0 "Earnings: §G+[?factory_earnings]§![GetCurrencyTextIconState]"
+    factories_spending_loc:0 "Spending: §R-[?factory_spending]§![GetCurrencyTextIconState]"
+    factories_profitability_loc:0 "Profitability: [?factory_profitability|%+=]"
+    factories_profitability_tt:0 "Profitability This Month: [?factory_profitability_this_month|%+=]"
+
+    resource_life_goods_price_loc:0 "§Y[?life_goods_price]§![GetCurrencyTextIconState]"
+    resource_life_goods_trade_title:0 "Trade:"
+    resource_life_goods_trade_loc:0 "[GetLifeGoodsResourceStatus] ([?life_goods_trade_amount|3C], [?life_goods_trade_value|=+][GetCurrencyTextIconState] )"
+    resource_life_goods_supply_demand_title:0 "Supply/Demand:"
+    resource_life_goods_supply_demand_loc:0 "( §G[?life_goods_produced_amount]§! [GetLifeGoodsTradeContribution] ) = §G[?life_goods_supply]§! / [?life_goods_demand|R3]"
+
+    resource_everyday_goods_price_loc:0 "§Y[?everyday_goods_price]§![GetCurrencyTextIconState]"
+    resource_everyday_goods_trade_title:0 "Trade:"
+    resource_everyday_goods_trade_loc:0 "[GetEverydayGoodsResourceStatus] ([?everyday_goods_trade_amount|3C], [?everyday_goods_trade_value|=+][GetCurrencyTextIconState] )"
+    resource_everyday_goods_supply_demand_title:0 "Supply/Demand:"
+    resource_everyday_goods_supply_demand_loc:0 "( §G[?everyday_goods_produced_amount]§! [GetEverydayGoodsTradeContribution] ) = §G[?everyday_goods_supply]§! / [?everyday_goods_demand|R3]"
+
+    resource_luxury_goods_price_loc:0 "§Y[?luxury_goods_price]§![GetCurrencyTextIconState]"
+    resource_luxury_goods_trade_title:0 "Trade:"
+    resource_luxury_goods_trade_loc:0 "[GetLuxuryGoodsResourceStatus] ([?luxury_goods_trade_amount|3C], [?luxury_goods_trade_value|=+][GetCurrencyTextIconState] )"
+    resource_luxury_goods_supply_demand_title:0 "Supply/Demand:"
+    resource_luxury_goods_supply_demand_loc:0 "( §G[?luxury_goods_produced_amount]§! [GetLuxuryGoodsTradeContribution] ) = §G[?luxury_goods_supply]§! / [?luxury_goods_demand|R3]"
+
+    resource_services_price_loc:0 "§Y[?services_price]§![GetCurrencyTextIconState]"
+    resource_services_trade_title:0 "Trade:"
+    resource_services_trade_loc:0 "[GetServicesResourceStatus] ([?services_trade_amount|3C], [?services_trade_value|=+][GetCurrencyTextIconState] )"
+    resource_services_supply_demand_title:0 "Supply/Demand:"
+    resource_services_supply_demand_loc:0 "( §G[?services_produced_amount]§! [GetServicesTradeContribution] ) = §G[?services_supply]§! / [?services_demand|R3]"
+
+    resource_raw_goods_price_loc:0 "§Y[?raw_goods_price]§![GetCurrencyTextIconState]"
+    resource_raw_goods_trade_title:0 "Trade:"
+    resource_raw_goods_trade_loc:0 "[GetRawGoodsResourceStatus] ([?raw_goods_trade_amount|3C], [?raw_goods_trade_value|=+][GetCurrencyTextIconState] )"
+    resource_raw_goods_supply_demand_title:0 "Supply/Demand:"
+    resource_raw_goods_supply_demand_loc:0 "( §G[?raw_goods_produced_amount]§! [GetRawGoodsTradeContribution] ) = §G[?raw_goods_supply]§! / [?raw_goods_demand|R3]"
+
+    resource_industrial_goods_price_loc:0 "§Y[?industrial_goods_price]§![GetCurrencyTextIconState]"
+    resource_industrial_goods_trade_title:0 "Trade:"
+    resource_industrial_goods_trade_loc:0 "[GetIndustrialGoodsResourceStatus] ([?industrial_goods_trade_amount|3C], [?industrial_goods_trade_value|=+][GetCurrencyTextIconState] )"
+    resource_industrial_goods_supply_demand_title:0 "Supply/Demand:"
+    resource_industrial_goods_supply_demand_loc:0 "( §G[?industrial_goods_produced_amount]§! [GetIndustrialGoodsTradeContribution] ) = §G[?industrial_goods_supply]§! / [?industrial_goods_demand|R3]"
+
+    gdp_amount_loc:0 "Ann. GDP: §Y[?annual_gdp_amount]§![GetCurrencyTextIconState] ([?annual_gdp_growth|+=]%)"
+    national_gdp_amount_loc:0 "Ann. Nat. GDP: §Y[?national_gdp_amount]K§![GetCurrencyTextIconState] ([?national_gdp_growth|+=]%)"
+  #
+
+  #Currency
+    currency_dollar_texticon:0 "£currency_texticons|1"
+    currency_pound_texticon:0 "£currency_texticons|2"
+    currency_euro_texticon:0 "£currency_texticons|3"
+    currency_franc_texticon:0 "£currency_texticons|4"
+    currency_ruble_texticon:0 "£currency_texticons|5"
+    currency_rupee_texticon:0 "£currency_texticons|6"
+    currency_yen_texticon:0 "£currency_texticons|7"
+    currency_lira_texticon:0 "£currency_texticons|8"
+    currency_mark_texticon:0 "£currency_texticons|9"
+    currency_real_texticon:0 "£currency_texticons|10"
+    currency_bitcoin_texticon:0 "£currency_texticons|11"
+    currency_shekel_texticon:0 "£currency_texticons|12"
+  #
+
+  #Modifier Tooltips
+    decrease_build_cost_5:0 "Build Cost: §G-5.00%§!\n"
+
+    decrease_transport_cost_5:0 "Transport Cost: §G-5.00%§!\n"
+
+    increase_raw_goods_output_10:0 "Raw Goods Output: §G+10.00%§!\n"
+    increase_raw_goods_output_15:0 "Raw Goods Output: §G+15.00%§!\n"
+
+
+    increase_factory_size_5:0 "Factory Size: §G+5.00%§!\n"
+    increase_factory_size_10:0 "Factory Size: §G+10.00%§!\n"
+
+    increase_factory_build_cost_5:0 "Factory Build Cost: §R+5.00%§!\n"
+    increase_factory_build_cost_10:0 "Factory Build Cost: §R+10.00%§!\n"
+
+    decrease_factory_raw_goods_input_4:0 "Factory Raw Goods Input: §G-4.00%§!\n"
+
+    increase_factory_throughput_2:0 "Factory Throughput: §G+2.00%§!\n"
+    increase_factory_throughput_4:0 "Factory Throughput: §G+4.00%§!\n"
+    increase_factory_throughput_8:0 "Factory Throughput: §G+8.00%§!\n"
+    increase_factory_throughput_10:0 "Factory Throughput: §G+10.00%§!\n"
+    increase_factory_throughput_20:0 "Factory Throughput: §G+20.00%§!\n"
+    
+    increase_factory_everyday_goods_throughput_2:0 "Factory Everyday Goods Throughput: §G+2.00%§!\n"
+    increase_factory_everyday_goods_throughput_4:0 "Factory Everyday Goods Throughput: §G+4.00%§!\n"
+    
+    increase_factory_industrial_goods_throughput_4:0 "Factory Industrial Goods Throughput: §G+4.00%§!\n"
+    increase_factory_industrial_goods_throughput_8:0 "Factory Industrial Goods Throughput: §G+8.00%§!\n"
+
+    increase_factory_goods_output_2:0 "Factory Goods Output: §G+2.00%§!\n"
+    increase_factory_goods_output_4:0 "Factory Goods Output: §G+4.00%§!\n"
+    
+    decrease_factory_industrial_goods_maintenance_10:0 "Factory Industrial Goods Maintenance: §G-10.00%§!\n"
+    increase_factory_industrial_goods_maintenance_2:0 "Factory Industrial Goods Maintenance: §R+2.00%§!\n"
+    increase_factory_industrial_goods_maintenance_4:0 "Factory Industrial Goods Maintenance: §R+4.00%§!\n"
+    increase_factory_industrial_goods_maintenance_8:0 "Factory Industrial Goods Maintenance: §R+8.00%§!\n"
+    increase_factory_industrial_goods_maintenance_10:0 "Factory Industrial Goods Maintenance: §R+10.00%§!\n"
+    increase_factory_industrial_goods_maintenance_12:0 "Factory Industrial Goods Maintenance: §R+12.00%§!\n"
+    increase_factory_industrial_goods_maintenance_50:0 "Factory Industrial Goods Maintenance: §R+50.00%§!\n"
+
+
+    increase_infrastructure_build_cost_10:0 "Infrastructure Build Cost: §R+10.00%§!\n"
+    increase_infrastructure_build_cost_20:0 "Infrastructure Build Cost: §R+20.00%§!\n"
+    decrease_infrastructure_maintenance_cost_5:0 "Infrastructure Maintenance Cost: §G-5.00%§!\n"
+    decrease_infrastructure_maintenance_cost_2_5:0 "Infrastructure Maintenance Cost: §G-2.50%§!\n"
+    increase_infrastructure_transport_cost_reduction_5:0 "Infrastructure Transport Cost Reduction: §G+5.00%§!\n"
+    increase_infrastructure_transport_cost_reduction_10:0 "Infrastructure Transport Cost Reduction: §G+10.00%§!\n"
+    increase_infrastructure_transport_cost_reduction_25:0 "Infrastructure Transport Cost Reduction: §G+25.00%§!\n"
+  #
+
+  #Scripted Loc
+  green_loc:0 "§G"
+  yellow_loc:0 "§Y"
+  red_loc:0 "§R"
+
+  exporting_loc:0 "§GExporting§!"
+  importing_loc:0 "§RImporting§!"
+  balanced_loc:0 "§YBalanced§!"
+  life_goods_resource_value_positive_loc:0 "§G[?life_goods_resource_value]§!"
+  life_goods_resource_value_negative_loc:0 "§R-[?life_goods_resource_value]§!"
+  life_goods_resource_value_zero_loc:0 "§Y[?life_goods_resource_value]§!"
+  life_goods_supply_add_loc:0 "§G+ [?life_goods_trade_amount]§!"
+  life_goods_supply_subtract_loc:0 "§R- [?life_goods_trade_amount]§!"
+
+  everyday_goods_resource_value_positive_loc:0 "§G[?everyday_goods_resource_value]§!"
+  everyday_goods_resource_value_negative_loc:0 "§R-[?everyday_goods_resource_value]§!"
+  everyday_goods_resource_value_zero_loc:0 "§Y[?everyday_goods_resource_value]§!"
+  everyday_goods_supply_add_loc:0 "§G+ [?everyday_goods_trade_amount]§!"
+  everyday_goods_supply_subtract_loc:0 "§R- [?everyday_goods_trade_amount]§!"
+  
+  luxury_goods_resource_value_positive_loc:0 "§G[?luxury_goods_resource_value]§!"
+  luxury_goods_resource_value_negative_loc:0 "§R-[?luxury_goods_resource_value]§!"
+  luxury_goods_resource_value_zero_loc:0 "§Y[?luxury_goods_resource_value]§!"
+  luxury_goods_supply_add_loc:0 "§G+ [?luxury_goods_trade_amount]§!"
+  luxury_goods_supply_subtract_loc:0 "§R- [?luxury_goods_trade_amount]§!"
+  
+  services_resource_value_positive_loc:0 "§G[?services_resource_value]§!"
+  services_resource_value_negative_loc:0 "§R-[?services_resource_value]§!"
+  services_resource_value_zero_loc:0 "§Y[?services_resource_value]§!"
+  services_supply_add_loc:0 "§G+ [?services_trade_amount]§!"
+  services_supply_subtract_loc:0 "§R- [?services_trade_amount]§!"
+  
+  raw_goods_resource_value_positive_loc:0 "§G[?raw_goods_resource_value]§!"
+  raw_goods_resource_value_negative_loc:0 "§R-[?raw_goods_resource_value]§!"
+  raw_goods_resource_value_zero_loc:0 "§Y[?raw_goods_resource_value]§!"
+  raw_goods_supply_add_loc:0 "§G+ [?raw_goods_trade_amount]§!"
+  raw_goods_supply_subtract_loc:0 "§R- [?raw_goods_trade_amount]§!"
+  
+  industrial_goods_resource_value_positive_loc:0 "§G[?industrial_goods_resource_value]§!"
+  industrial_goods_resource_value_negative_loc:0 "§R-[?industrial_goods_resource_value]§!"
+  industrial_goods_resource_value_zero_loc:0 "§Y[?industrial_goods_resource_value]§!"
+  industrial_goods_supply_add_loc:0 "§G+ [?industrial_goods_trade_amount]§!"
+  industrial_goods_supply_subtract_loc:0 "§R- [?industrial_goods_trade_amount]§!"
+  

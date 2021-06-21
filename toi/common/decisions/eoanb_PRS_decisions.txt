@@ -4225,9 +4225,6 @@ PRS_decision_category_heeresreform = {
 				mhc_add_sec = yes
 			}
 			add_command_power = -50
-			hidden_effect = {
-				set_country_flag = PRS_roon_chosen
-			}
 		}
 
 		ai_will_do = {
@@ -4266,9 +4263,6 @@ PRS_decision_category_heeresreform = {
 				mhc_add_chief = yes
 			}
 			add_command_power = -50
-			hidden_effect = {
-				set_country_flag = PRS_moltke_chosen
-			}
 		}
 
 		ai_will_do = {
@@ -6537,18 +6531,36 @@ PRS_decision_category_sh_question = {
 					OR = {
 						is_fully_controlled_by = PRS
 						is_fully_controlled_by = AUS
+						controller = {
+							OR = {
+								is_puppet_of = PRS
+								is_puppet_of = AUS
+							}
+						}
 					}
 				}
 				99 = {
 					OR = {
 						is_controlled_by = PRS
 						is_controlled_by = AUS
+						controller = {
+							OR = {
+								is_puppet_of = PRS
+								is_puppet_of = AUS
+							}
+						}
 					}
 				}
 				1032 = {
 					OR = {
 						is_fully_controlled_by = PRS
 						is_fully_controlled_by = AUS
+						controller = {
+							OR = {
+								is_puppet_of = PRS
+								is_puppet_of = AUS
+							}
+						}
 					}
 				}
 				NOT = { 37 = { is_fully_controlled_by = DEN } }
@@ -6782,12 +6794,24 @@ PRS_decision_category_sh_question = {
 					OR = {
 						is_fully_controlled_by = PRS
 						is_fully_controlled_by = AUS
+						controller = {
+							OR = {
+								is_puppet_of = PRS
+								is_puppet_of = AUS
+							}
+						}
 					}
 				}
 				1032 = {
 					OR = {
 						is_fully_controlled_by = PRS
 						is_fully_controlled_by = AUS
+						controller = {
+							OR = {
+								is_puppet_of = PRS
+								is_puppet_of = AUS
+							}
+						}
 					}
 				}
 				NOT = { 949 = { is_fully_controlled_by = DEN } }
@@ -6802,12 +6826,24 @@ PRS_decision_category_sh_question = {
 						OR = {
 							is_fully_controlled_by = PRS
 							is_fully_controlled_by = AUS
+							controller = {
+								OR = {
+									is_puppet_of = PRS
+									is_puppet_of = AUS
+								}
+							}
 						}
 					}
 					1032 = {
 						OR = {
 							is_fully_controlled_by = PRS
 							is_fully_controlled_by = AUS
+							controller = {
+								OR = {
+									is_puppet_of = PRS
+									is_puppet_of = AUS
+								}
+							}
 						}
 					}
 				}
@@ -6903,18 +6939,36 @@ PRS_decision_category_sh_question = {
 					OR = {
 						is_fully_controlled_by = PRS
 						is_fully_controlled_by = AUS
+						controller = {
+							OR = {
+								is_puppet_of = PRS
+								is_puppet_of = AUS
+							}
+						}
 					}
 				}
 				99 = {
 					OR = {
 						is_controlled_by = PRS
 						is_controlled_by = AUS
+						controller = {
+							OR = {
+								is_puppet_of = PRS
+								is_puppet_of = AUS
+							}
+						}
 					}
 				}
 				1032 = {
 					OR = {
 						is_fully_controlled_by = PRS
 						is_fully_controlled_by = AUS
+						controller = {
+							OR = {
+								is_puppet_of = PRS
+								is_puppet_of = AUS
+							}
+						}
 					}
 				}
 				NOT = { 37 = { is_fully_controlled_by = DEN } }

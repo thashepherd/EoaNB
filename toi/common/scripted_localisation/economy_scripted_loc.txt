@@ -1,0 +1,1258 @@
+# Allows you to create your own dynamic keys
+# to be called in localization.
+# defined_text -> this is it, we're defining the text
+# text -> a discrete entry that can be picked to display in loc.
+# trigger -> determines if a text entry will be picked or not.
+# (The triggers need to be valid for the scope the key is called in
+# (eg Root or From.From).)
+# localization_key -> points to the localization key
+# that'll be used if trigger passes
+
+defined_text = {
+    name = GetGoodsType
+    text = {
+        trigger = { 
+            check_variable = { goods_type_temp = 1 }
+        }
+        localization_key = "life_goods"
+    }
+    text = {
+        trigger = { 
+            check_variable = { goods_type_temp = 2 }
+        }
+        localization_key = "everyday_goods"
+    }
+    text = {
+        trigger = { 
+            check_variable = { goods_type_temp = 3 }
+        }
+        localization_key = "luxury_goods"
+    }
+    text = {
+        trigger = { 
+            check_variable = { goods_type_temp = 4 }
+        }
+        localization_key = "services"
+    }
+    text = {
+        trigger = { 
+            check_variable = { goods_type_temp = 5 }
+        }
+        localization_key = "raw_goods"
+    }
+    text = {
+        trigger = { 
+            check_variable = { goods_type_temp = 6 }
+        }
+        localization_key = "industrial_goods"
+    }
+}
+defined_text = {
+    name = GetGoodsType2
+    text = {
+        trigger = { 
+            check_variable = { goods_type_2_temp = 1 }
+        }
+        localization_key = "life_goods"
+    }
+    text = {
+        trigger = { 
+            check_variable = { goods_type_2_temp = 2 }
+        }
+        localization_key = "everyday_goods"
+    }
+    text = {
+        trigger = { 
+            check_variable = { goods_type_2_temp = 3 }
+        }
+        localization_key = "luxury_goods"
+    }
+    text = {
+        trigger = { 
+            check_variable = { goods_type_2_temp = 4 }
+        }
+        localization_key = "industrial_goods"
+    }
+    text = {
+        trigger = { 
+            check_variable = { goods_type_2_temp = 5 }
+        }
+        localization_key = "services"
+    }
+}
+#Currency Icon
+    defined_text = {
+        name = GetCurrencyIcon
+        text = {
+            trigger = {
+                currency_uses_dollar = yes
+            }
+            localization_key = "GFX_currency_icons:1"
+        }
+        text = {
+            trigger = {
+                currency_uses_pound = yes
+            }
+            localization_key = "GFX_currency_icons:2"
+        }
+        text = {
+            trigger = {
+                currency_uses_euro = yes
+            }
+            localization_key = "GFX_currency_icons:3"
+        }
+        text = {
+            trigger = {
+                currency_uses_franc = yes
+            }
+            localization_key = "GFX_currency_icons:4"
+        }
+        text = {
+            trigger = {
+                currency_uses_ruble = yes
+            }
+            localization_key = "GFX_currency_icons:5"
+        }
+        text = {
+            trigger = {
+                currency_uses_rupee = yes
+            }
+            localization_key = "GFX_currency_icons:6"
+        }
+        text = {
+            trigger = {
+                currency_uses_yen = yes
+            }
+            localization_key = "GFX_currency_icons:7"
+        }
+        text = {
+            trigger = {
+                currency_uses_lira = yes
+            }
+            localization_key = "GFX_currency_icons:8"
+        }
+        text = {
+            trigger = {
+                currency_uses_mark = yes
+            }
+            localization_key = "GFX_currency_icons:9"
+        }
+        text = {
+            trigger = {
+                currency_uses_real = yes
+            }
+            localization_key = "GFX_currency_icons:10"
+        }
+        text = {
+            trigger = {
+                currency_uses_bitcoin = yes
+            }
+            localization_key = "GFX_currency_icons:11"
+        }
+        text = {
+            trigger = {
+                currency_uses_shekel = yes
+            }
+            localization_key = "GFX_currency_icons:12"
+        }
+        text = {
+            trigger = {
+                currency_hegemon_pound = yes
+            }
+            localization_key = "GFX_currency_icons:2"
+        }
+        text = {
+            trigger = {
+                currency_hegemon_dollar = yes
+            }
+            localization_key = "GFX_currency_icons:1"
+        }
+        text = {
+            trigger = {
+                currency_hegemon_euro = yes
+            }
+            localization_key = "GFX_currency_icons:3"
+        }
+        text = {
+            trigger = {
+                currency_hegemon_franc = yes
+            }
+            localization_key = "GFX_currency_icons:4"
+        }
+        text = {
+            trigger = {
+                currency_hegemon_ruble = yes
+            }
+            localization_key = "GFX_currency_icons:5"
+        }
+        text = {
+            trigger = {
+                currency_hegemon_rupee = yes
+            }
+            localization_key = "GFX_currency_icons:6"
+        }
+        text = {
+            trigger = {
+                currency_hegemon_yen = yes
+            }
+            localization_key = "GFX_currency_icons:7"
+        }
+        text = {
+            trigger = {
+                currency_hegemon_lira = yes
+            }
+            localization_key = "GFX_currency_icons:8"
+        }
+        text = {
+            trigger = {
+                currency_hegemon_mark = yes
+            }
+            localization_key = "GFX_currency_icons:9"
+        }
+        text = {
+            trigger = {
+                currency_hegemon_real = yes
+            }
+            localization_key = "GFX_currency_icons:10"
+        }
+        text = {
+            trigger = {
+                currency_hegemon_bitcoin = yes
+            }
+            localization_key = "GFX_currency_icons:11"
+        }
+        text = {
+            trigger = {
+                currency_hegemon_shekel = yes
+            }
+            localization_key = "GFX_currency_icons:12"
+        }
+    }
+    defined_text = {
+        name = GetCurrencyIconState
+        #Note, when using this scripted loc, scope to the country
+        text = {
+            trigger = {
+                owner = {
+                    currency_uses_dollar = yes
+                }
+            }
+            localization_key = "GFX_currency_icons:1"
+        }
+        text = {
+            trigger = {
+                owner = {
+                    currency_uses_pound = yes
+                }
+            }
+            localization_key = "GFX_currency_icons:2"
+        }
+        text = {
+            trigger = {
+                owner = {
+                    currency_uses_euro = yes
+                }
+            }
+            localization_key = "GFX_currency_icons:3"
+        }
+        text = {
+            trigger = {
+                owner = {
+                    currency_uses_franc = yes
+                }
+            }
+            localization_key = "GFX_currency_icons:4"
+        }
+        text = {
+            trigger = {
+                owner = {
+                    currency_uses_ruble = yes
+                }
+            }
+            localization_key = "GFX_currency_icons:5"
+        }
+        text = {
+            trigger = {
+                owner = {
+                    currency_uses_rupee = yes
+                }
+            }
+            localization_key = "GFX_currency_icons:6"
+        }
+        text = {
+            trigger = {
+                owner = {
+                    currency_uses_yen = yes
+                }
+            }
+            localization_key = "GFX_currency_icons:7"
+        }
+        text = {
+            trigger = {
+                owner = {
+                    currency_uses_lira = yes
+                }
+            }
+            localization_key = "GFX_currency_icons:8"
+        }
+        text = {
+            trigger = {
+                owner = {
+                    currency_uses_mark = yes
+                }
+            }
+            localization_key = "GFX_currency_icons:9"
+        }
+        text = {
+            trigger = {
+                owner = {
+                    currency_uses_real = yes
+                }
+            }
+            localization_key = "GFX_currency_icons:10"
+        }
+        text = {
+            trigger = {
+                owner = {
+                    currency_uses_bitcoin = yes
+                }
+            }
+            localization_key = "GFX_currency_icons:11"
+        }
+        text = {
+            trigger = {
+                owner = {
+                    currency_uses_shekel = yes
+                }
+            }
+            localization_key = "GFX_currency_icons:12"
+        }
+        text = {
+            trigger = {
+                currency_hegemon_pound = yes
+            }
+            localization_key = "GFX_currency_icons:2"
+        }
+        text = {
+            trigger = {
+                currency_hegemon_dollar = yes
+            }
+            localization_key = "GFX_currency_icons:1"
+        }
+        text = {
+            trigger = {
+                currency_hegemon_euro = yes
+            }
+            localization_key = "GFX_currency_icons:3"
+        }
+        text = {
+            trigger = {
+                currency_hegemon_franc = yes
+            }
+            localization_key = "GFX_currency_icons:4"
+        }
+        text = {
+            trigger = {
+                currency_hegemon_ruble = yes
+            }
+            localization_key = "GFX_currency_icons:5"
+        }
+        text = {
+            trigger = {
+                currency_hegemon_rupee = yes
+            }
+            localization_key = "GFX_currency_icons:6"
+        }
+        text = {
+            trigger = {
+                currency_hegemon_yen = yes
+            }
+            localization_key = "GFX_currency_icons:7"
+        }
+        text = {
+            trigger = {
+                currency_hegemon_lira = yes
+            }
+            localization_key = "GFX_currency_icons:8"
+        }
+        text = {
+            trigger = {
+                currency_hegemon_mark = yes
+            }
+            localization_key = "GFX_currency_icons:9"
+        }
+        text = {
+            trigger = {
+                currency_hegemon_real = yes
+            }
+            localization_key = "GFX_currency_icons:10"
+        }
+        text = {
+            trigger = {
+                currency_hegemon_bitcoin = yes
+            }
+            localization_key = "GFX_currency_icons:11"
+        }
+        text = {
+            trigger = {
+                currency_hegemon_shekel = yes
+            }
+            localization_key = "GFX_currency_icons:12"
+        }
+    }
+    defined_text = {
+        name = GetCurrencyTextIcon
+        text = {
+            trigger = {
+                currency_uses_dollar = yes
+            }
+            localization_key = "currency_dollar_texticon"
+        }
+        text = {
+            trigger = {
+                currency_uses_pound = yes
+            }
+            localization_key = "currency_pound_texticon"
+        }
+        text = {
+            trigger = {
+                currency_uses_euro = yes
+            }
+            localization_key = "currency_euro_texticon"
+        }
+        text = {
+            trigger = {
+                currency_uses_franc = yes
+            }
+            localization_key = "currency_franc_texticon"
+        }
+        text = {
+            trigger = {
+                currency_uses_ruble = yes
+            }
+            localization_key = "currency_ruble_texticon"
+        }
+        text = {
+            trigger = {
+                currency_uses_rupee = yes
+            }
+            localization_key = "currency_rupee_texticon"
+        }
+        text = {
+            trigger = {
+                currency_uses_yen = yes
+            }
+            localization_key = "currency_yen_texticon"
+        }
+        text = {
+            trigger = {
+                currency_uses_lira = yes
+            }
+            localization_key = "currency_lira_texticon"
+        }
+        text = {
+            trigger = {
+                currency_uses_mark = yes
+            }
+            localization_key = "currency_mark_texticon"
+        }
+        text = {
+            trigger = {
+                currency_uses_real = yes
+            }
+            localization_key = "currency_real_texticon"
+        }
+        text = {
+            trigger = {
+                currency_uses_bitcoin = yes
+            }
+            localization_key = "currency_bitcoin_texticon"
+        }
+        text = {
+            trigger = {
+                currency_uses_shekel = yes
+            }
+            localization_key = "currency_shekel_texticon"
+        }
+        text = {
+            trigger = {
+                currency_hegemon_pound = yes
+            }
+            localization_key = "currency_pound_texticon"
+        }
+        text = {
+            trigger = {
+                currency_hegemon_dollar = yes
+            }
+            localization_key = "currency_dollar_texticon"
+        }
+        text = {
+            trigger = {
+                currency_hegemon_euro = yes
+            }
+            localization_key = "currency_euro_texticon"
+        }
+        text = {
+            trigger = {
+                currency_hegemon_franc = yes
+            }
+            localization_key = "currency_franc_texticon"
+        }
+        text = {
+            trigger = {
+                currency_hegemon_ruble = yes
+            }
+            localization_key = "currency_ruble_texticon"
+        }
+        text = {
+            trigger = {
+                currency_hegemon_rupee = yes
+            }
+            localization_key = "currency_rupee_texticon"
+        }
+        text = {
+            trigger = {
+                currency_hegemon_yen = yes
+            }
+            localization_key = "currency_yen_texticon"
+        }
+        text = {
+            trigger = {
+                currency_hegemon_lira = yes
+            }
+            localization_key = "currency_lira_texticon"
+        }
+        text = {
+            trigger = {
+                currency_hegemon_mark = yes
+            }
+            localization_key = "currency_mark_texticon"
+        }
+        text = {
+            trigger = {
+                currency_hegemon_real = yes
+            }
+            localization_key = "currency_real_texticon"
+        }
+        text = {
+            trigger = {
+                currency_hegemon_bitcoin = yes
+            }
+            localization_key = "currency_bitcoin_texticon"
+        }
+        text = {
+            trigger = {
+                currency_hegemon_shekel = yes
+            }
+            localization_key = "currency_shekel_texticon"
+        }
+    }
+    defined_text = {
+        name = GetCurrencyTextIconState
+        #Note, when using this scripted loc, scope to the country
+        text = {
+            trigger = {
+                owner = {
+                    currency_uses_dollar = yes
+                }
+            }
+            localization_key = "currency_dollar_texticon"
+        }
+        text = {
+            trigger = {
+                owner = {
+                    currency_uses_pound = yes
+                }
+            }
+            localization_key = "currency_pound_texticon"
+        }
+        text = {
+            trigger = {
+                owner = {
+                    currency_uses_euro = yes
+                }
+            }
+            localization_key = "currency_euro_texticon"
+        }
+        text = {
+            trigger = {
+                owner = {
+                    currency_uses_franc = yes
+                }
+            }
+            localization_key = "currency_franc_texticon"
+        }
+        text = {
+            trigger = {
+                owner = {
+                    currency_uses_ruble = yes
+                }
+            }
+            localization_key = "currency_ruble_texticon"
+        }
+        text = {
+            trigger = {
+                owner = {
+                    currency_uses_rupee = yes
+                }
+            }
+            localization_key = "currency_rupee_texticon"
+        }
+        text = {
+            trigger = {
+                owner = {
+                    currency_uses_yen = yes
+                }
+            }
+            localization_key = "currency_yen_texticon"
+        }
+        text = {
+            trigger = {
+                owner = {
+                    currency_uses_lira = yes
+                }
+            }
+            localization_key = "currency_lira_texticon"
+        }
+        text = {
+            trigger = {
+                owner = {
+                    currency_uses_mark = yes
+                }
+            }
+            localization_key = "currency_mark_texticon"
+        }
+        text = {
+            trigger = {
+                owner = {
+                    currency_uses_real = yes
+                }
+            }
+            localization_key = "currency_real_texticon"
+        }
+        text = {
+            trigger = {
+                owner = {
+                    currency_uses_bitcoin = yes
+                }
+            }
+            localization_key = "currency_bitcoin_texticon"
+        }
+        text = {
+            trigger = {
+                owner = {
+                    currency_uses_shekel = yes
+                }
+            }
+            localization_key = "currency_shekel_texticon"
+        }
+        text = {
+            trigger = {
+                currency_hegemon_pound = yes
+            }
+            localization_key = "currency_pound_texticon"
+        }
+        text = {
+            trigger = {
+                currency_hegemon_dollar = yes
+            }
+            localization_key = "currency_dollar_texticon"
+        }
+        text = {
+            trigger = {
+                currency_hegemon_euro = yes
+            }
+            localization_key = "currency_euro_texticon"
+        }
+        text = {
+            trigger = {
+                currency_hegemon_franc = yes
+            }
+            localization_key = "currency_franc_texticon"
+        }
+        text = {
+            trigger = {
+                currency_hegemon_ruble = yes
+            }
+            localization_key = "currency_ruble_texticon"
+        }
+        text = {
+            trigger = {
+                currency_hegemon_rupee = yes
+            }
+            localization_key = "currency_rupee_texticon"
+        }
+        text = {
+            trigger = {
+                currency_hegemon_yen = yes
+            }
+            localization_key = "currency_yen_texticon"
+        }
+        text = {
+            trigger = {
+                currency_hegemon_lira = yes
+            }
+            localization_key = "currency_lira_texticon"
+        }
+        text = {
+            trigger = {
+                currency_hegemon_mark = yes
+            }
+            localization_key = "currency_mark_texticon"
+        }
+        text = {
+            trigger = {
+                currency_hegemon_real = yes
+            }
+            localization_key = "currency_real_texticon"
+        }
+        text = {
+            trigger = {
+                currency_hegemon_bitcoin = yes
+            }
+            localization_key = "currency_bitcoin_texticon"
+        }
+        text = {
+            trigger = {
+                currency_hegemon_shekel = yes
+            }
+            localization_key = "currency_shekel_texticon"
+        }
+    }
+#
+
+#Pie Chart
+    defined_text = {
+        name = GetValueToPopType
+        text = {
+            trigger = {
+                state = 1
+            }
+            localization_key = "GFX_rgos_pie_chart_segment"
+        }
+        text = {
+            trigger = {
+                state = 2
+            }
+            localization_key = "GFX_artisans_pie_chart_segment"
+        }
+        text = {
+            trigger = {
+                state = 3
+            }
+            localization_key = "GFX_craftsmen_pie_chart_segment"
+        }
+        text = {
+            trigger = {
+                state = 4
+            }
+            localization_key = "GFX_specialists_pie_chart_segment"
+        }
+        text = {
+            trigger = {
+                state = 5
+            }
+            localization_key = "GFX_clerks_pie_chart_segment"
+        }
+        text = {
+            trigger = {
+                state = 6
+            }
+            localization_key = "GFX_professionals_pie_chart_segment"
+        }
+        text = {
+            trigger = {
+                state = 7
+            }
+            localization_key = "GFX_soldiers_pie_chart_segment"
+        }
+        text = {
+            trigger = {
+                state = 8
+            }
+            localization_key = "GFX_officers_pie_chart_segment"
+        }
+        text = {
+            trigger = {
+                state = 9
+            }
+            localization_key = "GFX_capitalists_pie_chart_segment"
+        }
+        text = {
+            trigger = {
+                state = 10
+            }
+            localization_key = "GFX_aristocrats_pie_chart_segment"
+        }
+    }
+#
+
+#Statistics
+    defined_text = {
+        name = GetStateGDPGraphThousands
+        text = {
+            trigger = {
+                has_state_flag = gdp_graph_thousands
+            }
+            localization_key = statistics_gdp_graph_thousands_loc
+        }
+    }
+    defined_text = {
+        name = GetStateGDPGrowthColor
+        text = {
+            trigger = {
+                check_variable = { annual_gdp_growth > 0 }
+            }
+            localization_key = green_loc
+        }
+        text = {
+            trigger = {
+                check_variable = { annual_gdp_growth < 0 }
+            }
+            localization_key = red_loc
+        }
+        text = {
+            localization_key = yellow_loc
+        }
+    }
+    defined_text = {
+        name = GetStateRealGDPGrowthColor
+        text = {
+            trigger = {
+                check_variable = { annual_real_gdp_growth > 0 }
+            }
+            localization_key = green_loc
+        }
+        text = {
+            trigger = {
+                check_variable = { annual_real_gdp_growth < 0 }
+            }
+            localization_key = red_loc
+        }
+        text = {
+            localization_key = yellow_loc
+        }
+    }
+#
+
+#Corporations
+    #Icon
+        defined_text = {
+            name = GetCorporationIcon
+            text = {
+                trigger = {
+                    check_variable = { corporation_type = 2 }
+                }
+                localization_key = "GFX_everyday_goods"
+            }
+            text = {
+                trigger = {
+                    check_variable = { corporation_type = 3 }
+                }
+                localization_key = "GFX_luxury_goods"
+            }
+            text = {
+                trigger = {
+                    check_variable = { corporation_type = 6 }
+                }
+                localization_key = "GFX_industrial_goods"
+            }
+        }
+    #
+    #Names
+        defined_text = {
+            name = GetCorpName
+            #Generic Names
+            text = {
+                trigger = {
+                    check_variable = { corporation_name < 100 }
+                }
+                localization_key = "[GetGenericCorpName]"
+            }
+            #Unique Names
+        }
+        
+        #Generic Names
+        defined_text = {
+            name = GetGenericCorpName
+            #Generics
+
+            #Super Generics
+            text = {
+                trigger = {
+                    check_variable = { corporation_type = 1 }
+                }
+                localization_key = corporation_name_life_goods_generic_zz
+            }
+            text = {
+                trigger = {
+                    check_variable = { corporation_type = 2 }
+                }
+                localization_key = corporation_name_everyday_goods_generic_zz
+            }
+            text = {
+                trigger = {
+                    check_variable = { corporation_type = 3 }
+                }
+                localization_key = corporation_name_luxury_goods_generic_zz
+            }
+            text = {
+                trigger = {
+                    check_variable = { corporation_type = 4 }
+                }
+                localization_key = corporation_name_services_generic_zz
+            }
+            text = {
+                trigger = {
+                    check_variable = { corporation_type = 5 }
+                }
+                localization_key = corporation_name_raw_goods_generic_zz
+            }
+            text = {
+                trigger = {
+                    check_variable = { corporation_type = 6 }
+                }
+                localization_key = corporation_name_industrial_goods_generic_zz
+            }
+        }
+    #
+#
+
+#Infrastructure
+    defined_text = {
+        name = GetInfrastructureCrumblingColor
+        text = {
+            trigger = {
+                check_variable = { infrastructure_crumbling_ticks > 0 }
+                check_variable = { infrastructure_industrial_goods_fulfilled_percentage < global.infrastructure_crumbling_threshold }
+            }
+            localization_key = red_loc
+        }
+        text = {
+            trigger = {
+                check_variable = { infrastructure_crumbling_ticks > 0 }
+                NOT = { check_variable = { infrastructure_industrial_goods_fulfilled_percentage < global.infrastructure_crumbling_threshold } }
+            }
+            localization_key = yellow_loc
+        }
+    }
+    defined_text = {
+        name = GetInfrastructureCrumbling
+        text = {
+            trigger = {
+                check_variable = { infrastructure_crumbling_ticks > 0 }
+                check_variable = { infrastructure_industrial_goods_fulfilled_percentage < global.infrastructure_crumbling_threshold }
+            }
+            localization_key = infrastructure_crumbling_warning_tt
+        }
+        text = {
+            trigger = {
+                check_variable = { infrastructure_crumbling_ticks > 0 }
+                NOT = { check_variable = { infrastructure_industrial_goods_fulfilled_percentage < global.infrastructure_crumbling_threshold } }
+            }
+            localization_key = infrastructure_restoring_warning_tt
+        }
+    }
+#
+
+#RGOs
+    defined_text = {
+        name = GetRGOsOutputTitle
+        text = {
+            trigger = {
+                has_state_flag = pops_rgos_valuable_goods_flag
+            }
+            localization_key = pops_rgos_valuable_goods_title
+        }
+        text = {
+            trigger = {
+                has_state_flag = pops_rgos_raw_goods_flag
+            }
+            localization_key = pops_rgos_raw_goods_title
+        }
+        text = {
+            localization_key = pops_rgos_life_goods_title
+        }
+    }
+    defined_text = {
+        name = GetRGOsOutputProduction
+        text = {
+            trigger = {
+                has_state_flag = pops_rgos_valuable_goods_flag
+            }
+            localization_key = pops_rgos_valuable_goods_production_loc
+        }
+        text = {
+            trigger = {
+                has_state_flag = pops_rgos_raw_goods_flag
+            }
+            localization_key = pops_rgos_raw_goods_production_loc
+        }
+        text = {
+            localization_key = pops_rgos_life_goods_production_loc
+        }
+    }
+    defined_text = {
+        name = GetRGOsOutputProductionTT
+        text = {
+            trigger = {
+                has_state_flag = pops_rgos_valuable_goods_flag
+            }
+            localization_key = pops_rgos_valuable_goods_production_tt
+        }
+        text = {
+            trigger = {
+                has_state_flag = pops_rgos_raw_goods_flag
+            }
+            localization_key = pops_rgos_raw_goods_production_tt
+        }
+        text = {
+            localization_key = pops_rgos_life_goods_production_tt
+        }
+    }
+    defined_text = {
+        name = GetRGOsOutputIcon
+        text = {
+            trigger = {
+                has_state_flag = pops_rgos_valuable_goods_flag
+            }
+            localization_key = "GFX_valuable_goods"
+        }
+        text = {
+            trigger = {
+                has_state_flag = pops_rgos_raw_goods_flag
+            }
+            localization_key = "GFX_raw_goods"
+        }
+        text = {
+            localization_key = "GFX_life_goods"
+        }
+    }
+    defined_text = {
+        name = GetRGOGoodsTypeIcon
+        text = {
+            trigger = {
+                has_state_flag = pops_rgos_cash_crops_flag
+            }
+            localization_key = "GFX_cash_crops_icon"
+        }
+        text = {
+            trigger = {
+                has_state_flag = pops_rgos_coal_flag
+            }
+            localization_key = "GFX_coal_icon"
+        }
+        text = {
+            trigger = {
+                has_state_flag = pops_rgos_metals_flag
+            }
+            localization_key = "GFX_metals_icon"
+        }
+        text = {
+            trigger = {
+                has_state_flag = pops_rgos_petroleum_flag
+            }
+            localization_key = "GFX_petroleum_icon"
+        }
+        text = {
+            localization_key = "GFX_life_goods"
+        }
+    }
+
+#Life Goods
+    defined_text = {
+        name = GetLifeGoodsResourceStatus
+        text = {
+            trigger = {
+                check_variable = { life_goods_trade_value > 0 }
+            }
+            localization_key = exporting_loc
+        }
+        text = {
+            trigger = {
+                check_variable = { life_goods_trade_value < 0 }
+            }
+            localization_key = importing_loc
+        }
+        text = {
+            localization_key = balanced_loc
+        }
+    }
+
+    defined_text = {
+        name = GetLifeGoodsTradeContribution
+        text = {
+            trigger = {
+                check_variable = { life_goods_trade_value > 0 }
+            }
+            localization_key = life_goods_supply_subtract_loc
+        }
+        text = {
+            localization_key = life_goods_supply_add_loc
+        }
+    }
+
+#Everyday Goods
+    defined_text = {
+        name = GetEverydayGoodsResourceStatus
+        text = {
+            trigger = {
+                check_variable = { everyday_goods_trade_value > 0 }
+            }
+            localization_key = exporting_loc
+        }
+        text = {
+            trigger = {
+                check_variable = { everyday_goods_trade_value < 0 }
+            }
+            localization_key = importing_loc
+        }
+        text = {
+            localization_key = balanced_loc
+        }
+    }
+
+    defined_text = {
+        name = GetEverydayGoodsTradeContribution
+        text = {
+            trigger = {
+                check_variable = { everyday_goods_trade_value > 0 }
+            }
+            localization_key = everyday_goods_supply_subtract_loc
+        }
+        text = {
+            localization_key = everyday_goods_supply_add_loc
+        }
+    }
+
+#Luxury Goods
+    defined_text = {
+        name = GetLuxuryGoodsResourceStatus
+        text = {
+            trigger = {
+                check_variable = { luxury_goods_trade_value > 0 }
+            }
+            localization_key = exporting_loc
+        }
+        text = {
+            trigger = {
+                check_variable = { luxury_goods_trade_value < 0 }
+            }
+            localization_key = importing_loc
+        }
+        text = {
+            localization_key = balanced_loc
+        }
+    }
+
+    defined_text = {
+        name = GetLuxuryGoodsTradeContribution
+        text = {
+            trigger = {
+                check_variable = { luxury_goods_trade_value > 0 }
+            }
+            localization_key = luxury_goods_supply_subtract_loc
+        }
+        text = {
+            localization_key = luxury_goods_supply_add_loc
+        }
+    }
+
+#Services
+    defined_text = {
+        name = GetServicesResourceStatus
+        text = {
+            trigger = {
+                check_variable = { services_trade_value > 0 }
+            }
+            localization_key = exporting_loc
+        }
+        text = {
+            trigger = {
+                check_variable = { services_trade_value < 0 }
+            }
+            localization_key = importing_loc
+        }
+        text = {
+            localization_key = balanced_loc
+        }
+    }
+
+    defined_text = {
+        name = GetServicesTradeContribution
+        text = {
+            trigger = {
+                check_variable = { services_trade_value > 0 }
+            }
+            localization_key = services_supply_subtract_loc
+        }
+        text = {
+            localization_key = services_supply_add_loc
+        }
+    }
+
+#Raw Goods
+    defined_text = {
+        name = GetRawGoodsResourceStatus
+        text = {
+            trigger = {
+                check_variable = { raw_goods_trade_value > 0 }
+            }
+            localization_key = exporting_loc
+        }
+        text = {
+            trigger = {
+                check_variable = { raw_goods_trade_value < 0 }
+            }
+            localization_key = importing_loc
+        }
+        text = {
+            localization_key = balanced_loc
+        }
+    }
+
+    defined_text = {
+        name = GetRawGoodsTradeContribution
+        text = {
+            trigger = {
+                check_variable = { raw_goods_trade_value > 0 }
+            }
+            localization_key = raw_goods_supply_subtract_loc
+        }
+        text = {
+            localization_key = raw_goods_supply_add_loc
+        }
+    }
+
+#Industrial Goods
+    defined_text = {
+        name = GetIndustrialGoodsResourceStatus
+        text = {
+            trigger = {
+                check_variable = { industrial_goods_trade_value > 0 }
+            }
+            localization_key = exporting_loc
+        }
+        text = {
+            trigger = {
+                check_variable = { industrial_goods_trade_value < 0 }
+            }
+            localization_key = importing_loc
+        }
+        text = {
+            localization_key = balanced_loc
+        }
+    }
+
+    defined_text = {
+        name = GetIndustrialGoodsTradeContribution
+        text = {
+            trigger = {
+                check_variable = { industrial_goods_trade_value > 0 }
+            }
+            localization_key = industrial_goods_supply_subtract_loc
+        }
+        text = {
+            localization_key = industrial_goods_supply_add_loc
+        }
+    }
