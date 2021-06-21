@@ -1256,3 +1256,29 @@ defined_text = {
             localization_key = industrial_goods_supply_add_loc
         }
     }
+	
+	
+	
+#topbar
+	defined_text = {
+        name = GetMoneyAmountTopbar
+		text = {
+            trigger = {
+                set_temp_variable = {treasury_temp = treasury}
+				divide_temp_variable = {treasury_temp = 1000000}
+				check_variable = {treasury > 999999.99}
+            }
+            localization_key = "[?treasury_temp|2]M"
+        }
+        text = {
+            trigger = {
+                set_temp_variable = {treasury_temp = treasury}
+				divide_temp_variable = {treasury_temp = 1000}
+				check_variable = {treasury > 999.99}
+            }
+            localization_key = "[?treasury_temp|2]K"
+        }
+        text = {
+            localization_key = "[?treasury|2]"
+        }
+    }

@@ -13,8 +13,9 @@
   BUILDING_TYPE_MERCHANDISING_STORE:0 "store"
   BUILDING_TYPE_SERVICE_INDUSTRY:0 "service"
 
-  treasury_amount_loc:0 "[?treasury][GetCurrencyTextIcon]"
-  income_amount_loc:0 "[?net_budget|+=][GetCurrencyTextIcon]"
+  treasury_amount_loc:0 "[GetMoneyAmountTopbar][GetCurrencyTextIcon]"
+  budget_tooltip:0 "Current Treasury: [?treasury|2][GetCurrencyTextIcon] \nLast Months Change: [?net_budget|2+=][GetCurrencyTextIcon]"
+  income_amount_loc:0 "[?net_budget|1+=]"
 
   #State Economy Screen
     state_economy_button_tt:0 "State Economy Screen"

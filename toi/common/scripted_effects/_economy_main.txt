@@ -45,6 +45,7 @@
 			add_to_array = { global.econ_gp_list_array = ELS }
 			add_to_array = { global.econ_gp_list_array = DOM }
 			add_to_array = { global.econ_gp_list_array = HAI }
+			add_to_array = { global.econ_gp_list_array = LIE }
 			#
 			#Primitives
 			add_to_array = { global.econ_gp_list_array = SIX }
@@ -63,6 +64,7 @@
 			
 			for_each_scope_loop = {
 				array = global.econ_gp_list_array
+			# every_country={
 
 				for_each_loop = {
 					array = global.econ_value_array
@@ -5526,6 +5528,10 @@
 			#Uruguay
 
 			#Argentina
+			
+			
+			#litchenstein yes strat, litchenstein is my testing nation -G
+			add_to_array = { global.raw_goods_states = 955 }
 		#
 
 

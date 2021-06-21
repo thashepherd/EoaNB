@@ -316,41 +316,6 @@ scripted_gui = {
 			#
 		}
 	}
-	country_view_economy = {
-		window_name = "topbar_economy_container"
-		parent_window_token = top_bar
-		context_type = player_context
-		
-		visible = {
-			always = yes
-		}
-		effects = {
-			country_view_economy_button_click = {
-				if = { 
-					limit = {
-						NOT = {
-							ROOT = {
-								has_country_flag = country_economy_view_open
-							}
-						}
-					}
-					ROOT = {
-						set_country_flag = country_economy_view_open
-					}
-				}
-				else = {
-					ROOT = {
-						clr_country_flag = country_economy_view_open
-					}
-				}
-			}
-		}
-		triggers = {
-			country_view_economy_button_click_enabled = {
-				always = yes
-			}
-		}
-	}
 	country_economy_window = {
 		window_name = "country_economy_window_container"
 		context_type = player_context
