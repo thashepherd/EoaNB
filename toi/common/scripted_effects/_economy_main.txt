@@ -63,7 +63,8 @@
 			clear_array = global.econ_value_array
 			
 			for_each_scope_loop = {
-				array = global.econ_gp_list_array
+				#array = global.econ_gp_list_array
+				array = global.score_tag_array
 			# every_country={
 
 				for_each_loop = {
@@ -278,6 +279,8 @@
 			set_variable = { previous_annual_gdp_amount = 0 }
 			set_variable = { annual_gdp_amount = 0 }
 			set_variable = { industrial_power = 0 }
+			
+			####insert treasury_prev_array stuff here
 			every_controlled_state = {
 				#Pops/Govt get paid
 					set_variable = { pops_spending = 0 }
@@ -8175,6 +8178,124 @@
 		add_to_variable = { update_state_econ_window = 1 }
 	}
 
+	create_budget_income_graph = {
+		set_variable = { budget_graph_min = 2000000 }
+		set_variable = { budget_graph_max = 0 }
+		clr_state_flag = budget_graph_thousands
+		clear_array = budget_graph_amount_array
+		clear_array = budget_graph_color_array
+		clear_array = budget_graph_y_array
+
+		for_each_loop = {
+			array = annual_budget_amount_array
+			value = vv
+			index = ii
+			if = {
+				limit = {
+					check_variable = { vv > budget_graph_max }
+				}
+				set_variable = { budget_graph_max = vv }
+			}
+			if = {
+				limit = {
+					check_variable = { vv < budget_graph_min }
+				}
+				set_variable = { budget_graph_min = vv }
+			}
+			
+			if = {
+				limit = {
+					check_variable = { ii > 0 }
+				}
+				set_temp_variable = { prev_i = ii }
+				subtract_from_temp_variable = { prev_i = 1 }
+
+				set_temp_variable = { value_temp = vv }
+				add_to_temp_variable = { value_temp = annual_budget_amount_array^prev_i }
+				divide_temp_variable = { value_temp = 2 }
+				add_to_array = { budget_graph_amount_array = value_temp }
+
+				if = {
+					limit = {
+						check_variable = { vv > annual_budget_amount_array^prev_i }
+					}
+					add_to_array = { gdp_graph_color_array = 1 }
+					add_to_array = { gdp_graph_color_array = 1 }
+				}
+				else_if = {
+					limit = {
+						check_variable = { vv = annual_budget_amount_array^prev_i }
+					}
+					add_to_array = { budget_graph_color_array = 2 }
+					add_to_array = { budget_graph_color_array = 2 }
+				}
+				else = {
+					add_to_array = { budget_graph_color_array = 3 }
+					add_to_array = { budget_graph_color_array = 3 }
+				}
+
+				add_to_array = { budget_graph_amount_array = vv }
+			}
+			else = {
+				add_to_array = { budget_graph_amount_array = vv }
+				add_to_array = { budget_graph_color_array = 2 }
+			}
+		}
+
+		#Creating the Graph
+		for_each_loop = {
+			array = budget_graph_amount_array
+			value = vv
+			index = ii
+
+			set_temp_variable = { budget_per_y_temp = budget_graph_max }
+			subtract_from_temp_variable = { budget_per_y_temp = budget_graph_min }
+			divide_temp_variable = { budget_per_y_temp = -27 } #75 Pixels, making it negative b/c going from top to bottom
+
+			set_temp_variable = { y_temp = vv }
+			subtract_from_temp_variable = { y_temp = budget_graph_max }
+			divide_temp_variable = { y_temp = budget_per_y_temp }
+			round_temp_variable = y_temp
+			if = {
+				limit = {
+					check_variable = { y_temp > 28 }
+				}
+				set_temp_variable = { y_temp = 28 }
+			}
+			add_to_array = { budget_graph_y_array = y_temp }
+		}
+
+
+
+		#Correcting the max/min
+		if = {
+			limit = {
+				check_variable = { budget_graph_max > 1000 } #gdp_graph_min should always be less than max, so there's no point to checking it
+			}
+			divide_variable = { budget_graph_min = 1000 }
+			divide_variable = { budget_graph_max = 1000 }
+			set_state_flag = budget_graph_thousands
+		}
+		else_if = {
+			limit = {
+				check_variable = { budget_graph_max > 100 }
+			}
+			divide_variable = { budget_graph_min = 100 } #This gets rid of some decimals so there's only up to 4 digits
+			divide_variable = { budget_graph_max = 100 }
+			multiply_variable = { budget_graph_min = 100 }
+			multiply_variable = { budget_graph_max = 100 }
+		}
+		else_if = {
+			limit = {
+				check_variable = { budget_graph_max > 10 }
+			}
+			divide_variable = { budget_graph_min = 10 } #This gets rid of some decimals so there's only up to 4 digits
+			divide_variable = { budget_graph_max = 10 }
+			multiply_variable = { budget_graph_min = 10 }
+			multiply_variable = { budget_graph_max = 10 }
+		}
+		#add_to_variable = { update_state_econ_window = 1 }
+	}
 
 	taxes_update = {
 		#Country Scope
