@@ -120,6 +120,10 @@
     social_democracy:0 "Social Democrat"
     social_democracy_noun:0 "Social Democracy"
     social_democracy_desc:0 "Social Democracy is an economic ideology and policy regime, it is described by academics as advocating economic and social interventions to promote social justice within the framework of a liberal-democratic polity and a capitalist-oriented mixed economy. The protocols and norms used to accomplish this involve a commitment to representative and participatory democracy, measures for income redistribution, regulation of the economy in the general interest and social-welfare provisions."
+  # Tridemism
+    tridemism:0 "Tridemist"
+    tridemism_noun:0 "Tridemism"
+    tridemism_desc:0 "Tridemism is a political philosophy that emphasizes the importance of nationalism, democracy, and the livelihood of the people. Specifically the development of a civic nation, the right for the People to govern themselves, and for the government to focus on improving citizens' livelihoods via welfare policies."
       
 # Centrism
  centrism:0 "Centrist"
@@ -224,6 +228,10 @@
     daimyo_republic:0 "Daimyo"
     daimyo_republic_noun:0 "Daimyo Republic"
     daimyo_republic_desc:0 "Daimyo Republic is a specialized form of government in [Root.GetName] where an individual or council of Daimyo Lords and their advisors make the political decisions for the nation."
+  # Kemalism
+    kemalism:0 "Kemalist"
+    kemalism_noun:0 "Kemalism"
+    kemalism_desc:0 "Kemalism is an ideology based around 6 fundamental pillars; republicanism, populism, laicism, reformism, nationalism, and statism. Specifically, it supports a representative parliamentary democracy, the transfer of socio-economic power to the common citizen, the banishment of religion from government affairs and vice versa, reforming the country to move from old traditions to a modern age, a civic nation, and for the government to regulate the country's economic activities."
   
 # Autocracy
  autocracy:0 "Autocracy"
@@ -242,6 +250,18 @@
     absolutism:0 "Absolute Monarch"
     absolutism_noun:0 "Absolute Monarchy"
     absolutism_desc:0 "Absolute monarchy is a form of monarchy in which the monarch holds supreme autocratic authority, principally not being restricted by written laws, legislature, or customs."
+  # Bonapartism
+    bonapartism:0 "Bonapartist"
+    bonapartism_noun:0 "Bonapartism"
+    bonapartism_desc:0 "Bonapartism is the political ideology supervening from Napoleon Bonaparte and his followers and successors. After Napoleon, the term was applied to the French politicians who seized power in the Coup of 18 Brumaire, ruling in the French Consulate and subsequently in the First and Second French Empires. The term has been used more generally for a political movement that advocated a dictatorship or an authoritarian centralized state, with a strongman charismatic leader based on anti-elitist rhetoric, army support, and conservatism. More generally, 'Bonapartism' may be used to describe the replacement of civilian leadership by military leadership within revolutionary movements or governments."
+  # Legitimists (Bourbonists)
+    legitimism:0 "Legitimist"
+    legitimism_noun:0 "Legitimism"
+    legitimism_desc:0 "Legitimists are royalists who adhere to the rights of dynastic succession to the French crown of the descendants of the eldest branch of the Bourbon dynasty, which was overthrown in the 1830 July Revolution. They reject the claim of the July Monarchy of 1830–1848 which placed Louis Philippe, Duke of Orléans, head of the Orléans cadet branch of the Bourbon dynasty, on the throne until he too was dethroned and driven with his family into exile."
+  # Orleanists
+    orleanism:0 "Orleanist"
+    orleanism_noun:0 "Orleanism"
+    orleanism_desc:0 "Orleanists are those who supported a constitutional monarchy expressed by the House of Orléans. Orleanism was opposed by the two other monarchist trends; the more conservative Legitimism that was loyal to the eldest branch of the House of Bourbon after 1830, and the Bonapartism that supported Napoleon’s legacy and heirs."
   # Tribal
     tribe:0 "Tribal Leader"
     tribe_noun:0 "Tribal Governance"
