@@ -53,8 +53,11 @@
     sfund_private_ventures_only
 
     #NATIONAL SPIRITS
+	egy_vic_debt
+	GRE_idea_economic_comission
     GRE_idea_occupation_athens
 	GRE_idea_uncertain_succession
+	GRE_piracy
   }
   
   #Rivals 
@@ -118,9 +121,9 @@ set_popularities = {
   }
   
 	#How to set up initial debt_level
-	#GRE = {
-	#	add_to_variable = {var = debt_level value = 1} #Greece's National Debt amounted to 274m Drachmae (= 10.86m Pound Sterling as of 1871) at the end of 1856; income per year 18.38m Drachmae (= 0.73m Pound Sterling; 51.8% direct taxes, 27.1% indirect taxes, 10.8% domain) = 14.88 GDP of debt
-	#}
+	GRE = {
+		add_to_variable = {var = debt_level value = 40} #Greece's National Debt amounted to 274m Drachmae (= 10.86m Pound Sterling as of 1871) at the end of 1856; income per year 18.38m Drachmae (= 0.73m Pound Sterling; 51.8% direct taxes, 27.1% indirect taxes, 10.8% domain) = 14.88 GDP of debt
+	}
 
   # POLITICAL LEADERS
   

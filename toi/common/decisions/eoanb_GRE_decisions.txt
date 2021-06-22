@@ -220,6 +220,443 @@ political_actions = {
 	
 economic_decisions = {
 
+	GRE_decision_control_debt = {
+		icon = money
+		
+		allowed = {
+			tag = GRE
+		}
+		
+		available = {
+			has_idea = GRE_idea_economic_comission
+			has_completed_focus = GRE_control_debts
+			NOT = { 
+				has_country_flag = GRE_debt_cut
+			}
+		}
+
+		visible = {
+			has_idea = egy_vic_debt
+			check_variable = {ROOT.debt_level > 0}
+			NOT = { 
+				has_country_flag = debt_declared_bankruptcy_flag 
+			}
+		}
+		
+		fire_only_once = yes
+
+		#cost = 25
+		days_remove = 100
+		
+		complete_effect = {
+		    hidden_effect = {
+			    set_country_flag = GRE_debt_cut 
+			}
+		}
+		
+		remove_effect = {
+			custom_effect_tooltip = EGY_afr_decrease_debt_5
+			hidden_effect = {
+					add_to_variable = {var = debt_level value = -5}
+					country_event = { id = calc_spain_debt.1 days = 1 }
+					add_timed_idea = {
+						idea = egy_vic_debt_payments
+						days = 180
+					}
+					if = {
+						limit = { 
+							has_idea = egy_vic_debt_payments 
+						}
+						modify_timed_idea = {
+							idea = egy_vic_debt_payments
+							days = 60
+						}
+					}	
+				}
+			}
+
+		ai_will_do = {
+			base = 1
+			#modifier = {
+			#	factor = 0
+			#	NOT = { check_variable = {ROOT.debt_level > 8} }
+			#	num_of_civilian_factories < 2
+			#}
+		}
+	}
+
+	GRE_decision_cut_administration = {
+		icon = money
+		
+		allowed = {
+			tag = GRE
+		}
+		
+		available = {
+			has_idea = GRE_idea_economic_comission
+			has_completed_focus = GRE_cut_administration
+			NOT = { 
+				has_country_flag = GRE_debt_cut
+			}
+		}
+
+		visible = {
+			has_idea = egy_vic_debt
+			check_variable = {ROOT.debt_level > 0}
+			NOT = { 
+				has_country_flag = debt_declared_bankruptcy_flag 
+			}
+		}
+		
+		fire_only_once = yes
+
+		#cost = 25
+		days_remove = 100
+		
+		complete_effect = {
+		    hidden_effect = {
+			    set_country_flag = GRE_debt_cut 
+			}
+		}
+		
+		remove_effect = {
+			custom_effect_tooltip = EGY_afr_decrease_debt_5
+			hidden_effect = {
+					add_to_variable = {var = debt_level value = -5}
+					country_event = { id = calc_spain_debt.1 days = 1 }
+					add_timed_idea = {
+						idea = egy_vic_debt_payments
+						days = 180
+					}
+					if = {
+						limit = { 
+							has_idea = egy_vic_debt_payments 
+						}
+						modify_timed_idea = {
+							idea = egy_vic_debt_payments
+							days = 60
+						}
+					}	
+				}
+			}
+
+		ai_will_do = {
+			base = 1
+			#modifier = {
+			#	factor = 0
+			#	NOT = { check_variable = {ROOT.debt_level > 8} }
+			#	num_of_civilian_factories < 2
+			#}
+		}
+	}
+	
+	GRE_decision_fiscal_responsability = {
+		icon = money
+		
+		allowed = {
+			tag = GRE
+		}
+		
+		available = {
+			has_idea = GRE_idea_economic_comission
+			has_completed_focus = GRE_fiscal_responsability
+			NOT = { 
+				has_country_flag = GRE_debt_cut
+			}
+		}
+
+		visible = {
+			has_idea = egy_vic_debt
+			check_variable = {ROOT.debt_level > 0}
+			NOT = { has_country_flag = debt_declared_bankruptcy_flag }
+		}
+		
+		fire_only_once = yes
+
+		#cost = 25
+		days_remove = 100
+		
+		complete_effect = {
+		    hidden_effect = {
+			    set_country_flag = GRE_debt_cut 
+			}
+		}
+		
+		remove_effect = {
+			custom_effect_tooltip = EGY_afr_decrease_debt_5
+			hidden_effect = {
+					add_to_variable = {var = debt_level value = -5}
+					country_event = { id = calc_spain_debt.1 days = 1 }
+					add_timed_idea = {
+						idea = egy_vic_debt_payments
+						days = 180
+					}
+					if = {
+						limit = { 
+							has_idea = egy_vic_debt_payments 
+						}
+						modify_timed_idea = {
+							idea = egy_vic_debt_payments
+							days = 60
+						}
+					}	
+				}
+			}
+
+		ai_will_do = {
+			base = 1
+			#modifier = {
+			#	factor = 0
+			#	NOT = { check_variable = {ROOT.debt_level > 8} }
+			#	num_of_civilian_factories < 2
+			#}
+		}
+	}
+	
+	GRE_decision_cut_down_corruption = {
+		icon = money
+		
+		allowed = {
+			tag = GRE
+		}
+		
+		available = {
+			has_idea = GRE_idea_economic_comission
+			has_completed_focus = GRE_clamp_on_corruption
+			NOT = { 
+				has_country_flag = GRE_debt_cut
+			}
+		}
+
+		visible = {
+			has_idea = egy_vic_debt
+			check_variable = {ROOT.debt_level > 0}
+			NOT = { has_country_flag = debt_declared_bankruptcy_flag }
+		}
+		
+		fire_only_once = yes
+
+		#cost = 25
+		days_remove = 100
+		
+		complete_effect = {
+		    hidden_effect = {
+			    set_country_flag = GRE_debt_cut 
+			}
+		}
+		
+		remove_effect = {
+			custom_effect_tooltip = EGY_afr_decrease_debt_5
+			hidden_effect = {
+					add_to_variable = {var = debt_level value = -5}
+					country_event = { id = calc_spain_debt.1 days = 1 }
+					add_timed_idea = {
+						idea = egy_vic_debt_payments
+						days = 180
+					}
+					if = {
+						limit = { 
+							has_idea = egy_vic_debt_payments 
+						}
+						modify_timed_idea = {
+							idea = egy_vic_debt_payments
+							days = 60
+						}
+					}	
+				}
+			}
+
+		ai_will_do = {
+			base = 1
+			#modifier = {
+			#	factor = 0
+			#	NOT = { check_variable = {ROOT.debt_level > 8} }
+			#	num_of_civilian_factories < 2
+			#}
+		}
+	}
+	
+	GRE_decision_temporary_rise_taxes = {
+		icon = money
+		
+		allowed = {
+			tag = GRE
+		}
+		
+		available = {
+			has_idea = egy_vic_debt
+			check_variable = { ROOT.debt_level > 30 }
+			NOT = { 
+				has_country_flag = GRE_debt_cut
+			}
+		}
+
+		visible = {
+			has_idea = egy_vic_debt
+			check_variable = {ROOT.debt_level > 0}
+			NOT = { has_country_flag = debt_declared_bankruptcy_flag }
+		}
+		
+		fire_only_once = yes
+
+		cost = 25
+		days_remove = 180
+		
+		modifier = {
+			stability_weekly = -0.005
+		}
+		
+		complete_effect = {
+		custom_effect_tooltip = GRE_raise_taxes
+			hidden_effect = {
+			if = {
+				limit = {
+					has_idea = very_low_taxes
+				}
+				swap_ideas = {
+					remove_idea = very_low_taxes
+					add_idea = low_taxes
+				}
+			}
+			else_if = { 
+				limit = {
+					has_idea = low_taxes
+				}
+				swap_ideas = {
+					remove_idea = low_taxes
+					add_idea = normal_taxes
+				}
+			}
+			else_if = { 
+				limit = {
+					has_idea = normal_taxes
+				}
+				swap_ideas = {
+					remove_idea = normal_taxes
+					add_idea = high_taxes
+				}
+			}
+			else_if = { 
+				limit = {
+					has_idea = high_taxes
+				}
+				swap_ideas = {
+					remove_idea = high_taxes
+					add_idea = very_high_taxes
+				}
+			}
+			set_country_flag = GRE_debt_cut 
+			}
+		}
+		
+		remove_effect = {
+			custom_effect_tooltip = EGY_afr_decrease_debt_5
+			hidden_effect = {
+			if = { 
+				limit = {
+					has_idea = low_taxes
+				}
+				swap_ideas = {
+					remove_idea = low_taxes
+					add_idea = very_low_taxes
+				}
+			}
+			else_if = { 
+				limit = {
+					has_idea = normal_taxes
+				}
+				swap_ideas = {
+					remove_idea = normal_taxes
+					add_idea = low_taxes
+				}
+			}
+			else_if = { 
+				limit = {
+					has_idea = high_taxes
+				}
+				swap_ideas = {
+					remove_idea = high_taxes
+					add_idea = normal_taxes
+				}
+			}
+			else_if = { 
+				limit = {
+					has_idea = very_high_taxes
+				}
+				swap_ideas = {
+					remove_idea = very_high_taxes
+					add_idea = high_taxes
+				}
+			}
+			add_to_variable = {var = debt_level value = -5}
+			country_event = { id = calc_spain_debt.1 days = 1 }	
+			}
+		}
+
+		ai_will_do = {
+			base = 1
+			#modifier = {
+			#	factor = 0
+			#	NOT = { check_variable = {ROOT.debt_level > 8} }
+			#	num_of_civilian_factories < 2
+			#}
+		}
+	}
+	
+	GRE_decision_naval_ironworks = { 
+
+        icon = steel
+		
+		available = {
+		    debt_not_bankrupt_trigger = yes 
+		    has_completed_focus = GRE_ironworks 
+			controls_state = 47
+			NOT = { has_country_flag = GRE_industry_development_ongoing_flag }
+		}
+
+		visible = {
+		}
+		
+		allowed = { TAG = GRE }
+		
+		custom_cost_trigger = { check_variable = { debt_level < 50 } }
+		custom_cost_text = eoanb_decision_cost_5_debt_loc
+
+		fire_only_once = yes
+		is_good = yes
+
+		#cost = 50
+		days_remove = 80
+
+		modifier = {
+			civilian_factory_use = 1
+			political_power_gain = -0.1
+		}
+		
+		complete_effect = {
+		    hidden_effect = {
+			    set_country_flag = GRE_industry_development_ongoing_flag
+			}
+		}
+
+		remove_effect = { 
+			47 = {
+				add_building_construction = {
+					type = steel_mill
+					level = 1
+					instant_build = yes
+				}
+			}
+			hidden_effect = {
+				debt_level_increase_by_5 = yes
+				clr_country_flag = GRE_industry_development_ongoing_flag 
+			}
+		}
+
+		ai_will_do = {
+			base = 1
+		}
+    }
 }
 
 eoanb_category_diplomatic_actions = {
