@@ -1,0 +1,345 @@
+set_historical_state_rgos={
+
+	#USA
+			add_to_array = { global.raw_goods_states = 961 }
+			add_to_array = { global.raw_goods_states = 960 }
+			add_to_array = { global.raw_goods_states = 959 }
+			add_to_array = { global.raw_goods_states = 358 }
+			add_to_array = { global.metals_states = 358 }
+			add_to_array = { global.raw_goods_states = 360 }
+			add_to_array = { global.coal_states = 360 }
+			add_to_array = { global.raw_goods_states = 746 }
+			add_to_array = { global.coal_states = 746 }
+			add_to_array = { global.raw_goods_states = 369 }
+			add_to_array = { global.coal_states = 369 }
+			add_to_array = { global.cash_crops_states = 361 }
+			add_to_array = { global.raw_goods_states = 362 }
+			add_to_array = { global.cash_crops_states = 362 }
+			add_to_array = { global.raw_goods_states = 363 }
+			add_to_array = { global.cash_crops_states = 363 }
+			add_to_array = { global.raw_goods_states = 364 }
+			add_to_array = { global.cash_crops_states = 364 }
+			add_to_array = { global.raw_goods_states = 365 }
+			add_to_array = { global.cash_crops_states = 365 }
+			add_to_array = { global.cash_crops_states = 366 }
+			add_to_array = { global.raw_goods_states = 367 }
+			add_to_array = { global.cash_crops_states = 367 }
+			add_to_array = { global.raw_goods_states = 368 }
+			add_to_array = { global.coal_states = 368 }
+			add_to_array = { global.raw_goods_states = 370 }
+			add_to_array = { global.cash_crops_states = 370 }
+			add_to_array = { global.cash_crops_states = 371 }
+			add_to_array = { global.raw_goods_states = 393 }
+			add_to_array = { global.raw_goods_states = 1358 }
+			add_to_array = { global.metals_states = 1358 }
+			add_to_array = { global.raw_goods_states = 394 }
+			add_to_array = { global.metals_states = 394 }
+			add_to_array = { global.raw_goods_states = 391 }
+			add_to_array = { global.metals_states = 391 }
+			add_to_array = { global.raw_goods_states = 386 }
+			add_to_array = { global.raw_goods_states = 1073 }
+			add_to_array = { global.raw_goods_states = 1076 }
+			add_to_array = { global.raw_goods_states = 385 }
+			add_to_array = { global.raw_goods_states = 378 }
+			add_to_array = { global.raw_goods_states = 1297 }
+			add_to_array = { global.raw_goods_states = 1285 }
+			add_to_array = { global.raw_goods_states = 1303 }
+
+			add_to_array = { global.valuable_goods_states = 1342 }
+			add_to_array = { global.raw_goods_states = 1342 }
+			1342 = { set_state_flag = pops_rgos_valuable_goods_untapped_flag }
+
+			#States in the Continental US but not owned by USA
+			add_to_array = { global.raw_goods_states = 1047 }
+			add_to_array = { global.coal_states = 1047 }
+			add_to_array = { global.raw_goods_states = 381 }
+			add_to_array = { global.coal_states = 381 }
+			add_to_array = { global.raw_goods_states = 1291 }
+			add_to_array = { global.coal_states = 1291 }
+			add_to_array = { global.raw_goods_states = 1292 }
+			add_to_array = { global.metals_states = 1292 }
+			add_to_array = { global.raw_goods_states = 1074 }
+			add_to_array = { global.raw_goods_states = 1289 }
+			add_to_array = { global.raw_goods_states = 1092 }
+			add_to_array = { global.metals_states = 1092 }
+			add_to_array = { global.raw_goods_states = 382 }
+			add_to_array = { global.raw_goods_states = 380 }
+			add_to_array = { global.coal_states = 380 }
+			add_to_array = { global.raw_goods_states = 1286 }
+			add_to_array = { global.raw_goods_states = 1287 }
+			add_to_array = { global.coal_states = 1287 }
+			add_to_array = { global.raw_goods_states = 1288 }
+			add_to_array = { global.metals_states = 1288 }
+			add_to_array = { global.raw_goods_states = 1302 }
+			add_to_array = { global.raw_goods_states = 1301 }
+			add_to_array = { global.metals_states = 1301 }
+			add_to_array = { global.raw_goods_states = 1295 }
+			add_to_array = { global.raw_goods_states = 376 }
+			
+			add_to_array = { global.valuable_goods_states = 379 }
+			add_to_array = { global.raw_goods_states = 379 }
+			379 = { set_state_flag = pops_rgos_valuable_goods_untapped_flag }
+
+			#Canada & Alaska
+			add_to_array = { global.raw_goods_states = 331 }
+			add_to_array = { global.raw_goods_states = 332 }
+			add_to_array = { global.raw_goods_states = 466 }
+			add_to_array = { global.raw_goods_states = 682 }
+			add_to_array = { global.metals_states = 682 }
+			add_to_array = { global.raw_goods_states = 683 }
+			add_to_array = { global.raw_goods_states = 472 }
+			add_to_array = { global.metals_states = 472 }
+			add_to_array = { global.raw_goods_states = 1137 }
+			add_to_array = { global.raw_goods_states = 471 }
+			add_to_array = { global.raw_goods_states = 473 }
+			add_to_array = { global.coal_states = 473 }
+			add_to_array = { global.raw_goods_states = 463}
+
+			#Mexico
+			add_to_array = { global.raw_goods_states = 480 }
+			add_to_array = { global.coal_states = 480 }
+			add_to_array = { global.raw_goods_states = 1112 }
+			add_to_array = { global.raw_goods_states = 478 }
+			add_to_array = { global.metals_states = 478 }
+			add_to_array = { global.raw_goods_states = 1114 }
+			add_to_array = { global.raw_goods_states = 474 }
+			add_to_array = { global.raw_goods_states = 475 }
+			add_to_array = { global.cash_crops_states = 475 }
+			add_to_array = { global.raw_goods_states = 481 }
+			add_to_array = { global.raw_goods_states = 1125 }
+
+			add_to_array = { global.valuable_goods_states = 482 }
+			add_to_array = { global.valuable_goods_states = 485 }
+
+			#Central America/Carribean
+			add_to_array = { global.raw_goods_states = 1155 }
+			add_to_array = { global.cash_crops_states = 1155 }
+			add_to_array = { global.cash_crops_states = 317 }
+			add_to_array = { global.cash_crops_states = 1249 }
+			add_to_array = { global.raw_goods_states = 1350 }
+			add_to_array = { global.cash_crops_states = 1350 }
+			add_to_array = { global.raw_goods_states = 315 }
+			add_to_array = { global.cash_crops_states = 315 }
+			add_to_array = { global.raw_goods_states = 690 }
+			add_to_array = { global.cash_crops_states = 690 }
+			add_to_array = { global.raw_goods_states = 693 }
+			add_to_array = { global.cash_crops_states = 693 }
+			add_to_array = { global.raw_goods_states = 689 }
+			add_to_array = { global.cash_crops_states = 689 }
+			add_to_array = { global.raw_goods_states = 318 }
+			add_to_array = { global.cash_crops_states = 318 }
+			add_to_array = { global.raw_goods_states = 790 }
+			add_to_array = { global.cash_crops_states = 790 }
+			add_to_array = { global.raw_goods_states = 319 }
+			add_to_array = { global.cash_crops_states = 319 }
+			add_to_array = { global.raw_goods_states = 1318 }
+			add_to_array = { global.cash_crops_states = 1318 }
+			add_to_array = { global.raw_goods_states = 686 }
+			add_to_array = { global.cash_crops_states = 686 }
+			add_to_array = { global.raw_goods_states = 1357 }
+			add_to_array = { global.cash_crops_states = 1357 }
+			add_to_array = { global.raw_goods_states = 694 }
+			add_to_array = { global.cash_crops_states = 694 }
+			add_to_array = { global.raw_goods_states = 308 }
+			add_to_array = { global.cash_crops_states = 308 }
+			add_to_array = { global.raw_goods_states = 692 }
+			add_to_array = { global.cash_crops_states = 692 }
+			add_to_array = { global.raw_goods_states = 691 }
+			add_to_array = { global.cash_crops_states = 691 }
+			add_to_array = { global.raw_goods_states = 695 }
+			add_to_array = { global.cash_crops_states = 695 }
+
+			#Grand Colombia/Guyanas
+			add_to_array = { global.raw_goods_states = 310 }
+			add_to_array = { global.raw_goods_states = 927 }
+			add_to_array = { global.cash_crops_states = 489 }
+			add_to_array = { global.cash_crops_states = 307 }
+			add_to_array = { global.raw_goods_states = 488 }
+			add_to_array = { global.cash_crops_states = 493 }
+			add_to_array = { global.raw_goods_states = 486 }
+			add_to_array = { global.raw_goods_states = 1419 }
+			add_to_array = { global.raw_goods_states = 1420 }
+			add_to_array = { global.raw_goods_states = 490 }
+			add_to_array = { global.raw_goods_states = 1421 }
+
+			#Brazil
+			add_to_array = { global.raw_goods_states = 495 }
+			add_to_array = { global.cash_crops_states = 495 }
+			add_to_array = { global.raw_goods_states = 1323 }
+			add_to_array = { global.raw_goods_states = 497 }
+			add_to_array = { global.cash_crops_states = 497 }
+			add_to_array = { global.raw_goods_states = 1041 }
+			add_to_array = { global.cash_crops_states = 1041 }
+			add_to_array = { global.raw_goods_states = 498 }
+			add_to_array = { global.cash_crops_states = 498 }
+			add_to_array = { global.cash_crops_states = 1044 }
+			add_to_array = { global.raw_goods_states = 1040 }
+			add_to_array = { global.cash_crops_states = 1040 }
+			add_to_array = { global.cash_crops_states = 499 }
+			add_to_array = { global.cash_crops_states = 1038 }
+			add_to_array = { global.cash_crops_states = 1039 }
+			add_to_array = { global.cash_crops_states = 500 }
+			add_to_array = { global.cash_crops_states = 501 }
+			add_to_array = { global.raw_goods_states = 280 }
+			add_to_array = { global.raw_goods_states = 1064 }
+			add_to_array = { global.raw_goods_states = 502 }
+
+			#Peru
+			add_to_array = { global.raw_goods_states = 491 }
+			add_to_array = { global.raw_goods_states = 303 }
+			add_to_array = { global.coal_states = 303 }
+			add_to_array = { global.raw_goods_states = 494 }
+			add_to_array = { global.raw_goods_states = 492 }
+			add_to_array = { global.raw_goods_states = 1131 }
+			add_to_array = { global.raw_goods_states = 1085 }
+
+			add_to_array = { global.valuable_goods_states = 1133 }
+			add_to_array = { global.raw_goods_states = 1133 }
+
+			#Bolivia
+			
+			#Paraguay
+
+			#Chile
+
+			#Uruguay
+
+			#Argentina
+			
+			
+			#litchenstein yes strat, litchenstein is my testing nation -G
+			add_to_array = { global.raw_goods_states = 955 }
+	#africa are raw goods, great for fueling imperial powers
+		#nambia,zimbawe and south africa
+		add_to_array = { global.raw_goods_states = 776 }
+		add_to_array = { global.coal_states = 776 }
+		add_to_array = { global.raw_goods_states = 777 }
+		777 = { set_state_flag = pops_rgos_valuable_goods_untapped_flag }
+		add_to_array = { global.raw_goods_states = 747 }
+		add_to_array = { global.raw_goods_states = 1149 }
+		1149 = { set_state_flag = pops_rgos_valuable_goods_untapped_flag }
+		add_to_array = { global.raw_goods_states = 1147 }
+		add_to_array = { global.raw_goods_states = 1148 }
+		1148 = { set_state_flag = pops_rgos_valuable_goods_untapped_flag }
+		add_to_array = { global.raw_goods_states = 1067 }
+		1067 = { set_state_flag = pops_rgos_valuable_goods_untapped_flag }
+		add_to_array = { global.raw_goods_states = 1140 }
+		1140 = { set_state_flag = pops_rgos_valuable_goods_untapped_flag }
+		add_to_array = { global.raw_goods_states = 1142 }
+		1142 = { set_state_flag = pops_rgos_valuable_goods_untapped_flag }
+		add_to_array = { global.coal_states = 1141 }
+		add_to_array = { global.raw_goods_states = 1141 }
+		add_to_array = { global.coal_states = 1144 }
+		add_to_array = { global.raw_goods_states = 1144 }
+		add_to_array = { global.raw_goods_states = 1143 }
+		add_to_array = { global.raw_goods_states = 823 }
+		add_to_array = { global.raw_goods_states = 827 }
+		add_to_array = { global.raw_goods_states = 828 }
+		add_to_array = { global.coal_states = 541 }
+		add_to_array = { global.raw_goods_states = 831 }
+		add_to_array = { global.raw_goods_states = 1214 }
+		add_to_array = { global.raw_goods_states = 830 }
+		add_to_array = { global.raw_goods_states = 829 }
+		add_to_array = { global.raw_goods_states = 542 }
+		add_to_array = { global.raw_goods_states = 545 }
+		add_to_array = { global.valuable_goods_states = 1398 }
+		add_to_array = { global.coal_states = 545 }
+		add_to_array = { global.coal_states = 719 }
+		add_to_array = { global.coal_states = 545 }
+		add_to_array = { global.coal_states = 545 }
+		coal_states
+		
+		#angola,DRC,zambia
+	
+	add_to_array = { global.raw_goods_states = 824 }
+	add_to_array = { global.raw_goods_states = 932 }
+	add_to_array = { global.raw_goods_states = 936 }
+	add_to_array = { global.raw_goods_states = 933 }
+	add_to_array = { global.raw_goods_states = 934 }
+	add_to_array = { global.raw_goods_states = 935 }
+	add_to_array = { global.raw_goods_states = 540 }
+	add_to_array = { global.raw_goods_states = 937 }
+	add_to_array = { global.coal_states = 844 }
+	add_to_array = { global.raw_goods_states = 544 }
+	add_to_array = { global.raw_goods_states = 928 }
+	add_to_array = { global.raw_goods_states = 1215 }
+	add_to_array = { global.raw_goods_states = 887 }
+	add_to_array = { global.raw_goods_states = 875 }
+	add_to_array = { global.raw_goods_states = 898 }
+	add_to_array = { global.raw_goods_states = 1212 }
+	add_to_array = { global.raw_goods_states = 888 }
+	add_to_array = { global.raw_goods_states = 877 }
+	add_to_array = { global.raw_goods_states = 1213 }
+	add_to_array = { global.raw_goods_states = 892 }
+	add_to_array = { global.raw_goods_states = 295 }
+	add_to_array = { global.raw_goods_states = 538 }
+	add_to_array = { global.raw_goods_states = 900 }
+	add_to_array = { global.raw_goods_states = 718 }
+	add_to_array = { global.raw_goods_states = 901 }
+	add_to_array = { global.raw_goods_states = 884 }
+	add_to_array = { global.raw_goods_states = 882 }
+	
+	#gabon,cameroon,central africa
+	add_to_array = { global.raw_goods_states = 878 }
+	add_to_array = { global.raw_goods_states = 539 }
+	add_to_array = { global.raw_goods_states = 297 }
+	add_to_array = { global.raw_goods_states = 880 }
+	add_to_array = { global.raw_goods_states = 893 }
+	add_to_array = { global.raw_goods_states = 885 }
+	add_to_array = { global.raw_goods_states = 889 }
+	add_to_array = { global.raw_goods_states = 891 }
+	add_to_array = { global.raw_goods_states = 805 }
+	add_to_array = { global.raw_goods_states = 1042 }
+	add_to_array = { global.raw_goods_states = 839 }
+	add_to_array = { global.raw_goods_states = 763 }
+	add_to_array = { global.raw_goods_states = 789 }
+	add_to_array = { global.raw_goods_states = 660 }
+	add_to_array = { global.raw_goods_states = 838 }
+	add_to_array = { global.raw_goods_states = 1340 }
+	add_to_array = { global.coal_states = 1401 }
+	
+	#nigeria,benin,niger
+	add_to_array = { global.raw_goods_states = 1383 }
+	add_to_array = { global.raw_goods_states = 873 }
+	add_to_array = { global.raw_goods_states = 881 }
+	add_to_array = { global.raw_goods_states = 796 }
+	add_to_array = { global.raw_goods_states = 872 }
+	add_to_array = { global.raw_goods_states = 1043 }
+	add_to_array = { global.raw_goods_states = 515 }
+	add_to_array = { global.raw_goods_states = 770 }
+	add_to_array = { global.raw_goods_states = 855 }
+	#togo,ghana,ivory coast
+	add_to_array = { global.raw_goods_states = 768 }
+	add_to_array = { global.raw_goods_states = 847 }
+	add_to_array = { global.valuable_goods_states = 1108 }
+	add_to_array = { global.valuable_goods_states = 274 }
+	add_to_array = { global.raw_goods_states = 1227 }
+	add_to_array = { global.raw_goods_states = 848 }
+	add_to_array = { global.raw_goods_states = 761 }
+	add_to_array = { global.raw_goods_states = 849 }
+	add_to_array = { global.raw_goods_states = 788 }
+	add_to_array = { global.valuable_goods_states = 556 }
+	
+	
+	
+	
+	#uk
+	add_to_array = { global.raw_goods_states = 122 }
+	add_to_array = { global.coal_states = 122 }
+	add_to_array = { global.raw_goods_states = 128 }
+	add_to_array = { global.metals_states = 128 }
+	add_to_array = { global.raw_goods_states = 132 }
+	add_to_array = { global.metals_states = 132 }
+	add_to_array = { global.raw_goods_states = 130 }
+	add_to_array = { global.coal_states = 130 }
+	add_to_array = { global.raw_goods_states = 131 }
+	add_to_array = { global.metals_states = 131 }
+	add_to_array = { global.raw_goods_states = 133 }
+	add_to_array = { global.metals_states = 133 }
+	add_to_array = { global.raw_goods_states = 120 }
+	add_to_array = { global.coal_states = 120 }
+	add_to_array = { global.raw_goods_states = 136 }
+	add_to_array = { global.raw_goods_states = 129 }
+	add_to_array = { global.coal_states = 129 }
+	
+}
