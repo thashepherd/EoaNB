@@ -66,7 +66,10 @@
 				#array = global.econ_gp_list_array
 				array = global.score_tag_array
 			# every_country={
-
+				if={
+					limit={
+						afr_is_tribal = no
+					}
 				for_each_loop = {
 					array = global.econ_value_array
 					index = ii
@@ -180,6 +183,7 @@
 				#
 				set_variable = { global.total_money = 0 }
 			#
+			}
 		}
 		for_each_scope_loop = {
 			array = global.econ_order_array
