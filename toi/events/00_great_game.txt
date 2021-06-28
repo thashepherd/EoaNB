@@ -627,7 +627,8 @@ country_event = { #1873 agreement
 		add_political_power = 100
 		FROM={
 			add_political_power = 100
-			eoanb_add_1_prestige_score = yes
+			set_temp_variable = { eoanb_prestige_change = 1 }
+			eoanb_change_prestige_score = yes
 		}
 		if={
 			limit={
@@ -1115,6 +1116,55 @@ country_event = {#england demands representive
 	}
 	option = {	#accept
 		name = anglo_afghan_war.3.b
+		ai_chance = {
+			factor = 0
+		}
+	}
+}
+
+
+country_event = {#impose rule over wukhan
+	id = anglo_afghan_war.4
+	title = anglo_afghan_war.4.t
+	desc = anglo_afghan_war.4.d
+	picture = GFX_report_event_krenholm_manufacture
+
+	is_triggered_only = yes
+
+	option = {	#do it
+		name = anglo_afghan_war.4.a
+		ai_chance = {
+			factor = 100
+		}
+		add_manpower = -1000
+		transfer_state = 1362
+		transfer_state = 1365
+		1362={remove_core_of = UCT}
+		1365={remove_core_of = UCT}
+	}
+	option = {	#not worth the effort
+		name = anglo_afghan_war.4.b
+		ai_chance = {
+			factor = 0
+		}
+	}
+}
+country_event = {#wukhan question
+	id = anglo_afghan_war.5
+	title = anglo_afghan_war.5.t
+	desc = anglo_afghan_war.5.d
+	picture = GFX_report_event_krenholm_manufacture
+
+	is_triggered_only = yes
+
+	option = {	#do it
+		name = anglo_afghan_war.5.a
+		ai_chance = {
+			factor = 100
+		}
+	}
+	option = {	#not worth the effort
+		name = anglo_afghan_war.5.b
 		ai_chance = {
 			factor = 0
 		}
