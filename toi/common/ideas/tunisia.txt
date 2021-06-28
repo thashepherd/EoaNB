@@ -1,4 +1,26 @@
 ideas = {
+    hidden_ideas = {
+        TUN_FRA_ENG_trades_go_up = {
+        targeted_modifier = { tag = FRA trade_opinion_factor = +0.5 }
+        targeted_modifier = { tag = ENG trade_opinion_factor = +0.5 }
+        }
+    }
+        hidden_ideas = {
+            TUN_FRA_ENG_trades_go_down = {
+            targeted_modifier = { tag = FRA trade_opinion_factor = -0.5 }
+            targeted_modifier = { tag = ENG trade_opinion_factor = -0.5 }
+            }
+    }
+        hidden_ideas = {
+            OTT_trades_go_down = {
+            targeted_modifier = { tag = OTT trade_opinion_factor = -0.5 }
+            }
+    }
+        hidden_ideas = {
+            OTT_trades_go_up = {
+            targeted_modifier = { tag = OTT trade_opinion_factor = +0.5 }
+            }
+    }
 	country = {
 		TUN_unorganized_ministries = {
 			removal_cost = -1
@@ -8,6 +30,26 @@ ideas = {
 			modifier = {
 				political_power_cost = -0.1
                 political_advisor_cost_factor = 1.00
+			}
+        }
+		TUN_the_fondamental_pact = {
+			allowed = {
+				always = yes
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			picture = placeholder
+
+			modifier = {
+				political_power_gain = 0.10
+				stability_factor = -0.1
+				research_speed_factor = -0.15
+                army_org_Factor = -0.05
 			}
 		}
     }

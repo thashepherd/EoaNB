@@ -1,0 +1,471 @@
+focus_tree = {
+	id = tunisia_focus_tree
+	country = {
+		factor = 0
+		modifier = {
+			add = 10
+			tag = TUN
+		}	
+	}
+	default = no
+	continuous_focus_position = {
+		x=100
+		y=2000
+	}
+#historical focus tree------------------------------------------------------------
+focus = {
+	id = TUN_the_great_prince
+	icon = GFX_goal_focus_tun_the_great_prince
+	x = 2
+	y = 0
+	cost = 20
+	available_if_capitulated = no
+	ai_will_do = {
+		factor = 1
+	}
+	completion_reward = {
+		add_political_power = 100
+		add_stability = 0.2
+	
+	swap_ideas = {
+		remove_idea = no_heir
+		add_idea = weak_heir
+	}
+}
+}
+
+focus = {
+	id = TUN_batto_sfez_affair
+	icon = GFX_goal_generic_attack_allies
+	x = 2
+	y = 1
+	cost = 20
+	ai_will_do = {
+		factor = 1
+	}
+	prerequisite = { focus = TUN_the_great_prince }
+	completion_reward = {
+		country_event = {
+			id = tunisia.1
+
+		}
+	}
+}
+focus = {
+	id = TUN_social_reforms
+	icon = GFX_focus_generic_concessions
+	x = 1
+	y = 2
+	cost = 60
+	ai_will_do = {
+		factor = 1
+	}
+	prerequisite = { focus = TUN_batto_sfez_affair }
+	completion_reward = {
+	add_manpower = 10000
+	increase_ps_by_one = yes
+	}
+}
+focus = {
+	id = TUN_political_reform
+	icon = GFX_goal_focus_reform_administration
+	x = 3
+	y = 2
+	cost = 60
+	ai_will_do = {
+		factor = 1
+	}
+	prerequisite = { focus = TUN_batto_sfez_affair }
+	completion_reward = {
+	add_political_power = 50
+	add_stability = 0.05
+	}
+}
+focus = {
+	id = TUN_municipality_of_tunis
+	icon = GFX_focus_generic_self_management
+	x = 3
+	y = 3
+	cost = 60
+	ai_will_do = {
+		factor = 1
+	}
+	prerequisite = { focus = TUN_political_reform }
+	completion_reward = {
+	swap_ideas = {
+		add_idea = states_restricted
+		remove_idea = no_federalism
+	}
+	}
+}	
+focus = {
+	id = TUN_the_fundamental_pact
+	icon = GFX_focus_generic_treaty
+	x = 1
+	y = 3
+	cost = 60
+	ai_will_do = {
+		factor = 1
+	}
+	available = {
+		date > 1857.09.01
+	}
+	prerequisite = { focus = TUN_social_reforms }
+	completion_reward = {
+		country_event = {
+			id = tunisia.2
+		}
+	}
+}
+focus = {
+	id = TUN_stabilize_the_nation
+	icon = GFX_focus_generic_support_the_left_right
+	x = 2
+	y = 4
+	cost = 60
+	ai_will_do = {
+		factor = 1
+	}
+	prerequisite = { 
+		focus = TUN_the_fundamental_pact
+	}
+	prerequisite = { 
+		focus = TUN_municipality_of_tunis
+	}
+	completion_reward = {
+		increase_ps_by_one = yes
+	}
+}	
+#---Part_2
+focus = {
+	id = TUN_the_reformist
+	icon = GFX_goal_focus_tun_the_reformist 
+	x = 10
+	y = 0
+	cost = 20
+	available_if_capitulated = no
+	ai_will_do = {
+		factor = 1
+	}
+	available = {
+		 date > 1859.09.20
+	}
+	completion_reward = {
+		add_political_power = 100
+		add_stability = 0.2
+		swap_ideas = {
+			remove_idea = weak_heir
+			add_idea = has_heir
+		}
+	}
+}
+#CULTURAL REFORMS------------------------------
+focus = {
+	id = TUN_cultural_reforms
+	icon = GFX_focus_generic_self_management
+	x = 7
+	y = 1
+	cost = 30
+	ai_will_do = {
+		factor = 1
+	}
+	prerequisite = { focus = TUN_the_reformist }
+	completion_reward = {
+		country_event = {
+			id = tunisia.3
+		}
+	}
+}
+focus = {
+	id = TUN_enforce_slave_trade_ban
+	icon = GFX_focus_cze_german_puppet
+	x = 7
+	y = 2
+	cost = 60
+	ai_will_do = {
+		factor = 1
+	}
+	prerequisite = { focus = TUN_the_reformist }
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = slavery_all_but_name
+				add_idea = limited_equality
+			}
+		add_political_power 50
+		decrease_ps_by_one = yes
+	}
+}
+focus = {
+	id = TUN_Trans_Saharan_networks
+	icon = GFX_goal_generic_demand_territory
+	x = 7
+	y = 3
+	cost = 60
+	ai_will_do = {
+		factor = 1
+	}
+	prerequisite = { focus = TUN_the_reformist }
+	completion_reward = {
+		country_event = {
+			id = tunisia.4
+		}
+		add_political_power 50
+		decrease_ps_by_two = yes	
+	}
+}
+focus = {
+	id = TUN_first_tunisian_newspaper
+	icon = GFX_focus_hol_the_foundations_of_defense
+	x = 5
+	y = 2
+	cost = 60
+	ai_will_do = {
+		factor = 1
+	}
+	prerequisite = { focus = TUN_cultural_reforms }
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = no_press
+				add_idea = state_controlled_press
+			}
+		}
+}
+#POLITICAL REFORMS-----------------------------
+focus = {
+	id = TUN_succession_reforms
+	icon = GFX_focus_rom_royal_dictatorship
+	x = 9
+	y = 3
+	cost = 60
+	ai_will_do = {
+		factor = 1
+	}
+	prerequisite = { focus = TUN_organize_the_ministries }
+	completion_reward = {
+add_political_power 50
+	}
+}
+focus = {
+	id = TUN_organize_the_ministries
+	icon = GFX_goal_generic_intelligence_exchange
+	x = 10
+	y = 1
+	cost = 60
+	ai_will_do = {
+		factor = 1
+	}
+	prerequisite = { focus = TUN_the_reformist }
+	completion_reward = {
+		remove_ideas = TUN_unorganized_ministries
+	}
+}
+focus = {
+	id = TUN_invite_reformists
+	icon = GFX_goal_generic_major_alliance
+	x = 11
+	y = 3
+	cost = 60
+	ai_will_do = {
+		factor = 1
+	}
+	prerequisite = { focus = TUN_organize_the_ministries }
+	completion_reward = {
+		country_event = {
+			id = tunisia.5
+		}
+	}
+}
+#Buyuruldu Comission will appear as an event after the invite_reformists
+focus = {
+	id = TUN_the_constitution
+	icon = GFX_goal_generic_forceful_treaty
+	x = 10
+	y = 4
+	cost = 60
+	ai_will_do = {
+		factor = 1
+	}
+	prerequisite = { focus = TUN_invite_reformists }
+	prerequisite = { focus = TUN_succession_reforms }
+	completion_reward = {
+		country_event = {
+			id = tunisia.6
+		}
+	}
+}
+
+#appoint the ministers event after organize_the_ministries
+
+
+#ECONOMICAL REFORMS----------------------------
+focus = {
+	id = TUN_economical_reforms
+	icon = GFX_goal_generic_positive_trade_relations
+	x = 13
+	y = 1
+	cost = 60
+	ai_will_do = {
+		factor = 1
+	}
+	prerequisite = { focus = TUN_the_reformist }
+	completion_reward = {
+		country_event = {
+			id = tunisia.7
+		}
+	}
+}
+focus = {
+	id = TUN_renew_old_infrastructures
+	icon = GFX_focus_generic_africa_infrastructure
+	x = 13
+	y = 2.25
+	cost = 30
+	ai_will_do = {
+		factor = 1
+	}
+	prerequisite = { focus = TUN_economical_reforms }
+	completion_reward = {
+		458 = {
+			add_extra_state_shared_building_slots = 2
+							add_building_construction = {
+									type = infrastructure
+									level = 2
+									instant_build = yes
+								}
+			}
+	}	
+}
+focus = {
+	id = TUN_influences_from_the_north
+	icon = GFX_goal_generic_attack_allies
+	x = 13
+	y = 3.5
+	cost = 60
+	ai_will_do = {
+		factor = 1
+	}
+	available = {
+		has_completed_focus = TUN_the_constitution
+	}
+	prerequisite = { focus = TUN_renew_old_infrastructures }
+	completion_reward = {
+		hidden_effect = {
+			add_ideas = { TUN_FRA_ENG_trades_go_up }
+		}
+	}
+}
+focus = {
+	id = TUN_the_telegraph_concession
+	icon = GFX_focus_generic_self_management
+	x = 12
+	y = 4.75
+	cost = 60
+	ai_will_do = {
+		factor = 1
+	}
+	prerequisite = { focus = TUN_influences_from_the_north}
+	completion_reward = {
+		country_event = {
+			id = tunisia.3
+		}
+	}
+}	
+focus = {
+	id = TUN_the_marseille_of_the_desert
+	icon = GFX_goal_generic_construction
+	x = 14
+	y = 4.75
+	cost = 60
+	ai_will_do = {
+		factor = 1
+	}
+	available = {
+		has_completed_focus = TUN_the_telegraph_concession
+	}
+	prerequisite = { focus = TUN_influences_from_the_north }
+		completion_reward = {
+			458 = {
+				add_extra_state_shared_building_slots = 2
+								add_building_construction = {
+										type = infrastructure
+										level = 2
+										instant_build = yes
+									}
+				}
+		}
+}
+focus = {
+	id = TUN_industrialize_the_country
+	icon = GFX_focus_generic_support_the_left_right 
+	x = 13
+	y = 6
+	cost = 60
+	ai_will_do = {
+		factor = 1
+	}
+	prerequisite = { 
+		focus = TUN_the_telegraph_concession
+	}
+	prerequisite = { 
+		focus = TUN_the_marseille_of_the_desert
+	}
+	completion_reward = {
+		swap_ideas = {
+			add_idea = industrializing
+			remove_idea = agrarian
+		}
+	}
+}
+# -------------------------pt2 monetary issue
+focus = {
+	id = TUN_the_monetary_issue
+	icon = GFX_focus_generic_concessions
+	x = 16
+	y = 2.25
+	cost = 30
+	ai_will_do = {
+		factor = 1
+	}
+	prerequisite = { focus = TUN_economical_reforms }
+	completion_reward = {
+		458 = {
+			add_extra_state_shared_building_slots = 2
+							add_building_construction = {
+									type = infrastructure
+									level = 2
+									instant_build = yes
+								}
+			}
+	}	
+}
+#NAVY------------------------------------------
+focus = {
+	id = TUN_focus_navy
+	icon = GFX_focus_generic_navy_battleship2 
+	x = 2
+	y = 6
+	cost = 60
+	ai_will_do = {
+		factor = 1
+	}
+	available = {
+		has_completed_focus = TUN_industrialize_the_country
+	}
+	completion_reward = {
+		add_tech_bonus = {
+			bonus = 0.25
+			uses = 2
+			category = naval_equipment
+		}
+	458 = {
+	add_extra_state_shared_building_slots = 2
+	add_building_construction = {
+			type = dockyard
+			level = 2
+			instant_build = yes
+		}
+}
+				
+	}
+}
+}

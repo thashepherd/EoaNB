@@ -8,7 +8,6 @@
   set_research_slots = 2
       add_equipment_to_stockpile = { type = infantry_equipment_rifle_0 amount = 1000 producer = TUN }
   add_equipment_to_stockpile = { type = uniform_equipment_0 amount = 1000 producer = TUN }
-
   add_ideas = {
     #POLITICS
 
@@ -18,7 +17,6 @@
     no_heir
     absolute_monarchy
 	law_army_tribal_advanced
-
     civilian_economy
     limited_exports
     two_percent
@@ -29,14 +27,17 @@
     stagnation_growth
     border_control
 	manpower_tribal_every_tenth
-    slavery
+    racial_laws
     absolutism
 
     sharia_constitution
     no_elections
+    no_separation
+    no_federalism
 
     traditional_uluma
     state_religion
+    no_press
 	religion_sunni
 
    hc_no_healthcare
@@ -124,15 +125,24 @@ set_popularities = {
   }
 
   # POLITICAL LEADERS
-
-	create_country_leader = {
-	  name = "Muhammad II ibn al-Husayn"
-	  desc = "POLITICS_GEORGE_V_DESC"
-	  picture = "Portrait_TUN_Muhammad_II_ibn_al_Husayn.dds"
-	  expire = "1900.1.1"
-	  ideology = despotism
+  create_country_leader = {
+	  name = "Muhammad III ibn al-Husayn"
+	  desc = "POLITICS_MUHAMMAD_III_IBN_AL_HUSAYN"
+    picture = "Portrait_TUN_Muhammad_III_ibn_al_Husayn.dds"
+	  expire = "1882.10.27"
+	  ideology = constit_monarch
 	  traits = {
 
 	  }
 	}
+	create_country_leader = {
+	  name = "Muhammad II ibn al-Husayn"
+	  desc = "POLITICS_MUHAMMAD_II_IDN_AL_HUSAYN"
+	  picture = "Portrait_TUN_Muhammad_II_ibn_al_Husayn.dds"
+	  expire = "1859.09.20"
+	  ideology = despotism
+	  traits = {
+
+	  }
+  }
 }

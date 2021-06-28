@@ -5839,6 +5839,7 @@ spriteTypes = {
 		name = "GFX_focus_rise_of_brazil"
 		texturefile = "gfx/interface/goals/brazil/rise_of_brazil.dds"
 	}
+#TUNISIA
 	SpriteType = {
 		name = "GFX_goal_focus_tun_the_great_prince"
 		texturefile = "gfx/interface/goals/tunisia/focus_tun_the_great_prince.dds"

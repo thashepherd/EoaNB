@@ -1,0 +1,93 @@
+add_namespace = Tunisia
+#batto sfez
+country_event = {
+    id = tunisia.1
+	title = tunisia.1.t
+	desc = tunisia.1.d
+	picture = GFX_report_event_carriage_accident
+	fire_only_once = yes
+    is_triggered_only = yes
+
+    trigger = {
+        tag = TUN
+        has_completed_focus = TUN_the_great_prince
+    }
+	
+	option = {
+		name = tunisia.1.a
+        hidden_effect = {
+    add_stability = -0.20
+    add_political_power = -25
+    decrease_ps_by_two = yes
+    set_country_flag = batto_sfez_dead
+        }
+    }
+    option = {
+		name = tunisia.1.b
+        hidden_effect = {
+    add_stability = -0.55
+    add_political_power = -100
+    decrease_ps_by_three = yes
+    set_country_flag = batto_sfez_alive
+        }
+	}
+is_triggered_only = yes
+}
+country_event = {
+    id = tunisia.2
+	title = tunisia.2.t
+	desc = tunisia.2.d
+	picture = GFX_TUN_the_fondamental_pact
+	fire_only_once = yes
+    is_triggered_only = yes
+
+    trigger = {
+        tag = TUN
+        has_completed_focus = TUN_social_reforms
+    }
+	
+	option = {
+		name = tunisia.2.a
+        hidden_effect = {
+    add_stability = -0.20
+    add_political_power = -25
+    decrease_ps_by_two = yes
+    add_ideas = TUN_FRA_ENG_trades_go_up
+    add_ideas = TUN_the_fondamental_pact
+    set_country_flag = TUN_the_fondamental_pact
+    swap_ideas = {
+        remove_idea = racial_laws
+        add_idea = slavery_all_but_name
+    }
+        }
+    }
+    option = {
+		name = tunisia.2.b
+        hidden_effect = {
+    add_stability = -0.10
+    add_political_power = -50
+    decrease_ps_by_two = yes
+    add_ideas = TUN_FRA_ENG_trades_go_down
+        }
+    }
+is_triggered_only = yes
+}
+
+country_event = {
+    id = tunisia.3
+	title = tunisia.3.t
+	desc = tunisia.3.d
+	picture = GFX_TUN_the_fondamental_pact
+	fire_only_once = yes
+    is_triggered_only = yes
+
+    trigger = {
+        tag = TUN
+        has_completed_focus = TUN_the_reformist
+    }
+	
+	option = {
+		name = tunisia.3.a
+    }
+is_triggered_only = yes
+}
