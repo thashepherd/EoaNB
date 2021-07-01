@@ -6,3 +6,5 @@
  FIN_outdated_economy_desc:0 ""
  FIN_reformed_army:0 "Freshly reformed army"
  FIN_reformed_army_desc:0 ""
+ FIN_famine_5:0 "Devastating Famine"
+ FIN_famine_desc_5:0 "§WFamine Level:§! [?FIN_var_famine|%R]"
