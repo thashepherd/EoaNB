@@ -754,6 +754,14 @@ afr_prosperity_mechanic_category = {
 	}
 }
 
+# Tunisia Decision Categories
+tunisia_revolt_category = {
+	#icon = to add
+	allowed = { tag = TUN }
+	priority = 20
+}
+
+
 
 
 

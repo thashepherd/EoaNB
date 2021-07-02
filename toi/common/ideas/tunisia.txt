@@ -52,5 +52,8 @@ ideas = {
                 army_org_Factor = -0.05
 			}
 		}
+        TUN_integralist_uprising ={
+            
+        }
     }
 }

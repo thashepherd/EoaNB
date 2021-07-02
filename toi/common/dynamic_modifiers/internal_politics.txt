@@ -41,3 +41,12 @@ USA_Slavery_Debate_Tension_Modifier = {
 	#traditional_conservatism_drift = USA_Slavery_Debate_driftU
 	#radical_democracy_drift = USA_Slavery_Debate_driftD
 }
+
+TUN_Mejba_Revolt_Modifier = {
+	#icon = "to add"
+	enable = { always = yes }
+
+	stability_factor = -0.2
+	
+
+}

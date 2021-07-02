@@ -1,4 +1,4 @@
-add_namespace = Tunisia
+add_namespace = tunisia
 #batto sfez
 country_event = {
     id = tunisia.1
@@ -14,21 +14,21 @@ country_event = {
     }
 	
 	option = {
-		name = tunisia.1.a
+		name = tunisia.1.a # dead
         hidden_effect = {
     add_stability = -0.20
     add_political_power = -25
     decrease_ps_by_two = yes
-    set_country_flag = batto_sfez_dead
+    
         }
     }
     option = {
-		name = tunisia.1.b
+		name = tunisia.1.b #alive
         hidden_effect = {
     add_stability = -0.55
     add_political_power = -100
     decrease_ps_by_three = yes
-    set_country_flag = batto_sfez_alive
+    activate_mission = tunisia_revolt_mission
         }
 	}
 is_triggered_only = yes
@@ -89,5 +89,28 @@ country_event = {
 	option = {
 		name = tunisia.3.a
     }
-is_triggered_only = yes
+
+}
+# ------------------------------------------------------------
+country_event = {
+    id = tunisia.100
+	title = tunisia.100.t
+	desc = tunisia.100.d
+	#picture = 
+	fire_only_once = yes
+    is_triggered_only = yes
+	option = {
+		name = tunisia.3.a
+        hidden_effect = {
+            start_civil_war = {
+                ruling_party = traditional_conservatism
+                ideology = traditional_conservatism
+                size = 0.1
+                capital = 1012
+                states = { 
+                    1012
+                }
+            }
+        }
+    }
 }

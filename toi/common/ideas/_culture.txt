@@ -422,6 +422,33 @@ ideas = {
 
 	press = { 
 		law = yes
+		no_press = {
+
+			cost = 450
+			removal_cost = -1
+			level = 4
+			
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = eoanb_law_reform_tip
+					AND = {
+						can_call_idea_votes = yes
+					}
+				}
+				hidden_trigger = {
+					always = no
+				}
+			}
+
+			modifier = {
+			political_power_factor = -0.05
+			stability_factor = -0.1
+			drift_defence_factor = 0.02
+			research_speed_factor = -0.1
+			}
+			
+			cancel_if_invalid = no
+		}
 
 		state_controlled_press = {
 

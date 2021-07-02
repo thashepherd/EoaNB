@@ -1,0 +1,29 @@
+tunisia_revolt_category = {
+	tunisia_revolt_mission = {
+		allowed = { always = no }
+
+		available = {
+			# add your variable here
+			check_variable = { Mejba_Revolt_var > 99 }
+		}
+
+		activation = { always = no }
+
+		is_good = no
+
+		days_mission_timeout = 30
+
+		timeout_effect = {
+			activate_mission = tunisia_revolt_mission # Copy this line when you make set your your variable
+			if = {
+				limit = { date > 1865.1.1 }
+				add_to_variable = { Mejba_Revolt_var = 1 }
+			}
+		}
+
+		complete_effect = {
+			country_event = { id = tunisia.100 } # Fires Civil War
+			remove_dynamic_modifier = { modifier = TUN_Mejba_Revolt_Modifier } # removes the modifier added for civil war
+		}
+	}
+}

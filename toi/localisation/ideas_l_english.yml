@@ -772,6 +772,8 @@ Generic_Investigation_Proceeding_1_desc:0 "[Root.GetNameDef] is spending resourc
  very_high_taxes:1 "Very High Taxes"
  very_high_taxes_desc:0 "This state has very high tax rates and its government greatly benefits from it.\n\n§GState Capitalist§! and §GPlanned Economy§! parties support this, no parties are neutral on the matter, §RLaissez-Faire§! and §RInterventionist§! parties are opposed to it."
  press:0 "Press Laws"
+ no_press:0 "No press"
+ no_press_desc:0 "There are no major publishing houses and neither a national press"
  state_controlled_press:0 "State Controlled Press"
  state_controlled_press_desc:0 "This state controls nearly all press within its borders."
  censored_press:0 "Censored Press"

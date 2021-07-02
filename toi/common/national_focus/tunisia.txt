@@ -112,6 +112,10 @@ focus = {
 	}
 	prerequisite = { focus = TUN_social_reforms }
 	completion_reward = {
+		add_to_variable = {
+				var = Mejba_Revolt_var
+				value = 5
+		}
 		country_event = {
 			id = tunisia.2
 		}
