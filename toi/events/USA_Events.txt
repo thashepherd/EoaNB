@@ -11551,6 +11551,7 @@ country_event = {
 		name = usa.158.b
 		USA = {
 			transfer_state = 315
+			transfer_state = 1350
 			if = {
 				limit = {
 					1022 = {
@@ -11871,6 +11872,7 @@ country_event = {
 		USA = {
 			white_peace = SPR
 			transfer_state = 315
+			transfer_state = 1350
 			if = {
 				limit = {
 					1022 = {
@@ -15265,7 +15267,7 @@ country_event = {
 	immediate = {
 		hidden_effect = {
 			USA_check_and_update_stars = yes
-			country_event = ={
+			country_event = {
 				id = usa_independence.1
 				days = 365
 			}

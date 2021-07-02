@@ -1536,6 +1536,10 @@ spriteTypes = {
 		texturefile = "gfx/interface/goals/uta/focus_uta_the_holy_land.dds"
 	}
 	### HOL
+	spriteType = {
+		name = "GFX_goal_HOL_movement_of_grain"
+		texturefile = "gfx/interface/goals/Netherlands/movement_of_grain.dds"
+	}
 	SpriteType = {
 		name = "GFX_focus_hol_abandon_the_gold_standard"
 		texturefile = "gfx/interface/goals/focus_hol_abandon_the_gold_standard.dds"
@@ -1898,6 +1902,46 @@ spriteTypes = {
 	}
 	### EOANB
 	### United Kingdom
+	SpriteType = {
+		name = "GFX_focus_the_many_who_work"
+		texturefile = "gfx/interface/goals/focus_the_many_who_work.dds"
+	}
+	SpriteType = {
+		name = "GFX_focus_socio_industrial_revolution"
+		texturefile = "gfx/interface/goals/uk/focus_socio_industrial_revolution.dds"
+	}
+	SpriteType = {
+		name = "GFX_focus_red_dawn_over_london"
+		texturefile = "gfx/interface/goals/uk/focus_red_dawn_over_london.dds"
+	}
+	SpriteType = {
+		name = "GFX_focus_internationale"
+		texturefile = "gfx/interface/goals/uk/focus_internationale.dds"
+	}
+	SpriteType = {
+		name = "GFX_focus_general_strike"
+		texturefile = "gfx/interface/goals/uk/focus_general_strike.dds"
+	}
+	SpriteType = {
+		name = "GFX_ENG_focus_imprison_the_monarchs"
+		texturefile = "gfx/interface/goals/uk/ENG_focus_imprison_the_monarchs.dds"
+	}
+	SpriteType = {
+		name = "GFX_ENG_focus_communist2"
+		texturefile = "gfx/interface/goals/uk/ENG_focus_communist2.dds"
+	}
+	SpriteType = {
+		name = "GFX_ENG_focus_royal_navy_2"
+		texturefile = "gfx/interface/goals/uk/ENG_focus_royal_navy_2.dds"
+	}
+	SpriteType = {
+		name = "GFX_ENG_focus_royal_navy_1"
+		texturefile = "gfx/interface/goals/uk/ENG_focus_royal_navy_1.dds"
+	}
+	SpriteType = {
+		name = "GFX_ENG_focus_best_in_life"
+		texturefile = "gfx/interface/goals/uk/ENG_focus_best_in_life.dds"
+	}
 	SpriteType = {
 		name = "GFX_goal_focus_australian_gold_rush"
 		texturefile = "gfx/interface/goals/uk/focus_australian_gold_rush.dds"
@@ -2417,6 +2461,10 @@ spriteTypes = {
 	SpriteType = {
 		name = "GFX_goal_focus_form_germany"
 		texturefile = "gfx/interface/goals/prussia/focus_form_germany.dds"
+	}
+	SpriteType = {
+		name = "GFX_goal_focus_german_conflict"
+		texturefile = "gfx/interface/goals/prussia/focus_german_conflict.dds"
 	}
 	SpriteType = {
 		name = "GFX_goal_focus_landwehr"
@@ -4474,6 +4522,14 @@ spriteTypes = {
 	spriteType = {
 		name = "GFX_focus_NOR_norwegian_boat_engine"
 		texturefile = "gfx/interface/goals/nor/norwegian_boat_engine.dds"
+	}
+	spriteType = {
+		name = "GFX_focus_NOR_armstrong_guns"
+		texturefile = "gfx/interface/goals/nor/armstrong_guns.dds"
+	}
+	spriteType = {
+		name = "GFX_focus_NOR_john_ericsson"
+		texturefile = "gfx/interface/goals/nor/john_ericsson.dds"
 	}
 	
 	spriteType = {
