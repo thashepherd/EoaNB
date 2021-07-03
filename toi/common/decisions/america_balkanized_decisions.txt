@@ -372,6 +372,8 @@ NA_B_Trans_Continental_Railroad_category = {
 		modifier = {
 			consumer_goods_factor = 0.05
 		}
+
+		days_remove = 90
 		complete_effect = {
 			add_timed_idea = {
 				idea = NA_B_Trans_Continental_Railroad_Investments

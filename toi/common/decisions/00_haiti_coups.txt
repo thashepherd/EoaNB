@@ -26,9 +26,13 @@ war_measures = {
 					limit = { ROOT = { NOT = { has_country_flag = HAI_coup_is_original_tag } } }
 					if = {
 						limit = { is_ai = yes }
-						random_state = {
-							limit = { is_owned_by = HAI }
-							every_country_with_original_tag = { original_tag_to_check = HAI limit = { has_country_flag = HAI_coup_is_original_tag } transfer_state = PREV }
+						every_country_with_original_tag = {
+							original_tag_to_check = HAI
+							limit = { has_country_flag = HAI_coup_is_original_tag }
+							random_state = {
+								limit = { is_owned_by = HAI }
+								THIS = { transfer_state = PREV.PREV }
+							}
 						}
 					}
 					else = {

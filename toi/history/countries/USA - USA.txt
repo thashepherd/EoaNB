@@ -64,7 +64,7 @@
 			country_event = { id = usa_slavery_debate.1 days = 14 random_days = 3 }
 
 			# Foreign Policy
-			activate_mission = eoanb_decision_USA_harris_treaty
+			# activate_mission = eoanb_decision_USA_harris_treaty
 
 			# Spirits
 			add_ideas = { 

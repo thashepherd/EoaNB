@@ -2713,125 +2713,125 @@ country_event={
 }
 
 #remove prime-minister
-country_event={
-	id=brazil.prime.minister.0b
-	is_triggered_only=yes
-	hidden=yes
-	option={
-		name=brazil.prime.minister.0b.a
-		trigger={BRA={has_country_flag=BRA_change_prime_minister}}
-		if={
-			limit={has_idea=BRA_marques_de_olinda}
-			clr_country_flag=BRA_change_prime_minister
-			remove_ideas=BRA_marques_de_olinda
-		}
-		else_if={
-			limit={has_idea=BRA_eusebio_de_queiros}
-			clr_country_flag=BRA_change_prime_minister
-			remove_ideas=BRA_eusebio_de_queiros
-		}
-		else_if={
-			limit={has_idea=BRA_visconde_de_uruguai}
-			clr_country_flag=BRA_change_prime_minister
-			remove_ideas=BRA_visconde_de_uruguai
-		}
-		else_if={
-			limit={has_idea=BRA_visconde_de_abaete}
-			clr_country_flag=BRA_change_prime_minister
-			remove_ideas=BRA_visconde_de_abaete
-		}
-		else_if={
-			limit={has_idea=BRA_visconde_de_sinimbu}
-			clr_country_flag=BRA_change_prime_minister
-			remove_ideas=BRA_visconde_de_sinimbu
-		}
-		else_if={
-			limit={has_idea=BRA_francisco_furtado}
-			clr_country_flag=BRA_change_prime_minister
-			remove_ideas=BRA_francisco_furtado
-		}
-		else_if={
-			limit={has_idea=BRA_barao_de_uruguaiana}
-			clr_country_flag=BRA_change_prime_minister
-			remove_ideas=BRA_barao_de_uruguaiana
-		}
-		else_if={
-			limit={has_idea=BRA_visconde_do_rio_branco}
-			clr_country_flag=BRA_change_prime_minister
-			remove_ideas=BRA_visconde_do_rio_branco
-		}
-		else_if={
-			limit={has_idea=BRA_marques_de_paranagua}
-			clr_country_flag=BRA_change_prime_minister
-			remove_ideas=BRA_marques_de_paranagua
-		}
-		else_if={
-			limit={has_idea=BRA_nabuco_de_araujo}
-			clr_country_flag=BRA_change_prime_minister
-			remove_ideas=BRA_nabuco_de_araujo
-		}
-		else_if={
-			limit={has_idea=BRA_duque_de_caxias}
-			clr_country_flag=BRA_change_prime_minister
-			remove_ideas=BRA_duque_de_caxias
-		}
-		else_if={
-			limit={has_idea=BRA_visconde_de_itaborai}
-			clr_country_flag=BRA_change_prime_minister
-			remove_ideas=BRA_visconde_de_itaborai
-		}
-		else_if={
-			limit={has_idea=BRA_conselheiro_saraiva}
-			clr_country_flag=BRA_change_prime_minister
-			remove_ideas=BRA_conselheiro_saraiva
-		}
-		else_if={
-			limit={has_idea=BRA_zacaria_de_gois}
-			clr_country_flag=BRA_change_prime_minister
-			remove_ideas=BRA_zacaria_de_gois
-		}
-		else_if={
-			limit={has_idea=BRA_visconde_de_sao_vicente}
-			clr_country_flag=BRA_change_prime_minister
-			remove_ideas=BRA_visconde_de_sao_vicente
-		}
-		else_if={
-			limit={has_idea=BRA_martinho_campos}
-			clr_country_flag=BRA_change_prime_minister
-			remove_ideas=BRA_martinho_campos
-		}
-		else_if={
-			limit={has_idea=BRA_conselheiro_lafayette}
-			clr_country_flag=BRA_change_prime_minister
-			remove_ideas=BRA_conselheiro_lafayette
-		}
-		else_if={
-			limit={has_idea=BRA_sousa_dantas}
-			clr_country_flag=BRA_change_prime_minister
-			remove_ideas=BRA_sousa_dantas
-		}
-		else_if={
-			limit={has_idea=BRA_barao_de_cotegipe}
-			clr_country_flag=BRA_change_prime_minister
-			remove_ideas=BRA_barao_de_cotegipe
-		}
-		else_if={
-			limit={has_idea=BRA_joao_alfredo}
-			clr_country_flag=BRA_change_prime_minister
-			remove_ideas=BRA_joao_alfredo
-		}
-		else_if={
-			limit={has_idea=BRA_visconde_de_ouro_preto}
-			clr_country_flag=BRA_change_prime_minister
-			remove_ideas=BRA_visconde_de_ouro_preto
-		}
-		else_if={
-			limit={has_idea=BRA_no_prime_minister}
-			clr_country_flag=BRA_change_prime_minister		
-			remove_ideas=BRA_no_prime_minister
-		}
-	}
-}
+# country_event={
+# 	id=brazil.prime.minister.0b
+# 	is_triggered_only=yes
+# 	hidden=yes
+# 	option={
+# 		name=brazil.prime.minister.0b.a
+# 		trigger={BRA={has_country_flag=BRA_change_prime_minister}}
+# 		if={
+# 			limit={has_idea=BRA_marques_de_olinda}
+# 			clr_country_flag=BRA_change_prime_minister
+# 			remove_ideas=BRA_marques_de_olinda
+# 		}
+# 		else_if={
+# 			limit={has_idea=BRA_eusebio_de_queiros}
+# 			clr_country_flag=BRA_change_prime_minister
+# 			remove_ideas=BRA_eusebio_de_queiros
+# 		}
+# 		else_if={
+# 			limit={has_idea=BRA_visconde_de_uruguai}
+# 			clr_country_flag=BRA_change_prime_minister
+# 			remove_ideas=BRA_visconde_de_uruguai
+# 		}
+# 		else_if={
+# 			limit={has_idea=BRA_visconde_de_abaete}
+# 			clr_country_flag=BRA_change_prime_minister
+# 			remove_ideas=BRA_visconde_de_abaete
+# 		}
+# 		else_if={
+# 			limit={has_idea=BRA_visconde_de_sinimbu}
+# 			clr_country_flag=BRA_change_prime_minister
+# 			remove_ideas=BRA_visconde_de_sinimbu
+# 		}
+# 		else_if={
+# 			limit={has_idea=BRA_francisco_furtado}
+# 			clr_country_flag=BRA_change_prime_minister
+# 			remove_ideas=BRA_francisco_furtado
+# 		}
+# 		else_if={
+# 			limit={has_idea=BRA_barao_de_uruguaiana}
+# 			clr_country_flag=BRA_change_prime_minister
+# 			remove_ideas=BRA_barao_de_uruguaiana
+# 		}
+# 		else_if={
+# 			limit={has_idea=BRA_visconde_do_rio_branco}
+# 			clr_country_flag=BRA_change_prime_minister
+# 			remove_ideas=BRA_visconde_do_rio_branco
+# 		}
+# 		else_if={
+# 			limit={has_idea=BRA_marques_de_paranagua}
+# 			clr_country_flag=BRA_change_prime_minister
+# 			remove_ideas=BRA_marques_de_paranagua
+# 		}
+# 		else_if={
+# 			limit={has_idea=BRA_nabuco_de_araujo}
+# 			clr_country_flag=BRA_change_prime_minister
+# 			remove_ideas=BRA_nabuco_de_araujo
+# 		}
+# 		else_if={
+# 			limit={has_idea=BRA_duque_de_caxias}
+# 			clr_country_flag=BRA_change_prime_minister
+# 			remove_ideas=BRA_duque_de_caxias
+# 		}
+# 		else_if={
+# 			limit={has_idea=BRA_visconde_de_itaborai}
+# 			clr_country_flag=BRA_change_prime_minister
+# 			remove_ideas=BRA_visconde_de_itaborai
+# 		}
+# 		else_if={
+# 			limit={has_idea=BRA_conselheiro_saraiva}
+# 			clr_country_flag=BRA_change_prime_minister
+# 			remove_ideas=BRA_conselheiro_saraiva
+# 		}
+# 		else_if={
+# 			limit={has_idea=BRA_zacaria_de_gois}
+# 			clr_country_flag=BRA_change_prime_minister
+# 			remove_ideas=BRA_zacaria_de_gois
+# 		}
+# 		else_if={
+# 			limit={has_idea=BRA_visconde_de_sao_vicente}
+# 			clr_country_flag=BRA_change_prime_minister
+# 			remove_ideas=BRA_visconde_de_sao_vicente
+# 		}
+# 		else_if={
+# 			limit={has_idea=BRA_martinho_campos}
+# 			clr_country_flag=BRA_change_prime_minister
+# 			remove_ideas=BRA_martinho_campos
+# 		}
+# 		else_if={
+# 			limit={has_idea=BRA_conselheiro_lafayette}
+# 			clr_country_flag=BRA_change_prime_minister
+# 			remove_ideas=BRA_conselheiro_lafayette
+# 		}
+# 		else_if={
+# 			limit={has_idea=BRA_sousa_dantas}
+# 			clr_country_flag=BRA_change_prime_minister
+# 			remove_ideas=BRA_sousa_dantas
+# 		}
+# 		else_if={
+# 			limit={has_idea=BRA_barao_de_cotegipe}
+# 			clr_country_flag=BRA_change_prime_minister
+# 			remove_ideas=BRA_barao_de_cotegipe
+# 		}
+# 		else_if={
+# 			limit={has_idea=BRA_joao_alfredo}
+# 			clr_country_flag=BRA_change_prime_minister
+# 			remove_ideas=BRA_joao_alfredo
+# 		}
+# 		else_if={
+# 			limit={has_idea=BRA_visconde_de_ouro_preto}
+# 			clr_country_flag=BRA_change_prime_minister
+# 			remove_ideas=BRA_visconde_de_ouro_preto
+# 		}
+# 		else_if={
+# 			limit={has_idea=BRA_no_prime_minister}
+# 			clr_country_flag=BRA_change_prime_minister
+# 			remove_ideas=BRA_no_prime_minister
+# 		}
+# 	}
+# }
 
 #Add Marquês de Olinda
 country_event={
@@ -8169,6 +8169,7 @@ add_namespace=brazil.election
 country_event={
 	id=brazil.election.0
 	title=brazil.election.0.t
+	desc=brazil.election.0.d
 	is_triggered_only=yes
 	immediate={
 		if={
@@ -8746,6 +8747,7 @@ country_event={
 country_event={
 	id=brazil.election.6
 	title=brazil.election.6.t
+	desc=brazil.election.6.d
 	is_triggered_only=yes
 	immediate={
 		if={
@@ -8942,6 +8944,7 @@ country_event={
 country_event={
 	id=brazil.election.8
 	title=brazil.election.8.t
+	desc=brazil.election.8.d
 	is_triggered_only=yes
 	immediate={
 		if={
@@ -9141,6 +9144,7 @@ country_event={
 country_event={
 	id=brazil.election.10
 	title=brazil.election.10.t
+	desc=brazil.election.10.t
 	is_triggered_only=yes
 	immediate={
 		if={
@@ -9283,7 +9287,7 @@ country_event={
 	}
 	option={
 		name=brazil.election.11.c
-		trigger={BRA=has_country_flag=brazil_itaborai_1864}
+		trigger={has_country_flag=brazil_itaborai_1864}
 		retire_country_leader=yes
 		create_country_leader={
 			name="Joaquim José Rodrigues Torres, Visconde de Itaboraí"
@@ -9303,6 +9307,7 @@ country_event={
 country_event={
 	id=brazil.election.12
 	title=brazil.election.12.t
+	desc=brazil.election.12.d
 	is_triggered_only=yes
 	immediate={
 		if={
@@ -9468,6 +9473,7 @@ country_event={
 country_event={
 	id=brazil.election.14
 	title=brazil.election.14.t
+	desc=brazil.election.14.d
 	is_triggered_only=yes
 	immediate={
 		if={
@@ -9582,7 +9588,7 @@ country_event={
 	is_triggered_only=yes
 	option={
 		name=brazil.election.15.a
-		trigger={BRA=has_country_flag=brazil_itaborai_1868}
+		trigger={has_country_flag=brazil_itaborai_1868}
 		retire_country_leader=yes
 		create_country_leader={
 			name="Joaquim José Rodrigues Torres, Visconde de Itaboraí"
@@ -9636,6 +9642,7 @@ country_event={
 country_event={
 	id=brazil.election.16
 	title=brazil.election.16.t
+	desc=brazil.election.16.d
 	is_triggered_only=yes
 	immediate={
 		if={
