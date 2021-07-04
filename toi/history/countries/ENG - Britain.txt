@@ -116,6 +116,8 @@
 	 
 	set_truce = { target = BRM days = 500 }
 	
+	set_truce = { target = PER days = 950 }#persia-herat war
+	
 	set_politics = {
 		ruling_party = centrism
 	}
@@ -530,6 +532,24 @@
 		defense_skill = 2
 		planning_skill = 3
 		logistics_skill = 2
+	}
+	
+	# https://en.wikipedia.org/wiki/Richard_England_(British_Army_officer,_born_1793)
+	# Died 1877
+	create_corps_commander = {
+		name = "Sir Richard England"
+		picture = "Portrait_ENG_Richard_England.dds"
+		id = 167999
+		traits = {
+			old_guard # Start army in 1809
+			career_officer
+			infantry_officer 
+		}
+		skill = 2
+		attack_skill = 2
+		defense_skill = 2
+		planning_skill = 3
+		logistics_skill = 4
 	}
 
 ####################

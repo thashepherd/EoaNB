@@ -815,24 +815,6 @@ defined_text = {
             localization_key = yellow_loc
         }
     }
-    defined_text = {
-        name = GetStateRealGDPGrowthColor
-        text = {
-            trigger = {
-                check_variable = { annual_real_gdp_growth > 0 }
-            }
-            localization_key = green_loc
-        }
-        text = {
-            trigger = {
-                check_variable = { annual_real_gdp_growth < 0 }
-            }
-            localization_key = red_loc
-        }
-        text = {
-            localization_key = yellow_loc
-        }
-    }
 #
 
 #Corporations

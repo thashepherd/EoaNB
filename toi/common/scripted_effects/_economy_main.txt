@@ -9,55 +9,6 @@
 				set_variable = { global.month = 0 }
 				add_to_variable = { global.years_passed = 1 }
 			}
-			clear_array = global.econ_gp_list_array
-			#add_to_array = { global.econ_gp_list_array = ENG }
-			add_to_array = { global.econ_gp_list_array = USA }
-			add_to_array = { global.econ_gp_list_array = BRA }
-			add_to_array = { global.econ_gp_list_array = MEX }
-			add_to_array = { global.econ_gp_list_array = COL }
-			add_to_array = { global.econ_gp_list_array = VEN }
-			add_to_array = { global.econ_gp_list_array = CAN }
-			#add_to_array = { global.econ_gp_list_array = CHL }
-			#add_to_array = { global.econ_gp_list_array = BOL }
-			add_to_array = { global.econ_gp_list_array = PRU }
-			#add_to_array = { global.econ_gp_list_array = ARG }
-			#add_to_array = { global.econ_gp_list_array = BUE }
-			add_to_array = { global.econ_gp_list_array = HBC }
-			#add_to_array = { global.econ_gp_list_array = URG }
-			#add_to_array = { global.econ_gp_list_array = PAR }
-			#
-			add_to_array = { global.econ_gp_list_array = ECU }
-			add_to_array = { global.econ_gp_list_array = PRR }
-			#
-			add_to_array = { global.econ_gp_list_array = UTA }
-			add_to_array = { global.econ_gp_list_array = NVS }
-			add_to_array = { global.econ_gp_list_array = VAN }
-			add_to_array = { global.econ_gp_list_array = BRK }
-			add_to_array = { global.econ_gp_list_array = NFL }
-			add_to_array = { global.econ_gp_list_array = BCO }
-			add_to_array = { global.econ_gp_list_array = QCI }
-			add_to_array = { global.econ_gp_list_array = NWT }
-			#
-			add_to_array = { global.econ_gp_list_array = GUA }
-			add_to_array = { global.econ_gp_list_array = HON }
-			add_to_array = { global.econ_gp_list_array = NIC }
-			add_to_array = { global.econ_gp_list_array = COS }
-			add_to_array = { global.econ_gp_list_array = ELS }
-			add_to_array = { global.econ_gp_list_array = DOM }
-			add_to_array = { global.econ_gp_list_array = HAI }
-			add_to_array = { global.econ_gp_list_array = LIE }
-			#
-			#Primitives
-			add_to_array = { global.econ_gp_list_array = SIX }
-			add_to_array = { global.econ_gp_list_array = CHY }
-			add_to_array = { global.econ_gp_list_array = COM }
-			add_to_array = { global.econ_gp_list_array = SHO }
-			add_to_array = { global.econ_gp_list_array = APA }
-			add_to_array = { global.econ_gp_list_array = CRW }
-			add_to_array = { global.econ_gp_list_array = BFT }
-			add_to_array = { global.econ_gp_list_array = NAV }
-			add_to_array = { global.econ_gp_list_array = NEZ }
-			add_to_array = { global.econ_gp_list_array = SEM }
 
 			clear_array = global.econ_order_array
 			clear_array = global.econ_value_array
@@ -278,13 +229,10 @@
 			set_variable = { actual_infrastructure_spending = 0 }
 			set_variable = { actual_construction_spending = 0 }
 
-			set_variable = { total_money = 0 }
 			set_variable = { gdp_amount = 0 }
-			set_variable = { previous_annual_gdp_amount = 0 }
-			set_variable = { annual_gdp_amount = 0 }
-			set_variable = { industrial_power = 0 }
-			
-			####insert treasury_prev_array stuff here
+			set_variable = { gdp_amount_this_year = 0 }
+			set_variable = { gdp_amount_last_year = 0 }
+
 			every_controlled_state = {
 				#Pops/Govt get paid
 					set_variable = { pops_spending = 0 }
@@ -370,8 +318,6 @@
 					set_variable = { factory_everyday_goods_sold = 0 }
 					set_variable = { factory_luxury_goods_sold = 0 }
 					set_variable = { factory_industrial_goods_sold = 0 }
-
-					set_variable = { gdp_amount = 0 }
 				#
 				
 				set_variable = { infrastructure_max_level = PREV.infrastructure_max_level }
@@ -435,10 +381,15 @@
 							multiply_temp_variable = { infra_construction_funds_temp = industrial_goods_price }
 							multiply_temp_variable = { infra_construction_funds_temp = PREV.construction_spending_percentage }
 							divide_temp_variable = { infra_construction_funds_temp = 100 }
-							
-							add_to_variable = { infrastructure_construction_investment_money = infra_construction_funds_temp }
-							subtract_from_variable = { PREV.treasury = infra_construction_funds_temp }
-							add_to_variable = { PREV.actual_construction_spending = infra_construction_funds_temp }
+							subtract_from_temp_variable = { infra_construction_funds_temp = infrastructure_investment_money }
+							if = {
+								limit = {
+									check_variable = { infra_construction_funds_temp > 0 }
+								}
+								add_to_variable = { infrastructure_construction_investment_money = infra_construction_funds_temp }
+								subtract_from_variable = { PREV.treasury = infra_construction_funds_temp }
+								add_to_variable = { PREV.actual_construction_spending = infra_construction_funds_temp }
+							}
 						}
 					#
 					#Everyday Goods Factory
@@ -450,10 +401,15 @@
 							multiply_temp_variable = { construction_funds_temp = industrial_goods_price }
 							multiply_temp_variable = { construction_funds_temp = PREV.construction_spending_percentage }
 							divide_temp_variable = { construction_funds_temp = 100 }
-							
-							add_to_variable = { factory_everyday_goods_construction_investment_money = construction_funds_temp }
-							subtract_from_variable = { PREV.treasury = construction_funds_temp }
-							add_to_variable = { PREV.actual_construction_spending = construction_funds_temp }
+							subtract_from_temp_variable = { construction_funds_temp = factory_everyday_goods_construction_investment_money }
+							if = {
+								limit = {
+									check_variable = { construction_funds_temp > 0 }
+								}
+								add_to_variable = { factory_everyday_goods_construction_investment_money = construction_funds_temp }
+								subtract_from_variable = { PREV.treasury = construction_funds_temp }
+								add_to_variable = { PREV.actual_construction_spending = construction_funds_temp }
+							}
 						}
 					#
 					#Luxury Goods Factory
@@ -465,10 +421,15 @@
 							multiply_temp_variable = { construction_funds_temp = industrial_goods_price }
 							multiply_temp_variable = { construction_funds_temp = PREV.construction_spending_percentage }
 							divide_temp_variable = { construction_funds_temp = 100 }
-							
-							add_to_variable = { factory_luxury_goods_construction_investment_money = construction_funds_temp }
-							subtract_from_variable = { PREV.treasury = construction_funds_temp }
-							add_to_variable = { PREV.actual_construction_spending = construction_funds_temp }
+							subtract_from_temp_variable = { construction_funds_temp = factory_luxury_goods_construction_investment_money }
+							if = {
+								limit = {
+									check_variable = { construction_funds_temp > 0 }
+								}
+								add_to_variable = { factory_luxury_goods_construction_investment_money = construction_funds_temp }
+								subtract_from_variable = { PREV.treasury = construction_funds_temp }
+								add_to_variable = { PREV.actual_construction_spending = construction_funds_temp }
+							}
 						}
 					#
 					#Industrial Goods Factory
@@ -480,10 +441,15 @@
 							multiply_temp_variable = { construction_funds_temp = industrial_goods_price }
 							multiply_temp_variable = { construction_funds_temp = PREV.construction_spending_percentage }
 							divide_temp_variable = { construction_funds_temp = 100 }
-							
-							add_to_variable = { factory_industrial_goods_construction_investment_money = construction_funds_temp }
-							subtract_from_variable = { PREV.treasury = construction_funds_temp }
-							add_to_variable = { PREV.actual_construction_spending = construction_funds_temp }
+							subtract_from_temp_variable = { construction_funds_temp = factory_industrial_goods_construction_investment_money }
+							if = {
+								limit = {
+									check_variable = { construction_funds_temp > 0 }
+								}
+								add_to_variable = { factory_industrial_goods_construction_investment_money = construction_funds_temp }
+								subtract_from_variable = { PREV.treasury = construction_funds_temp }
+								add_to_variable = { PREV.actual_construction_spending = construction_funds_temp }
+							}
 						}
 					#
 				#
@@ -492,121 +458,79 @@
 					#life_goods
 						set_variable = { life_goods_supply_min = life_goods_supply } #Minimum number of goods the state will keep
 						multiply_variable = { life_goods_supply_min = 0.2 }
+
+						set_temp_variable = { demand_temp = life_goods_demand }
+						divide_temp_variable = { demand_temp = 2 }
 						if = {
 							limit = {
-								set_temp_variable = { life_goods_demand_temp = life_goods_demand }
-								multiply_temp_variable = { life_goods_demand_temp = 0.9 }
-								check_variable = { life_goods_supply_min > life_goods_demand_temp }
+								check_variable = { demand_temp < life_goods_supply_min }
 							}
-							set_variable = { life_goods_supply_min = life_goods_demand }
-						}
-						else_if = {
-							limit = {
-								set_temp_variable = { life_goods_demand_temp = life_goods_demand }
-								multiply_temp_variable = { life_goods_demand_temp = 0.75 }
-								check_variable = { life_goods_supply_min < life_goods_demand_temp }
-							}
-							set_variable = { life_goods_supply_min = life_goods_demand_temp }
+							set_variable = { life_goods_supply_min = demand_temp }
 						}
 
 					#everyday_goods
 						set_variable = { everyday_goods_supply_min = everyday_goods_supply } #Minimum number of goods the state will keep
 						multiply_variable = { everyday_goods_supply_min = 0.2 }
+
+						set_temp_variable = { demand_temp = everyday_goods_demand }
+						divide_temp_variable = { demand_temp = 2 }
 						if = {
 							limit = {
-								set_temp_variable = { everyday_goods_demand_temp = everyday_goods_demand }
-								multiply_temp_variable = { everyday_goods_demand_temp = 0.9 }
-								check_variable = { everyday_goods_supply_min > everyday_goods_demand_temp }
+								check_variable = { demand_temp < everyday_goods_supply_min }
 							}
-							set_variable = { everyday_goods_supply_min = everyday_goods_demand }
-						}
-						else_if = {
-							limit = {
-								set_temp_variable = { everyday_goods_demand_temp = everyday_goods_demand }
-								multiply_temp_variable = { everyday_goods_demand_temp = 0.75 }
-								check_variable = { everyday_goods_supply_min < everyday_goods_demand_temp }
-							}
-							set_variable = { everyday_goods_supply_min = everyday_goods_demand_temp }
+							set_variable = { everyday_goods_supply_min = demand_temp }
 						}
 
 					#luxury_goods
 						set_variable = { luxury_goods_supply_min = luxury_goods_supply } #Minimum number of goods the state will keep
 						multiply_variable = { luxury_goods_supply_min = 0.2 }
+
+						set_temp_variable = { demand_temp = luxury_goods_demand }
+						divide_temp_variable = { demand_temp = 2 }
 						if = {
 							limit = {
-								set_temp_variable = { luxury_goods_demand_temp = luxury_goods_demand }
-								multiply_temp_variable = { luxury_goods_demand_temp = 0.9 }
-								check_variable = { luxury_goods_supply_min > luxury_goods_demand_temp }
+								check_variable = { demand_temp < luxury_goods_supply_min }
 							}
-							set_variable = { luxury_goods_supply_min = luxury_goods_demand }
-						}
-						else_if = {
-							limit = {
-								set_temp_variable = { luxury_goods_demand_temp = luxury_goods_demand }
-								multiply_temp_variable = { luxury_goods_demand_temp = 0.75 }
-								check_variable = { luxury_goods_supply_min < luxury_goods_demand_temp }
-							}
-							set_variable = { luxury_goods_supply_min = luxury_goods_demand_temp }
+							set_variable = { luxury_goods_supply_min = demand_temp }
 						}
 
 					#services
 						set_variable = { services_supply_min = services_supply } #Minimum number of goods the state will keep
 						multiply_variable = { services_supply_min = 0.2 }
+
+						set_temp_variable = { demand_temp = services_demand }
+						divide_temp_variable = { demand_temp = 2 }
 						if = {
 							limit = {
-								set_temp_variable = { services_demand_temp = services_demand }
-								multiply_temp_variable = { services_demand_temp = 0.9 }
-								check_variable = { services_supply_min > services_demand_temp }
+								check_variable = { demand_temp < services_supply_min }
 							}
-							set_variable = { services_supply_min = services_demand }
-						}
-						else_if = {
-							limit = {
-								set_temp_variable = { services_demand_temp = services_demand }
-								multiply_temp_variable = { services_demand_temp = 0.75 }
-								check_variable = { services_supply_min < services_demand_temp }
-							}
-							set_variable = { services_supply_min = services_demand_temp }
+							set_variable = { services_supply_min = demand_temp }
 						}
 
 					#raw_goods
 						set_variable = { raw_goods_supply_min = raw_goods_supply } #Minimum number of goods the state will keep
 						multiply_variable = { raw_goods_supply_min = 0.2 }
+
+						set_temp_variable = { demand_temp = raw_goods_demand }
+						divide_temp_variable = { demand_temp = 2 }
 						if = {
 							limit = {
-								set_temp_variable = { raw_goods_demand_temp = raw_goods_demand }
-								multiply_temp_variable = { raw_goods_demand_temp = 0.9 }
-								check_variable = { raw_goods_supply_min > raw_goods_demand_temp }
+								check_variable = { demand_temp < raw_goods_supply_min }
 							}
-							set_variable = { raw_goods_supply_min = raw_goods_demand_temp }
-						}
-						else_if = {
-							limit = {
-								set_temp_variable = { raw_goods_demand_temp = raw_goods_demand }
-								multiply_temp_variable = { raw_goods_demand_temp = 0.75 }
-								check_variable = { raw_goods_supply_min < raw_goods_demand_temp }
-							}
-							set_variable = { raw_goods_supply_min = raw_goods_demand_temp }
+							set_variable = { raw_goods_supply_min = demand_temp }
 						}
 
 					#industrial_goods
 						set_variable = { industrial_goods_supply_min = industrial_goods_supply } #Minimum number of goods the state will keep
 						multiply_variable = { industrial_goods_supply_min = 0.2 }
+
+						set_temp_variable = { demand_temp = industrial_goods_demand }
+						divide_temp_variable = { demand_temp = 2 }
 						if = {
 							limit = {
-								set_temp_variable = { industrial_goods_demand_temp = industrial_goods_demand }
-								multiply_temp_variable = { industrial_goods_demand_temp = 0.9 }
-								check_variable = { industrial_goods_supply_min > industrial_goods_demand_temp }
+								check_variable = { demand_temp < industrial_goods_supply_min }
 							}
-							set_variable = { industrial_goods_supply_min = industrial_goods_demand }
-						}
-						else_if = {
-							limit = {
-								set_temp_variable = { industrial_goods_demand_temp = industrial_goods_demand }
-								multiply_temp_variable = { industrial_goods_demand_temp = 0.75 }
-								check_variable = { industrial_goods_supply_min < industrial_goods_demand_temp }
-							}
-							set_variable = { industrial_goods_supply_min = industrial_goods_demand_temp }
+							set_variable = { industrial_goods_supply_min = demand_temp }
 						}
 
 				#
@@ -1136,12 +1060,7 @@
                         var:life_goods_trade_state_array^ii = {
                             
                             #Checks if the state actually has more demand than supply. If it doesn't, this is pointless
-                            if = {
-                                limit = {
-                                    check_variable = { life_goods_demand > life_goods_supply }
-                                }
                                 set_temp_variable = { buy_amount_left = life_goods_demand }
-                                subtract_from_temp_variable = { buy_amount_left = life_goods_supply }
 
                                 #Loops thru cheapest states to buy from
                                 for_each_loop = {
@@ -1156,74 +1075,77 @@
                                         limit = {
                                             check_variable = { state_temp:life_goods_price < life_goods_price }
                                             check_variable = { buy_amount_left > 0 }
-											check_variable = { state_temp:life_goods_supply_min < state_temp:life_goods_supply }
-                                            
                                         }
-										#Transport Cost
-										var:state_temp = {
-											set_variable = { PREV.transport_cost = distance_to@PREV } #This needs to be a normal variable
-										}
-										divide_variable = { transport_cost = global.base_transport_cost_divisor }
-										set_temp_variable = { modifier_temp = transport_cost_effect }
-										add_to_temp_variable = { modifier_temp = 1 }
-										multiply_variable = { transport_cost = modifier_temp }
-										add_to_variable = { transport_cost = 1 }
-
-										set_temp_variable = { true_price = state_temp:life_goods_price }
-										multiply_temp_variable = { true_price = transport_cost }
 										if = {
 											limit = {
-												check_variable = { true_price < life_goods_price }
+												check_variable = { state_temp:life_goods_supply_min < state_temp:life_goods_supply }
 											}
+											#Transport Cost
+											var:state_temp = {
+												set_variable = { PREV.transport_cost = distance_to@PREV } #This needs to be a normal variable
+											}
+											divide_variable = { transport_cost = global.base_transport_cost_divisor }
+											set_temp_variable = { modifier_temp = transport_cost_effect }
+											add_to_temp_variable = { modifier_temp = 1 }
+											multiply_variable = { transport_cost = modifier_temp }
+											add_to_variable = { transport_cost = 1 }
 
-											#Do Trade
-											set_temp_variable = { buy_amount = buy_amount_left }
+											set_temp_variable = { true_price = state_temp:life_goods_price }
+											multiply_temp_variable = { true_price = transport_cost }
+											if = {
+												limit = {
+													check_variable = { true_price < life_goods_price }
+												}
+												#Do Trade
+												set_temp_variable = { u = true_price }
+												multiply_temp_variable = { u = state_temp:life_goods_demand }
+												divide_temp_variable = { u = life_goods_price }
+												divide_temp_variable = { u = life_goods_demand }
+												
+												set_temp_variable = { buy_amount = life_goods_supply }
+												multiply_temp_variable = { buy_amount = u }
+												multiply_temp_variable = { buy_amount = -1 }
+												add_to_temp_variable = { buy_amount = state_temp:life_goods_supply }
+												add_to_temp_variable = { u = 1 }
+												divide_temp_variable = { buy_amount = u }
+												
+												multiply_temp_variable = { buy_amount = 0.7 }
 
-											#Depending on the actual price difference, the buy amount will be different
-											set_temp_variable = { price_difference = life_goods_price }
-											subtract_from_temp_variable = { price_difference = state_temp:life_goods_price }
-											divide_temp_variable = { price_difference = state_temp:life_goods_price }
-											divide_temp_variable = { price_difference = 2 }
-											add_to_temp_variable = { price_difference = 1 }
-											multiply_temp_variable = { buy_amount = price_difference } #buy_amount = buy_amount_left * ((life_goods_price - state_temp:life_goods_price) / (state_temp:life_goods_price * 2) + 1)
-											
-											multiply_temp_variable = { buy_amount = 0.8 }
+												multiply_temp_variable = { buy_amount = transport_cost }
 
-											multiply_temp_variable = { buy_amount = transport_cost }
+												set_temp_variable = { good_max_temp = state_temp:life_goods_supply }
+												subtract_from_temp_variable = { good_max_temp = state_temp:life_goods_supply_min }
+												
+												clamp_temp_variable = {
+													var = buy_amount
+													max = good_max_temp
+												}
+												clamp_temp_variable = {
+													var = buy_amount
+													min = 0
+												}
+												set_temp_variable = { cost_temp = buy_amount }
+												multiply_temp_variable = { cost_temp = state_temp:life_goods_price }
 
-											set_temp_variable = { money_temp = buy_amount }
-											multiply_temp_variable = { money_temp = state_temp:life_goods_price }
-											set_temp_variable = { good_max_temp = state_temp:life_goods_supply }
-											subtract_from_temp_variable = { good_max_temp = state_temp:life_goods_supply_min }
-											set_temp_variable = { good_price_temp = state_temp:life_goods_price }
-											
-											shopping_algorithm = yes
+												subtract_from_variable = { state_temp:life_goods_supply = buy_amount }
+												subtract_from_variable = { state_temp:life_goods_trade_amount = buy_amount }
+												add_to_variable = { state_temp:life_goods_trade_value = cost_temp }
 
-											subtract_from_variable = { state_temp:life_goods_supply = buy_amount }
-											subtract_from_variable = { state_temp:life_goods_trade_amount = buy_amount }
-											add_to_variable = { state_temp:life_goods_trade_value = cost_temp }
+												divide_temp_variable = { buy_amount = transport_cost }
 
-											divide_temp_variable = { buy_amount = transport_cost }
-
-											subtract_from_temp_variable = { buy_amount_left = buy_amount }
-											add_to_variable = { life_goods_supply = buy_amount }
-											add_to_variable = { life_goods_trade_amount = buy_amount }
-											subtract_from_variable = { life_goods_trade_value = cost_temp }
-											add_to_variable = { PREV.life_goods_trade_amount = buy_amount }
-											add_to_variable = { PREV.life_goods_trade_value = cost_temp }
+												subtract_from_temp_variable = { buy_amount_left = buy_amount }
+												add_to_variable = { life_goods_supply = buy_amount }
+												add_to_variable = { life_goods_trade_amount = buy_amount }
+												subtract_from_variable = { life_goods_trade_value = cost_temp }
+												add_to_variable = { PREV.life_goods_trade_amount = buy_amount }
+												add_to_variable = { PREV.life_goods_trade_value = cost_temp }
+											}
 										}
                                     }
-                                    else_if = {
-                                        limit = {
-                                            OR = {
-                                                NOT = { check_variable = { buy_amount_left > 0 } }
-                                                NOT = {  check_variable = { state_temp:life_goods_price < life_goods_price } }
-                                            }
-                                        }
+                                    else = {
                                         set_temp_variable = { cheapest_brk = 1 }
                                     }
                                 }
-                            }
                         }
                     }
 
@@ -1243,12 +1165,7 @@
                         var:everyday_goods_trade_state_array^ii = {
                             
                             #Checks if the state actually has more demand than supply. If it doesn't, this is pointless
-                            if = {
-                                limit = {
-                                    check_variable = { everyday_goods_demand > everyday_goods_supply }
-                                }
                                 set_temp_variable = { buy_amount_left = everyday_goods_demand }
-                                subtract_from_temp_variable = { buy_amount_left = everyday_goods_supply }
 
                                 #Loops thru cheapest states to buy from
                                 for_each_loop = {
@@ -1263,77 +1180,79 @@
                                         limit = {
                                             check_variable = { state_temp:everyday_goods_price < everyday_goods_price }
                                             check_variable = { buy_amount_left > 0 }
-											check_variable = { state_temp:everyday_goods_supply_min < state_temp:everyday_goods_supply }
-                                            
                                         }
-										#Transport Cost
-										var:state_temp = {
-											set_variable = { PREV.transport_cost = distance_to@PREV } #This needs to be a normal variable
-										}
-										divide_variable = { transport_cost = global.base_transport_cost_divisor }
-										set_temp_variable = { modifier_temp = transport_cost_effect }
-										add_to_temp_variable = { modifier_temp = 1 }
-										multiply_variable = { transport_cost = modifier_temp }
-										add_to_variable = { transport_cost = 1 }
-
-										set_temp_variable = { true_price = state_temp:everyday_goods_price }
-										multiply_temp_variable = { true_price = transport_cost }
 										if = {
 											limit = {
-												check_variable = { true_price < everyday_goods_price }
+												check_variable = { state_temp:everyday_goods_supply_min < state_temp:everyday_goods_supply }
 											}
+											#Transport Cost
+											var:state_temp = {
+												set_variable = { PREV.transport_cost = distance_to@PREV } #This needs to be a normal variable
+											}
+											divide_variable = { transport_cost = global.base_transport_cost_divisor }
+											set_temp_variable = { modifier_temp = transport_cost_effect }
+											add_to_temp_variable = { modifier_temp = 1 }
+											multiply_variable = { transport_cost = modifier_temp }
+											add_to_variable = { transport_cost = 1 }
 
-											#Do Trade
-											set_temp_variable = { buy_amount = buy_amount_left }
+											set_temp_variable = { true_price = state_temp:everyday_goods_price }
+											multiply_temp_variable = { true_price = transport_cost }
+											if = {
+												limit = {
+													check_variable = { true_price < everyday_goods_price }
+												}
+												#Do Trade
+												set_temp_variable = { u = true_price }
+												multiply_temp_variable = { u = state_temp:everyday_goods_demand }
+												divide_temp_variable = { u = everyday_goods_price }
+												divide_temp_variable = { u = everyday_goods_demand }
+												
+												set_temp_variable = { buy_amount = everyday_goods_supply }
+												multiply_temp_variable = { buy_amount = u }
+												multiply_temp_variable = { buy_amount = -1 }
+												add_to_temp_variable = { buy_amount = state_temp:everyday_goods_supply }
+												add_to_temp_variable = { u = 1 }
+												divide_temp_variable = { buy_amount = u }
+												
+												multiply_temp_variable = { buy_amount = 0.7 }
 
-											#Depending on the actual price difference, the buy amount will be different
-											set_temp_variable = { price_difference = everyday_goods_price }
-											subtract_from_temp_variable = { price_difference = state_temp:everyday_goods_price }
-											divide_temp_variable = { price_difference = state_temp:everyday_goods_price }
-											divide_temp_variable = { price_difference = 2 }
-											add_to_temp_variable = { price_difference = 1 }
-											multiply_temp_variable = { buy_amount = price_difference } #buy_amount = buy_amount_left * ((everyday_goods_price - state_temp:everyday_goods_price) / (state_temp:everyday_goods_price * 2) + 1)
-											
-											multiply_temp_variable = { buy_amount = 0.8 }
+												multiply_temp_variable = { buy_amount = transport_cost }
 
-											multiply_temp_variable = { buy_amount = transport_cost }
+												set_temp_variable = { good_max_temp = state_temp:everyday_goods_supply }
+												subtract_from_temp_variable = { good_max_temp = state_temp:everyday_goods_supply_min }
+												
+												clamp_temp_variable = {
+													var = buy_amount
+													max = good_max_temp
+												}
+												clamp_temp_variable = {
+													var = buy_amount
+													min = 0
+												}
+												set_temp_variable = { cost_temp = buy_amount }
+												multiply_temp_variable = { cost_temp = state_temp:everyday_goods_price }
 
-											set_temp_variable = { money_temp = buy_amount }
-											multiply_temp_variable = { money_temp = state_temp:everyday_goods_price }
-											set_temp_variable = { good_max_temp = state_temp:everyday_goods_supply }
-											subtract_from_temp_variable = { good_max_temp = state_temp:everyday_goods_supply_min }
-											set_temp_variable = { good_price_temp = state_temp:everyday_goods_price }
-											
-											shopping_algorithm = yes
+												subtract_from_variable = { state_temp:everyday_goods_supply = buy_amount }
+												subtract_from_variable = { state_temp:everyday_goods_trade_amount = buy_amount }
+												add_to_variable = { state_temp:everyday_goods_trade_value = cost_temp }
 
-											subtract_from_variable = { state_temp:everyday_goods_supply = buy_amount }
-											subtract_from_variable = { state_temp:everyday_goods_trade_amount = buy_amount }
-											add_to_variable = { state_temp:everyday_goods_trade_value = cost_temp }
+												divide_temp_variable = { buy_amount = transport_cost }
 
-											divide_temp_variable = { buy_amount = transport_cost }
-
-											add_to_variable = { everyday_goods_supply = buy_amount }
-											add_to_variable = { everyday_goods_trade_amount = buy_amount }
-											add_to_variable = { PREV.everyday_goods_trade_amount = buy_amount }
-											subtract_from_temp_variable = { buy_amount_left = buy_amount }
-											subtract_from_variable = { everyday_goods_trade_value = cost_temp }
-											add_to_variable = { PREV.everyday_goods_trade_value = cost_temp }
+												subtract_from_temp_variable = { buy_amount_left = buy_amount }
+												add_to_variable = { everyday_goods_supply = buy_amount }
+												add_to_variable = { everyday_goods_trade_amount = buy_amount }
+												subtract_from_variable = { everyday_goods_trade_value = cost_temp }
+												add_to_variable = { PREV.everyday_goods_trade_amount = buy_amount }
+												add_to_variable = { PREV.everyday_goods_trade_value = cost_temp }
+											}
 										}
                                     }
-                                    else_if = {
-                                        limit = {
-                                            OR = {
-                                                NOT = { check_variable = { buy_amount_left > 0 } }
-                                                NOT = {  check_variable = { state_temp:everyday_goods_price < everyday_goods_price } }
-                                            }
-                                        }
+                                    else = {
                                         set_temp_variable = { cheapest_brk = 1 }
                                     }
                                 }
-                            }
                         }
                     }
-
                 #luxury_goods
                     #Loops from highest price states to lowest
                     set_temp_variable = { start_temp = luxury_goods_trade_state_array^num }
@@ -1350,12 +1269,7 @@
                         var:luxury_goods_trade_state_array^ii = {
                             
                             #Checks if the state actually has more demand than supply. If it doesn't, this is pointless
-                            if = {
-                                limit = {
-                                    check_variable = { luxury_goods_demand > luxury_goods_supply }
-                                }
                                 set_temp_variable = { buy_amount_left = luxury_goods_demand }
-                                subtract_from_temp_variable = { buy_amount_left = luxury_goods_supply }
 
                                 #Loops thru cheapest states to buy from
                                 for_each_loop = {
@@ -1370,75 +1284,77 @@
                                         limit = {
                                             check_variable = { state_temp:luxury_goods_price < luxury_goods_price }
                                             check_variable = { buy_amount_left > 0 }
-											check_variable = { state_temp:luxury_goods_supply_min < state_temp:luxury_goods_supply }
-                                            
                                         }
-										#Transport Cost
-										var:state_temp = {
-											set_variable = { PREV.transport_cost = distance_to@PREV } #This needs to be a normal variable
-										}
-										divide_variable = { transport_cost = global.base_transport_cost_divisor }
-										set_temp_variable = { modifier_temp = transport_cost_effect }
-										add_to_temp_variable = { modifier_temp = 1 }
-										multiply_variable = { transport_cost = modifier_temp }
-										add_to_variable = { transport_cost = 1 }
-
-										set_temp_variable = { true_price = state_temp:luxury_goods_price }
-										multiply_temp_variable = { true_price = transport_cost }
 										if = {
 											limit = {
-												check_variable = { true_price < luxury_goods_price }
+												check_variable = { state_temp:luxury_goods_supply_min < state_temp:luxury_goods_supply }
 											}
+											#Transport Cost
+											var:state_temp = {
+												set_variable = { PREV.transport_cost = distance_to@PREV } #This needs to be a normal variable
+											}
+											divide_variable = { transport_cost = global.base_transport_cost_divisor }
+											set_temp_variable = { modifier_temp = transport_cost_effect }
+											add_to_temp_variable = { modifier_temp = 1 }
+											multiply_variable = { transport_cost = modifier_temp }
+											add_to_variable = { transport_cost = 1 }
 
+											set_temp_variable = { true_price = state_temp:luxury_goods_price }
+											multiply_temp_variable = { true_price = transport_cost }
+											if = {
+												limit = {
+													check_variable = { true_price < luxury_goods_price }
+												}
+												#Do Trade
+												set_temp_variable = { u = true_price }
+												multiply_temp_variable = { u = state_temp:luxury_goods_demand }
+												divide_temp_variable = { u = luxury_goods_price }
+												divide_temp_variable = { u = luxury_goods_demand }
+												
+												set_temp_variable = { buy_amount = luxury_goods_supply }
+												multiply_temp_variable = { buy_amount = u }
+												multiply_temp_variable = { buy_amount = -1 }
+												add_to_temp_variable = { buy_amount = state_temp:luxury_goods_supply }
+												add_to_temp_variable = { u = 1 }
+												divide_temp_variable = { buy_amount = u }
+												
+												multiply_temp_variable = { buy_amount = 0.7 }
 
-											#Do Trade
-											set_temp_variable = { buy_amount = buy_amount_left }
+												multiply_temp_variable = { buy_amount = transport_cost }
 
-											#Depending on the actual price difference, the buy amount will be different
-											set_temp_variable = { price_difference = luxury_goods_price }
-											subtract_from_temp_variable = { price_difference = state_temp:luxury_goods_price }
-											divide_temp_variable = { price_difference = state_temp:luxury_goods_price }
-											divide_temp_variable = { price_difference = 2 }
-											add_to_temp_variable = { price_difference = 1 }
-											multiply_temp_variable = { buy_amount = price_difference } #buy_amount = buy_amount_left * ((luxury_goods_price - state_temp:luxury_goods_price) / (state_temp:luxury_goods_price * 2) + 1)
-											
-											multiply_temp_variable = { buy_amount = 0.8 }
+												set_temp_variable = { good_max_temp = state_temp:luxury_goods_supply }
+												subtract_from_temp_variable = { good_max_temp = state_temp:luxury_goods_supply_min }
+												
+												clamp_temp_variable = {
+													var = buy_amount
+													max = good_max_temp
+												}
+												clamp_temp_variable = {
+													var = buy_amount
+													min = 0
+												}
+												set_temp_variable = { cost_temp = buy_amount }
+												multiply_temp_variable = { cost_temp = state_temp:luxury_goods_price }
 
-											multiply_temp_variable = { buy_amount = transport_cost }
+												subtract_from_variable = { state_temp:luxury_goods_supply = buy_amount }
+												subtract_from_variable = { state_temp:luxury_goods_trade_amount = buy_amount }
+												add_to_variable = { state_temp:luxury_goods_trade_value = cost_temp }
 
-											set_temp_variable = { money_temp = buy_amount }
-											multiply_temp_variable = { money_temp = state_temp:luxury_goods_price }
-											set_temp_variable = { good_max_temp = state_temp:luxury_goods_supply }
-											subtract_from_temp_variable = { good_max_temp = state_temp:luxury_goods_supply_min }
-											set_temp_variable = { good_price_temp = state_temp:luxury_goods_price }
-											
-											shopping_algorithm = yes
+												divide_temp_variable = { buy_amount = transport_cost }
 
-											subtract_from_variable = { state_temp:luxury_goods_supply = buy_amount }
-											subtract_from_variable = { state_temp:luxury_goods_trade_amount = buy_amount }
-											add_to_variable = { state_temp:luxury_goods_trade_value = cost_temp }
-
-											divide_temp_variable = { buy_amount = transport_cost }
-
-											add_to_variable = { luxury_goods_supply = buy_amount }
-											add_to_variable = { luxury_goods_trade_amount = buy_amount }
-											add_to_variable = { PREV.luxury_goods_trade_amount = buy_amount }
-											subtract_from_temp_variable = { buy_amount_left = buy_amount }
-											subtract_from_variable = { luxury_goods_trade_value = cost_temp }
-											add_to_variable = { PREV.luxury_goods_trade_value = cost_temp }
+												subtract_from_temp_variable = { buy_amount_left = buy_amount }
+												add_to_variable = { luxury_goods_supply = buy_amount }
+												add_to_variable = { luxury_goods_trade_amount = buy_amount }
+												subtract_from_variable = { luxury_goods_trade_value = cost_temp }
+												add_to_variable = { PREV.luxury_goods_trade_amount = buy_amount }
+												add_to_variable = { PREV.luxury_goods_trade_value = cost_temp }
+											}
 										}
                                     }
-                                    else_if = {
-                                        limit = {
-                                            OR = {
-                                                NOT = { check_variable = { buy_amount_left > 0 } }
-                                                NOT = {  check_variable = { state_temp:luxury_goods_price < luxury_goods_price } }
-                                            }
-                                        }
+                                    else = {
                                         set_temp_variable = { cheapest_brk = 1 }
                                     }
                                 }
-                            }
                         }
                     }
 
@@ -1458,12 +1374,7 @@
                         var:services_trade_state_array^ii = {
                             
                             #Checks if the state actually has more demand than supply. If it doesn't, this is pointless
-                            if = {
-                                limit = {
-                                    check_variable = { services_demand > services_supply }
-                                }
                                 set_temp_variable = { buy_amount_left = services_demand }
-                                subtract_from_temp_variable = { buy_amount_left = services_supply }
 
                                 #Loops thru cheapest states to buy from
                                 for_each_loop = {
@@ -1478,74 +1389,77 @@
                                         limit = {
                                             check_variable = { state_temp:services_price < services_price }
                                             check_variable = { buy_amount_left > 0 }
-											check_variable = { state_temp:services_supply_min < state_temp:services_supply }
-                                            
                                         }
-										#Transport Cost
-										var:state_temp = {
-											set_variable = { PREV.transport_cost = distance_to@PREV } #This needs to be a normal variable
-										}
-										divide_variable = { transport_cost = global.base_transport_cost_divisor }
-										set_temp_variable = { modifier_temp = transport_cost_effect }
-										add_to_temp_variable = { modifier_temp = 1 }
-										multiply_variable = { transport_cost = modifier_temp }
-										add_to_variable = { transport_cost = 1 }
-
-										set_temp_variable = { true_price = state_temp:services_price }
-										multiply_temp_variable = { true_price = transport_cost }
 										if = {
 											limit = {
-												check_variable = { true_price < services_price }
+												check_variable = { state_temp:services_supply_min < state_temp:services_supply }
 											}
+											#Transport Cost
+											var:state_temp = {
+												set_variable = { PREV.transport_cost = distance_to@PREV } #This needs to be a normal variable
+											}
+											divide_variable = { transport_cost = global.base_transport_cost_divisor }
+											set_temp_variable = { modifier_temp = transport_cost_effect }
+											add_to_temp_variable = { modifier_temp = 1 }
+											multiply_variable = { transport_cost = modifier_temp }
+											add_to_variable = { transport_cost = 1 }
 
-											#Do Trade
-											set_temp_variable = { buy_amount = buy_amount_left }
+											set_temp_variable = { true_price = state_temp:services_price }
+											multiply_temp_variable = { true_price = transport_cost }
+											if = {
+												limit = {
+													check_variable = { true_price < services_price }
+												}
+												#Do Trade
+												set_temp_variable = { u = true_price }
+												multiply_temp_variable = { u = state_temp:services_demand }
+												divide_temp_variable = { u = services_price }
+												divide_temp_variable = { u = services_demand }
+												
+												set_temp_variable = { buy_amount = services_supply }
+												multiply_temp_variable = { buy_amount = u }
+												multiply_temp_variable = { buy_amount = -1 }
+												add_to_temp_variable = { buy_amount = state_temp:services_supply }
+												add_to_temp_variable = { u = 1 }
+												divide_temp_variable = { buy_amount = u }
+												
+												multiply_temp_variable = { buy_amount = 0.7 }
 
-											#Depending on the actual price difference, the buy amount will be different
-											set_temp_variable = { price_difference = services_price }
-											subtract_from_temp_variable = { price_difference = state_temp:services_price }
-											divide_temp_variable = { price_difference = state_temp:services_price }
-											divide_temp_variable = { price_difference = 2 }
-											add_to_temp_variable = { price_difference = 1 }
-											multiply_temp_variable = { buy_amount = price_difference } #buy_amount = buy_amount_left * ((services_price - state_temp:services_price) / (state_temp:services_price * 2) + 1)
-											
-											multiply_temp_variable = { buy_amount = 0.8 }
+												multiply_temp_variable = { buy_amount = transport_cost }
 
-											multiply_temp_variable = { buy_amount = transport_cost }
+												set_temp_variable = { good_max_temp = state_temp:services_supply }
+												subtract_from_temp_variable = { good_max_temp = state_temp:services_supply_min }
+												
+												clamp_temp_variable = {
+													var = buy_amount
+													max = good_max_temp
+												}
+												clamp_temp_variable = {
+													var = buy_amount
+													min = 0
+												}
+												set_temp_variable = { cost_temp = buy_amount }
+												multiply_temp_variable = { cost_temp = state_temp:services_price }
 
-											set_temp_variable = { money_temp = buy_amount }
-											multiply_temp_variable = { money_temp = state_temp:services_price }
-											set_temp_variable = { good_max_temp = state_temp:services_supply }
-											subtract_from_temp_variable = { good_max_temp = state_temp:services_supply_min }
-											set_temp_variable = { good_price_temp = state_temp:services_price }
-											
-											shopping_algorithm = yes
+												subtract_from_variable = { state_temp:services_supply = buy_amount }
+												subtract_from_variable = { state_temp:services_trade_amount = buy_amount }
+												add_to_variable = { state_temp:services_trade_value = cost_temp }
 
-											subtract_from_variable = { state_temp:services_supply = buy_amount }
-											subtract_from_variable = { state_temp:services_trade_amount = buy_amount }
-											add_to_variable = { state_temp:services_trade_value = cost_temp }
+												divide_temp_variable = { buy_amount = transport_cost }
 
-											divide_temp_variable = { buy_amount = transport_cost }
-
-											add_to_variable = { services_supply = buy_amount }
-											add_to_variable = { services_trade_amount = buy_amount }
-											add_to_variable = { PREV.services_trade_amount = buy_amount }
-											subtract_from_temp_variable = { buy_amount_left = buy_amount }
-											subtract_from_variable = { services_trade_value = cost_temp }
-											add_to_variable = { PREV.services_trade_value = cost_temp }
+												subtract_from_temp_variable = { buy_amount_left = buy_amount }
+												add_to_variable = { services_supply = buy_amount }
+												add_to_variable = { services_trade_amount = buy_amount }
+												subtract_from_variable = { services_trade_value = cost_temp }
+												add_to_variable = { PREV.services_trade_amount = buy_amount }
+												add_to_variable = { PREV.services_trade_value = cost_temp }
+											}
 										}
                                     }
-                                    else_if = {
-                                        limit = {
-                                            OR = {
-                                                NOT = { check_variable = { buy_amount_left > 0 } }
-                                                NOT = {  check_variable = { state_temp:services_price < services_price } }
-                                            }
-                                        }
+                                    else = {
                                         set_temp_variable = { cheapest_brk = 1 }
                                     }
                                 }
-                            }
                         }
                     }
 
@@ -1565,12 +1479,7 @@
                         var:raw_goods_trade_state_array^ii = {
                             
                             #Checks if the state actually has more demand than supply. If it doesn't, this is pointless
-                            if = {
-                                limit = {
-                                    check_variable = { raw_goods_demand > raw_goods_supply }
-                                }
                                 set_temp_variable = { buy_amount_left = raw_goods_demand }
-                                subtract_from_temp_variable = { buy_amount_left = raw_goods_supply }
 
                                 #Loops thru cheapest states to buy from
                                 for_each_loop = {
@@ -1585,74 +1494,77 @@
                                         limit = {
                                             check_variable = { state_temp:raw_goods_price < raw_goods_price }
                                             check_variable = { buy_amount_left > 0 }
-											check_variable = { state_temp:raw_goods_supply_min < state_temp:raw_goods_supply }
-                                            
                                         }
-										#Transport Cost
-										var:state_temp = {
-											set_variable = { PREV.transport_cost = distance_to@PREV } #This needs to be a normal variable
-										}
-										divide_variable = { transport_cost = global.base_transport_cost_divisor }
-										set_temp_variable = { modifier_temp = transport_cost_effect }
-										add_to_temp_variable = { modifier_temp = 1 }
-										multiply_variable = { transport_cost = modifier_temp }
-										add_to_variable = { transport_cost = 1 }
-
-										set_temp_variable = { true_price = state_temp:raw_goods_price }
-										multiply_temp_variable = { true_price = transport_cost }
 										if = {
 											limit = {
-												check_variable = { true_price < raw_goods_price }
+												check_variable = { state_temp:raw_goods_supply_min < state_temp:raw_goods_supply }
 											}
+											#Transport Cost
+											var:state_temp = {
+												set_variable = { PREV.transport_cost = distance_to@PREV } #This needs to be a normal variable
+											}
+											divide_variable = { transport_cost = global.base_transport_cost_divisor }
+											set_temp_variable = { modifier_temp = transport_cost_effect }
+											add_to_temp_variable = { modifier_temp = 1 }
+											multiply_variable = { transport_cost = modifier_temp }
+											add_to_variable = { transport_cost = 1 }
 
-											#Do Trade
-											set_temp_variable = { buy_amount = buy_amount_left }
+											set_temp_variable = { true_price = state_temp:raw_goods_price }
+											multiply_temp_variable = { true_price = transport_cost }
+											if = {
+												limit = {
+													check_variable = { true_price < raw_goods_price }
+												}
+												#Do Trade
+												set_temp_variable = { u = true_price }
+												multiply_temp_variable = { u = state_temp:raw_goods_demand }
+												divide_temp_variable = { u = raw_goods_price }
+												divide_temp_variable = { u = raw_goods_demand }
+												
+												set_temp_variable = { buy_amount = raw_goods_supply }
+												multiply_temp_variable = { buy_amount = u }
+												multiply_temp_variable = { buy_amount = -1 }
+												add_to_temp_variable = { buy_amount = state_temp:raw_goods_supply }
+												add_to_temp_variable = { u = 1 }
+												divide_temp_variable = { buy_amount = u }
+												
+												multiply_temp_variable = { buy_amount = 0.7 }
 
-											#Depending on the actual price difference, the buy amount will be different
-											set_temp_variable = { price_difference = raw_goods_price }
-											subtract_from_temp_variable = { price_difference = state_temp:raw_goods_price }
-											divide_temp_variable = { price_difference = state_temp:raw_goods_price }
-											divide_temp_variable = { price_difference = 2 }
-											add_to_temp_variable = { price_difference = 1 }
-											multiply_temp_variable = { buy_amount = price_difference } #buy_amount = buy_amount_left * ((raw_goods_price - state_temp:raw_goods_price) / (state_temp:raw_goods_price * 2) + 1)
-											
-											multiply_temp_variable = { buy_amount = 0.8 }
+												multiply_temp_variable = { buy_amount = transport_cost }
 
-											multiply_temp_variable = { buy_amount = transport_cost }
+												set_temp_variable = { good_max_temp = state_temp:raw_goods_supply }
+												subtract_from_temp_variable = { good_max_temp = state_temp:raw_goods_supply_min }
+												
+												clamp_temp_variable = {
+													var = buy_amount
+													max = good_max_temp
+												}
+												clamp_temp_variable = {
+													var = buy_amount
+													min = 0
+												}
+												set_temp_variable = { cost_temp = buy_amount }
+												multiply_temp_variable = { cost_temp = state_temp:raw_goods_price }
 
-											set_temp_variable = { money_temp = buy_amount }
-											multiply_temp_variable = { money_temp = state_temp:raw_goods_price }
-											set_temp_variable = { good_max_temp = state_temp:raw_goods_supply }
-											subtract_from_temp_variable = { good_max_temp = state_temp:raw_goods_supply_min }
-											set_temp_variable = { good_price_temp = state_temp:raw_goods_price }
-											
-											shopping_algorithm = yes
+												subtract_from_variable = { state_temp:raw_goods_supply = buy_amount }
+												subtract_from_variable = { state_temp:raw_goods_trade_amount = buy_amount }
+												add_to_variable = { state_temp:raw_goods_trade_value = cost_temp }
 
-											subtract_from_variable = { state_temp:raw_goods_supply = buy_amount }
-											subtract_from_variable = { state_temp:raw_goods_trade_amount = buy_amount }
-											add_to_variable = { state_temp:raw_goods_trade_value = cost_temp }
+												divide_temp_variable = { buy_amount = transport_cost }
 
-											divide_temp_variable = { buy_amount = transport_cost }
-
-											add_to_variable = { raw_goods_supply = buy_amount }
-											add_to_variable = { raw_goods_trade_amount = buy_amount }
-											subtract_from_temp_variable = { buy_amount_left = buy_amount }
-											add_to_variable = { PREV.raw_goods_trade_amount = buy_amount }
-											subtract_from_variable = { raw_goods_trade_value = cost_temp }
-											add_to_variable = { PREV.raw_goods_trade_value = cost_temp }
+												subtract_from_temp_variable = { buy_amount_left = buy_amount }
+												add_to_variable = { raw_goods_supply = buy_amount }
+												add_to_variable = { raw_goods_trade_amount = buy_amount }
+												subtract_from_variable = { raw_goods_trade_value = cost_temp }
+												add_to_variable = { PREV.raw_goods_trade_amount = buy_amount }
+												add_to_variable = { PREV.raw_goods_trade_value = cost_temp }
+											}
 										}
                                     }
-                                    else_if = {
-                                        limit = {
-                                            OR = {
-                                                NOT = { check_variable = { buy_amount_left > 0 } }
-                                                NOT = {  check_variable = { state_temp:raw_goods_price < raw_goods_price } }
-                                            }
-                                        }
+                                    else = {
                                         set_temp_variable = { cheapest_brk = 1 }
                                     }
                                 }
-                            }
                         }
                     }
 
@@ -1672,12 +1584,7 @@
                         var:industrial_goods_trade_state_array^ii = {
                             
                             #Checks if the state actually has more demand than supply. If it doesn't, this is pointless
-                            if = {
-                                limit = {
-                                    check_variable = { industrial_goods_demand > industrial_goods_supply }
-                                }
                                 set_temp_variable = { buy_amount_left = industrial_goods_demand }
-                                subtract_from_temp_variable = { buy_amount_left = industrial_goods_supply }
 
                                 #Loops thru cheapest states to buy from
                                 for_each_loop = {
@@ -1692,79 +1599,85 @@
                                         limit = {
                                             check_variable = { state_temp:industrial_goods_price < industrial_goods_price }
                                             check_variable = { buy_amount_left > 0 }
-											check_variable = { state_temp:industrial_goods_supply_min < state_temp:industrial_goods_supply }
-                                            
                                         }
-										#Transport Cost
-										var:state_temp = {
-											set_variable = { PREV.transport_cost = distance_to@PREV } #This needs to be a normal variable
-										}
-										divide_variable = { transport_cost = global.base_transport_cost_divisor }
-										set_temp_variable = { modifier_temp = transport_cost_effect }
-										add_to_temp_variable = { modifier_temp = 1 }
-										multiply_variable = { transport_cost = modifier_temp }
-										add_to_variable = { transport_cost = 1 }
-
-										set_temp_variable = { true_price = state_temp:industrial_goods_price }
-										multiply_temp_variable = { true_price = transport_cost }
 										if = {
 											limit = {
-												check_variable = { true_price < industrial_goods_price }
+												check_variable = { state_temp:industrial_goods_supply_min < state_temp:industrial_goods_supply }
 											}
+											#Transport Cost
+											var:state_temp = {
+												set_variable = { PREV.transport_cost = distance_to@PREV } #This needs to be a normal variable
+											}
+											divide_variable = { transport_cost = global.base_transport_cost_divisor }
+											set_temp_variable = { modifier_temp = transport_cost_effect }
+											add_to_temp_variable = { modifier_temp = 1 }
+											multiply_variable = { transport_cost = modifier_temp }
+											add_to_variable = { transport_cost = 1 }
 
-											#Do Trade
-											set_temp_variable = { buy_amount = buy_amount_left }
+											set_temp_variable = { true_price = state_temp:industrial_goods_price }
+											multiply_temp_variable = { true_price = transport_cost }
+											if = {
+												limit = {
+													check_variable = { true_price < industrial_goods_price }
+												}
+												#Do Trade
+												set_temp_variable = { u = true_price }
+												multiply_temp_variable = { u = state_temp:industrial_goods_demand }
+												divide_temp_variable = { u = industrial_goods_price }
+												divide_temp_variable = { u = industrial_goods_demand }
+												
+												set_temp_variable = { buy_amount = industrial_goods_supply }
+												multiply_temp_variable = { buy_amount = u }
+												multiply_temp_variable = { buy_amount = -1 }
+												add_to_temp_variable = { buy_amount = state_temp:industrial_goods_supply }
+												add_to_temp_variable = { u = 1 }
+												divide_temp_variable = { buy_amount = u }
+												
+												multiply_temp_variable = { buy_amount = 0.7 }
 
-											#Depending on the actual price difference, the buy amount will be different
-											set_temp_variable = { price_difference = industrial_goods_price }
-											subtract_from_temp_variable = { price_difference = state_temp:industrial_goods_price }
-											divide_temp_variable = { price_difference = state_temp:industrial_goods_price }
-											divide_temp_variable = { price_difference = 2 }
-											add_to_temp_variable = { price_difference = 1 }
-											multiply_temp_variable = { buy_amount = price_difference } #buy_amount = buy_amount_left * ((industrial_goods_price - state_temp:industrial_goods_price) / (state_temp:industrial_goods_price * 2) + 1)
-											
-											multiply_temp_variable = { buy_amount = 0.8 }
+												multiply_temp_variable = { buy_amount = transport_cost }
 
-											multiply_temp_variable = { buy_amount = transport_cost }
+												set_temp_variable = { good_max_temp = state_temp:industrial_goods_supply }
+												subtract_from_temp_variable = { good_max_temp = state_temp:industrial_goods_supply_min }
+												
+												clamp_temp_variable = {
+													var = buy_amount
+													max = good_max_temp
+												}
+												clamp_temp_variable = {
+													var = buy_amount
+													min = 0
+												}
+												set_temp_variable = { cost_temp = buy_amount }
+												multiply_temp_variable = { cost_temp = state_temp:industrial_goods_price }
 
-											set_temp_variable = { money_temp = buy_amount }
-											multiply_temp_variable = { money_temp = state_temp:industrial_goods_price }
-											set_temp_variable = { good_max_temp = state_temp:industrial_goods_supply }
-											subtract_from_temp_variable = { good_max_temp = state_temp:industrial_goods_supply_min }
-											set_temp_variable = { good_price_temp = state_temp:industrial_goods_price }
-											
-											shopping_algorithm = yes
+												subtract_from_variable = { state_temp:industrial_goods_supply = buy_amount }
+												subtract_from_variable = { state_temp:industrial_goods_trade_amount = buy_amount }
+												add_to_variable = { state_temp:industrial_goods_trade_value = cost_temp }
 
-											subtract_from_variable = { state_temp:industrial_goods_supply = buy_amount }
-											subtract_from_variable = { state_temp:industrial_goods_trade_amount = buy_amount }
-											add_to_variable = { state_temp:industrial_goods_trade_value = cost_temp }
+												divide_temp_variable = { buy_amount = transport_cost }
 
-											divide_temp_variable = { buy_amount = transport_cost }
-
-											add_to_variable = { industrial_goods_supply = buy_amount }
-											add_to_variable = { industrial_goods_trade_amount = buy_amount }
-											add_to_variable = { PREV.industrial_goods_trade_amount = buy_amount }
-											subtract_from_temp_variable = { buy_amount_left = buy_amount }
-											subtract_from_variable = { industrial_goods_trade_value = cost_temp }
-											add_to_variable = { PREV.industrial_goods_trade_value = cost_temp }
+												subtract_from_temp_variable = { buy_amount_left = buy_amount }
+												add_to_variable = { industrial_goods_supply = buy_amount }
+												add_to_variable = { industrial_goods_trade_amount = buy_amount }
+												subtract_from_variable = { industrial_goods_trade_value = cost_temp }
+												add_to_variable = { PREV.industrial_goods_trade_amount = buy_amount }
+												add_to_variable = { PREV.industrial_goods_trade_value = cost_temp }
+											}
 										}
                                     }
-                                    else_if = {
-                                        limit = {
-                                            OR = {
-                                                NOT = { check_variable = { buy_amount_left > 0 } }
-                                                NOT = {  check_variable = { state_temp:industrial_goods_price < industrial_goods_price } }
-                                            }
-                                        }
+                                    else = {
                                         set_temp_variable = { cheapest_brk = 1 }
                                     }
                                 }
-                            }
                         }
                     }
 
+
 			#
-			#Minimum goods supply to be in a country
+			#Minimum goods supply to be in a country & Some necessary vars for resolving international trade
+
+				#Excess added up from each individual state
 				set_variable = { life_goods_supply_min = 0 }
 				set_variable = { life_goods_supply = 0 }
 				set_variable = { everyday_goods_supply_min = 0 }
@@ -1795,8 +1708,19 @@
 
 					add_to_variable = { PREV.industrial_goods_supply_min = industrial_goods_supply_min }
 					add_to_variable = { PREV.industrial_goods_supply = industrial_goods_supply }
-
 				}
+				set_variable = { life_goods_supply_demand_ratio = life_goods_supply }
+				divide_variable = { life_goods_supply_demand_ratio = life_goods_demand }
+				set_variable = { everyday_goods_supply_demand_ratio = everyday_goods_supply }
+				divide_variable = { everyday_goods_supply_demand_ratio = everyday_goods_demand }
+				set_variable = { luxury_goods_supply_demand_ratio = luxury_goods_supply }
+				divide_variable = { luxury_goods_supply_demand_ratio = luxury_goods_demand }
+				set_variable = { services_supply_demand_ratio = services_supply }
+				divide_variable = { services_supply_demand_ratio = services_demand }
+				set_variable = { raw_goods_supply_demand_ratio = raw_goods_supply }
+				divide_variable = { raw_goods_supply_demand_ratio = raw_goods_demand }
+				set_variable = { industrial_goods_supply_demand_ratio = industrial_goods_supply }
+				divide_variable = { industrial_goods_supply_demand_ratio = industrial_goods_demand }
 			#
 		}
 
@@ -1810,16 +1734,8 @@
 				#It is assumed that all imported and exported supply/demand will be fulfilled. This will be fulfilled in order of cheapest states to most expensive in exports and most expensive to cheapest in imports.
 
 				set_variable = { actual_tariff_revenue = 0 }
-
                 #life_goods
-					#Checks if the country actually has more demand than supply. If it doesn't, this is pointless
-					if = {
-						limit = {
-							check_variable = { life_goods_demand > life_goods_supply }
-						}
 						set_temp_variable = { buy_amount_left = life_goods_demand }
-						subtract_from_temp_variable = { buy_amount_left = life_goods_supply }
-
 						#Loops thru cheapest countries to buy from
 						for_each_loop = {
 							array = global.life_goods_global_trade_country_array
@@ -1870,30 +1786,38 @@
 										check_variable = { true_price < life_goods_price }
 									}
 									#Do Trade
-									set_temp_variable = { buy_amount = buy_amount_left }
-
-									#Depending on the actual price difference, the buy amount will be different
-									set_temp_variable = { price_difference = life_goods_price }
-									subtract_from_temp_variable = { price_difference = country_temp:life_goods_price }
-									divide_temp_variable = { price_difference = country_temp:life_goods_price }
-									divide_temp_variable = { price_difference = 2 }
-									add_to_temp_variable = { price_difference = 1 }
-									multiply_temp_variable = { buy_amount = price_difference } #buy_amount = buy_amount_left * ((life_goods_price - country_temp:life_goods_price) / (country_temp:life_goods_price * 2) + 1)
+									set_temp_variable = { u = true_price }
+									multiply_temp_variable = { u = country_temp:life_goods_demand }
+									divide_temp_variable = { u = life_goods_price }
+									divide_temp_variable = { u = life_goods_demand }
 									
-									multiply_temp_variable = { buy_amount = 0.8 }
+									set_temp_variable = { buy_amount = life_goods_supply }
+									multiply_temp_variable = { buy_amount = u }
+									multiply_temp_variable = { buy_amount = -1 }
+									add_to_temp_variable = { buy_amount = country_temp:life_goods_supply }
+									add_to_temp_variable = { u = 1 }
+									divide_temp_variable = { buy_amount = u }
+									
+									multiply_temp_variable = { buy_amount = 0.7 }
 
 									multiply_temp_variable = { buy_amount = shipping_cost }
 									multiply_temp_variable = { buy_amount = net_tariff_percentage_temp }
 									divide_temp_variable = { buy_amount = 100 }
 
-									set_temp_variable = { money_temp = buy_amount }
-									multiply_temp_variable = { money_temp = country_temp:life_goods_price }
 									set_temp_variable = { good_max_temp = country_temp:life_goods_supply }
 									subtract_from_temp_variable = { good_max_temp = country_temp:life_goods_supply_min }
-									set_temp_variable = { good_price_temp = country_temp:life_goods_price }
 									
-									shopping_algorithm = yes
-
+									clamp_temp_variable = {
+										var = buy_amount
+										max = good_max_temp
+									}
+									clamp_temp_variable = {
+										var = buy_amount
+										min = 0
+									}
+									set_temp_variable = { cost_temp = buy_amount }
+									multiply_temp_variable = { cost_temp = country_temp:life_goods_price }
+												
 									subtract_from_variable = { country_temp:life_goods_supply = buy_amount }
 									subtract_from_variable = { country_temp:life_goods_global_trade_amount = buy_amount }
 									add_to_variable = { country_temp:life_goods_global_trade_actual_value = cost_temp }
@@ -1963,7 +1887,6 @@
 								set_temp_variable = { cheapest_brk = 1 }
 							}
 						}
-					}
 				#everyday_goods
 					#Checks if the country actually has more demand than supply. If it doesn't, this is pointless
 					if = {
@@ -2021,31 +1944,38 @@
 									limit = {
 										check_variable = { true_price < everyday_goods_price }
 									}
-
 									#Do Trade
-									set_temp_variable = { buy_amount = buy_amount_left }
-
-									#Depending on the actual price difference, the buy amount will be different
-									set_temp_variable = { price_difference = everyday_goods_price }
-									subtract_from_temp_variable = { price_difference = country_temp:everyday_goods_price }
-									divide_temp_variable = { price_difference = country_temp:everyday_goods_price }
-									divide_temp_variable = { price_difference = 2 }
-									add_to_temp_variable = { price_difference = 1 }
-									multiply_temp_variable = { buy_amount = price_difference } #buy_amount = buy_amount_left * ((everyday_goods_price - country_temp:everyday_goods_price) / (country_temp:everyday_goods_price * 2) + 1)
+									set_temp_variable = { u = true_price }
+									multiply_temp_variable = { u = country_temp:everyday_goods_demand }
+									divide_temp_variable = { u = everyday_goods_price }
+									divide_temp_variable = { u = everyday_goods_demand }
 									
-									multiply_temp_variable = { buy_amount = 0.8 }
+									set_temp_variable = { buy_amount = everyday_goods_supply }
+									multiply_temp_variable = { buy_amount = u }
+									multiply_temp_variable = { buy_amount = -1 }
+									add_to_temp_variable = { buy_amount = country_temp:everyday_goods_supply }
+									add_to_temp_variable = { u = 1 }
+									divide_temp_variable = { buy_amount = u }
+									
+									multiply_temp_variable = { buy_amount = 0.7 }
 
 									multiply_temp_variable = { buy_amount = shipping_cost }
 									multiply_temp_variable = { buy_amount = net_tariff_percentage_temp }
 									divide_temp_variable = { buy_amount = 100 }
 
-									set_temp_variable = { money_temp = buy_amount }
-									multiply_temp_variable = { money_temp = country_temp:everyday_goods_price }
 									set_temp_variable = { good_max_temp = country_temp:everyday_goods_supply }
 									subtract_from_temp_variable = { good_max_temp = country_temp:everyday_goods_supply_min }
-									set_temp_variable = { good_price_temp = country_temp:everyday_goods_price }
 									
-									shopping_algorithm = yes
+									clamp_temp_variable = {
+										var = buy_amount
+										max = good_max_temp
+									}
+									clamp_temp_variable = {
+										var = buy_amount
+										min = 0
+									}
+									set_temp_variable = { cost_temp = buy_amount }
+									multiply_temp_variable = { cost_temp = country_temp:everyday_goods_price }
 
 									subtract_from_variable = { country_temp:everyday_goods_supply = buy_amount }
 									subtract_from_variable = { country_temp:everyday_goods_global_trade_amount = buy_amount }
@@ -2174,31 +2104,38 @@
 									limit = {
 										check_variable = { true_price < luxury_goods_price }
 									}
-
 									#Do Trade
-									set_temp_variable = { buy_amount = buy_amount_left }
-
-									#Depending on the actual price difference, the buy amount will be different
-									set_temp_variable = { price_difference = luxury_goods_price }
-									subtract_from_temp_variable = { price_difference = country_temp:luxury_goods_price }
-									divide_temp_variable = { price_difference = country_temp:luxury_goods_price }
-									divide_temp_variable = { price_difference = 2 }
-									add_to_temp_variable = { price_difference = 1 }
-									multiply_temp_variable = { buy_amount = price_difference } #buy_amount = buy_amount_left * ((luxury_goods_price - country_temp:luxury_goods_price) / (country_temp:luxury_goods_price * 2) + 1)
+									set_temp_variable = { u = true_price }
+									multiply_temp_variable = { u = country_temp:luxury_goods_demand }
+									divide_temp_variable = { u = luxury_goods_price }
+									divide_temp_variable = { u = luxury_goods_demand }
 									
-									multiply_temp_variable = { buy_amount = 0.8 }
+									set_temp_variable = { buy_amount = luxury_goods_supply }
+									multiply_temp_variable = { buy_amount = u }
+									multiply_temp_variable = { buy_amount = -1 }
+									add_to_temp_variable = { buy_amount = country_temp:luxury_goods_supply }
+									add_to_temp_variable = { u = 1 }
+									divide_temp_variable = { buy_amount = u }
+									
+									multiply_temp_variable = { buy_amount = 0.7 }
 
 									multiply_temp_variable = { buy_amount = shipping_cost }
 									multiply_temp_variable = { buy_amount = net_tariff_percentage_temp }
 									divide_temp_variable = { buy_amount = 100 }
 
-									set_temp_variable = { money_temp = buy_amount }
-									multiply_temp_variable = { money_temp = country_temp:luxury_goods_price }
 									set_temp_variable = { good_max_temp = country_temp:luxury_goods_supply }
 									subtract_from_temp_variable = { good_max_temp = country_temp:luxury_goods_supply_min }
-									set_temp_variable = { good_price_temp = country_temp:luxury_goods_price }
 									
-									shopping_algorithm = yes
+									clamp_temp_variable = {
+										var = buy_amount
+										max = good_max_temp
+									}
+									clamp_temp_variable = {
+										var = buy_amount
+										min = 0
+									}
+									set_temp_variable = { cost_temp = buy_amount }
+									multiply_temp_variable = { cost_temp = country_temp:luxury_goods_price }
 
 									subtract_from_variable = { country_temp:luxury_goods_supply = buy_amount }
 									subtract_from_variable = { country_temp:luxury_goods_global_trade_amount = buy_amount }
@@ -2327,31 +2264,38 @@
 									limit = {
 										check_variable = { true_price < services_price }
 									}
-
 									#Do Trade
-									set_temp_variable = { buy_amount = buy_amount_left }
-
-									#Depending on the actual price difference, the buy amount will be different
-									set_temp_variable = { price_difference = services_price }
-									subtract_from_temp_variable = { price_difference = country_temp:services_price }
-									divide_temp_variable = { price_difference = country_temp:services_price }
-									divide_temp_variable = { price_difference = 2 }
-									add_to_temp_variable = { price_difference = 1 }
-									multiply_temp_variable = { buy_amount = price_difference } #buy_amount = buy_amount_left * ((services_price - country_temp:services_price) / (country_temp:services_price * 2) + 1)
+									set_temp_variable = { u = true_price }
+									multiply_temp_variable = { u = country_temp:services_demand }
+									divide_temp_variable = { u = services_price }
+									divide_temp_variable = { u = services_demand }
 									
-									multiply_temp_variable = { buy_amount = 0.8 }
+									set_temp_variable = { buy_amount = services_supply }
+									multiply_temp_variable = { buy_amount = u }
+									multiply_temp_variable = { buy_amount = -1 }
+									add_to_temp_variable = { buy_amount = country_temp:services_supply }
+									add_to_temp_variable = { u = 1 }
+									divide_temp_variable = { buy_amount = u }
+									
+									multiply_temp_variable = { buy_amount = 0.7 }
 
 									multiply_temp_variable = { buy_amount = shipping_cost }
 									multiply_temp_variable = { buy_amount = net_tariff_percentage_temp }
 									divide_temp_variable = { buy_amount = 100 }
 
-									set_temp_variable = { money_temp = buy_amount }
-									multiply_temp_variable = { money_temp = country_temp:services_price }
 									set_temp_variable = { good_max_temp = country_temp:services_supply }
 									subtract_from_temp_variable = { good_max_temp = country_temp:services_supply_min }
-									set_temp_variable = { good_price_temp = country_temp:services_price }
 									
-									shopping_algorithm = yes
+									clamp_temp_variable = {
+										var = buy_amount
+										max = good_max_temp
+									}
+									clamp_temp_variable = {
+										var = buy_amount
+										min = 0
+									}
+									set_temp_variable = { cost_temp = buy_amount }
+									multiply_temp_variable = { cost_temp = country_temp:services_price }
 
 									subtract_from_variable = { country_temp:services_supply = buy_amount }
 									subtract_from_variable = { country_temp:services_global_trade_amount = buy_amount }
@@ -2486,31 +2430,38 @@
 									limit = {
 										check_variable = { true_price < raw_goods_price }
 									}
-
 									#Do Trade
-									set_temp_variable = { buy_amount = buy_amount_left }
-
-									#Depending on the actual price difference, the buy amount will be different
-									set_temp_variable = { price_difference = raw_goods_price }
-									subtract_from_temp_variable = { price_difference = country_temp:raw_goods_price }
-									divide_temp_variable = { price_difference = country_temp:raw_goods_price }
-									divide_temp_variable = { price_difference = 2 }
-									add_to_temp_variable = { price_difference = 1 }
-									multiply_temp_variable = { buy_amount = price_difference } #buy_amount = buy_amount_left * ((raw_goods_price - country_temp:raw_goods_price) / (country_temp:raw_goods_price * 2) + 1)
-
-									multiply_temp_variable = { buy_amount = 0.8 }
+									set_temp_variable = { u = true_price }
+									multiply_temp_variable = { u = country_temp:raw_goods_demand }
+									divide_temp_variable = { u = raw_goods_price }
+									divide_temp_variable = { u = raw_goods_demand }
+									
+									set_temp_variable = { buy_amount = raw_goods_supply }
+									multiply_temp_variable = { buy_amount = u }
+									multiply_temp_variable = { buy_amount = -1 }
+									add_to_temp_variable = { buy_amount = country_temp:raw_goods_supply }
+									add_to_temp_variable = { u = 1 }
+									divide_temp_variable = { buy_amount = u }
+									
+									multiply_temp_variable = { buy_amount = 0.7 }
 
 									multiply_temp_variable = { buy_amount = shipping_cost }
 									multiply_temp_variable = { buy_amount = net_tariff_percentage_temp }
 									divide_temp_variable = { buy_amount = 100 }
 
-									set_temp_variable = { money_temp = buy_amount }
-									multiply_temp_variable = { money_temp = country_temp:raw_goods_price }
 									set_temp_variable = { good_max_temp = country_temp:raw_goods_supply }
 									subtract_from_temp_variable = { good_max_temp = country_temp:raw_goods_supply_min }
-									set_temp_variable = { good_price_temp = country_temp:raw_goods_price }
 									
-									shopping_algorithm = yes
+									clamp_temp_variable = {
+										var = buy_amount
+										max = good_max_temp
+									}
+									clamp_temp_variable = {
+										var = buy_amount
+										min = 0
+									}
+									set_temp_variable = { cost_temp = buy_amount }
+									multiply_temp_variable = { cost_temp = country_temp:raw_goods_price }
 
 									subtract_from_variable = { country_temp:raw_goods_supply = buy_amount }
 									subtract_from_variable = { country_temp:raw_goods_global_trade_amount = buy_amount }
@@ -2640,29 +2591,37 @@
 										check_variable = { true_price < industrial_goods_price }
 									}
 									#Do Trade
-									set_temp_variable = { buy_amount = buy_amount_left }
-
-									#Depending on the actual price difference, the buy amount will be different
-									set_temp_variable = { price_difference = industrial_goods_price }
-									subtract_from_temp_variable = { price_difference = country_temp:industrial_goods_price }
-									divide_temp_variable = { price_difference = country_temp:industrial_goods_price }
-									divide_temp_variable = { price_difference = 2 }
-									add_to_temp_variable = { price_difference = 1 }
-									multiply_temp_variable = { buy_amount = price_difference } #buy_amount = buy_amount_left * ((industrial_goods_price - country_temp:industrial_goods_price) / (country_temp:industrial_goods_price * 2) + 1)
+									set_temp_variable = { u = true_price }
+									multiply_temp_variable = { u = country_temp:industrial_goods_demand }
+									divide_temp_variable = { u = industrial_goods_price }
+									divide_temp_variable = { u = industrial_goods_demand }
 									
-									multiply_temp_variable = { buy_amount = 0.8 }
+									set_temp_variable = { buy_amount = industrial_goods_supply }
+									multiply_temp_variable = { buy_amount = u }
+									multiply_temp_variable = { buy_amount = -1 }
+									add_to_temp_variable = { buy_amount = country_temp:industrial_goods_supply }
+									add_to_temp_variable = { u = 1 }
+									divide_temp_variable = { buy_amount = u }
+									
+									multiply_temp_variable = { buy_amount = 0.7 }
 
 									multiply_temp_variable = { buy_amount = shipping_cost }
 									multiply_temp_variable = { buy_amount = net_tariff_percentage_temp }
 									divide_temp_variable = { buy_amount = 100 }
 
-									set_temp_variable = { money_temp = buy_amount }
-									multiply_temp_variable = { money_temp = country_temp:industrial_goods_price }
 									set_temp_variable = { good_max_temp = country_temp:industrial_goods_supply }
 									subtract_from_temp_variable = { good_max_temp = country_temp:industrial_goods_supply_min }
-									set_temp_variable = { good_price_temp = country_temp:industrial_goods_price }
 									
-									shopping_algorithm = yes
+									clamp_temp_variable = {
+										var = buy_amount
+										max = good_max_temp
+									}
+									clamp_temp_variable = {
+										var = buy_amount
+										min = 0
+									}
+									set_temp_variable = { cost_temp = buy_amount }
+									multiply_temp_variable = { cost_temp = country_temp:industrial_goods_price }
 
 									subtract_from_variable = { country_temp:industrial_goods_supply = buy_amount }
 									subtract_from_variable = { country_temp:industrial_goods_global_trade_amount = buy_amount }
@@ -2735,6 +2694,8 @@
 						}
 					}
 				
+			
+			
 			#
 		}
 		for_each_scope_loop = {
@@ -2747,7 +2708,7 @@
 						limit = {
 							check_variable = { life_goods_global_trade_amount > 0 }            
 						}
-						set_variable = { buy_amount_left = life_goods_global_trade_amount }
+						set_variable = { trade_amount_left = life_goods_global_trade_amount }
 						set_variable = { cost_amount_left = life_goods_global_trade_value }
 
 						#Loop thru most expensive states to resolve
@@ -2761,38 +2722,33 @@
 							value = ii
 
 
-							#Scopes to state
-							var:life_goods_trade_state_array^ii = {
-								if = {
-									limit = {
-										check_variable = { PREV.buy_amount_left > 0 }
-										check_variable = { life_goods_demand > life_goods_supply }
-									}
+							if = {
+								limit = {
+									check_variable = { trade_amount_left > 0 }
+								}
+								#Scopes to state
+								var:life_goods_trade_state_array^ii = {
 									set_temp_variable = { trade_percentage_temp = life_goods_demand }
-									subtract_from_temp_variable = { trade_percentage_temp = life_goods_supply }
 									multiply_temp_variable = { trade_percentage_temp = 100 }
-									set_temp_variable = { tp_temp = PREV.life_goods_demand }
-									subtract_from_temp_variable = { tp_temp = PREV.life_goods_supply }
-									add_to_temp_variable = { tp_temp = PREV.life_goods_global_trade_amount }
-									divide_temp_variable = { trade_percentage_temp = tp_temp }
+									divide_temp_variable = { trade_percentage_temp = PREV.life_goods_demand }
 
 									set_temp_variable = { trade_amount_temp = PREV.life_goods_global_trade_amount }
 									multiply_temp_variable = { trade_amount_temp = trade_percentage_temp }
 									divide_temp_variable = { trade_amount_temp = 100 }
 									if = {
 										limit = {
-											check_variable = { trade_amount_temp > PREV.buy_amount_left }
+											check_variable = { trade_amount_temp > PREV.trade_amount_left }
 										}
-										set_temp_variable = { trade_amount_temp = PREV.buy_amount_left }
+										set_temp_variable = { trade_amount_temp = PREV.trade_amount_left }
 									}
 
-									set_temp_variable = { after_goods_temp = PREV.buy_amount_left }
+									set_temp_variable = { after_goods_temp = PREV.trade_amount_left }
 									subtract_from_temp_variable = { after_goods_temp = trade_amount_temp }
 									if = {
 										limit = {
 											check_variable = { after_goods_temp < 0.003 }
 										}
-										set_temp_variable = { trade_amount_temp = PREV.buy_amount_left }
+										set_temp_variable = { trade_amount_temp = PREV.trade_amount_left }
 										set_temp_variable = { trade_value_temp = PREV.cost_amount_left }
 									}
 									else = {
@@ -2804,24 +2760,21 @@
 												check_variable = { trade_value_temp < PREV.cost_amount_left }
 											}
 											set_temp_variable = { trade_value_temp = PREV.cost_amount_left }
-											set_temp_variable = { trade_amount_temp = PREV.buy_amount_left }
+											set_temp_variable = { trade_amount_temp = PREV.trade_amount_left }
 										}
 									}
 									#RESOLVE
-									subtract_from_variable = { PREV.buy_amount_left = trade_amount_temp }
+									subtract_from_variable = { PREV.trade_amount_left = trade_amount_temp }
 									subtract_from_variable = { PREV.cost_amount_left = trade_value_temp }
 									add_to_variable = { life_goods_trade_amount = trade_amount_temp }
 									add_to_variable = { life_goods_trade_value = trade_value_temp }
 									add_to_variable = { life_goods_supply = trade_amount_temp }
 								}
-								else_if = {
-									limit = {
-										NOT = { check_variable = { PREV.buy_amount_left > 0 } }
-									}
-									set_temp_variable = { cheapest_brk = 1 }
-								}
-
 							}
+							else = {
+								set_temp_variable = { cheapest_brk = 1 }
+							}
+
 						}
 					}
 					#Exporting
@@ -2829,8 +2782,11 @@
 						limit = {
 							check_variable = { life_goods_global_trade_amount < 0 }            
 						}
-						set_variable = { buy_amount_left = life_goods_global_trade_amount } #Note, this is negative
+						set_variable = { trade_amount_left = life_goods_global_trade_amount } #Note, this is negative
 						set_variable = { cost_amount_left = life_goods_global_trade_value }
+						set_variable = { original_life_goods_supply = life_goods_supply }
+						subtract_from_variable = { original_life_goods_supply = life_goods_global_trade_amount }
+						subtract_from_variable = { original_life_goods_supply = life_goods_supply_min }
 
 						#Loops thru cheapest states to resolve
 						for_each_loop = {
@@ -2840,33 +2796,30 @@
 							break = cheapest_brk
 
 
-							var:state_temp = {
+							if = {
+								limit = {
+									check_variable = { trade_amount_left < 0 }
+								}
+								var:state_temp = {
+									set_temp_variable = { trade_percentage_temp = life_goods_supply }
+									subtract_from_temp_variable = { trade_percentage_temp = life_goods_supply_min }
+									multiply_temp_variable = { trade_percentage_temp = 100 }
+									divide_temp_variable = { trade_percentage_temp = PREV.original_life_goods_supply }
 
-								if = {
-									limit = {
-										check_variable = { PREV.buy_amount_left < 0 }
-										check_variable = { life_goods_supply_min < life_goods_supply }
-									}
-									set_temp_variable = { trade_amount_temp = life_goods_supply_min }
-									subtract_from_temp_variable = { trade_amount_temp = life_goods_supply }
+									set_temp_variable = { trade_amount_temp = PREV.life_goods_global_trade_amount }
+									multiply_temp_variable = { trade_amount_temp = trade_percentage_temp }
+									divide_temp_variable = { trade_amount_temp = 100 }
 									if = {
 										limit = {
-											check_variable = { trade_amount_temp < PREV.buy_amount_left }
+											NOT = { check_variable = { trade_amount_temp > PREV.trade_amount_left } }
 										}
-										set_temp_variable = { trade_amount_temp = PREV.buy_amount_left }
-									}
-									set_temp_variable = { after_goods_temp = PREV.buy_amount_left }
-									subtract_from_temp_variable = { after_goods_temp = trade_amount_temp }
-									if = {
-										limit = {
-											check_variable = { after_goods_temp = 0 }
-										}
+										set_temp_variable = { trade_amount_temp = PREV.trade_amount_left }
 										set_temp_variable = { trade_value_temp = PREV.cost_amount_left }
 									}
 									else = {
 										set_temp_variable = { price_temp = PREV.cost_amount_left }
 										multiply_temp_variable = { price_temp = 100 }
-										divide_temp_variable = { price_temp = PREV.buy_amount_left }
+										divide_temp_variable = { price_temp = PREV.trade_amount_left }
 
 										set_temp_variable = { trade_value_temp = trade_amount_temp }
 										multiply_temp_variable = { trade_value_temp = price_temp }
@@ -2876,33 +2829,31 @@
 												check_variable = { trade_value_temp > PREV.cost_amount_left }
 											}
 											set_temp_variable = { trade_value_temp = PREV.cost_amount_left }
-											set_temp_variable = { trade_amount_temp = PREV.buy_amount_left }
+											set_temp_variable = { trade_amount_temp = PREV.trade_amount_left }
 										}
 									}
-
+									
 									#RESOLVE
-									subtract_from_variable = { PREV.buy_amount_left = trade_amount_temp }
+									subtract_from_variable = { PREV.trade_amount_left = trade_amount_temp }
 									subtract_from_variable = { PREV.cost_amount_left = trade_value_temp }
 									add_to_variable = { life_goods_trade_amount = trade_amount_temp }
 									add_to_variable = { life_goods_trade_value = trade_value_temp }
 									add_to_variable = { life_goods_supply = trade_amount_temp }
 								}
-								else_if = {
-									limit = {
-										NOT = { check_variable = { PREV.buy_amount_left < 0 } }
-									}
-									set_temp_variable = { cheapest_brk = 1 }
-								}
+							}
+							else = {
+								set_temp_variable = { cheapest_brk = 1 }
 							}
 						}
 					}
+				#
 				#everyday_goods
 					#Importing
 					if = {
 						limit = {
 							check_variable = { everyday_goods_global_trade_amount > 0 }            
 						}
-						set_variable = { buy_amount_left = everyday_goods_global_trade_amount }
+						set_variable = { trade_amount_left = everyday_goods_global_trade_amount }
 						set_variable = { cost_amount_left = everyday_goods_global_trade_value }
 
 						#Loop thru most expensive states to resolve
@@ -2916,38 +2867,33 @@
 							value = ii
 
 
-							#Scopes to state
-							var:everyday_goods_trade_state_array^ii = {
-								if = {
-									limit = {
-										check_variable = { PREV.buy_amount_left > 0 }
-										check_variable = { everyday_goods_demand > everyday_goods_supply }
-									}
+							if = {
+								limit = {
+									check_variable = { trade_amount_left > 0 }
+								}
+								#Scopes to state
+								var:everyday_goods_trade_state_array^ii = {
 									set_temp_variable = { trade_percentage_temp = everyday_goods_demand }
-									subtract_from_temp_variable = { trade_percentage_temp = everyday_goods_supply }
 									multiply_temp_variable = { trade_percentage_temp = 100 }
-									set_temp_variable = { tp_temp = PREV.everyday_goods_demand }
-									subtract_from_temp_variable = { tp_temp = PREV.everyday_goods_supply }
-									add_to_temp_variable = { tp_temp = PREV.everyday_goods_global_trade_amount }
-									divide_temp_variable = { trade_percentage_temp = tp_temp }
+									divide_temp_variable = { trade_percentage_temp = PREV.everyday_goods_demand }
 
 									set_temp_variable = { trade_amount_temp = PREV.everyday_goods_global_trade_amount }
 									multiply_temp_variable = { trade_amount_temp = trade_percentage_temp }
 									divide_temp_variable = { trade_amount_temp = 100 }
 									if = {
 										limit = {
-											check_variable = { trade_amount_temp > PREV.buy_amount_left }
+											check_variable = { trade_amount_temp > PREV.trade_amount_left }
 										}
-										set_temp_variable = { trade_amount_temp = PREV.buy_amount_left }
+										set_temp_variable = { trade_amount_temp = PREV.trade_amount_left }
 									}
 
-									set_temp_variable = { after_goods_temp = PREV.buy_amount_left }
+									set_temp_variable = { after_goods_temp = PREV.trade_amount_left }
 									subtract_from_temp_variable = { after_goods_temp = trade_amount_temp }
 									if = {
 										limit = {
 											check_variable = { after_goods_temp < 0.003 }
 										}
-										set_temp_variable = { trade_amount_temp = PREV.buy_amount_left }
+										set_temp_variable = { trade_amount_temp = PREV.trade_amount_left }
 										set_temp_variable = { trade_value_temp = PREV.cost_amount_left }
 									}
 									else = {
@@ -2959,21 +2905,21 @@
 												check_variable = { trade_value_temp < PREV.cost_amount_left }
 											}
 											set_temp_variable = { trade_value_temp = PREV.cost_amount_left }
-											set_temp_variable = { trade_amount_temp = PREV.buy_amount_left }
+											set_temp_variable = { trade_amount_temp = PREV.trade_amount_left }
 										}
 									}
 									#RESOLVE
-									subtract_from_variable = { PREV.buy_amount_left = trade_amount_temp }
+									subtract_from_variable = { PREV.trade_amount_left = trade_amount_temp }
 									subtract_from_variable = { PREV.cost_amount_left = trade_value_temp }
 									add_to_variable = { everyday_goods_trade_amount = trade_amount_temp }
 									add_to_variable = { everyday_goods_trade_value = trade_value_temp }
 									add_to_variable = { everyday_goods_supply = trade_amount_temp }
 								}
-								else = {
-									set_temp_variable = { cheapest_brk = 1 }
-								}
-
 							}
+							else = {
+								set_temp_variable = { cheapest_brk = 1 }
+							}
+
 						}
 					}
 					#Exporting
@@ -2981,8 +2927,11 @@
 						limit = {
 							check_variable = { everyday_goods_global_trade_amount < 0 }            
 						}
-						set_variable = { buy_amount_left = everyday_goods_global_trade_amount } #Note, this is negative
+						set_variable = { trade_amount_left = everyday_goods_global_trade_amount } #Note, this is negative
 						set_variable = { cost_amount_left = everyday_goods_global_trade_value }
+						set_variable = { original_everyday_goods_supply = everyday_goods_supply }
+						subtract_from_variable = { original_everyday_goods_supply = everyday_goods_global_trade_amount }
+						subtract_from_variable = { original_everyday_goods_supply = everyday_goods_supply_min }
 
 						#Loops thru cheapest states to resolve
 						for_each_loop = {
@@ -2992,34 +2941,30 @@
 							break = cheapest_brk
 
 
-							var:state_temp = {
+							if = {
+								limit = {
+									check_variable = { trade_amount_left < 0 }
+								}
+								var:state_temp = {
+									set_temp_variable = { trade_percentage_temp = everyday_goods_supply }
+									subtract_from_temp_variable = { trade_percentage_temp = everyday_goods_supply_min }
+									multiply_temp_variable = { trade_percentage_temp = 100 }
+									divide_temp_variable = { trade_percentage_temp = PREV.original_everyday_goods_supply }
 
-								if = {
-									limit = {
-										check_variable = { PREV.buy_amount_left < 0 }
-										check_variable = { everyday_goods_supply_min < everyday_goods_supply }
-									}
-									set_temp_variable = { trade_amount_temp = everyday_goods_supply_min }
-									subtract_from_temp_variable = { trade_amount_temp = everyday_goods_supply }
+									set_temp_variable = { trade_amount_temp = PREV.everyday_goods_global_trade_amount }
+									multiply_temp_variable = { trade_amount_temp = trade_percentage_temp }
+									divide_temp_variable = { trade_amount_temp = 100 }
 									if = {
 										limit = {
-											check_variable = { trade_amount_temp < PREV.buy_amount_left }
+											NOT = { check_variable = { trade_amount_temp > PREV.trade_amount_left } }
 										}
-										set_temp_variable = { trade_amount_temp = PREV.buy_amount_left }
-									}
-
-									set_temp_variable = { after_goods_temp = PREV.buy_amount_left }
-									subtract_from_temp_variable = { after_goods_temp = trade_amount_temp }
-									if = {
-										limit = {
-											check_variable = { after_goods_temp = 0 }
-										}
+										set_temp_variable = { trade_amount_temp = PREV.trade_amount_left }
 										set_temp_variable = { trade_value_temp = PREV.cost_amount_left }
 									}
 									else = {
 										set_temp_variable = { price_temp = PREV.cost_amount_left }
 										multiply_temp_variable = { price_temp = 100 }
-										divide_temp_variable = { price_temp = PREV.buy_amount_left }
+										divide_temp_variable = { price_temp = PREV.trade_amount_left }
 
 										set_temp_variable = { trade_value_temp = trade_amount_temp }
 										multiply_temp_variable = { trade_value_temp = price_temp }
@@ -3029,33 +2974,31 @@
 												check_variable = { trade_value_temp > PREV.cost_amount_left }
 											}
 											set_temp_variable = { trade_value_temp = PREV.cost_amount_left }
-											set_temp_variable = { trade_amount_temp = PREV.buy_amount_left }
+											set_temp_variable = { trade_amount_temp = PREV.trade_amount_left }
 										}
 									}
 									
 									#RESOLVE
-									subtract_from_variable = { PREV.buy_amount_left = trade_amount_temp }
+									subtract_from_variable = { PREV.trade_amount_left = trade_amount_temp }
 									subtract_from_variable = { PREV.cost_amount_left = trade_value_temp }
 									add_to_variable = { everyday_goods_trade_amount = trade_amount_temp }
 									add_to_variable = { everyday_goods_trade_value = trade_value_temp }
 									add_to_variable = { everyday_goods_supply = trade_amount_temp }
 								}
-								else_if = {
-									limit = {
-										NOT = { check_variable = { PREV.buy_amount_left < 0 } }
-									}
-									set_temp_variable = { cheapest_brk = 1 }
-								}
+							}
+							else = {
+								set_temp_variable = { cheapest_brk = 1 }
 							}
 						}
 					}
+				#
 				#luxury_goods
 					#Importing
 					if = {
 						limit = {
 							check_variable = { luxury_goods_global_trade_amount > 0 }            
 						}
-						set_variable = { buy_amount_left = luxury_goods_global_trade_amount }
+						set_variable = { trade_amount_left = luxury_goods_global_trade_amount }
 						set_variable = { cost_amount_left = luxury_goods_global_trade_value }
 
 						#Loop thru most expensive states to resolve
@@ -3069,38 +3012,33 @@
 							value = ii
 
 
-							#Scopes to state
-							var:luxury_goods_trade_state_array^ii = {
-								if = {
-									limit = {
-										check_variable = { PREV.buy_amount_left > 0 }
-										check_variable = { luxury_goods_demand > luxury_goods_supply }
-									}
+							if = {
+								limit = {
+									check_variable = { trade_amount_left > 0 }
+								}
+								#Scopes to state
+								var:luxury_goods_trade_state_array^ii = {
 									set_temp_variable = { trade_percentage_temp = luxury_goods_demand }
-									subtract_from_temp_variable = { trade_percentage_temp = luxury_goods_supply }
 									multiply_temp_variable = { trade_percentage_temp = 100 }
-									set_temp_variable = { tp_temp = PREV.luxury_goods_demand }
-									subtract_from_temp_variable = { tp_temp = PREV.luxury_goods_supply }
-									add_to_temp_variable = { tp_temp = PREV.luxury_goods_global_trade_amount }
-									divide_temp_variable = { trade_percentage_temp = tp_temp }
+									divide_temp_variable = { trade_percentage_temp = PREV.luxury_goods_demand }
 
 									set_temp_variable = { trade_amount_temp = PREV.luxury_goods_global_trade_amount }
 									multiply_temp_variable = { trade_amount_temp = trade_percentage_temp }
 									divide_temp_variable = { trade_amount_temp = 100 }
 									if = {
 										limit = {
-											check_variable = { trade_amount_temp > PREV.buy_amount_left }
+											check_variable = { trade_amount_temp > PREV.trade_amount_left }
 										}
-										set_temp_variable = { trade_amount_temp = PREV.buy_amount_left }
+										set_temp_variable = { trade_amount_temp = PREV.trade_amount_left }
 									}
 
-									set_temp_variable = { after_goods_temp = PREV.buy_amount_left }
+									set_temp_variable = { after_goods_temp = PREV.trade_amount_left }
 									subtract_from_temp_variable = { after_goods_temp = trade_amount_temp }
 									if = {
 										limit = {
 											check_variable = { after_goods_temp < 0.003 }
 										}
-										set_temp_variable = { trade_amount_temp = PREV.buy_amount_left }
+										set_temp_variable = { trade_amount_temp = PREV.trade_amount_left }
 										set_temp_variable = { trade_value_temp = PREV.cost_amount_left }
 									}
 									else = {
@@ -3112,21 +3050,21 @@
 												check_variable = { trade_value_temp < PREV.cost_amount_left }
 											}
 											set_temp_variable = { trade_value_temp = PREV.cost_amount_left }
-											set_temp_variable = { trade_amount_temp = PREV.buy_amount_left }
+											set_temp_variable = { trade_amount_temp = PREV.trade_amount_left }
 										}
 									}
 									#RESOLVE
-									subtract_from_variable = { PREV.buy_amount_left = trade_amount_temp }
+									subtract_from_variable = { PREV.trade_amount_left = trade_amount_temp }
 									subtract_from_variable = { PREV.cost_amount_left = trade_value_temp }
 									add_to_variable = { luxury_goods_trade_amount = trade_amount_temp }
 									add_to_variable = { luxury_goods_trade_value = trade_value_temp }
 									add_to_variable = { luxury_goods_supply = trade_amount_temp }
 								}
-								else = {
-									set_temp_variable = { cheapest_brk = 1 }
-								}
-
 							}
+							else = {
+								set_temp_variable = { cheapest_brk = 1 }
+							}
+
 						}
 					}
 					#Exporting
@@ -3134,8 +3072,11 @@
 						limit = {
 							check_variable = { luxury_goods_global_trade_amount < 0 }            
 						}
-						set_variable = { buy_amount_left = luxury_goods_global_trade_amount } #Note, this is negative
+						set_variable = { trade_amount_left = luxury_goods_global_trade_amount } #Note, this is negative
 						set_variable = { cost_amount_left = luxury_goods_global_trade_value }
+						set_variable = { original_luxury_goods_supply = luxury_goods_supply }
+						subtract_from_variable = { original_luxury_goods_supply = luxury_goods_global_trade_amount }
+						subtract_from_variable = { original_luxury_goods_supply = luxury_goods_supply_min }
 
 						#Loops thru cheapest states to resolve
 						for_each_loop = {
@@ -3145,34 +3086,30 @@
 							break = cheapest_brk
 
 
-							var:state_temp = {
+							if = {
+								limit = {
+									check_variable = { trade_amount_left < 0 }
+								}
+								var:state_temp = {
+									set_temp_variable = { trade_percentage_temp = luxury_goods_supply }
+									subtract_from_temp_variable = { trade_percentage_temp = luxury_goods_supply_min }
+									multiply_temp_variable = { trade_percentage_temp = 100 }
+									divide_temp_variable = { trade_percentage_temp = PREV.original_luxury_goods_supply }
 
-								if = {
-									limit = {
-										check_variable = { PREV.buy_amount_left < 0 }
-										check_variable = { luxury_goods_supply_min < luxury_goods_supply }
-									}
-									set_temp_variable = { trade_amount_temp = luxury_goods_supply_min }
-									subtract_from_temp_variable = { trade_amount_temp = luxury_goods_supply }
+									set_temp_variable = { trade_amount_temp = PREV.luxury_goods_global_trade_amount }
+									multiply_temp_variable = { trade_amount_temp = trade_percentage_temp }
+									divide_temp_variable = { trade_amount_temp = 100 }
 									if = {
 										limit = {
-											check_variable = { trade_amount_temp < PREV.buy_amount_left }
+											NOT = { check_variable = { trade_amount_temp > PREV.trade_amount_left } }
 										}
-										set_temp_variable = { trade_amount_temp = PREV.buy_amount_left }
-									}
-
-									set_temp_variable = { after_goods_temp = PREV.buy_amount_left }
-									subtract_from_temp_variable = { after_goods_temp = trade_amount_temp }
-									if = {
-										limit = {
-											check_variable = { after_goods_temp = 0 }
-										}
+										set_temp_variable = { trade_amount_temp = PREV.trade_amount_left }
 										set_temp_variable = { trade_value_temp = PREV.cost_amount_left }
 									}
 									else = {
 										set_temp_variable = { price_temp = PREV.cost_amount_left }
 										multiply_temp_variable = { price_temp = 100 }
-										divide_temp_variable = { price_temp = PREV.buy_amount_left }
+										divide_temp_variable = { price_temp = PREV.trade_amount_left }
 
 										set_temp_variable = { trade_value_temp = trade_amount_temp }
 										multiply_temp_variable = { trade_value_temp = price_temp }
@@ -3182,33 +3119,31 @@
 												check_variable = { trade_value_temp > PREV.cost_amount_left }
 											}
 											set_temp_variable = { trade_value_temp = PREV.cost_amount_left }
-											set_temp_variable = { trade_amount_temp = PREV.buy_amount_left }
+											set_temp_variable = { trade_amount_temp = PREV.trade_amount_left }
 										}
 									}
 									
 									#RESOLVE
-									subtract_from_variable = { PREV.buy_amount_left = trade_amount_temp }
+									subtract_from_variable = { PREV.trade_amount_left = trade_amount_temp }
 									subtract_from_variable = { PREV.cost_amount_left = trade_value_temp }
 									add_to_variable = { luxury_goods_trade_amount = trade_amount_temp }
 									add_to_variable = { luxury_goods_trade_value = trade_value_temp }
 									add_to_variable = { luxury_goods_supply = trade_amount_temp }
 								}
-								else_if = {
-									limit = {
-										NOT = { check_variable = { PREV.buy_amount_left < 0 } }
-									}
-									set_temp_variable = { cheapest_brk = 1 }
-								}
+							}
+							else = {
+								set_temp_variable = { cheapest_brk = 1 }
 							}
 						}
 					}
+				#
 				#services
 					#Importing
 					if = {
 						limit = {
 							check_variable = { services_global_trade_amount > 0 }            
 						}
-						set_variable = { buy_amount_left = services_global_trade_amount }
+						set_variable = { trade_amount_left = services_global_trade_amount }
 						set_variable = { cost_amount_left = services_global_trade_value }
 
 						#Loop thru most expensive states to resolve
@@ -3222,38 +3157,33 @@
 							value = ii
 
 
-							#Scopes to state
-							var:services_trade_state_array^ii = {
-								if = {
-									limit = {
-										check_variable = { PREV.buy_amount_left > 0 }
-										check_variable = { services_demand > services_supply }
-									}
+							if = {
+								limit = {
+									check_variable = { trade_amount_left > 0 }
+								}
+								#Scopes to state
+								var:services_trade_state_array^ii = {
 									set_temp_variable = { trade_percentage_temp = services_demand }
-									subtract_from_temp_variable = { trade_percentage_temp = services_supply }
 									multiply_temp_variable = { trade_percentage_temp = 100 }
-									set_temp_variable = { tp_temp = PREV.services_demand }
-									subtract_from_temp_variable = { tp_temp = PREV.services_supply }
-									add_to_temp_variable = { tp_temp = PREV.services_global_trade_amount }
-									divide_temp_variable = { trade_percentage_temp = tp_temp }
+									divide_temp_variable = { trade_percentage_temp = PREV.services_demand }
 
 									set_temp_variable = { trade_amount_temp = PREV.services_global_trade_amount }
 									multiply_temp_variable = { trade_amount_temp = trade_percentage_temp }
 									divide_temp_variable = { trade_amount_temp = 100 }
 									if = {
 										limit = {
-											check_variable = { trade_amount_temp > PREV.buy_amount_left }
+											check_variable = { trade_amount_temp > PREV.trade_amount_left }
 										}
-										set_temp_variable = { trade_amount_temp = PREV.buy_amount_left }
+										set_temp_variable = { trade_amount_temp = PREV.trade_amount_left }
 									}
 
-									set_temp_variable = { after_goods_temp = PREV.buy_amount_left }
+									set_temp_variable = { after_goods_temp = PREV.trade_amount_left }
 									subtract_from_temp_variable = { after_goods_temp = trade_amount_temp }
 									if = {
 										limit = {
 											check_variable = { after_goods_temp < 0.003 }
 										}
-										set_temp_variable = { trade_amount_temp = PREV.buy_amount_left }
+										set_temp_variable = { trade_amount_temp = PREV.trade_amount_left }
 										set_temp_variable = { trade_value_temp = PREV.cost_amount_left }
 									}
 									else = {
@@ -3265,21 +3195,21 @@
 												check_variable = { trade_value_temp < PREV.cost_amount_left }
 											}
 											set_temp_variable = { trade_value_temp = PREV.cost_amount_left }
-											set_temp_variable = { trade_amount_temp = PREV.buy_amount_left }
+											set_temp_variable = { trade_amount_temp = PREV.trade_amount_left }
 										}
 									}
 									#RESOLVE
-									subtract_from_variable = { PREV.buy_amount_left = trade_amount_temp }
+									subtract_from_variable = { PREV.trade_amount_left = trade_amount_temp }
 									subtract_from_variable = { PREV.cost_amount_left = trade_value_temp }
 									add_to_variable = { services_trade_amount = trade_amount_temp }
 									add_to_variable = { services_trade_value = trade_value_temp }
 									add_to_variable = { services_supply = trade_amount_temp }
 								}
-								else = {
-									set_temp_variable = { cheapest_brk = 1 }
-								}
-
 							}
+							else = {
+								set_temp_variable = { cheapest_brk = 1 }
+							}
+
 						}
 					}
 					#Exporting
@@ -3287,8 +3217,11 @@
 						limit = {
 							check_variable = { services_global_trade_amount < 0 }            
 						}
-						set_variable = { buy_amount_left = services_global_trade_amount } #Note, this is negative
+						set_variable = { trade_amount_left = services_global_trade_amount } #Note, this is negative
 						set_variable = { cost_amount_left = services_global_trade_value }
+						set_variable = { original_services_supply = services_supply }
+						subtract_from_variable = { original_services_supply = services_global_trade_amount }
+						subtract_from_variable = { original_services_supply = services_supply_min }
 
 						#Loops thru cheapest states to resolve
 						for_each_loop = {
@@ -3298,34 +3231,30 @@
 							break = cheapest_brk
 
 
-							var:state_temp = {
+							if = {
+								limit = {
+									check_variable = { trade_amount_left < 0 }
+								}
+								var:state_temp = {
+									set_temp_variable = { trade_percentage_temp = services_supply }
+									subtract_from_temp_variable = { trade_percentage_temp = services_supply_min }
+									multiply_temp_variable = { trade_percentage_temp = 100 }
+									divide_temp_variable = { trade_percentage_temp = PREV.original_services_supply }
 
-								if = {
-									limit = {
-										check_variable = { PREV.buy_amount_left < 0 }
-										check_variable = { services_supply_min < services_supply }
-									}
-									set_temp_variable = { trade_amount_temp = services_supply_min }
-									subtract_from_temp_variable = { trade_amount_temp = services_supply }
+									set_temp_variable = { trade_amount_temp = PREV.services_global_trade_amount }
+									multiply_temp_variable = { trade_amount_temp = trade_percentage_temp }
+									divide_temp_variable = { trade_amount_temp = 100 }
 									if = {
 										limit = {
-											check_variable = { trade_amount_temp < PREV.buy_amount_left }
+											NOT = { check_variable = { trade_amount_temp > PREV.trade_amount_left } }
 										}
-										set_temp_variable = { trade_amount_temp = PREV.buy_amount_left }
-									}
-
-									set_temp_variable = { after_goods_temp = PREV.buy_amount_left }
-									subtract_from_temp_variable = { after_goods_temp = trade_amount_temp }
-									if = {
-										limit = {
-											check_variable = { after_goods_temp = 0 }
-										}
+										set_temp_variable = { trade_amount_temp = PREV.trade_amount_left }
 										set_temp_variable = { trade_value_temp = PREV.cost_amount_left }
 									}
 									else = {
 										set_temp_variable = { price_temp = PREV.cost_amount_left }
 										multiply_temp_variable = { price_temp = 100 }
-										divide_temp_variable = { price_temp = PREV.buy_amount_left }
+										divide_temp_variable = { price_temp = PREV.trade_amount_left }
 
 										set_temp_variable = { trade_value_temp = trade_amount_temp }
 										multiply_temp_variable = { trade_value_temp = price_temp }
@@ -3335,33 +3264,31 @@
 												check_variable = { trade_value_temp > PREV.cost_amount_left }
 											}
 											set_temp_variable = { trade_value_temp = PREV.cost_amount_left }
-											set_temp_variable = { trade_amount_temp = PREV.buy_amount_left }
+											set_temp_variable = { trade_amount_temp = PREV.trade_amount_left }
 										}
 									}
 									
 									#RESOLVE
-									subtract_from_variable = { PREV.buy_amount_left = trade_amount_temp }
+									subtract_from_variable = { PREV.trade_amount_left = trade_amount_temp }
 									subtract_from_variable = { PREV.cost_amount_left = trade_value_temp }
 									add_to_variable = { services_trade_amount = trade_amount_temp }
 									add_to_variable = { services_trade_value = trade_value_temp }
 									add_to_variable = { services_supply = trade_amount_temp }
 								}
-								else_if = {
-									limit = {
-										NOT = { check_variable = { PREV.buy_amount_left < 0 } }
-									}
-									set_temp_variable = { cheapest_brk = 1 }
-								}
+							}
+							else = {
+								set_temp_variable = { cheapest_brk = 1 }
 							}
 						}
 					}
+				#
 				#raw_goods
 					#Importing
 					if = {
 						limit = {
 							check_variable = { raw_goods_global_trade_amount > 0 }            
 						}
-						set_variable = { buy_amount_left = raw_goods_global_trade_amount }
+						set_variable = { trade_amount_left = raw_goods_global_trade_amount }
 						set_variable = { cost_amount_left = raw_goods_global_trade_value }
 
 						#Loop thru most expensive states to resolve
@@ -3375,38 +3302,33 @@
 							value = ii
 
 
-							#Scopes to state
-							var:raw_goods_trade_state_array^ii = {
-								if = {
-									limit = {
-										check_variable = { PREV.buy_amount_left > 0 }
-										check_variable = { raw_goods_demand > raw_goods_supply }
-									}
+							if = {
+								limit = {
+									check_variable = { trade_amount_left > 0 }
+								}
+								#Scopes to state
+								var:raw_goods_trade_state_array^ii = {
 									set_temp_variable = { trade_percentage_temp = raw_goods_demand }
-									subtract_from_temp_variable = { trade_percentage_temp = raw_goods_supply }
 									multiply_temp_variable = { trade_percentage_temp = 100 }
-									set_temp_variable = { tp_temp = PREV.raw_goods_demand }
-									subtract_from_temp_variable = { tp_temp = PREV.raw_goods_supply }
-									add_to_temp_variable = { tp_temp = PREV.raw_goods_global_trade_amount }
-									divide_temp_variable = { trade_percentage_temp = tp_temp }
+									divide_temp_variable = { trade_percentage_temp = PREV.raw_goods_demand }
 
 									set_temp_variable = { trade_amount_temp = PREV.raw_goods_global_trade_amount }
 									multiply_temp_variable = { trade_amount_temp = trade_percentage_temp }
 									divide_temp_variable = { trade_amount_temp = 100 }
 									if = {
 										limit = {
-											check_variable = { trade_amount_temp > PREV.buy_amount_left }
+											check_variable = { trade_amount_temp > PREV.trade_amount_left }
 										}
-										set_temp_variable = { trade_amount_temp = PREV.buy_amount_left }
+										set_temp_variable = { trade_amount_temp = PREV.trade_amount_left }
 									}
 
-									set_temp_variable = { after_goods_temp = PREV.buy_amount_left }
+									set_temp_variable = { after_goods_temp = PREV.trade_amount_left }
 									subtract_from_temp_variable = { after_goods_temp = trade_amount_temp }
 									if = {
 										limit = {
 											check_variable = { after_goods_temp < 0.003 }
 										}
-										set_temp_variable = { trade_amount_temp = PREV.buy_amount_left }
+										set_temp_variable = { trade_amount_temp = PREV.trade_amount_left }
 										set_temp_variable = { trade_value_temp = PREV.cost_amount_left }
 									}
 									else = {
@@ -3418,21 +3340,21 @@
 												check_variable = { trade_value_temp < PREV.cost_amount_left }
 											}
 											set_temp_variable = { trade_value_temp = PREV.cost_amount_left }
-											set_temp_variable = { trade_amount_temp = PREV.buy_amount_left }
+											set_temp_variable = { trade_amount_temp = PREV.trade_amount_left }
 										}
 									}
 									#RESOLVE
-									subtract_from_variable = { PREV.buy_amount_left = trade_amount_temp }
+									subtract_from_variable = { PREV.trade_amount_left = trade_amount_temp }
 									subtract_from_variable = { PREV.cost_amount_left = trade_value_temp }
 									add_to_variable = { raw_goods_trade_amount = trade_amount_temp }
 									add_to_variable = { raw_goods_trade_value = trade_value_temp }
 									add_to_variable = { raw_goods_supply = trade_amount_temp }
 								}
-								else = {
-									set_temp_variable = { cheapest_brk = 1 }
-								}
-
 							}
+							else = {
+								set_temp_variable = { cheapest_brk = 1 }
+							}
+
 						}
 					}
 					#Exporting
@@ -3440,8 +3362,11 @@
 						limit = {
 							check_variable = { raw_goods_global_trade_amount < 0 }            
 						}
-						set_variable = { buy_amount_left = raw_goods_global_trade_amount } #Note, this is negative
+						set_variable = { trade_amount_left = raw_goods_global_trade_amount } #Note, this is negative
 						set_variable = { cost_amount_left = raw_goods_global_trade_value }
+						set_variable = { original_raw_goods_supply = raw_goods_supply }
+						subtract_from_variable = { original_raw_goods_supply = raw_goods_global_trade_amount }
+						subtract_from_variable = { original_raw_goods_supply = raw_goods_supply_min }
 
 						#Loops thru cheapest states to resolve
 						for_each_loop = {
@@ -3451,34 +3376,30 @@
 							break = cheapest_brk
 
 
-							var:state_temp = {
+							if = {
+								limit = {
+									check_variable = { trade_amount_left < 0 }
+								}
+								var:state_temp = {
+									set_temp_variable = { trade_percentage_temp = raw_goods_supply }
+									subtract_from_temp_variable = { trade_percentage_temp = raw_goods_supply_min }
+									multiply_temp_variable = { trade_percentage_temp = 100 }
+									divide_temp_variable = { trade_percentage_temp = PREV.original_raw_goods_supply }
 
-								if = {
-									limit = {
-										check_variable = { PREV.buy_amount_left < 0 }
-										check_variable = { raw_goods_supply_min < raw_goods_supply }
-									}
-									set_temp_variable = { trade_amount_temp = raw_goods_supply_min }
-									subtract_from_temp_variable = { trade_amount_temp = raw_goods_supply }
+									set_temp_variable = { trade_amount_temp = PREV.raw_goods_global_trade_amount }
+									multiply_temp_variable = { trade_amount_temp = trade_percentage_temp }
+									divide_temp_variable = { trade_amount_temp = 100 }
 									if = {
 										limit = {
-											check_variable = { trade_amount_temp < PREV.buy_amount_left }
+											NOT = { check_variable = { trade_amount_temp > PREV.trade_amount_left } }
 										}
-										set_temp_variable = { trade_amount_temp = PREV.buy_amount_left }
-									}
-
-									set_temp_variable = { after_goods_temp = PREV.buy_amount_left }
-									subtract_from_temp_variable = { after_goods_temp = trade_amount_temp }
-									if = {
-										limit = {
-											check_variable = { after_goods_temp = 0 }
-										}
+										set_temp_variable = { trade_amount_temp = PREV.trade_amount_left }
 										set_temp_variable = { trade_value_temp = PREV.cost_amount_left }
 									}
 									else = {
 										set_temp_variable = { price_temp = PREV.cost_amount_left }
 										multiply_temp_variable = { price_temp = 100 }
-										divide_temp_variable = { price_temp = PREV.buy_amount_left }
+										divide_temp_variable = { price_temp = PREV.trade_amount_left }
 
 										set_temp_variable = { trade_value_temp = trade_amount_temp }
 										multiply_temp_variable = { trade_value_temp = price_temp }
@@ -3488,33 +3409,31 @@
 												check_variable = { trade_value_temp > PREV.cost_amount_left }
 											}
 											set_temp_variable = { trade_value_temp = PREV.cost_amount_left }
-											set_temp_variable = { trade_amount_temp = PREV.buy_amount_left }
+											set_temp_variable = { trade_amount_temp = PREV.trade_amount_left }
 										}
 									}
 									
 									#RESOLVE
-									subtract_from_variable = { PREV.buy_amount_left = trade_amount_temp }
+									subtract_from_variable = { PREV.trade_amount_left = trade_amount_temp }
 									subtract_from_variable = { PREV.cost_amount_left = trade_value_temp }
 									add_to_variable = { raw_goods_trade_amount = trade_amount_temp }
 									add_to_variable = { raw_goods_trade_value = trade_value_temp }
 									add_to_variable = { raw_goods_supply = trade_amount_temp }
 								}
-								else_if = {
-									limit = {
-										NOT = { check_variable = { PREV.buy_amount_left < 0 } }
-									}
-									set_temp_variable = { cheapest_brk = 1 }
-								}
+							}
+							else = {
+								set_temp_variable = { cheapest_brk = 1 }
 							}
 						}
 					}
+				#
 				#industrial_goods
 					#Importing
 					if = {
 						limit = {
 							check_variable = { industrial_goods_global_trade_amount > 0 }            
 						}
-						set_variable = { buy_amount_left = industrial_goods_global_trade_amount }
+						set_variable = { trade_amount_left = industrial_goods_global_trade_amount }
 						set_variable = { cost_amount_left = industrial_goods_global_trade_value }
 
 						#Loop thru most expensive states to resolve
@@ -3528,38 +3447,33 @@
 							value = ii
 
 
-							#Scopes to state
-							var:industrial_goods_trade_state_array^ii = {
-								if = {
-									limit = {
-										check_variable = { PREV.buy_amount_left > 0 }
-										check_variable = { industrial_goods_demand > industrial_goods_supply }
-									}
+							if = {
+								limit = {
+									check_variable = { trade_amount_left > 0 }
+								}
+								#Scopes to state
+								var:industrial_goods_trade_state_array^ii = {
 									set_temp_variable = { trade_percentage_temp = industrial_goods_demand }
-									subtract_from_temp_variable = { trade_percentage_temp = industrial_goods_supply }
 									multiply_temp_variable = { trade_percentage_temp = 100 }
-									set_temp_variable = { tp_temp = PREV.industrial_goods_demand }
-									subtract_from_temp_variable = { tp_temp = PREV.industrial_goods_supply }
-									add_to_temp_variable = { tp_temp = PREV.industrial_goods_global_trade_amount }
-									divide_temp_variable = { trade_percentage_temp = tp_temp }
+									divide_temp_variable = { trade_percentage_temp = PREV.industrial_goods_demand }
 
 									set_temp_variable = { trade_amount_temp = PREV.industrial_goods_global_trade_amount }
 									multiply_temp_variable = { trade_amount_temp = trade_percentage_temp }
 									divide_temp_variable = { trade_amount_temp = 100 }
 									if = {
 										limit = {
-											check_variable = { trade_amount_temp > PREV.buy_amount_left }
+											check_variable = { trade_amount_temp > PREV.trade_amount_left }
 										}
-										set_temp_variable = { trade_amount_temp = PREV.buy_amount_left }
+										set_temp_variable = { trade_amount_temp = PREV.trade_amount_left }
 									}
 
-									set_temp_variable = { after_goods_temp = PREV.buy_amount_left }
+									set_temp_variable = { after_goods_temp = PREV.trade_amount_left }
 									subtract_from_temp_variable = { after_goods_temp = trade_amount_temp }
 									if = {
 										limit = {
 											check_variable = { after_goods_temp < 0.003 }
 										}
-										set_temp_variable = { trade_amount_temp = PREV.buy_amount_left }
+										set_temp_variable = { trade_amount_temp = PREV.trade_amount_left }
 										set_temp_variable = { trade_value_temp = PREV.cost_amount_left }
 									}
 									else = {
@@ -3571,21 +3485,21 @@
 												check_variable = { trade_value_temp < PREV.cost_amount_left }
 											}
 											set_temp_variable = { trade_value_temp = PREV.cost_amount_left }
-											set_temp_variable = { trade_amount_temp = PREV.buy_amount_left }
+											set_temp_variable = { trade_amount_temp = PREV.trade_amount_left }
 										}
 									}
 									#RESOLVE
-									subtract_from_variable = { PREV.buy_amount_left = trade_amount_temp }
+									subtract_from_variable = { PREV.trade_amount_left = trade_amount_temp }
 									subtract_from_variable = { PREV.cost_amount_left = trade_value_temp }
 									add_to_variable = { industrial_goods_trade_amount = trade_amount_temp }
 									add_to_variable = { industrial_goods_trade_value = trade_value_temp }
 									add_to_variable = { industrial_goods_supply = trade_amount_temp }
 								}
-								else = {
-									set_temp_variable = { cheapest_brk = 1 }
-								}
-
 							}
+							else = {
+								set_temp_variable = { cheapest_brk = 1 }
+							}
+
 						}
 					}
 					#Exporting
@@ -3593,8 +3507,11 @@
 						limit = {
 							check_variable = { industrial_goods_global_trade_amount < 0 }            
 						}
-						set_variable = { buy_amount_left = industrial_goods_global_trade_amount } #Note, this is negative
+						set_variable = { trade_amount_left = industrial_goods_global_trade_amount } #Note, this is negative
 						set_variable = { cost_amount_left = industrial_goods_global_trade_value }
+						set_variable = { original_industrial_goods_supply = industrial_goods_supply }
+						subtract_from_variable = { original_industrial_goods_supply = industrial_goods_global_trade_amount }
+						subtract_from_variable = { original_industrial_goods_supply = industrial_goods_supply_min }
 
 						#Loops thru cheapest states to resolve
 						for_each_loop = {
@@ -3604,34 +3521,30 @@
 							break = cheapest_brk
 
 
-							var:state_temp = {
+							if = {
+								limit = {
+									check_variable = { trade_amount_left < 0 }
+								}
+								var:state_temp = {
+									set_temp_variable = { trade_percentage_temp = industrial_goods_supply }
+									subtract_from_temp_variable = { trade_percentage_temp = industrial_goods_supply_min }
+									multiply_temp_variable = { trade_percentage_temp = 100 }
+									divide_temp_variable = { trade_percentage_temp = PREV.original_industrial_goods_supply }
 
-								if = {
-									limit = {
-										check_variable = { PREV.buy_amount_left < 0 }
-										check_variable = { industrial_goods_supply_min < industrial_goods_supply }
-									}
-									set_temp_variable = { trade_amount_temp = industrial_goods_supply_min }
-									subtract_from_temp_variable = { trade_amount_temp = industrial_goods_supply }
+									set_temp_variable = { trade_amount_temp = PREV.industrial_goods_global_trade_amount }
+									multiply_temp_variable = { trade_amount_temp = trade_percentage_temp }
+									divide_temp_variable = { trade_amount_temp = 100 }
 									if = {
 										limit = {
-											check_variable = { trade_amount_temp < PREV.buy_amount_left }
+											NOT = { check_variable = { trade_amount_temp > PREV.trade_amount_left } }
 										}
-										set_temp_variable = { trade_amount_temp = PREV.buy_amount_left }
-									}
-
-									set_temp_variable = { after_goods_temp = PREV.buy_amount_left }
-									subtract_from_temp_variable = { after_goods_temp = trade_amount_temp }
-									if = {
-										limit = {
-											check_variable = { after_goods_temp = 0 }
-										}
+										set_temp_variable = { trade_amount_temp = PREV.trade_amount_left }
 										set_temp_variable = { trade_value_temp = PREV.cost_amount_left }
 									}
 									else = {
 										set_temp_variable = { price_temp = PREV.cost_amount_left }
 										multiply_temp_variable = { price_temp = 100 }
-										divide_temp_variable = { price_temp = PREV.buy_amount_left }
+										divide_temp_variable = { price_temp = PREV.trade_amount_left }
 
 										set_temp_variable = { trade_value_temp = trade_amount_temp }
 										multiply_temp_variable = { trade_value_temp = price_temp }
@@ -3641,28 +3554,25 @@
 												check_variable = { trade_value_temp > PREV.cost_amount_left }
 											}
 											set_temp_variable = { trade_value_temp = PREV.cost_amount_left }
-											set_temp_variable = { trade_amount_temp = PREV.buy_amount_left }
+											set_temp_variable = { trade_amount_temp = PREV.trade_amount_left }
 										}
 									}
 									
 									#RESOLVE
-									subtract_from_variable = { PREV.buy_amount_left = trade_amount_temp }
+									subtract_from_variable = { PREV.trade_amount_left = trade_amount_temp }
 									subtract_from_variable = { PREV.cost_amount_left = trade_value_temp }
 									add_to_variable = { industrial_goods_trade_amount = trade_amount_temp }
 									add_to_variable = { industrial_goods_trade_value = trade_value_temp }
 									add_to_variable = { industrial_goods_supply = trade_amount_temp }
 								}
-								else_if = {
-									limit = {
-										NOT = { check_variable = { PREV.buy_amount_left < 0 } }
-									}
-									set_temp_variable = { cheapest_brk = 1 }
-								}
+							}
+							else = {
+								set_temp_variable = { cheapest_brk = 1 }
 							}
 						}
 					}
 				#
-				clear_variable = buy_amount_left
+				clear_variable = trade_amount_left
 				clear_variable = cost_amount_left
 			#
 
@@ -3685,7 +3595,6 @@
 								min = 0
 								max = 1
 							}
-							add_to_variable = { gdp_amount = life_goods_trade_value }
 						}
 						#Exporting
 						else_if = {
@@ -3697,7 +3606,6 @@
 							add_to_variable = { pops_earnings = life_goods_trade_value }
 							add_to_variable = { rgos_earnings = life_goods_trade_value }
 							subtract_from_variable = { pops_rgos_life_goods_sold = life_goods_trade_amount }
-							add_to_variable = { gdp_amount = life_goods_trade_value }
 						}
 
 					#everyday_goods
@@ -3717,7 +3625,6 @@
 								min = 0
 								max = 1
 							}
-							add_to_variable = { gdp_amount = everyday_goods_trade_value }
 						}
 						#Exporting
 						else_if = {
@@ -3785,7 +3692,6 @@
 							add_to_variable = { pops_earnings = artisan_trade_value }
 							subtract_from_variable = { pops_artisans_everyday_goods_sold = artisan_trade_amount }
 
-							add_to_variable = { gdp_amount = everyday_goods_trade_value }
 						}
 
 					#luxury_goods
@@ -3805,7 +3711,6 @@
 								min = 0
 								max = 1
 							}
-							add_to_variable = { gdp_amount = luxury_goods_trade_value }
 						}
 						#Exporting
 						else_if = {
@@ -3873,7 +3778,6 @@
 							add_to_variable = { pops_earnings = artisan_trade_value }
 							subtract_from_variable = { pops_artisans_luxury_goods_sold = artisan_trade_amount }
 
-							add_to_variable = { gdp_amount = luxury_goods_trade_value }
 						}
 
 					#services
@@ -3893,7 +3797,6 @@
 								min = 0
 								max = 1
 							}
-							add_to_variable = { gdp_amount = services_trade_value }
 						}
 						#Exporting
 						else_if = {
@@ -3934,7 +3837,6 @@
 							add_to_variable = { professionals_earnings = professionals_value }
 
 							subtract_from_variable = { pops_services_sold = services_trade_amount }
-							add_to_variable = { gdp_amount = services_trade_value }
 						}
 
 					#raw_goods
@@ -4009,7 +3911,6 @@
 								max = 1
 							}
 
-							add_to_variable = { gdp_amount = raw_goods_trade_value }
 						}
 						#Exporting
 						else_if = {
@@ -4023,7 +3924,6 @@
 
 							subtract_from_variable = { pops_rgos_raw_goods_sold = raw_goods_trade_amount }
 
-							add_to_variable = { gdp_amount = raw_goods_trade_value }
 						}
 
 					#industrial_goods
@@ -4225,10 +4125,6 @@
 									subtract_from_variable = { factory_spending = infrastructure_construction_investment_money }
 									set_variable = { infrastructure_construction_investment_money = 0 }
 								}
-								subtract_from_variable = { gdp_amount = construction_everyday_goods_trade_value }
-								subtract_from_variable = { gdp_amount = construction_luxury_goods_trade_value }
-								subtract_from_variable = { gdp_amount = construction_industrial_goods_trade_value }
-								subtract_from_variable = { gdp_amount = construction_infrastructure_trade_value }
 
 							}
 							else = {
@@ -4273,9 +4169,6 @@
 								min = 0
 								max = 1
 							}
-
-
-							add_to_variable = { gdp_amount = industrial_goods_trade_value }
 						}
 						#Exporting
 						else_if = {
@@ -4342,8 +4235,6 @@
 							add_to_variable = { artisans_earnings = artisan_trade_value }
 							add_to_variable = { pops_earnings = artisan_trade_value }
 							subtract_from_variable = { pops_artisans_industrial_goods_sold = artisan_trade_amount }
-
-							add_to_variable = { gdp_amount = industrial_goods_trade_value }
 						}
 
 				}
@@ -4857,7 +4748,7 @@
 					}
 					set_variable = { money_supply = 0 }
 					for_each_loop = {
-						array = gdp_amount_array
+						array = total_money_array
 						value = vv
 						index = ii
 						add_to_variable = { money_supply = vv }
@@ -4908,7 +4799,7 @@
 					set_temp_variable = { price_of_goods_index_temp = 0 }
 					set_temp_variable = { previous_price_of_goods_index_temp = 0 }
 					for_each_loop = {
-						array = gdp_amount_array
+						array = price_of_goods_index_array
 						value = vv
 						index = ii
 						if = {
@@ -4931,18 +4822,52 @@
 					add_to_variable = { PREV.private_factory_amount = private_factory_amount }
 					
 					#GDP
-					add_to_variable = { gdp_amount = pops_goods_spending }
+					set_variable = { gdp_amount = 0 }
+					
+					set_temp_variable = { gdp_value_temp = life_goods_produced_amount }
+					multiply_temp_variable = { gdp_value_temp = life_goods_price }
+					add_to_variable = { gdp_amount = gdp_value_temp }
+					
+					set_temp_variable = { gdp_value_temp = everyday_goods_produced_amount }
+					multiply_temp_variable = { gdp_value_temp = everyday_goods_price }
+					add_to_variable = { gdp_amount = gdp_value_temp }
+					
+					set_temp_variable = { gdp_value_temp = luxury_goods_produced_amount }
+					multiply_temp_variable = { gdp_value_temp = luxury_goods_price }
+					add_to_variable = { gdp_amount = gdp_value_temp }
+					
+					set_temp_variable = { gdp_value_temp = services_produced_amount }
+					multiply_temp_variable = { gdp_value_temp = services_price }
+					add_to_variable = { gdp_amount = gdp_value_temp }
+					
+					set_temp_variable = { gdp_value_temp = raw_goods_produced_amount }
+					multiply_temp_variable = { gdp_value_temp = raw_goods_price }
+					add_to_variable = { gdp_amount = gdp_value_temp }
+					
+					set_temp_variable = { gdp_value_temp = industrial_goods_produced_amount }
+					multiply_temp_variable = { gdp_value_temp = industrial_goods_price }
+					add_to_variable = { gdp_amount = gdp_value_temp }
+
+					divide_variable = { gdp_amount = price_of_goods_index }
 					add_to_variable = { PREV.gdp_amount = gdp_amount }
-					add_to_array = { gdp_amount_array = gdp_amount }
+
+					
+					add_to_array = { 
+						array = gdp_amount_array
+						value = gdp_amount
+						index = 0
+					}
 					if = {
 						limit = {
-							check_variable = { gdp_amount_array^num > 24 }
+							check_variable = { gdp_amount_array^num > 25 }
 						}
-						remove_from_array = { array = gdp_amount_array index = 0 }
+						remove_from_array = { array = gdp_amount_array }
 					}
-					
-					set_variable = { annual_gdp_amount = 0 }
-					set_variable = { previous_annual_gdp_amount = 0 }
+				
+					set_variable = { gdp_amount_this_year = 0 }
+					set_temp_variable = { this_year_months_temp = 0 }
+					set_variable = { gdp_amount_last_year = 0 }
+					set_temp_variable = { last_year_months_temp = 0 }
 					for_each_loop = {
 						array = gdp_amount_array
 						value = vv
@@ -4951,33 +4876,29 @@
 							limit = {
 								check_variable = { ii < 12 }
 							}
-							add_to_variable = { previous_annual_gdp_amount = vv }
+							add_to_variable = { gdp_amount_this_year = vv }
+							add_to_temp_variable = { this_year_months_temp = 1 }
 						}
-						else = {
-							add_to_variable = { annual_gdp_amount = vv }
+						else_if = {
+							limit = {
+								check_variable = { ii < 24 }
+							}
+							add_to_variable = { gdp_amount_last_year = vv }
+							add_to_temp_variable = { last_year_months_temp = 1 }
 						}
 					}
-					add_to_variable = { PREV.annual_gdp_amount = annual_gdp_amount }
+					divide_variable = { gdp_amount_this_year = this_year_months_temp }
+					divide_variable = { gdp_amount_last_year = last_year_months_temp }
+					add_to_variable = { PREV.gdp_amount_this_year = gdp_amount_this_year }
+					add_to_variable = { PREV.gdp_amount_last_year = gdp_amount_last_year }
 
-					set_variable = { annual_gdp_growth = annual_gdp_amount }
+					set_variable = { annual_gdp_amount = gdp_amount_this_year }
+					multiply_variable = { annual_gdp_amount = 12 }
+
+					set_variable = { annual_gdp_growth = gdp_amount_this_year }
 					multiply_variable = { annual_gdp_growth = 100 }
-					divide_variable = { annual_gdp_growth = previous_annual_gdp_amount }
+					divide_variable = { annual_gdp_growth = gdp_amount_last_year }
 					subtract_from_variable = { annual_gdp_growth = 100 }
-					add_to_variable = { PREV.previous_annual_gdp_amount = previous_annual_gdp_amount }
-
-					
-					set_variable = { annual_real_gdp_growth = annual_gdp_amount }
-					multiply_variable = { annual_real_gdp_growth = 100 }
-					
-					set_temp_variable = { inflation_temp = annual_inflation }
-					add_to_temp_variable = { inflation_temp = 100 }
-
-					set_temp_variable = { prev_ann_gdp_temp = previous_annual_gdp_amount }
-					multiply_temp_variable = { prev_ann_gdp_temp = inflation_temp }
-					divide_temp_variable = { prev_ann_gdp_temp = 100 }
-					divide_variable = { annual_real_gdp_growth = prev_ann_gdp_temp }
-					subtract_from_variable = { annual_real_gdp_growth = 100 }
-					
 
 					add_to_array = { annual_gdp_amount_array = annual_gdp_amount }
 					if = {
@@ -4986,6 +4907,9 @@
 						}
 						remove_from_array = { array = annual_gdp_amount_array index = 0 }
 					}
+
+					set_variable = { gdp_per_capita = annual_gdp_amount }
+					divide_variable = { gdp_per_capita = pops_amount }
 
 					#Industrial Power
 					set_variable = { industrial_power = 0 }
@@ -5007,71 +4931,80 @@
 					add_to_variable = { pops_spending = pops_goods_spending }
 				#
 			}
-			taxes_update = yes
-			spending_update = yes
 
-			set_variable = { total_factory_amount = num_of_civilian_factories }
-			add_to_variable = { total_factory_amount = num_of_military_factories }
-			add_to_variable = { total_factory_amount = num_of_naval_factories }
-			add_to_variable = { total_factory_amount = private_factory_amount }
+			#Country Level Stats
+				taxes_update = yes
+				spending_update = yes
 
-			set_temp_variable = { industrial_power_temp = num_of_civilian_factories }
-			multiply_temp_variable = { industrial_power_temp = global.factory_jobs_base_amount }
-			divide_temp_variable = { industrial_power_temp = 50 }
-			set_temp_variable = { modifier_temp = modifier@production_speed_buildings_factor }
-			add_to_temp_variable = { modifier_temp = 1 }
-			if = {
-				limit = { 
-					check_variable = { modifier_temp < 0 }
+				set_variable = { total_factory_amount = num_of_civilian_factories }
+				add_to_variable = { total_factory_amount = num_of_military_factories }
+				add_to_variable = { total_factory_amount = num_of_naval_factories }
+				add_to_variable = { total_factory_amount = private_factory_amount }
+
+				#Industrial Power
+				set_temp_variable = { industrial_power_temp = num_of_civilian_factories }
+				multiply_temp_variable = { industrial_power_temp = global.factory_jobs_base_amount }
+				divide_temp_variable = { industrial_power_temp = 50 }
+				set_temp_variable = { modifier_temp = modifier@production_speed_buildings_factor }
+				add_to_temp_variable = { modifier_temp = 1 }
+				if = {
+					limit = { 
+						check_variable = { modifier_temp < 0 }
+					}
+					set_temp_variable = { modifier_temp = 0 }
 				}
-				set_temp_variable = { modifier_temp = 0 }
-			}
-			multiply_temp_variable = { industrial_power_temp = modifier_temp }
-			add_to_variable = { industrial_power = industrial_power_temp }
+				multiply_temp_variable = { industrial_power_temp = modifier_temp }
+				add_to_variable = { industrial_power = industrial_power_temp }
 
-			set_temp_variable = { industrial_power_temp = num_of_military_factories }
-			multiply_temp_variable = { industrial_power_temp = global.factory_jobs_base_amount }
-			divide_temp_variable = { industrial_power_temp = 50 }
-			set_temp_variable = { modifier_temp = modifier@industrial_capacity_factory  }
-			add_to_temp_variable = { modifier_temp = 1 }
-			if = {
-				limit = { 
-					check_variable = { modifier_temp < 0 }
+				set_temp_variable = { industrial_power_temp = num_of_military_factories }
+				multiply_temp_variable = { industrial_power_temp = global.factory_jobs_base_amount }
+				divide_temp_variable = { industrial_power_temp = 50 }
+				set_temp_variable = { modifier_temp = modifier@industrial_capacity_factory  }
+				add_to_temp_variable = { modifier_temp = 1 }
+				if = {
+					limit = { 
+						check_variable = { modifier_temp < 0 }
+					}
+					set_temp_variable = { modifier_temp = 0 }
 				}
-				set_temp_variable = { modifier_temp = 0 }
-			}
-			multiply_temp_variable = { industrial_power_temp = modifier_temp }
-			add_to_variable = { industrial_power = industrial_power_temp }
+				multiply_temp_variable = { industrial_power_temp = modifier_temp }
+				add_to_variable = { industrial_power = industrial_power_temp }
 
-			set_temp_variable = { industrial_power_temp = num_of_naval_factories }
-			multiply_temp_variable = { industrial_power_temp = global.factory_jobs_base_amount }
-			divide_temp_variable = { industrial_power_temp = 50 }
-			set_temp_variable = { modifier_temp = modifier@industrial_capacity_dockyard  }
-			add_to_temp_variable = { modifier_temp = 1 }
-			if = {
-				limit = { 
-					check_variable = { modifier_temp < 0 }
+				set_temp_variable = { industrial_power_temp = num_of_naval_factories }
+				multiply_temp_variable = { industrial_power_temp = global.factory_jobs_base_amount }
+				divide_temp_variable = { industrial_power_temp = 50 }
+				set_temp_variable = { modifier_temp = modifier@industrial_capacity_dockyard  }
+				add_to_temp_variable = { modifier_temp = 1 }
+				if = {
+					limit = { 
+						check_variable = { modifier_temp < 0 }
+					}
+					set_temp_variable = { modifier_temp = 0 }
 				}
-				set_temp_variable = { modifier_temp = 0 }
-			}
-			multiply_temp_variable = { industrial_power_temp = modifier_temp }
-			add_to_variable = { industrial_power = industrial_power_temp }
+				multiply_temp_variable = { industrial_power_temp = modifier_temp }
+				add_to_variable = { industrial_power = industrial_power_temp }
 
-			divide_variable = { annual_gdp_amount = 1000 }
-			divide_variable = { previous_annual_gdp_amount = 1000 }
+				#GDP
+				divide_variable = { gdp_amount_this_year = 1000 }
+				divide_variable = { gdp_amount_last_year = 1000 }
 
-			set_variable = { annual_gdp_growth = annual_gdp_amount }
-			multiply_variable = { annual_gdp_growth = 100 }
-			divide_variable = { annual_gdp_growth = previous_annual_gdp_amount }
-			subtract_from_variable = { annual_gdp_growth = 100 }
+				set_variable = { annual_gdp_growth = gdp_amount_this_year }
+				multiply_variable = { annual_gdp_growth = 100 }
+				divide_variable = { annual_gdp_growth = gdp_amount_last_year }
+				subtract_from_variable = { annual_gdp_growth = 100 }
 
-			set_variable = { actual_revenue = actual_income_tax_revenue }
-			add_to_variable = { actual_revenue = actual_tariff_revenue }
-			set_variable = { actual_subsidy_expense = actual_infrastructure_spending }
-			set_variable = { actual_spending = actual_subsidy_expense }
-			add_to_variable = { actual_spending = actual_construction_spending }
-			set_variable = { net_budget = actual_revenue }
-			subtract_from_variable = { net_budget = actual_spending }
+				#Budget
+				set_variable = { actual_revenue = actual_income_tax_revenue }
+				add_to_variable = { actual_revenue = actual_tariff_revenue }
+				set_variable = { actual_subsidy_expense = actual_infrastructure_spending }
+				set_variable = { actual_spending = actual_subsidy_expense }
+				add_to_variable = { actual_spending = actual_construction_spending }
+				set_variable = { net_budget = actual_revenue }
+				subtract_from_variable = { net_budget = actual_spending }
+
+				#Total Money
+				add_to_variable = { total_money = treasury }
+			#
 
 			every_controlled_state = {
 				create_pie_chart_pop_type = yes
@@ -5150,14 +5083,14 @@
 					set_variable = { global.pops_luxury_goods_spending = 0.25 }
 					set_variable = { global.pops_services_spending = 0.25 }
 					set_variable = { global.pops_life_goods_spending_max = 0.75 }
-					set_variable = { global.pops_everyday_goods_spending_max = 0.75 }
-					set_variable = { global.pops_luxury_goods_spending_max = 0.75 }
+					set_variable = { global.pops_everyday_goods_spending_max = 0.9 }
+					set_variable = { global.pops_luxury_goods_spending_max = 0.9 }
 					set_variable = { global.pops_services_spending_max = 0.75 }
 
 				#Upper Strata
 					set_variable = { global.pops_upper_strata_life_goods_base_need = 2 }
-					set_variable = { global.pops_upper_strata_everyday_goods_base_need = 10 }
-					set_variable = { global.pops_upper_strata_luxury_goods_base_need = 20 }
+					set_variable = { global.pops_upper_strata_everyday_goods_base_need = 20 }
+					set_variable = { global.pops_upper_strata_luxury_goods_base_need = 40 }
 
 					#Aristocrats
 						set_variable =  { global.aristocrats_percentage = 1 }
@@ -5170,8 +5103,8 @@
 
 				#Middle Strata
 					set_variable = { global.pops_middle_strata_life_goods_base_need = 1 }
-					set_variable = { global.pops_middle_strata_everyday_goods_base_need = 2.5 }
-					set_variable = { global.pops_middle_strata_luxury_goods_base_need = 0.5 }
+					set_variable = { global.pops_middle_strata_everyday_goods_base_need = 5 }
+					set_variable = { global.pops_middle_strata_luxury_goods_base_need = 1 }
 
 					#Artisans
 						set_variable =  { global.artisans_percentage = 20 }
@@ -5195,13 +5128,13 @@
 
 				#Lower Strata
 					set_variable = { global.pops_lower_strata_life_goods_base_need = 2 }
-					set_variable = { global.pops_lower_strata_everyday_goods_base_need = 1 }
-					set_variable = { global.pops_lower_strata_luxury_goods_base_need = 0.20 }
+					set_variable = { global.pops_lower_strata_everyday_goods_base_need = 0.5 }
+					set_variable = { global.pops_lower_strata_luxury_goods_base_need = 0.10 }
 					
 					#RGOs
 						set_variable =  { global.rgos_percentage = 74 }
 						set_variable = { global.pops_rgos_life_goods_base_production = 15 } #Every 100k RGOs
-						set_variable = { global.pops_rgos_raw_goods_base_production = 5 }
+						set_variable = { global.pops_rgos_raw_goods_base_production = 6 }
 						set_variable = { global.pops_rgos_valuable_goods_base_production = 20 }
 
 						set_variable = { global.pops_rgos_cash_crops_output_multiplier = 1.2 } #Applies to Life/Raw Goods
@@ -5281,7 +5214,7 @@
 				add_to_array = { global.factory_resources_array = 3 } #Luxury
 				add_to_array = { global.factory_resources_array = 6 } #Industrial
 
-				set_variable = { global.base_transport_cost_divisor = 200 } #How much to divide distance_to@state to get the transport cost for state to state trade.
+				set_variable = { global.base_transport_cost_divisor = 500 } #How much to divide distance_to@state to get the transport cost for state to state trade.
 				set_variable = { global.base_shipping_cost_divisor = 1000 } #How much to divide distance_to@state to get the shipping cost for country to country trade.
 				
 
@@ -5480,6 +5413,8 @@
 					clr_state_flag = infrastructure_construction_government_subsidized
 					set_variable = { infrastructure_construction_investment_money = 0 }
 					set_variable = { infrastructure_construction_industrial_goods_need = 0 }
+
+					clear_array = annual_gdp_amount_array
 
 				#
 
@@ -6148,6 +6083,9 @@
 	pops_shopping = {
 		#life_goods
 			set_temp_variable = { buy_amount = pops_life_goods_demand }
+			set_temp_variable = { buy_amount_temp = 1 }
+			subtract_from_temp_variable = { buy_amount_temp = pops_life_goods_fulfilled_percentage }
+			multiply_temp_variable = { buy_amount = buy_amount_temp }
 			set_temp_variable = { money_temp = pops_money } #Can theoretically be infinite
 			set_temp_variable = { good_max_temp = pops_rgos_life_goods_production }
 			subtract_from_temp_variable = { good_max_temp = pops_rgos_life_goods_sold }
@@ -6176,6 +6114,9 @@
 
 		#raw_goods
 			set_temp_variable = { buy_amount = pops_artisans_raw_goods_demand }
+			set_temp_variable = { buy_amount_temp = 1 }
+			subtract_from_temp_variable = { buy_amount_temp = pops_artisans_raw_goods_fulfilled_percentage }
+			multiply_temp_variable = { buy_amount = buy_amount_temp }
 			set_temp_variable = { money_temp = pops_money } #Can theoretically be infinite
 			set_temp_variable = { good_max_temp = pops_rgos_raw_goods_production }
 			subtract_from_temp_variable = { good_max_temp = pops_rgos_raw_goods_sold }
@@ -6198,6 +6139,9 @@
 
 		#everyday_goods
 			set_temp_variable = { buy_amount = pops_everyday_goods_demand }
+			set_temp_variable = { buy_amount_temp = 1 }
+			subtract_from_temp_variable = { buy_amount_temp = pops_everyday_goods_fulfilled_percentage }
+			multiply_temp_variable = { buy_amount = buy_amount_temp }
 			set_temp_variable = { money_temp = pops_money }
 			set_temp_variable = { good_max_temp = factory_everyday_goods_production }
 			add_to_temp_variable = { good_max_temp = pops_artisans_everyday_goods_production }
@@ -6285,6 +6229,9 @@
 
 		#luxury_goods
 			set_temp_variable = { buy_amount = pops_luxury_goods_demand }
+			set_temp_variable = { buy_amount_temp = 1 }
+			subtract_from_temp_variable = { buy_amount_temp = pops_luxury_goods_fulfilled_percentage }
+			multiply_temp_variable = { buy_amount = buy_amount_temp }
 			set_temp_variable = { money_temp = pops_money }
 			set_temp_variable = { good_max_temp = factory_luxury_goods_production }
 			add_to_temp_variable = { good_max_temp = pops_artisans_luxury_goods_production }
@@ -6376,6 +6323,9 @@
 
 		#services
 			set_temp_variable = { buy_amount = pops_services_demand }
+			set_temp_variable = { buy_amount_temp = 1 }
+			subtract_from_temp_variable = { buy_amount_temp = pops_services_fulfilled_percentage }
+			multiply_temp_variable = { buy_amount = buy_amount_temp }
 			set_temp_variable = { money_temp = pops_money }
 			set_temp_variable = { good_max_temp = pops_services_production }
 			subtract_from_temp_variable = { good_max_temp = pops_services_sold }
@@ -6626,8 +6576,6 @@
 
 				subtract_from_variable = { factory_everyday_goods_construction_investment_money = cost_temp }
 				subtract_from_variable = { factory_everyday_goods_construction_industrial_goods_need = buy_amount }
-				add_to_variable = { gdp_amount = cost_temp }
-
 			#
 			#Luxury Goods Factory
 				set_temp_variable = { buy_amount = factory_luxury_goods_construction_industrial_goods_demand }
@@ -6706,8 +6654,6 @@
 
 				subtract_from_variable = { factory_luxury_goods_construction_investment_money = cost_temp }
 				subtract_from_variable = { factory_luxury_goods_construction_industrial_goods_need = buy_amount }
-				add_to_variable = { gdp_amount = cost_temp }
-
 			#
 			#Industrial Goods Factory
 				set_temp_variable = { buy_amount = factory_industrial_goods_construction_industrial_goods_demand }
@@ -6786,7 +6732,6 @@
 
 				subtract_from_variable = { factory_industrial_goods_construction_investment_money = cost_temp }
 				subtract_from_variable = { factory_industrial_goods_construction_industrial_goods_need = buy_amount }
-				add_to_variable = { gdp_amount = cost_temp }
 			#
 		#
 	}
@@ -6900,8 +6845,6 @@
 
 				subtract_from_variable = { infrastructure_construction_investment_money = cost_temp }
 				subtract_from_variable = { infrastructure_construction_industrial_goods_need = buy_amount }
-				add_to_variable = { gdp_amount = cost_temp }
-
 			#
 		#
 	}
@@ -8134,13 +8077,7 @@
 		add_to_variable = { income_tax_revenue = income_tax_lower_strata_revenue }
 
 		#Sales Tax
-			set_variable = { sales_tax_revenue = gdp_amount }
-			subtract_from_variable = { sales_tax_revenue = life_goods_global_trade_value }
-			subtract_from_variable = { sales_tax_revenue = everyday_goods_global_trade_value }
-			subtract_from_variable = { sales_tax_revenue = luxury_goods_global_trade_value }
-			subtract_from_variable = { sales_tax_revenue = services_global_trade_value }
-			subtract_from_variable = { sales_tax_revenue = raw_goods_global_trade_value }
-			subtract_from_variable = { sales_tax_revenue = industrial_goods_global_trade_value }
+			set_variable = { sales_tax_revenue = pops_goods_spending }
 			multiply_variable = { sales_tax_revenue = sales_tax_percentage }
 			divide_variable = { sales_tax_revenue = 100 }
 		#
@@ -8279,9 +8216,20 @@
 	}
 	spending_update = {
 		set_variable = { construction_spending_expense = 0 }
-
+		set_variable = { industrial_subsidy_expense = 0 }
 		set_variable = { infrastructure_subsidy_expense = 0 }
 		every_controlled_state = {
+			set_temp_variable = { raw_goods_temp = factory_raw_goods_need }
+			multiply_temp_variable = { raw_goods_temp = raw_goods_price }
+			set_temp_variable = { industrial_goods_temp = factory_industrial_goods_need }
+			multiply_temp_variable = { industrial_goods_temp = industrial_goods_price }
+
+			set_temp_variable = { industrial_spending_temp = raw_goods_temp }
+			add_to_temp_variable = { industrial_spending_temp = industrial_goods_temp }
+			multiply_temp_variable = { industrial_spending_temp = PREV.industrial_subsidy_percentage }
+			divide_temp_variable = { industrial_spending_temp = 100 }
+			add_to_variable = { PREV.industrial_subsidy_expense = industrial_spending_temp }
+
 			set_temp_variable = { infrastructure_money_temp = infrastructure_industrial_goods_demand }
 			multiply_temp_variable = { infrastructure_money_temp = industrial_goods_price }
 			multiply_temp_variable = { infrastructure_money_temp = PREV.infrastructure_subsidy_percentage }
@@ -8296,7 +8244,13 @@
 				multiply_temp_variable = { infra_construction_funds_temp = industrial_goods_price }
 				multiply_temp_variable = { infra_construction_funds_temp = PREV.construction_spending_percentage }
 				divide_temp_variable = { infra_construction_funds_temp = 100 }
-				add_to_variable = { PREV.construction_spending_expense = infra_construction_funds_temp }
+				subtract_from_temp_variable = { infra_construction_funds_temp = infrastructure_construction_investment_money }
+				if = {
+					limit = {
+						check_variable = { infra_construction_funds_temp > 0 }
+					}
+					add_to_variable = { PREV.construction_spending_expense = infra_construction_funds_temp }
+				}
 			}
 			if = {
 				limit = {
@@ -8306,7 +8260,13 @@
 				multiply_temp_variable = { infra_construction_funds_temp = industrial_goods_price }
 				multiply_temp_variable = { infra_construction_funds_temp = PREV.construction_spending_percentage }
 				divide_temp_variable = { infra_construction_funds_temp = 100 }
-				add_to_variable = { PREV.construction_spending_expense = infra_construction_funds_temp }
+				subtract_from_temp_variable = { infra_construction_funds_temp = factory_everyday_goods_construction_investment_money }
+				if = {
+					limit = {
+						check_variable = { infra_construction_funds_temp > 0 }
+					}
+					add_to_variable = { PREV.construction_spending_expense = infra_construction_funds_temp }
+				}
 			}
 			if = {
 				limit = {
@@ -8316,7 +8276,13 @@
 				multiply_temp_variable = { infra_construction_funds_temp = industrial_goods_price }
 				multiply_temp_variable = { infra_construction_funds_temp = PREV.construction_spending_percentage }
 				divide_temp_variable = { infra_construction_funds_temp = 100 }
-				add_to_variable = { PREV.construction_spending_expense = infra_construction_funds_temp }
+				subtract_from_temp_variable = { infra_construction_funds_temp = factory_luxury_goods_construction_investment_money }
+				if = {
+					limit = {
+						check_variable = { infra_construction_funds_temp > 0 }
+					}
+					add_to_variable = { PREV.construction_spending_expense = infra_construction_funds_temp }
+				}
 			}
 			if = {
 				limit = {
@@ -8326,11 +8292,18 @@
 				multiply_temp_variable = { infra_construction_funds_temp = industrial_goods_price }
 				multiply_temp_variable = { infra_construction_funds_temp = PREV.construction_spending_percentage }
 				divide_temp_variable = { infra_construction_funds_temp = 100 }
-				add_to_variable = { PREV.construction_spending_expense = infra_construction_funds_temp }
+				subtract_from_temp_variable = { infra_construction_funds_temp = factory_industrial_goods_construction_investment_money }
+				if = {
+					limit = {
+						check_variable = { infra_construction_funds_temp > 0 }
+					}
+					add_to_variable = { PREV.construction_spending_expense = infra_construction_funds_temp }
+				}
 			}
 		}
 
 		set_variable = { subsidy_expense = infrastructure_subsidy_expense }
+		add_to_variable = { subsidy_expense = industrial_subsidy_expense }
 
 		set_variable = { discretionary_spending = subsidy_expense }
 		add_to_variable = { discretionary_spending = construction_spending_expense }
@@ -8418,8 +8391,6 @@
 			else = {
 				set_temp_variable = { investment_money_temp = 0 }
 			}
-			add_to_variable = { gdp_amount = factory_everyday_goods_construction_investment_money }
-
 			factories_update = yes
 			add_to_variable = { update_state_econ_window = 1 }
 		}
@@ -8480,8 +8451,6 @@
 			else = {
 				set_temp_variable = { investment_money_temp = 0 }
 			}
-			add_to_variable = { gdp_amount = factory_luxury_goods_construction_investment_money }
-
 			factories_update = yes
 			add_to_variable = { update_state_econ_window = 1 }
 		}
@@ -8542,8 +8511,6 @@
 			else = {
 				set_temp_variable = { investment_money_temp = 0 }
 			}
-			add_to_variable = { gdp_amount = factory_industrial_goods_construction_investment_money }
-
 			factories_update = yes
 			add_to_variable = { update_state_econ_window = 1 }
 		}
@@ -8606,8 +8573,6 @@
 			else = {
 				set_temp_variable = { investment_money_temp = 0 }
 			}
-			add_to_variable = { gdp_amount = infrastructure_construction_investment_money }
-
 			add_to_variable = { update_state_econ_window = 1 }
 		}
 	}
@@ -9016,6 +8981,41 @@
 					check_variable = { infrastructure_subsidy_percentage < 0 }
 				}
 				set_variable = { infrastructure_subsidy_percentage = 0 }
+			}
+		}
+		spending_update = yes
+	} 
+	change_industrial_subsidy = {
+		#Scope: Country
+		#Increases/Decreases the Industrial Subsidy level
+		#INPUT:
+			#percent_change_temp - Amount to decrease it by. 1.0 increases it by 1%,  -10.0 decreases it by 10%
+		
+		add_to_variable = { industrial_subsidy_percentage = percent_change_temp }
+		if = {
+			limit = {
+				check_variable = { percent_change_temp > 0 }
+			}
+			#TODO - People get angerry
+
+			if = {
+				limit = {
+					check_variable = { industrial_subsidy_percentage > 100 }
+				}
+				set_variable = { industrial_subsidy_percentage = 100 }
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = { percent_change_temp < 0 }
+			}
+			#TODO - People become happy
+
+			if = {
+				limit = {
+					check_variable = { industrial_subsidy_percentage < 0 }
+				}
+				set_variable = { industrial_subsidy_percentage = 0 }
 			}
 		}
 		spending_update = yes

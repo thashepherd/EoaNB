@@ -1216,7 +1216,9 @@ focus_tree = {
 		cost = 35
 		#icon = GFX_focus_generic_the_giant_wakes
 
-		completion_reward = { }
+		completion_reward = {
+			country_event = { id = eoanb_norway.22 days = 2 }
+		}
 	}
 
 	focus = {
@@ -1882,7 +1884,7 @@ focus_tree = {
 		y = 1
 
 		cost = 70
-		#icon = GFX_focus_generic_the_giant_wakes
+		icon = GFX_focus_NOR_john_ericsson
 
 		completion_reward = { }
 	}
@@ -1984,7 +1986,7 @@ focus_tree = {
 		y = 1
 
 		cost = 35
-		#icon = GFX_goal_generic_small_arms
+		icon = GFX_focus_NOR_armstrong_guns
 
 		completion_reward = { }
 	}

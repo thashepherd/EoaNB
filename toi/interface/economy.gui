@@ -3528,6 +3528,7 @@ guiTypes = {
 					maxHeight = 24
 					fixedsize = yes
 					#alwaystransparent = yes
+					pdx_tooltip = statistics_gdp_amount_tt
 				}
 			#
 			#GDP Graph
