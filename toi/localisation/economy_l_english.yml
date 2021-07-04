@@ -277,12 +277,13 @@
       statistics_title:0 "Statistics"
 
       statistics_gdp_amount_loc:0 "§Y[?annual_gdp_amount]§![GetCurrencyTextIconState]"
+      statistics_gdp_amount_tt:0 "Gross Domestic Product: §Y[?annual_gdp_amount]§![GetCurrencyTextIconState] \nGDP per Capita: §Y[?gdp_per_capita]§![GetCurrencyTextIconState]"
 
       statistics_gdp_graph_max_loc:0 "[?gdp_graph_max][GetStateGDPGraphThousands]"
       statistics_gdp_graph_min_loc:0 "[?gdp_graph_min][GetStateGDPGraphThousands]"
       statistics_gdp_graph_thousands_loc:0 "K"
       
-      statistics_gdp_growth_loc:0 "GDP Growth: [GetStateGDPGrowthColor][?annual_gdp_growth|3=]%§! [GetStateRealGDPGrowthColor]([?annual_real_gdp_growth|3=]%)§!"
+      statistics_gdp_growth_loc:0 "GDP Growth: [GetStateGDPGrowthColor][?annual_gdp_growth|3=]%§!"
       statistics_money_supply_loc:0 "Money Supply: §Y[?money_supply|3]§![GetCurrencyTextIconState]"
       statistics_annual_inflation_loc:0 "Annual Inflation: §Y[?annual_inflation|=3]%§!"
     #

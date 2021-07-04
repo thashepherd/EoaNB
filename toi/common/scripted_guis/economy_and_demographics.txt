@@ -131,7 +131,7 @@ scripted_gui = {
 				set_temp_variable = { investment_money_temp = global.factory_everyday_goods_construction_base_speed }
 				multiply_temp_variable = { investment_money_temp = everyday_goods_price }
 				
-				subtract_from_variable = { PREV.treasury = investment_money_temp }
+				subtract_from_variable = { ROOT.treasury = investment_money_temp }
 
 				set_state_flag = factory_everyday_goods_construction_government_subsidized
 				start_everyday_goods_factory_construction = yes
@@ -140,7 +140,7 @@ scripted_gui = {
 				set_temp_variable = { investment_money_temp = global.factory_luxury_goods_construction_base_speed }
 				multiply_temp_variable = { investment_money_temp = luxury_goods_price }
 				
-				subtract_from_variable = { PREV.treasury = investment_money_temp }
+				subtract_from_variable = { ROOT.treasury = investment_money_temp }
 
 				set_state_flag = factory_luxury_goods_construction_government_subsidized
 				start_luxury_goods_factory_construction = yes
@@ -149,16 +149,16 @@ scripted_gui = {
 				set_temp_variable = { investment_money_temp = global.factory_industrial_goods_construction_base_speed }
 				multiply_temp_variable = { investment_money_temp = industrial_goods_price }
 				
-				subtract_from_variable = { PREV.treasury = investment_money_temp }
+				subtract_from_variable = { ROOT.treasury = investment_money_temp }
 
 				set_state_flag = factory_industrial_goods_construction_government_subsidized
 				start_industrial_goods_factory_construction = yes
 			}
 			trade_infra_build_button_click = {
-				set_temp_variable = { investment_money_temp = global.infrastructure_construction_industrial_goods_base_speed }
+				set_temp_variable = { investment_money_temp = global.infrastructure_construction_base_speed }
 				multiply_temp_variable = { investment_money_temp = industrial_goods_price }
 				
-				subtract_from_variable = { PREV.treasury = investment_money_temp }
+				subtract_from_variable = { ROOT.treasury = investment_money_temp }
 
 				set_state_flag = infrastructure_construction_government_subsidized
 				start_infrastructure_construction = yes
@@ -745,6 +745,40 @@ scripted_gui = {
 					change_infrastructure_subsidy = yes
 				}
 			#
+			#Industrial Subsidies
+				govt_decrease_industrial_subsidy_button_click = {
+					set_temp_variable = { percent_change_temp = -1 }
+					change_industrial_subsidy = yes
+				}
+				govt_decrease_industrial_subsidy_button_shift_click = {
+					set_temp_variable = { percent_change_temp = -5 }
+					change_industrial_subsidy = yes
+				}
+				govt_decrease_industrial_subsidy_button_control_click = {
+					set_temp_variable = { percent_change_temp = -10 }
+					change_industrial_subsidy = yes
+				}
+				govt_decrease_industrial_subsidy_button_control_shift_click = {
+					set_temp_variable = { percent_change_temp = -25 }
+					change_industrial_subsidy = yes
+				}
+				govt_increase_industrial_subsidy_button_click = {
+					set_temp_variable = { percent_change_temp = 1 }
+					change_industrial_subsidy = yes
+				}
+				govt_increase_industrial_subsidy_button_shift_click = {
+					set_temp_variable = { percent_change_temp = 5 }
+					change_industrial_subsidy = yes
+				}
+				govt_increase_industrial_subsidy_button_control_click = {
+					set_temp_variable = { percent_change_temp = 10 }
+					change_industrial_subsidy = yes
+				}
+				govt_increase_industrial_subsidy_button_control_shift_click = {
+					set_temp_variable = { percent_change_temp = 25 }
+					change_industrial_subsidy = yes
+				}
+			#
 
 
 			time_button_click = {
@@ -791,6 +825,9 @@ scripted_gui = {
 			}
 			govt_infrastructure_subsidy_icon = {
 				x = infrastructure_subsidy_percentage
+			}
+			govt_industrial_subsidy_icon = {
+				x = industrial_subsidy_percentage
 			}
 		}
 	}
