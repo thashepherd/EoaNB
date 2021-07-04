@@ -1,0 +1,12 @@
+ideas = {
+    country = {
+        TUN_Manipulate_Inland_Economy_idea = {
+
+         picture = FRA_army_of_aggression_focus
+        
+            modifier = {
+            consumer_goods_factor = 0.1
+            }
+        }
+    }
+}

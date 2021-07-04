@@ -66,6 +66,19 @@
   TUN_industrialize_the_country_desc:0 "the more industries we build the better we can manage our debts"
 
   TUN_the_monetary_issue:0 " The Monetary Issue "
-  TUN_the_monetary_issue_desc:0 "We have an absourd abount of debts and we can't afford a default"
+  TUN_the_monetary_issue_desc:0 "We have an absourd amount of debts and we can't afford a default"
+
+# decisions
+  tunisia_revolt_category:0 "Revolts in Tunisia"
+  tunisia_revolt_mission:0 " General Discontent "
+  tunisia_revolt_mission_desc:0 "An integralist upraising is spreading in our country, this is probably due to the high debts and the political events of our time. \n Current upset level is [?Mejba_Revolt_var|G]% "
+
+  TUN_Increase_Military_Presence:0 " Increase Military Presence"
+  TUN_Increase_Military_Presence_desc:0 " To avoid a  rebellion we need to displace the army"
+
+  TUN_Manipulate_Inland_Economy:0 " Manipulate Inland Economy"
+  TUN_Manipulate_Inland_Economy:0 " the best way to quell a riot is to find a compromise"
+# tooltips
+  TUN_control_the_revolt_tooltip:0 "\n§RWe must control the revolt before its too late§!"
 
 

@@ -756,7 +756,7 @@ afr_prosperity_mechanic_category = {
 
 # Tunisia Decision Categories
 tunisia_revolt_category = {
-	#icon = to add
+	icon = decision_tun_revolt.dds
 	allowed = { tag = TUN }
 	priority = 20
 }

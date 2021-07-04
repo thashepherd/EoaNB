@@ -39,7 +39,7 @@ focus = {
 	icon = GFX_goal_generic_attack_allies
 	x = 2
 	y = 1
-	cost = 20
+	cost = 60
 	ai_will_do = {
 		factor = 1
 	}
@@ -195,7 +195,7 @@ focus = {
 				remove_idea = slavery_all_but_name
 				add_idea = limited_equality
 			}
-		add_political_power 50
+		add_political_power = 50
 		decrease_ps_by_one = yes
 	}
 }
@@ -213,7 +213,7 @@ focus = {
 		country_event = {
 			id = tunisia.4
 		}
-		add_political_power 50
+		add_political_power = 50
 		decrease_ps_by_two = yes	
 	}
 }
@@ -229,8 +229,8 @@ focus = {
 	prerequisite = { focus = TUN_cultural_reforms }
 		completion_reward = {
 			swap_ideas = {
-				remove_idea = no_press
-				add_idea = state_controlled_press
+				remove_idea = state_controlled_press
+				add_idea = censored_press
 			}
 		}
 }
@@ -246,7 +246,7 @@ focus = {
 	}
 	prerequisite = { focus = TUN_organize_the_ministries }
 	completion_reward = {
-add_political_power 50
+		add_political_power = 50
 	}
 }
 focus = {

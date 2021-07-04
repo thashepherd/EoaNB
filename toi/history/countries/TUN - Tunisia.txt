@@ -37,7 +37,7 @@
 
     traditional_uluma
     state_religion
-    no_press
+    state_controlled_press
 	religion_sunni
 
    hc_no_healthcare
