@@ -383,7 +383,7 @@
 					divide_temp_variable = { industrial_spending_temp = 100 }
 					add_to_variable = { factory_money = industrial_spending_temp }
 					subtract_from_variable = { PREV.treasury = industrial_spending_temp }
-					add_to_variable = { PREV.actual_industrial_spending = construction_funds_temp }
+					add_to_variable = { PREV.actual_industrial_spending = industrial_spending_temp }
 				#
 
 				update_modifiers_state_effects = yes
