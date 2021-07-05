@@ -5057,6 +5057,7 @@
 				set_variable = { actual_subsidy_expense = actual_infrastructure_spending }
 				set_variable = { actual_spending = actual_subsidy_expense }
 				add_to_variable = { actual_spending = actual_construction_spending }
+				add_to_variable = { actual_spending = actual_industrial_spending }
 				set_variable = { net_budget = actual_revenue }
 				subtract_from_variable = { net_budget = actual_spending }
 
