@@ -534,64 +534,64 @@ EOANB_Technology_Era_Update = {
     if = {
       limit = { has_idea = digital_era }
       swap_ideas = {
-        remove_ideas = digital_era
-        add_ideas = post_digital_era
+        remove_idea = digital_era
+        add_idea = post_digital_era
       }
     }
     else_if = {
       limit = { has_idea = information_era }
       swap_ideas = {
-        remove_ideas = information_era
-        add_ideas = digital_era
+        remove_idea = information_era
+        add_idea = digital_era
       }
     }
     else_if = {
       limit = { has_idea = atomic_era }
       swap_ideas = {
-        remove_ideas = atomic_era
-        add_ideas = information_era
+        remove_idea = atomic_era
+        add_idea = information_era
       }
     }
     else_if = {
       limit = { has_idea = modern_era }
       swap_ideas = {
-        remove_ideas = modern_era
-        add_ideas = atomic_era
+        remove_idea = modern_era
+        add_idea = atomic_era
       }
     }
     else_if = {
       limit = { has_idea = aviation_era }
       swap_ideas = {
-        remove_ideas = aviation_era
-        add_ideas = modern_era
+        remove_idea = aviation_era
+        add_idea = modern_era
       }
     }
     else_if = {
       limit = { has_idea = oil_era }
       swap_ideas = {
-        remove_ideas = oil_era
-        add_ideas = aviation_era
+        remove_idea = oil_era
+        add_idea = aviation_era
       }
     }
     else_if = {
       limit = { has_idea = machine_era }
       swap_ideas = {
-        remove_ideas = machine_era
-        add_ideas = oil_era
+        remove_idea = machine_era
+        add_idea = oil_era
       }
     }
     else_if = {
       limit = { has_idea = victorian_era }
       swap_ideas = {
-        remove_ideas = victorian_era
-        add_ideas = machine_era
+        remove_idea = victorian_era
+        add_idea = machine_era
       }
     }
     else_if = {
       limit = { has_idea = pre_industrial_era }
       swap_ideas = {
-        remove_ideas = pre_industrial_era
-        add_ideas = victorian_era
+        remove_idea = pre_industrial_era
+        add_idea = victorian_era
       }
     }
 }

@@ -247,7 +247,7 @@ set_historical_state_rgos={
 		add_to_array = { global.coal_states = 719 }
 		add_to_array = { global.coal_states = 545 }
 		add_to_array = { global.coal_states = 545 }
-		coal_states
+		#coal_states
 		
 		#angola,DRC,zambia
 	
