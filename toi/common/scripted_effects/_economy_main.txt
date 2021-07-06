@@ -2115,14 +2115,7 @@
 							}
 						}
 				#everyday_goods
-					#Checks if the country actually has more demand than supply. If it doesn't, this is pointless
-					if = {
-						limit = {
-							check_variable = { everyday_goods_demand > everyday_goods_supply }
-						}
 						set_temp_variable = { buy_amount_left = everyday_goods_demand }
-						subtract_from_temp_variable = { buy_amount_left = everyday_goods_supply }
-
 						#Loops thru cheapest countries to buy from
 						for_each_loop = {
 							array = global.everyday_goods_global_trade_country_array
@@ -2273,16 +2266,9 @@
 								set_temp_variable = { cheapest_brk = 1 }
 							}
 						}
-					}
 				#luxury_goods
 					#Checks if the country actually has more demand than supply. If it doesn't, this is pointless
-					if = {
-						limit = {
-							check_variable = { luxury_goods_demand > luxury_goods_supply }
-						}
 						set_temp_variable = { buy_amount_left = luxury_goods_demand }
-						subtract_from_temp_variable = { buy_amount_left = luxury_goods_supply }
-
 						#Loops thru cheapest countries to buy from
 						for_each_loop = {
 							array = global.luxury_goods_global_trade_country_array
@@ -2433,16 +2419,9 @@
 								set_temp_variable = { cheapest_brk = 1 }
 							}
 						}
-					}
 				#services
 					#Checks if the country actually has more demand than supply. If it doesn't, this is pointless
-					if = {
-						limit = {
-							check_variable = { services_demand > services_supply }
-						}
 						set_temp_variable = { buy_amount_left = services_demand }
-						subtract_from_temp_variable = { buy_amount_left = services_supply }
-
 						#Loops thru cheapest countries to buy from
 						for_each_loop = {
 							array = global.services_global_trade_country_array
@@ -2593,22 +2572,8 @@
 								set_temp_variable = { cheapest_brk = 1 }
 							}
 						}
-					}
 				#raw_goods
-					#Checks if the country actually has more demand than supply. If it doesn't, this is pointless
-					if = {
-						limit = {
-							tag = GUA
-						}
-						set_variable = { raw_goods_available = 0 }
-					}
-					if = {
-						limit = {
-							check_variable = { raw_goods_demand > raw_goods_supply }
-						}
 						set_temp_variable = { buy_amount_left = raw_goods_demand }
-						subtract_from_temp_variable = { buy_amount_left = raw_goods_supply }
-
 						#Loops thru cheapest countries to buy from
 						for_each_loop = {
 							array = global.raw_goods_global_trade_country_array
@@ -2759,16 +2724,8 @@
 								set_temp_variable = { cheapest_brk = 1 }
 							}
 						}
-					}
 				#industrial_goods
-					#Checks if the country actually has more demand than supply. If it doesn't, this is pointless
-					if = {
-						limit = {
-							check_variable = { industrial_goods_demand > industrial_goods_supply }
-						}
 						set_temp_variable = { buy_amount_left = industrial_goods_demand }
-						subtract_from_temp_variable = { buy_amount_left = industrial_goods_supply }
-
 						#Loops thru cheapest countries to buy from
 						for_each_loop = {
 							array = global.industrial_goods_global_trade_country_array
@@ -2919,10 +2876,6 @@
 								set_temp_variable = { cheapest_brk = 1 }
 							}
 						}
-					}
-				
-			
-			
 			#
 		}
 		for_each_scope_loop = {
