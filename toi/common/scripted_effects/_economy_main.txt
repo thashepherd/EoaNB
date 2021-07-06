@@ -271,6 +271,8 @@
 			set_variable = { actual_infrastructure_spending = 0 }
 			set_variable = { actual_construction_spending = 0 }
 			set_variable = { actual_industrial_spending = 0 }
+			set_variable = { actual_tariff_revenue = 0 }
+			set_variable = { actual_trade_subsidy_spending = 0 }
 
 			set_variable = { gdp_amount = 0 }
 			set_variable = { gdp_amount_this_year = 0 }
@@ -337,6 +339,9 @@
 
 					set_variable = { pops_earnings = 0 }
 
+					set_variable = { pops_savings_deposits = 0 }
+					set_variable = { pops_savings_withdrawals = 0 }
+
 					set_variable = { artisans_earnings = 0 }
 					set_variable = { pops_artisans_everyday_goods_sold = 0 }
 					set_variable = { pops_artisans_luxury_goods_sold = 0 }
@@ -367,11 +372,84 @@
 				
 				set_variable = { infrastructure_max_level = PREV.infrastructure_max_level }
 
-				###
-				#set_variable = { pops_money = pops_amount }
-				#divide_variable = { pops_money = 10 }
-				#set_variable = { factory_money = factory_money_limit }
-				###
+				
+				#Pops withdraw from Savings
+					if = {
+						limit = {
+							check_variable = { pops_money < 0 }
+						}
+						set_temp_variable = { pops_savings_temp = pops_money }
+						multiply_temp_variable = { pops_savings_temp = -2 }
+						subtract_from_variable = { pops_savings = pops_savings_temp }
+						add_to_variable = { pops_money = pops_savings_temp }
+						add_to_variable = { pops_savings_withdrawals = pops_savings_temp }
+						if = {
+							limit = {
+								check_variable = { pops_savings < 0 }
+							}
+							add_to_variable = { pops_money = pops_savings }
+							add_to_variable = { pops_savings_withdrawals = pops_savings }
+							set_variable = { pops_savings = 0 }
+						}
+					}
+					if = {
+						limit = {
+							check_variable = { pops_life_goods_fulfilled_percentage < pops_annual_life_goods_fulfilled_percentage }
+						}
+						set_temp_variable = { pops_savings_temp = pops_annual_life_goods_fulfilled_percentage }
+						subtract_from_temp_variable = { pops_savings_temp = pops_life_goods_fulfilled_percentage }
+						multiply_temp_variable = { pops_savings_temp = pops_life_goods_need }
+						multiply_temp_variable = { pops_savings_temp = life_goods_price }
+						divide_temp_variable = { pops_savings_temp = 2 }
+						if = {
+							limit = {
+								check_variable = { pops_savings_temp > pops_savings }
+							}
+							set_temp_variable = { pops_savings_temp = pops_savings }
+						}
+						subtract_from_variable = { pops_savings = pops_savings_temp }
+						add_to_variable = { pops_money = pops_savings_temp }
+						add_to_variable = { pops_savings_withdrawals = pops_savings_temp }
+					}
+					if = {
+						limit = {
+							check_variable = { pops_everyday_goods_fulfilled_percentage < pops_annual_everyday_goods_fulfilled_percentage }
+						}
+						set_temp_variable = { pops_savings_temp = pops_annual_everyday_goods_fulfilled_percentage }
+						subtract_from_temp_variable = { pops_savings_temp = pops_everyday_goods_fulfilled_percentage }
+						multiply_temp_variable = { pops_savings_temp = pops_everyday_goods_need }
+						multiply_temp_variable = { pops_savings_temp = everyday_goods_price }
+						divide_temp_variable = { pops_savings_temp = 2 }
+						if = {
+							limit = {
+								check_variable = { pops_savings_temp > pops_savings }
+							}
+							set_temp_variable = { pops_savings_temp = pops_savings }
+						}
+						subtract_from_variable = { pops_savings = pops_savings_temp }
+						add_to_variable = { pops_money = pops_savings_temp }
+						add_to_variable = { pops_savings_withdrawals = pops_savings_temp }
+					}
+					if = {
+						limit = {
+							check_variable = { pops_luxury_goods_fulfilled_percentage < pops_annual_luxury_goods_fulfilled_percentage }
+						}
+						set_temp_variable = { pops_savings_temp = pops_annual_luxury_goods_fulfilled_percentage }
+						subtract_from_temp_variable = { pops_savings_temp = pops_luxury_goods_fulfilled_percentage }
+						multiply_temp_variable = { pops_savings_temp = pops_luxury_goods_need }
+						multiply_temp_variable = { pops_savings_temp = luxury_goods_price }
+						divide_temp_variable = { pops_savings_temp = 2 }
+						if = {
+							limit = {
+								check_variable = { pops_savings_temp > pops_savings }
+							}
+							set_temp_variable = { pops_savings_temp = pops_savings }
+						}
+						subtract_from_variable = { pops_savings = pops_savings_temp }
+						add_to_variable = { pops_money = pops_savings_temp }
+						add_to_variable = { pops_savings_withdrawals = pops_savings_temp }
+					}
+				#
 
 				#Industrial Subsidies
 					set_temp_variable = { raw_goods_temp = factory_raw_goods_need }
@@ -441,7 +519,7 @@
 							multiply_temp_variable = { infra_construction_funds_temp = industrial_goods_price }
 							multiply_temp_variable = { infra_construction_funds_temp = PREV.construction_spending_percentage }
 							divide_temp_variable = { infra_construction_funds_temp = 100 }
-							subtract_from_temp_variable = { infra_construction_funds_temp = infrastructure_investment_money }
+							subtract_from_temp_variable = { infra_construction_funds_temp = infrastructure_construction_investment_money }
 							if = {
 								limit = {
 									check_variable = { infra_construction_funds_temp > 0 }
@@ -1209,6 +1287,7 @@
 
 												subtract_from_temp_variable = { buy_amount_left = buy_amount }
 												add_to_variable = { life_goods_supply = buy_amount }
+												add_to_variable = { life_goods_supply_min = buy_amount }
 												add_to_variable = { life_goods_trade_amount = buy_amount }
 												subtract_from_variable = { life_goods_trade_value = cost_temp }
 												add_to_variable = { PREV.life_goods_trade_amount = buy_amount }
@@ -1328,6 +1407,7 @@
 
 												subtract_from_temp_variable = { buy_amount_left = buy_amount }
 												add_to_variable = { everyday_goods_supply = buy_amount }
+												add_to_variable = { everyday_goods_supply_min = buy_amount }
 												add_to_variable = { everyday_goods_trade_amount = buy_amount }
 												subtract_from_variable = { everyday_goods_trade_value = cost_temp }
 												add_to_variable = { PREV.everyday_goods_trade_amount = buy_amount }
@@ -1446,6 +1526,7 @@
 
 												subtract_from_temp_variable = { buy_amount_left = buy_amount }
 												add_to_variable = { luxury_goods_supply = buy_amount }
+												add_to_variable = { luxury_goods_supply_min = buy_amount }
 												add_to_variable = { luxury_goods_trade_amount = buy_amount }
 												subtract_from_variable = { luxury_goods_trade_value = cost_temp }
 												add_to_variable = { PREV.luxury_goods_trade_amount = buy_amount }
@@ -1565,6 +1646,7 @@
 
 												subtract_from_temp_variable = { buy_amount_left = buy_amount }
 												add_to_variable = { services_supply = buy_amount }
+												add_to_variable = { services_supply_min = buy_amount }
 												add_to_variable = { services_trade_amount = buy_amount }
 												subtract_from_variable = { services_trade_value = cost_temp }
 												add_to_variable = { PREV.services_trade_amount = buy_amount }
@@ -1684,6 +1766,7 @@
 
 												subtract_from_temp_variable = { buy_amount_left = buy_amount }
 												add_to_variable = { raw_goods_supply = buy_amount }
+												add_to_variable = { raw_goods_supply_min = buy_amount }
 												add_to_variable = { raw_goods_trade_amount = buy_amount }
 												subtract_from_variable = { raw_goods_trade_value = cost_temp }
 												add_to_variable = { PREV.raw_goods_trade_amount = buy_amount }
@@ -1803,6 +1886,7 @@
 
 												subtract_from_temp_variable = { buy_amount_left = buy_amount }
 												add_to_variable = { industrial_goods_supply = buy_amount }
+												add_to_variable = { industrial_goods_supply_min = buy_amount }
 												add_to_variable = { industrial_goods_trade_amount = buy_amount }
 												subtract_from_variable = { industrial_goods_trade_value = cost_temp }
 												add_to_variable = { PREV.industrial_goods_trade_amount = buy_amount }
@@ -1877,7 +1961,6 @@
 				#Countries with excess demand to supply will try to buy goods. Countries in the order of the "Great Powers List" go first. 
 				#It is assumed that all imported and exported supply/demand will be fulfilled. This will be fulfilled in order of cheapest states to most expensive in exports and most expensive to cheapest in imports.
 
-				set_variable = { actual_tariff_revenue = 0 }
                 #life_goods
 						set_temp_variable = { buy_amount_left = life_goods_demand }
 						#Loops thru cheapest countries to buy from
@@ -1967,6 +2050,7 @@
 									add_to_variable = { country_temp:life_goods_global_trade_actual_value = cost_temp }
 									subtract_from_variable = { life_goods_global_trade_actual_value = cost_temp }
 									add_to_variable = { global.life_goods_global_trade_actual_value = cost_temp }
+									add_to_variable = { country_temp:life_goods_global_trade_value = cost_temp }
 
 									multiply_temp_variable = { buy_amount = 100 }
 									divide_temp_variable = { buy_amount = shipping_cost }
@@ -2000,7 +2084,7 @@
 										add_to_variable = { country_temp:actual_tariff_revenue = export_value_temp }
 									}
 									else = {
-										subtract_from_variable = { country_temp:actual_subsidy_expense = export_value_temp }
+										subtract_from_variable = { country_temp:actual_trade_subsidy_spending = export_value_temp }
 									}
 									if = {
 										limit = {
@@ -2009,7 +2093,7 @@
 										add_to_variable = { actual_tariff_revenue = import_value_temp }
 									}
 									else = {
-										subtract_from_variable = { actual_subsidy_expense = import_value_temp }
+										subtract_from_variable = { actual_trade_subsidy_spending = import_value_temp }
 									}
 
 									add_to_variable = { life_goods_supply = buy_amount }
@@ -2018,7 +2102,6 @@
 									subtract_from_temp_variable = { buy_amount_left = buy_amount }
 									subtract_from_variable = { life_goods_global_trade_value = cost_temp }
 									add_to_variable = { global.life_goods_global_trade_value = cost_temp }
-									add_to_variable = { country_temp:life_goods_global_trade_value = cost_temp }
 								}
 							}
 							else_if = {
@@ -2126,6 +2209,7 @@
 									add_to_variable = { country_temp:everyday_goods_global_trade_actual_value = cost_temp }
 									subtract_from_variable = { everyday_goods_global_trade_actual_value = cost_temp }
 									add_to_variable = { global.everyday_goods_global_trade_actual_value = cost_temp }
+									add_to_variable = { country_temp:everyday_goods_global_trade_value = cost_temp }
 
 									multiply_temp_variable = { buy_amount = 100 }
 									divide_temp_variable = { buy_amount = shipping_cost }
@@ -2159,7 +2243,7 @@
 										add_to_variable = { country_temp:actual_tariff_revenue = export_value_temp }
 									}
 									else = {
-										subtract_from_variable = { country_temp:actual_subsidy_expense = export_value_temp }
+										subtract_from_variable = { country_temp:actual_trade_subsidy_spending = export_value_temp }
 									}
 									if = {
 										limit = {
@@ -2168,7 +2252,7 @@
 										add_to_variable = { actual_tariff_revenue = import_value_temp }
 									}
 									else = {
-										subtract_from_variable = { actual_subsidy_expense = import_value_temp }
+										subtract_from_variable = { actual_trade_subsidy_spending = import_value_temp }
 									}
 
 									add_to_variable = { everyday_goods_supply = buy_amount }
@@ -2177,7 +2261,6 @@
 									subtract_from_temp_variable = { buy_amount_left = buy_amount }
 									subtract_from_variable = { everyday_goods_global_trade_value = cost_temp }
 									add_to_variable = { global.everyday_goods_global_trade_value = cost_temp }
-									add_to_variable = { country_temp:everyday_goods_global_trade_value = cost_temp }
 								}
 							}
 							else_if = {
@@ -2286,6 +2369,7 @@
 									add_to_variable = { country_temp:luxury_goods_global_trade_actual_value = cost_temp }
 									subtract_from_variable = { luxury_goods_global_trade_actual_value = cost_temp }
 									add_to_variable = { global.luxury_goods_global_trade_actual_value = cost_temp }
+									add_to_variable = { country_temp:luxury_goods_global_trade_value = cost_temp }
 
 									multiply_temp_variable = { buy_amount = 100 }
 									divide_temp_variable = { buy_amount = shipping_cost }
@@ -2319,7 +2403,7 @@
 										add_to_variable = { country_temp:actual_tariff_revenue = export_value_temp }
 									}
 									else = {
-										subtract_from_variable = { country_temp:actual_subsidy_expense = export_value_temp }
+										subtract_from_variable = { country_temp:actual_trade_subsidy_spending = export_value_temp }
 									}
 									if = {
 										limit = {
@@ -2328,7 +2412,7 @@
 										add_to_variable = { actual_tariff_revenue = import_value_temp }
 									}
 									else = {
-										subtract_from_variable = { actual_subsidy_expense = import_value_temp }
+										subtract_from_variable = { actual_trade_subsidy_spending = import_value_temp }
 									}
 
 									add_to_variable = { luxury_goods_supply = buy_amount }
@@ -2337,7 +2421,6 @@
 									subtract_from_temp_variable = { buy_amount_left = buy_amount }
 									subtract_from_variable = { luxury_goods_global_trade_value = cost_temp }
 									add_to_variable = { global.luxury_goods_global_trade_value = cost_temp }
-									add_to_variable = { country_temp:luxury_goods_global_trade_value = cost_temp }
 								}
 							}
 							else_if = {
@@ -2446,6 +2529,7 @@
 									add_to_variable = { country_temp:services_global_trade_actual_value = cost_temp }
 									subtract_from_variable = { services_global_trade_actual_value = cost_temp }
 									add_to_variable = { global.services_global_trade_actual_value = cost_temp }
+									add_to_variable = { country_temp:services_global_trade_value = cost_temp }
 
 									multiply_temp_variable = { buy_amount = 100 }
 									divide_temp_variable = { buy_amount = shipping_cost }
@@ -2479,7 +2563,7 @@
 										add_to_variable = { country_temp:actual_tariff_revenue = export_value_temp }
 									}
 									else = {
-										subtract_from_variable = { country_temp:actual_subsidy_expense = export_value_temp }
+										subtract_from_variable = { country_temp:actual_trade_subsidy_spending = export_value_temp }
 									}
 									if = {
 										limit = {
@@ -2488,7 +2572,7 @@
 										add_to_variable = { actual_tariff_revenue = import_value_temp }
 									}
 									else = {
-										subtract_from_variable = { actual_subsidy_expense = import_value_temp }
+										subtract_from_variable = { actual_trade_subsidy_spending = import_value_temp }
 									}
 
 									add_to_variable = { services_supply = buy_amount }
@@ -2497,7 +2581,6 @@
 									subtract_from_temp_variable = { buy_amount_left = buy_amount }
 									subtract_from_variable = { services_global_trade_value = cost_temp }
 									add_to_variable = { global.services_global_trade_value = cost_temp }
-									add_to_variable = { country_temp:services_global_trade_value = cost_temp }
 								}
 							}
 							else_if = {
@@ -2612,6 +2695,7 @@
 									add_to_variable = { country_temp:raw_goods_global_trade_actual_value = cost_temp }
 									subtract_from_variable = { raw_goods_global_trade_actual_value = cost_temp }
 									add_to_variable = { global.raw_goods_global_trade_actual_value = cost_temp }
+									add_to_variable = { country_temp:raw_goods_global_trade_value = cost_temp }
 
 									multiply_temp_variable = { buy_amount = 100 }
 									divide_temp_variable = { buy_amount = shipping_cost }
@@ -2645,7 +2729,7 @@
 										add_to_variable = { country_temp:actual_tariff_revenue = export_value_temp }
 									}
 									else = {
-										subtract_from_variable = { country_temp:actual_subsidy_expense = export_value_temp }
+										subtract_from_variable = { country_temp:actual_trade_subsidy_spending = export_value_temp }
 									}
 									if = {
 										limit = {
@@ -2654,7 +2738,7 @@
 										add_to_variable = { actual_tariff_revenue = import_value_temp }
 									}
 									else = {
-										subtract_from_variable = { actual_subsidy_expense = import_value_temp }
+										subtract_from_variable = { actual_trade_subsidy_spending = import_value_temp }
 									}
 
 									add_to_variable = { raw_goods_supply = buy_amount }
@@ -2663,7 +2747,6 @@
 									subtract_from_temp_variable = { buy_amount_left = buy_amount }
 									subtract_from_variable = { raw_goods_global_trade_value = cost_temp }
 									add_to_variable = { global.raw_goods_global_trade_value = cost_temp }
-									add_to_variable = { country_temp:raw_goods_global_trade_value = cost_temp }
 								}
 							}
 							else_if = {
@@ -2772,6 +2855,7 @@
 									add_to_variable = { country_temp:industrial_goods_global_trade_actual_value = cost_temp }
 									subtract_from_variable = { industrial_goods_global_trade_actual_value = cost_temp }
 									add_to_variable = { global.industrial_goods_global_trade_actual_value = cost_temp }
+									add_to_variable = { country_temp:industrial_goods_global_trade_value = cost_temp }
 
 									multiply_temp_variable = { buy_amount = 100 }
 									divide_temp_variable = { buy_amount = shipping_cost }
@@ -2805,7 +2889,7 @@
 										add_to_variable = { country_temp:actual_tariff_revenue = export_value_temp }
 									}
 									else = {
-										subtract_from_variable = { country_temp:actual_subsidy_expense = export_value_temp }
+										subtract_from_variable = { country_temp:actual_trade_subsidy_spending = export_value_temp }
 									}
 									if = {
 										limit = {
@@ -2814,7 +2898,7 @@
 										add_to_variable = { actual_tariff_revenue = import_value_temp }
 									}
 									else = {
-										subtract_from_variable = { actual_subsidy_expense = import_value_temp }
+										subtract_from_variable = { actual_trade_subsidy_spending = import_value_temp }
 									}
 
 									add_to_variable = { industrial_goods_supply = buy_amount }
@@ -2823,7 +2907,6 @@
 									subtract_from_temp_variable = { buy_amount_left = buy_amount }
 									subtract_from_variable = { industrial_goods_global_trade_value = cost_temp }
 									add_to_variable = { global.industrial_goods_global_trade_value = cost_temp }
-									add_to_variable = { country_temp:industrial_goods_global_trade_value = cost_temp }
 								}
 							}
 							else_if = {
@@ -4483,6 +4566,22 @@
 				add_to_variable = { pops_earnings = pops_rgos_valuable_goods_production } #Gold in dem hills
 				add_to_variable = { rgos_earnings = pops_rgos_valuable_goods_production }
 
+				#Pops put money into Savings
+					set_temp_variable = { pops_savings_temp = pops_money }
+					multiply_temp_variable = { pops_savings_temp = global.pops_savings_spending }
+					
+					set_variable = { pops_savings_goal = pops_earnings }
+					multiply_variable = { pops_savings_goal = global.pops_savings_base_goal }
+					if = {
+						limit = {
+							check_variable = { pops_savings < pops_savings_goal }
+						}
+						add_to_variable = { pops_savings = pops_savings_temp }
+						add_to_variable = { pops_savings_deposits = pops_savings_temp }
+						subtract_from_variable = { pops_money = pops_savings_temp }
+					}
+				#
+
 				#RGO Revenue into Aristocrats
 
 					set_temp_variable = { aristocrats_share = aristocrats_percentage }
@@ -4534,22 +4633,60 @@
 					multiply_variable = { pops_other_death_amount = global.pops_other_death_base_rate }
 					divide_variable = { pops_other_death_amount = 12 }
 
+					set_variable = { pops_starvation_percentage = 0 } #Percentage needed for starvation
 					if = {
 						limit = {
-							check_variable = { pops_annual_life_goods_fulfilled_percentage < 0.1 } #Starvation
+							check_variable = { pops_amount < 100 }
+						}
+						set_temp_variable = { pops_amount_temp = pops_amount }
+						divide_temp_variable = { pops_amount_temp = 2000 }
+						add_to_variable = { pops_starvation_percentage = pops_amount_temp }
+					}
+					else = {
+						add_to_variable = { pops_starvation_percentage = 0.05 }
+
+						if = {
+							limit = {
+								check_variable = { pops_amount < 1000 }
+							}
+							set_temp_variable = { pops_amount_temp = pops_amount }
+							divide_temp_variable = { pops_amount_temp = 10000 }
+							add_to_variable = { pops_starvation_percentage = pops_amount_temp }
+						}
+						else = {
+							add_to_variable = { pops_starvation_percentage = 0.1 }
+							if = {
+								limit = {
+									check_variable = { pops_amount < 30000 }
+								}
+								set_temp_variable = { pops_amount_temp = pops_amount }
+								divide_temp_variable = { pops_amount_temp = 200000 }
+								add_to_variable = { pops_starvation_percentage = pops_amount_temp }
+							}
+							else = {
+								add_to_variable = { pops_starvation_percentage = 0.15 }
+								set_temp_variable = { pops_amount_temp = pops_amount }
+								divide_temp_variable = { pops_amount_temp = 2000000 }
+								add_to_variable = { pops_starvation_percentage = pops_amount_temp }
+							}
+						}
+					}
+					if = {
+						limit = {
+							check_variable = { pops_annual_life_goods_fulfilled_percentage < pops_starvation_percentage } #Starvation
 						}
 						if = {
 							limit = {
-								check_variable = { pops_amount > 10 } #Low pop amounts may lead to them not getting goods by default
+								check_variable = { pops_amount > 20 } #Low pop amounts may lead to them not getting goods by default
 							}
 							set_temp_variable = { pops_starvation_death_amount_temp = pops_amount }
 							divide_temp_variable = { pops_starvation_death_amount_temp = 100 }
 							multiply_temp_variable = { pops_starvation_death_amount_temp = global.pops_maximum_starvation_death_rate }
 							divide_temp_variable = { pops_starvation_death_amount_temp = 12 }
 
-							set_temp_variable = { percentage_applied_temp = 0.1 }
+							set_temp_variable = { percentage_applied_temp = pops_starvation_percentage }
 							subtract_from_temp_variable = { percentage_applied_temp = pops_annual_life_goods_fulfilled_percentage }
-							multiply_temp_variable = { percentage_applied_temp = 10 }
+							divide_temp_variable = { percentage_applied_temp = pops_starvation_percentage }
 							multiply_temp_variable = { pops_starvation_death_amount_temp = percentage_applied_temp }
 							add_to_variable = { pops_other_death_amount = pops_starvation_death_amount_temp }
 						}
@@ -4795,45 +4932,6 @@
 					}
 				#
 
-				#Making trade amounts positive
-					if = {
-						limit = {
-							check_variable = { life_goods_trade_amount < 0 }
-						}
-						multiply_variable = { life_goods_trade_amount = -1 }
-					}
-					if = {
-						limit = {
-							check_variable = { everyday_goods_trade_amount < 0 }
-						}
-						multiply_variable = { everyday_goods_trade_amount = -1 }
-					}
-					if = {
-						limit = {
-							check_variable = { luxury_goods_trade_amount < 0 }
-						}
-						multiply_variable = { luxury_goods_trade_amount = -1 }
-					}
-					if = {
-						limit = {
-							check_variable = { services_trade_amount < 0 }
-						}
-						multiply_variable = { services_trade_amount = -1 }
-					}
-					if = {
-						limit = {
-							check_variable = { raw_goods_trade_amount < 0 }
-						}
-						multiply_variable = { raw_goods_trade_amount = -1 }
-					}
-					if = {
-						limit = {
-							check_variable = { industrial_goods_trade_amount < 0 }
-						}
-						multiply_variable = { industrial_goods_trade_amount = -1 }
-					}
-				#
-
 				#Adding Per Month Stats
 					add_to_array = { pops_life_goods_fulfilled_array = pops_life_goods_fulfilled_percentage }
 					if = {
@@ -4876,6 +4974,7 @@
 					add_to_variable = { total_money = infrastructure_money }
 					add_to_variable = { total_money = factory_money }
 					add_to_variable = { total_money = pops_earnings }
+					add_to_variable = { total_money = pops_savings }
 					add_to_variable = { total_money = factory_everyday_goods_construction_investment_money }
 					add_to_variable = { total_money = factory_luxury_goods_construction_investment_money }
 					add_to_variable = { total_money = factory_industrial_goods_construction_investment_money }
@@ -5143,6 +5242,7 @@
 				set_variable = { actual_revenue = actual_income_tax_revenue }
 				add_to_variable = { actual_revenue = actual_tariff_revenue }
 				set_variable = { actual_subsidy_expense = actual_infrastructure_spending }
+				add_to_variable = { actual_subsidy_expense = actual_trade_subsidy_spending }
 				set_variable = { actual_spending = actual_subsidy_expense }
 				add_to_variable = { actual_spending = actual_construction_spending }
 				add_to_variable = { actual_spending = actual_industrial_spending }
@@ -5226,16 +5326,19 @@
 					set_variable = { global.pops_artisans_raw_goods_spending_max = 0.30 }
 
 					set_variable = { global.pops_life_goods_spending = 0.50 }
-					set_variable = { global.pops_everyday_goods_spending = 0.50 }
-					set_variable = { global.pops_luxury_goods_spending = 0.25 }
-					set_variable = { global.pops_services_spending = 0.25 }
+					set_variable = { global.pops_everyday_goods_spending = 0.75 }
+					set_variable = { global.pops_luxury_goods_spending = 0.50 }
+					set_variable = { global.pops_services_spending = 0.75 }
 					set_variable = { global.pops_life_goods_spending_max = 0.75 }
 					set_variable = { global.pops_everyday_goods_spending_max = 0.9 }
 					set_variable = { global.pops_luxury_goods_spending_max = 0.9 }
-					set_variable = { global.pops_services_spending_max = 0.75 }
+					set_variable = { global.pops_services_spending_max = 0.90 }
+
+					set_variable = { global.pops_savings_spending = 0.5 } #How much of their excess money goes into savings?
+					set_variable = { global.pops_savings_base_goal = 0.5 } #How many months of earnings should pops save as a base (Can be affected by a lot of things)
 
 				#Upper Strata
-					set_variable = { global.pops_upper_strata_life_goods_base_need = 2 }
+					set_variable = { global.pops_upper_strata_life_goods_base_need = 5 }
 					set_variable = { global.pops_upper_strata_everyday_goods_base_need = 20 }
 					set_variable = { global.pops_upper_strata_luxury_goods_base_need = 40 }
 
@@ -5249,9 +5352,9 @@
 						set_variable =  { global.capitalists_services_output_modifier = 0.1 } #At full capitalists
 
 				#Middle Strata
-					set_variable = { global.pops_middle_strata_life_goods_base_need = 1 }
-					set_variable = { global.pops_middle_strata_everyday_goods_base_need = 5 }
-					set_variable = { global.pops_middle_strata_luxury_goods_base_need = 1 }
+					set_variable = { global.pops_middle_strata_life_goods_base_need = 3 }
+					set_variable = { global.pops_middle_strata_everyday_goods_base_need = 10 }
+					set_variable = { global.pops_middle_strata_luxury_goods_base_need = 2 }
 
 					#Artisans
 						set_variable =  { global.artisans_percentage = 20 }
@@ -5274,15 +5377,15 @@
 						set_variable =  { global.officers_percentage = 0.5 }
 
 				#Lower Strata
-					set_variable = { global.pops_lower_strata_life_goods_base_need = 2 }
-					set_variable = { global.pops_lower_strata_everyday_goods_base_need = 0.5 }
-					set_variable = { global.pops_lower_strata_luxury_goods_base_need = 0.10 }
+					set_variable = { global.pops_lower_strata_life_goods_base_need = 1 }
+					set_variable = { global.pops_lower_strata_everyday_goods_base_need = 0.2 }
+					set_variable = { global.pops_lower_strata_luxury_goods_base_need = 0.05 }
 					
 					#RGOs
 						set_variable =  { global.rgos_percentage = 74 }
-						set_variable = { global.pops_rgos_life_goods_base_production = 15 } #Every 100k RGOs
-						set_variable = { global.pops_rgos_raw_goods_base_production = 6 }
-						set_variable = { global.pops_rgos_valuable_goods_base_production = 5 }
+						set_variable = { global.pops_rgos_life_goods_base_production = 10 } #Every 100k RGOs
+						set_variable = { global.pops_rgos_raw_goods_base_production = 5 }
+						set_variable = { global.pops_rgos_valuable_goods_base_production = 10 }
 
 						set_variable = { global.pops_rgos_cash_crops_output_multiplier = 1.2 } #Applies to Life/Raw Goods
 						set_variable = { global.pops_rgos_coal_output_multiplier = 1.25 } #Only to Raw
@@ -5717,6 +5820,8 @@
 					set_variable = { pops_earnings = 0 }
 					set_variable = { pops_spending = 0 }
 					set_variable = { pops_goods_spending = 0 }
+					set_variable = { pops_savings = 0 }
+					set_variable = { pops_debt = 0 }
 
 					set_variable = { factory_earnings = 0 }
 					set_variable = { factory_spending = 0 }
@@ -8559,6 +8664,130 @@
 			}
 		}
 
+		#Trade Subsidies
+			set_variable = { export_subsidy_expense = 0 }
+			set_variable = { import_subsidy_expense = 0 }
+			#life_goods
+				if = {
+					limit = {
+						check_variable = { life_goods_global_trade_actual_value < 0 }
+					}
+					set_temp_variable = { subsidy_temp = life_goods_global_trade_actual_value }
+					multiply_temp_variable = { subsidy_temp = -1 }
+					multiply_temp_variable = { subsidy_temp = import_subsidy_percentage }
+					add_to_variable = { import_subsidy_expense = subsidy_temp }
+				}
+				else_if = {
+					limit = {
+						check_variable = { life_goods_global_trade_actual_value > 0 }
+					}
+					set_temp_variable = { subsidy_temp = life_goods_global_trade_actual_value }
+					multiply_temp_variable = { subsidy_temp = export_subsidy_percentage }
+					add_to_variable = { export_subsidy_expense = subsidy_temp }
+				}
+			#
+			#everyday_goods
+				if = {
+					limit = {
+						check_variable = { everyday_goods_global_trade_actual_value < 0 }
+					}
+					set_temp_variable = { subsidy_temp = everyday_goods_global_trade_actual_value }
+					multiply_temp_variable = { subsidy_temp = -1 }
+					multiply_temp_variable = { subsidy_temp = import_subsidy_percentage }
+					add_to_variable = { import_subsidy_expense = subsidy_temp }
+				}
+				else_if = {
+					limit = {
+						check_variable = { everyday_goods_global_trade_actual_value > 0 }
+					}
+					set_temp_variable = { subsidy_temp = everyday_goods_global_trade_actual_value }
+					multiply_temp_variable = { subsidy_temp = export_subsidy_percentage }
+					add_to_variable = { export_subsidy_expense = subsidy_temp }
+				}
+			#
+			#luxury_goods
+				if = {
+					limit = {
+						check_variable = { luxury_goods_global_trade_actual_value < 0 }
+					}
+					set_temp_variable = { subsidy_temp = luxury_goods_global_trade_actual_value }
+					multiply_temp_variable = { subsidy_temp = -1 }
+					multiply_temp_variable = { subsidy_temp = import_subsidy_percentage }
+					add_to_variable = { import_subsidy_expense = subsidy_temp }
+				}
+				else_if = {
+					limit = {
+						check_variable = { luxury_goods_global_trade_actual_value > 0 }
+					}
+					set_temp_variable = { subsidy_temp = luxury_goods_global_trade_actual_value }
+					multiply_temp_variable = { subsidy_temp = export_subsidy_percentage }
+					add_to_variable = { export_subsidy_expense = subsidy_temp }
+				}
+			#
+			#services
+				if = {
+					limit = {
+						check_variable = { services_global_trade_actual_value < 0 }
+					}
+					set_temp_variable = { subsidy_temp = services_global_trade_actual_value }
+					multiply_temp_variable = { subsidy_temp = -1 }
+					multiply_temp_variable = { subsidy_temp = import_subsidy_percentage }
+					add_to_variable = { import_subsidy_expense = subsidy_temp }
+				}
+				else_if = {
+					limit = {
+						check_variable = { services_global_trade_actual_value > 0 }
+					}
+					set_temp_variable = { subsidy_temp = services_global_trade_actual_value }
+					multiply_temp_variable = { subsidy_temp = export_subsidy_percentage }
+					add_to_variable = { export_subsidy_expense = subsidy_temp }
+				}
+			#
+			#raw_goods
+				if = {
+					limit = {
+						check_variable = { raw_goods_global_trade_actual_value < 0 }
+					}
+					set_temp_variable = { subsidy_temp = raw_goods_global_trade_actual_value }
+					multiply_temp_variable = { subsidy_temp = -1 }
+					multiply_temp_variable = { subsidy_temp = import_subsidy_percentage }
+					add_to_variable = { import_subsidy_expense = subsidy_temp }
+				}
+				else_if = {
+					limit = {
+						check_variable = { raw_goods_global_trade_actual_value > 0 }
+					}
+					set_temp_variable = { subsidy_temp = raw_goods_global_trade_actual_value }
+					multiply_temp_variable = { subsidy_temp = export_subsidy_percentage }
+					add_to_variable = { export_subsidy_expense = subsidy_temp }
+				}
+			#
+			#industrial_goods
+				if = {
+					limit = {
+						check_variable = { industrial_goods_global_trade_actual_value < 0 }
+					}
+					set_temp_variable = { subsidy_temp = industrial_goods_global_trade_actual_value }
+					multiply_temp_variable = { subsidy_temp = -1 }
+					multiply_temp_variable = { subsidy_temp = import_subsidy_percentage }
+					add_to_variable = { import_subsidy_expense = subsidy_temp }
+				}
+				else_if = {
+					limit = {
+						check_variable = { industrial_goods_global_trade_actual_value > 0 }
+					}
+					set_temp_variable = { subsidy_temp = industrial_goods_global_trade_actual_value }
+					multiply_temp_variable = { subsidy_temp = export_subsidy_percentage }
+					add_to_variable = { export_subsidy_expense = subsidy_temp }
+				}
+			#
+			divide_variable = { import_subsidy_expense = 100 }
+			divide_variable = { export_subsidy_expense = 100 }
+
+			set_variable = { subsidy_expense = import_subsidy_expense }
+			add_to_variable = { subsidy_expense = export_subsidy_expense }
+		#
+
 		set_variable = { subsidy_expense = infrastructure_subsidy_expense }
 		add_to_variable = { subsidy_expense = industrial_subsidy_expense }
 
@@ -9207,6 +9436,76 @@
 		}
 		spending_update = yes
 	}
+	change_import_subsidy = {
+		#Scope: Country
+		#Increases/Decreases the Import Subsidy level
+		#INPUT:
+			#percent_change_temp - Amount to decrease it by. 1.0 increases it by 1%,  -10.0 decreases it by 10%
+		
+		add_to_variable = { import_subsidy_percentage = percent_change_temp }
+		if = {
+			limit = {
+				check_variable = { percent_change_temp > 0 }
+			}
+			#TODO - People get angerry
+
+			if = {
+				limit = {
+					check_variable = { import_subsidy_percentage > 100 }
+				}
+				set_variable = { import_subsidy_percentage = 100 }
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = { percent_change_temp < 0 }
+			}
+			#TODO - People become happy
+
+			if = {
+				limit = {
+					check_variable = { import_subsidy_percentage < 0 }
+				}
+				set_variable = { import_subsidy_percentage = 0 }
+			}
+		}
+		spending_update = yes
+	} 
+	change_export_subsidy = {
+		#Scope: Country
+		#Increases/Decreases the Export Subsidy level
+		#INPUT:
+			#percent_change_temp - Amount to decrease it by. 1.0 increases it by 1%,  -10.0 decreases it by 10%
+		
+		add_to_variable = { export_subsidy_percentage = percent_change_temp }
+		if = {
+			limit = {
+				check_variable = { percent_change_temp > 0 }
+			}
+			#TODO - People get angerry
+
+			if = {
+				limit = {
+					check_variable = { export_subsidy_percentage > 100 }
+				}
+				set_variable = { export_subsidy_percentage = 100 }
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = { percent_change_temp < 0 }
+			}
+			#TODO - People become happy
+
+			if = {
+				limit = {
+					check_variable = { export_subsidy_percentage < 0 }
+				}
+				set_variable = { export_subsidy_percentage = 0 }
+			}
+		}
+		spending_update = yes
+	} 
 	change_infrastructure_subsidy = {
 		#Scope: Country
 		#Increases/Decreases the Infrastructure Subsidy level
@@ -9456,7 +9755,22 @@
 		add_to_temp_variable = { sales_tax_temp = 100 }
 		#Life Goods
 			set_temp_variable = { money_life_goods_temp = money_left_temp }
-			multiply_temp_variable = { money_life_goods_temp = global.pops_life_goods_spending } #Pops will spend up to 75% of their money on Life Goods
+			set_temp_variable = { spending_temp = global.pops_life_goods_spending }
+			if = {
+				limit = {
+					check_variable = { pops_annual_life_goods_fulfilled_percentage < 0.5 }
+				}
+				set_temp_variable = { percent_temp = 0.5 }
+				subtract_from_temp_variable = { percent_temp = pops_annual_life_goods_fulfilled_percentage }
+				add_to_temp_variable = { spending_temp = percent_temp }
+				if = {
+					limit = {
+						check_variable = { spending_temp > 1 }
+					}
+					set_temp_variable = { spending_temp = 1 }
+				}
+			}
+			multiply_temp_variable = { money_life_goods_temp = spending_temp }
 
 			set_temp_variable = { actual_price_temp = life_goods_price }
 			multiply_temp_variable = { actual_price_temp = sales_tax_temp }
@@ -10017,29 +10331,41 @@
 
 	calculate_price = {
 		#life_goods
+			set_temp_variable = { demand_temp = life_goods_demand }
+			set_temp_variable = { supply_temp = life_goods_supply }
+			if = {
+				limit = {
+					check_variable = { life_goods_supply < 1 }
+					check_variable = { life_goods_demand < 1 }
+					check_variable = { life_goods_trade_amount < 0 }
+				}
+				subtract_from_temp_variable = { supply_temp = life_goods_supply }
+				subtract_from_temp_variable = { demand_temp = life_goods_trade_amount }
+			}
+
 			set_temp_variable = { life_goods_prev_price_temp = life_goods_price }
 			multiply_temp_variable = { life_goods_prev_price_temp = 2 }
 			if = {
 				limit = {
-					check_variable = { life_goods_supply > 0 }
+					check_variable = { supply_temp > 0 }
 				}
 				if = {
 					limit = {
-						check_variable = { life_goods_supply < 1 }
+						check_variable = { supply_temp < 1 }
 					}
-					divide_variable = { life_goods_price = life_goods_supply }
-					multiply_variable = { life_goods_price = life_goods_demand }
+					divide_variable = { life_goods_price = supply_temp }
+					multiply_variable = { life_goods_price = demand_temp }
 				}
 				else = {
-					multiply_variable = { life_goods_price = life_goods_demand }
-					divide_variable = { life_goods_price = life_goods_supply }
+					multiply_variable = { life_goods_price = demand_temp }
+					divide_variable = { life_goods_price = supply_temp }
 				}
 				add_to_variable = { life_goods_price = life_goods_prev_price_temp }
 				divide_variable = { life_goods_price = 3 }
 			}
 			else_if = {
 				limit = {
-					check_variable = { life_goods_demand > 0 }
+					check_variable = { demand_temp > 0 }
 				}
 				multiply_variable = { life_goods_price = 1.2 }
 			}
@@ -10059,29 +10385,41 @@
 			}
 
 		#everyday_goods
+			set_temp_variable = { demand_temp = everyday_goods_demand }
+			set_temp_variable = { supply_temp = everyday_goods_supply }
+			if = {
+				limit = {
+					check_variable = { everyday_goods_supply < 1 }
+					check_variable = { everyday_goods_demand < 1 }
+					check_variable = { everyday_goods_trade_amount < 0 }
+				}
+				subtract_from_temp_variable = { supply_temp = everyday_goods_supply }
+				subtract_from_temp_variable = { demand_temp = everyday_goods_trade_amount }
+			}
+
 			set_temp_variable = { everyday_goods_prev_price_temp = everyday_goods_price }
 			multiply_temp_variable = { everyday_goods_prev_price_temp = 2 }
 			if = {
 				limit = {
-					check_variable = { everyday_goods_supply > 0 }
+					check_variable = { supply_temp > 0 }
 				}
 				if = {
 					limit = {
-						check_variable = { everyday_goods_supply < 1 }
+						check_variable = { supply_temp < 1 }
 					}
-					divide_variable = { everyday_goods_price = everyday_goods_supply }
-					multiply_variable = { everyday_goods_price = everyday_goods_demand }
+					divide_variable = { everyday_goods_price = supply_temp }
+					multiply_variable = { everyday_goods_price = demand_temp }
 				}
 				else = {
-					multiply_variable = { everyday_goods_price = everyday_goods_demand }
-					divide_variable = { everyday_goods_price = everyday_goods_supply }
+					multiply_variable = { everyday_goods_price = demand_temp }
+					divide_variable = { everyday_goods_price = supply_temp }
 				}
 				add_to_variable = { everyday_goods_price = everyday_goods_prev_price_temp }
 				divide_variable = { everyday_goods_price = 3 }
 			}
 			else_if = {
 				limit = {
-					check_variable = { everyday_goods_demand > 0 }
+					check_variable = { demand_temp > 0 }
 				}
 				multiply_variable = { everyday_goods_price = 1.2 }
 			}
@@ -10101,29 +10439,41 @@
 			}
 
 		#luxury_goods
+			set_temp_variable = { demand_temp = luxury_goods_demand }
+			set_temp_variable = { supply_temp = luxury_goods_supply }
+			if = {
+				limit = {
+					check_variable = { luxury_goods_supply < 1 }
+					check_variable = { luxury_goods_demand < 1 }
+					check_variable = { luxury_goods_trade_amount < 0 }
+				}
+				subtract_from_temp_variable = { supply_temp = luxury_goods_supply }
+				subtract_from_temp_variable = { demand_temp = luxury_goods_trade_amount }
+			}
+
 			set_temp_variable = { luxury_goods_prev_price_temp = luxury_goods_price }
 			multiply_temp_variable = { luxury_goods_prev_price_temp = 2 }
 			if = {
 				limit = {
-					check_variable = { luxury_goods_supply > 0 }
+					check_variable = { supply_temp > 0 }
 				}
 				if = {
 					limit = {
-						check_variable = { luxury_goods_supply < 1 }
+						check_variable = { supply_temp < 1 }
 					}
-					divide_variable = { luxury_goods_price = luxury_goods_supply }
-					multiply_variable = { luxury_goods_price = luxury_goods_demand }
+					divide_variable = { luxury_goods_price = supply_temp }
+					multiply_variable = { luxury_goods_price = demand_temp }
 				}
 				else = {
-					multiply_variable = { luxury_goods_price = luxury_goods_demand }
-					divide_variable = { luxury_goods_price = luxury_goods_supply }
+					multiply_variable = { luxury_goods_price = demand_temp }
+					divide_variable = { luxury_goods_price = supply_temp }
 				}
 				add_to_variable = { luxury_goods_price = luxury_goods_prev_price_temp }
 				divide_variable = { luxury_goods_price = 3 }
 			}
 			else_if = {
 				limit = {
-					check_variable = { luxury_goods_demand > 0 }
+					check_variable = { demand_temp > 0 }
 				}
 				multiply_variable = { luxury_goods_price = 1.2 }
 			}
@@ -10143,29 +10493,41 @@
 			}
 
 		#services
+			set_temp_variable = { demand_temp = services_demand }
+			set_temp_variable = { supply_temp = services_supply }
+			if = {
+				limit = {
+					check_variable = { services_supply < 1 }
+					check_variable = { services_demand < 1 }
+					check_variable = { services_trade_amount < 0 }
+				}
+				subtract_from_temp_variable = { supply_temp = services_supply }
+				subtract_from_temp_variable = { demand_temp = services_trade_amount }
+			}
+
 			set_temp_variable = { services_prev_price_temp = services_price }
 			multiply_temp_variable = { services_prev_price_temp = 2 }
 			if = {
 				limit = {
-					check_variable = { services_supply > 0 }
+					check_variable = { supply_temp > 0 }
 				}
 				if = {
 					limit = {
-						check_variable = { services_supply < 1 }
+						check_variable = { supply_temp < 1 }
 					}
-					divide_variable = { services_price = services_supply }
-					multiply_variable = { services_price = services_demand }
+					divide_variable = { services_price = supply_temp }
+					multiply_variable = { services_price = demand_temp }
 				}
 				else = {
-					multiply_variable = { services_price = services_demand }
-					divide_variable = { services_price = services_supply }
+					multiply_variable = { services_price = demand_temp }
+					divide_variable = { services_price = supply_temp }
 				}
 				add_to_variable = { services_price = services_prev_price_temp }
 				divide_variable = { services_price = 3 }
 			}
 			else_if = {
 				limit = {
-					check_variable = { services_demand > 0 }
+					check_variable = { demand_temp > 0 }
 				}
 				multiply_variable = { services_price = 1.2 }
 			}
@@ -10185,29 +10547,41 @@
 			}
 
 		#raw_goods
+			set_temp_variable = { demand_temp = raw_goods_demand }
+			set_temp_variable = { supply_temp = raw_goods_supply }
+			if = {
+				limit = {
+					check_variable = { raw_goods_supply < 1 }
+					check_variable = { raw_goods_demand < 1 }
+					check_variable = { raw_goods_trade_amount < 0 }
+				}
+				subtract_from_temp_variable = { supply_temp = raw_goods_supply }
+				subtract_from_temp_variable = { demand_temp = raw_goods_trade_amount }
+			}
+
 			set_temp_variable = { raw_goods_prev_price_temp = raw_goods_price }
 			multiply_temp_variable = { raw_goods_prev_price_temp = 2 }
 			if = {
 				limit = {
-					check_variable = { raw_goods_supply > 0 }
+					check_variable = { supply_temp > 0 }
 				}
 				if = {
 					limit = {
-						check_variable = { raw_goods_supply < 1 }
+						check_variable = { supply_temp < 1 }
 					}
-					divide_variable = { raw_goods_price = raw_goods_supply }
-					multiply_variable = { raw_goods_price = raw_goods_demand }
+					divide_variable = { raw_goods_price = supply_temp }
+					multiply_variable = { raw_goods_price = demand_temp }
 				}
 				else = {
-					multiply_variable = { raw_goods_price = raw_goods_demand }
-					divide_variable = { raw_goods_price = raw_goods_supply }
+					multiply_variable = { raw_goods_price = demand_temp }
+					divide_variable = { raw_goods_price = supply_temp }
 				}
 				add_to_variable = { raw_goods_price = raw_goods_prev_price_temp }
 				divide_variable = { raw_goods_price = 3 }
 			}
 			else_if = {
 				limit = {
-					check_variable = { raw_goods_demand > 0 }
+					check_variable = { demand_temp > 0 }
 				}
 				multiply_variable = { raw_goods_price = 1.2 }
 			}
@@ -10227,29 +10601,41 @@
 			}
 
 		#industrial_goods
+			set_temp_variable = { demand_temp = industrial_goods_demand }
+			set_temp_variable = { supply_temp = industrial_goods_supply }
+			if = {
+				limit = {
+					check_variable = { industrial_goods_supply < 1 }
+					check_variable = { industrial_goods_demand < 1 }
+					check_variable = { industrial_goods_trade_amount < 0 }
+				}
+				subtract_from_temp_variable = { supply_temp = industrial_goods_supply }
+				subtract_from_temp_variable = { demand_temp = industrial_goods_trade_amount }
+			}
+
 			set_temp_variable = { industrial_goods_prev_price_temp = industrial_goods_price }
 			multiply_temp_variable = { industrial_goods_prev_price_temp = 2 }
 			if = {
 				limit = {
-					check_variable = { industrial_goods_supply > 0 }
+					check_variable = { supply_temp > 0 }
 				}
 				if = {
 					limit = {
-						check_variable = { industrial_goods_supply < 1 }
+						check_variable = { supply_temp < 1 }
 					}
-					divide_variable = { industrial_goods_price = industrial_goods_supply }
-					multiply_variable = { industrial_goods_price = industrial_goods_demand }
+					divide_variable = { industrial_goods_price = supply_temp }
+					multiply_variable = { industrial_goods_price = demand_temp }
 				}
 				else = {
-					multiply_variable = { industrial_goods_price = industrial_goods_demand }
-					divide_variable = { industrial_goods_price = industrial_goods_supply }
+					multiply_variable = { industrial_goods_price = demand_temp }
+					divide_variable = { industrial_goods_price = supply_temp }
 				}
 				add_to_variable = { industrial_goods_price = industrial_goods_prev_price_temp }
 				divide_variable = { industrial_goods_price = 3 }
 			}
 			else_if = {
 				limit = {
-					check_variable = { industrial_goods_demand > 0 }
+					check_variable = { demand_temp > 0 }
 				}
 				multiply_variable = { industrial_goods_price = 1.2 }
 			}
@@ -10267,6 +10653,7 @@
 				}
 				set_variable = { industrial_goods_price = price_temp }
 			}
+
 	}
 	calculate_base_priced = {
 		if = {

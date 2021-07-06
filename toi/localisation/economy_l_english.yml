@@ -15,6 +15,7 @@
 
   treasury_amount_loc:0 "[?treasury][GetCurrencyTextIcon]"
   income_amount_loc:0 "[?net_budget|+=][GetCurrencyTextIcon]"
+  income_amount_tt:0 "§YBalance Sheet:§!\nNet Income: [?net_budget|+=][GetCurrencyTextIcon] \n\nRevenue: §G+[?actual_revenue]§![GetCurrencyTextIcon] \n   - Income Taxes: §G+[?actual_income_tax_revenue]§![GetCurrencyTextIcon] \n   - Tariffs: §G+[?actual_tariff_revenue]§![GetCurrencyTextIcon] \n\nSpending: §R-[?actual_spending]§![GetCurrencyTextIcon] \n   - Construction: §R-[?actual_construction_spending]§![GetCurrencyTextIcon] \n   - Subsidies: §R-[?actual_subsidy_expense]§![GetCurrencyTextIcon] \n      - Trade Subsidies: §R-[?actual_trade_subsidy_spending]§![GetCurrencyTextIcon] \n      - Industrial Subsidies: §R-[?actual_industrial_spending]§![GetCurrencyTextIcon] \n      - Infrastructure Subsidies: §R-[?actual_infrastructure_spending]§![GetCurrencyTextIcon] \n"
 
   #State Economy Screen
     state_economy_button_tt:0 "State Economy Screen"
@@ -36,6 +37,7 @@
 
       pops_savings_loc:0 "§Y[?pops_savings|3]§![GetCurrencyTextIconState]"
       pops_debt_loc:0 "§R[?pops_debt|3]§![GetCurrencyTextIconState]"
+      pops_bank_tt:0 "§YNational Bank:§!\nCurrent Savings: §Y[?pops_savings|3]§![GetCurrencyTextIconState] \n   - Deposits: §G+[?pops_savings_deposits|3]§![GetCurrencyTextIconState] \n   - Withdrawals: §R-[?pops_savings_withdrawals|3]§![GetCurrencyTextIconState] \n\nDebt: §R[?pops_debt|3]§![GetCurrencyTextIconState]"
 
       #Pop Table
       pop_types_name_title:0 "Name"
