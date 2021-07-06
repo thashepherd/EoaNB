@@ -276,6 +276,8 @@
 			set_variable = { gdp_amount_this_year = 0 }
 			set_variable = { gdp_amount_last_year = 0 }
 
+			set_variable = { total_money = 0 }
+
 			every_controlled_state = {
 				#Pops/Govt get paid
 					set_variable = { pops_spending = 0 }
@@ -1182,6 +1184,20 @@
 													var = buy_amount
 													min = 0
 												}
+												set_temp_variable = { percent_temp = state_temp:life_goods_supply_min }
+												divide_temp_variable = { percent_temp = state_temp:life_goods_supply }
+												set_temp_variable = { percentage_temp = 1 }
+												subtract_from_temp_variable = { percentage_temp = percent_temp }
+												multiply_temp_variable = { buy_amount = percentage_temp }
+
+												set_temp_variable = { percent_temp = buy_amount }
+												divide_temp_variable = { percent_temp = 2 }
+												add_to_temp_variable = { percent_temp = state_temp:life_goods_supply_min }
+												divide_temp_variable = { percent_temp = state_temp:life_goods_supply }
+												set_temp_variable = { percentage_temp = 1 }
+												subtract_from_temp_variable = { percentage_temp = percent_temp }
+												multiply_temp_variable = { buy_amount = percentage_temp }
+
 												set_temp_variable = { cost_temp = buy_amount }
 												multiply_temp_variable = { cost_temp = state_temp:life_goods_price }
 
@@ -1287,6 +1303,20 @@
 													var = buy_amount
 													min = 0
 												}
+												set_temp_variable = { percent_temp = state_temp:everyday_goods_supply_min }
+												divide_temp_variable = { percent_temp = state_temp:everyday_goods_supply }
+												set_temp_variable = { percentage_temp = 1 }
+												subtract_from_temp_variable = { percentage_temp = percent_temp }
+												multiply_temp_variable = { buy_amount = percentage_temp }
+
+												set_temp_variable = { percent_temp = buy_amount }
+												divide_temp_variable = { percent_temp = 2 }
+												add_to_temp_variable = { percent_temp = state_temp:everyday_goods_supply_min }
+												divide_temp_variable = { percent_temp = state_temp:everyday_goods_supply }
+												set_temp_variable = { percentage_temp = 1 }
+												subtract_from_temp_variable = { percentage_temp = percent_temp }
+												multiply_temp_variable = { buy_amount = percentage_temp }
+
 												set_temp_variable = { cost_temp = buy_amount }
 												multiply_temp_variable = { cost_temp = state_temp:everyday_goods_price }
 
@@ -1391,6 +1421,20 @@
 													var = buy_amount
 													min = 0
 												}
+												set_temp_variable = { percent_temp = state_temp:luxury_goods_supply_min }
+												divide_temp_variable = { percent_temp = state_temp:luxury_goods_supply }
+												set_temp_variable = { percentage_temp = 1 }
+												subtract_from_temp_variable = { percentage_temp = percent_temp }
+												multiply_temp_variable = { buy_amount = percentage_temp }
+
+												set_temp_variable = { percent_temp = buy_amount }
+												divide_temp_variable = { percent_temp = 2 }
+												add_to_temp_variable = { percent_temp = state_temp:luxury_goods_supply_min }
+												divide_temp_variable = { percent_temp = state_temp:luxury_goods_supply }
+												set_temp_variable = { percentage_temp = 1 }
+												subtract_from_temp_variable = { percentage_temp = percent_temp }
+												multiply_temp_variable = { buy_amount = percentage_temp }
+
 												set_temp_variable = { cost_temp = buy_amount }
 												multiply_temp_variable = { cost_temp = state_temp:luxury_goods_price }
 
@@ -1496,6 +1540,20 @@
 													var = buy_amount
 													min = 0
 												}
+												set_temp_variable = { percent_temp = state_temp:services_supply_min }
+												divide_temp_variable = { percent_temp = state_temp:services_supply }
+												set_temp_variable = { percentage_temp = 1 }
+												subtract_from_temp_variable = { percentage_temp = percent_temp }
+												multiply_temp_variable = { buy_amount = percentage_temp }
+
+												set_temp_variable = { percent_temp = buy_amount }
+												divide_temp_variable = { percent_temp = 2 }
+												add_to_temp_variable = { percent_temp = state_temp:services_supply_min }
+												divide_temp_variable = { percent_temp = state_temp:services_supply }
+												set_temp_variable = { percentage_temp = 1 }
+												subtract_from_temp_variable = { percentage_temp = percent_temp }
+												multiply_temp_variable = { buy_amount = percentage_temp }
+
 												set_temp_variable = { cost_temp = buy_amount }
 												multiply_temp_variable = { cost_temp = state_temp:services_price }
 
@@ -1601,6 +1659,20 @@
 													var = buy_amount
 													min = 0
 												}
+												set_temp_variable = { percent_temp = state_temp:raw_goods_supply_min }
+												divide_temp_variable = { percent_temp = state_temp:raw_goods_supply }
+												set_temp_variable = { percentage_temp = 1 }
+												subtract_from_temp_variable = { percentage_temp = percent_temp }
+												multiply_temp_variable = { buy_amount = percentage_temp }
+
+												set_temp_variable = { percent_temp = buy_amount }
+												divide_temp_variable = { percent_temp = 2 }
+												add_to_temp_variable = { percent_temp = state_temp:raw_goods_supply_min }
+												divide_temp_variable = { percent_temp = state_temp:raw_goods_supply }
+												set_temp_variable = { percentage_temp = 1 }
+												subtract_from_temp_variable = { percentage_temp = percent_temp }
+												multiply_temp_variable = { buy_amount = percentage_temp }
+
 												set_temp_variable = { cost_temp = buy_amount }
 												multiply_temp_variable = { cost_temp = state_temp:raw_goods_price }
 
@@ -1706,6 +1778,20 @@
 													var = buy_amount
 													min = 0
 												}
+												set_temp_variable = { percent_temp = state_temp:industrial_goods_supply_min }
+												divide_temp_variable = { percent_temp = state_temp:industrial_goods_supply }
+												set_temp_variable = { percentage_temp = 1 }
+												subtract_from_temp_variable = { percentage_temp = percent_temp }
+												multiply_temp_variable = { buy_amount = percentage_temp }
+
+												set_temp_variable = { percent_temp = buy_amount }
+												divide_temp_variable = { percent_temp = 2 }
+												add_to_temp_variable = { percent_temp = state_temp:industrial_goods_supply_min }
+												divide_temp_variable = { percent_temp = state_temp:industrial_goods_supply }
+												set_temp_variable = { percentage_temp = 1 }
+												subtract_from_temp_variable = { percentage_temp = percent_temp }
+												multiply_temp_variable = { buy_amount = percentage_temp }
+
 												set_temp_variable = { cost_temp = buy_amount }
 												multiply_temp_variable = { cost_temp = state_temp:industrial_goods_price }
 
@@ -4906,6 +4992,8 @@
 					multiply_temp_variable = { gdp_value_temp = industrial_goods_price }
 					add_to_variable = { gdp_amount = gdp_value_temp }
 
+					add_to_variable = { gdp_amount = pops_rgos_valuable_goods_production }
+
 					divide_variable = { gdp_amount = price_of_goods_index }
 					add_to_variable = { PREV.gdp_amount = gdp_amount }
 
@@ -5194,7 +5282,7 @@
 						set_variable =  { global.rgos_percentage = 74 }
 						set_variable = { global.pops_rgos_life_goods_base_production = 15 } #Every 100k RGOs
 						set_variable = { global.pops_rgos_raw_goods_base_production = 6 }
-						set_variable = { global.pops_rgos_valuable_goods_base_production = 20 }
+						set_variable = { global.pops_rgos_valuable_goods_base_production = 5 }
 
 						set_variable = { global.pops_rgos_cash_crops_output_multiplier = 1.2 } #Applies to Life/Raw Goods
 						set_variable = { global.pops_rgos_coal_output_multiplier = 1.25 } #Only to Raw
@@ -6055,8 +6143,6 @@
 
 				factories_update = yes
 				
-				#MODIFIERS (To get true production amount)
-
 				#Starting Factory Distribution:
 					set_variable = { private_factory_amount = specialists_workforce_amount }
 					add_to_variable = { private_factory_amount = craftsmen_workforce_amount }
@@ -6097,27 +6183,56 @@
 
 					#
 
+					#Factory Modifiers
+					set_temp_variable = { factory_everyday_goods_base_production_temp = global.factory_everyday_goods_base_production }
+					set_temp_variable = { modifier_temp = factory_everyday_goods_throughput_effect }
+					add_to_temp_variable = { modifier_temp = 1 }
+					multiply_temp_variable = { factory_everyday_goods_base_production_temp = modifier_temp }
+					set_temp_variable = { modifier_temp = factory_everyday_goods_output_effect }
+					add_to_temp_variable = { modifier_temp = 1 }
+					multiply_temp_variable = { factory_everyday_goods_base_production_temp = modifier_temp }
+					
+					set_temp_variable = { factory_luxury_goods_base_production_temp = global.factory_luxury_goods_base_production }
+					set_temp_variable = { modifier_temp = factory_luxury_goods_throughput_effect }
+					add_to_temp_variable = { modifier_temp = 1 }
+					multiply_temp_variable = { factory_luxury_goods_base_production_temp = modifier_temp }
+					set_temp_variable = { modifier_temp = factory_luxury_goods_output_effect }
+					add_to_temp_variable = { modifier_temp = 1 }
+					multiply_temp_variable = { factory_luxury_goods_base_production_temp = modifier_temp }
+					
+					set_temp_variable = { factory_industrial_goods_base_production_temp = global.factory_industrial_goods_base_production }
+					set_temp_variable = { modifier_temp = factory_industrial_goods_throughput_effect }
+					add_to_temp_variable = { modifier_temp = 1 }
+					multiply_temp_variable = { factory_industrial_goods_base_production_temp = modifier_temp }
+					set_temp_variable = { modifier_temp = factory_industrial_goods_output_effect }
+					add_to_temp_variable = { modifier_temp = 1 }
+					multiply_temp_variable = { factory_industrial_goods_base_production_temp = modifier_temp }
+
 					#Get Needs Amount adjusted by factory prodution
-					set_temp_variable = { factory_everyday_goods_distribution_temp = pops_everyday_goods_need }
-					divide_temp_variable = { factory_everyday_goods_distribution_temp = global.factory_everyday_goods_base_production } #TOOD - Use actual factory production amount, not the base one
+					set_temp_variable = { factory_everyday_goods_distribution_temp = pops_everyday_goods_demand }
+					divide_temp_variable = { factory_everyday_goods_distribution_temp = factory_everyday_goods_base_production_temp } #TOOD - Use actual factory production amount, not the base one
 					multiply_temp_variable = { factory_everyday_goods_distribution_temp = factory_everyday_goods_distribution_adjust_temp }
 
 
-					set_temp_variable = { factory_luxury_goods_distribution_temp = pops_luxury_goods_need }
-					divide_temp_variable = { factory_luxury_goods_distribution_temp = global.factory_luxury_goods_base_production } #TOOD
+					set_temp_variable = { factory_luxury_goods_distribution_temp = pops_luxury_goods_demand }
+					divide_temp_variable = { factory_luxury_goods_distribution_temp = factory_luxury_goods_base_production_temp } #TOOD
 					multiply_temp_variable = { factory_luxury_goods_distribution_temp = factory_luxury_goods_distribution_adjust_temp }
 
-
-					set_variable = { factory_industrial_goods_need = factory_everyday_goods_production }
-					add_to_variable = { factory_industrial_goods_need = factory_luxury_goods_production }
-					add_to_variable = { factory_industrial_goods_need = factory_industrial_goods_production }
+					#Using Everyday Goods factories as a base to get a rough need
+					set_variable = { factory_industrial_goods_need = factory_employment_amount_per_factory }
+					multiply_variable = { factory_industrial_goods_need = global.factory_everyday_goods_base_production }
+					divide_variable = { factory_industrial_goods_need = 100 }
+					multiply_variable = { factory_industrial_goods_need = private_factory_amount }
+					set_temp_variable = { modifier_temp = factory_everyday_goods_throughput_effect }
+					add_to_temp_variable = { modifier_temp = 1 }
+					multiply_variable = { factory_industrial_goods_need = modifier_temp }
 					multiply_variable = { factory_industrial_goods_need = global.factory_industrial_goods_base_need }
 					set_temp_variable = { modifier_temp = factory_industrial_goods_maintenance_effect }
 					add_to_temp_variable = { modifier_temp = 1 }
 					multiply_variable = { factory_industrial_goods_need = modifier_temp }
 
 					set_temp_variable = { factory_industrial_goods_distribution_temp = factory_industrial_goods_need }
-					divide_temp_variable = { factory_industrial_goods_distribution_temp = global.factory_industrial_goods_base_production } #TOOD
+					divide_temp_variable = { factory_industrial_goods_distribution_temp = factory_industrial_goods_base_production_temp } #TOOD
 					multiply_temp_variable = { factory_industrial_goods_distribution_temp = factory_industrial_goods_distribution_adjust_temp }
 
 
