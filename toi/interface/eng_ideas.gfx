@@ -206,8 +206,4 @@ spriteTypes = {
 		name = "GFX_idea_ENG_political_advisor_beresford"
 		texturefile = "gfx/interface/ideas/ENG/ENG_political_advisor_beresford.dds"
 	}
-	spriteType = {
-		name = "GFX_idea_ENG_political_advisor_consort_albert"
-		texturefile = "gfx/interface/ideas/ENG/ENG_political_advisor_consort_albert"
-	}
 }
