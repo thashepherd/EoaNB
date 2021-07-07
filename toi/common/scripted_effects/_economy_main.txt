@@ -6195,9 +6195,9 @@
 				
 				update_modifiers_state_effects = yes
 				
-				calculate_demand = yes
-
 				pops_update = yes
+
+				calculate_demand = yes
 
 				factories_update = yes
 				
