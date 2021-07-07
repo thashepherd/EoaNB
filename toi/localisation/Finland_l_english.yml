@@ -16,6 +16,7 @@
  FIN_vic_Carl_Robert_Mannerheim:0 "Carl Robert Mannerheim"
  FIN_vic_Sofia_Zweygberg:0 "Sofia Zweygberg"
  FIN_vic_Carl_Magnus_Dahlstrom:0 "Carl Magnus Dahlström"
+ FIN_vic_Fabian_Langenskiold:0 "Carl Langenskiöld"
 
  FIN_Anders_Edvard_Ramsay:0 "Anders Edvard Ramsay"
  FIN_August_Alexander_Jarnefelt:0 "August Alexander Jarnefelt"
@@ -23,6 +24,9 @@
  FIN_vic_Carl_Korsman:0 "Carl Johan Korsman"
  FIN_vic_von_Schantz:0 "Johan Eberhard von Schantz"
  FIN_vic_von_Wendt:0 "Alexander Jacob von Wendt"
+ 
+ FIN_rosenlew_ab:0 "Rosenlew"
+ FIN_tampella:0 "Tampella Company"
  
  ### FOCUS TREE
  FIN_status_of_economy:0 "The Finnish Economy"
@@ -160,7 +164,7 @@
  finlandfocus.1.t:0 "State of The Finnish Economy"
  finlandfocus.1.d:0 "The Finnish economy was agrarian, but with rapid growth of the commercial sector. The Finnish production per capita grew yearly around 0.4 %, although this was a minimum estimate as it did not account for livestock and some cereals. Around 85% of the labour force worked either on the land or in the forest."
  finlandfocus.2.t:0 "Future of Industralziation"
- finlandfocus.2.d:0 "It is time to choose the way we want to develop our economy, we could either atempt a rapid §Rindustrialization §bor focus on developing our §Gagriculture."
+ finlandfocus.2.d:0 "It is time to choose the way we want to develop our economy, we could either atempt a rapid §Rindustrialization§! or focus on developing our §Gagriculture.§!"
  
  ###Some stuff
  eoanb_FIN_swedish_instructors:0 "Military cooperation"

@@ -4,6 +4,9 @@ BWR_raise_welsh_workers= {
 		allowed = {			
 			tag = BWR
 		}
+		
+		icon = generic_nationalism
+		
 		highlight_states = {
 			state = 122
 		}
@@ -56,7 +59,7 @@ BWR_raise_welsh_workers= {
 		}
 	
 	BWR_draft_highlander_regiments = {
-	
+		icon = generic_prepare_civil_war
 		allowed = {			
 			tag = ENG
 		}
@@ -114,6 +117,8 @@ BWR_raise_welsh_workers= {
 		allowed = {			
 			tag = BWR
 		}
+
+		icon = GFX_decision_generic_political_discourse
 
 		available = {
 			has_war_with = ENG
@@ -222,7 +227,9 @@ BWR_raise_welsh_workers= {
 		allowed = {			
 			tag = BWR
 		}
-
+		
+		icon = generic_construction
+		
 		available = {
 			has_war_with = ENG
 			has_completed_focus = BWR_fighter_factories
@@ -252,6 +259,8 @@ BWR_raise_welsh_workers= {
 		allowed = {			
 			tag = BWR
 		}
+
+		ICON = generic_prepare_civil_war
 
 		available = {
 			has_war_with = ENG
