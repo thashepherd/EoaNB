@@ -80,7 +80,7 @@ country_event = { # Revolt in the Capital
 	}
 }
 
-country_event = { # Election of the Commune Council
+country_event = {
 	id = fcw.003
 	title = fcw.003.t
 	desc = fcw.003.d
