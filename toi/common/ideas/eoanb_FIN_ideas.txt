@@ -367,97 +367,6 @@ ideas = {
 				production_speed_buildings_factor = 0.15
 			}
 		}
-		
-		FIN_famine_5 = {
-			allowed = {
-				always = yes
-				original_tag = FIN
-			}
-			
-			allowed_civil_war = {
-				always = yes
-			}
-			
-			removal_cost = -1
-			
-			picture = ITA_agriculture_focus
-			
-			modifier = {
-			}
-		}
-		
-		FIN_famine_4 = {
-			allowed = {
-				always = yes
-				original_tag = FIN
-			}
-			
-			allowed_civil_war = {
-				always = yes
-			}
-			
-			removal_cost = -1
-			
-			picture = ITA_agriculture_focus
-			
-			modifier = {
-			}
-		}
-		
-		FIN_famine_3 = {
-			allowed = {
-				always = yes
-				original_tag = FIN
-			}
-			
-			allowed_civil_war = {
-				always = yes
-			}
-			
-			removal_cost = -1
-			
-			picture = ITA_agriculture_focus
-			
-			modifier = {
-			}
-		}
-		
-		FIN_famine_2 = {
-			allowed = {
-				always = yes
-				original_tag = FIN
-			}
-			
-			allowed_civil_war = {
-				always = yes
-			}
-			
-			removal_cost = -1
-			
-			picture = ITA_agriculture_focus
-			
-			modifier = {
-			}
-		}
-		
-		FIN_famine_1 = {
-			allowed = {
-				always = yes
-				original_tag = FIN
-			}
-			
-			allowed_civil_war = {
-				always = yes
-			}
-			
-			removal_cost = -1
-			
-			picture = ITA_agriculture_focus
-			
-			modifier = {
-			}
-		}
-		
 	}
 	
 	industrial_concern = {
@@ -818,5 +727,4 @@ ideas = {
 #			}
 #        }
 #    }
-
 }
