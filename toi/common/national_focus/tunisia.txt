@@ -63,6 +63,7 @@ focus = {
 	prerequisite = { focus = TUN_batto_sfez_affair }
 	completion_reward = {
 	add_manpower = 10000
+	dd_political_power = 100
 	increase_ps_by_one = yes
 	}
 }
@@ -138,6 +139,7 @@ focus = {
 	}
 	completion_reward = {
 		increase_ps_by_one = yes
+		dd_political_power = 100
 	}
 }	
 #---Part_2
