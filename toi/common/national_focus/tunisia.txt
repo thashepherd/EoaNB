@@ -18,7 +18,7 @@ focus = {
 	icon = GFX_goal_focus_tun_the_great_prince
 	x = 2
 	y = 0
-	cost = 20
+	cost = 60
 	available_if_capitulated = no
 	ai_will_do = {
 		factor = 1
@@ -291,6 +291,7 @@ focus = {
 	}
 	prerequisite = { focus = TUN_invite_reformists }
 	prerequisite = { focus = TUN_succession_reforms }
+	available = { has_completed_focus = TUN_the_monetary_issue }
 	completion_reward = {
 		country_event = {
 			id = tunisia.6
@@ -313,9 +314,9 @@ focus = {
 	}
 	prerequisite = { focus = TUN_the_reformist }
 	completion_reward = {
-		country_event = {
-			id = tunisia.7
-		}
+		add_political_power = 100
+		add_stability = 0.02
+
 	}
 }
 focus = {
@@ -370,7 +371,7 @@ focus = {
 	prerequisite = { focus = TUN_influences_from_the_north}
 	completion_reward = {
 		country_event = {
-			id = tunisia.3
+			id = tunisia.7
 		}
 	}
 }	

@@ -1,7 +1,6 @@
 tunisia_revolt_category = {
 	tunisia_revolt_mission = {
 		allowed = { always = no }
-
 		available = {
 			# add your variable here
 			check_variable = { Mejba_Revolt_var > 99 }
@@ -22,9 +21,13 @@ tunisia_revolt_category = {
 		complete_effect = {
 			country_event = { id = tunisia.100 } # Fires Civil War
 			remove_dynamic_modifier = { modifier = TUN_Mejba_Revolt_Modifier } # removes the modifier added for civil war
+			remove_decision = { TUN_Increase_Military_Presence }
+			remove_decision = { TUN_Manipulate_Inland_Economy }
 		}
 	}
 	TUN_Increase_Military_Presence = {
+		visible = {check_variable = { Mejba_Revolt_var > 49 }}
+		allowed = { always = yes }
 		ai_will_do = {
 			base = 1
 		}
@@ -38,11 +41,16 @@ tunisia_revolt_category = {
 			custom_effect_tooltip = TUN_control_the_revolt_tooltip
 			add_to_variable = {
 				var = Mejba_Revolt_var
-				value = -10
+				value = -25
 			}
 		}
 	}
 	TUN_Manipulate_Inland_Economy = {
+		visible = {check_variable = { Mejba_Revolt_var > 49 }}
+		allowed = { always = yes }
+		available = {
+			has_active_mission = tunisia_revolt_mission
+		}
 		ai_will_do = {
 			base = 1
 		}

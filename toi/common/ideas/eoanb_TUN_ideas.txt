@@ -2,7 +2,7 @@ ideas = {
     country = {
         TUN_Manipulate_Inland_Economy_idea = {
 
-         picture = FRA_army_of_aggression_focus
+         picture = idea_nomadic_tribal_nation
         
             modifier = {
             consumer_goods_factor = 0.1

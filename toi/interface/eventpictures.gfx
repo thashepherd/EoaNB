@@ -3820,5 +3820,10 @@ spriteTypes = {
 		name = "GFX_MOR_Muhammad"
 		texturefile = "gfx/event_pictures/morocco/GFX_Muhammad.dds"
 	}
+	# tunisian events #
+	spriteType = {
+		name = "GFX_tun_event_carriage_accident"
+		texturefile = "gfx/event_pictures/tunisia/tun_event_carriage_accident.dds"
+	}
 	
 }
