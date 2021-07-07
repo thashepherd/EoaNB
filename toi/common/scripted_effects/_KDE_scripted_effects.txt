@@ -96,6 +96,10 @@ KDE_bi_yearly_event_fire_1858 = {
 		country_event = { id = usa_event_check.15 days = 577 } # 1859.8.1
 		country_event = { id = usaPolitics.2 days = 311 } ###1858.11.8
 		country_event = { id = usa_independence.1 days = 54 }
+		country_event = { id = usa_guano_islands.1 days = 550 }###1859.7.5
+		country_event = { id = usa_guano_islands.3 days = 187 }###1858.7.7
+		country_event = { id = usa_guano_islands.5 days = 151 }###1858.6.1
+		country_event = { id = usa_guano_islands.6 days = 207 }###1858.7.27
 	}
 }
 
@@ -142,6 +146,9 @@ KDE_bi_yearly_event_fire_1860 = {
 		country_event = { id = prussiaadvisors.1 days = 28 } ###1860.01.29
 		country_event = { id = prussiaadvisors.2 days = 338 } ###1860.12.05
 		country_event = { id = prussiaadvisors.3 days = 586 } ###1861.08.10
+	}
+	USA = {
+		country_event = { id = usa_guano_islands.4 days = 243 }###1860.9.1
 	}
 }
 
@@ -379,6 +386,10 @@ KDE_bi_yearly_event_fire_1870 = {
 		country_event = { id = spanishflavour.4 days = 266 } # 1870.9.24
 		country_event = { id = spanishflavour.5 days = 306 } # 1870.11.3
 	}
+	USA = {
+		news_event = { id = usa_worldmapperus.2 days = 304 } # 1870.11.1
+		news_event = { id = usa_worldmapperus.1 days = 651 } # 1871.10.14
+	}
 }
 
 KDE_bi_yearly_event_fire_1872 = {
@@ -422,6 +433,10 @@ KDE_bi_yearly_event_fire_1876 = {
 	}
 	ENG = {
 		country_event = { id = army_british.28 days = 372 } # 1877.1.7
+		country_event = { id = army_british.1012 days = 425 } #1877.3.1
+	}
+	QNG={
+		country_event = { id = qing.16 days = 31 random_days = 90} # 1877.2.1
 	}
 	
 }
@@ -464,6 +479,9 @@ KDE_bi_yearly_event_fire_1884 = {
 	PRS = {
 		country_event = { id = prussiaadvisors.16 days = 414 } ###1885.02.19
 	}
+	USA = {
+		news_event = { id = usa_worldmapperus.3 days = 428 } # 1885.3.5
+	}
 }
 
 KDE_bi_yearly_event_fire_1886 = {
@@ -496,6 +514,9 @@ KDE_bi_yearly_event_fire_1890 = {
 	}
 	PRS = {
 		country_event = { id = prussia.47 days = 290 } ###1890.10.18
+	}
+	ENG = {
+		country_event = { id = army_british.1013 days = 31 } #1890.2.1
 	}
 }
 
