@@ -153,6 +153,8 @@
  SWE_Louis_De_Geer_desc:0 "Louis de Geer is, along with Johan August Gripenstedt, the de-facto leader for the Liberal Faction in the Parliament. Rich, aristocratic, and an unapologetic populist, he is a nightmare come to life for many Conservative politicians - A traitor to his class."
  SWE_Andre_Oscar_Wallenberg:0 "André Oscar Wallenberg"
  SWE_Andre_Oscar_Wallenberg_desc:0 ""
+ SWE_Goran_Fredrik_Goransson:0 "Göran Fredrik Göransson"
+ SWE_Goran_Fredrik_Goransson_desc:0 " "
  SWE_Johan_August_Gripenstedt:0 "Johan August Gripenstedt"
  SWE_Johan_August_Gripenstedt_desc:0 "Gripenstedt's controversiality is matched only by his incredible talent for oratory and finanicial management. As a great speaker with an excellent sense for political intrigues, he has so far been successful in virtually everything he has undertaken. With a great deal of contacts and allies in the capital, Gripenstedt challenges even the King when it comes to Political Influence. \n\n§RBE AWARE:§! Gripenstedt is an exceedingly gifted politician, and if you do not intend on supporting his Liberal Cause, you may want to reconsider giving him a cabinet position. Once you've given, it will be supremely difficult to un-give it."
  SWE_Fredrik_Georg_Afzelius:0 "Fredrik Georg Afzelius"
@@ -200,5 +202,6 @@
  husqvarna_vapenfabriks:0 "Husqvarna Vapenfabriks"
  husqvarna_vapenfabriks_desc:0 "Husqvarna Vapenfabriks Aktiebolag, or HVA, is one of Sweden's larger weapons manufacturers, and has a long history of making small arms for the Swedish Army."
  kongl_elecktriska_telegraf_werket:0 "Kongl. Elecktriska Telegraf-Werket"
- 
- allotment_system:0 "Indelningsverket"
+ sandvik:0 "Sandvik AB"
+ falu_gruva:0 "Falu Gruva"
+ domnarvets_jernverk:0 "Domnarvets Jernverk"

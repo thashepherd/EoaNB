@@ -2238,6 +2238,33 @@ ideas = {
 			}
 		}
 		
+		SWE_Goran_Fredrik_Goransson = {
+
+			
+			allowed = {
+				original_tag = SWE
+			}
+
+			available = {
+				has_country_flag = SWE_invite_goran_fredrik_goransson_gov_flag
+			}
+			
+			traits = { industrial_promoter }
+			
+			modifier = {
+				political_power_gain = -0.05
+			    production_speed_steel_mill_factor = 0.05
+		    }
+
+			research_bonus = {
+				mechanical_engineering_tech = 0.05
+			}
+
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		
 		SWE_Johan_August_Gripenstedt = {
 
 			
@@ -2767,6 +2794,77 @@ ideas = {
 			}
 
 			traits = { electronics_concern_3 }
+		}
+		
+		sandvik = {
+
+			picture = generic_electronics_concern_3
+
+			allowed = {
+				original_tag = SWE
+			}
+			
+			available = {
+				has_completed_focus = SWE_not_agrarian_anymore
+			}
+
+			research_bonus = {
+                mechanical_engineering_tech = 0.03
+				excavation_tech = 0.03
+            }
+
+            traits = { industrial_concern_1 }
+
+			modifier = {
+				local_resources_factor = 0.05
+				political_power_factor = -0.05
+			}
+		}
+		
+		falu_gruva = {
+
+			picture = generic_electronics_concern_3
+
+			allowed = {
+				original_tag = SWE
+			}
+			
+			available = {
+				has_completed_focus = SWE_not_agrarian_anymore
+			}
+
+			modifier = {
+			    production_speed_coal_mine_factor = 0.05
+		    }
+
+			research_bonus = {
+				resource_extraction_tech = 0.10
+			}
+
+			traits = { industrial_concern_1 }
+		}
+		
+		domnarvets_jernverk = {
+
+			picture = generic_electronics_concern_3
+
+			allowed = {
+				original_tag = SWE
+			}
+			
+			available = {
+				has_completed_focus = SWE_not_agrarian_anymore
+			}
+
+			modifier = {
+			    production_speed_steel_mill_factor = 0.05
+		    }
+
+			research_bonus = {
+				mechanical_engineering_tech = 0.05
+			}
+
+			traits = { industrial_concern_1 }
 		}
 	}
 	

@@ -361,6 +361,162 @@ ideas = {
                 production_speed_farm_factor = 0.50
 			}
 		}
+		BAD_boost_infra = {
+            allowed = {
+                original_tag = BAD
+            }
+            
+            cancel = {
+                BAD = {
+                    NOT = {
+                        has_variable = infra_total_bonus
+                    }
+                }
+            }
+            
+            allowed_civil_war = {
+                OR = {
+                    has_government = autocracy
+                    has_government = collectivist_socialism
+                    has_government = traditional_conservatism
+                }
+            }
+            
+            removal_cost = -1
+            
+            modifier = {
+                production_speed_infrastructure_factor = 0.50  # Speed bonus
+            }
+        }
+		BAD_freiburgs_wine = { 
+			allowed = {
+				original_tag = BAD
+			}
+			
+			allowed_civil_war = {
+			   always = yes
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+                stability_weekly = 0.001
+				consumer_goods_factor = -0.01
+				political_power_gain = 0.05
+			}
+		}
+		BAD_idea_state_railways_1 = {
+
+			allowed = {
+				original_tag = BAD
+			}
+			
+			picture = PRS_eisenbahn
+
+			removal_cost = -1
+			
+			modifier = {
+			    consumer_goods_factor = 0.02
+				political_power_factor = 0.02
+				production_speed_infrastructure_factor = 0.1
+			}
+		}
+		BAD_idea_state_railways_2 = {
+
+			allowed = {
+				original_tag = BAD
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+			    consumer_goods_factor = 0.03
+				political_power_factor = 0.03
+				production_speed_infrastructure_factor = 0.15
+			}
+		}
+		BAD_fortification_efforts = {
+		
+			allowed = {
+				original_tag = BAD
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+			    defence = 0.05
+				army_defence_factor = 0.05
+				production_speed_bunker_factor = 0.15
+			}
+		}
+		
+		BAD_haslachmine = {
+		
+			allowed = {
+				original_tag = BAD
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+			    consumer_goods_factor = -0.03
+				political_power_factor = 0.03
+			}
+		}
+		
+		BAD_der_schwarzwald = {
+		
+			allowed = {
+				original_tag = BAD
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				stability_factor = -0.05
+			    production_speed_logging_camp_factor = 0.1
+				industrial_capacity_factory = 0.05
+				MONTHLY_POPULATION = -0.05
+			}
+		}
+		
+		BAD_arms_production = {
+		
+			allowed = {
+				original_tag = BAD
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				political_power_gain = -0.05
+				industrial_capacity_factory = 0.05
+				production_factory_efficiency_gain_factor = 0.05 
+				MONTHLY_POPULATION = -0.05
+			}
+		}
+		
+		BAD_agriculture = {
+			allowed = {
+				always = yes
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			removal_cost = -1
+			
+			picture = generic_agrarian_society
+			
+			modifier = {
+			    MONTHLY_POPULATION = 0.05
+				production_factory_start_efficiency_factor = -0.05
+				production_factory_max_efficiency_factor = -0.05
+				consumer_goods_factor = -0.01
+				production_speed_buildings_factor = 0.05
+			}
+		}
 	}
 	
 	materiel_manufacturer = {
@@ -406,6 +562,8 @@ ideas = {
 			}
 
 			traits = {
+				eoanb_trait_efficient_administrator
+				traditional_conservatism_alignment
 			}
 			
 			ai_will_do = {
@@ -423,6 +581,8 @@ ideas = {
 			}
 
 			traits = {
+				traditional_conservatism_alignment
+				eoanb_trait_experienced_diplomat
 			}
 			
 			ai_will_do = {
@@ -444,6 +604,8 @@ ideas = {
 			}
 
 			traits = {
+				eoanb_kriegs_minister
+				neutral_party
 			}
 			
 			ai_will_do = {
@@ -460,6 +622,8 @@ ideas = {
 			}
 
 			traits = {
+				BAD_trait_Franz_Anton_Regnauer
+				centrism_alignment
 			}
 			
 			ai_will_do = {
@@ -480,6 +644,8 @@ ideas = {
 			}
 
 			traits = {
+				clever_buisnessman
+				traditional_conservatism_alignment
 			}
 			
 			ai_will_do = {
@@ -500,6 +666,8 @@ ideas = {
 			}
 
 			traits = {
+				BAD_trait_Franz_Freiherr_von_Roggenbach
+				centrism_alignment
 			}
 			
 			ai_will_do = {
@@ -516,6 +684,8 @@ ideas = {
 			}
 
 			traits = {
+				BAD_trait_August_Lamey
+				centrism_alignment
 			}
 			
 			ai_will_do = {
@@ -532,6 +702,8 @@ ideas = {
 			}
 
 			traits = {
+				eoanb_trait_finance_minister
+				traditional_conservatism_alignment
 			}
 			
 			ai_will_do = {
@@ -552,6 +724,8 @@ ideas = {
 			}
 
 			traits = {
+				BAD_trait_Gideon_Weizel
+				centrism_alignment
 			}
 			
 			ai_will_do = {
@@ -568,6 +742,8 @@ ideas = {
 			}
 
 			traits = {
+				BAD_trait_Anton_von_Stabel
+				centrism_alignment
 			}
 			
 			ai_will_do = {
@@ -588,6 +764,8 @@ ideas = {
 			}
 
 			traits = {
+				clever_buisnessman
+				centrist
 			}
 			
 			ai_will_do = {
@@ -677,6 +855,8 @@ ideas = {
 			}
 
 			traits = {
+				eoanb_trait_finance_minister
+				centrism_alignment
 			}
 			
 			ai_will_do = {
@@ -724,6 +904,7 @@ ideas = {
 
 			traits = {
 				railroad_tycoon
+				neutral_party
 			}
 			
 			ai_will_do = {

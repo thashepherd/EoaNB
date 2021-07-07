@@ -66,17 +66,12 @@ focus_tree = {
 		}
 		prerequisite = { focus = BAD_focus_land_of_inventors }
 		completion_reward = {
-			744 = {
-				add_resource = {
-					type = wood
-					amount = 5
-				}
-			}
+			add_ideas = BAD_der_schwarzwald
 		}
 	}
 	focus = {
 		id = BAD_focus_reforestation
-		icon = GFX_focus_generic_diplomatic_treaty
+		icon = GFX_Focus_Resource_Wood
 		x = 1
 		y = 3
 		cost = 70
@@ -94,12 +89,6 @@ focus_tree = {
 			activate_mission_tooltip = BAD_mission_reforestation
 			hidden_effect = {
 				activate_mission = BAD_mission_reforestation
-			}
-			capital_scope = {
-				add_resource = {
-					type = wood
-					amount = 1
-				}
 			}
 		}
 	}
@@ -119,14 +108,7 @@ focus_tree = {
 		}
 		prerequisite = { focus = BAD_focus_reforestation }
 		completion_reward = {
-			744 = {
-				add_extra_state_shared_building_slots = 1
-				add_building_construction = {
-    				type = logging_camp
-					level = 1
-    				instant_build = yes
-				}
-			}
+			custom_effect_tooltip = eoanb_tt_decision_unlocked
 		}
 	}
 	focus = {
@@ -181,7 +163,7 @@ focus_tree = {
 	}
 	focus = {
 		id = BAD_focus_haslach_silver_mine
-		icon = GFX_focus_generic_diplomatic_treaty
+		icon = GFX_Focus_Distribute_Silver
 		x = 3
 		y = 4
 		cost = 70
@@ -195,16 +177,13 @@ focus_tree = {
 		}
 		prerequisite = { focus = BAD_focus_improved_mining }
 		completion_reward = {
-			744 = {
-				add_extra_state_shared_building_slots = 1
-				add_building_construction = {
-    				type = coal_mine
-					level = 1
-    				instant_build = yes
-				}
+			add_timed_idea = {
+				idea = BAD_haslachmine
+				days = 180
 			}
 		}
 	}
+	
 	focus = {
 		id = BAD_focus_expanded_iron_mining
 		icon = GFX_goal_raw_iron_production_focus
@@ -222,18 +201,9 @@ focus_tree = {
 		prerequisite = { focus = BAD_focus_haslach_silver_mine }
 		
 		completion_reward = {
-			custom_effect_tooltip = BAD_customeffect_steel_bonus_one
-			hidden_effect = {
-				set_variable = { steel_total = 0 }
-				every_owned_state = {
-					add_to_variable = { ROOT.steel_total = building_level@steel_mill }
-				}
-				set_variable = { steel_total_bonus = steel_total }
-				add_to_variable = { steel_total_bonus = 1 }
-				add_ideas = BAD_boost_steel
-			}
 		}
 	}
+	
 	focus = {
 		id = BAD_focus_badenian_railways
 		icon = GFX_focus_generic_diplomatic_treaty
@@ -251,6 +221,9 @@ focus_tree = {
 		prerequisite = { focus = BAD_focus_land_of_inventors }
 		available = { Or = { has_completed_focus = BAD_focus_privatize_railways has_completed_focus = BAD_focus_reform_program } }
 		completion_reward = {
+			hidden_effect = { 
+				swap_ideas = { remove_idea = BAD_idea_state_railways_1 add_idea = BAD_idea_state_railways_2 } 
+			}
 		}
 	}
 	focus = {
@@ -269,18 +242,23 @@ focus_tree = {
 		}
 		prerequisite = { focus = BAD_focus_badenian_railways }
 		completion_reward = {
-			744 = {
-				add_building_construction = {
-					type = infrastructure
-					level = 1
-					instant_build = yes
+			custom_effect_tooltip = BAD_customeffect_infrastructure_bonus_one
+			activate_mission_tooltip = BAD_mission_railway_expansion
+			hidden_effect = {
+				set_variable = { infra_total = 0 }
+				every_owned_state = {
+					add_to_variable = { ROOT.infra_total = infrastructure_level }
+				}
+				set_variable = { infra_total_bonus = infra_total }
+				add_to_variable = { infra_total_bonus = 1 }
+				activate_mission = BAD_mission_railway_expansion
+				add_ideas = BAD_boost_infra
 				}
 			}
 		}
-	}
 	focus = {
 		id = BAD_focus_railway_germans
-		icon = GFX_focus_generic_diplomatic_treaty
+		icon = GFX_Focus_Generic_German_National_Republic
 		x = 6
 		y = 4
 		cost = 70
@@ -336,7 +314,7 @@ focus_tree = {
 	}
 	focus = {
 		id = BAD_focus_future_of_agriculture
-		icon = GFX_focus_generic_diplomatic_treaty
+		icon = GFX_Focus_Agriculture
 		x = 10
 		y = 2
 		cost = 70
@@ -350,16 +328,7 @@ focus_tree = {
 		}
 		prerequisite = { focus = BAD_focus_land_of_inventors }
 		completion_reward = {
-			custom_effect_tooltip = BAD_customeffect_farm_bonus_one
-			hidden_effect = {
-				set_variable = { farm_total = 0 }
-				every_owned_state = {
-					add_to_variable = { ROOT.farm_total = building_level@farm }
-				}
-				set_variable = { farm_total_bonus = farm_total }
-				add_to_variable = { farm_total_bonus = 1 }
-				add_ideas = BAD_boost_farm
-			}
+			add_ideas = BAD_agriculture
 		}
 	}
 	focus = {
@@ -380,6 +349,16 @@ focus_tree = {
 		mutually_exclusive = { focus = BAD_focus_processed_goods }
 		completion_reward = {
 			add_tech_bonus = { bonus = 0.5 uses = 1 category = biochemistry_tech }
+			custom_effect_tooltip = BAD_customeffect_farm_bonus_one
+			hidden_effect = {
+				set_variable = { farm_total = 0 }
+				every_owned_state = {
+					add_to_variable = { ROOT.farm_total = building_level@farm }
+				}
+				set_variable = { farm_total_bonus = farm_total }
+				add_to_variable = { farm_total_bonus = 1 }
+				add_ideas = BAD_boost_farm
+			}
 		}
 	}
 	focus = {
@@ -398,11 +377,15 @@ focus_tree = {
 		}
 		prerequisite = { focus = BAD_focus_fruits_of_soil }
 		completion_reward = {
+			add_timed_idea = {
+				idea = BAD_freiburgs_wine
+				days = 720
+			}
 		}
 	}
 	focus = {
 		id = BAD_focus_support_peasantry
-		icon = GFX_focus_generic_diplomatic_treaty
+		icon = GFX_Focus_Agriculture_2
 		x = 9
 		y = 5
 		cost = 70
@@ -416,14 +399,6 @@ focus_tree = {
 		}
 		prerequisite = { focus = BAD_focus_freiburgs_wine }
 		completion_reward = {
-			744 = {
-				add_extra_state_shared_building_slots = 1
-				add_building_construction = {
-    				type = farm
-					level = 1
-    				instant_build = yes
-				}
-			}
 		}
 	}
 	focus = {
@@ -462,6 +437,7 @@ focus_tree = {
 		}
 		prerequisite = { focus = BAD_focus_processed_goods }
 		completion_reward = {
+			custom_effect_tooltip = eoanb_tt_decision_unlocked
 		}
 	}
 	focus = {
@@ -480,19 +456,14 @@ focus_tree = {
 		}
 		prerequisite = { focus = BAD_focus_textile_production }
 		completion_reward = {
-			744 = {
-				add_extra_state_shared_building_slots = 1
-				add_building_construction = {
-    				type = industrial_complex
-					level = 1
-    				instant_build = yes
-				}
-			}
+			add_tech_bonus = { bonus = 0.25 uses = 1 category = humanities_tech }
+			add_tech_bonus = { bonus = 0.25 uses = 1 category = economics_tech }
+			add_political_power = 50		
 		}
 	}
 	focus = {
 		id = BAD_focus_construction_industry
-		icon = GFX_focus_generic_diplomatic_treaty
+		icon = GFX_Focus_Industrial_Complex
 		x = 6
 		y = 6
 		cost = 70
@@ -522,7 +493,7 @@ focus_tree = {
 	}
 	focus = {
 		id = BAD_focus_military_industry
-		icon = GFX_focus_generic_diplomatic_treaty
+		icon = GFX_Focus_Industry_Revolution
 		x = 6
 		y = 7
 		cost = 70
@@ -564,16 +535,10 @@ focus_tree = {
 		}
 		prerequisite = { focus = BAD_focus_military_industry }
 		completion_reward = {
-			#custom_effect_tooltip = BAV_customeffect_mil_bonus
-			#hidden_effect = {
-			#	set_variable = { mil_total = 0 }
-			#	every_owned_state = {
-			#		add_to_variable = { ROOT.mil_total = building_level@arms_factory }
-			#	}
-			#	set_variable = { mil_total_bonus = mil_total }
-			#	add_to_variable = { mil_total_bonus = 1 }
-			#	add_ideas = BAD_boost_mils
-			#}
+			add_timed_idea = {
+				idea = BAD_arms_production
+				days = 180
+			}
 		}
 	}	
 	
@@ -727,7 +692,7 @@ focus_tree = {
 	
 	focus = {
 		id = BAD_focus_lessons_of_1812_1
-		icon = GFX_focus_generic_diplomatic_treaty
+		icon = GFX_Focus_Army_General_Mobilization_Generic_1
 		x = 14
 		y = 5
 		cost = 70
@@ -813,7 +778,7 @@ focus_tree = {
 	
 	focus = {
 		id = BAD_focus_jaegerbat_reform
-		icon = GFX_focus_generic_diplomatic_treaty
+		icon = GFX_Focus_Soldier_Victorian_USA
 		x = 19
 		y = 3
 		cost = 70
@@ -833,7 +798,7 @@ focus_tree = {
 	
 	focus = {
 		id = BAD_focus_artillery_reform
-		icon = GFX_focus_generic_diplomatic_treaty
+		icon = GFX_Focus_Weapon_Canon_5_Russian
 		x = 19
 		y = 4
 		cost = 70
@@ -854,7 +819,7 @@ focus_tree = {
 	
 	focus = {
 		id = BAD_focus_lessons_of_1812_2
-		icon = GFX_focus_generic_diplomatic_treaty
+		icon = GFX_Focus_Army_General_Mobilization_Generic_1
 		x = 18
 		y = 5
 		cost = 70
@@ -897,7 +862,7 @@ focus_tree = {
 	
 	focus = {
 		id = BAD_focus_dreyse_rifle
-		icon = GFX_focus_generic_diplomatic_treaty
+		icon = GFX_goal_focus_prussia_dreyse_rifle
 		x = 21
 		y = 3
 		cost = 70
@@ -918,7 +883,7 @@ focus_tree = {
 	
 	focus = {
 		id = BAD_focus_krupp_cooperation
-		icon = GFX_focus_generic_diplomatic_treaty
+		icon = GFX_Focus_Weapon_Canon_7
 		x = 21
 		y = 4
 		cost = 70
@@ -987,7 +952,7 @@ focus_tree = {
 	
 	focus = {
 		id = BAD_focus_the_landwehr
-		icon = GFX_focus_generic_diplomatic_treaty
+		icon = GFX_goal_focus_landwehr
 		x = 23
 		y = 4
 		cost = 70
@@ -1010,7 +975,7 @@ focus_tree = {
 	
 	focus = {
 		id = BAD_focus_lessons_of_1812_3
-		icon = GFX_focus_generic_diplomatic_treaty
+		icon = GFX_Focus_Army_General_Mobilization_Generic_1
 		x = 22
 		y = 5
 		cost = 70
@@ -1203,7 +1168,7 @@ focus_tree = {
 	
 	focus = {
 		id = BAD_focus_treaty_with_catholics
-		icon = GFX_focus_generic_diplomatic_treaty
+		icon = GFX_goal_focus_christianity_state_religion
 		x = 36
 		y = 2
 		cost = 70
@@ -1268,7 +1233,7 @@ focus_tree = {
 	
 	focus = {
 		id = BAD_focus_easter_proclamation
-		icon = GFX_focus_generic_diplomatic_treaty
+		icon = GFX_Focus_Government_Reform_2
 		x = 29
 		y = 5
 		cost = 35
@@ -1425,7 +1390,7 @@ focus_tree = {
 	
 	focus = {
 		id = BAD_focus_school_reforms
-		icon = GFX_focus_generic_diplomatic_treaty
+		icon = GFX_Focus_Elementary_School_0
 		x = 28
 		y = 10
 		cost = 70
@@ -1569,7 +1534,7 @@ focus_tree = {
 	
 	focus = {
 		id = BAD_focus_jewish_civil_rights
-		icon = GFX_focus_generic_diplomatic_treaty
+		icon = GFX_focus_ITA_Schoolw3s
 		x = 31
 		y = 11
 		cost = 70
@@ -1770,6 +1735,9 @@ focus_tree = {
 			add_political_power = 50
 			add_stability = -0.05
 			custom_effect_tooltip = BAD_customeffect_infrastructure_focus 
+			hidden_effect = { 
+				add_ideas = BAD_idea_state_railways_1
+			}
 		}
 	}
 	
@@ -1806,7 +1774,7 @@ focus_tree = {
 	
 	focus = {
 		id = BAD_focus_continue_reaktionsera
-		icon = GFX_focus_generic_diplomatic_treaty
+		icon = GFX_Focus_Government_Reform_3
 		x = 41
 		y = 5
 		cost = 35
@@ -1989,6 +1957,9 @@ focus_tree = {
 		completion_reward = {
 			add_political_power = 30
 			custom_effect_tooltip = BAD_customeffect_infrastructure_focus 
+			hidden_effect = { 
+				add_ideas = BAD_idea_state_railways_1
+			}
 		}
 	}
 	
@@ -2120,6 +2091,10 @@ focus_tree = {
 		}
 		
 		completion_reward = {
+			add_timed_idea = {
+				idea = BAD_fortification_efforts
+				days = 360
+			}
 		}
 	}
 	
@@ -2359,7 +2334,7 @@ focus_tree = {
 	
 	focus = {
 		id = BAD_focus_side_with_prussia
-		icon = GFX_focus_generic_diplomatic_treaty
+		icon = GFX_Focus_Diplomatic_Ally_PRS
 		x = 33
 		y = 7
 		cost = 70
@@ -2387,7 +2362,7 @@ focus_tree = {
 	
 	focus = {
 		id = BAD_focus_improve_prussia_relations
-		icon = GFX_focus_generic_diplomatic_treaty
+		icon = GFX_goal_focus_invite_prussian_diplomats
 		x = 33
 		y = 8
 		cost = 70
@@ -2429,7 +2404,7 @@ focus_tree = {
 	
 	focus = {
 		id = BAD_focus_join_prussia_alliance
-		icon = GFX_focus_generic_diplomatic_treaty
+		icon = GFX_focus_invite_prussian_commanders
 		x = 33
 		y = 10
 		cost = 70
@@ -2476,7 +2451,7 @@ focus_tree = {
 	
 	focus = {
 		id = BAD_focus_improve_southern_relations
-		icon = GFX_focus_generic_diplomatic_treaty
+		icon = GFX_goal_focus_the_german_two
 		x = 35
 		y = 8
 		cost = 70
@@ -2500,7 +2475,7 @@ focus_tree = {
 	
 	focus = {
 		id = BAD_focus_the_trias
-		icon = GFX_focus_generic_diplomatic_treaty
+		icon = GFX_goal_focus_extend_trias
 		x = 35
 		y = 9
 		cost = 70

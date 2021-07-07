@@ -1282,6 +1282,47 @@ leader_traits = {
 		ai_will_do = { factor = 10 }
 	}
 	
+	###Baden Advisor Traits
+	
+	BAD_trait_Franz_Anton_Regnauer = {
+		random = no
+		political_power_factor = 0.05
+		
+		ai_will_do = { factor = 3 }
+	}
+	
+	BAD_trait_Franz_Freiherr_von_Roggenbach = {
+		random = no
+		stability_factor = 0.05
+		opinion_gain_monthly = 5
+		
+		ai_will_do = { factor = 3 }
+	}
+	
+	BAD_trait_August_Lamey = {
+		random = no
+		stability_factor = 0.05
+		political_power_factor = 0.05
+		
+		ai_will_do = { factor = 3 }
+	}
+	
+	BAD_trait_Gideon_Weizel = {
+		random = no
+		consumer_goods_factor = -0.05
+		trade_opinion_factor = 0.05
+		
+		ai_will_do = { factor = 3 }
+	}
+	
+	BAD_trait_Anton_von_Stabel = {
+		random = no
+		political_power_gain = 0.10
+		stability_factor = 0.05
+		
+		ai_will_do = { factor = 3 }
+	}
+	
 	### UK Advisor Traits ###
 	
 	ENG_trait_royal_family = {
