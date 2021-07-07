@@ -48,10 +48,6 @@
    FIN_outdated_economy
   }
 
-	set_variable = {
-		var = FIN_var_famine
-		value = 0
-	}
 
   RUS = {
     if = {

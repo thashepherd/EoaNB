@@ -3,7 +3,6 @@ ideas = {
 		FIN_risk_of_famine = {
 			allowed = {
 				always = yes
-				original_tag = FIN
 			}
 			
 			allowed_civil_war = {
@@ -381,7 +380,7 @@ ideas = {
 			
 			removal_cost = -1
 			
-			picture = raj_risk_of_famine
+			picture = ITA_agriculture_focus
 			
 			modifier = {
 			}
