@@ -10,496 +10,6 @@ add_namespace = third_rep_france
 add_namespace = latin_monetary_union
 add_namespace = paris_commune
 
-#----------------------------------------------------------------------------------------------
-# FRENCH PARLIAMENT VANILLA EVENTS
-#----------------------------------------------------------------------------------------------
-
-country_event = { # VANILLA RESULT FOR OPTION : MAKE A SPEECH IN THE PARLIAMENT
-  id = french_parliament.1
-  title = french_parliament.1.t
-  desc = french_parliament.1.d
-  picture = GFX_report_event_nap_france_orsini_affair
-
-  is_triggered_only = yes
-
-  option = { # MASSIVE SUCCES
-    name = french_parliament.1.a
-    trigger = {
-			has_country_flag = FRA_Parliament_Massive_Success
-		}
-    add_political_power = -25
-  }
-  option = { # SUCCESS
-    name = french_parliament.1.b
-    trigger = {
-			has_country_flag = FRA_Parliament_Success
-		}
-    add_political_power = -25
-  }
-  option = { # NEUTRAL
-    name = french_parliament.1.c
-    trigger = {
-      has_country_flag = FRA_Parliament_Neutral
-    }
-    add_political_power = -25
-  }
-  option = { # FAIL
-    name = french_parliament.1.d
-    trigger = {
-      has_country_flag = FRA_Parliament_Fail
-    }
-    add_political_power = -25
-  }
-}
-
-country_event = { # SUCCESS OF COMPROMISE
-  id = french_parliament.2
-  title = french_parliament.2.t
-  desc = french_parliament.2.d
-  picture = GFX_report_event_nap_france_orsini_affair
-
-  is_triggered_only = yes
-
-  option = { # MASSIVE SUCCES
-    name = french_parliament.2.a
-    add_political_power = 25
-  }
-}
-
-country_event = { # FAIL OF COMPROMISE
-  id = french_parliament.2
-  title = french_parliament.2.t
-  desc = french_parliament.2.d
-  picture = GFX_report_event_nap_france_orsini_affair
-
-  is_triggered_only = yes
-
-  option = { # MASSIVE SUCCES
-    name = french_parliament.2.a
-    add_political_power = 25
-  }
-}
-
-#----------------------------------------------------------------------------------------------
-# IMPERIAL GENERAL SECURITY LAW 
-#----------------------------------------------------------------------------------------------
-
-country_event = { # BREAK of the Bonapartist party
-  id = orsini_affair.4
-  title = orsini_affair.4.t
-  desc = orsini_affair.4.d
-  picture = GFX_report_event_nap_france_orsini_affair
-
-  is_triggered_only = yes
-
-  option = { # we cannot sell off the security of the empire !
-    name = orsini_affair.4.a
-    add_political_power = -200
-  }
-}
-
-country_event = { # Deputies septic about this reform
-  id = orsini_affair.5
-  title = orsini_affair.5.t
-  desc = orsini_affair.5.d
-  picture = GFX_report_event_nap_france_orsini_affair
-
-  is_triggered_only = yes
-
-  option = { # insist on the threat of attack by another nation
-    name = orsini_affair.5.a
-    
-    random_list = {
-      20 = { activate_decision = effect_french_parl_aut_meet_party_leaders add_political_power = -25 } 
-      80 = { FRA = { country_event = { id = orsini_affair.7 days = 2 } } } 
-    }
-    FRA = { country_event = { id = orsini_affair.6 days = 4 } }
-  }
-  option = { # insist on the threat of anarchists
-    name = orsini_affair.5.b
-    add_political_power = -25
-    random_list = { 
-      50 = { activate_decision = effect_french_parl_aut_meet_party_leaders } 
-      50 = { activate_decision = effect_french_parl_aut_meet_party_leaders FRA = { country_event = { id = orsini_affair.7 days = 2 } } } 
-    }
-    FRA = { country_event = { id = orsini_affair.6 days = 4 } }
-  }
-  option = { # there may be a better compromise
-    name = orsini_affair.5.c
-    FRA = { country_event = { id = orsini_affair.6 days = 4 } }
-  }
-}
-
-country_event = { # Debate on budget reform
-  id = orsini_affair.6
-  title = orsini_affair.6.t
-  desc = orsini_affair.6.d
-  picture = GFX_report_event_nap_france_orsini_affair
-
-  is_triggered_only = yes
-
-  option = { # Review the reform budget
-    name = orsini_affair.6.a
-  }
-
-  option = { # Review the objective of the reform
-    name = orsini_affair.6.b
-  }
-  
-  option = { # Review 
-    name = orsini_affair.6.c
-  }
-}
-
-country_event = { # apply the budget cuts on the reform
-  id = orsini_affair.7
-  title = orsini_affair.0.t
-  desc = orsini_affair.7.d
-  picture = GFX_report_event_nap_france_orsini_affair
-
-  is_triggered_only = yes
-
-  option = { # replace deportation with exile to limit costs
-    name = orsini_affair.7.a
-    set_country_flag = FRA_Parliament_Success
-    FRA = { country_event = { id = french_parliament.1 days = 1 } }
-  }
-  option = { # let's forget the surveillance of dangerous citizens
-    name = orsini_affair.7.b
-    set_country_flag = FRA_Parliament_Success
-    FRA = { country_event = { id = french_parliament.1 days = 1 } }
-  }
-  option = { # reduce the surveillance of the borders
-    name = orsini_affair.7.c
-    set_country_flag = FRA_Parliament_Success
-    FRA = { country_event = { id = french_parliament.1 days = 1 } }
-  }
-}
-
-#----------------------------------------------------------------------------------------------
-# ORSINI AFFAIR
-#----------------------------------------------------------------------------------------------
-
-
-
-
-
-
-
-
-
-
-
-
-country_event = { # Dangerous radicals arrested in Calais
-  id = orsini_affair.11
-  title = orsini_affair.11.t
-  desc = orsini_affair.11.d
-  picture = GFX_report_event_nap_france_orsini_affair
-
-  is_triggered_only = yes
-
-  option = { # Regardless, send them to jail!
-    name = orsini_affair.11.a
-  }
-  option = { # Make these terrorists talk !
-    name = orsini_affair.11.b
-  }
-}
-
-country_event = { # A plot against Napoleon III discovered
-  id = orsini_affair.12
-  title = orsini_affair.12.t
-  desc = orsini_affair.12.d
-  picture = GFX_report_event_nap_france_orsini_affair
-
-  is_triggered_only = yes
-
-  option = { # We must react fast to stop this extremists 
-    name = orsini_affair.12.a
-  }
-}
-
-country_event = { # Attack against the Emperor !
-  id = orsini_affair.13
-  title = orsini_affair.13.t
-  desc = orsini_affair.13.d
-  picture = GFX_report_event_nap_france_orsini_affair
-
-  is_triggered_only = yes
-
-  option = { # Quickly ! Send help to the emperor !
-    name = orsini_affair.13.a
-  }
-}
-
-country_event = { # Emperor is safe and sound
-  id = orsini_affair.14
-  title = orsini_affair.14.t
-  desc = orsini_affair.14.d
-  picture = GFX_report_event_nap_france_orsini_affair
-
-  is_triggered_only = yes
-
-  option = { # The empire is saved
-    name = orsini_affair.4.a
-  }
-}
-
-country_event = { # The emperor was injured and is very shocked
-  id = orsini_affair.15
-  title = orsini_affair.15.t
-  desc = orsini_affair.15.d
-  picture = GFX_report_event_nap_france_orsini_affair
-
-  is_triggered_only = yes
-
-  option = { # The empire is saved
-    name = orsini_affair.15.a
-  }
-}
-
-country_event = { # The emperor was severely injured
-  id = orsini_affair.16
-  title = orsini_affair.16.t
-  desc = orsini_affair.16.d
-  picture = GFX_report_event_nap_france_orsini_affair
-
-  is_triggered_only = yes
-
-  option = { # The empire is shocked
-    name = orsini_affair.16.a
-  }
-}
-
-country_event = { # Death of Napoleon III
-	id = orsini_affair.17
-	title = orsini_affair.17.t
-	desc = orsini_affair.17.d
-	picture = GFX_report_event_napoleon_iii_death
-
-	fire_only_once = yes
-
-	trigger = {
-		NOT = {
-			OR = {
-				has_country_flag = fra_orsini_success
-				has_country_flag = fra_orsini_tragedy_flag
-			}
-		}
-	}
-
-	is_triggered_only = yes
-
-	option = {
-		name = orsini_affair.17.a
-		if = {
-			limit = {
-				has_country_leader = {
-					id = 00505
-					ruling_only = no
-				}
-			}
-			kill_ideology_leader = autocracy
-			create_country_leader = {
-				name = "Napoleon IV"
-				picture = "Portrait_FRA_Napoleon_IV.dds"
-				ideology = despotism
-			}
-		}
-		hidden_effect = {
-
-		}
-		set_country_flag = fra_nap_iv
-		remove_ideas = FRA_napoleon_illness_3
-    }
-}
-
-country_event = { # The emperor recovered
-  id = orsini_affair.8
-  title = orsini_affair.8.t
-  desc = orsini_affair.8.d
-  picture = GFX_report_event_nap_france_orsini_affair
-
-  is_triggered_only = yes
-
-  option = { # Aleluia ! 
-    name = orsini_affair.8.a
-  }
-}
-
-country_event = { # Orsini Letter
-  id = orsini_affair.9
-  title = orsini_affair.9.t
-  desc = orsini_affair.9.d
-  picture = GFX_report_event_nap_france_orsini_affair
-
-  is_triggered_only = yes
-
-  option = { # Nothing fishy about this letter !
-    name = orsini_affair.9.a
-  }
-}
-
-country_event = { # Aftermath of the Orsini Tragedy
-  id = orsini_affair.10
-  title = orsini_affair.10.t
-  desc = orsini_affair.10.d
-  picture = GFX_report_event_nap_france_orsini_affair
-
-  is_triggered_only = yes
-
-  option = { # France is rebuilding itself
-    name = orsini_affair.10.a
-  }
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-country_event = { # Orsini Affair
-  id = nap_france.398
-  title = nap_france.398.t
-  desc = nap_france.398.d
-  picture = GFX_report_event_nap_france_orsini_affair
-
-  fire_only_once = yes
-  is_triggered_only = yes
-
-  trigger = {
-    tag = FRA
-    date > 14.01.1958
-  }
-
-  option = { # Emperor Dead
-    name = nap_france.398.a
-    complete_national_focus = FRA_the_unthinkable
-    ai_chance = {
-      factor = 25
-      modifier = {
-        is_historical_focus_on = yes
-        factor = 0
-      }
-    }
-    if = {
-      limit = {
-        AND = {
-          PIE = {
-            has_completed_focus = PIE_Go_with_Garibaldi
-          }
-          NOT = {
-            PIE = {
-              has_completed_focus = PIE_Aftermath_of_Orsini
-            }
-          }
-        }
-        
-      }
-      PIE = {
-        complete_national_focus = PIE_Aftermath_of_Orsini
-      }
-    }
-    kill_country_leader = yes
-    add_stability = -0.1
-    create_country_leader = {
-      name = "Eugénie I"
-      picture = "Portrait_FRA_Eugenie_de_Montijo.dds"
-      ideology = despotism
-    }
-    add_political_power = -100
-    set_country_flag = fra_orsini_success
-    add_ideas = FRA_idea_orsini_regency_empress
-    clr_country_flag = FRA_has_colonial_ambitions
-    hidden_effect = {
-      news_event = { id = nap_france_flavor.19 }
-    }
-  }
-  option = { # Emperor Alive
-    name = nap_france.398.b
-    ai_chance = { factor = 50 }
-    add_stability = -0.05
-    set_country_flag = fra_orsini_failure
-    complete_national_focus = FRA_the_orsini_letter
-    hidden_effect = {
-      news_event = { id = nap_france_flavor.21 }
-    }
-    if = {
-      limit = {
-        AND = {
-          PIE = {
-            has_completed_focus = PIE_Go_with_Garibaldi
-          }
-          NOT = {
-            PIE = {
-              has_completed_focus = PIE_Aftermath_of_Orsini
-            }
-          }
-        }
-        
-      }
-      PIE = {
-        complete_national_focus = PIE_Aftermath_of_Orsini
-      }
-    }
-  }
-  option = { # Sacrebleu
-    name = nap_france.398.c
-    ai_chance = {
-      factor = 25
-      modifier = {
-        is_historical_focus_on = yes
-        factor = 0
-      }
-    }
-    add_stability = -0.15
-    create_country_leader = {
-      name = "Regency Council"
-      picture = "Portrait_FRA_Regency_Council.dds"
-      ideology = despotism
-    }
-    set_country_flag = fra_orsini_success
-    clr_country_flag = FRA_has_colonial_ambitions
-    add_ideas = FRA_idea_orsini_tragedy
-    complete_national_focus = FRA_the_unthinkable
-    complete_national_focus = FRA_orsini_tragedy
-    hidden_effect = {
-      news_event = { id = nap_france_flavor.20 }
-    }
-    if = {
-      limit = {
-        AND = {
-          PIE = {
-            has_completed_focus = PIE_Go_with_Garibaldi
-          }
-          NOT = {
-            PIE = {
-              has_completed_focus = PIE_Aftermath_of_Orsini
-            }
-          }
-        }
-        
-      }
-      PIE = {
-        complete_national_focus = PIE_Aftermath_of_Orsini
-      }
-    }
-  }
-}
 
 
 
@@ -3448,8 +2958,6 @@ country_event = { # Switzerland - Refused
     }
 }
 
-<<<<<<< Updated upstream
-=======
 #----------------------------------------------------------------------------------------------
 # MEXICAN INTERVENTION
 #----------------------------------------------------------------------------------------------
@@ -4769,7 +4277,6 @@ country_event = { #Imperial Triumph (called by on_peaceconference_ended on_actio
   }
 }
 
->>>>>>> Stashed changes
 
 
 
@@ -5253,197 +4760,6 @@ country_event = { # Victor Hugo denouces the government
   option = { # Damn
     name = nap_france.375.a
     add_stability = -0.1
-  }
-}
-
-#----------------------------------------------------------------------------------------------
-# POPULAR UPRISINGS
-#----------------------------------------------------------------------------------------------
-
-country_event = { # Republicans demands more liberties
-  id = nap_france.380
-  title = nap_france.380.t
-  desc = nap_france.380.d
-
-  trigger = {
-    tag = FRA
-    autocracy > 0.8
-  }
-
-  mean_time_to_happen = {
-    days = 150
-  }
-
-  fire_only_once = yes
-
-  option = { # Side with the Republicans
-    name = nap_france.380.a
-    add_political_power = 20
-    add_popularity = {
-      ideology = traditional_conservatism
-      popularity = 0.1
-    }
-    add_popularity = {
-      ideology = centrism
-      popularity = 0.1
-    }
-    set_country_flag = fra_demanded_more_liberty
-  }
-
-  option = { # Oppose the Republicans
-    name = nap_france.380.b
-    add_political_power = -40
-    add_popularity = {
-      ideology = traditional_conservatism
-      popularity = -0.1
-    }
-    add_popularity = {
-      ideology = centrism
-      popularity = -0.1
-    }
-    set_country_flag = fra_demanded_more_liberty
-  }
-}
-
-country_event = { # Legitimist worries
-  id = nap_france.381
-  title = nap_france.381.t
-  desc = nap_france.381.d
-
-  trigger = {
-    tag = FRA
-    OR = {
-      centrism > 0.1
-      traditional_conservatism > 0.1
-    }
-  }
-
-  mean_time_to_happen = {
-    days = 200
-  }
-
-  fire_only_once = yes
-
-  option = { # Side with the Legitimists
-    name = nap_france.381.a
-    add_political_power = 20
-    add_popularity = {
-      ideology = autocracy
-      popularity = 0.2
-    }
-    hidden_effect = {
-      country_event = {
-        id = nap_france.382
-        days = 80
-      }
-    }
-  }
-
-  option = { # Oppose the Legitimists
-    name = nap_france.381.b
-    add_political_power = -40
-    add_popularity = {
-      ideology = autocracy
-      popularity = -0.1
-    }
-  }
-}
-
-country_event = { # Republican Uprising
-  id = nap_france.382
-  title = nap_france.382.t
-  desc = nap_france.382.d
-
-  is_triggered_only = yes
-
-  #trigger = {
-  # tag = FRA
-  #  autocracy > 0.9
-  #  has_country_flag = fra_demanded_more_liberty
-  #}
-
-  #mean_time_to_happen = {
-  #  days = 300
-  #}
-
-  #fire_only_once = yes
-
-  option = { # Send the Army
-    name = nap_france.382.a
-    add_political_power = 20
-    add_popularity = {
-      ideology = traditional_conservatism
-      popularity = -0.05
-    }
-    add_popularity = {
-      ideology = centrism
-      popularity = -0.05
-    }
-    add_political_power = 100
-  }
-
-  option = { # Give in the Republican
-    name = nap_france.382.b
-    add_political_power = -40
-    add_popularity = {
-      ideology = traditional_conservatism
-      popularity = 0.1
-    }
-    add_popularity = {
-      ideology = centrism
-      popularity = 0.1
-    }
-    add_political_power = -100
-  }
-}
-
-country_event = { # Legitimist Uprising
-  id = nap_france.383
-  title = nap_france.383.t
-  desc = nap_france.383.d
-
-  is_triggered_only = yes
-
-  #mean_time_to_happen = {
-  #  days = 300
-  #}
-
-  #trigger = {
-  #  tag = FRA
-  #  OR = {
-  #    centrism > 0.25
-  #    traditional_conservatism > 0.25
-  #  }
-  #}
-
-  #fire_only_once = yes
-
-  option = { # Send the Army
-    name = nap_france.383.a
-    add_political_power = 20
-    add_popularity = {
-      ideology = traditional_conservatism
-      popularity = -0.05
-    }
-    add_popularity = {
-      ideology = centrism
-      popularity = -0.05
-    }
-    add_political_power = 100
-  }
-
-  option = { # Give in the Republican
-    name = nap_france.383.b
-    add_political_power = -40
-    add_popularity = {
-      ideology = traditional_conservatism
-      popularity = 0.1
-    }
-    add_popularity = {
-      ideology = centrism
-      popularity = 0.1
-    }
-    add_political_power = -100
   }
 }
 
@@ -6355,7 +5671,77 @@ country_event = { #German Troops withdraw from France
 #####################################################################################
 
 #----------------------------------------------------------------------------------------------
-#     ELECTIONS
+# FRENCH PARLIAMENT VANILLA EVENTS
+#----------------------------------------------------------------------------------------------
+
+country_event = { # VANILLA RESULT FOR OPTION : MAKE A SPEECH IN THE PARLIAMENT
+  id = french_parliament.1
+  title = french_parliament.1.t
+  desc = french_parliament.1.d
+  picture = GFX_report_event_nap_france_orsini_affair
+
+  is_triggered_only = yes
+
+  option = { # MASSIVE SUCCES
+    name = french_parliament.1.a
+    trigger = {
+			has_country_flag = FRA_Parliament_Massive_Success
+		}
+    add_political_power = -25
+  }
+  option = { # SUCCESS
+    name = french_parliament.1.b
+    trigger = {
+			has_country_flag = FRA_Parliament_Success
+		}
+    add_political_power = -25
+  }
+  option = { # NEUTRAL
+    name = french_parliament.1.c
+    trigger = {
+      has_country_flag = FRA_Parliament_Neutral
+    }
+    add_political_power = -25
+  }
+  option = { # FAIL
+    name = french_parliament.1.d
+    trigger = {
+      has_country_flag = FRA_Parliament_Fail
+    }
+    add_political_power = -25
+  }
+}
+
+country_event = { # SUCCESS OF COMPROMISE
+  id = french_parliament.2
+  title = french_parliament.2.t
+  desc = french_parliament.2.d
+  picture = GFX_report_event_nap_france_orsini_affair
+
+  is_triggered_only = yes
+
+  option = { # MASSIVE SUCCES
+    name = french_parliament.2.a
+    add_political_power = 25
+  }
+}
+
+country_event = { # FAIL OF COMPROMISE
+  id = french_parliament.2
+  title = french_parliament.2.t
+  desc = french_parliament.2.d
+  picture = GFX_report_event_nap_france_orsini_affair
+
+  is_triggered_only = yes
+
+  option = { # MASSIVE SUCCES
+    name = french_parliament.2.a
+    add_political_power = 25
+  }
+}
+
+#----------------------------------------------------------------------------------------------
+#     ELECTION OF 1857
 #----------------------------------------------------------------------------------------------
 
 country_event = { # France - Legislative Elections 1857
@@ -6388,5 +5774,427 @@ country_event = { # France - Legislative Elections 1857 - Results
       popularity = 0.05
     }
     set_country_flag = FRA_flag_elections_1857
+    complete_national_focus = FRA_legislative_election_1857
+  }
+}
+
+#----------------------------------------------------------------------------------------------
+# IMPERIAL GENERAL SECURITY LAW 
+#----------------------------------------------------------------------------------------------
+
+country_event = { # BREAK of the Bonapartist party
+  id = orsini_affair.4
+  title = orsini_affair.4.t
+  desc = orsini_affair.4.d
+  picture = GFX_report_event_nap_france_orsini_affair
+
+  is_triggered_only = yes
+
+  option = { # we cannot sell off the security of the empire !
+    name = orsini_affair.4.a
+    add_political_power = -200
+  }
+}
+
+country_event = { # Deputies septic about this reform
+  id = orsini_affair.5
+  title = orsini_affair.5.t
+  desc = orsini_affair.5.d
+  picture = GFX_report_event_nap_france_orsini_affair
+
+  is_triggered_only = yes
+
+  option = { # insist on the threat of attack by another nation
+    name = orsini_affair.5.a
+    
+    random_list = {
+      20 = { activate_decision = effect_french_parl_aut_meet_party_leaders add_political_power = -25 } 
+      80 = { FRA = { country_event = { id = orsini_affair.7 days = 2 } } } 
+    }
+    FRA = { country_event = { id = orsini_affair.6 days = 4 } }
+  }
+  option = { # insist on the threat of anarchists
+    name = orsini_affair.5.b
+    add_political_power = -25
+    random_list = { 
+      50 = { activate_decision = effect_french_parl_aut_meet_party_leaders } 
+      50 = { activate_decision = effect_french_parl_aut_meet_party_leaders FRA = { country_event = { id = orsini_affair.7 days = 2 } } } 
+    }
+    FRA = { country_event = { id = orsini_affair.6 days = 4 } }
+  }
+  option = { # there may be a better compromise
+    name = orsini_affair.5.c
+    FRA = { country_event = { id = orsini_affair.6 days = 4 } }
+  }
+}
+
+country_event = { # Debate on budget reform
+  id = orsini_affair.6
+  title = orsini_affair.6.t
+  desc = orsini_affair.6.d
+  picture = GFX_report_event_nap_france_orsini_affair
+
+  is_triggered_only = yes
+
+  option = { # Review the reform budget
+    name = orsini_affair.6.a
+  }
+
+  option = { # Review the objective of the reform
+    name = orsini_affair.6.b
+  }
+  
+  option = { # Review 
+    name = orsini_affair.6.c
+  }
+}
+
+country_event = { # apply the budget cuts on the reform
+  id = orsini_affair.7
+  title = orsini_affair.0.t
+  desc = orsini_affair.7.d
+  picture = GFX_report_event_nap_france_orsini_affair
+
+  is_triggered_only = yes
+
+  option = { # replace deportation with exile to limit costs
+    name = orsini_affair.7.a
+    set_country_flag = FRA_Parliament_Success
+    FRA = { country_event = { id = french_parliament.1 days = 1 } }
+  }
+  option = { # let's forget the surveillance of dangerous citizens
+    name = orsini_affair.7.b
+    set_country_flag = FRA_Parliament_Success
+    FRA = { country_event = { id = french_parliament.1 days = 1 } }
+  }
+  option = { # reduce the surveillance of the borders
+    name = orsini_affair.7.c
+    set_country_flag = FRA_Parliament_Success
+    FRA = { country_event = { id = french_parliament.1 days = 1 } }
+  }
+}
+
+#----------------------------------------------------------------------------------------------
+# ORSINI AFFAIR
+#----------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+country_event = { # Dangerous radicals arrested in Calais
+  id = orsini_affair.11
+  title = orsini_affair.11.t
+  desc = orsini_affair.11.d
+  picture = GFX_report_event_nap_france_orsini_affair
+
+  is_triggered_only = yes
+
+  option = { # Regardless, send them to jail!
+    name = orsini_affair.11.a
+  }
+  option = { # Make these terrorists talk !
+    name = orsini_affair.11.b
+  }
+}
+
+country_event = { # A plot against Napoleon III discovered
+  id = orsini_affair.12
+  title = orsini_affair.12.t
+  desc = orsini_affair.12.d
+  picture = GFX_report_event_nap_france_orsini_affair
+
+  is_triggered_only = yes
+
+  option = { # We must react fast to stop this extremists 
+    name = orsini_affair.12.a
+  }
+}
+
+country_event = { # Attack against the Emperor !
+  id = orsini_affair.13
+  title = orsini_affair.13.t
+  desc = orsini_affair.13.d
+  picture = GFX_report_event_nap_france_orsini_affair
+
+  is_triggered_only = yes
+
+  option = { # Quickly ! Send help to the emperor !
+    name = orsini_affair.13.a
+  }
+}
+
+country_event = { # Emperor is safe and sound
+  id = orsini_affair.14
+  title = orsini_affair.14.t
+  desc = orsini_affair.14.d
+  picture = GFX_report_event_nap_france_orsini_affair
+
+  is_triggered_only = yes
+
+  option = { # The empire is saved
+    name = orsini_affair.4.a
+  }
+}
+
+country_event = { # The emperor was injured and is very shocked
+  id = orsini_affair.15
+  title = orsini_affair.15.t
+  desc = orsini_affair.15.d
+  picture = GFX_report_event_nap_france_orsini_affair
+
+  is_triggered_only = yes
+
+  option = { # The empire is saved
+    name = orsini_affair.15.a
+  }
+}
+
+country_event = { # The emperor was severely injured
+  id = orsini_affair.16
+  title = orsini_affair.16.t
+  desc = orsini_affair.16.d
+  picture = GFX_report_event_nap_france_orsini_affair
+
+  is_triggered_only = yes
+
+  option = { # The empire is shocked
+    name = orsini_affair.16.a
+  }
+}
+
+country_event = { # Death of Napoleon III
+	id = orsini_affair.17
+	title = orsini_affair.17.t
+	desc = orsini_affair.17.d
+	picture = GFX_report_event_napoleon_iii_death
+
+	fire_only_once = yes
+
+	trigger = {
+		NOT = {
+			OR = {
+				has_country_flag = fra_orsini_success
+				has_country_flag = fra_orsini_tragedy_flag
+			}
+		}
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = orsini_affair.17.a
+		if = {
+			limit = {
+				has_country_leader = {
+					id = 00505
+					ruling_only = no
+				}
+			}
+			kill_ideology_leader = autocracy
+			create_country_leader = {
+				name = "Napoleon IV"
+				picture = "Portrait_FRA_Napoleon_IV.dds"
+				ideology = despotism
+			}
+		}
+		hidden_effect = {
+
+		}
+		set_country_flag = fra_nap_iv
+		remove_ideas = FRA_napoleon_illness_3
+    }
+}
+
+country_event = { # The emperor recovered
+  id = orsini_affair.8
+  title = orsini_affair.8.t
+  desc = orsini_affair.8.d
+  picture = GFX_report_event_nap_france_orsini_affair
+
+  is_triggered_only = yes
+
+  option = { # Aleluia ! 
+    name = orsini_affair.8.a
+  }
+}
+
+country_event = { # Orsini Letter
+  id = orsini_affair.9
+  title = orsini_affair.9.t
+  desc = orsini_affair.9.d
+  picture = GFX_report_event_nap_france_orsini_affair
+
+  is_triggered_only = yes
+
+  option = { # Nothing fishy about this letter !
+    name = orsini_affair.9.a
+  }
+}
+
+country_event = { # Aftermath of the Orsini Tragedy
+  id = orsini_affair.10
+  title = orsini_affair.10.t
+  desc = orsini_affair.10.d
+  picture = GFX_report_event_nap_france_orsini_affair
+
+  is_triggered_only = yes
+
+  option = { # France is rebuilding itself
+    name = orsini_affair.10.a
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+country_event = { # Orsini Affair
+  id = nap_france.398
+  title = nap_france.398.t
+  desc = nap_france.398.d
+  picture = GFX_report_event_nap_france_orsini_affair
+
+  fire_only_once = yes
+  is_triggered_only = yes
+
+  trigger = {
+    tag = FRA
+    date > 14.01.1958
+  }
+
+  option = { # Emperor Dead
+    name = nap_france.398.a
+    complete_national_focus = FRA_the_unthinkable
+    ai_chance = {
+      factor = 25
+      modifier = {
+        is_historical_focus_on = yes
+        factor = 0
+      }
+    }
+    if = {
+      limit = {
+        AND = {
+          PIE = {
+            has_completed_focus = PIE_Go_with_Garibaldi
+          }
+          NOT = {
+            PIE = {
+              has_completed_focus = PIE_Aftermath_of_Orsini
+            }
+          }
+        }
+        
+      }
+      PIE = {
+        complete_national_focus = PIE_Aftermath_of_Orsini
+      }
+    }
+    kill_country_leader = yes
+    add_stability = -0.1
+    create_country_leader = {
+      name = "Eugénie I"
+      picture = "Portrait_FRA_Eugenie_de_Montijo.dds"
+      ideology = despotism
+    }
+    add_political_power = -100
+    set_country_flag = fra_orsini_success
+    add_ideas = FRA_idea_orsini_regency_empress
+    clr_country_flag = FRA_has_colonial_ambitions
+    hidden_effect = {
+      news_event = { id = nap_france_flavor.19 }
+    }
+  }
+  option = { # Emperor Alive
+    name = nap_france.398.b
+    ai_chance = { factor = 50 }
+    add_stability = -0.05
+    set_country_flag = fra_orsini_failure
+    complete_national_focus = FRA_the_orsini_letter
+    hidden_effect = {
+      news_event = { id = nap_france_flavor.21 }
+    }
+    if = {
+      limit = {
+        AND = {
+          PIE = {
+            has_completed_focus = PIE_Go_with_Garibaldi
+          }
+          NOT = {
+            PIE = {
+              has_completed_focus = PIE_Aftermath_of_Orsini
+            }
+          }
+        }
+        
+      }
+      PIE = {
+        complete_national_focus = PIE_Aftermath_of_Orsini
+      }
+    }
+  }
+  option = { # Sacrebleu
+    name = nap_france.398.c
+    ai_chance = {
+      factor = 25
+      modifier = {
+        is_historical_focus_on = yes
+        factor = 0
+      }
+    }
+    add_stability = -0.15
+    create_country_leader = {
+      name = "Regency Council"
+      picture = "Portrait_FRA_Regency_Council.dds"
+      ideology = despotism
+    }
+    set_country_flag = fra_orsini_success
+    clr_country_flag = FRA_has_colonial_ambitions
+    add_ideas = FRA_idea_orsini_tragedy
+    complete_national_focus = FRA_the_unthinkable
+    complete_national_focus = FRA_orsini_tragedy
+    hidden_effect = {
+      news_event = { id = nap_france_flavor.20 }
+    }
+    if = {
+      limit = {
+        AND = {
+          PIE = {
+            has_completed_focus = PIE_Go_with_Garibaldi
+          }
+          NOT = {
+            PIE = {
+              has_completed_focus = PIE_Aftermath_of_Orsini
+            }
+          }
+        }
+        
+      }
+      PIE = {
+        complete_national_focus = PIE_Aftermath_of_Orsini
+      }
+    }
   }
 }

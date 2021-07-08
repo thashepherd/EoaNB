@@ -712,6 +712,16 @@ FRA_decision_category_france_civil_war = {
 	allowed = { tag = FRA }
 }
 
+french_reform_voting_process_category = {
+	icon = generic_political_actions
+	
+	allowed = { tag = FRA } 
+
+}
+
+
+
+
 #### Norway Decision Categories ####
 
 NOR_decision_category_sami_opression = {

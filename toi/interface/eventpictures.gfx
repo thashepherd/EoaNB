@@ -3505,7 +3505,12 @@ spriteTypes = {
 		name = "GFX_report_event_uk_parliament"
 		texturefile = "gfx/event_pictures/uk/report_event_uk_parliament.dds"
 	}
-	
+
+	spriteType = {
+		name = "GFX_report_event_french_parliament"
+		texturefile = "gfx/event_pictures/uk/report_event_french_parliament.dds"
+	}
+
 	spriteType = {
 		name = "GFX_report_event_sepoy_lucknow_surrender"
 		texturefile = "gfx/event_pictures/uk/report_event_sepoy_lucknow_surrender.dds"
@@ -3816,9 +3821,16 @@ spriteTypes = {
 		texturefile = "gfx/event_pictures/bolivia/report_event_sucre_rebellion.dds"
 	}
 	## Morocco Events ##
+
 	spriteType = {
 		name = "GFX_MOR_Muhammad"
 		texturefile = "gfx/event_pictures/morocco/GFX_Muhammad.dds"
 	}
-	
+
+	## USA Events ##
+
+	spriteType = {
+		name = "GFX_USA_1857_Panic"
+		texturefile = "gfx/event_pictures/flavor/news_event_flavor_panic_1857.dds"
+	}
 }

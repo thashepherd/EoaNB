@@ -155,7 +155,7 @@
  FRA_societe_prince_imperial_desc:0 ""
 
  FRA_general_security_law:0 "General Security Act"
- FRA_general_security_law_desc:0 ""
+ FRA_general_security_law_desc:0 "The law of general safety, or law of the suspects, makes it possible to punish with prison any attempt of opposition and authorizes, among other things, the arrest and the transport, of an individual condemned for political offense."
 
  FRA_future_empire:0 "The Future of the Empire"
  FRA_future_empire_desc:0 "In 1852, the Second French Republic was struck down by a coup, led by its one and only president, Louis-Napoléon Bonaparte. Crowned Napoléon III, he restored the empire. But the cost of destroying, again, the republic is low legitimacy. The empire needs to find its future now or be doomed to fall."
@@ -760,15 +760,36 @@ orsini_affair.6.a:0 "Review the reform budget"
 orsini_affair.6.b:0 "Review the objective of the reform"
 orsini_affair.6.c:0 ""
 
+
+
+
+
+
+
+
+
+
+
+
+
 # 1857 POLITICAL PATH EVENTS
 
  nap_france.370.t:0 "The Legislative Elections of 1857"
  nap_france.370.d:0 "The second legislative election of the history of the Second Empire shouldn't put too much pressure on the government. The Official Candidate, Charles de Morny, is in a very confortable place, being a close ally of the Empire and a popular figure among the politicians. Michel Goudchaux has little support, as the opposition is still split between republicans and monarchists, allowing it to be outshined."
- nap_france.3701.a:0 "Time for democracy !"
+ nap_france.370.a:0 "Time for democracy"
 
  nap_france.3701.t:0 "Election Results"
  nap_france.3701.d:0 "Unsurprisingly, the election was won with a large majority by the Empire's official candidate, Charles de Morny, who received 89% of the vote."
  nap_france.3701.a:0 "Congratulation to M.Morny"
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1657,26 +1678,6 @@ orsini_affair.6.c:0 ""
  nap_france.375.t:0 "Victor Hugo denouces the government"
  nap_france.375.d:0 "We have offered partial amnesty to our opposition, meaning only to the moderate republicans, and not the socialists. This wasn't to the taste of Victor Hugo, who has denounced our practices and the censorship of our government towards the socialists voices of France. It seems that hate towards the Empire is stronger than the will of freedom. Politically speaking, this might hurt us in the long run, but the Emperor is satisfied by his offer, and points out that he can only give his good will."
  nap_france.375.a:0 "Damn"
-
- nap_france.380.t:0 "The Republicans demand more liberties"
- nap_france.380.d:0 "Recent turns towards authoritarianism has made lots of republican weary. They are calling the government to act in a more moderate and considerate way, and to listen to the pleas of their people. While the Emperor hasn't responded yet, the government is already preparing their response. We hope that the political effects of such fears stops there, but in the French Empire, nothing is for certain."
- nap_france.380.a:0 "They will have them!"
- nap_france.380.b:0 "We will not give in to them."
-
- nap_france.381.t:0 "The Legitimists are worried"
- nap_france.381.d:0 "Recent turns towards liberalism has made lots of legitimists weary. They are calling the government to act in a more traditionalist and conservative war, and to listen to the demand of the elite. While the Emperor hasn't responded yet, the government is already preparing their response. We hope that the political effects of such fears stops there, but in the French Empire, nothing is for certain."
- nap_france.381.a:0 "Try to reassure them."
- nap_france.381.b:0 "They will have to deal with that."
-
- nap_france.382.t:0 "Republican Strikes!"
- nap_france.382.d:0 ""
- nap_france.382.a:0 "Send in the Army!"
- nap_france.382.b:0 "Negotiate with them"
-
- nap_france.383.t:0 "Legitimist Uprising!"
- nap_france.383.d:0 ""
- nap_france.383.a:0 "Send in the Army!"
- nap_france.383.b:0 "Negotiate with them"
 
  nap_france.397.t:0 "Napoleon III captured!"
  nap_france.397.d:0 "During the Battle of Sedan, in Champagne, the Emperor of the French was captured by the Prussian army. An emergency council decided that a military commander should act as the head of state until the end of the war."

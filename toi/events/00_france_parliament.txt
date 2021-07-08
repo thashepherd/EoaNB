@@ -71,11 +71,11 @@ country_event = { # 1857 General Security Law
   id = france_votes.1
   title = france_votes.1.t
   desc = france_votes.1.d
-  picture = GFX_report_event_uk_parliament
+  picture = GFX_report_event_french_parliament
 
   is_triggered_only = yes
 
-  option = { # Let's vote it in a month
+  option = { # Submit the Law to Parliament 
     name = france_votes.1.a
     set_variable = { 
       var = current_france_reform_id
@@ -97,7 +97,7 @@ country_event = { # 1857 General Security Law
     compute_number_seats_approve_est = yes
   }
 
-  option = { # Later
+  option = { # Vote it later
     name = france_votes.1.b
     set_variable = { 
       var = current_france_reform_id
@@ -115,7 +115,7 @@ country_event = { # Vote on the reform
   id = france_votes_results.1
   title = france_votes_results.1.t
   desc = france_votes_results.1.d
-  picture = GFX_report_event_uk_parliament
+  picture = GFX_report_event_french_parliament
 
   is_triggered_only = yes
 
