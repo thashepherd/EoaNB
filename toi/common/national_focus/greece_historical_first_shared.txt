@@ -1,37 +1,55 @@
 	#####Economic Tree#####
 
-shared_focus  = {
-		id = GRE_control_debts
-		icon = GFX_goal_SWE_economic_reform
-		x = 19
+shared_focus = {
+		id = GRE_agrarian_nation
+		icon = GFX_focus_ITA_Farms
+		x = 17          
 		y = 0
-		cost = 25 
+		cost = 70
 		available_if_capitulated = no
-		available = {
-			has_idea = GRE_idea_economic_comission
-			debt_not_bankrupt_trigger = yes
-		}	
+		
 		ai_will_do = {
 			factor = 1
 		}	
 		
+		completion_reward = {			
+			add_political_power = 150 
+		}
+	}
+	
+#Reforms sub-tree
+	
+shared_focus  = {
+		id = GRE_control_debts
+		icon = GFX_goal_SWE_economic_reform
+		x = -2 
+		y = 1
+		cost = 25 
+		available_if_capitulated = no
+		relative_position_id = GRE_agrarian_nation
+		
+		ai_will_do = {
+			factor = 1
+		}	
+		
+		prerequisite = { focus = GRE_agrarian_nation }
+		
 		completion_reward = {
 			custom_effect_tooltip = GRE_tt_control_debts
+			GRE = {
+				add_ideas = GRE_idea_national_debt
+			}
 		}
 	}
 	
 shared_focus  = {
 		id = GRE_cut_administration
 		icon = GFX_focus_generic_self_management
-		x = 2      
-		y = 1
+		x = -1      
+		y = 2
 		cost = 140
 		available_if_capitulated = no
-		available = {
-			has_idea = GRE_idea_economic_comission
-			debt_not_bankrupt_trigger = yes
-		}
-		relative_position_id = GRE_control_debts
+		relative_position_id = GRE_agrarian_nation
 		
 		ai_will_do = {
 			factor = 1
@@ -41,22 +59,18 @@ shared_focus  = {
 		
 		completion_reward = {
 			custom_effect_tooltip = GRE_tt_cut_administration
-			
+			add_stability = -0.1
 		}
 	}
 	
 shared_focus  = {
 		id = GRE_clamp_on_corruption
 		icon = GFX_goal_focus_enact_law
-		x = -2   
-		y = 1
+		x = -3    
+		y = 2
 		cost = 140
 		available_if_capitulated = no
-		available = {
-			has_idea = GRE_idea_economic_comission
-			debt_not_bankrupt_trigger = yes
-		}
-		relative_position_id = GRE_control_debts
+		relative_position_id = GRE_agrarian_nation
 		
 		ai_will_do = {
 			factor = 1
@@ -66,21 +80,18 @@ shared_focus  = {
 		
 		completion_reward = {
 			custom_effect_tooltip = GRE_tt_clamp_corruption
+			add_political_power = -150
 		}
 	}
 	
 shared_focus  = {
 		id = GRE_fiscal_responsability
 		icon = GFX_goal_focus_foreign_diplomacy_economy
-		x = 0 
-		y = 2
+		x = -2 
+		y = 3
 		cost = 140
 		available_if_capitulated = no
-		available = {
-			has_idea = GRE_idea_economic_comission
-			debt_not_bankrupt_trigger = yes
-		}
-		relative_position_id = GRE_control_debts
+		relative_position_id = GRE_agrarian_nation
 		
 		ai_will_do = {
 			factor = 1
@@ -91,20 +102,18 @@ shared_focus  = {
 		
 		completion_reward = {
 			custom_effect_tooltip = GRE_tt_fiscal_responsability
+			add_political_power = -150
 		}
 	}
 	
 shared_focus  = {
 		id = GRE_repay_debt
 		icon = GFX_focus_increase_civillian_budget
-		x = 0
-		y = 3
-		#cost = 25
+		x = -2  
+		y = 4
+		cost = 25
 		available_if_capitulated = no
-		available = {
-			has_idea = GRE_idea_economic_comission
-		}
-		relative_position_id = GRE_control_debts
+		relative_position_id = GRE_agrarian_nation
 		
 		ai_will_do = {
 			factor = 1
@@ -115,40 +124,459 @@ shared_focus  = {
 		completion_reward = {
 			
 			custom_effect_tooltip = GRE_tt_repay_debt
-			remove_ideas = { GRE_idea_economic_comission }
+			GRE = {
+				remove_ideas = GRE_idea_national_debt
+			}
 			add_stability = 0.1
 			add_political_power = 100
 			47 = {
 				add_resource = {
 					type = cotton 
-					amount = 2
+					amount = 16
 				}
 				add_resource = {
 					type = wood
-					amount = 2
+					amount = 16
 				}
 				add_resource = {
 					type = coal
-					amount =4
+					amount = 16
 				}
 				add_resource = {
 					type = iron
-					amount = 4
+					amount = 16
 				}
 			}	
 			1251 = { 
 				add_building_construction = { 
 					type = industrial_complex 
-					level = 1 
+					level = 3 
 					instant_build = yes 
 				} 
 			}
-			if = {
-				limit = {
-					has_idea = egy_vic_debt_payments
-				}
-			remove_ideas = egy_vic_debt_payments
-			}		
+			
+		}
+	}
+	
+#Agriculture sub-tree
+
+shared_focus  = {
+		id = GRE_land_reform
+		icon = GFX_goal_SWE_agricultural_economy
+		x = 2  
+		y = 1
+		cost = 140  
+		available_if_capitulated = no
+		relative_position_id = GRE_agrarian_nation
+		
+		ai_will_do = {
+			factor = 1
+		}	
+		
+		available = {
+        GRE = { has_political_power > 100 }
+        } 		
+		
+		cancel_if_invalid = no
+		
+		prerequisite = { focus = GRE_agrarian_nation }
+		
+		completion_reward = {
+			add_political_power = 50
+			add_stability = 0.05
+			
+		}
+	}
+	
+shared_focus  = {
+		id = GRE_cotton
+		icon = GFX_goal_focus_confederate_cotton_trade
+		x = 1  
+		y = 2
+		cost = 70
+		available_if_capitulated = no
+		relative_position_id = GRE_agrarian_nation
+		
+		ai_will_do = {
+			factor = 1
+		}	
+		
+		prerequisite = { focus = GRE_land_reform }
+		
+		completion_reward = {
+		47 = {
+			add_resource = {
+                type = cotton 
+                amount = 4
+            }
+		}
+			
+		}
+	}
+	
+shared_focus  = {
+		id = GRE_promote_tobbaco
+		icon = GFX_focus_tobacco
+		x = 3  
+		y = 2
+		cost = 70
+		available_if_capitulated = no
+		relative_position_id = GRE_agrarian_nation
+		
+		ai_will_do = {
+			factor = 1
+		}	
+		
+		prerequisite = { focus = GRE_land_reform }
+		
+		completion_reward = {
+			GRE = {
+				country_event = Greecemisc.9
+			}
+			add_political_power = 50 
+			add_stability = 0.05 
+		}
+	}
+	
+	
+shared_focus  = {
+		id = GRE_fruit_exports
+		icon = GFX_goal_focus_agriculture
+		x = 2  
+		y = 3
+		cost = 70
+		available_if_capitulated = no
+		relative_position_id = GRE_agrarian_nation
+		
+		ai_will_do = {
+			factor = 1
+		}	
+		
+		prerequisite = { focus = GRE_cotton
+		                 focus = GRE_promote_tobbaco }
+		
+		completion_reward = {
+			add_political_power = 50
+			add_timed_idea = {
+				idea = GRE_idea_fruit_exports
+				days = 3650
+			}
+		}
+	}
+	
+shared_focus  = {
+		id = GRE_dry_copais
+		icon = GFX_goal_SWE_appeal_to_workers
+		x = 2  
+		y = 4
+		cost = 70
+		available_if_capitulated = no
+		relative_position_id = GRE_agrarian_nation
+		
+		ai_will_do = {
+			factor = 1
+		}	
+		
+		prerequisite = { focus = GRE_fruit_exports }
+		
+		completion_reward = {
+			custom_effect_tooltip = GRE_tt_dry_lake_copais 
+			hidden_effect = {
+				GRE = { country_event = GREeconomy.3 }
+			}
+			
+		}
+	}
+	
+#Industrialization sub-tree
+
+shared_focus  = {
+		id = GRE_industrialization
+		icon = GFX_goal_focus_industrial_revolution
+		x = 7    
+		y = 1
+		cost = 150  
+		available_if_capitulated = no
+		relative_position_id = GRE_agrarian_nation
+		
+		ai_will_do = {
+			factor = 1
+		}	
+		
+		available = {
+        GRE = { has_political_power > 250 }
+        } 
+		
+		cancel_if_invalid = no
+		
+		prerequisite = { focus = GRE_agrarian_nation }
+	
+        select_effect = {
+			add_political_power = -250 
+        }
+		
+		completion_reward = {
+			swap_ideas	= {
+			     add_idea = industrializing
+				 remove_idea = agrarian
+		    }		
+		}
+	}
+	
+#Infrastructure sub-sub-tree	
+	
+shared_focus  = {
+		id = GRE_improve_roads
+		icon = GFX_goal_focus_telegraph_lines
+		x = 5  
+		y = 2
+		cost = 70
+		available_if_capitulated = no
+		relative_position_id = GRE_agrarian_nation
+		
+		ai_will_do = {
+			factor = 1
+		}	
+		
+		prerequisite = { focus = GRE_industrialization }
+		
+        select_effect = {
+			add_political_power = -25  
+        }
+
+		completion_reward = {
+		    1251 = { add_building_construction = { type = infrastructure level = 1 instant_build = yes } }
+		}
+	}
+	
+shared_focus  = {
+		id = GRE_improve_ship_lines
+		icon = GFX_goal_focus_mass_produce_ships
+		x = 5  
+		y = 3
+		cost = 70
+		available_if_capitulated = no
+		relative_position_id = GRE_agrarian_nation
+		
+		ai_will_do = {
+			factor = 1
+		}	
+		
+		prerequisite = { focus = GRE_improve_roads }
+		
+        select_effect = {
+        add_political_power = -25  
+        }		
+		
+		completion_reward = {
+			add_stability = 0.02 
+			1251 = {
+                add_building_construction = {
+                    type = naval_base 
+                    level = 1
+                    instant_build = yes
+                    province = 2999
+                }			
+			}
+		}
+	}
+	
+shared_focus  = {
+		id = GRE_athens-piraeus_rail
+		icon = GFX_goal_focus_railroad_development
+		x = 5  
+		y = 4
+		cost = 70
+		available_if_capitulated = no
+		relative_position_id = GRE_agrarian_nation
+		
+		ai_will_do = {
+			factor = 1
+		}	
+		
+		prerequisite = { focus = GRE_improve_ship_lines }
+		
+		available = {
+        GRE = { has_political_power > 75 }
+		date > 1864.01.01 
+        } 
+		
+		cancel_if_invalid = no
+		
+        select_effect = {
+        add_political_power = -75    
+        }
+		
+		completion_reward = {
+			custom_effect_tooltip = GRE_tt_begin_athens_piraeus_rail 
+			hidden_effect = {
+			    GRE = { country_event = GREeconomy.1 }
+			}
+		}
+	}
+	
+#Urbanisation sub-sub-tree	
+
+shared_focus  = {
+		id = GRE_athens_industry
+		icon = GFX_goal_GRE_industrialize_athens
+		x = 7   
+		y = 2
+		cost = 70
+		available_if_capitulated = no
+		relative_position_id = GRE_agrarian_nation
+		
+		ai_will_do = {
+			factor = 1
+		}	
+		
+		available = {
+        GRE = { has_political_power > 50 }
+        } 
+		
+		cancel_if_invalid = no
+		
+        select_effect = {
+        add_political_power = -50    
+        }
+		
+		prerequisite = { focus = GRE_industrialization }
+		
+		completion_reward = {
+			1251 = { add_extra_state_shared_building_slots = 1  }
+			1251 = { add_building_construction = { type = industrial_complex level = 1 instant_build = yes } }
+		}
+	}
+	
+shared_focus  = {
+		id = GRE_rural_exodus
+		icon = GFX_goal_SWE_famine
+		x = 7  
+		y = 3
+		cost = 70
+		available_if_capitulated = no
+		relative_position_id = GRE_agrarian_nation
+		
+		ai_will_do = {
+			factor = 1
+		}	
+		
+		prerequisite = { focus = GRE_athens_industry }
+		
+		completion_reward = {
+			add_political_power = 100
+			add_stability = -0.05
+		}
+	}
+	
+shared_focus  = {
+		id = GRE_urbanisation
+		icon = GFX_goal_GRE_urbanize_athens
+		x = 7  
+		y = 4
+		cost = 70
+		available_if_capitulated = no
+		relative_position_id = GRE_agrarian_nation
+		
+		ai_will_do = {
+			factor = 1
+		}	
+		
+		available = {
+        GRE = { has_political_power > 50 }
+        } 
+		
+		cancel_if_invalid = no
+		
+		prerequisite = { focus = GRE_rural_exodus }
+		
+        select_effect = {
+        add_political_power = -50    
+        }
+		
+		completion_reward = {
+			1251 = { add_building_construction = { type = infrastructure level = 1 instant_build = yes } }
+			186 = { add_building_construction = { type = infrastructure level = 1 instant_build = yes } }
+			add_timed_idea = { idea = GRE_idea_monthly_population  days = 5475 }
+		}
+	}
+	
+#Trade sub-sub-tree
+
+shared_focus  = {
+		id = GRE_syros_shipyards
+		icon = GFX_goal_focus_mass_produce_ships
+		x = 9
+		y = 2
+		cost = 70
+		available_if_capitulated = no
+		relative_position_id = GRE_agrarian_nation
+		
+		ai_will_do = {
+			factor = 1
+		}	
+		
+		available = {
+        GRE = { has_political_power > 50 }
+        } 
+		
+		cancel_if_invalid = no
+		
+		
+		prerequisite = { focus = GRE_industrialization }
+		
+		completion_reward = {
+		    47 = {
+                add_building_construction = {
+					type = naval_base 
+                    level = 1
+                    instant_build = yes
+                }			
+			}
+		}
+	}
+	
+shared_focus  = {
+		id = GRE_trade_and_industry
+		icon = GFX_goal_focus_stimulate_economy
+		x = 9  
+		y = 3
+		cost = 70
+		available_if_capitulated = no
+		relative_position_id = GRE_agrarian_nation
+		
+		ai_will_do = {
+			factor = 1
+		}	
+		
+		prerequisite = { focus = GRE_syros_shipyards }
+		
+		completion_reward = {
+			GRE = {
+			    add_ideas = GRE_idea_merchant_marine
+			}
+		}
+	}
+	
+shared_focus  = {
+		id = GRE_national_benefactors
+		icon = GFX_goal_focus_increase_wages
+		x = 9 
+		y = 4
+		cost = 70
+		available_if_capitulated = no
+		relative_position_id = GRE_agrarian_nation
+		
+		ai_will_do = {
+			factor = 1
+		}	
+		
+		prerequisite = { focus = GRE_trade_and_industry }
+		
+		completion_reward = {
+			GRE = {
+			    add_ideas = GRE_idea_national_benefactors 
+			}
 		}
 	}
 	
@@ -443,7 +871,7 @@ shared_focus  = {
 shared_focus  = {
 		id = GRE_hellenic_navy
 		icon = GFX_goal_GRE_Hellenic_Navy
-		x = 38
+		x = 30   
 		y = 6
 		cost = 70
 		available_if_capitulated = no
@@ -461,12 +889,13 @@ shared_focus  = {
 #Ship sub-tree
 
 shared_focus  = {
-		id = GRE_combat_piracy
+		id = GRE_steamships
 		icon = GFX_focus_gunboat_basic
-		x = 34
-		y = 7 
+		x = -2   
+		y = 1 
 		cost = 70
 		available_if_capitulated = no
+		relative_position_id = GRE_hellenic_navy
 		
 		ai_will_do = {
 			factor = 1
@@ -475,306 +904,84 @@ shared_focus  = {
 		prerequisite = { focus = GRE_hellenic_navy }		
 		
 		completion_reward = {
+			GRE = {
+				add_tech_bonus = {
+					bonus = 0.25 
+					uses = 1  
+					technology = tech_naval_mtg_1850_gunboat
+				}	
+				add_tech_bonus = {
+					bonus = 0.25 
+					uses = 1  
+					technology = tech_naval_mtg_1860_gunboat
+				}
+			}
 		}
 	}
 	
 shared_focus  = {
-		id = GRE_aeagan_squadron
+		id = GRE_iron_wall
 		icon = GFX_goal_focus_mass_produce_ships
-		x = 30
-		y = 8
+		x = -2 
+		y = 2 
 		cost = 70
 		available_if_capitulated = no
+		relative_position_id = GRE_hellenic_navy
 		
 		ai_will_do = {
 			factor = 1
 		}	
 		
-		prerequisite = { focus = GRE_combat_piracy }	
-
-		mutually_exclusive = {
-		    focus = GRE_west_squadron
-		}
+		prerequisite = { focus = GRE_steamships }		
 		
 		completion_reward = {
-        }	
-	}
-	
-shared_focus  = {
-		id = GRE_west_squadron
-		icon = GFX_goal_focus_mass_produce_ships
-		x = 32 
-		y = 8 
-		cost = 70
-		available_if_capitulated = no
-		
-		ai_will_do = {
-			factor = 1
-		}	
-		
-		prerequisite = { focus = GRE_combat_piracy }	
-			
-		mutually_exclusive = {
-		    focus = GRE_aeagan_squadron
-		}
-		
-		completion_reward = {
-        }	
-	}
-	
-shared_focus  = {
-		id = GRE_greek_streamers
-		icon = GFX_Focus_Victorian_Gunboat
-		x = 28 
-		y = 9 
-		cost = 70
-		available_if_capitulated = no
-		
-		ai_will_do = {
-			factor = 1
-		}	
-		
-		prerequisite = { focus = GRE_west_squadron focus = GRE_aeagan_squadron }	
-		
-		completion_reward = {
-			add_tech_bonus = {
-				bonus = 0.25 
-				uses = 1  
-				technology = tech_naval_mtg_1850_gunboat
-			}	
-			add_tech_bonus = {
-				bonus = 0.25 
-				uses = 1  
-				technology = tech_naval_mtg_1860_gunboat
+			#custom_effect_tooltip = GRE_tt_iron_wall
+			GRE = {
+				add_tech_bonus = {
+					bonus = 0.25 
+					uses = 1  
+					technology = tech_naval_mtg_ironclad
+				}
 			}
         }	
 	}
 	
 shared_focus  = {
-		id = GRE_amalia_frigate
-		icon = GFX_Focus_Victorian_Line_Ship
-		x = 31 
-		y = 9 
+		id = GRE_comission_ships
+		icon = GFX_goal_focus_generic_navy_ironclad
+		x = -2 
+		y = 3  
 		cost = 70
 		available_if_capitulated = no
+		relative_position_id = GRE_hellenic_navy
 		
 		ai_will_do = {
 			factor = 1
 		}	
 		
-		prerequisite = { focus = GRE_west_squadron focus = GRE_aeagan_squadron }	
-		
+		prerequisite = { focus = GRE_iron_wall
+		                 focus = GRE_merchant_marine 
+        }
+						 
 		completion_reward = {
-			create_ship = {
-				type = ship_hull_corvette_0
-				equipment_variant = "Corvette Class"
-				name = "Αmalia"
-			}
-        }	
-	}
-	
-shared_focus  = {
-		id = GRE_greek_gunboats
-		icon = GFX_Focus_Losange_Gunboat
-		x = 34
-		y = 9 
-		cost = 70
-		available_if_capitulated = no
-		
-		ai_will_do = {
-			factor = 1
-		}	
-		
-		prerequisite = { focus = GRE_west_squadron focus = GRE_aeagan_squadron }	
-		
-		completion_reward = {
-        }	
-	}	
-	
-shared_focus  = {
-		id = GRE_end_piracy
-		icon = GFX_goal_focus_mass_produce_ships
-		x = 31 
-		y = 10
-		cost = 70
-		available_if_capitulated = no
-		
-		ai_will_do = {
-			factor = 1
-		}	
-		
-		prerequisite = { focus = GRE_greek_streamers }	
-		prerequisite = { focus = GRE_amalia_frigate }
-		prerequisite = { focus = GRE_greek_gunboats }
-		
-		completion_reward = {
-			remove_ideas = GRE_piracy
-			add_tech_bonus = { bonus = 0.15 uses = 3 category = naval_equipment }
-			navy_experience = 25
-			add_political_power = 50
-        }	
-	}
-	
-shared_focus  = {
-		id = GRE_shoolship_athens
-		icon = GFX_goal_focus_mass_produce_ships
-		x = 36
-		y = 8 
-		cost = 70
-		available_if_capitulated = no
-		
-		ai_will_do = {
-			factor = 1
-		}	
-		
-		prerequisite = { focus = GRE_combat_piracy }	
-
-		mutually_exclusive = {
-		    focus = GRE_shoolship_loudovikos
+			custom_effect_tooltip = GRE_tt_comission_ships_1		
 		}
-		
-		completion_reward = {
-        }	
-	}
-	
-shared_focus  = {
-		id = GRE_shoolship_loudovikos
-		icon = GFX_goal_focus_mass_produce_ships
-		x = 38
-		y = 8 
-		cost = 70
-		available_if_capitulated = no
-		
-		ai_will_do = {
-			factor = 1
-		}	
-		
-		prerequisite = { focus = GRE_combat_piracy }	
-			
-		mutually_exclusive = {
-		    focus = GRE_shoolship_athens
-		}
-		
-		completion_reward = {
-        }	
-	}
-	
-shared_focus  = {
-		id = GRE_cadets_abroad
-		icon = GFX_goal_focus_mass_produce_ships
-		x = 37
-		y = 9 
-		cost = 70
-		available_if_capitulated = no
-		
-		ai_will_do = {
-			factor = 1
-		}	
-		
-		prerequisite = { focus = GRE_shoolship_athens focus = GRE_shoolship_loudovikos }	
-		
-		completion_reward = {
-        }	
-	}
-	
-shared_focus  = {
-		id = GRE_new_naval_tactics 
-		icon = GFX_goal_focus_mass_produce_ships
-		x = 37
-		y = 10 
-		cost = 70
-		available_if_capitulated = no
-		
-		ai_will_do = {
-			factor = 1
-		}	
-		
-		prerequisite = { focus = GRE_cadets_abroad }	
-		
-		completion_reward = {
-			add_tech_bonus = {
-                bonus = 0.10   
-                uses = 3  
-                category = naval_doctrine 
-            }
-        }	
-	}
-	
-shared_focus  = {
-		id = GRE_cretan_revolution_experiance
-		icon = GFX_goal_focus_mass_produce_ships
-		x = 34
-		y = 11 
-		cost = 70
-		available_if_capitulated = no
-		available = { 
-			OR = {
-				has_country_flag = GRE_Crete_Support_Yes 
-				has_country_flag = GRE_Crete_Support_No
-			}
-		}
-		
-		ai_will_do = {
-			factor = 1
-		}	
-		
-		prerequisite = { focus = GRE_new_naval_tactics }
-		prerequisite = { focus = GRE_end_piracy }		
-		
-		completion_reward = {
-        }	
-	}
-	
-shared_focus  = {
-		id = GRE_georgios
-		icon = GFX_goal_focus_mass_produce_ships
-		x = 36
-		y = 12 
-		cost = 70
-		available_if_capitulated = no
-		
-		ai_will_do = {
-			factor = 1
-		}	
-		
-		prerequisite = { focus = GRE_cretan_revolution_experiance }		
-		
-		completion_reward = {
-        }	
-	}
-	
-shared_focus  = {
-		id = GRE_olga
-		icon = GFX_goal_focus_mass_produce_ships
-		x = 32
-		y = 12 
-		cost = 70
-		available_if_capitulated = no
-		
-		ai_will_do = {
-			factor = 1
-		}	
-		
-		prerequisite = { focus = GRE_cretan_revolution_experiance }	
-		
-		completion_reward = {
-        }	
 	}
 	
 shared_focus  = {
 		id = GRE_eng_ships
 		icon = GFX_goal_focus_british_royal_navy
-		x = 31 
-		y = 13
+		x = -4 
+		y = 4
 		cost = 70
 		available_if_capitulated = no
+		relative_position_id = GRE_hellenic_navy
 		
 		ai_will_do = {
 			factor = 1
 		}	
 		
-		prerequisite = { focus = GRE_olga }
-		prerequisite = { focus = GRE_georgios }
+		prerequisite = { focus = GRE_comission_ships }
 		
 	    mutually_exclusive = { focus = GRE_fra_ships }
 	    mutually_exclusive = { focus = GRE_rus_ships }
@@ -787,17 +994,17 @@ shared_focus  = {
 shared_focus  = {
 		id = GRE_fra_ships
 		icon = GFX_goal_focus_defy_british_navy
-		x = 34
-		y = 13
+		x = -2 
+		y = 4
 		cost = 70
 		available_if_capitulated = no
+		relative_position_id = GRE_hellenic_navy
 		
 		ai_will_do = {
 			factor = 1
 		}	
 		
-		prerequisite = { focus = GRE_olga }
-		prerequisite = { focus = GRE_georgios }
+		prerequisite = { focus = GRE_comission_ships }
 		
 	    mutually_exclusive = { focus = GRE_eng_ships }
 	    mutually_exclusive = { focus = GRE_rus_ships }
@@ -810,17 +1017,17 @@ shared_focus  = {
 shared_focus  = {
 		id = GRE_rus_ships
 		icon = GFX_goal_focus_embassy_st_petersburg
-		x = 37
-		y = 13
+		x = 0
+		y = 4
 		cost = 70
 		available_if_capitulated = no
+		relative_position_id = GRE_hellenic_navy
 		
 		ai_will_do = {
 			factor = 1
 		}	
 		
-		prerequisite = { focus = GRE_olga }
-		prerequisite = { focus = GRE_georgios }
+		prerequisite = { focus = GRE_comission_ships }
 		
 	    mutually_exclusive = { focus = GRE_eng_ships }
 	    mutually_exclusive = { focus = GRE_fra_ships }
@@ -830,120 +1037,97 @@ shared_focus  = {
 		}
 	}
 	
+#Modernize Navy sub-tree
+
 shared_focus  = {
-		id = GRE_merchant_marine
-		icon = GFX_goal_focus_embassy_st_petersburg
-		x = 42
-		y = 7
+		id = GRE_naval_academy
+		icon = GFX_focus_naval_restrictions
+		x = 2  
+		y = 1 
 		cost = 70
 		available_if_capitulated = no
+		relative_position_id = GRE_hellenic_navy
 		
 		ai_will_do = {
 			factor = 1
 		}	
 		
 		prerequisite = { focus = GRE_hellenic_navy }
-		
-		completion_reward = { 
-			add_tech_bonus = {
-				bonus = 0.10
-				uses = 4  
-				category = economics_tech
-			}
-		}
-	}
-	
-shared_focus  = {
-		id = GRE_recover_eco
-		icon = GFX_goal_focus_embassy_st_petersburg
-		x = 42
-		y = 8
-		cost = 70
-		available_if_capitulated = no
-		
-		ai_will_do = {
-			factor = 1
-		}	
-		
-		prerequisite = { focus = GRE_merchant_marine }
-		
-		completion_reward = { 
-		}
-	}
-	
-shared_focus  = {
-		id = GRE_greek_steamship_co
-		icon = GFX_goal_focus_embassy_st_petersburg
-		x = 41
-		y = 9
-		cost = 70
-		available_if_capitulated = no
-		
-		ai_will_do = {
-			factor = 1
-		}	
-		
-		prerequisite = { focus = GRE_recover_eco }
-		mutually_exclusive = { focus = GRE_epirotiki_line }
-		
-		completion_reward = { 
-		}
-	}
 
-shared_focus  = {
-		id = GRE_ironworks
-		icon = GFX_goal_focus_embassy_st_petersburg
-		x = 41
-		y = 10
-		cost = 70
-		available_if_capitulated = no
-		
-		ai_will_do = {
-			factor = 1
-		}	
-		
-		prerequisite = { focus = GRE_greek_steamship_co }
-		
-		completion_reward = { 
+		completion_reward = {
+			navy_experience = 10 
 		}
 	}
 	
 shared_focus  = {
-		id = GRE_epirotiki_line
-		icon = GFX_goal_focus_embassy_st_petersburg
-		x = 43
-		y = 9
+		id = GRE_merchant_marine
+		icon = GFX_goal_SWE_capitalism_liberalism
+		x = 2 
+		y = 2 
 		cost = 70
 		available_if_capitulated = no
+		relative_position_id = GRE_hellenic_navy
 		
 		ai_will_do = {
 			factor = 1
 		}	
 		
-		prerequisite = { focus = GRE_recover_eco }
-		mutually_exclusive = { focus = GRE_greek_steamship_co }
-		
-		completion_reward = { 
+		prerequisite = { focus = GRE_naval_academy }
+
+		completion_reward = {
+			add_tech_bonus = {
+                bonus = 0.5  
+                uses = 1  
+                category = navaltroops_tech 
+            }
 		}
 	}
 	
 shared_focus  = {
-		id = GRE_potamianos
-		icon = GFX_goal_focus_embassy_st_petersburg
-		x = 43
-		y = 10
+		id = GRE_naval_shipyard
+		icon = GFX_focus_gunboat_basic
+		x = 2 
+		y = 3 
 		cost = 70
 		available_if_capitulated = no
+		relative_position_id = GRE_hellenic_navy
 		
 		ai_will_do = {
 			factor = 1
 		}	
 		
-		prerequisite = { focus = GRE_epirotiki_line }
-		
-		completion_reward = { 
+		prerequisite = { focus = GRE_merchant_marine
+                         focus = GRE_iron_wall   
 		}
-	}	
+						 
+		completion_reward = {
+			add_tech_bonus = {
+                bonus = 0.25   
+                uses = 1  
+                category = naval_doctrine 
+            }
+		}
+	}
+	
+shared_focus  = {
+		id = GRE_modern_navy
+		icon = GFX_goal_SWE_mariner
+		x = 2
+		y = 4 
+		cost = 70
+		available_if_capitulated = no
+		relative_position_id = GRE_hellenic_navy
+		
+		ai_will_do = {
+			factor = 1
+		}	
+		
+		prerequisite = { focus = GRE_naval_shipyard }
+
+		completion_reward = {
+			navy_experience = 5 
+		}
+	}
 	
 #####Cultural Focus Tree#####
 
