@@ -299,7 +299,7 @@ spriteTypes = {
 	### France ###
 	spriteType = {
 		name = "GFX_ideology_FRA_bonapartism"
-		texturefile = "gfx/interface/ideologies/FRA_bonapartism.dds"
+		texturefile = "gfx/interface/ideologies/bonapartism.dds"
 	}
 	### Russia ###
 	spriteType = {

@@ -2190,31 +2190,13 @@ spriteTypes = {
 		name = "GFX_goal_focus_fall_of_o_donnell"
 		texturefile = "gfx/interface/goals/uk/focus_fall_of_o_donnell.dds"
 	}
-	### France
-	SpriteType = {
-		name = "GFX_goal_focus_authoritarian_empire"
-		texturefile = "gfx/interface/goals/france/focus_authoritarian_empire.dds"
-	}
-	SpriteType = {
-		name = "GFX_goal_focus_liberal_empire"
-		texturefile = "gfx/interface/goals/france/focus_liberal_empire.dds"
-	}
-	SpriteType = {
-		name = "GFX_goal_focus_haussmann"
-		texturefile = "gfx/interface/goals/france/focus_haussmann.dds"
-	}
-	SpriteType = {
-		name = "GFX_goal_focus_paris_revival"
-		texturefile = "gfx/interface/goals/france/focus_paris_revival.dds"
-	}
-	SpriteType = {
-		name = "GFX_goal_focus_niel_plan"
-		texturefile = "gfx/interface/goals/france/focus_niel_plan.dds"
-	}
-	SpriteType = {
-		name = "GFX_goal_focus_fra_reunion_politique"
-		texturefile = "gfx/interface/goals/france/focus_fra_reunion_politique.dds"
-	}
+	
+	###########################
+	# French Events
+	###########################
+
+	#Political 1857
+
 	SpriteType = {
 		name = "GFX_goal_focus_fra_imperial_security"
 		texturefile = "gfx/interface/goals/france/focus_fra_imperial_security.dds"
@@ -2224,12 +2206,101 @@ spriteTypes = {
 		texturefile = "gfx/interface/goals/france/focus_fra_eugenie.dds"
 	}
 	SpriteType = {
+		name = "GFX_goal_focus_french_empire"
+		texturefile = "gfx/interface/goals/france/focus_french_empire.dds"
+	}
+
+	#Political 1858 Regency Gerome
+
+	SpriteType = {
+		name = "GFX_goal_focus_the_unthinkable"
+		texturefile = "gfx/interface/goals/france/focus_the_unthinkable.dds"
+	}
+	SpriteType = {
+		name = "GFX_goal_focus_regency_jerome"
+		texturefile = "gfx/interface/goals/france/focus_regency_jerome.dds"
+	}
+	SpriteType = {
+		name = "GFX_goal_focus_regency_jerome_napoleon"
+		texturefile = "gfx/interface/goals/france/focus_regency_jerome_napoleon.dds"
+	}
+	SpriteType = {
+		name = "GFX_goal_focus_art_funding"
+		texturefile = "gfx/interface/goals/france/focus_art_funding.dds"
+	}
+
+	#Political 1863 Liberal
+
+	SpriteType = {
+		name = "GFX_goal_focus_liberal_empire"
+		texturefile = "gfx/interface/goals/france/focus_liberal_empire.dds"
+	}
+	SpriteType = {
 		name = "GFX_goal_focus_fra_free_press"
 		texturefile = "gfx/interface/goals/france/focus_fra_free_press.dds"
 	}
 	SpriteType = {
-		name = "GFX_goal_focus_societe_prince_imperial"
-		texturefile = "gfx/interface/goals/france/focus_societe_prince_imperial.dds"
+		name = "GFX_goal_focus_fra_reunion_politique"
+		texturefile = "gfx/interface/goals/france/focus_fra_reunion_politique.dds"
+	}
+	SpriteType = {
+		name = "GFX_goal_focus_niel_plan"
+		texturefile = "gfx/interface/goals/france/focus_niel_plan.dds"
+	}
+
+	#Political 1863 Authoritarian
+
+	SpriteType = {
+		name = "GFX_goal_focus_authoritarian_empire"
+		texturefile = "gfx/interface/goals/france/focus_authoritarian_empire.dds"
+	}
+	SpriteType = {
+		name = "GFX_goal_focus_haussmann"
+		texturefile = "gfx/interface/goals/france/focus_haussmann.dds"
+	}
+	SpriteType = {
+		name = "GFX_goal_focus_paris_revival"
+		texturefile = "gfx/interface/goals/france/focus_paris_revival.dds"
+	}
+
+	#Historical Intalian Intervention
+
+	SpriteType = {
+		name = "GFX_goal_focus_orsini_letter"
+		texturefile = "gfx/interface/goals/france/focus_orsini_letter.dds"
+	}
+	SpriteType = {
+		name = "GFX_goal_focus_carvour_meeting_2"
+		texturefile = "gfx/interface/goals/france/focus_fra_plombiere_meeting2.dds"
+	}
+	SpriteType = {
+		name = "GFX_goal_focus_french_bank"
+		texturefile = "gfx/interface/goals/france/focus_fra_societe_generale.dds"
+	}
+
+
+	#1857 Industrial
+
+	SpriteType = {
+		name = "GFX_goal_focus_fra_chemin_fer_est"
+		texturefile = "gfx/interface/goals/france/focus_fra_chemins_de_fer_de_Est.dds"
+	}
+	SpriteType = {
+		name = "GFX_goal_focus_fra_chemin_fer_ouest"
+		texturefile = "gfx/interface/goals/france/focus_fra_chemins_de_fer_de_Ouest.dds"
+	}
+	SpriteType = {
+		name = "GFX_goal_focus_fra_chemin_fer_nord"
+		texturefile = "gfx/interface/goals/france/focus_fra_chemins_de_fer_du_Nord.dds"
+	}
+	
+
+
+
+
+	SpriteType = {
+		name = "GFX_goal_focus_paris_revival"
+		texturefile = "gfx/interface/goals/france/focus_paris_revival.dds"
 	}
 	SpriteType = {
 		name = "GFX_goal_focus_carbonari_national_support"
@@ -2255,10 +2326,7 @@ spriteTypes = {
 		name = "GFX_goal_focus_turn_back_papal_states"
 		texturefile = "gfx/interface/goals/france/focus_turn_back_papal_states.dds"
 	}
-	SpriteType = {
-		name = "GFX_goal_focus_orsini_letter"
-		texturefile = "gfx/interface/goals/france/focus_orsini_letter.dds"
-	}
+
 	SpriteType = {
 		name = "GFX_goal_focus_angkor_wat"
 		texturefile = "gfx/interface/goals/france/focus_angkor_wat.dds"
@@ -2311,10 +2379,7 @@ spriteTypes = {
 		name = "GFX_goal_focus_faith_vietnam"
 		texturefile = "gfx/interface/goals/france/focus_faith_vietnam.dds"
 	}
-	SpriteType = {
-		name = "GFX_goal_focus_french_empire"
-		texturefile = "gfx/interface/goals/france/focus_french_empire.dds"
-	}
+
 	SpriteType = {
 		name = "GFX_focus_fra_expansion_equatorial_africa"
 		texturefile = "gfx/interface/goals/france/focus_fra_expansion_equatorial_africa.dds"

@@ -265,7 +265,7 @@
     desc = "POLITICS_NAPOLEON_III_DESC"
     picture = "Portrait_FRA_1857_Napoleon_III.dds"
     expire = "1865.1.1"
-    ideology = absolutism
+    ideology = bonapartism
     traits = { }
     id = 00505
   }
