@@ -1,17 +1,14 @@
 ﻿l_english:
 ### Event titels, descriptions and options
  tunisia.1.t:0 "Batto Sfez Affair"
- #tunisia.1.d:0 "Today The Court of Tunisia declared Batto Sfez, the jew that killed a muslim child in a carriage accident, guilty and it will be executed for blasphemy. Few days ago we executed a muslim that murdered a jew, if we don't do the same now the stability of our nation could be affected."
-#tunisia.1.a:0 " Hang The jew! "
-#tunisia.1.b:0 " We can't anger France and England"
- tunisia.1.d:0 "."
-tunisia.1.a:0 " ! "
-tunisia.1.b:0 " .."
+tunisia.1.d:0 "Today The Court of Tunisia declared Batto Sfez, the jew that killed a muslim child in a carriage accident, guilty and it will be executed for blasphemy. Few days ago we executed a muslim that murdered a jew, if we don't do the same now the stability of our nation could be affected."
+tunisia.1.a:0 " Hang The jew! "
+tunisia.1.b:0 " We can't anger France and England"
 
 tunisia.2.t:0 "The Fondamental Pact"
-tunisia.2.d:0 "Our nation needs to be reformed, it is our last chance to save us from become a puppet"
+tunisia.2.d:0 "Has been a while since the consules of Britain and France (Richard Wood and Leon Roches) started making pressure on us for a new bill of rights"
 tunisia.2.a:0 "Europe is making pressure on us, we have to act"
-tunisia.2.b:0 "Slavery is not the problem of our country, civil rights can wait"
+tunisia.2.b:0 "this is just a way to make of us puppets!"
 
 tunisia.3.t:0 "Cultural Reforms"
 tunisia.3.d:0 "First step to keep our nation alive is to to invest in future and tecnology"
@@ -32,6 +29,11 @@ tunisia.6.a:0 "Not everyone seems to be happy though..."
 tunisia.7.t:0 "The Telegraph concession"
 tunisia.7.d:0 "We have recently recived a request from french industries to build a telegraph line in our country"
 tunisia.7.a:0 "Technology is coming in africa!"
+
+tunisia.8.t:0 "In name of Allah"
+tunisia.8.d:0 "Our path is signed, if we follow His will we will never suffer"
+tunisia.8.a:0 "Technology is coming in africa!"
+
 
 tunisia.100.t:0 "Mejba Revolt"
 tunisia.100.d:0 "We got news of the death of General Ferhat, it seems that he was killed by a group of insurgents. The entire region is fighting against us"

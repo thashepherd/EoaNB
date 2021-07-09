@@ -3825,5 +3825,8 @@ spriteTypes = {
 		name = "GFX_tun_event_carriage_accident"
 		texturefile = "gfx/event_pictures/tunisia/tun_event_carriage_accident.dds"
 	}
-	
+	spriteType = {
+		name = "GFX_tun_the_fundamental_pact"
+		texturefile = "gfx/event_pictures/tunisia/tun_the_fundamental_pact.dds"
+	}
 }

@@ -21,8 +21,7 @@ tunisia_revolt_category = {
 		complete_effect = {
 			country_event = { id = tunisia.100 } # Fires Civil War
 			remove_dynamic_modifier = { modifier = TUN_Mejba_Revolt_Modifier } # removes the modifier added for civil war
-			remove_decision = { TUN_Increase_Military_Presence }
-			remove_decision = { TUN_Manipulate_Inland_Economy }
+			set_variable = { Mejba_Revolt_var = 0}
 		}
 	}
 	TUN_Increase_Military_Presence = {

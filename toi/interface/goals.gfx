@@ -7702,4 +7702,8 @@ spriteTypes = {
 		name = "GFX_focus_OTO_Police_Force"
 		texturefile = "gfx/interface/goals/ottoman/Police_Force.dds"
 	}
+	SpriteType = {
+		name = "GFX_focus_tribal_slavery"
+		texturefile = "gfx/interface/goals/focus_tribal_slavery.dds"
+	}
 }

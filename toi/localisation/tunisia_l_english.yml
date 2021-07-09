@@ -8,7 +8,7 @@
   TUN_social_reforms:0 " Social Reforms "
   TUN_social_reforms_desc:0 " The will of allah must not be misinterpreted "
 
-  TUN_the_fundamental_pact:0 " The Fondamental Pact "
+  TUN_the_fundamental_pact:0 " The Fundamental Pact "
   TUN_the_fundamental_pact_desc:0 " We need our bill of rights "
 
   TUN_political_reform:0 " Political Reforms "
@@ -17,8 +17,25 @@
   TUN_municipality_of_tunis:0 " Municipality of Tunis "
   TUN_municipality_of_tunis_desc:0 " We have to decentralize the country to obtain more autonomy "
 
+  TUN_expand_the_royal_palace:0 "Expand the Dar al-Taj palace"
+  TUN_political_reform_desc:0 "he power of a king is seen in his palace"
+
   TUN_stabilize_the_nation:0 " Stabilize the Nation "
   TUN_stabilize_the_nation_desc:0 " There is only one law in a state "
+
+#---NO REFORMS
+  TUN_the_old_order:0 " The old Order"
+  TUN_the_old_order_desc:0 " To ensure our nation autonomy, we must act as our fathers did."
+
+  TUN_tunisia_first:0 " Tunisia First"
+  TUN_the_old_order_desc:0 " Our national sovranity comes before everything."
+
+  TUN_relegalize_slavery:0 " Relegalize slavery"
+  TUN_relegalize_slavery_desc:0 "We have to deal with our debts in all the ways possible"
+
+  TUN_in_name_of_Allah:0 "In name of Allah"
+  TUN_in_name_of_Allah_desc:0 "So remember Me; I will remember you. And be grateful to Me and do not deny Me."
+#-- PT2
 
   TUN_the_reformist:0 " The Reformist "
   TUN_the_reformist_desc:0 " Muhammad II is dead, Long live Muhammad III "
