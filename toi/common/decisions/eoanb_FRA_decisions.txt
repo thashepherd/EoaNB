@@ -1079,13 +1079,13 @@ FRA_decision_political_actions = {
 
 	FRA_decision_enact_general_security_act = {
 		available = { 
-			has_completed_focus = FRA_general_security_law_2 
+			has_completed_focus = FRA_general_security_law
 			check_variable = { 
 				var = current_france_reform_id
 				value = 0
 			}
 		}
-		visible = { has_completed_focus = FRA_general_security_law_2 }
+		visible = { has_completed_focus = FRA_general_security_law }
 		allowed = { TAG = FRA }
 		fire_only_once = yes
 		cost = 50

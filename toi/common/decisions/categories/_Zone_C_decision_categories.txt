@@ -665,6 +665,9 @@ french_reform_voting_process_category = {
 	visible = {
 		afr_is_tribal = no
 	}
+	allowed = {
+		tag = FRA
+	}
 }
 
 FRA_category_Industrialisation_decisions = {
