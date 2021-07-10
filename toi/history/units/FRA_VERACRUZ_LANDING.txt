@@ -67,11 +67,11 @@ division_template = {
 
 units = {
 	division= {
-		name = "2e régiment d'infanterie de marine"
+		name = "Regiment de Marche de la Marine"
 		location = 12810
 		division_template = "French Marines"
-		start_experience_factor = 0.5
-		start_equipment_factor = 0.87
+		start_experience_factor = 0.8
+		start_equipment_factor = 1
 	}
 }
 
@@ -81,7 +81,7 @@ units = {
 		location = 12810
 		division_template = "African Zouaves"
 		start_experience_factor = 0.5
-		start_equipment_factor = 0.87
+		start_equipment_factor = 1
 	}
 }
 
@@ -91,7 +91,7 @@ units = {
 		location = 12810
 		division_template = "Zouaves"
 		start_experience_factor = 0.5
-		start_equipment_factor = 0.87
+		start_equipment_factor = 1
 	}
 }
 
@@ -101,7 +101,7 @@ units = {
 		location = 12810
 		division_template = "gendarmes a cheval"
 		start_experience_factor = 0.5
-		start_equipment_factor = 0.87
+		start_equipment_factor = 1
 	}
 }
 
@@ -111,6 +111,6 @@ units = {
 		location = 12810
 		division_template = "Belgian Legion"
 		start_experience_factor = 0.5
-		start_equipment_factor = 0.87
+		start_equipment_factor = 1
 	}
 }

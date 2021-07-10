@@ -95,6 +95,7 @@ defined_text = {
 	}
 }
 
+
 defined_text = {
 	name = GetLegitimacyState
 	text = { # Catastrophic
@@ -2898,6 +2899,7 @@ defined_text = {
         }
         localization_key = reform_name_25_8
     }
+
 }
 
 
@@ -6204,4 +6206,90 @@ defined_text = {
 		}
 		localization_key = EOANB_FUN_PARTY_INFO
 	}
+}
+
+##################################################
+##################################################
+#               FRENCH PARLIAMENT
+##################################################
+##################################################
+
+defined_text = {
+	name = GetFrenchParliamentDesc
+	text = { # No vote
+		trigger = {
+			check_variable = { current_france_reform_id = 0 }
+		}
+		localization_key = french_reform_voting_process_category_desc_0
+	}
+
+	text = { # Reform Vote in process
+		trigger = {
+			NOT = {
+				check_variable = { current_france_reform_id = 0 }
+			}
+			NOT = {
+				check_variable = { current_france_reform_id = -1 }
+			}
+		}
+		localization_key = french_reform_voting_process_category_desc_1
+	}
+
+	text = { # Custom Vote in process
+		trigger = {
+			check_variable = { current_france_reform_id = -1 }
+		}
+		localization_key = french_reform_voting_process_category_desc_2
+	}
+}
+
+
+defined_text = {
+	name = GetFrenchCurrentVotedReform
+	text = { # The "I am ERROR" Act
+		trigger = {
+			check_variable = { 
+				var = current_france_reform_id
+				value = 0
+          		compare = equals
+			}
+		}
+		localization_key = french_reform_name_1_1
+	}
+
+
+	text = { # General Imperial Security Act
+		trigger = {
+			check_variable = { 
+				var = current_france_reform_id
+				value = 1.1
+          		compare = equals
+			}
+		}
+		localization_key = french_reform_name_1_1
+	}
+
+	text = { # Loi Duruy
+		trigger = {
+			check_variable = { 
+				var = current_france_reform_id
+				value = 1.2
+          		compare = equals
+			}
+		}
+		localization_key = french_reform_name_1_2
+	}
+
+	text = { # Loi Ollivier
+		trigger = {
+			check_variable = { 
+				var = current_france_reform_id
+				value = 1.3
+			 	 compare = equals
+			}
+		}
+		localization_key = french_reform_name_1_3
+	}
+
+
 }

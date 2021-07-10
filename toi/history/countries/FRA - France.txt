@@ -41,7 +41,7 @@
     parliamentary_suffrage
 
     constitution_adopted
-    no_elections
+    limited_elections
 
     open_schools
     state_religion
@@ -124,18 +124,24 @@
 }
 
   set_popularities = {
-      centrism = 10
-      traditional_conservatism = 15
-      social_egalitarianism = 8
-      collectivist_socialism = 2
+      centrism = 0
+      traditional_conservatism = 2.01
+      social_egalitarianism = 1.06
+      collectivist_socialism = 0
       vanguard_communism = 0
-      autocracy = 65
+      autocracy = 96.93
       radical_democracy = 0
       chauvinist_populism = 0
       anarchism = 0
       fundamentalism = 0
   }
   
+  #Parliament Parties Banned
+  set_country_flag = parl_col_soc_meet_party_leaders_is_prohibited
+  set_country_flag = parl_van_com_meet_party_leaders_is_prohibited
+  set_country_flag = parl_talk_with_the_unions_is_prohibited 
+
+
   #Native Raids
 	add_to_variable = { var = FRA.FNT_raid_likelihood_varKBY value = 1 }
 
@@ -186,7 +192,7 @@
   	gw_artillery = 1
   	improved_smoothbore = 1
   	early_howitzer = 1
-  	#tech_naval_1830_frigate = 1 
+  	tech_naval_1830_frigate = 1 
 	start_build_tech = 1
     tech_naval_mtg_24_pounder_battery = 1
     tech_naval_mtg_sails = 1
@@ -196,8 +202,8 @@
     tech_naval_mtg_early_frigate = 1
     tech_naval_mtg_1850_frigate = 1
     tech_naval_mtg_lineship_hull = 1
-    #tech_naval_1812_troops = 1 
-    #tech_naval_1855_frigate = 1 
+    tech_naval_1812_troops = 1 
+    tech_naval_1855_frigate = 1 
     mongolfiere = 1
     ornithopter = 1
     screw_propeller = 1 

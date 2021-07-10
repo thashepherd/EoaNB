@@ -1,37 +1,1097 @@
-political_actions = {
+# FRENCH PARLIAMENT DECISIONS 
 
+french_reform_voting_process_category = {
 
-	FRA_decision_enact_general_security_act = {
-
-		available = {
-			has_completed_focus = FRA_general_security_law
+	french_parl_vote_for_the_reform = {
+		priority = 2
+		available = { always = no }
+		activation = {
+			NOT = { check_variable = { current_france_reform_id = 0 } }
 		}
-
-		visible = {
-			has_completed_focus = FRA_general_security_law
+		is_good = yes
+		days_mission_timeout = 30
+		timeout_effect = {
+			hidden_effect = {
+				if = {
+					limit = {
+						NOT = {
+							OR = {
+								check_variable = { current_france_reform_id = -1 }
+								check_variable = { current_france_reform_id = 0 }
+							}
+						}
+					}
+					FRA = { country_event = { id = france_votes_results.1 } }
+				}
 			}
-	
-		fire_only_once = yes
-	
-		cost = 50
-	
-		complete_effect = {
-			swap_ideas = {
-				add_idea = FRA_idea_republican_spirit_2
-				remove_idea = FRA_idea_republican_spirit
-			}
-		}
-	z
-		ai_will_do = {
-			base = 1000
 		}
 	}
 
+	french_parl_van_com_seek_support = {  
+		available = { NOT = { has_country_flag = parl_political_action_in_progress } }  
+		days_remove = 7
+		visible = {
+            check_variable = { var = parl_voting_approval_array^0 value = 1 compare = less_than_or_equals }
+			NOT = { check_variable = { current_france_reform_id = 0 } check_variable = { seats_count_array^0 = 0 } }
+			NOT = { has_country_flag = parl_aut_meet_party_leaders_is_prohibited }
+		} 
+		complete_effect = { set_country_flag = parl_political_action_in_progress }
+		remove_effect = {
+			set_temp_variable = { parl_r = random }
+			multiply_temp_variable = { parl_r = 0.1 }
+			if = {
+				limit = { check_variable = { parl_voting_approval_array^0 < 0.4 } check_variable = { parl_voting_approval_array^0 > 0.25 } }
+				multiply_temp_variable = { parl_r = 0.5 }
+			}
+			else = {
+				if = {
+					limit = { OR = { check_variable = { parl_voting_approval_array^0 < 0.25 } check_variable = { parl_voting_approval_array^0 = 0.25 } }
+					}
+					multiply_temp_variable = { parl_r = 0.25 }
+				}
+			}
+		# LIST OF LAWS
+			if = {
+				limit = {
+					AND = {
+						has_country_flag = french_parl_vote_in_progress
+						has_country_flag = french_vanilla_reform
+					}
+				}
+				custom_effect_tooltip = parl_meeting_small_boost_tt
+				add_political_power = -25
+				clr_country_flag = parl_political_action_in_progress
+			}
+			add_to_variable = { parl_voting_approval_array^0 = parl_r }
+			clamp_variable = { var = parl_voting_approval_array^0 min = 0 max = 1 }
+			compute_number_seats_tot = yes
+			compute_number_seats_approve_est = yes
+		}  
+	}
+
+	french_parl_col_soc_meet_party_leaders = {  
+		available = { NOT = { has_country_flag = parl_political_action_in_progress } }  
+		days_remove = 7
+		visible = {
+            check_variable = { var = parl_voting_approval_array^1 value = 1 compare = less_than_or_equals }
+			NOT = { check_variable = { current_france_reform_id = 0 } check_variable = { seats_count_array^1 = 0 } }
+			NOT = { has_country_flag = parl_aut_meet_party_leaders_is_prohibited }
+		} 
+		complete_effect = { set_country_flag = parl_political_action_in_progress }
+		remove_effect = {
+			set_temp_variable = { parl_r = random }
+			multiply_temp_variable = { parl_r = 0.1 }
+			if = {
+				limit = { check_variable = { parl_voting_approval_array^1 < 0.4 } check_variable = { parl_voting_approval_array^1 > 0.25 } }
+				multiply_temp_variable = { parl_r = 0.5 }
+			}
+			else = {
+				if = {
+					limit = { OR = { check_variable = { parl_voting_approval_array^1 < 0.25 } check_variable = { parl_voting_approval_array^1 = 0.25 } }
+					}
+					multiply_temp_variable = { parl_r = 0.25 }
+				}
+			}
+		# LIST OF LAWS
+			if = {
+				limit = {
+					AND = {
+						has_country_flag = french_parl_vote_in_progress
+						has_country_flag = french_vanilla_reform
+					}
+				}
+				custom_effect_tooltip = parl_meeting_small_boost_tt
+				add_political_power = -25
+				clr_country_flag = parl_political_action_in_progress
+			}
+			add_to_variable = { parl_voting_approval_array^1 = parl_r }
+			clamp_variable = { var = parl_voting_approval_array^1 min = 0 max = 1 }
+			compute_number_seats_tot = yes
+			compute_number_seats_approve_est = yes
+		}  
+	}
+
+	french_parl_soc_ega_meet_party_leaders = {  
+		available = { NOT = { has_country_flag = parl_political_action_in_progress } }  
+		days_remove = 7
+		visible = {
+            check_variable = { var = parl_voting_approval_array^2 value = 1 compare = less_than_or_equals }
+			NOT = { check_variable = { current_france_reform_id = 0 } check_variable = { seats_count_array^2 = 0 } }
+			NOT = { has_country_flag = parl_aut_meet_party_leaders_is_prohibited }
+		} 
+		complete_effect = { set_country_flag = parl_political_action_in_progress }
+		remove_effect = {
+			set_temp_variable = { parl_r = random }
+			multiply_temp_variable = { parl_r = 0.1 }
+			if = {
+				limit = { check_variable = { parl_voting_approval_array^2 < 0.4 } check_variable = { parl_voting_approval_array^2 > 0.25 } }
+				multiply_temp_variable = { parl_r = 0.5 }
+			}
+			else = {
+				if = {
+					limit = { OR = { check_variable = { parl_voting_approval_array^2 < 0.25 } check_variable = { parl_voting_approval_array^2 = 0.25 } }
+					}
+					multiply_temp_variable = { parl_r = 0.25 }
+				}
+			}
+		# LIST OF LAWS
+			if = {
+				limit = {
+					AND = {
+						has_country_flag = french_parl_vote_in_progress
+						has_country_flag = french_vanilla_reform
+					}
+				}
+				custom_effect_tooltip = parl_meeting_small_boost_tt
+				add_political_power = -25
+				clr_country_flag = parl_political_action_in_progress
+			}
+			add_to_variable = { parl_voting_approval_array^2 = parl_r }
+			clamp_variable = { var = parl_voting_approval_array^2 min = 0 max = 1 }
+			compute_number_seats_tot = yes
+			compute_number_seats_approve_est = yes
+		}  
+	}
+
+	french_parl_cen_meet_party_leaders = {  
+		available = { NOT = { has_country_flag = parl_political_action_in_progress } }  
+		days_remove = 7
+		visible = {
+            check_variable = { var = parl_voting_approval_array^3 value = 1 compare = less_than_or_equals }
+			NOT = { check_variable = { current_france_reform_id = 0 } check_variable = { seats_count_array^3 = 0 } }
+			NOT = { has_country_flag = parl_aut_meet_party_leaders_is_prohibited }
+		} 
+		complete_effect = { set_country_flag = parl_political_action_in_progress }
+		remove_effect = {
+			set_temp_variable = { parl_r = random }
+			multiply_temp_variable = { parl_r = 0.1 }
+			if = {
+				limit = { check_variable = { parl_voting_approval_array^3 < 0.4 } check_variable = { parl_voting_approval_array^3 > 0.25 } }
+				multiply_temp_variable = { parl_r = 0.5 }
+			}
+			else = {
+				if = {
+					limit = { OR = { check_variable = { parl_voting_approval_array^3 < 0.25 } check_variable = { parl_voting_approval_array^3 = 0.25 } }
+					}
+					multiply_temp_variable = { parl_r = 0.25 }
+				}
+			}
+		# LIST OF LAWS
+			if = {
+				limit = {
+					AND = {
+						has_country_flag = french_parl_vote_in_progress
+						has_country_flag = french_vanilla_reform
+					}
+				}
+				custom_effect_tooltip = parl_meeting_small_boost_tt
+				add_political_power = -25
+				clr_country_flag = parl_political_action_in_progress
+			}
+			add_to_variable = { parl_voting_approval_array^3 = parl_r }
+			clamp_variable = { var = parl_voting_approval_array^3 min = 0 max = 1 }
+			compute_number_seats_tot = yes
+			compute_number_seats_approve_est = yes
+		}  
+	}
+
+	french_parl_tra_con_meet_party_leaders = {  
+		available = { NOT = { has_country_flag = parl_political_action_in_progress } }  
+		days_remove = 7
+		visible = {
+            check_variable = { var = parl_voting_approval_array^4 value = 1 compare = less_than_or_equals }
+			NOT = { check_variable = { current_france_reform_id = 0 } check_variable = { seats_count_array^4 = 0 } }
+			NOT = { has_country_flag = parl_aut_meet_party_leaders_is_prohibited }
+		} 
+		complete_effect = { set_country_flag = parl_political_action_in_progress }
+		remove_effect = {
+			set_temp_variable = { parl_r = random }
+			multiply_temp_variable = { parl_r = 0.1 }
+			if = {
+				limit = { check_variable = { parl_voting_approval_array^4 < 0.4 } check_variable = { parl_voting_approval_array^4 > 0.25 } }
+				multiply_temp_variable = { parl_r = 0.5 }
+			}
+			else = {
+				if = {
+					limit = { OR = { check_variable = { parl_voting_approval_array^4 < 0.25 } check_variable = { parl_voting_approval_array^4 = 0.25 } }
+					}
+					multiply_temp_variable = { parl_r = 0.25 }
+				}
+			}
+		# LIST OF LAWS
+			if = {
+				limit = {
+					AND = {
+						has_country_flag = french_parl_vote_in_progress
+						has_country_flag = french_vanilla_reform
+					}
+				}
+				custom_effect_tooltip = parl_meeting_small_boost_tt
+				add_political_power = -25
+				clr_country_flag = parl_political_action_in_progress
+			}
+			add_to_variable = { parl_voting_approval_array^4 = parl_r }
+			clamp_variable = { var = parl_voting_approval_array^4 min = 0 max = 1 }
+			compute_number_seats_tot = yes
+			compute_number_seats_approve_est = yes
+		}  
+	}
+
+	french_parl_rad_dem_meet_party_leaders = {  
+		available = { NOT = { has_country_flag = parl_political_action_in_progress } }  
+		days_remove = 7
+		visible = {
+            check_variable = { var = parl_voting_approval_array^5 value = 1 compare = less_than_or_equals }
+			NOT = { check_variable = { current_france_reform_id = 0 } check_variable = { seats_count_array^5 = 0 } }
+			NOT = { has_country_flag = parl_aut_meet_party_leaders_is_prohibited }
+		} 
+		complete_effect = { set_country_flag = parl_political_action_in_progress }
+		remove_effect = {
+			set_temp_variable = { parl_r = random }
+			multiply_temp_variable = { parl_r = 0.1 }
+			if = {
+				limit = { check_variable = { parl_voting_approval_array^5 < 0.4 } check_variable = { parl_voting_approval_array^5 > 0.25 } }
+				multiply_temp_variable = { parl_r = 0.5 }
+			}
+			else = {
+				if = {
+					limit = { OR = { check_variable = { parl_voting_approval_array^5 < 0.25 } check_variable = { parl_voting_approval_array^5 = 0.25 } }
+					}
+					multiply_temp_variable = { parl_r = 0.25 }
+				}
+			}
+		# LIST OF LAWS
+			if = {
+				limit = {
+					AND = {
+						has_country_flag = french_parl_vote_in_progress
+						has_country_flag = french_vanilla_reform
+					}
+				}
+				custom_effect_tooltip = parl_meeting_small_boost_tt
+				add_political_power = -25
+				clr_country_flag = parl_political_action_in_progress
+			}
+			add_to_variable = { parl_voting_approval_array^5 = parl_r }
+			clamp_variable = { var = parl_voting_approval_array^5 min = 0 max = 1 }
+			compute_number_seats_tot = yes
+			compute_number_seats_approve_est = yes
+		}  
+	}
+
+	french_parl_aut_meet_party_leaders = {  
+		available = { NOT = { has_country_flag = parl_political_action_in_progress } }  
+		days_remove = 7
+		visible = {
+            check_variable = { var = parl_voting_approval_array^7 value = 1 compare = less_than_or_equals }
+			NOT = { check_variable = { current_france_reform_id = 0 } check_variable = { seats_count_array^7 = 0 } }
+			NOT = { has_country_flag = parl_aut_meet_party_leaders_is_prohibited }
+		} 
+		complete_effect = { set_country_flag = parl_political_action_in_progress }
+		remove_effect = {
+			set_temp_variable = { parl_r = random }
+			multiply_temp_variable = { parl_r = 0.1 }
+			if = {
+				limit = { check_variable = { parl_voting_approval_array^7 < 0.4 } check_variable = { parl_voting_approval_array^7 > 0.25 } }
+				multiply_temp_variable = { parl_r = 0.5 }
+			}
+			else = {
+				if = {
+					limit = { OR = { check_variable = { parl_voting_approval_array^7 < 0.25 } check_variable = { parl_voting_approval_array^7 = 0.25 } }
+					}
+					multiply_temp_variable = { parl_r = 0.25 }
+				}
+			}
+		# LIST OF LAWS
+			if = {
+				limit = {
+					AND = {
+						has_country_flag = french_parl_vote_in_progress
+						has_country_flag = french_vanilla_reform
+					}
+				}
+				custom_effect_tooltip = parl_meeting_small_boost_tt
+				add_political_power = -25
+				clr_country_flag = parl_political_action_in_progress
+			}
+			else_if = {
+				limit = {
+					AND = {
+						has_country_flag = french_parl_vote_in_progress
+						has_country_flag = french_law_vote_general_security
+					}
+				}
+				FRA = { country_event = { id = orsini_affair.5 } }
+			}
+			else_if = {
+				limit = {
+					AND = {
+						has_country_flag = french_law_vote_general_security
+						OR = {
+							has_country_flag = fra_orsini_failure
+							has_country_flag = FRA_idea_orsini_tragedy
+							has_country_flag = fra_orsini_success
+						}
+					}
+				}
+				FRA = { country_event = { id = orsini_affair.6 } }
+			}
+			add_to_variable = { parl_voting_approval_array^7 = parl_r }
+			clamp_variable = { var = parl_voting_approval_array^7 min = 0 max = 1 }
+			compute_number_seats_tot = yes
+			compute_number_seats_approve_est = yes
+		}  
+	}
+
+	french_parl_chauv_pop_meet_party_leaders = {  
+		available = {
+            NOT = { has_country_flag = parl_political_action_in_progress }
+		}  
+
+		days_remove = 7
+
+		visible = {
+            check_variable = { 
+				var = parl_voting_approval_array^6
+				value = 0.6
+          		compare = less_than_or_equals
+			}
+			NOT = {
+				check_variable = { current_france_reform_id = 0 }
+				check_variable = { seats_count_array^6 = 0 }
+			}
+			NOT = { has_country_flag = parl_chauv_pop_meet_party_leaders_is_prohibited  }
+			NOT = { 
+				OR = { 
+					has_idea = FRA_idea_liberal_empire
+					has_idea = FRA_idea_authoritarian_empire
+				}
+			}
+		} 
+
+		complete_effect = { 
+			add_political_power = -25
+			custom_effect_tooltip = parl_meeting_small_boost_tt
+			set_country_flag = parl_political_action_in_progress
+		}  
+
+		remove_effect = {
+			clr_country_flag = parl_political_action_in_progress
+
+			set_temp_variable = { parl_r = random }
+			multiply_temp_variable = { parl_r = 0.1 }
+			if = {
+				limit = {
+					check_variable = { parl_voting_approval_array^6 < 0.4 }
+					check_variable = { parl_voting_approval_array^6 > 0.25 }
+				}
+
+				multiply_temp_variable = { parl_r = 0.5 }
+			}
+			else = {
+				if = {
+					limit = {
+						OR = {
+							check_variable = { parl_voting_approval_array^6 < 0.25 }
+							check_variable = { parl_voting_approval_array^6 = 0.25 }
+						}
+					}
+
+					multiply_temp_variable = { parl_r = 0.25 }
+				}
+			}
+
+			add_to_variable = { parl_voting_approval_array^6 = parl_r }
+			clamp_variable = {
+			    var = parl_voting_approval_array^6
+			    min = 0
+			    max = 1
+			}
+
+			compute_number_seats_tot = yes
+			compute_number_seats_approve_est = yes
+		}  
+	}
+
+	french_parl_fun_meet_party_leaders = {  
+		available = {
+            NOT = { has_country_flag = parl_political_action_in_progress }
+		}  
+
+		days_remove = 7
+
+		visible = {
+            check_variable = { 
+				var = parl_voting_approval_array^8
+				value = 0.6
+          		compare = less_than_or_equals
+			}
+			NOT = {
+				check_variable = { current_france_reform_id = 0 }
+				check_variable = { seats_count_array^8 = 0 }
+			}
+			NOT = { has_country_flag = parl_fun_meet_party_leaders_is_prohibited  }
+			NOT = { 
+				has_country_flag = parl_van_com_meet_party_leaders_is_prohibited  
+				has_idea = FRA_idea_liberal_empire
+				has_idea = FRA_idea_authoritarian_empire
+			}
+		} 
+
+		complete_effect = { 
+			add_political_power = -25
+			custom_effect_tooltip = parl_meeting_small_boost_tt
+			set_country_flag = parl_political_action_in_progress
+		}  
+
+		remove_effect = {
+			clr_country_flag = parl_political_action_in_progress
+
+			set_temp_variable = { parl_r = random }
+			multiply_temp_variable = { parl_r = 0.1 }
+			if = {
+				limit = {
+					check_variable = { parl_voting_approval_array^8 < 0.4 }
+					check_variable = { parl_voting_approval_array^8 > 0.25 }
+				}
+
+				multiply_temp_variable = { parl_r = 0.5 }
+			}
+			else = {
+				if = {
+					limit = {
+						OR = {
+							check_variable = { parl_voting_approval_array^8 < 0.25 }
+							check_variable = { parl_voting_approval_array^8 = 0.25 }
+						}
+					}
+
+					multiply_temp_variable = { parl_r = 0.25 }
+				}
+			}
+
+			add_to_variable = { parl_voting_approval_array^8 = parl_r }
+			clamp_variable = {
+			    var = parl_voting_approval_array^8
+			    min = 0
+			    max = 1
+			}
+
+			compute_number_seats_tot = yes
+			compute_number_seats_approve_est = yes
+		} 
+	}
+
+	french_parl_make_speech_in_parliament = {
+		available = {
+            NOT = { has_country_flag = parl_political_action_in_progress }
+		}
+
+		fire_only_once = yes
+
+		days_remove = 7 
+
+		visible = {
+			NOT = {
+				check_variable = { current_france_reform_id = 0 }
+			}
+			NOT = { has_country_flag = parl_make_speech_in_parliament_is_prohibited  }
+		} 
+
+		complete_effect = { 
+			add_political_power = -25
+			set_country_flag = parl_political_action_in_progress
+		} 
+
+		remove_effect = {
+			custom_effect_tooltip = parl_speech_boost_tt
+			clr_country_flag = parl_political_action_in_progress
+
+			set_temp_variable = { parl_r = random }
+			multiply_temp_variable = { parl_r = 0.05 }
+			add_to_temp_variable = { parl_r = 0.025 }
+
+			for_each_loop = {
+			    array = parl_voting_approval_array
+			    value = parl_v
+			    index = parl_i
+
+			    if = {
+			    	limit = {
+			    		check_variable = { parl_coalitions^parl_i = 0 }
+			    	}
+
+			    	add_to_variable = { parl_voting_approval_array^parl_i = parl_r }
+			    }
+
+			    if = {
+			    	limit = {
+			    		check_variable = { parl_coalitions^parl_i = 1 }
+			    	}
+
+			    	multiply_temp_variable = { parl_r = 1.5 }
+			    	add_to_variable = { parl_voting_approval_array^parl_i = parl_r }
+			    }
+
+			    if = {
+			    	limit = {
+			    		check_variable = { parl_coalitions^parl_i = 2 }
+			    	}
+
+			    	subtract_from_variable = { parl_voting_approval_array^parl_i = parl_r }
+			    }
+
+			    clamp_variable = {
+				    var = parl_voting_approval_array^parl_i
+				    min = 0
+				    max = 1
+				}
+			}
+
+			compute_number_seats_tot = yes
+			compute_number_seats_approve_est = yes
+		} 
+	}
+
+	french_parl_pressure_the_lobbies = {
+		available = {
+            NOT = { has_country_flag = parl_political_action_in_progress }
+		}  
+
+		days_remove = 7
+
+		visible = {
+            NOT = {
+				check_variable = { current_france_reform_id = 0 }
+			}
+			NOT = { has_country_flag = parl_pressure_the_lobbies_is_prohibited  }
+		} 
+
+		complete_effect = { 
+			add_political_power = -40
+			custom_effect_tooltip = parl_pressure_the_lobbies_leaders_tt
+			set_country_flag = parl_political_action_in_progress
+		} 
+
+		remove_effect = {
+			clr_country_flag = parl_political_action_in_progress
+
+			compute_number_seats_tot = yes
+			compute_number_seats_approve_est = yes
+		} 
+	}
+
+	french_parl_talk_with_the_unions = {
+		available = {
+            NOT = { has_country_flag = parl_political_action_in_progress }
+		}  
+
+		days_remove = 7
+
+		visible = {
+            NOT = {
+				check_variable = { current_france_reform_id = 0 }
+			}
+			NOT = { has_country_flag = parl_talk_with_the_unions_is_prohibited  }
+		} 
+
+		complete_effect = { 
+			add_political_power = -40
+			custom_effect_tooltip = parl_pressure_the_lobbies_leaders_tt
+			set_country_flag = parl_political_action_in_progress
+		} 
+
+		remove_effect = {
+			clr_country_flag = parl_political_action_in_progress
+
+			compute_number_seats_tot = yes
+			compute_number_seats_approve_est = yes
+		} 
+	}
+
+	french_parl_silence_out_opponants = {
+		available = {
+            NOT = { has_country_flag = parl_political_action_in_progress }
+		}  
+
+		days_remove = 7
+
+		visible = {
+            NOT = {
+				check_variable = { current_france_reform_id = 0 }
+			}
+			NOT = { has_country_flag = parl_silence_out_opponants_is_prohibited  }
+		} 
+
+		complete_effect = { 
+			add_political_power = -40
+			custom_effect_tooltip = parl_silence_out_opponants_tt
+			set_country_flag = parl_political_action_in_progress
+		} 
+
+		remove_effect = {
+			clr_country_flag = parl_political_action_in_progress
+
+			compute_number_seats_tot = yes
+			compute_number_seats_approve_est = yes
+		}  
+	}
+
+#----------------------------------------------------------------------------------------------
+# HIDDEN EFFECTS FOR CUSTOM EVENTS 
+#----------------------------------------------------------------------------------------------
+
+french_parl_van_com_seek_support_effect = {  
+	available = { always = yes }  
+	visible = { always = no } 
+	complete_effect = { 
+		add_political_power = -25
+		custom_effect_tooltip = parl_meeting_small_boost_tt
+	}
+	remove_effect = {
+		set_temp_variable = { parl_r = random }
+		multiply_temp_variable = { parl_r = 0.1 }
+		if = {
+			limit = {
+				check_variable = { parl_voting_approval_array^0 < 0.4 }
+				check_variable = { parl_voting_approval_array^0 > 0.25 }
+			}
+			multiply_temp_variable = { parl_r = 0.5 }
+		}
+		else = {
+			if = {
+				limit = {
+					OR = {
+						check_variable = { parl_voting_approval_array^0 < 0.25 }
+						check_variable = { parl_voting_approval_array^0 = 0.25 }
+					}
+				}
+				multiply_temp_variable = { parl_r = 0.25 }
+			}
+		}
+		add_to_variable = { parl_voting_approval_array^0 = parl_r }
+		clamp_variable = {
+			var = parl_voting_approval_array^0
+			min = 0
+			max = 1
+		}
+		compute_number_seats_tot = yes
+		compute_number_seats_approve_est = yes
+	} 
+}
+
+effect_french_parl_col_soc_meet_party_leaders = {  
+	available = { always = yes }  
+	visible = { always = no } 
+	complete_effect = { 
+		add_political_power = -25
+		custom_effect_tooltip = parl_meeting_small_boost_tt
+	}  
+	remove_effect = {
+		set_temp_variable = { parl_r = random }
+		multiply_temp_variable = { parl_r = 0.1 }
+		if = {
+			limit = {
+				check_variable = { parl_voting_approval_array^1 < 0.4 }
+				check_variable = { parl_voting_approval_array^1 > 0.25 }
+			}
+
+			multiply_temp_variable = { parl_r = 0.5 }
+		}
+		else = {
+			if = {
+				limit = {
+					OR = {
+						check_variable = { parl_voting_approval_array^1 < 0.25 }
+						check_variable = { parl_voting_approval_array^1 = 0.25 }
+					}
+				}
+
+				multiply_temp_variable = { parl_r = 0.25 }
+			}
+		}
+
+		add_to_variable = { parl_voting_approval_array^1 = parl_r }
+		clamp_variable = {
+			var = parl_voting_approval_array^1
+			min = 0
+			max = 1
+		}
+
+		compute_number_seats_tot = yes
+		compute_number_seats_approve_est = yes
+	} 
+}
+
+effect_french_parl_soc_ega_meet_party_leaders = {  
+	available = { always = yes }  
+	visible = { always = no } 
+	complete_effect = { 
+		add_political_power = -25
+		custom_effect_tooltip = parl_meeting_small_boost_tt
+	}  
+	remove_effect = {
+		set_temp_variable = { parl_r = random }
+		multiply_temp_variable = { parl_r = 0.1 }
+		if = {
+			limit = {
+				check_variable = { parl_voting_approval_array^2 < 0.4 }
+				check_variable = { parl_voting_approval_array^2 > 0.25 }
+			}
+			multiply_temp_variable = { parl_r = 0.5 }
+		}
+		else = {
+			if = {
+				limit = {
+					OR = {
+						check_variable = { parl_voting_approval_array^2 < 0.25 }
+						check_variable = { parl_voting_approval_array^2 = 0.25 }
+					}
+				}
+
+				multiply_temp_variable = { parl_r = 0.25 }
+			}
+		}
+		add_to_variable = { parl_voting_approval_array^2 = parl_r }
+		clamp_variable = {
+			var = parl_voting_approval_array^2
+			min = 0
+			max = 1
+		}
+		compute_number_seats_tot = yes
+		compute_number_seats_approve_est = yes
+	}
+}
+
+effect_french_parl_cen_meet_party_leaders = {  
+	available = { always = yes }  
+	visible = { always = no } 
+	complete_effect = { 
+		add_political_power = -25
+		custom_effect_tooltip = parl_meeting_small_boost_tt
+		set_country_flag = parl_political_action_in_progress
+	}  
+	remove_effect = {
+		clr_country_flag = parl_political_action_in_progress
+
+		set_temp_variable = { parl_r = random }
+		multiply_temp_variable = { parl_r = 0.1 }
+		if = {
+			limit = {
+				check_variable = { parl_voting_approval_array^3 < 0.4 }
+				check_variable = { parl_voting_approval_array^3 > 0.25 }
+			}
+			multiply_temp_variable = { parl_r = 0.5 }
+		}
+		else = {
+			if = {
+				limit = {
+					OR = {
+						check_variable = { parl_voting_approval_array^3 < 0.25 }
+						check_variable = { parl_voting_approval_array^3 = 0.25 }
+					}
+				}
+				multiply_temp_variable = { parl_r = 0.25 }
+			}
+		}
+		add_to_variable = { parl_voting_approval_array^3 = parl_r }
+		clamp_variable = {
+			var = parl_voting_approval_array^3
+			min = 0
+			max = 1
+		}
+		compute_number_seats_tot = yes
+		compute_number_seats_approve_est = yes
+	} 
+}
+
+effect_french_parl_tra_con_meet_party_leaders = {  
+	available = { always = yes }  
+	visible = { always = no } 
+	complete_effect = { 
+		add_political_power = -25
+		custom_effect_tooltip = parl_meeting_small_boost_tt
+		set_temp_variable = { parl_r = random }
+		multiply_temp_variable = { parl_r = 0.1 }
+		if = {
+			limit = {
+				check_variable = { parl_voting_approval_array^4 < 0.4 }
+				check_variable = { parl_voting_approval_array^4 > 0.25 }
+			}
+			multiply_temp_variable = { parl_r = 0.5 }
+		}
+		else = {
+			if = {
+				limit = {
+					OR = {
+						check_variable = { parl_voting_approval_array^4 < 0.25 }
+						check_variable = { parl_voting_approval_array^4 = 0.25 }
+					}
+				}
+				multiply_temp_variable = { parl_r = 0.25 }
+			}
+		}
+		add_to_variable = { parl_voting_approval_array^4 = parl_r }
+		clamp_variable = {
+			var = parl_voting_approval_array^4
+			min = 0
+			max = 1
+		}
+		compute_number_seats_tot = yes
+		compute_number_seats_approve_est = yes
+	}  
+}
+
+effect_french_parl_rad_dem_meet_party_leaders = {  
+	available = { always = yes }  
+	visible = { always = no } 
+	complete_effect = { 
+		add_political_power = -25
+		custom_effect_tooltip = parl_meeting_small_boost_tt
+		set_temp_variable = { parl_r = random }
+		multiply_temp_variable = { parl_r = 0.1 }
+		if = {
+			limit = {
+				check_variable = { parl_voting_approval_array^5 < 0.4 }
+				check_variable = { parl_voting_approval_array^5 > 0.25 }
+			}
+			multiply_temp_variable = { parl_r = 0.5 }
+		}
+		else = {
+			if = {
+				limit = {
+					OR = {
+						check_variable = { parl_voting_approval_array^5 < 0.25 }
+						check_variable = { parl_voting_approval_array^5 = 0.25 }
+					}
+				}
+				multiply_temp_variable = { parl_r = 0.25 }
+			}
+		}
+		add_to_variable = { parl_voting_approval_array^5 = parl_r }
+		clamp_variable = {
+			var = parl_voting_approval_array^5
+			min = 0
+			max = 1
+		}
+		compute_number_seats_tot = yes
+		compute_number_seats_approve_est = yes
+	} 
+}
+
+effect_french_parl_aut_meet_party_leaders = {  
+	available = { always = yes }  
+	visible = { always = no } 
+	complete_effect = {
+		custom_effect_tooltip = parl_meeting_small_boost_tt
+		add_political_power = -25
+		set_temp_variable = { parl_r = random }
+		multiply_temp_variable = { parl_r = 0.1 }
+		if = {
+			limit = {
+				check_variable = { parl_voting_approval_array^7 < 0.4 }
+				check_variable = { parl_voting_approval_array^7 > 0.25 }
+			}
+			multiply_temp_variable = { parl_r = 0.5 }
+		}
+		else = {
+			if = {
+				limit = {
+					OR = {
+						check_variable = { parl_voting_approval_array^7 < 0.25 }
+						check_variable = { parl_voting_approval_array^7 = 0.25 }
+					}
+				}
+				multiply_temp_variable = { parl_r = 0.25 }
+			}
+		}
+		add_to_variable = { parl_voting_approval_array^7 = parl_r }
+		clamp_variable = {
+			var = parl_voting_approval_array^7
+			min = 0
+			max = 1
+		}
+		compute_number_seats_tot = yes
+		compute_number_seats_approve_est = yes
+	}  
+}
+
+effect_french_parl_chauv_pop_meet_party_leaders = {  
+	available = { always = yes }  
+	visible = { always = no } 
+	complete_effect = { 
+		add_political_power = -25
+		custom_effect_tooltip = parl_meeting_small_boost_tt
+		set_temp_variable = { parl_r = random }
+		multiply_temp_variable = { parl_r = 0.1 }
+		if = {
+			limit = {
+				check_variable = { parl_voting_approval_array^6 < 0.4 }
+				check_variable = { parl_voting_approval_array^6 > 0.25 }
+			}
+			multiply_temp_variable = { parl_r = 0.5 }
+		}
+		else = {
+			if = {
+				limit = {
+					OR = {
+						check_variable = { parl_voting_approval_array^6 < 0.25 }
+						check_variable = { parl_voting_approval_array^6 = 0.25 }
+					}
+				}
+				multiply_temp_variable = { parl_r = 0.25 }
+			}
+		}
+		add_to_variable = { parl_voting_approval_array^6 = parl_r }
+		clamp_variable = {
+			var = parl_voting_approval_array^6
+			min = 0
+			max = 1
+		}
+		compute_number_seats_tot = yes
+		compute_number_seats_approve_est = yes
+	}  
+}
+
+effect_french_parl_fun_meet_party_leaders = {  
+	available = { always = yes }  
+	visible = { always = no }  
+	complete_effect = { 
+		add_political_power = -25
+		custom_effect_tooltip = parl_meeting_small_boost_tt
+		set_country_flag = parl_political_action_in_progress
+		set_temp_variable = { parl_r = random }
+		multiply_temp_variable = { parl_r = 0.1 }
+		if = {
+			limit = {
+				check_variable = { parl_voting_approval_array^8 < 0.4 }
+				check_variable = { parl_voting_approval_array^8 > 0.25 }
+			}
+			multiply_temp_variable = { parl_r = 0.5 }
+		}
+		else = {
+			if = {
+				limit = {
+					OR = {
+						check_variable = { parl_voting_approval_array^8 < 0.25 }
+						check_variable = { parl_voting_approval_array^8 = 0.25 }
+					}
+				}
+				multiply_temp_variable = { parl_r = 0.25 }
+			}
+		}
+		add_to_variable = { parl_voting_approval_array^8 = parl_r }
+		clamp_variable = {
+			var = parl_voting_approval_array^8
+			min = 0
+			max = 1
+		}
+		compute_number_seats_tot = yes
+		compute_number_seats_approve_est = yes
+	} 
+}
+
+effect_french_parl_make_speech_in_parliament = {
+	available = { always = yes }  
+	visible = { always = no }  
+	complete_effect = { 
+		add_political_power = -25
+		custom_effect_tooltip = parl_speech_boost_tt
+		set_temp_variable = { parl_r = random }
+		multiply_temp_variable = { parl_r = 0.05 }
+		add_to_temp_variable = { parl_r = 0.025 }
+		for_each_loop = {
+			array = parl_voting_approval_array
+			value = parl_v
+			index = parl_i
+			if = {
+				limit = {
+					check_variable = { parl_coalitions^parl_i = 0 }
+				}
+
+				add_to_variable = { parl_voting_approval_array^parl_i = parl_r }
+			}
+			if = {
+				limit = {
+					check_variable = { parl_coalitions^parl_i = 1 }
+				}
+				multiply_temp_variable = { parl_r = 1.5 }
+				add_to_variable = { parl_voting_approval_array^parl_i = parl_r }
+			}
+			if = {
+				limit = {
+					check_variable = { parl_coalitions^parl_i = 2 }
+				}
+				subtract_from_variable = { parl_voting_approval_array^parl_i = parl_r }
+			}
+			clamp_variable = {
+				var = parl_voting_approval_array^parl_i
+				min = 0
+				max = 1
+			}
+		}
+		compute_number_seats_tot = yes
+		compute_number_seats_approve_est = yes
+	} 
+}
+
+effect_french_parl_pressure_the_lobbies = {
+	available = { always = yes }  
+	visible = { always = no }  
+	complete_effect = { 
+		add_political_power = -40
+		custom_effect_tooltip = parl_pressure_the_lobbies_leaders_tt
+		compute_number_seats_tot = yes
+		compute_number_seats_approve_est = yes
+	} 
+}
+
+effect_french_parl_talk_with_the_unions = {
+	available = { always = yes }  
+	visible = { always = no } 
+	complete_effect = { 
+		add_political_power = -40
+		custom_effect_tooltip = parl_pressure_the_lobbies_leaders_tt
+		set_country_flag = parl_political_action_in_progress
+		compute_number_seats_tot = yes
+		compute_number_seats_approve_est = yes
+	} 
+}
+
+effect_french_parl_silence_out_opponants = {
+	available = { always = yes }  
+	visible = { always = no } 
+	complete_effect = { 
+		add_political_power = -40
+		custom_effect_tooltip = parl_silence_out_opponants_tt
+		set_country_flag = parl_political_action_in_progress
+		compute_number_seats_tot = yes
+		compute_number_seats_approve_est = yes
+	}  
+}
+
+}
 
 
+# FRENCH EMPIRE 1857-1870
 
+FRA_decision_political_actions = {
 
-
+	FRA_decision_enact_general_security_act = {
+		available = { 
+			has_completed_focus = FRA_general_security_law_2 
+			check_variable = { 
+				var = current_france_reform_id
+				value = 0
+			}
+		}
+		visible = { has_completed_focus = FRA_general_security_law_2 }
+		allowed = { TAG = FRA }
+		fire_only_once = yes
+		cost = 50
+		complete_effect = { FRA = { country_event = { id = france_votes.1 } } }
+		ai_will_do = { base = 1000 }
+	}
 
 	FRA_decision_enact_loi_ollivier = {
 
