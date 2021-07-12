@@ -32,7 +32,7 @@ french_reform_voting_process_category = {
 		days_remove = 7
 		visible = {
             check_variable = { var = parl_voting_approval_array^0 value = 1 compare = less_than_or_equals }
-			NOT = { check_variable = { current_france_reform_id = 0 } check_variable = { seats_count_array^0 = 0 } }
+			NOT = { check_variable = { current_france_reform_id = 0 } check_variable = { seats_count_array^0 < 5 } }
 			NOT = { has_country_flag = parl_aut_meet_party_leaders_is_prohibited }
 		} 
 		complete_effect = { set_country_flag = parl_political_action_in_progress }
@@ -74,7 +74,7 @@ french_reform_voting_process_category = {
 		days_remove = 7
 		visible = {
             check_variable = { var = parl_voting_approval_array^1 value = 1 compare = less_than_or_equals }
-			NOT = { check_variable = { current_france_reform_id = 0 } check_variable = { seats_count_array^1 = 0 } }
+			NOT = { check_variable = { current_france_reform_id = 0 } check_variable = { seats_count_array^1 < 5 } }
 			NOT = { has_country_flag = parl_aut_meet_party_leaders_is_prohibited }
 		} 
 		complete_effect = { set_country_flag = parl_political_action_in_progress }
@@ -116,7 +116,7 @@ french_reform_voting_process_category = {
 		days_remove = 7
 		visible = {
             check_variable = { var = parl_voting_approval_array^2 value = 1 compare = less_than_or_equals }
-			NOT = { check_variable = { current_france_reform_id = 0 } check_variable = { seats_count_array^2 = 0 } }
+			NOT = { check_variable = { current_france_reform_id = 0 } check_variable = { seats_count_array^2 < 5 } }
 			NOT = { has_country_flag = parl_aut_meet_party_leaders_is_prohibited }
 		} 
 		complete_effect = { set_country_flag = parl_political_action_in_progress }
@@ -158,7 +158,7 @@ french_reform_voting_process_category = {
 		days_remove = 7
 		visible = {
             check_variable = { var = parl_voting_approval_array^3 value = 1 compare = less_than_or_equals }
-			NOT = { check_variable = { current_france_reform_id = 0 } check_variable = { seats_count_array^3 = 0 } }
+			NOT = { check_variable = { current_france_reform_id = 0 } check_variable = { seats_count_array^3 < 5 } }
 			NOT = { has_country_flag = parl_aut_meet_party_leaders_is_prohibited }
 		} 
 		complete_effect = { set_country_flag = parl_political_action_in_progress }
@@ -200,7 +200,7 @@ french_reform_voting_process_category = {
 		days_remove = 7
 		visible = {
             check_variable = { var = parl_voting_approval_array^4 value = 1 compare = less_than_or_equals }
-			NOT = { check_variable = { current_france_reform_id = 0 } check_variable = { seats_count_array^4 = 0 } }
+			NOT = { check_variable = { current_france_reform_id = 0 } check_variable = { seats_count_array^4 < 5 } }
 			NOT = { has_country_flag = parl_aut_meet_party_leaders_is_prohibited }
 		} 
 		complete_effect = { set_country_flag = parl_political_action_in_progress }
@@ -242,7 +242,7 @@ french_reform_voting_process_category = {
 		days_remove = 7
 		visible = {
             check_variable = { var = parl_voting_approval_array^5 value = 1 compare = less_than_or_equals }
-			NOT = { check_variable = { current_france_reform_id = 0 } check_variable = { seats_count_array^5 = 0 } }
+			NOT = { check_variable = { current_france_reform_id = 0 } check_variable = { seats_count_array^5 < 5 } }
 			NOT = { has_country_flag = parl_aut_meet_party_leaders_is_prohibited }
 		} 
 		complete_effect = { set_country_flag = parl_political_action_in_progress }
@@ -284,7 +284,7 @@ french_reform_voting_process_category = {
 		days_remove = 7
 		visible = {
             check_variable = { var = parl_voting_approval_array^7 value = 1 compare = less_than_or_equals }
-			NOT = { check_variable = { current_france_reform_id = 0 } check_variable = { seats_count_array^7 = 0 } }
+			NOT = { check_variable = { current_france_reform_id = 0 } check_variable = { seats_count_array^7 < 5 } }
 			NOT = { has_country_flag = parl_aut_meet_party_leaders_is_prohibited }
 		} 
 		complete_effect = { set_country_flag = parl_political_action_in_progress }

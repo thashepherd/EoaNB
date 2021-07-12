@@ -1009,6 +1009,20 @@ bitmapfonts = {
 	}
 
 	bitmapfont = {
+		name = "Cambria"
+		path = "gfx/fonts/hoi_mapfont2"
+		color = 0xffffffff
+
+		textcolors = {
+			G = { 86 172 91 }
+			R = { 222 86 70 }
+			Y = { 238 201 35 }
+			H = { 238 203 35 }
+			T = { 255 255 255 }
+		}
+	}
+
+	bitmapfont = {
 		name = "vic_36_black"
 		path = "gfx/fonts/vic_36"
 		color = 0xff000000
@@ -1464,6 +1478,7 @@ bitmapfonts = {
 			T = { 255 255 255 }
 		}
 	}
+
 
 	bitmapfont = {
 		name = "Arial12"

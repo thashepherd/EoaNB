@@ -113,3 +113,9 @@ sound =
 	file = "super_events/franco_prussian_war.wav"
 	always_load = no
 }
+sound = 
+{
+	name = eoanb_1857_fra_start
+	file = "startup_super_event/eoanb_1857_fra_start.wav"
+	always_load = no
+}

@@ -132,3 +132,10 @@ soundeffect = {
 	}
 	volume = 0.90
 }
+soundeffect = {
+	name = eoanb_1857_fra_start
+	sounds = {
+		sound = eoanb_1857_fra_start
+	}
+	volume = 0.90
+}

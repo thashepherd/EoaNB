@@ -972,3 +972,53 @@ defined_text = {
 		localization_key = DEBUG_BUTTON_SUPER
 	}
 }
+
+
+#STARTUP SUPER EVENT 1857
+
+
+defined_text = {
+	name = get_startup_super_event_title
+	text = {
+		trigger={
+			check_variable = {startup_super_event_displayed = 1}
+		}
+		localization_key = "Second French Empire"
+	}
+}
+defined_text = {
+	name = get_startup_super_event_image
+	text = {
+		trigger={
+			check_variable = {startup_super_event_displayed = 1}
+		}
+		localization_key = "GFX_1857_FRA"
+	}
+	text = {
+		localization_key = "GFX_debug_super_event"
+	}
+}
+defined_text = {
+	name = get_startup_super_event_quote
+	text = {
+		trigger={
+			check_variable = {startup_super_event_displayed = 1}
+		}
+		localization_key = 1857_FRA_QUOTE
+	}
+	text = {
+		localization_key = DEBUG_STARTUP_SUPER
+	}
+}
+defined_text = {
+	name = get_startup_super_event_button
+	text = {
+		trigger={
+			check_variable = {startup_super_event_displayed = 1}
+		}
+		localization_key = "Vive la France !"
+	}
+	text = {
+		localization_key = DEBUG_BUTTON_STARTUP_SUPER
+	}
+}

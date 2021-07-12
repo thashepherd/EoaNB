@@ -155,7 +155,10 @@
  FRA_societe_prince_imperial_desc:0 ""
 
  FRA_general_security_law:0 "General Security Act"
- FRA_general_security_law_desc:0 "The law of general safety, or law of the suspects, makes it possible to punish with prison any attempt of opposition and authorizes, among other things, the arrest and the transport, of an individual condemned for political offense."
+ FRA_general_security_law_desc:0 "[FRA_general_security_act_event_desc_scripted]"
+ FRA_general_security_act_before_orsini_desc:0 "To guarantee the security of the empire, §R Passing such a law now could have catastrophic consequences in case of failure for the stability of the empire. §R"
+ FRA_general_security_act_after_successful_orsini_desc:0 "After the death of our beloved emperor, General Espinasse, newly appointed to the Ministry of the Interior and General Security, proposes a law on security aimed at eliminating all anarchists and potential threats against the empire."
+ FRA_general_security_act_after_failed_orsini_desc:0 "After the failed attack on our emperor, General Espinasse, newly appointed to the Ministry of the Interior and General Security, proposed a law on security aimed at eliminating all forms of threat against the empire and its representatives."
 
  FRA_future_empire:0 "The Future of the Empire"
  FRA_future_empire_desc:0 "In 1852, the Second French Republic was struck down by a coup, led by its one and only president, Louis-Napoléon Bonaparte. Crowned Napoléon III, he restored the empire. But the cost of destroying, again, the republic is low legitimacy. The empire needs to find its future now or be doomed to fall."
@@ -518,7 +521,7 @@
 #                 PARLIAMENT LAWS
 ##################################################
 
-  french_reform_voting_process_category:0 "French Parliament"
+  french_reform_voting_process_category:0 "Corps Législatif"
   french_reform_voting_process_category_desc:0 "[GetFrenchParliamentDesc]"
   
   french_reform_voting_process_category_desc_0:0 "Currently, no laws are being voted on."
@@ -580,25 +583,45 @@ effect_french_parl_pressure_the_lobbies:0 "Support from the lobbyists"
 effect_french_parl_talk_with_the_unions:0 "Support from the Syndicalists"
 effect_french_parl_silence_out_opponants:0 "Opponants crushed"
 
-### LIST OF FRENCH ACTS 
+### LIST OF FRENCH ACTS ###
 
 french_reform_name_1_1:0 "General Imperial Security Act"
 french_reform_name_1_2:0 "Elementary School Reform"
 french_reform_name_1_3:0 ""
 
-### FRENCH ACTS
+### FRENCH ACTS ###
 
-france_votes.1:0 "General Security Act"
-france_votes.1.t:0 "§BGeneral Security Act§!"
-france_votes.1.d:0 "The law of general safety, or law of the suspects, makes it possible to punish with prison any attempt of opposition and authorizes, among other things, the arrest and the transport, of an individual condemned for political offense."
-france_votes.1.a:0 "Submit the act to the parliament"
-france_votes.1.b:0 "Later..."
 france_votes_results.1:0 "The result of the vote"
 france_votes_results.1.t:0 ""
 france_votes_results.1.d:0 ""
 france_votes_results.1.a:0 "It's a success !"
 france_votes_results.1.b:0 "It's a failure..."
 france_votes_results.1.c:0 "This is worse than a failure"
+
+# General Security Act
+
+france_votes.1:0 "General Security Act"
+france_votes.1.t:0 "§BGeneral Security Act§!"
+france_votes.1.d:0 "[FRA_general_security_act_event_desc_scripted]"
+france_votes.1.a:0 "Submit the act to the parliament"
+france_votes.1.b:0 "Later..."
+
+orsini_affair.4.t:0 "Liberals and Conservatives break from the United Bonapartist Party"
+orsini_affair.4.d:0 ""
+orsini_affair.4.a:0 "The only insecure thing here is the Empire"
+
+orsini_affair.5.t:0 "Deputies are scandalized by this reform"
+orsini_affair.5.d:0 ""
+orsini_affair.5.a:0 "Set up a fake threat of invasion by the British Empire"
+orsini_affair.5.b:0 "Justify the reform with the anarchist strikes danger"
+orsini_affair.5.c:0 "We need to find compromises"
+
+orsini_affair.6.t:0 "Review the reform"
+orsini_affair.6.d:0 ""
+orsini_affair.6.a:0 "Review the reform budget"
+orsini_affair.6.b:0 "Review the objective of the reform"
+orsini_affair.6.c:0 ""
+
 
 ##################################################
 #          NATIONAL SPIRITS AND ADVISORS
@@ -744,21 +767,7 @@ france_votes_results.1.c:0 "This is worse than a failure"
 #               EVENT TEXTS
 ##################################################
 
-orsini_affair.4.t:0 "Liberals and Conservatives break from the United Bonapartist Party"
-orsini_affair.4.d:0 ""
-orsini_affair.4.a:0 "The only insecure thing here is the Empire"
 
-orsini_affair.5.t:0 "Deputies are scandalized by this reform"
-orsini_affair.5.d:0 ""
-orsini_affair.5.a:0 "Set up a fake threat of invasion by the British Empire"
-orsini_affair.5.b:0 "Justify the reform with the anarchist strikes danger"
-orsini_affair.5.c:0 "We need to find compromises"
-
-orsini_affair.6.t:0 "Review the reform"
-orsini_affair.6.d:0 ""
-orsini_affair.6.a:0 "Review the reform budget"
-orsini_affair.6.b:0 "Review the objective of the reform"
-orsini_affair.6.c:0 ""
 
 
 
@@ -1930,6 +1939,50 @@ orsini_affair.6.c:0 ""
  fra_cut_relations_piedmont:0 "Cut relations with Sardinia-Piedmont"
  fra_renew_relations_france:0 "Renewed relations between France and Austria"
  fra_accept_romanian_unification:0 "Has supported Romanian unification"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

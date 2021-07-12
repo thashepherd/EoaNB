@@ -1426,6 +1426,8 @@ guiTypes = {
 		# show_sound = eoanb_acw_super # sound effect here
 	}
 }
+
+
 # Detrimental Colonial Impact
 guiTypes = {
 	containerWindowType = {
@@ -2247,5 +2249,78 @@ guiTypes = {
 			format = center
 			fixedsize = yes
 		}
+	}
+}
+
+
+# Startup Super Events
+guiTypes = {
+	containerWindowType = {
+		name = "startup_superevents_container"
+		position = { x = -405 y = -325 }
+		orientation = center
+		origo = center
+		clipping = no
+		# show_sound = click_dog
+		# Images
+		iconType = {
+			position = { x = 68 y = 124 }
+			name = "debug_super_event"
+			spriteType = "GFX_debug_super_event"
+		}
+		# Quote Frame
+		iconType = {
+			position = { x = 0 y = 0 }
+			name = "main_frame"
+			spriteType = "GFX_startup_super_event_frame_vic"
+		}
+		# Quote
+		buttonType = {
+			name = "ok_button"
+			spriteType = "GFX_button_super_event"
+			position = { x = 295 y = 555 }
+			# clicksound = click_dog
+			# shortcut = enter
+			buttonFont = "vic_36"
+			text = "[get_startup_super_event_button]"
+		}
+		instantTextBoxType = {
+			name = "startup_superevent_text"
+			position = { x = 267 y = 50 }
+			font = "vic_36"
+			text = "[get_startup_super_event_title]"
+			format = center
+			maxWidth = 300
+			maxHeight = 24
+			fixedsize = yes
+		}
+		instantTextBoxType = {
+			name = "startup_superevent_quote"
+			position = { x = 380 y = 150 }
+			font = "hoi_26header"
+			text = "[get_startup_super_event_quote]"
+			format = center
+			maxWidth = 370
+			maxHeight = 1200
+			fixedsize = yes
+		}
+	}
+
+	# Sound
+	containerWindowType = {
+		name = "superevent_sound_container"
+		position = { x = -400 y = -300 }
+		orientation = center
+		Origo = center
+		clipping = no
+		show_sound = click_dog # sound effect here
+	}
+	containerWindowType = {
+		name = "1857_fra_start_container"
+		position = { x = -400 y = -300 }
+		orientation = center
+		Origo = center
+		clipping = no
+		show_sound = eoanb_1857_fra_start # sound effect here
 	}
 }

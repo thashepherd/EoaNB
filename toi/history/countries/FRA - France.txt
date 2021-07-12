@@ -10,6 +10,11 @@
 	}
 }
 
+if = {
+  limit = { is_ai = no }
+  set_variable = { startup_super_event_displayed = 1 }
+}
+
   set_convoys = 150
 
   set_research_slots = 4

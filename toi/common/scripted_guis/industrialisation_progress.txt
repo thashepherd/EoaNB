@@ -2094,4 +2094,32 @@ scripted_gui = {
 			# }
 		}
 	}
+
+	#STARTUP SUPER EVENT 
+
+	startup_superevents_eoanb = {
+		context_type = player_context
+		window_name = "startup_superevents_container"
+		
+		visible = {
+			check_variable = {startup_super_event_displayed > 0}
+		}
+		properties = {
+			debug_super_event = { image = "[get_startup_super_event_image]"}
+		}
+        effects = {
+			ok_button_click={
+				set_variable = {startup_super_event_displayed = 0}
+			}
+        }
+	}
+
+	eoanb_1857_fra_sound = {
+		context_type = player_context
+		window_name = "1857_fra_start_container"
+		visible = {
+			check_variable = {startup_super_event_displayed = 1}
+		}
+	}
+
 }

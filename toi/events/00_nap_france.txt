@@ -57,96 +57,7 @@ add_namespace = paris_commune
 
 
 
-country_event = { # Future of the Empire
-  id = nap_france.1
-  title = nap_france.1.t
-  desc = nap_france.1.d
-  picture = GFX_report_event_nap_france_tuilleries
 
-  is_triggered_only = yes
-
-  option = { # Authoritarian Empire
-    name = nap_france.1.a
-    ai_chance = {
-      factor = 25
-      modifier = {
-        is_historical_focus_on = yes
-        factor = 0
-      }
-	 }
-    add_political_power = -50
-    add_popularity = {
-      ideology = autocracy
-      popularity = 0.15
-    }
-    set_country_flag = FRA_flag_authoritarian_empire
-  }
-
-  option = { # Liberal Empire
-    name = nap_france.1.b
-    ai_chance = {
-      factor = 75
-      modifier = {
-        is_historical_focus_on = yes
-        factor = 100
-      }
-	 }
-    add_political_power = 50
-    add_popularity = {
-      ideology = centrism
-      popularity = 0.05
-    }
-    add_popularity = {
-      ideology = traditional_conservatism
-      popularity = 0.05
-    }
-    set_country_flag = FRA_flag_liberal_empire
-  }
-}
-
-country_event = { # Redrawing of the Cantons
-  id = nap_france.2
-  title = nap_france.2.t
-  desc = nap_france.2.d
-  picture = GFX_report_event_nap_france_redraw_cantons
-
-  fire_only_once = yes
-  is_triggered_only = yes
-
-  option = { # Assure our political hegemony
-    name = nap_france.2.a
-    add_political_power = -50
-    add_popularity = {
-      ideology = autocracy
-      popularity = 0.1
-    }
-    add_popularity = {
-      ideology = centrism
-      popularity = -0.05
-    }
-    add_popularity = {
-      ideology = traditional_conservatism
-      popularity = -0.05
-    }
-  }
-
-  option = { # Fair cut
-    name = nap_france.2.b
-    add_political_power = 50
-    add_popularity = {
-      ideology = autocracy
-      popularity = -0.05
-    }
-    add_popularity = {
-      ideology = centrism
-      popularity = 0.05
-    }
-    add_popularity = {
-      ideology = traditional_conservatism
-      popularity = 0.05
-    }
-  }
-}
 
 country_event = { # Expansion of the LGOC
   id = nap_france.3
@@ -590,61 +501,6 @@ country_event = { # Cobden-Chevalier Treaty - France Notification - No
   }
 }
 
-country_event = { # Reaction to the American Civil War
-  id = nap_france.19
-  title = nap_france.19.t
-  desc = nap_france.19.d
-  picture = GFX_report_event_american_civil_war
-
-  is_triggered_only = yes
-
-  option = { # Neutral Stance
-    name = nap_france.19.a
-    trigger = {
-      OR = {
-        USA = {
-          has_offensive_war_with = CSA
-        }
-        CSA = {
-          has_offensive_war_with = USA
-        }
-      }
-    }
-    set_country_flag = FRA_flag_neutral_stance
-  }
-
-  option = { # Support the USA
-    name = nap_france.19.b
-    trigger = {
-      USA = {
-        has_offensive_war_with = CSA
-      }
-    }
-    USA = {
-      add_opinion_modifier = {
-        target = FRA
-        modifier = fra_support_civil_war
-      }
-    }
-    CSA = {
-      add_opinion_modifier = {
-        target = FRA
-        modifier = fra_support_civil_war_other_side
-      }
-    }
-    set_country_flag = FRA_flag_support_usa
-  }
-
-  option = { # Support the CSA
-    name = nap_france.19.c
-    trigger = {
-      CSA = {
-        has_offensive_war_with = USA
-      }
-    }
-    set_country_flag = FRA_flag_support_csa
-  }
-}
 
 #country_event = { # Monaco votes to join France
 #  id = nap_france.20
@@ -5670,6 +5526,39 @@ country_event = { #German Troops withdraw from France
 #####################################################################################
 #####################################################################################
 
+#================================================================================================
+#================================================================================================
+#     SECOND FRENCH EMPIRE EVENTS - POLITICAL SECTION
+#================================================================================================
+#================================================================================================
+
+#----------------------------------------------------------------------------------------------
+# STARTUP SUPER EVENT
+#----------------------------------------------------------------------------------------------
+
+country_event = {
+	id = nap_france.1000000
+	title = nap_france.1000000.t
+	desc = nap_france.1000000.d
+	picture = GFX_worldnews_tunguska_explosion
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	trigger = {
+    tag = FRA
+		date = 1857.5.12
+	}
+	
+	option = {
+		name = nap_france.1000000.a
+    if = {
+      limit = { is_ai = no }
+      set_variable = { startup_super_event_displayed = 1 }
+	  }
+  }
+}
+
 #----------------------------------------------------------------------------------------------
 # FRENCH PARLIAMENT VANILLA EVENTS
 #----------------------------------------------------------------------------------------------
@@ -5782,20 +5671,6 @@ country_event = { # France - Legislative Elections 1857 - Results
 # IMPERIAL GENERAL SECURITY LAW 
 #----------------------------------------------------------------------------------------------
 
-country_event = { # BREAK of the Bonapartist party
-  id = orsini_affair.4
-  title = orsini_affair.4.t
-  desc = orsini_affair.4.d
-  picture = GFX_report_event_nap_france_orsini_affair
-
-  is_triggered_only = yes
-
-  option = { # we cannot sell off the security of the empire !
-    name = orsini_affair.4.a
-    add_political_power = -200
-  }
-}
-
 country_event = { # Deputies septic about this reform
   id = orsini_affair.5
   title = orsini_affair.5.t
@@ -5827,6 +5702,31 @@ country_event = { # Deputies septic about this reform
     FRA = { country_event = { id = orsini_affair.6 days = 4 } }
   }
 }
+
+
+
+
+
+
+
+
+
+
+country_event = { # BREAK of the Bonapartist party
+  id = orsini_affair.4
+  title = orsini_affair.4.t
+  desc = orsini_affair.4.d
+  picture = GFX_report_event_nap_france_orsini_affair
+
+  is_triggered_only = yes
+
+  option = { # we cannot sell off the security of the empire !
+    name = orsini_affair.4.a
+    add_political_power = -200
+  }
+}
+
+
 
 country_event = { # Debate on budget reform
   id = orsini_affair.6
@@ -5877,17 +5777,6 @@ country_event = { # apply the budget cuts on the reform
 #----------------------------------------------------------------------------------------------
 # ORSINI AFFAIR
 #----------------------------------------------------------------------------------------------
-
-
-
-
-
-
-
-
-
-
-
 
 country_event = { # Dangerous radicals arrested in Calais
   id = orsini_affair.11
@@ -6052,24 +5941,6 @@ country_event = { # Aftermath of the Orsini Tragedy
   }
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 country_event = { # Orsini Affair
   id = nap_france.398
   title = nap_france.398.t
@@ -6196,5 +6067,167 @@ country_event = { # Orsini Affair
         complete_national_focus = PIE_Aftermath_of_Orsini
       }
     }
+  }
+}
+
+#----------------------------------------------------------------------------------------------
+# POST ORSINI POLITICAL EVENTS & 1863 ELECTION
+#----------------------------------------------------------------------------------------------
+
+country_event = { # Future of the Empire
+  id = nap_france.1
+  title = nap_france.1.t
+  desc = nap_france.1.d
+  picture = GFX_report_event_nap_france_tuilleries
+
+  is_triggered_only = yes
+
+  option = { # Authoritarian Empire
+    name = nap_france.1.a
+    ai_chance = {
+      factor = 25
+      modifier = {
+        is_historical_focus_on = yes
+        factor = 0
+      }
+	 }
+    add_political_power = -50
+    add_popularity = {
+      ideology = autocracy
+      popularity = 0.15
+    }
+    set_country_flag = FRA_flag_authoritarian_empire
+  }
+
+  option = { # Liberal Empire
+    name = nap_france.1.b
+    ai_chance = {
+      factor = 75
+      modifier = {
+        is_historical_focus_on = yes
+        factor = 100
+      }
+	 }
+    add_political_power = 50
+    add_popularity = {
+      ideology = centrism
+      popularity = 0.05
+    }
+    add_popularity = {
+      ideology = traditional_conservatism
+      popularity = 0.05
+    }
+    set_country_flag = FRA_flag_liberal_empire
+  }
+}
+
+country_event = { # Redrawing of the Cantons
+  id = nap_france.2
+  title = nap_france.2.t
+  desc = nap_france.2.d
+  picture = GFX_report_event_nap_france_redraw_cantons
+
+  fire_only_once = yes
+  is_triggered_only = yes
+
+  option = { # Assure our political hegemony
+    name = nap_france.2.a
+    add_political_power = -50
+    add_popularity = {
+      ideology = autocracy
+      popularity = 0.1
+    }
+    add_popularity = {
+      ideology = centrism
+      popularity = -0.05
+    }
+    add_popularity = {
+      ideology = traditional_conservatism
+      popularity = -0.05
+    }
+  }
+
+  option = { # Fair cut
+    name = nap_france.2.b
+    add_political_power = 50
+    add_popularity = {
+      ideology = autocracy
+      popularity = -0.05
+    }
+    add_popularity = {
+      ideology = centrism
+      popularity = 0.05
+    }
+    add_popularity = {
+      ideology = traditional_conservatism
+      popularity = 0.05
+    }
+  }
+}
+
+#================================================================================================
+#================================================================================================
+#     SECOND FRENCH EMPIRE EVENTS - EXTERIOR POLITIC SECTION
+#================================================================================================
+#================================================================================================
+
+#----------------------------------------------------------------------------------------------
+# AMERICAN CIVIL WAR 
+#----------------------------------------------------------------------------------------------
+
+
+country_event = { # Reaction to the American Civil War
+  id = nap_france.19
+  title = nap_france.19.t
+  desc = nap_france.19.d
+  picture = GFX_report_event_american_civil_war
+
+  is_triggered_only = yes
+
+  option = { # Neutral Stance
+    name = nap_france.19.a
+    trigger = {
+      OR = {
+        USA = {
+          has_offensive_war_with = CSA
+        }
+        CSA = {
+          has_offensive_war_with = USA
+        }
+      }
+    }
+    set_country_flag = FRA_flag_neutral_stance
+  }
+
+  option = { # Support the USA
+    name = nap_france.19.b
+    trigger = {
+      USA = {
+        has_offensive_war_with = CSA
+      }
+    }
+    USA = {
+      add_opinion_modifier = {
+        target = FRA
+        modifier = fra_support_civil_war
+      }
+    }
+    CSA = {
+      add_opinion_modifier = {
+        target = FRA
+        modifier = fra_support_civil_war_other_side
+      }
+    }
+    set_country_flag = FRA_flag_support_usa
+  }
+
+  option = { # Support the CSA
+    name = nap_france.19.c
+    trigger = {
+      CSA = {
+        has_offensive_war_with = USA
+      }
+    }
+    set_country_flag = FRA_flag_support_csa
   }
 }

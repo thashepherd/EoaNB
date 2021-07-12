@@ -1,0 +1,29 @@
+defined_text = {
+	name = FRA_general_security_act_event_desc_scripted
+	text = {
+	  trigger = { tag = FRA has_country_flag = fra_orsini_success }
+	  localization_key = FRA_general_security_act_after_successful_orsini_desc
+	}
+	text = {
+		trigger = { tag = FRA has_country_flag = fra_orsini_failure }
+		localization_key = FRA_general_security_act_after_failed_orsini_desc
+	  }
+	text = {
+	  localization_key = FRA_general_security_act_before_orsini_desc
+	}
+  }
+
+  defined_text = {
+	name = FRA_general_security_act_decision_scripted
+	text = {
+	  trigger = { tag = FRA has_country_flag = fra_orsini_success }
+	  localization_key = FRA_general_security_act_after_successful_orsini_desc
+	}
+	text = {
+		trigger = { tag = FRA has_country_flag = fra_orsini_failure }
+		localization_key = FRA_general_security_act_after_failed_orsini_desc
+	  }
+	text = {
+	  localization_key = FRA_general_security_act_before_orsini_desc
+	}
+  }

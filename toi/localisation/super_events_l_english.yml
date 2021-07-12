@@ -32,4 +32,17 @@
  MANNED_FLIGHT_SUPER:0 "Once you have tasted flight, you will forever walk the earth with your eyes turned skyward, for there you have been, and there you will always long to return.\n-Leonardo da Vinci"
  PANAMA_CANAL_SUPER:0 "I took the Canal Zone and let Congress debate; and while the debate goes on, the canal does also.\n-Theodore Roosevelt"
  DEBUG_BUTTON_SUPER:0 "§RDEBUG Code: #[?super_event_displayed]§!"
- 
+ 1857_FRA_QUOTE:0 "After the glorious victory of the Franco-English alliance against the Russian Empire during the Crimean War of 1856, Napoleon III covered with glory has great plans to propel his young empire through the industrial era and spread French success around the world. However, there are still many obstacles to overcome, so good luck Louis Napoleon Bonaparte, may your reign be long and glorious. Long live the emperor !"
+
+#1857
+
+1857_FRA_QUOTE:0 "After the glorious victory of the Franco-English alliance against the Russian Empire during the Crimean War of 1856, Napoleon III covered with glory has great plans to propel his young empire through the industrial era and spread French success around the world. 
+
+However, there are still many obstacles to overcome, so good luck Louis Napoleon Bonaparte, may your reign be long and glorious. Long live the emperor !"
+
+
+
+#DEBUG
+
+ DEBUG_BUTTON_STARTUP_SUPER:0 "§RDEBUG Code: #[?startup_super_event_displayed]§!"
+ DEBUG_STARTUP_SUPER:0 "§RDEBUG Code: #[?startup_super_event_displayed]§!"

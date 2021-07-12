@@ -1,0 +1,84 @@
+### STARTUP SUPER EVENT GUIDE ###
+
+Startup super events are display on startup, only for the country the player is controlling, in order to give small description of the current state of the country, and some information about politic and country leader.
+
+
+--- SETUP A STARTUP SUPER EVENT --- 
+
+Requierements :
+Background illustration.(Ask the Artifex, Funkyman have the template is you want to make your own illustration)
+Small resume of the country.
+
+File you need to open in order :
+
+1 -/localisation/startup_super_events_l_english.yml - Localisation file for country description, start your description with : 1857_NAMEOFCOUNTRY:0 "Desription"
+
+2 - /interface/startup_super_event.gfx - File used to set the GFX_ name and texturefile of the illustration
+
+3 - common/scripted_localisation/edc_scripted_localisation.txt - 
+File where are assigned : 
+The Event Title & ID, 
+The Illustration ID, 
+The description ID
+The Audio File ID
+The Button Title  
+!!!Startup Super Event are at the end of the file, the Super Events are just before, be careful to not write your code in the wrong section!!!
+
+
+
+
+--- ADDING AUDIO ---
+
+1 - import your audio file in the folder super_events/ (format .wav)
+
+2 - sound/00_sound_super.assets add the following code
+
+sound = 
+{
+	name = eoanb_1857_TAG_start
+	file = "startup_super_events/1857_TAG.wav"
+	always_load = no
+}
+
+3 - sound/00_sound_super_effect.asset - add the following code 
+
+soundeffect = {
+	name = eoanb_1857_TAG_start
+	sounds = {
+		sound = eoanb_1857_TAG_start
+	}
+	volume = 0.90
+}
+
+4 - interface/EOANB_systems.gui - add the following code at the end of the file (startup super event / sound section)
+
+containerWindowType = {
+	name = "1857_TAG_start_container"
+	position = { x = -400 y = -300 }
+	orientation = center
+	Origo = center
+	clipping = no
+	show_sound = eoanb_1857_TAG_start # sound effect here
+}
+
+5 - sound/00_category.asset - add the name to the startup super event list
+
+6 - common/scripted_guis/industrialisation_process.txt add the following code at the end of the code before the final braquet
+
+eoanb_1857_fra_sound = {
+	context_type = player_context
+	window_name = "1857_TAG_start_container"
+	visible = {
+		check_variable = {startup_super_event_displayed = N° OF YOUR STARTUP EVENT}
+	}
+}
+
+
+
+--- ADDING THE STARTUP SUPER EVENT IN THE GAME ---
+
+1 - common/scripted_guis/startup_event.txt add the following code between the last IF 
+
+IF = { TAG = { is_ai = no }
+set_variable = {startup_super_event_displayed = N° OF YOUR STARTUP EVENT}
+}

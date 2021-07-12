@@ -85,7 +85,7 @@ country_event = { # 1857 General Security Law
     set_country_flag = french_parl_vote_in_progress
 
     reset_approval_arrays = yes 
-    set_1_approval_neutral = yes 
+    set_1_approval_disagree = yes 
     set_2_approval_agree = yes 
     set_3_approval_disagree = yes 
     set_4_approval_highly_disagree = yes 
