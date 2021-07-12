@@ -3,15 +3,15 @@ focus_tree = {
 
 	country = {
 		factor = 0
-		
+
 		modifier = {
 			add = 10
 			tag = BAD
 		}
 	}
-	
+
 	default = no
-	
+
 	focus = {
 		id = BAD_focus_industrial_situation
 		icon = GFX_focus_BAD_Industrial_Situation
@@ -30,7 +30,7 @@ focus_tree = {
 			add_political_power = 50
 		}
 	}
-	
+
 	focus = {
 		id = BAD_focus_land_of_inventors
 		icon = GFX_focus_BAD_Tueftler
@@ -126,7 +126,7 @@ focus_tree = {
 			}
 		}
 		prerequisite = { focus = BAD_focus_woodcuttery_industry }
-		
+
 		completion_reward = {
 			custom_effect_tooltip = BAD_customeffect_logging_bonus_one
 			hidden_effect = {
@@ -140,7 +140,7 @@ focus_tree = {
 			}
 		}
 	}
-	
+
 	focus = {
 		id = BAD_focus_improved_mining
 		icon = GFX_focus_generic_diplomatic_treaty
@@ -199,7 +199,7 @@ focus_tree = {
 			}
 		}
 		prerequisite = { focus = BAD_focus_haslach_silver_mine }
-		
+
 		completion_reward = {
 		}
 	}
@@ -536,8 +536,8 @@ focus_tree = {
 				days = 180
 			}
 		}
-	}	
-	
+	}
+
 	focus = {
 		id = BAD_focus_our_army
 		icon = GFX_focus_BAD_OurArmy
@@ -552,13 +552,13 @@ focus_tree = {
 				is_historical_focus_on = yes
 			}
 		}
-		
+
 		completion_reward = {
 			add_political_power = 50
 			army_experience = 5
 		}
 	}
-	
+
 	focus = {
 		id = BAD_focus_vereinsgewehr
 		icon = GFX_focus_BAD_Vereinsgewehr
@@ -574,12 +574,12 @@ focus_tree = {
 				is_historical_focus_on = yes
 			}
 		}
-		
+
 		completion_reward = {
 			add_tech_bonus = {bonus = 0.5 uses = 1 category = infantry_weapons  }
 		}
 	}
-	
+
 	focus = {
 		id = BAD_focus_austrian_inspiration
 		icon = GFX_goal_AUS_franz_kaiser_shine
@@ -596,12 +596,12 @@ focus_tree = {
 				is_historical_focus_on = yes
 			}
 		}
-		
+
 		completion_reward = {
 			add_political_power = 50
 		}
 	}
-	
+
 	focus = {
 		id = BAD_focus_improve_scouting_equipment
 		icon = GFX_focus_generic_diplomatic_treaty
@@ -617,12 +617,12 @@ focus_tree = {
 				is_historical_focus_on = yes
 			}
 		}
-		
+
 		completion_reward = {
 			add_tech_bonus = {bonus = 0.5 uses = 1 category = recon_tech  }
 		}
 	}
-	
+
 	focus = {
 		id = BAD_focus_austrian_rifles
 		icon = GFX_Focus_Army_Defence_1
@@ -638,12 +638,12 @@ focus_tree = {
 				is_historical_focus_on = yes
 			}
 		}
-		
+
 		completion_reward = {
 			add_tech_bonus = {bonus = 0.5 uses = 1 category = infantry_weapons  }
 		}
 	}
-	
+
 	focus = {
 		id = BAD_focus_update_doctrines
 		icon = GFX_focus_generic_diplomatic_treaty
@@ -659,12 +659,12 @@ focus_tree = {
 				is_historical_focus_on = yes
 			}
 		}
-		
+
 		completion_reward = {
 			add_tech_bonus = {bonus = 0.5 uses = 1 category = land_doctrine  }
 		}
 	}
-	
+
 	focus = {
 		id = BAD_focus_create_engineer_corps
 		icon = GFX_focus_generic_diplomatic_treaty
@@ -680,12 +680,12 @@ focus_tree = {
 				is_historical_focus_on = yes
 			}
 		}
-		
+
 		completion_reward = {
 			add_tech_bonus = {bonus = 0.5 uses = 1 category = engineers_tech  }
 		}
 	}
-	
+
 	focus = {
 		id = BAD_focus_lessons_of_1812_1
 		icon = GFX_focus_BAD_Lessonsof1812
@@ -702,12 +702,12 @@ focus_tree = {
 				is_historical_focus_on = yes
 			}
 		}
-		
+
 		completion_reward = {
 		    remove_ideas = BAD_russiancampaign
 		}
 	}
-	
+
 	focus = {
 		id = BAD_focus_ludwig_reforms
 		icon = GFX_focus_BAD_LudwigsReforms
@@ -724,12 +724,12 @@ focus_tree = {
 				is_historical_focus_on = yes
 			}
 		}
-		
+
 		completion_reward = {
-			
+
 		}
 	}
-	
+
 	focus = {
 		id = BAD_focus_new_infantry_equipment
 		icon = GFX_focus_generic_diplomatic_treaty
@@ -745,12 +745,12 @@ focus_tree = {
 				is_historical_focus_on = yes
 			}
 		}
-		
+
 		completion_reward = {
-			add_tech_bonus = {bonus = 0.5 uses = 1 category = infantry_tech  }
+			add_tech_bonus = {bonus = 0.5 uses = 1 category = infantry_weapons  }
 		}
 	}
-	
+
 	focus = {
 		id = BAD_focus_new_cavalry_equipment
 		icon = GFX_goal_AUS_Expand_Uhlans_shine
@@ -766,12 +766,12 @@ focus_tree = {
 				is_historical_focus_on = yes
 			}
 		}
-		
+
 		completion_reward = {
 			add_tech_bonus = {bonus = 0.5 uses = 1 category = tech_category_cavalry  }
 		}
 	}
-	
+
 	focus = {
 		id = BAD_focus_jaegerbat_reform
 		icon = GFX_Focus_Soldier_Victorian_USA
@@ -787,11 +787,11 @@ focus_tree = {
 				is_historical_focus_on = yes
 			}
 		}
-		
+
 		completion_reward = {
 		}
 	}
-	
+
 	focus = {
 		id = BAD_focus_artillery_reform
 		icon = GFX_Focus_Weapon_Canon_5_Russian
@@ -807,12 +807,12 @@ focus_tree = {
 				is_historical_focus_on = yes
 			}
 		}
-		
+
 		completion_reward = {
 			add_tech_bonus = {bonus = 0.5 uses = 1 category = artillery }
 		}
 	}
-	
+
 	focus = {
 		id = BAD_focus_lessons_of_1812_2
 		icon = GFX_focus_BAD_Lessonsof1812
@@ -829,12 +829,12 @@ focus_tree = {
 				is_historical_focus_on = yes
 			}
 		}
-		
+
 		completion_reward = {
 		    remove_ideas = BAD_russiancampaign
 		}
 	}
-	
+
 	focus = {
 		id = BAD_focus_beyer_warmin
 		icon = GFX_focus_BAD_VonBeyer
@@ -851,11 +851,11 @@ focus_tree = {
 				is_historical_focus_on = yes
 			}
 		}
-		
+
 		completion_reward = {
 		}
 	}
-	
+
 	focus = {
 		id = BAD_focus_dreyse_rifle
 		icon = GFX_goal_focus_prussia_dreyse_rifle
@@ -871,12 +871,12 @@ focus_tree = {
 				is_historical_focus_on = yes
 			}
 		}
-		
+
 		completion_reward = {
 			add_tech_bonus = {bonus = 0.5 uses = 1 category = infantry_weapons  }
 		}
 	}
-	
+
 	focus = {
 		id = BAD_focus_krupp_cooperation
 		icon = GFX_Focus_Weapon_Canon_7
@@ -892,12 +892,12 @@ focus_tree = {
 				is_historical_focus_on = yes
 			}
 		}
-		
+
 		completion_reward = {
 			add_tech_bonus = {bonus = 0.5 uses = 1 category = artillery  }
 		}
 	}
-	
+
 	focus = {
 		id = BAD_focus_reestablish_1825_conlaw
 		icon = GFX_focus_BAD_Conscription
@@ -913,17 +913,17 @@ focus_tree = {
 				is_historical_focus_on = yes
 			}
 		}
-		
+
 		bypass = {
 			or = {
-				has_idea = limited_conscription 
+				has_idea = limited_conscription
 				has_idea =  extensive_conscription
 				has_idea = service_by_requirement
 				has_idea = all_adults_serve
 				has_idea = scraping_the_barrel
 			}
 		}
-		
+
 		completion_reward = {
 			if = {
 				limit = {
@@ -937,7 +937,7 @@ focus_tree = {
 			else_if = {
 				limit = {
 					has_idea = volunteer_only
-				} 
+				}
 				swap_ideas = {
 					remove_idea = volunteer_only
 					add_idea = limited_conscription
@@ -945,7 +945,7 @@ focus_tree = {
 			}
 		}
 	}
-	
+
 	focus = {
 		id = BAD_focus_the_landwehr
 		icon = GFX_focus_BAD_Landwehr
@@ -961,14 +961,14 @@ focus_tree = {
 				is_historical_focus_on = yes
 			}
 		}
-		
+
 		completion_reward = {
 			add_ideas = {
 				PRS_landwehr
 			}
 		}
 	}
-	
+
 	focus = {
 		id = BAD_focus_lessons_of_1812_3
 		icon = GFX_focus_BAD_Lessonsof1812
@@ -985,12 +985,12 @@ focus_tree = {
 				is_historical_focus_on = yes
 			}
 		}
-		
+
 		completion_reward = {
 		    remove_ideas = BAD_russiancampaign
 		}
 	}
-	
+
 	focus = {
 		id = BAD_focus_bruderkrieg_experience
 		icon = GFX_focus_BAD_BruderkriegExp
@@ -1006,12 +1006,12 @@ focus_tree = {
 				is_historical_focus_on = yes
 			}
 		}
-		
+
 		completion_reward = {
 			army_experience = 25
 		}
 	}
-	
+
 	focus = {
 		id = BAD_focus_own_breechloading_rifle
 		icon = GFX_focus_generic_diplomatic_treaty
@@ -1027,12 +1027,12 @@ focus_tree = {
 				is_historical_focus_on = yes
 			}
 		}
-		
+
 		completion_reward = {
 			add_tech_bonus = {bonus = 0.5 uses = 1 category = infantry_weapons  }
 		}
 	}
-	
+
 	focus = {
 		id = BAD_focus_increase_mil_budget
 		icon = GFX_focus_generic_diplomatic_treaty
@@ -1048,7 +1048,7 @@ focus_tree = {
 				is_historical_focus_on = yes
 			}
 		}
-		
+
 		completion_reward = {
 			if = {
 				limit = {
@@ -1097,7 +1097,7 @@ focus_tree = {
 			}
 		}
 	}
-	
+
 	focus = {
 		id = BAD_focus_frederick_1
 		icon = GFX_focus_BAD_Friedrich
@@ -1112,13 +1112,13 @@ focus_tree = {
 				is_historical_focus_on = yes
 			}
 		}
-		
+
 		completion_reward = {
 			add_political_power = 100
 			add_stability = 0.05
 		}
 	}
-	
+
 	focus = {
 		id = BAD_focus_kabinett_stengel
 		icon = GFX_focus_generic_diplomatic_treaty
@@ -1134,13 +1134,13 @@ focus_tree = {
 				is_historical_focus_on = yes
 			}
 		}
-		
+
 		completion_reward = {
 			set_country_flag = BAD_kabinett_stengel_flag
 			add_political_power = 10
-		}	
+		}
 	}
-	
+
 	focus = {
 		id = BAD_focus_change_criminal_code
 		icon = GFX_focus_BAD_CriminalCode
@@ -1156,12 +1156,12 @@ focus_tree = {
 				is_historical_focus_on = yes
 			}
 		}
-		
+
 		completion_reward = {
 			add_stability = 0.05
 		}
 	}
-	
+
 	focus = {
 		id = BAD_focus_treaty_with_catholics
 		icon = GFX_focus_BAD_TreatyCatholicChurch
@@ -1177,12 +1177,12 @@ focus_tree = {
 				is_historical_focus_on = yes
 			}
 		}
-		
+
 		completion_reward = {
 			add_stability = 0.05
 		}
 	}
-	
+
 	focus = {
 		id = BAD_focus_second_chamber_opposition
 		icon = GFX_focus_generic_diplomatic_treaty
@@ -1199,11 +1199,11 @@ focus_tree = {
 				is_historical_focus_on = yes
 			}
 		}
-		
+
 		completion_reward = {
 		}
 	}
-	
+
 	focus = {
 		id = BAD_focus_dissolution_cabinet
 		icon = GFX_focus_generic_diplomatic_treaty
@@ -1220,13 +1220,13 @@ focus_tree = {
 				is_historical_focus_on = yes
 			}
 		}
-		
+
 		completion_reward = {
 			clr_country_flag = BAD_kabinett_stengel_flag
 			decrease_ps_by_one = yes
 		}
 	}
-	
+
 	focus = {
 		id = BAD_focus_easter_proclamation
 		icon = GFX_focus_BAD_Easter_Proclemation
@@ -1243,7 +1243,7 @@ focus_tree = {
 				is_historical_focus_on = yes
 			}
 		}
-		
+
 		completion_reward = {
 			BAD = {
 				country_event = {
@@ -1253,7 +1253,7 @@ focus_tree = {
 			custom_effect_tooltip = historical_option
 		}
 	}
-	
+
 	focus = {
 		id = BAD_focus_kabinett_stabel
 		icon = GFX_focus_BAD_Kabinett_Stabel
@@ -1269,13 +1269,13 @@ focus_tree = {
 				is_historical_focus_on = yes
 			}
 		}
-		
+
 		completion_reward = {
 			clr_country_flag = BAD_kabinett_stengel_flag
 			set_country_flag = BAD_kabinett_stabel_flag
 		}
 	}
-	
+
 	focus = {
 		id = BAD_focus_minister_anton_von_stabel
 		icon = GFX_focus_generic_diplomatic_treaty
@@ -1291,13 +1291,13 @@ focus_tree = {
 				is_historical_focus_on = yes
 			}
 		}
-		
+
 		completion_reward = {
 			set_country_flag = BAD_anton_von_stabel_flag
 			custom_effect_tooltip = BAD_focus_minister_anton_von_stabel_effect_tt
 		}
 	}
-	
+
 	focus = {
 		id = BAD_focus_state_and_church
 		icon = GFX_focus_generic_diplomatic_treaty
@@ -1313,12 +1313,12 @@ focus_tree = {
 				is_historical_focus_on = yes
 			}
 		}
-		
+
 		completion_reward = {
 			add_political_power = 50
 		}
 	}
-	
+
 	focus = {
 		id = BAD_focus_state_and_church_act
 		icon = GFX_focus_generic_diplomatic_treaty
@@ -1334,12 +1334,12 @@ focus_tree = {
 				is_historical_focus_on = yes
 			}
 		}
-		
+
 		completion_reward = {
 			remove_ideas = BAD_kulturkampf
 		}
 	}
-	
+
 	focus = {
 		id = BAD_focus_foreign_relations
 		icon = GFX_focus_generic_diplomatic_treaty
@@ -1355,13 +1355,13 @@ focus_tree = {
 				is_historical_focus_on = yes
 			}
 		}
-		
+
 		completion_reward = {
 			custom_effect_tooltip = BAD_customeffect_national_question_focus
 		}
 	}
-	
-	
+
+
 	focus = {
 		id = BAD_focus_closer_relations_prussia
 		icon = GFX_focus_generic_diplomatic_treaty
@@ -1377,13 +1377,13 @@ focus_tree = {
 				is_historical_focus_on = yes
 			}
 		}
-		
+
 		completion_reward = {
 			add_opinion_modifier = { target = PRS modifier = bad_closer_relations_prussia}
 			reverse_add_opinion_modifier = { target = PRS modifier = bad_closer_relations_prussia}
 		}
 	}
-	
+
 	focus = {
 		id = BAD_focus_school_reforms
 		icon = GFX_Focus_Elementary_School_0
@@ -1435,7 +1435,7 @@ focus_tree = {
 			}	
 		}
 	}
-	
+
 	focus = {
 		id = BAD_focus_reform_primary_schools
 		icon = GFX_focus_generic_diplomatic_treaty
@@ -1451,14 +1451,14 @@ focus_tree = {
 				is_historical_focus_on = yes
 			}
 		}
-			
+
 		bypass = {
 			or = {
 				has_idea = open_schools
 				has_idea = compulsory_education
 			}
 		}
-		
+
 		completion_reward = {
 			if = {
 				limit = {
@@ -1489,7 +1489,7 @@ focus_tree = {
 			}
 		}
 	}
-	
+
 	focus = {
 		id = BAD_focus_admin_reforms
 		icon = GFX_focus_generic_diplomatic_treaty
@@ -1505,12 +1505,12 @@ focus_tree = {
 				is_historical_focus_on = yes
 			}
 		}
-		
+
 		completion_reward = {
 			add_political_power = 30
 		}
 	}
-	
+
 	focus = {
 		id = BAD_focus_establish_admin_court
 		icon = GFX_focus_generic_diplomatic_treaty
@@ -1526,12 +1526,12 @@ focus_tree = {
 				is_historical_focus_on = yes
 			}
 		}
-		
+
 		completion_reward = {
 			add_stability = 0.03
 		}
 	}
-	
+
 	focus = {
 		id = BAD_focus_amnesty_for_1848
 		icon = GFX_focus_BAD_1848
@@ -1547,7 +1547,7 @@ focus_tree = {
 				is_historical_focus_on = yes
 			}
 		}
-		
+
 		completion_reward = {
 			add_political_power = -50
 			add_popularity = {
@@ -1555,10 +1555,10 @@ focus_tree = {
 				popularity = 0.1
 			}
 			decrease_ps_by_one = yes
-			
+
 		}
 	}
-	
+
 	focus = {
 		id = BAD_focus_jewish_civil_rights
 		icon = GFX_focus_ITA_Schoolw3s
@@ -1574,11 +1574,11 @@ focus_tree = {
 				is_historical_focus_on = yes
 			}
 		}
-		
+
 		bypass = {
 			has_idea = full_equality
 		}
-		
+
 		completion_reward = {
 			if = {
 				limit = {
@@ -1627,7 +1627,7 @@ focus_tree = {
 			}
 		}
 	}
-	
+
 	focus = {
 		id = BAD_focus_minister_gideon_weizel
 		icon = GFX_focus_generic_diplomatic_treaty
@@ -1643,13 +1643,13 @@ focus_tree = {
 				is_historical_focus_on = yes
 			}
 		}
-		
+
 		completion_reward = {
 			custom_effect_tooltip = BAD_focus_minister_gideon_weizel_effect_tt
 			set_country_flag = BAD_gideon_weizel_flag
 		}
 	}
-	
+
 	focus = {
 		id = BAD_focus_ministry_of_trade
 		icon = GFX_focus_generic_diplomatic_treaty
@@ -1665,11 +1665,11 @@ focus_tree = {
 				is_historical_focus_on = yes
 			}
 		}
-		
+
 		bypass = {
 			has_idea = free_trade
 		}
-		
+
 		completion_reward = {
 			if = {
 				limit = {
@@ -1700,7 +1700,7 @@ focus_tree = {
 			}
 		}
 	}
-	
+
 	focus = {
 		id = BAD_focus_trade_act
 		icon = GFX_focus_generic_diplomatic_treaty
@@ -1716,12 +1716,12 @@ focus_tree = {
 				is_historical_focus_on = yes
 			}
 		}
-		
+
 		completion_reward = {
 			add_ideas = BAD_trade_act
 		}
 	}
-	
+
 	focus = {
 		id = BAD_focus_end_compulsory_guilds
 		icon = GFX_focus_generic_diplomatic_treaty
@@ -1737,12 +1737,12 @@ focus_tree = {
 				is_historical_focus_on = yes
 			}
 		}
-		
+
 		completion_reward = {
 			add_political_power = 50
 		}
 	}
-	
+
 	focus = {
 		id = BAD_focus_privatize_railways
 		icon = GFX_focus_generic_diplomatic_treaty
@@ -1767,7 +1767,7 @@ focus_tree = {
 			}
 		}
 	}
-	
+
 	focus = {
 		id = BAD_focus_end_reaktionsera
 		icon = GFX_focus_BAD_Reaktionsera
@@ -1785,20 +1785,20 @@ focus_tree = {
 				is_historical_focus_on = yes
 			}
 		}
-		
+
 		completion_reward = {
 			add_popularity = {
 				ideology = centrism
 				popularity = 0.05
 			}
-			
+
 			swap_ideas = {
 				remove_idea = BAD_era_reaktion
 				add_idea = BAD_liberal_grand_duchy
 			}
 		}
 	}
-	
+
 	focus = {
 		id = BAD_focus_continue_reaktionsera
 		icon = GFX_Focus_Government_Reform_3
@@ -1815,7 +1815,7 @@ focus_tree = {
 				is_historical_focus_on = yes
 			}
 		}
-		
+
 		completion_reward = {
 			add_popularity = {
 				ideology = centrism
@@ -1825,11 +1825,11 @@ focus_tree = {
 				ideology = traditional_conservatism
 				popularity = 0.05
 			}
-			
+
 			add_political_power = -10
 		}
 	}
-	
+
 	focus = {
 		id = BAD_focus_kabinett_meysenburg
 		icon = GFX_focus_generic_diplomatic_treaty
@@ -1845,13 +1845,13 @@ focus_tree = {
 				is_historical_focus_on = yes
 			}
 		}
-		
+
 		completion_reward = {
 			clr_country_flag = BAD_kabinett_stengel_flag
 			set_country_flag = BAD_kabinett_meysenburg_flag
 		}
 	}
-	
+
 	focus = {
 		id = BAD_focus_foreign_policy
 		icon = GFX_focus_generic_diplomatic_treaty
@@ -1867,12 +1867,12 @@ focus_tree = {
 				is_historical_focus_on = yes
 			}
 		}
-		
+
 		completion_reward = {
 			custom_effect_tooltip = BAD_customeffect_national_question_focus
 		}
 	}
-	
+
 	focus = {
 		id = BAD_focus_talk_with_pope
 		icon = GFX_focus_generic_diplomatic_treaty
@@ -1888,13 +1888,13 @@ focus_tree = {
 				is_historical_focus_on = yes
 			}
 		}
-		
+
 		completion_reward = {
 			add_opinion_modifier = {target = PAP modifier = bad_talk_with_pope}
 			reverse_add_opinion_modifier = {target = PAP modifier = bad_talk_with_pope}
 		}
 	}
-	
+
 	focus = {
 		id = BAD_focus_our_austrian_brothers
 		icon = GFX_focus_generic_diplomatic_treaty
@@ -1910,13 +1910,13 @@ focus_tree = {
 				is_historical_focus_on = yes
 			}
 		}
-		
+
 		completion_reward = {
 			add_opinion_modifier = {target = AUS modifier = bad_austrian_brothers}
 			reverse_add_opinion_modifier = {target = AUS modifier = bad_austrian_brothers}
 		}
 	}
-	
+
 	focus = {
 		id = BAD_focus_talks_with_neighbors
 		icon = GFX_focus_generic_diplomatic_treaty
@@ -1932,7 +1932,7 @@ focus_tree = {
 				is_historical_focus_on = yes
 			}
 		}
-		
+
 		completion_reward = {
 			add_opinion_modifier = {target = WUR  modifier = bad_talks_with_neighbours}
 			add_opinion_modifier = {target = BAV modifier = bad_talks_with_neighbours}
@@ -1942,7 +1942,7 @@ focus_tree = {
 			reverse_add_opinion_modifier = {target = HSD modifier = bad_talks_with_neighbours}
 		}
 	}
-	
+
 	focus = {
 		id = BAD_focus_meet_with_french
 		icon = GFX_focus_generic_diplomatic_treaty
@@ -1958,13 +1958,13 @@ focus_tree = {
 				is_historical_focus_on = yes
 			}
 		}
-		
+
 		completion_reward = {
 			add_opinion_modifier = {target = FRA  modifier = bad_meet_with_french}
 			reverse_add_opinion_modifier = {target = FRA modifier = bad_meet_with_french}
 		}
 	}
-	
+
 	focus = {
 		id = BAD_focus_reform_program
 		icon = GFX_focus_generic_diplomatic_treaty
@@ -1980,7 +1980,7 @@ focus_tree = {
 				is_historical_focus_on = yes
 			}
 		}
-		
+
 		completion_reward = {
 			add_political_power = 30
 			custom_effect_tooltip = BAD_customeffect_infrastructure_focus 
@@ -1989,7 +1989,7 @@ focus_tree = {
 			}
 		}
 	}
-	
+
 	focus = {
 		id = BAD_focus_reform_governing_system
 		icon = GFX_focus_generic_diplomatic_treaty
@@ -2005,12 +2005,12 @@ focus_tree = {
 				is_historical_focus_on = yes
 			}
 		}
-		
+
 		completion_reward = {
 			add_political_power = 30
 		}
 	}
-	
+
 	focus = {
 		id = BAD_focus_grant_church_rights
 		icon = GFX_focus_generic_diplomatic_treaty
@@ -2026,12 +2026,12 @@ focus_tree = {
 				is_historical_focus_on = yes
 			}
 		}
-		
+
 		completion_reward = {
 			remove_ideas = BAD_kulturkampf
 		}
 	}
-	
+
 	focus = {
 		id = BAD_focus_increase_military_budget
 		icon = GFX_focus_generic_diplomatic_treaty
@@ -2047,11 +2047,11 @@ focus_tree = {
 				is_historical_focus_on = yes
 			}
 		}
-		
+
 		bypass = {
 			has_idea = ten_percent
 		}
-		
+
 		completion_reward = {
 			if = {
 				limit = {
@@ -2100,7 +2100,7 @@ focus_tree = {
 			}
 		}
 	}
-	
+
 	focus = {
 		id = BAD_focus_fortification_efforts
 		icon = GFX_focus_generic_diplomatic_treaty
@@ -2116,7 +2116,7 @@ focus_tree = {
 				is_historical_focus_on = yes
 			}
 		}
-		
+
 		completion_reward = {
 			add_timed_idea = {
 				idea = BAD_fortification_efforts
@@ -2124,7 +2124,7 @@ focus_tree = {
 			}
 		}
 	}
-	
+
 	focus = {
 		id = BAD_focus_combat_liberalism
 		icon = GFX_focus_generic_diplomatic_treaty
@@ -2140,12 +2140,12 @@ focus_tree = {
 				is_historical_focus_on = yes
 			}
 		}
-		
+
 		completion_reward = {
 			add_ideas = BAD_combat_liberalism
 		}
 	}
-	
+
 	focus = {
 		id = BAD_focus_anti_liberal_laws
 		icon = GFX_focus_generic_diplomatic_treaty
@@ -2161,7 +2161,7 @@ focus_tree = {
 				is_historical_focus_on = yes
 			}
 		}
-		
+
 		completion_reward = {
 			add_stability = -0.01
 			add_popularity = {
@@ -2170,7 +2170,7 @@ focus_tree = {
 			}
 		}
 	}
-	
+
 	focus = {
 		id = BAD_focus_stop_second_chamber
 		icon = GFX_focus_generic_diplomatic_treaty
@@ -2186,12 +2186,12 @@ focus_tree = {
 				is_historical_focus_on = yes
 			}
 		}
-		
+
 		completion_reward = {
 			add_political_power = 20
 		}
 	}
-	
+
 	focus = {
 		id = BAD_focus_more_conservative_chamber
 		icon = GFX_focus_generic_diplomatic_treaty
@@ -2208,7 +2208,7 @@ focus_tree = {
 				is_historical_focus_on = yes
 			}
 		}
-		
+
 		completion_reward = {
 			add_popularity = {
 				ideology = traditional_conservatism
@@ -2216,7 +2216,7 @@ focus_tree = {
 			}
 		}
 	}
-	
+
 	focus = {
 		id = BAD_focus_press_censorship
 		icon = GFX_focus_generic_diplomatic_treaty
@@ -2225,7 +2225,7 @@ focus_tree = {
 		cost = 70
 		available_if_capitulated = no
 		prerequisite = { focus = BAD_focus_more_conservative_chamber }
-		
+
 		ai_will_do = {
 			factor = 40
 			modifier = {
@@ -2233,14 +2233,14 @@ focus_tree = {
 				is_historical_focus_on = yes
 			}
 		}
-		
+
 		bypass = {
 			or = {
 				has_idea = censored_press
 				has_idea = state_controlled_press
 			}
 		}
-		
+
 		completion_reward = {
 			add_stability = -0.05
 			swap_ideas = {
@@ -2249,7 +2249,7 @@ focus_tree = {
 			}
 		}
 	}
-	
+
 	focus = {
 		id = BAD_focus_restrict_assembly_freedom
 		icon = GFX_focus_generic_diplomatic_treaty
@@ -2265,7 +2265,7 @@ focus_tree = {
 				is_historical_focus_on = yes
 			}
 		}
-		
+
 		bypass = {
 			or = {
 				has_idea = foa_restricted_attendance
@@ -2273,7 +2273,7 @@ focus_tree = {
 				has_idea = foa_banned
 			}
 		}
-		
+
 		completion_reward = {
 			add_stability = -0.05
 			if {
@@ -2296,7 +2296,7 @@ focus_tree = {
 			}
 		}
 	}
-	
+
 	focus = {
 		id = BAD_focus_intensify_reaktionsera
 		icon = GFX_focus_generic_diplomatic_treaty
@@ -2314,7 +2314,7 @@ focus_tree = {
 				is_historical_focus_on = yes
 			}
 		}
-		
+
 		completion_reward = {
 			add_popularity = {
 				ideology = traditional_conservatism
@@ -2326,7 +2326,7 @@ focus_tree = {
 			}
 		}
 	}
-	
+
 	focus = {
 		id = BAD_focus_national_question
 		icon = GFX_focus_BAD_NationalQuestion
@@ -2341,7 +2341,7 @@ focus_tree = {
 				has_completed_focus = BAD_focus_foreign_relations
 			}
 		}
-		
+
 		ai_will_do = {
 			factor = 40
 			modifier = {
@@ -2349,7 +2349,7 @@ focus_tree = {
 				is_historical_focus_on = yes
 			}
 		}
-		
+
 		completion_reward = {
 			BAD = {
 				country_event = {
@@ -2358,7 +2358,7 @@ focus_tree = {
 			}
 		}
 	}
-	
+
 	focus = {
 		id = BAD_focus_side_with_prussia
 		icon = GFX_Focus_Diplomatic_Ally_PRS
@@ -2381,12 +2381,12 @@ focus_tree = {
 				is_historical_focus_on = yes
 			}
 		}
-		
+
 		completion_reward = {
 			set_country_flag = eoanb_flag_sww_side_prs
 		}
 	}
-	
+
 	focus = {
 		id = BAD_focus_improve_prussia_relations
 		icon = GFX_goal_focus_invite_prussian_diplomats
@@ -2402,13 +2402,13 @@ focus_tree = {
 				is_historical_focus_on = yes
 			}
 		}
-		
+
 		completion_reward = {
 			add_opinion_modifier = { target = PRS modifier = bad_sided_with_prussia}
 			reverse_add_opinion_modifier = { target = PRS modifier = bad_sided_with_prussia}
 		}
 	}
-	
+
 	focus = {
 		id = BAD_focus_common_policy_prsallies
 		icon = GFX_focus_generic_diplomatic_treaty
@@ -2424,11 +2424,11 @@ focus_tree = {
 				is_historical_focus_on = yes
 			}
 		}
-		
+
 		completion_reward = {
 		}
 	}
-	
+
 	focus = {
 		id = BAD_focus_join_prussia_alliance
 		icon = GFX_focus_invite_prussian_commanders
@@ -2444,11 +2444,11 @@ focus_tree = {
 				is_historical_focus_on = yes
 			}
 		}
-		
+
 		completion_reward = {
 		}
 	}
-	
+
 	focus = {
 		id = BAD_focus_stay_neutral
 		icon = GFX_focus_generic_diplomatic_treaty
@@ -2471,11 +2471,11 @@ focus_tree = {
 				is_historical_focus_on = yes
 			}
 		}
-		
+
 		completion_reward = {
 		}
 	}
-	
+
 	focus = {
 		id = BAD_focus_improve_southern_relations
 		icon = GFX_goal_focus_the_german_two
@@ -2491,7 +2491,7 @@ focus_tree = {
 				is_historical_focus_on = yes
 			}
 		}
-		
+
 		completion_reward = {
 			add_opinion_modifier = {target = BAV modifier = bad_southern_relations}
 			reverse_add_opinion_modifier = {target = BAV modifier = bad_southern_relations}
@@ -2499,7 +2499,7 @@ focus_tree = {
 			reverse_add_opinion_modifier = {target = WUR modifier = bad_southern_relations}
 		}
 	}
-	
+
 	focus = {
 		id = BAD_focus_the_trias
 		icon = GFX_goal_focus_extend_trias
@@ -2515,12 +2515,12 @@ focus_tree = {
 				is_historical_focus_on = yes
 			}
 		}
-		
+
 		completion_reward = {
 			add_war_support = 0.05
 		}
 	}
-	
+
 	focus = {
 		id = BAD_focus_propose_sgc
 		icon = GFX_focus_generic_diplomatic_treaty
@@ -2536,11 +2536,11 @@ focus_tree = {
 				is_historical_focus_on = yes
 			}
 		}
-		
+
 		completion_reward = {
 		}
 	}
-	
+
 	focus = {
 		id = BAD_focus_side_with_austria
 		icon = GFX_focus_BAD_Austrian
@@ -2563,12 +2563,12 @@ focus_tree = {
 				is_historical_focus_on = yes
 			}
 		}
-		
+
 		completion_reward = {
 			set_country_flag = eoanb_flag_sww_side_aus
 		}
 	}
-	
+
 	focus = {
 		id = BAD_focus_improve_austria_relations
 		icon = GFX_focus_generic_diplomatic_treaty
@@ -2584,13 +2584,13 @@ focus_tree = {
 				is_historical_focus_on = yes
 			}
 		}
-		
+
 		completion_reward = {
 			add_opinion_modifier = { target = AUS modifier = bad_sided_with_austria}
 			reverse_add_opinion_modifier = { target = AUS modifier = bad_sided_with_austria}
 		}
 	}
-	
+
 	focus = {
 		id = BAD_focus_talk_aus_allies
 		icon = GFX_focus_generic_diplomatic_treaty
@@ -2606,11 +2606,11 @@ focus_tree = {
 				is_historical_focus_on = yes
 			}
 		}
-		
+
 		completion_reward = {
 		}
 	}
-	
+
 	focus = {
 		id = BAD_focus_join_austria_alliance
 		icon = GFX_focus_generic_diplomatic_treaty
@@ -2626,11 +2626,11 @@ focus_tree = {
 				is_historical_focus_on = yes
 			}
 		}
-		
+
 		completion_reward = {
 		}
 	}
-	
+
 	focus = {
 		id = BAD_focus_brothers_war
 		icon = GFX_focus_generic_diplomatic_treaty
@@ -2658,7 +2658,7 @@ focus_tree = {
 			}
 		}
 	}
-	
+
 	focus = {
 		id = BAD_focus_prussian_victory
 		icon = GFX_focus_generic_diplomatic_treaty
@@ -2668,7 +2668,7 @@ focus_tree = {
 		available_if_capitulated = no
 		prerequisite = { focus = BAD_focus_brothers_war}
 		allow_branch = {
-			has_completed_focus = BAD_focus_brothers_war  
+			has_completed_focus = BAD_focus_brothers_war
 		}
 		available = {
 			custom_trigger_tooltip = {
@@ -2693,14 +2693,14 @@ focus_tree = {
 				limit = { has_country_flag = eoanb_flag_sww_side_prs }
 				add_stability = 0.05
 			}
-				
-			
+
+
 			hidden_effect = {
 				mark_focus_tree_layout_dirty = yes
 			}
 		}
 	}
-	
+
 	focus = {
 		id = BAD_focus_austrian_victory
 		icon = GFX_focus_generic_diplomatic_treaty
@@ -2740,7 +2740,7 @@ focus_tree = {
 			}
 		}
 	}
-	
+
 	#focus = {
 	#	id = BAD_focus_brothers_war_defeat
 	#	icon = GFX_focus_generic_diplomatic_treaty
@@ -2757,15 +2757,15 @@ focus_tree = {
 	#			is_historical_focus_on = yes
 	#		}
 	#	}
-	#	
-	#	
-	#	
+	#
+	#
+	#
 	#	completion_reward = {
 	#		add_stability = -0.05
 	#		custom_effect_tooltip = historical_option
 	#	}
 	#}
-	
+
 	focus = {
 		id = BAD_focus_kabinett_mathy
 		icon = GFX_focus_generic_diplomatic_treaty
@@ -2774,7 +2774,7 @@ focus_tree = {
 		cost = 70
 		available_if_capitulated = no
 		allow_branch = {
-			has_completed_focus = BAD_focus_prussian_victory  
+			has_completed_focus = BAD_focus_prussian_victory
 		}
 		prerequisite = { focus = BAD_focus_prussian_victory }
 		ai_will_do = {
@@ -2784,15 +2784,15 @@ focus_tree = {
 				is_historical_focus_on = yes
 			}
 		}
-		
+
 		completion_reward = {
 			clr_country_flag = BAD_kabinett_stabel_flag
 			set_country_flag = BAD_kabinett_mathy_flag
-			
+
 			add_political_power = 50
 		}
 	}
-	
+
 	focus = {
 		id = BAD_focus_new_zollvertrag
 		icon = GFX_focus_generic_diplomatic_treaty
@@ -2801,7 +2801,7 @@ focus_tree = {
 		cost = 70
 		available_if_capitulated = no
 		allow_branch = {
-			has_completed_focus = BAD_focus_prussian_victory  
+			has_completed_focus = BAD_focus_prussian_victory
 		}
 		prerequisite = { focus = BAD_focus_prussian_victory }
 		#focus = BAD_focus_kabinett_mathy }
@@ -2812,7 +2812,7 @@ focus_tree = {
 				is_historical_focus_on = yes
 			}
 		}
-		
+
 		completion_reward = {
 			swap_ideas = {
 				remove_idea = PRS_Zollverein
@@ -2820,7 +2820,7 @@ focus_tree = {
 			}
 		}
 	}
-	
+
 	focus = {
 		id = BAD_focus_mannheimer_akte
 		icon = GFX_focus_generic_diplomatic_treaty
@@ -2836,7 +2836,7 @@ focus_tree = {
 				is_historical_focus_on = yes
 			}
 		}
-		
+
 		completion_reward = {
 			744 = {
 				add_building_construction = {
@@ -2847,7 +2847,7 @@ focus_tree = {
 			}
 		}
 	}
-	
+
 	focus = {
 		id = BAD_focus_curtail_second_chamber
 		icon = GFX_focus_generic_diplomatic_treaty
@@ -2863,12 +2863,12 @@ focus_tree = {
 				is_historical_focus_on = yes
 			}
 		}
-		
+
 		completion_reward = {
 			add_political_power = 20
 		}
 	}
-	
+
 	focus = {
 		id = BAD_focus_con_amendment_year
 		icon = GFX_focus_generic_diplomatic_treaty
@@ -2884,12 +2884,12 @@ focus_tree = {
 				is_historical_focus_on = yes
 			}
 		}
-		
+
 		completion_reward = {
 			add_stability = 0.02
 		}
 	}
-	
+
 	#focus = {
 	#	id = BAD_focus_brothers_war_victory
 	#	icon = GFX_focus_generic_diplomatic_treaty
@@ -2906,7 +2906,7 @@ focus_tree = {
 	#			is_historical_focus_on = yes
 	#		}
 	#	}
-	#	
+	#
 	#	completion_reward = {
 	#		add_stability = 0.05
 	#	}
@@ -2928,11 +2928,11 @@ focus_tree = {
 	#			is_historical_focus_on = yes
 	#		}
 	#	}
-	#	
+	#
 	#	completion_reward = {
 	#	}
 	#}
-	
+
 	focus = {
 		id = BAD_focus_ngc_relations
 		icon = GFX_focus_generic_diplomatic_treaty
@@ -2941,7 +2941,7 @@ focus_tree = {
 		cost = 70
 		available_if_capitulated = no
 		allow_branch = {
-			has_completed_focus = BAD_focus_prussian_victory  
+			has_completed_focus = BAD_focus_prussian_victory
 		}
 		prerequisite = { focus = BAD_focus_prussian_victory }
 		ai_will_do = {
@@ -2951,13 +2951,13 @@ focus_tree = {
 				is_historical_focus_on = yes
 			}
 		}
-		
+
 		completion_reward = {
-			add_opinion_modifier = { target = PRS modifier = bad_NGC_relations } 
-			reverse_add_opinion_modifier = { target = PRS modifier = bad_NGC_relations } 
+			add_opinion_modifier = { target = PRS modifier = bad_NGC_relations }
+			reverse_add_opinion_modifier = { target = PRS modifier = bad_NGC_relations }
 		}
 	}
-	
+
 	focus = {
 		id = BAD_focus_ngc_milcoop
 		icon = GFX_focus_generic_diplomatic_treaty
@@ -2973,11 +2973,11 @@ focus_tree = {
 				is_historical_focus_on = yes
 			}
 		}
-		
+
 		completion_reward = {
 		}
 	}
-	
+
 	focus = {
 		id = BAD_focus_zollverein_parliament
 		icon = GFX_focus_generic_diplomatic_treaty
@@ -2993,11 +2993,11 @@ focus_tree = {
 				is_historical_focus_on = yes
 			}
 		}
-		
+
 		completion_reward = {
 		}
 	}
-	
+
 	focus = {
 		id = BAD_focus_kabinett_jolly
 		icon = GFX_focus_generic_diplomatic_treaty
@@ -3014,13 +3014,13 @@ focus_tree = {
 				is_historical_focus_on = yes
 			}
 		}
-		
+
 		completion_reward = {
 			set_country_flag = BAD_kabinett_mathy_flag
 			set_country_flag = BAD_kabinett_jolly_flag
 		}
 	}
-	
+
 	focus = {
 		id = BAD_focus_ngc_measures
 		icon = GFX_focus_generic_diplomatic_treaty
@@ -3036,11 +3036,11 @@ focus_tree = {
 				is_historical_focus_on = yes
 			}
 		}
-		
+
 		completion_reward = {
 		}
 	}
-	
+
 	focus = {
 		id = BAD_focus_civmar_clerex
 		icon = GFX_focus_generic_diplomatic_treaty
@@ -3056,11 +3056,11 @@ focus_tree = {
 				is_historical_focus_on = yes
 			}
 		}
-		
+
 		completion_reward = {
 		}
 	}
-	
+
 	focus = {
 		id = BAD_focus_fpwar_correspondence
 		icon = GFX_focus_generic_diplomatic_treaty
@@ -3076,11 +3076,11 @@ focus_tree = {
 				is_historical_focus_on = yes
 			}
 		}
-		
+
 		completion_reward = {
 		}
 	}
-	
+
 	focus = {
 		id = BAD_focus_embrace_national_liberalism
 		icon = GFX_focus_generic_diplomatic_treaty
@@ -3097,11 +3097,11 @@ focus_tree = {
 				is_historical_focus_on = yes
 			}
 		}
-		
+
 		completion_reward = {
 		}
 	}
-	
+
 	focus = {
 		id = BAD_focus_anti_unification_opposition
 		icon = GFX_focus_generic_diplomatic_treaty
@@ -3118,11 +3118,11 @@ focus_tree = {
 				is_historical_focus_on = yes
 			}
 		}
-		
+
 		completion_reward = {
 		}
 	}
-	
+
 	#focus = {
 	#	id = BAD_focus_austrian_victory
 	#	icon = GFX_focus_generic_diplomatic_treaty
@@ -3139,11 +3139,11 @@ focus_tree = {
 	#			is_historical_focus_on = yes
 	#		}
 	#	}
-	#	
+	#
 	#	completion_reward = {
 	#	}
 	#}
-	
+
 	focus = {
 		id = BAD_focus_propose_gerconfed_reforms
 		icon = GFX_focus_generic_diplomatic_treaty
@@ -3152,7 +3152,7 @@ focus_tree = {
 		cost = 70
 		available_if_capitulated = no
 		allow_branch = {
-			has_completed_focus = BAD_focus_austrian_victory  
+			has_completed_focus = BAD_focus_austrian_victory
 		}
 		prerequisite = { focus = BAD_focus_austrian_victory }
 		ai_will_do = {
@@ -3162,9 +3162,9 @@ focus_tree = {
 				is_historical_focus_on = yes
 			}
 		}
-		
+
 		completion_reward = {
 		}
 	}
-	
+
 }
