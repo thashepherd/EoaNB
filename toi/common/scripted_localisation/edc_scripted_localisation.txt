@@ -999,12 +999,24 @@ defined_text = {
 	}
 }
 defined_text = {
-	name = get_startup_super_event_quote
+	name = get_startup_super_event_quote_start
 	text = {
 		trigger={
 			check_variable = {startup_super_event_displayed = 1}
 		}
-		localization_key = 1857_FRA_QUOTE
+		localization_key = FRA_1857_QUOTE_START
+	}
+	text = {
+		localization_key = DEBUG_STARTUP_SUPER
+	}
+}
+defined_text = {
+	name = get_startup_super_event_quote_end
+	text = {
+		trigger={
+			check_variable = {startup_super_event_displayed = 1}
+		}
+		localization_key = FRA_1857_QUOTE_END
 	}
 	text = {
 		localization_key = DEBUG_STARTUP_SUPER

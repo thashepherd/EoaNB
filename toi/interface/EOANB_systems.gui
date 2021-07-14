@@ -2296,12 +2296,22 @@ guiTypes = {
 		}
 		instantTextBoxType = {
 			name = "startup_superevent_quote"
-			position = { x = 380 y = 150 }
+			position = { x = 390 y = 150 }
 			font = "hoi_26header"
-			text = "[get_startup_super_event_quote]"
+			text = "[get_startup_super_event_quote_start]"
 			format = center
-			maxWidth = 370
-			maxHeight = 1200
+			maxWidth = 355
+			maxHeight = 300
+			fixedsize = yes
+		}
+		instantTextBoxType = {
+			name = "startup_superevent_quote_2"
+			position = { x = 400 y = 350 }
+			font = "hoi_26header"
+			text = "[get_startup_super_event_quote_end]"
+			format = center
+			maxWidth = 330
+			maxHeight = 300
 			fixedsize = yes
 		}
 	}

@@ -321,7 +321,9 @@ french_reform_voting_process_category = {
 						has_country_flag = french_law_vote_general_security
 					}
 				}
-				FRA = { country_event = { id = orsini_affair.5 } }
+				hidden_effect = {
+					FRA = { country_event = { id = orsini_affair.5 } }
+				}
 			}
 			else_if = {
 				limit = {
@@ -1072,8 +1074,10 @@ effect_french_parl_silence_out_opponants = {
 
 }
 
+######################################################################
+#######              FRENCH EMPIRE 1857-1870
+######################################################################
 
-# FRENCH EMPIRE 1857-1870
 
 FRA_decision_political_actions = {
 

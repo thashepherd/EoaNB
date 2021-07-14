@@ -156,7 +156,7 @@
 
  FRA_general_security_law:0 "General Security Act"
  FRA_general_security_law_desc:0 "[FRA_general_security_act_event_desc_scripted]"
- FRA_general_security_act_before_orsini_desc:0 "To guarantee the security of the empire, §R Passing such a law now could have catastrophic consequences in case of failure for the stability of the empire. §R"
+ FRA_general_security_act_before_orsini_desc:0 "The law on general security aims to eliminate any threat to the empire and its institutions by the arrest and immediate deportation of any opponents of the regime deemed dangerous.  \n \n §RTrying to vote such law now could end with catastrophic results for the stability of the empire. §R"
  FRA_general_security_act_after_successful_orsini_desc:0 "After the death of our beloved emperor, General Espinasse, newly appointed to the Ministry of the Interior and General Security, proposes a law on security aimed at eliminating all anarchists and potential threats against the empire."
  FRA_general_security_act_after_failed_orsini_desc:0 "After the failed attack on our emperor, General Espinasse, newly appointed to the Ministry of the Interior and General Security, proposed a law on security aimed at eliminating all forms of threat against the empire and its representatives."
 
@@ -610,10 +610,10 @@ orsini_affair.4.t:0 "Liberals and Conservatives break from the United Bonapartis
 orsini_affair.4.d:0 ""
 orsini_affair.4.a:0 "The only insecure thing here is the Empire"
 
-orsini_affair.5.t:0 "Deputies are scandalized by this reform"
-orsini_affair.5.d:0 ""
-orsini_affair.5.a:0 "Set up a fake threat of invasion by the British Empire"
-orsini_affair.5.b:0 "Justify the reform with the anarchist strikes danger"
+orsini_affair.5.t:0 "The law divides the majority"
+orsini_affair.5.d:0 "The excessively authoritarian nature of this reform tears the majority between conservatives and liberalists, who could quickly join the ranks of the opposition. To resolve this crisis, we will have to find solid arguments to justify the need for this law."
+orsini_affair.5.a:0 "Republican opposition must be contained !"
+orsini_affair.5.b:0 "Anarchists are a great threat to the empire !"
 orsini_affair.5.c:0 "We need to find compromises"
 
 orsini_affair.6.t:0 "Review the reform"
