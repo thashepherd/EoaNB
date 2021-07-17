@@ -10,7 +10,7 @@ state={
 		4989 
 	}
 	history={
-		owner = KAB
+		owner = ENG
 		add_core_of = KAB
 		buildings = {
 			infrastructure = 2
