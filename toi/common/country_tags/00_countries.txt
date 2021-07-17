@@ -473,7 +473,7 @@
 	UJJ = "countries/Ujiji.txt"
 	AHR = "countries/Angolan Herero.txt"
 	WYO = "countries/Wayao.txt"
-	LOZ = "countries/Lozi.txt"
+	KZB = "countries/Kazembe.txt"
 	BTS = "countries/Barotseland.txt"
 	OVD = "countries/Ovimbundu.txt"
 	CKW = "countries/Chokwe.txt"

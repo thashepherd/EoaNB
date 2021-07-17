@@ -54,6 +54,10 @@ focus_tree = {
                                 tag = IJW
                                 tag = ARR
                                 tag = TGN
+                                tag = BTS
+                                tag = KZB
+
+
 			}
 		}
 	}

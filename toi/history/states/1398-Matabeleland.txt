@@ -5,6 +5,9 @@ state={
 	
 	state_category = rural
 
+	resources={
+		iron=5
+	}
 	
 
 	provinces={

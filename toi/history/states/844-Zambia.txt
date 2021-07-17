@@ -2,9 +2,10 @@ state={
 	id=844
 	name="STATE_844"
 
-	state_category = wasteland
+	state_category = rural
 	resources={
 		rubber=2
+		fabric=2
 	}
 	
 
@@ -14,10 +15,13 @@ state={
 	manpower=472457
 	
 	history={
+		victory_points = {
+			10594 1
+		}
 		buildings = {
 		}
-		owner = LOZ
-		add_core_of = LOZ
+		owner = KZB
+		add_core_of = KZB
 		afr_state_setup_scripted_effect = yes
 	}
 }

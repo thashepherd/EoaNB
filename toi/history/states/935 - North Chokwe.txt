@@ -13,8 +13,8 @@ state={
 	history={
 		buildings = {
 		}
-		owner = CKW
-		add_core_of = CKW
+		owner = LUN
+		add_core_of = LUN
 
                 add_to_array = { state_culture_array = 310 } 
          	add_to_array = { state_culture_array_num = 1.00 }
