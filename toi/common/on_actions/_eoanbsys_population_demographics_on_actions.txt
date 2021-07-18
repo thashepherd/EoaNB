@@ -2055,6 +2055,10 @@ on_actions = {
 					add_to_array = { national_culture_array = global.chewa }
 					add_to_array = { national_religion_array = global.animist }
 				}
+				MLW = {
+					add_to_array = { national_culture_array = global.chewa }
+					add_to_array = { national_religion_array = global.animist }
+				}
 				XSM = {
 					add_to_array = { national_religion_array = global.mahayana }
 				}

@@ -13,8 +13,8 @@ state={
 	history={
 		buildings = {
 		}
-		owner = KND
-		add_core_of = KND
+		owner = WYO
+		add_core_of = WYO
 		afr_state_setup_scripted_effect = yes
 	}
 }

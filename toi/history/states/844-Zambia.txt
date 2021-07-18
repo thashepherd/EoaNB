@@ -20,8 +20,8 @@ state={
 		}
 		buildings = {
 		}
-		owner = KZB
-		add_core_of = KZB
+		owner = BMB
+		add_core_of = BMB
 		afr_state_setup_scripted_effect = yes
 	}
 }

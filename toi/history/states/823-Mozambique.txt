@@ -2,7 +2,7 @@
 state={
 	id=823
 	name="STATE_823" #Mozambique
-	manpower = 2075000
+	manpower = 2035452
 
 	state_category = rural
 
@@ -20,6 +20,6 @@ state={
 	}
 
 	provinces={
-		8245 2193 12935 2120 12971 2123 2202 5164 
+		8245 2123 12971 2120 2202 5164 
 	}
 }

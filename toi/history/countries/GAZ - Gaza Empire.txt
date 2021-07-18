@@ -50,7 +50,10 @@
 	AFR_transatlantic_supplier
 	
   }
-
+GAZ = {
+	add_ideas={AF_T_Tribal_Army}
+	add_to_variable = {Tribal_army_num = 10000}
+}
   set_politics = {
 	  ruling_party = autocracy
 }
@@ -87,7 +90,7 @@ set_technology = {
   # POLITICAL LEADERS
 
   create_country_leader = {
-  name = "Soshangane kaZikode"
+  name = "Mzila kaSoshangane"
   desc = "POLITICS_GEORGE_V_DESC"
   picture = "gfx/leaders/Africa/african_generic_7.dds"
   expire = "1868.1.1"

@@ -2,11 +2,17 @@ state={
 	id=930
 	name="STATE_930"
 
-	state_category = pastoral
+	state_category = rural
+
+	resources={
+		wood=2
+	}
+
 	history={
 		buildings = {
 		}
 		owner = WYO
+		add_core_of = MLW
 		add_core_of = WYO
 
                 add_to_array = { state_culture_array = 322 } 

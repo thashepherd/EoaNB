@@ -2,18 +2,24 @@
 state={
 	id=544
 	name="STATE_544" #Mozambique
-	manpower = 442400
+	manpower = 956400
+	resources={
+		coal=10
+		iron=3
+	}
 
 	state_category = rural
 
-	
 
 	provinces={
 		2159 2180 2217 5155 10972 12950 
 	}
 	history={
-		owner = KND
-		add_core_of = KND
+			victory_points = {
+			10972 1
+		}
+		owner = WYO
+		add_core_of = WYO
 		afr_state_setup_scripted_effect = yes
 	}
 }

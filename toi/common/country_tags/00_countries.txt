@@ -496,6 +496,8 @@
 	RCG = "countries/Republic of Congo.txt"
 	TGY = "countries/Tanganyika.txt"
 	CHA = "countries/Chad.txt"
+	MLW = "countries/Malawi.txt"
+	BMB = "countries/Bemba.txt"
  
 # Southern Africa
 	# graphical_culture = african_gfx
@@ -515,10 +517,8 @@
 	OVB = "countries/Ovambo.txt"
 	ROZ = "countries/Rozwi.txt"
 	BAT = "countries/Batswana.txt"
-	BMG = "countries/Bamangwato.txt"
 	NDE = "countries/Ndebele.txt"
 	SAA = "countries/Saan.txt"
-	BNG = "countries/Bangwaketse.txt"
 	SWZ = "countries/Swaziland.txt"
 	NAT = "countries/Natal.txt"
 	GQW = "countries/Griqualand West.txt"
