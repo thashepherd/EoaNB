@@ -42,7 +42,7 @@ l_english:
   JAP_vic_nagasaki_iron_foundry_desc:0 "The potential for an iron foundry at Nagasaki has recently become a reality worth investigating, and would be a useful facility to have."
   JAP_vic_nagasaki_ironworks:0 "Nagasaki Ironworks"
   JAP_vic_nagasaki_ironworks_desc:0 "With other supporting buildings close by, it would be possible to build an arsenal as well in Nagasaki. This would synergize well with other manufactories in the city."
-  JAP_vic_yokusuka_weapons_arsenal:0 "Yokusuka Shipyard"
+  JAP_vic_yokusuka_weapons_arsenal:0 "Yokusuka Weapons Arsenal"
   JAP_vic_yokusuka_weapons_arsenal_desc:0 "Being a port city with notable international traffic, and with ship maintainance of both foreign and national vessels becoming more important, it seems it is necessary to expand Yokosuka's shipyards to accommodate these increased demands."
   JAP_vic_practical_observations:0 "Practical Observations"
   JAP_vic_practical_observations_desc:0 "Theory can only bring us so far. Being present in existing manufactories to study the workplace in action would bring far more useful information immediately, than by reading and discussing manufacture."
@@ -224,7 +224,7 @@ l_english:
   JAP_vic_kobu_gattai_desc:0 "Kōbu gattai, or "Union of the Imperial Court and the Shogunate", has been a proposal to unify the Imperial Court with the Shogunate in relation to goals and administration, and to marry the Tokugawa into the Imperial Family. This presents a compromise where the Bakufu and the Emperor will share power, with the Emperor taking the reigns as Head of State and the Shogun becoming a figure similar to a Prime Minister."
   JAP_vic_retain_consultive_stance:0 "Retain Consultive Stance"
   JAP_vic_retain_consultive_stance_desc:0 "The Bakufu has always been, formally, a consultative organ to the Emperor. In this spirit, and to keep the Bakufu impartial to any outside party, we should maintain a consultative stance to the Emperor and to cooperate instead of butting heads."
-  JAP_vic_end_the_bakumatsu_crisis:0 "Bakumatsu Crisis"
+  JAP_vic_end_the_bakumatsu_crisis:0 "End the Bakumatsu Crisis"
   JAP_vic_end_the_bakumatsu_crisis_desc:0 ""
   JAP_vic_end_of_tokugawa_reign:0 "End of the Tokugawa Reign"
   JAP_vic_end_of_tokugawa_reign_desc:0 ""
@@ -304,3 +304,21 @@ l_english:
  # Military
 
  # Boshin War
+
+ # Advisors
+  TSH_advisor_vic_pompe_van_meerdervort:0 "Johannes Lijdius Catharinus Pompe van Meerdervoort"
+
+
+
+# Events
+ feudal_tokugawa_shogunate.1.t:0 "The Tokugawa Shogunate"
+ feudal_tokugawa_shogunate.1.d_shogunate:0 "Ever since Tokugawa Ieyasu's decisive victory at the Battle of Sekigahara in 1600, Japan has undergone an era of unprecedented unity, stability, and progress under his family's reign. This era, dubbed the Edo Period after the bakufu capital, would see the beginnings of Japan's complete withdrawal from the outside world, save for brief contacts with China and Korea under the policy of sakoku, or closed country, enacted between 1633-1639. With its strong isolationist stance, Japan was able to resist the spread of Christianity and other Western influences within the country, maintaining its independence, at the cost of sealing off contact with modern innovations, save for a small Dutch trading post in the bay of Nagasaki called Dejima. Although contacts with the Dutch were limited, Japanese scholars were able to obtain a fair amount of knowledge on modern medicine and technology through the Rangaku studies, but the country as a whole still lagged far behind the West. \n \nThis 220-year paradigm, and the peace that came with it, suddenly came to a screeching halt when American Commodore Matthew C. Perry steamed into Edo Bay on July 8, 1853 and demanded that Japan end its long period of isolation and adopt formal trade relations with the US. To back up his demands were the might of his powerful steamships, which the Japanese called the black ships because of the color of the warships and the smoke that belched out of their coal-fired steam engines. The Shogunate, virtually threatened at gunpoint to end sakoku, finally agreed to sign the Convention of Kanagawa with Perry on March 31, 1854. The terms of the Convention agreed to the opening of the ports of Shimoda and Hakodate to American vessels, ensured the safety of American castaways, and established an American consul in Japan. \n \nThe aftermath of the Convention would cast a huge shadow of doubt over the Shogun's historical responsibility to oppose Western encroachment into Japan, and it was the catalyst for the rise of the Sonno Joi movement, or the belief that the Shogun was no longer capable of resisting the West, and that the Emperor should be entrusted with such an important role. With the security of Japan deeply threatened, the Shogunate overturned many of its policies restricting its naval capabilities in 1855, and desperately sought to improve the strength of its defenses as quickly as possible. However, centuries of peace have atrophied the fighting capability of Japanese troops, and with growing discontent from the historically hostile tozama daimyo, the Shogunate is quickly approaching its day of reckoning..."
+ feudal_tokugawa_shogunate.1.a:0 "For whom does the wind blow?"
+ feudal_tokugawa_shogunate.2.t:0 "The Harris Treaty"
+ feudal_tokugawa_shogunate.2.d_shogunate:0 "Townsend Harris, an envoy from [USA.GetNameDef] has once again approached the Bakufu, seeking the ratification of a new, so-called Treaty of Amity and Commerce. Its contents include an exchange of diplomatic agents between them and Japan, the additional opening of the ports of Kanagawa and Nagasaki from what was previously agreed, extraterritoriality rights for their citizens, new fixed-low import-export duties subject to international control, and the right of freedom of religious expression to US nationals in Japan.\n \nThese demands are much steeper than the previous treaty signed with [USA.GetNameDef] and capitulating to these demands will weaken the Bakufu's standing in Japanese Society as well as put Japan's isolated nationhood at risk. However, we are in no position to oppose the West's demands. If we refuse, we might fall into the same difficult times as the Qing to the west, their empire in disarray from the Opium Wars."
+ feudal_tokugawa_shogunate.2.d_han:0 "Townsend Harris, an envoy from [USA.GetNameDef] has once again approached the Tokugawa Bakufu, seeking the ratification of a new, so-called Treaty of Amity and Commerce. Its contents include an exchange of diplomatic agents between them and Japan, the additional opening of the ports of Kanagawa and Nagasaki from what was previously agreed, extraterritoriality rights for their citizens, new fixed-low import-export duties subject to international control, and the right of freedom of religious expression to US nationals in Japan.\n \nThese demands are much steeper than the previous treaty signed between the Shogun and the [USA.GetNameDef] and any capitulation may bring unrest upon the Tokugawa Shogun. What will the Tokugawa Bakufu decide?"
+ feudal_tokugawa_shogunate.2.a:0 "Bring their demands to the Bakufu Council"
+ feudal_tokugawa_shogunate.2.b:0 "We must be steadfast against the West!"
+ feudal_tokugawa_shogunate.2.c:0 "We can make use these future troubles."
+ feudal_tokugawa_shogunate.20.a:0 "We must convince the Emperor!"
+ feudal_tokugawa_shogunate.20.b:0 "The Shogun rules, not the Emperor!"
