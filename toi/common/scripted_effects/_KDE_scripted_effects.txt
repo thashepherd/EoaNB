@@ -96,6 +96,10 @@ KDE_bi_yearly_event_fire_1858 = {
 		country_event = { id = usa_event_check.15 days = 577 } # 1859.8.1
 		country_event = { id = usaPolitics.2 days = 311 } ###1858.11.8
 		country_event = { id = usa_independence.1 days = 54 }
+		country_event = { id = usa_guano_islands.1 days = 550 }###1859.7.5
+		country_event = { id = usa_guano_islands.3 days = 187 }###1858.7.7
+		country_event = { id = usa_guano_islands.5 days = 151 }###1858.6.1
+		country_event = { id = usa_guano_islands.6 days = 207 }###1858.7.27
 	}
 }
 
@@ -142,6 +146,9 @@ KDE_bi_yearly_event_fire_1860 = {
 		country_event = { id = prussiaadvisors.1 days = 28 } ###1860.01.29
 		country_event = { id = prussiaadvisors.2 days = 338 } ###1860.12.05
 		country_event = { id = prussiaadvisors.3 days = 586 } ###1861.08.10
+	}
+	USA = {
+		country_event = { id = usa_guano_islands.4 days = 243 }###1860.9.1
 	}
 }
 
@@ -379,6 +386,10 @@ KDE_bi_yearly_event_fire_1870 = {
 		country_event = { id = spanishflavour.4 days = 266 } # 1870.9.24
 		country_event = { id = spanishflavour.5 days = 306 } # 1870.11.3
 	}
+	USA = {
+		news_event = { id = usa_worldmapperus.2 days = 304 } # 1870.11.1
+		news_event = { id = usa_worldmapperus.1 days = 651 } # 1871.10.14
+	}
 }
 
 KDE_bi_yearly_event_fire_1872 = {
@@ -424,11 +435,15 @@ KDE_bi_yearly_event_fire_1876 = {
 		country_event = { id = army_british.28 days = 372 } # 1877.1.7
 		country_event = { id = army_british.1012 days = 425 } #1877.3.1
 	}
+	QNG={
+		country_event = { id = qing.16 days = 31 random_days = 90} # 1877.2.1
+	}
 	
 }
 
 KDE_bi_yearly_event_fire_1878 = {
 	ENG = {
+		country_event = { id = army_british.1015 days = 90 } # 1878.4.1
 		country_event = { id = army_british.1011 days = 369 } # 1879.1.5
 		country_event = { id = britainroyal.5 days = 436 } # 1879.3.13
 	}
@@ -443,6 +458,9 @@ KDE_bi_yearly_event_fire_1880 = {
 		country_event = { id = prussiamonuments.4 days = 287 } ###1880.10.15
 		country_event = { id = prussiaadvisors.11 days = 517 } ###1881.06.02
 		country_event = { id = germany.16 days = 686 } ###1881.11.18
+	}
+	ENG = {
+		country_event = { id = army_british.1017 days = 417 } # 1887.2.27
 	}
 }
 
@@ -459,11 +477,15 @@ KDE_bi_yearly_event_fire_1882 = {
 
 KDE_bi_yearly_event_fire_1884 = {
 	ENG = {
+		country_event = { id = army_british.1014 days = 30 } # 1884.2.1
 		country_event = { id = britishafrica.4 days = 395 } # 1885.1.31
 		country_event = { id = britainroyal.7 days = 571  } # 1885.7.25
 	}
 	PRS = {
 		country_event = { id = prussiaadvisors.16 days = 414 } ###1885.02.19
+	}
+	USA = {
+		news_event = { id = usa_worldmapperus.3 days = 428 } # 1885.3.5
 	}
 }
 
@@ -476,6 +498,7 @@ KDE_bi_yearly_event_fire_1886 = {
 		news_event = { id = eoanb_norway.20 days = 597 } # 1887.08.21
 	}
 	ENG = { 
+		country_event = { id = army_british.1016 days = 2 } #1886.1.2
 		country_event = { id = army_british.30 days = 7 } #1886.1.7
 	}
 }

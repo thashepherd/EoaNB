@@ -1045,16 +1045,36 @@ spriteTypes = {
 
 	spriteType = {
 		name = "GFX_Portrait_ENG_Richard_England"
-		texturefile = "gfx\leaders\ENG\Portrait_ENG_Richard_England.dds"
+		texturefile = "gfx/leaders/ENG/Portrait_ENG_Richard_England.dds"
 	}
 	
 	spriteType = {
 		name = "GFX_Portrait_ENG_Chelmsford"
-		texturefile = "gfx\leaders\ENG\Portrait_ENG_Chelmsford.dds"
+		texturefile = "gfx/leaders/ENG/Portrait_ENG_Chelmsford.dds"
 	}
 	
 	spriteType = {
 		name = "GFX_Portrait_ENG_Kitchener"
-		texturefile = "gfx\leaders\ENG\Portrait_ENG_Kitchener.dds"
+		texturefile = "gfx/leaders/ENG/Portrait_ENG_Kitchener.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_Portrait_ENG_Charles_Wilson"
+		texturefile = "gfx/leaders/ENG/Portrait_ENG_Charles_Wilson.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_Portrait_ENG_Mark_Walker"
+		texturefile = "gfx/leaders/ENG/Portrait_ENG_Mark_Walker.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_Portrait_ENG_Redvers_Buller"
+		texturefile = "gfx/leaders/ENG/Portrait_ENG_Redvers_Buller.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_Portrait_ENG_Evelyn_Wood"
+		texturefile = "gfx/leaders/ENG/Portrait_ENG_Evelyn_Wood.dds"
 	}
 }

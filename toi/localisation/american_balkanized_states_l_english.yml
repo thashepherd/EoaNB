@@ -3,9 +3,9 @@
  balkanized_american_states_core_states:0 "[Root.GetAdj] Statehood Decisions"
  balkanized_american_states_core_states_desc:0 "[Root.GetNameWithFlag] currently has §C[?ROOT.usa_state_count] states§!."
  balkanized_american_states_core_states_decision_switch:0 "Toggle Grant Statehood Decisions"
- balkanized_american_states_core_states_decision_switch:0 "Toggles the visibility of §HGrant Statehood§! Decisions"
+ balkanized_american_states_core_states_decision_switch_desc:0 "Toggles the visibility of §HGrant Statehood§! Decisions"
  balkanized_american_states_core_states_decision_switch_on:0 "§CReveal§! §HGrant Statehood§! Decisions"
- balkanized_american_states_core_states_decision_switch_on:0 "§CHide§! §HGrant Statehood§! Decisions"
+ balkanized_american_states_core_states_decision_switch_off:0 "§CHide§! §HGrant Statehood§! Decisions"
  balkanized_american_states_core_states_decision:0 "Grant [FROM.GetName] Statehood"
  NA_B_statehood.1.t:0 "[From.GetName] becomes a state!"
  NA_B_statehood.1.d:0 "[From.GetName] has become a state!"
@@ -103,10 +103,6 @@
 
  acw_has_started_scripted_trigger_tooltip:0 "The §YAmerican Civil War§! has started!"
  acw_has_concluded_scripted_trigger_tooltip:0 "The §YAmerican Civil War§! has concluded!"
- acw_has_been_avoided_started_scripted_trigger_tooltip:0 "The §YAmerican Civil War§! has been avoided!"
-
- acw_has_not_started_scripted_trigger_tooltip:0 "The §YAmerican Civil War§! has not started"
- acw_has_not_concluded_scripted_trigger_tooltip:0 "The §YAmerican Civil War§! has not concluded"
  acw_has_been_avoided_started_scripted_trigger_tooltip:0 "The §YAmerican Civil War§! has been avoided!"
 
  acw_american_civil_war_focus_cant_be_done_started_tooltip:0 "§gDue to the §!§YAmerican Civil War§!§g being §!§RStarted§!§g, this cannot be done.§!"

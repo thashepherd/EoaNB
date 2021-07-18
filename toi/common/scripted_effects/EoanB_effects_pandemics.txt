@@ -1,0 +1,305 @@
+# Constants for Pandemics System
+	EOANBSYS_pandemics_constants_setup = {
+		UCT = {
+			# Death Rates
+			set_variable = { EOANBSYS_pandemics_malaria_constant = -0.008 }
+			set_variable = { EOANBSYS_pandemics_cholera_constant = -0.005 }
+			set_variable = { EOANBSYS_pandemics_bubonic_constant = -0.021 }
+			set_variable = { EOANBSYS_pandemics_spanish_flu_constant = -0.008 }
+			set_variable = { EOANBSYS_pandemics_influenza_constant = -0.003 }
+			set_variable = { EOANBSYS_pandemics_typhus_constant = -0.005 }
+			set_variable = { EOANBSYS_pandemics_ebola_constant = -0.0013 }
+			set_variable = { EOANBSYS_pandemics_corona_constant = -0.001 }
+
+			# Name of Spanish Flu
+			set_variable = { EOANBSYS_pandemics_spanish_flu_spark = UCT.id }
+
+			# Type
+			set_variable = { EOANBSYS_pandemics_global_pandemic_type_var = 2 }
+
+			# Quarantine Efficacy
+			set_variable = { EOANBSYS_pandemics_quarantine_soft_constant = 0.2 }
+			set_variable = { EOANBSYS_pandemics_quarantine_medium_constant = 0.3 }
+			set_variable = { EOANBSYS_pandemics_quarantine_strong_constant = 0.4 }
+		}
+	}
+
+# Global
+	# Enable Spread
+	EOANBSYS_pandemics_global_setup = {
+		if = {
+			limit = { NOT = { has_global_flag = EOANBSYS_pandemics_global_recent_flag } }
+			if = {
+				limit = { has_country_flag = EOANBSYS_pandemics_malaria_flag }
+				set_variable = { EOANBSYS_pandemics_global_pandemic_type_var = 1 }
+			}
+			else_if = {
+				limit = { has_country_flag = EOANBSYS_pandemics_cholera_flag }
+				set_variable = { EOANBSYS_pandemics_global_pandemic_type_var = 2 }
+			}
+			else_if = {
+				limit = { has_country_flag = EOANBSYS_pandemics_bubonic_flag }
+				set_variable = { EOANBSYS_pandemics_global_pandemic_type_var = 3 }
+			}
+			else_if = {
+				limit = { has_country_flag = EOANBSYS_pandemics_spanish_flu_flag }
+				set_variable = { EOANBSYS_pandemics_global_pandemic_type_var = 4 }
+			}
+			else_if = {
+				limit = { has_country_flag = EOANBSYS_pandemics_typhus_flag }
+				set_variable = { EOANBSYS_pandemics_global_pandemic_type_var = 5 }
+			}
+			else_if = {
+				limit = { has_country_flag = EOANBSYS_pandemics_ebola_flag }
+				set_variable = { EOANBSYS_pandemics_global_pandemic_type_var = 6 }
+			}
+			else_if = {
+				limit = { has_country_flag = EOANBSYS_pandemics_corona_flag }
+				set_variable = { EOANBSYS_pandemics_global_pandemic_type_var = 7 }
+			}
+			else = {
+				# limit = { has_country_flag = EOANBSYS_pandemics_influenza_flag }
+				set_variable = { EOANBSYS_pandemics_global_pandemic_type_var = 0 }
+			}
+			set_global_flag = EOANBSYS_pandemics_global_flag
+			set_global_flag = {
+				flag = EOANBSYS_pandemics_global_recent_flag
+				days = 22000
+			}
+			news_event = eoanbsys_pandemics.1
+		}
+		else = {
+			# country_event = { id = eoanbsys_pandemics.100 days = 1825 }
+		}
+	}
+
+	EOANBSYS_pandemics_global_clear = {
+		clr_global_flag = EOANBSYS_pandemics_global_flag
+		set_variable = { EOANBSYS_pandemics_global_pandemic_type_var = -1 }
+		news_event = eoanbsys_pandemics.2
+	}
+
+
+# National
+	EOANBSYS_pandemics_country_setup = {
+		add_ideas = EOANBSYS_spirit_pandemics
+		set_variable = { EOANBSYS_pandemics_progress_var = 0 }
+		activate_mission = EOANBSYS_pandemics_progress_counter
+	}
+
+	EOANBSYS_pandemics_country_clear = {
+		remove_ideas = EOANBSYS_spirit_pandemics
+		clear_variable = EOANBSYS_pandemics_progress_var
+		increase_ps_by_one = yes
+
+		set_country_flag = {
+			flag = EOANBSYS_pandemics_immune_flag
+			days = 7300
+		}
+
+		hidden_effect = {
+			clear_variable = EOANBSYS_pandemics_progress_var
+			remove_mission = EOANBSYS_pandemics_progress_counter
+
+			clr_country_flag = EOANBSYS_pandemics_cholera_flag
+			clr_country_flag = EOANBSYS_pandemics_bubonic_flag
+			clr_country_flag = EOANBSYS_pandemics_spanish_flu_flag
+			clr_country_flag = EOANBSYS_pandemics_influenza_flag
+			clr_country_flag = EOANBSYS_pandemics_typhus_flag
+			clr_country_flag = EOANBSYS_pandemics_ebola_flag
+			clr_country_flag = EOANBSYS_pandemics_corona_flag
+		}
+	}
+
+# Wave of Death Through Country
+	EOANBSYS_pandemics_country_wave = {
+		EOANBSYS_pandemics_country_wave_calculate = yes
+
+		set_temp_variable = { EOANBSYS_pandemics_country_wave_count = 0 }
+    set_temp_variable = { EOANBSYS_pandemics_country_wave_states = num_core_states }
+		multiply_temp_variable = { EOANBSYS_pandemics_initial_count_var = 0.25 }
+
+    while_loop_effect = {
+			limit = { check_variable = { EOANBSYS_pandemics_initial_loop_var > EOANBSYS_pandemics_initial_count_var } }
+			random_owned_controlled_state = {
+				EOANBSYS_pandemics_state_wave = yes
+			}
+    }
+	}
+
+	EOANBSYS_pandemics_state_wave = {
+		randomize_temp_variable = {
+			var = EOANBSYS_pandemics_state_death_temp
+			min = 0
+			max = EOANBSYS_pandemics_death_temp
+		}
+
+		set_temp_variable = { EOANBSYS_pandemics_state_population_temp = state_population }
+		multiply_temp_variable = { EOANBSYS_pandemics_state_population_temp = EOANBSYS_pandemics_state_death_temp }
+		multiply_temp_variable ={ EOANBSYS_pandemics_state_population_temp = 0.01 }
+
+		add_manpower = EOANBSYS_pandemics_state_population_temp
+	}
+
+# Calculate Death Rates
+	EOANBSYS_pandemics_country_wave_calculate = {
+		# Base Rate
+			if = {
+				limit = { has_country_flag = EOANBSYS_pandemics_malaria_flag }
+				set_temp_variable = { EOANBSYS_pandemics_death_temp = EOANBSYS_pandemics_malaria_constant }
+			}
+			else_if = {
+				limit = { has_country_flag = EOANBSYS_pandemics_cholera_flag }
+				set_temp_variable = { EOANBSYS_pandemics_death_temp = EOANBSYS_pandemics_cholera_constant }
+			}
+			else_if = {
+				limit = { has_country_flag = EOANBSYS_pandemics_bubonic_flag }
+				set_temp_variable = { EOANBSYS_pandemics_death_temp = EOANBSYS_pandemics_bubonic_constant }
+			}
+			else_if = {
+				limit = { has_country_flag = EOANBSYS_pandemics_spanish_flu_flag }
+				set_temp_variable = { EOANBSYS_pandemics_death_temp = EOANBSYS_pandemics_spanish_flu_constant }
+			}
+			else_if = {
+				limit = { has_country_flag = EOANBSYS_pandemics_influenza_flag }
+				set_temp_variable = { EOANBSYS_pandemics_death_temp = EOANBSYS_pandemics_influenza_constant }
+			}
+			else_if = {
+				limit = { has_country_flag = EOANBSYS_pandemics_typhus_flag }
+				set_temp_variable = { EOANBSYS_pandemics_death_temp = EOANBSYS_pandemics_typhus_constant }
+			}
+			else_if = {
+				limit = { has_country_flag = EOANBSYS_pandemics_ebola_flag }
+				set_temp_variable = { EOANBSYS_pandemics_death_temp = EOANBSYS_pandemics_ebola_constant }
+			}
+			else_if = {
+				limit = { has_country_flag = EOANBSYS_pandemics_corona_flag }
+				set_temp_variable = { EOANBSYS_pandemics_death_temp = EOANBSYS_pandemics_corona_constant }
+			}
+			# Transmission
+				if = {
+					limit = { has_idea = hc_no_healthcare }
+					multiply_temp_variable = { EOANBSYS_pandemics_death_temp = 1.1 }
+				}
+				else_if = {
+					limit = { has_idea = hc_low_healtcare }
+					multiply_temp_variable = { EOANBSYS_pandemics_death_temp = 1 }
+				}
+				else_if = {
+					limit = { has_idea = hc_decent_healtcare }
+					multiply_temp_variable = { EOANBSYS_pandemics_death_temp = 0.90 }
+				}
+				else_if = {
+					limit = { has_idea = hc_good_healtcare }
+					multiply_temp_variable = { EOANBSYS_pandemics_death_temp = 0.80 }
+				}
+				else_if = {
+					limit = { has_idea = hc_excellent_healtcare }
+					multiply_temp_variable = { EOANBSYS_pandemics_death_temp = 0.70 }
+				}
+				if = {
+					limit = { has_idea = EOANBSYS_spirit_pandemics_quarantine_soft }
+					multiply_temp_variable = { EOANBSYS_pandemics_death_temp = EOANBSYS_pandemics_quarantine_soft_constant }
+				}
+				else_if = {
+					limit = { has_idea = EOANBSYS_spirit_pandemics_quarantine_medium }
+					multiply_temp_variable = { EOANBSYS_pandemics_death_temp = EOANBSYS_pandemics_quarantine_medium_constant }
+				}
+				else_if = {
+					limit = { has_idea = EOANBSYS_spirit_pandemics_quarantine_strong }
+					multiply_temp_variable = { EOANBSYS_pandemics_death_temp = EOANBSYS_pandemics_quarantine_strong_constant }
+				}
+			# Infectivity Technologies Adjustment
+				set_temp_variable = { EOANBSYS_pandemics_death_adjustment = 100 }
+				if = { limit = { has_tech = hygiene } subtract_from_temp_variable = { EOANBSYS_pandemics_death_adjustment = 10 } }
+				if = { limit = { has_tech = antiseptics } subtract_from_temp_variable = { EOANBSYS_pandemics_death_adjustment = 3 } }
+				if = { limit = { has_tech = food_canning } subtract_from_temp_variable = { EOANBSYS_pandemics_death_adjustment = 3 } }
+				if = {
+					limit = { has_pandemic_bacterial = yes }
+					if = { limit = { has_tech = early_vaccination } subtract_from_temp_variable = { EOANBSYS_pandemics_death_adjustment = 5 } }
+					if = { limit = { has_tech = advanced_vaccination } subtract_from_temp_variable = { EOANBSYS_pandemics_death_adjustment = 5 } }
+					if = { limit = { has_tech = food_preserving_icebox } subtract_from_temp_variable = { EOANBSYS_pandemics_death_adjustment = 2 } }
+					if = { limit = { has_tech = pasteurization } subtract_from_temp_variable = { EOANBSYS_pandemics_death_adjustment = 2 } }
+				}
+				else_if = {
+					limit = { has_pandemic_viral = yes }
+					if = { limit = { has_tech = early_vaccination } subtract_from_temp_variable = { EOANBSYS_pandemics_death_adjustment = 10 } }
+					if = { limit = { has_tech = advanced_vaccination } subtract_from_temp_variable = { EOANBSYS_pandemics_death_adjustment = 3 } }
+					if = { limit = { has_tech = food_preserving_icebox } subtract_from_temp_variable = { EOANBSYS_pandemics_death_adjustment = 02 } }
+				}
+				else_if = {
+					limit = { has_pandemic_parasytic = yes }
+					if = { limit = { has_tech = food_preserving_icebox } subtract_from_temp_variable = { EOANBSYS_pandemics_death_adjustment = 5 } }
+					if = { limit = { has_tech = tech_infantry_quinine } subtract_from_temp_variable = { EOANBSYS_pandemics_death_adjustment = 20 } }
+				}
+		# Finalizie
+			clamp_variable = { var = EOANBSYS_pandemics_death_adjustment min = 3 max = 200 }
+			multiply_temp_variable = { EOANBSYS_pandemics_death_temp = EOANBSYS_pandemics_death_adjustment }
+	}
+# Pandemic Progress
+	EOANBSYS_pandemics_progress_add_half = {
+		if = {
+			limit = { has_pandemic = yes }
+			custom_effect_tooltip = EOANBSYS_pandemics_progress_add_half_tt
+			add_to_variable = { EOANBSYS_pandemics_progress_var = 0.005 }
+			clamp_variable = { var = EOANBSYS_pandemics_progress_var min = 0 max = 1 }
+		}
+		else = {
+			add_political_power = 5
+		}
+	}
+	EOANBSYS_pandemics_progress_add_one = {
+		if = {
+			limit = { has_pandemic = yes }
+			custom_effect_tooltip = EOANBSYS_pandemics_progress_add_one_tt
+			add_to_variable = { EOANBSYS_pandemics_progress_var = 0.010 }
+			clamp_variable = { var = EOANBSYS_pandemics_progress_var min = 0 max = 1 }
+		}
+		else = {
+			add_political_power = 10
+		}
+	}
+	EOANBSYS_pandemics_progress_add_two = {
+		if = {
+			limit = { has_pandemic = yes }
+			custom_effect_tooltip = EOANBSYS_pandemics_progress_add_two_tt
+			add_to_variable = { EOANBSYS_pandemics_progress_var = 0.020 }
+			clamp_variable = { var = EOANBSYS_pandemics_progress_var min = 0 max = 1 }
+		}
+		else = {
+			add_political_power = 20
+		}
+	}
+	EOANBSYS_pandemics_progress_add_five = {
+		if = {
+			limit = { has_pandemic = yes }
+			custom_effect_tooltip = EOANBSYS_pandemics_progress_add_five_tt
+			add_to_variable = { EOANBSYS_pandemics_progress_var = 0.050 }
+			clamp_variable = { var = EOANBSYS_pandemics_progress_var min = 0 max = 1 }
+		}
+		else = {
+			add_political_power = 40
+		}
+	}
+	EOANBSYS_pandemics_progress_add_ten = {
+		if = {
+			limit = { has_pandemic = yes }
+			custom_effect_tooltip = EOANBSYS_pandemics_progress_add_ten_tt
+			add_to_variable = { EOANBSYS_pandemics_progress_var = 0.100 }
+			clamp_variable = { var = EOANBSYS_pandemics_progress_var min = 0 max = 1 }
+		}
+		else = {
+			add_political_power = 80
+		}
+	}
+	EOANBSYS_pandemics_progress_add_twenty = {
+		if = {
+			limit = { has_pandemic = yes }
+			custom_effect_tooltip = EOANBSYS_pandemics_progress_add_twenty_tt
+			add_to_variable = { EOANBSYS_pandemics_progress_var = 0.200 }
+			clamp_variable = { var = EOANBSYS_pandemics_progress_var min = 0 max = 1 }
+		}
+		else = {
+			add_political_power = 100
+		}
+	}

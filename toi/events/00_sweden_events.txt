@@ -215,6 +215,18 @@ country_event = { # Likfärd
 					ideology = despotism
 				}
 			}
+
+			NOR = {
+				create_country_leader = {
+					name = "Charles XV"
+					desc = "POLITICS_TEMP_DESC"
+					picture = "gfx/leaders/SWE/Portrait_SWE_Charles_XV.dds"
+					expire = 1872.09.18
+					ideology = constit_monarch
+
+					traits = { unpopular_monarch }
+				}
+			}
 		}
 	}
 }
@@ -1677,7 +1689,7 @@ country_event = { # Pressure Jørgen Herman Vogt to resign
 	}
 }
 
-country_event = { # Norwegian Storting proposes to abolish stattholder
+country_event = { # Stattholderstriden: Norwegian Storting proposes to abolish stattholder
 	id = eoanb_sweden.47
 	title = eoanb_sweden.47.t
 	desc = eoanb_sweden.47.d
@@ -1690,7 +1702,7 @@ country_event = { # Norwegian Storting proposes to abolish stattholder
 		name = eoanb_sweden.47.a
 		ai_chance = { base = 99 }
 
-		add_stability = 10
+		add_stability = 0.10
 
 		NOR = {
 			country_event = { id = eoanb_norway.24 days = 2 }
@@ -1701,10 +1713,178 @@ country_event = { # Norwegian Storting proposes to abolish stattholder
 		name = eoanb_sweden.47.b
 		ai_chance = { base = 1 }
 
-		add_stability = -10
+		add_stability = -0.15
 
 		NOR = {
 			country_event = { id = eoanb_norway.23 days = 2 }
+		}
+	}
+}
+
+country_event = { # Stattholderstriden: Swedish King Promsed To Sanction Stattholder Law
+	id = eoanb_sweden.48
+	title = eoanb_sweden.48.t
+	desc = eoanb_sweden.48.d
+	picture = GFX_news_event_generic_sign_treaty2
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = { # We disagree
+		name = eoanb_sweden.48.a
+		ai_chance = { base = 50 }
+		
+		add_stability = 0.05
+
+		NOR = {
+			country_event = { id = eoanb_norway.29 days = 2 }
+		}
+	}
+
+	option = { # Keep our promise
+		name = eoanb_sweden.48.b
+		ai_chance = { base = 50 }
+
+		add_stability = -0.15
+
+		SWE = {
+			country_event = { id = eoanb_sweden.52 days = 2 }
+		}
+	}
+}
+
+country_event = { # Stattholderstriden: Riksdag protests the law
+	id = eoanb_sweden.49
+	title = eoanb_sweden.49.t
+	desc = eoanb_sweden.49.d
+	picture = GFX_news_event_generic_sign_treaty2
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = { # Step down
+		name = eoanb_sweden.49.a
+		ai_chance = { base = 99 }
+
+		add_stability = 0.05
+
+		SWE = {
+			country_event = { id = eoanb_sweden.50 days = 2 }
+		}
+	}
+
+	option = { # Insist on pushing the law
+		name = eoanb_sweden.49.b
+		ai_chance = { base = 1 }
+
+		add_stability = -0.05
+		add_political_power = -20
+
+		SWE = {
+			country_event = { id = eoanb_sweden.51 days = 2 }
+		}
+	}
+}
+
+country_event = { # Stattholderstriden: Charles Backs Down
+	id = eoanb_sweden.50
+	title = eoanb_sweden.50.t
+	desc = eoanb_sweden.50.d
+	picture = GFX_news_event_generic_sign_treaty2
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = eoanb_sweden.50.a
+		ai_chance = { base = 99 }
+
+		add_stability = 0.10
+
+		NOR = {
+			set_temp_variable = { NOR_loyalty_change = -1.25 }
+			NOR_scripted_effect_loyalty_check = yes
+			country_event = { id = eoanb_norway.30 days = 2 }
+		}
+	}
+}
+
+country_event = { # Stattholderstriden: Charles Pushes Again
+	id = eoanb_sweden.51
+	title = eoanb_sweden.51.t
+	desc = eoanb_sweden.51.d
+	picture = GFX_news_event_generic_sign_treaty2
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = eoanb_sweden.51.a
+		ai_chance = { base = 100 }
+
+		add_stability = 0.10
+
+		NOR = {
+			set_temp_variable = { NOR_loyalty_change = 2.5 }
+			NOR_scripted_effect_loyalty_check = yes
+			#country_event = { id = eoanb_norway.29 days = 2 }
+		}
+	}
+}
+
+country_event = { # Stattholderstriden: Sweds disagree, setting up a limitation to Norwegian demands
+	id = eoanb_sweden.52
+	title = eoanb_sweden.52.t
+	desc = eoanb_sweden.52.d
+	picture = GFX_news_event_generic_sign_treaty2
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = eoanb_sweden.52.a
+		ai_chance = { base = 100 }
+
+		SWE = {
+			country_event = { id = eoanb_sweden.49 days = 7 }
+		}
+	}
+}
+
+country_event = { # Stattholderstriden: Swedish People Does Not Accept The Kings Proposals
+	id = eoanb_sweden.53
+	title = eoanb_sweden.53.t
+	desc = eoanb_sweden.53.d
+	picture = GFX_news_event_generic_sign_treaty2
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = eoanb_sweden.53.a
+		ai_chance = { base = 100 }
+
+		NOR = {
+			country_event = { id = eoanb_norway.31 days = 2 }
+		}
+	}
+}
+
+country_event = { # Stattholderstriden: Swedish People Accepts The Kings Proposals
+	id = eoanb_sweden.54
+	title = eoanb_sweden.54.t
+	desc = eoanb_sweden.54.d
+	picture = GFX_news_event_generic_sign_treaty2
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = eoanb_sweden.54.a
+		ai_chance = { base = 100 }
+
+		NOR = {
+			country_event = { id = eoanb_norway.33 days = 2 }
 		}
 	}
 }
@@ -1730,24 +1910,69 @@ country_event = {
 		hidden_effect = { 
 			if = {
 				limit = { has_dlc = "Man the Guns" }
-				#create_equipment_variant = {
-				#	name = "Camaeleon-Klasse"
-				#	type = ship_hull_gunboat_2
-				#	name_group = GER_GB_HISTORICAL
-				#	parent_version = 0
-				#	modules = {
-				#		fixed_ship_battery_slot = ship_cannon_battery_1
-				#		fixed_ship_fire_control_system_slot = fire_control_system_0
-				#		fixed_ship_engine_slot = ship_engine_steam_screw_gunboat
-				#		fixed_ship_secondaries_slot = empty
-				#		fixed_ship_armor_slot = ship_armor_capital_hardwood_0
-				#		mid_1_custom_slot = empty
-				#		mid_2_custom_slot = empty
-				#		rear_1_custom_slot = ship_cannon_battery_1
-				#	}
-				#	#obsolete = no
-				#}
-				#	#load_oob = PRS_new_ships_PRS_2
+				create_equipment_variant = {
+					name = "John Ericsson Class"
+					type = ship_hull_monitor
+					name_group = GER_GB_HISTORICAL
+					parent_version = 0
+					modules = {
+						fixed_ship_battery_slot = ship_cannon_battery_1
+						fixed_ship_fire_control_system_slot = fire_control_system_0
+						fixed_ship_engine_slot = ship_engine_steam_screw_gunboat
+						fixed_ship_secondaries_slot = empty
+						fixed_ship_armor_slot = ship_armor_capital_hardwood_0
+						mid_1_custom_slot = empty
+						mid_2_custom_slot = empty
+						rear_1_custom_slot = ship_cannon_battery_1
+					}
+					#obsolete = no
+				}
+				load_oob = SWE_new_ericsson_monitors
+			}
+		}
+	}
+}
+
+
+country_event = {
+	id = eoanb_sweden_naval.2
+	title = eoanb_sweden_naval.2.t
+	desc = eoanb_sweden_naval.2.d
+	
+	#picture = GFX_
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+		name = eoanb_sweden_naval.2.a
+
+		ai_chance = {
+			base = 360
+		}
+		
+		navy_experience = 5
+		hidden_effect = { 
+			if = {
+				limit = { has_dlc = "Man the Guns" }
+				create_equipment_variant = {
+					name = "Monitor Class"
+					type = ship_hull_monitor
+					name_group = GER_GB_HISTORICAL
+					parent_version = 0
+					modules = {
+						fixed_ship_battery_slot = ship_cannon_battery_1
+						fixed_ship_fire_control_system_slot = fire_control_system_0
+						fixed_ship_engine_slot = ship_engine_steam_screw_gunboat
+						fixed_ship_secondaries_slot = empty
+						fixed_ship_armor_slot = ship_armor_capital_hardwood_0
+						mid_1_custom_slot = empty
+						mid_2_custom_slot = empty
+						rear_1_custom_slot = ship_cannon_battery_1
+					}
+					#obsolete = no
+				}
+				load_oob = SWE_new_non_ericsson_monitors
 			}
 		}
 	}

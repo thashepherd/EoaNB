@@ -14,30 +14,28 @@ add_namespace = feudal_tokugawa_daimyos_rebel
 country_event = {
 	id = feudal_tokugawa_shogunate.1
 	title = feudal_tokugawa_shogunate.1.t
-	desc = feudal_tokugawa_shogunate.1.d
+	desc = {
+		trigger = { tag = TSH }
+		text = feudal_tokugawa_shogunate.1.d_shogunate
+	}
+	desc = {
+		trigger = { NOT = { tag = TSH } }
+		text = feudal_tokugawa_shogunate.1.d_han
+	}
+
+	picture = GFX_report_event_japan_map
 
 	is_triggered_only = yes
 
-	trigger = {
-		is_japanese_country = yes
-		date < 1868.1.1
-	}
-	
 	immediate = {
 		hidden_effect = {
-			if = { 
+			if = {
 				limit = { tag = TSH }
-				hidden_effect = {
-					country_event = feudal_tokugawa_shogunate_flavor.1
-				}
-				add_ideas = TSH_Spirit_Bakumatsu_Modernization_Amity_Treaty_Negotiations
+				add_ideas = TSH_spirit_vic_external_amity_treaty_negotiations
 			}
 			else_if = {
 				limit = { is_subject_of = TSH }
-				add_timed_idea = {
-					idea = TSH_Spirit_Bakumatsu_Modernization_Amity_Treaty_Negotiations
-					days = 555
-				}
+				add_timed_idea = { idea = TSH_spirit_vic_external_amity_treaty_negotiations days = 555 }
 			}
 		}
 	}
@@ -46,144 +44,277 @@ country_event = {
 		name = feudal_tokugawa_shogunate.1.a
 		trigger = { tag = TSH }
 		add_political_power = -25
+
 		activate_mission = TSH_Mission_Bakumatsu_Modernization_Kanrin_Mahru
-		country_event = { id = feudal_tokugawa_shogunate.2 days = 5 }
+
 		set_temp_variable = { eoanb_prestige_change = 1 }
 		eoanb_change_prestige_score = yes
+		hidden_effect = {
+			news_event = { id = feudal_tokugawa_shogunate.2 days = 3 } # Bakumatsu Introduction
+			news_event = { id = feudal_tokugawa_shogunate.3 days = 10 } # Cholera Outbreak Introduction
+			news_event = { id = feudal_tokugawa_shogunate.4 days = 17 } # Han System Introduction
+		}
 	}
+
 	option = {
-		name = feudal_tokugawa_shogunate.1.b
-		trigger = { OR = { tag = SAT tag = DTE } }
-		add_political_power = -35
+		name = feudal_tokugawa_shogunate.1.a
+		trigger = { is_subject_of = TSH }
+		add_political_power = -5
+		hidden_effect = {
+			news_event = { id = feudal_tokugawa_shogunate.2 days = 3 } # Bakumatsu Introduction
+			news_event = { id = feudal_tokugawa_shogunate.3 days = 10 } # Cholera Outbreak Introduction
+			news_event = { id = feudal_tokugawa_shogunate.4 days = 17 } # Han System Introduction
+		}
 	}
+
 	option = {
-		name = feudal_tokugawa_shogunate.1.c
-		trigger = { OR = { tag = CHO tag = SAG tag = TOS } }
-		add_political_power = -35
-	}
-	option = {
-		name = feudal_tokugawa_shogunate.1.d
-		trigger = { tag = RYU }
+		name = feudal_tokugawa_shogunate.1.a
+		trigger = { NOT = { tag = TSH is_subject_of = TSH } }
+		add_political_power = -1
 	}
 }
 
-# Amity Treaty Negotiations
-country_event = {
+# Introduction to Amity Treaties and Bakumatsu Crisis
+news_event = {
 	id = feudal_tokugawa_shogunate.2
 	title = feudal_tokugawa_shogunate.2.t
-	desc = feudal_tokugawa_shogunate.2.d
+	desc = {
+		trigger = { tag = TSH }
+		text = feudal_tokugawa_shogunate.2.d_shogunate
+	}
+	desc = {
+		trigger = { NOT = { tag = TSH } }
+		text = feudal_tokugawa_shogunate.2.d_han
+	}
+
+	picture = GFX_news_event_shogunate_1
 
 	is_triggered_only = yes
 
-    immediate = {
-			hidden_effect = {
-				# Death of the Shogun
-				country_event = { id = feudal_tokugawa_shogunate.20 days = 350 random_days = 200 }
-			}
-    }
-
-    # Convince the Emperor!
 	option = {
+		trigger = { tag = TSH }
+		ai_chance = { base = 1 }
 		name = feudal_tokugawa_shogunate.2.a
-        ai_chance = { base = 85 }
-        country_event = { id = feudal_tokugawa_shogunate.3 days = 300 }
+		set_country_flag = EOANBSYS_national_crisis_bakumatsu_crisis_flag
+		EOANBSYS_national_crisis_setup = yes
+		hidden_effect = {
+			country_event = feudal_tokugawa_shogunate.20
+		}
 	}
-    #Sign the Treaty
-    option = {
-        ai_chance = { base = 15 }
-        name = feudal_tokugawa_shogunate.2.b
-        add_political_power = -50
-        SAT = {
-            set_temp_variable = { TSH_Bakumatsu_Debate_Influence_Change = 3 }
-            TSH_Bakumatsu_Debate_Influence_Country_Modify = yes
-        }
-        SAG = {
-            set_temp_variable = { TSH_Bakumatsu_Debate_Influence_Change = 5 }
-            TSH_Bakumatsu_Debate_Influence_Country_Modify = yes
-        }
-        CHO = {
-            set_temp_variable = { TSH_Bakumatsu_Debate_Influence_Change = 2 }
-            TSH_Bakumatsu_Debate_Influence_Country_Modify = yes
-        }
-        MIT = {
-            set_temp_variable = { TSH_Bakumatsu_Debate_Influence_Change = 1 }
-            TSH_Bakumatsu_Debate_Influence_Country_Modify = yes
-        }
-        TSU = {
-            set_temp_variable = { TSH_Bakumatsu_Debate_Influence_Change = -2 }
-            TSH_Bakumatsu_Debate_Influence_Country_Modify = yes
-        }
-        random_owned_state = {
-            set_temp_variable = { TSH_Bakumatsu_Debate_Influence_Change = 3 }
-            TSH_Bakumatsu_Debate_Influence_State_Modify = yes
-        }
-        random_owned_state = {
-            set_temp_variable = { TSH_Bakumatsu_Debate_Influence_Change = 2 }
-            TSH_Bakumatsu_Debate_Influence_State_Modify = yes
-        }
-        random_owned_state = {
-            set_temp_variable = { TSH_Bakumatsu_Debate_Influence_Change = 1 }
-            TSH_Bakumatsu_Debate_Influence_State_Modify = yes
-        }
-        random_owned_state = {
-            set_temp_variable = { TSH_Bakumatsu_Debate_Influence_Change = -5 }
-            TSH_Bakumatsu_Debate_Influence_State_Modify = yes
-        }
-        USA = { country_event = { id = feudal_tokugawa_shogunate.4 days = 600 } }
-    }
+	option = {
+		trigger = { NOT = { tag = TSH } }
+		ai_chance = { base = 1 }
+		name = feudal_tokugawa_shogunate.2.b
+		add_popularity = {
+			ideology = radical_democracy
+			popularity = 0.02
+		}
+	}
+	option = {
+		trigger = { NOT = { tag = TSH } }
+		ai_chance = { base = 1 }
+		name = feudal_tokugawa_shogunate.2.c
+		add_popularity = {
+			ideology = autocracy
+			popularity = 0.02
+		}
+	}
 }
+
+# Cholera Outbreak of Japan 1857
+news_event = {
+	id = feudal_tokugawa_shogunate.3
+	title = feudal_tokugawa_shogunate.3.t
+	desc = feudal_tokugawa_shogunate.3.d
+
+	is_triggered_only = yes
+
+	picture = news_event_plague
+
+	option = {
+		name = feudal_tokugawa_shogunate.3
+
+		hidden_effect = {
+			set_country_flag = EOANBSYS_pandemics_cholera_flag
+			EOANBSYS_pandemics_country_setup = yes
+		}
+	}
+}
+
+
+
+
+# country_event = {
+# 	id = feudal_tokugawa_shogunate.1
+# 	title = feudal_tokugawa_shogunate.1.t
+# 	desc = feudal_tokugawa_shogunate.1.d
+
+# 	is_triggered_only = yes
+
+
+# 	immediate = {
+# 		hidden_effect = {
+# 			if = {
+# 				limit = { tag = TSH }
+# 				hidden_effect = {
+# 					country_event = feudal_tokugawa_shogunate_flavor.1
+# 				}
+# 				add_ideas = TSH_spirit_vic_external_amity_treaty_Negotiations
+# 			}
+# 			else_if = {
+# 				limit = { is_subject_of = TSH }
+# 				add_timed_idea = {
+# 					idea = TSH_spirit_vic_external_amity_treaty_Negotiations
+# 					days = 555
+# 				}
+# 			}
+# 		}
+# 	}
+
+# 	option = {
+# 		name = feudal_tokugawa_shogunate.1.a
+# 		trigger = { tag = TSH }
+# 		add_political_power = -25
+# 		activate_mission = TSH_Mission_Bakumatsu_Modernization_Kanrin_Mahru
+# 		country_event = { id = feudal_tokugawa_shogunate.2 days = 5 }
+# 		set_temp_variable = { eoanb_prestige_change = 1 }
+# 		eoanb_change_prestige_score = yes
+# 		set_country_flag = EOANBSYS_national_crisis_bakumatsu_crisis_flag
+# 		EOANBSYS_national_crisis_setup = yes
+# 	}
+# 	option = {
+# 		name = feudal_tokugawa_shogunate.1.b
+# 		trigger = { OR = { tag = SAT tag = DTE } }
+# 		add_political_power = -35
+# 	}
+# 	option = {
+# 		name = feudal_tokugawa_shogunate.1.c
+# 		trigger = { OR = { tag = CHO tag = SAG tag = TOS } }
+# 		add_political_power = -35
+# 	}
+# 	option = {
+# 		name = feudal_tokugawa_shogunate.1.d
+# 		trigger = { tag = RYU }
+# 	}
+# }
+
+# Amity Treaty Negotiations
+# country_event = {
+# 	id = feudal_tokugawa_shogunate.2
+# 	title = feudal_tokugawa_shogunate.2.t
+# 	desc = feudal_tokugawa_shogunate.2.d
+
+# 	is_triggered_only = yes
+
+#     immediate = {
+# 			hidden_effect = {
+# 				# Death of the Shogun
+# 				country_event = { id = feudal_tokugawa_shogunate.20 days = 350 random_days = 200 }
+# 			}
+#     }
+
+#     # Convince the Emperor!
+# 	option = {
+# 		name = feudal_tokugawa_shogunate.2.a
+#         ai_chance = { base = 85 }
+#         country_event = { id = feudal_tokugawa_shogunate.3 days = 300 }
+# 	}
+#     #Sign the Treaty
+#     option = {
+#         ai_chance = { base = 15 }
+#         name = feudal_tokugawa_shogunate.2.b
+#         add_political_power = -50
+#         SAT = {
+#             set_temp_variable = { TSH_Bakumatsu_Debate_Influence_Change = 3 }
+#             TSH_Bakumatsu_Debate_Influence_Country_Modify = yes
+#         }
+#         SAG = {
+#             set_temp_variable = { TSH_Bakumatsu_Debate_Influence_Change = 5 }
+#             TSH_Bakumatsu_Debate_Influence_Country_Modify = yes
+#         }
+#         CHO = {
+#             set_temp_variable = { TSH_Bakumatsu_Debate_Influence_Change = 2 }
+#             TSH_Bakumatsu_Debate_Influence_Country_Modify = yes
+#         }
+#         MIT = {
+#             set_temp_variable = { TSH_Bakumatsu_Debate_Influence_Change = 1 }
+#             TSH_Bakumatsu_Debate_Influence_Country_Modify = yes
+#         }
+#         TSU = {
+#             set_temp_variable = { TSH_Bakumatsu_Debate_Influence_Change = -2 }
+#             TSH_Bakumatsu_Debate_Influence_Country_Modify = yes
+#         }
+#         random_owned_state = {
+#             set_temp_variable = { TSH_Bakumatsu_Debate_Influence_Change = 3 }
+#             TSH_Bakumatsu_Debate_Influence_State_Modify = yes
+#         }
+#         random_owned_state = {
+#             set_temp_variable = { TSH_Bakumatsu_Debate_Influence_Change = 2 }
+#             TSH_Bakumatsu_Debate_Influence_State_Modify = yes
+#         }
+#         random_owned_state = {
+#             set_temp_variable = { TSH_Bakumatsu_Debate_Influence_Change = 1 }
+#             TSH_Bakumatsu_Debate_Influence_State_Modify = yes
+#         }
+#         random_owned_state = {
+#             set_temp_variable = { TSH_Bakumatsu_Debate_Influence_Change = -5 }
+#             TSH_Bakumatsu_Debate_Influence_State_Modify = yes
+#         }
+#         USA = { country_event = { id = feudal_tokugawa_shogunate.4 days = 600 } }
+#     }
+# }
 
 # Convince the Emperor
-country_event = {
-    id = feudal_tokugawa_shogunate.3
-    title = feudal_tokugawa_shogunate.3.t
-    desc = feudal_tokugawa_shogunate.3.d
+# country_event = {
+#     id = feudal_tokugawa_shogunate.3
+#     title = feudal_tokugawa_shogunate.3.t
+#     desc = feudal_tokugawa_shogunate.3.d
 
-    is_triggered_only = yes
+#     is_triggered_only = yes
 
-	# Sign it anyway!
-    option = {
-        name = feudal_tokugawa_shogunate.3.a
-        add_political_power = -50
-        SAT = {
-            set_temp_variable = { TSH_Bakumatsu_Debate_Influence_Change = 3 }
-            TSH_Bakumatsu_Debate_Influence_Country_Modify = yes
-        }
-        SAG = {
-            set_temp_variable = { TSH_Bakumatsu_Debate_Influence_Change = 5 }
-            TSH_Bakumatsu_Debate_Influence_Country_Modify = yes
-        }
-        CHO = {
-            set_temp_variable = { TSH_Bakumatsu_Debate_Influence_Change = 2 }
-            TSH_Bakumatsu_Debate_Influence_Country_Modify = yes
-        }
-        MIT = {
-            set_temp_variable = { TSH_Bakumatsu_Debate_Influence_Change = 1 }
-            TSH_Bakumatsu_Debate_Influence_Country_Modify = yes
-        }
-        TSU = {
-            set_temp_variable = { TSH_Bakumatsu_Debate_Influence_Change = -2 }
-            TSH_Bakumatsu_Debate_Influence_Country_Modify = yes
-        }
-        random_owned_state = {
-            set_temp_variable = { TSH_Bakumatsu_Debate_Influence_Change = -3 }
-            TSH_Bakumatsu_Debate_Influence_State_Modify = yes
-        }
-        random_owned_state = {
-            set_temp_variable = { TSH_Bakumatsu_Debate_Influence_Change = -2 }
-            TSH_Bakumatsu_Debate_Influence_State_Modify = yes
-        }
-        random_owned_state = {
-            set_temp_variable = { TSH_Bakumatsu_Debate_Influence_Change = -1 }
-            TSH_Bakumatsu_Debate_Influence_State_Modify = yes
-        }
-        random_owned_state = {
-            set_temp_variable = { TSH_Bakumatsu_Debate_Influence_Change = 5 }
-            TSH_Bakumatsu_Debate_Influence_State_Modify = yes
-        }
-        USA = { country_event = { id = feudal_tokugawa_shogunate.4 days = 300 } }
-    }
-}
+# 	# Sign it anyway!
+#     option = {
+#         name = feudal_tokugawa_shogunate.3.a
+#         add_political_power = -50
+#         SAT = {
+#             set_temp_variable = { TSH_Bakumatsu_Debate_Influence_Change = 3 }
+#             TSH_Bakumatsu_Debate_Influence_Country_Modify = yes
+#         }
+#         SAG = {
+#             set_temp_variable = { TSH_Bakumatsu_Debate_Influence_Change = 5 }
+#             TSH_Bakumatsu_Debate_Influence_Country_Modify = yes
+#         }
+#         CHO = {
+#             set_temp_variable = { TSH_Bakumatsu_Debate_Influence_Change = 2 }
+#             TSH_Bakumatsu_Debate_Influence_Country_Modify = yes
+#         }
+#         MIT = {
+#             set_temp_variable = { TSH_Bakumatsu_Debate_Influence_Change = 1 }
+#             TSH_Bakumatsu_Debate_Influence_Country_Modify = yes
+#         }
+#         TSU = {
+#             set_temp_variable = { TSH_Bakumatsu_Debate_Influence_Change = -2 }
+#             TSH_Bakumatsu_Debate_Influence_Country_Modify = yes
+#         }
+#         random_owned_state = {
+#             set_temp_variable = { TSH_Bakumatsu_Debate_Influence_Change = -3 }
+#             TSH_Bakumatsu_Debate_Influence_State_Modify = yes
+#         }
+#         random_owned_state = {
+#             set_temp_variable = { TSH_Bakumatsu_Debate_Influence_Change = -2 }
+#             TSH_Bakumatsu_Debate_Influence_State_Modify = yes
+#         }
+#         random_owned_state = {
+#             set_temp_variable = { TSH_Bakumatsu_Debate_Influence_Change = -1 }
+#             TSH_Bakumatsu_Debate_Influence_State_Modify = yes
+#         }
+#         random_owned_state = {
+#             set_temp_variable = { TSH_Bakumatsu_Debate_Influence_Change = 5 }
+#             TSH_Bakumatsu_Debate_Influence_State_Modify = yes
+#         }
+#         USA = { country_event = { id = feudal_tokugawa_shogunate.4 days = 300 } }
+#     }
+# }
 
 # Signing of Harris Treaty (USA)
 country_event = {
@@ -301,13 +432,13 @@ country_event = {
 
     trigger = {
 			OR = {
-				has_idea = TSH_Spirit_Bakumatsu_Modernization_Amity_Treaty_Japan_7
-				has_idea = TSH_Spirit_Bakumatsu_Modernization_Amity_Treaty_Japan_6
-				has_idea = TSH_Spirit_Bakumatsu_Modernization_Amity_Treaty_Japan_5
-				has_idea = TSH_Spirit_Bakumatsu_Modernization_Amity_Treaty_Japan_4
-				has_idea = TSH_Spirit_Bakumatsu_Modernization_Amity_Treaty_Japan_3
-				has_idea = TSH_Spirit_Bakumatsu_Modernization_Amity_Treaty_Japan_2
-				has_idea = TSH_Spirit_Bakumatsu_Modernization_Amity_Treaty_Japan_1
+				has_idea = TSH_spirit_vic_external_amity_treaty_Japan_7
+				has_idea = TSH_spirit_vic_external_amity_treaty_Japan_6
+				has_idea = TSH_spirit_vic_external_amity_treaty_Japan_5
+				has_idea = TSH_spirit_vic_external_amity_treaty_Japan_4
+				has_idea = TSH_spirit_vic_external_amity_treaty_Japan_3
+				has_idea = TSH_spirit_vic_external_amity_treaty_Japan_2
+				has_idea = TSH_spirit_vic_external_amity_treaty_Japan_1
 				any_owned_state = { is_demilitarized_zone = yes }
 			}
     }
@@ -330,7 +461,7 @@ news_event = {
 
 	option = {
 		name = feudal_tokugawa_shogunate.10.a
-		trigger = { 
+		trigger = {
 			is_japanese_country = no
 			afr_is_tribal_allowed = no
 		}
@@ -368,7 +499,7 @@ news_event = {
 	}
 	option = {
 		name = feudal_tokugawa_shogunate.10.c
-		trigger = { 
+		trigger = {
 			is_japanese_country = no
 			afr_is_tribal_allowed = yes
 		}
@@ -444,7 +575,7 @@ country_event = {
 
     immediate = {
         if = {
-            limit = { 
+            limit = {
                 has_idea = TSH_Spirit_Bakumatsu_Modernization_Cholera_Outbreak
             }
             country_event = { id = feudal_tokugawa_shogunate.17 days = 35 random_days = 25 }
@@ -770,7 +901,7 @@ country_event = {
 	id = feudal_tokugawa_shogunate.30
 	title = feudal_tokugawa_shogunate.30.t
 	desc = feudal_tokugawa_shogunate.30.d
-	
+
 	is_triggered_only = yes
 
 	option = {
@@ -798,7 +929,7 @@ country_event = {
 	id = feudal_tokugawa_shogunate.31
 	title = feudal_tokugawa_shogunate.31.t
 	desc = feudal_tokugawa_shogunate.31.d
-	
+
 	is_triggered_only = yes
 
 	option = {
@@ -830,7 +961,7 @@ country_event = {
 #	id = feudal_tokugawa_shogunate.31
 #	title = feudal_tokugawa_shogunate.31.t
 #	desc = feudal_tokugawa_shogunate.31.d
-#	
+#
 #	is_triggered_only = yes
 #
 #	option = {
@@ -862,7 +993,7 @@ country_event = {
 	title = feudal_tokugawa_shogunate.32.t
 	desc = feudal_tokugawa_shogunate.32.d
 	picture = GFX_report_event_generic_sailship
-	
+
 	is_triggered_only = yes
 
 	option = {
@@ -899,7 +1030,7 @@ country_event = {
 	title = feudal_tokugawa_shogunate.33.t
 	desc = feudal_tokugawa_shogunate.33.d
 	picture = GFX_report_event_generic_sailship
-	
+
 	is_triggered_only = yes
 
 	option = {
@@ -919,7 +1050,7 @@ country_event = {
 	title = feudal_tokugawa_shogunate.34.t
 	desc = feudal_tokugawa_shogunate.34.d
 	picture = GFX_report_event_generic_sailship
-	
+
 	is_triggered_only = yes
 
 	option = {
@@ -932,7 +1063,7 @@ country_event = {
 	id = feudal_tokugawa_shogunate.35
 	title = feudal_tokugawa_shogunate.35.t
 	desc = feudal_tokugawa_shogunate.35.d
-	
+
 	is_triggered_only = yes
 
 	option = {
@@ -963,7 +1094,7 @@ country_event = {
 	id = feudal_tokugawa_shogunate.36
 	title = feudal_tokugawa_shogunate.36.t
 	desc = feudal_tokugawa_shogunate.36.d
-	
+
 	is_triggered_only = yes
 
 	option = {
@@ -1013,7 +1144,7 @@ country_event = {
                     OR = {
                         is_japanese_country = yes
                         any_owned_state = { is_in_japan = yes }
-                        has_idea = TSH_Spirit_Bakumatsu_Modernization_Amity_Treaty_West
+                        has_idea = TSH_spirit_vic_external_amity_treaty_West
                     }
                 }
                 news_event = feudal_tokugawa_shogunate_ansei.2
@@ -1522,7 +1653,7 @@ country_event = {
 
 	is_triggered_only = yes
 
-	trigger = { 
+	trigger = {
 			tag = TSH
 			has_global_flag = TSH_Bakumatsu_Debate_Ongoing
 	}
@@ -1763,7 +1894,7 @@ country_event = {
 	hidden = yes
 
 	is_triggered_only = yes
-	
+
 	immediate = {
 		every_country = {
 			limit = { any_owned_state = { is_in_japan = yes } }
@@ -1778,7 +1909,7 @@ news_event = {
 	title = feudal_tokugawa_shogunate_flavor.3.t
 	desc = feudal_tokugawa_shogunate_flavor.3.d
 	# picture = earthquakepls
-	
+
 	is_triggered_only = yes
 
 	immediate = {
@@ -1800,7 +1931,7 @@ news_event = {
 		}
 		every_owned_state = {
 			limit = {
-				OR = { 
+				OR = {
 					state = 535
 					state = 531
 				}

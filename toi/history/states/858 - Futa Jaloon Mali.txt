@@ -1,17 +1,17 @@
-state={
-	id=858
-	name="STATE_858"
+state = {
+	id =858
+	name = "STATE_858"
 
 	state_category = rural
 
 	
 
-	provinces={
+	provinces = {
 		5101 
 	}
-	manpower=263355
+	manpower =263355
 	
-	history={
+	history = {
 		victory_points = {
 			5101 1
 		}
@@ -31,6 +31,6 @@ state={
 		add_to_array = { state_culture_array_num = 0.12 }
 
 		add_to_array = { state_religion_array = 8 } 
-	    add_to_array = { state_religion_array_num = 1.00}
+			add_to_array = { state_religion_array_num = 1.00}
 	}
 }

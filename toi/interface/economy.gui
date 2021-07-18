@@ -66,6 +66,7 @@ guiTypes = {
 			maxHeight = 24
 			fixedsize = yes
 			#alwaystransparent = yes
+			pdx_tooltip = income_amount_tt
 		}
 	}
 
@@ -1172,6 +1173,7 @@ guiTypes = {
 					name ="national_bank_icon"
 					spriteType = "GFX_national_bank_icon"
 					position = { x = 288 y = 74 }
+					pdx_tooltip = pops_bank_tt
 				}
 				instantTextBoxType = {
 					name = "pops_savings"
@@ -1183,6 +1185,7 @@ guiTypes = {
 					maxHeight = 24
 					fixedsize = yes
 					#alwaystransparent = yes
+					pdx_tooltip = pops_bank_tt
 				}
 				instantTextBoxType = {
 					name = "pops_debt"
@@ -1194,6 +1197,7 @@ guiTypes = {
 					maxHeight = 24
 					fixedsize = yes
 					#alwaystransparent = yes
+					pdx_tooltip = pops_bank_tt
 				}
 
 
@@ -3621,7 +3625,7 @@ guiTypes = {
 				buttonFont = "Main_14_black"
 				Orientation = "UPPER_LEFT"
 				clicksound = click_close
-				#shortcut = "A"
+				shortcut = "A"
 			}
 			instantTextBoxType = {
 				name = "time_button_title"
@@ -4927,6 +4931,112 @@ guiTypes = {
 					#alwaystransparent = yes
 				}
 			}
+			containerWindowType = { #Mandatory Spending
+				name = "govt_mandatory_spending_container"
+				position = {x = 698 y = 38 }
+				size = { width = 350 height = 342 }
+				Orientation = upper_left
+			
+				background = {
+					name = "Background"
+					spriteType = "GFX_tiled_decisions_bg_small"
+				}
+				
+				instantTextBoxType = {
+					name = "govt_mandatory_spending_title"
+					position = { x = 7 y = 7 }
+					font = "hoi_24header"
+					format = center
+					maxWidth = 220
+					text = "govt_mandatory_spending_title"
+					maxHeight = 24
+					fixedsize = yes
+					#alwaystransparent = yes
+				}
+			}
+			containerWindowType = { #National Bank
+				name = "govt_national_bank_container"
+				position = {x = 698 y = 378 }
+				size = { width = 350 height = 172 }
+				Orientation = upper_left
+			
+				background = {
+					name = "Background"
+					spriteType = "GFX_tiled_decisions_bg_small"
+				}
+				
+				instantTextBoxType = {
+					name = "govt_national_bank_title"
+					position = { x = 7 y = 7 }
+					font = "hoi_24header"
+					format = center
+					maxWidth = 170
+					text = "govt_national_bank_title"
+					maxHeight = 24
+					fixedsize = yes
+					#alwaystransparent = yes
+				}
+
+				instantTextBoxType = {
+					name = "govt_national_bank_amount_loc"
+					position = { x = 20 y = 40 }
+					font = "hoi_18mbs"
+					format = left
+					maxWidth = 300
+					text = "govt_national_bank_amount_loc"
+					maxHeight = 24
+					fixedsize = yes
+					#alwaystransparent = yes
+					pdx_tooltip = govt_national_bank_amount_tt
+				}
+				instantTextBoxType = {
+					name = "govt_national_bank_amount_borrowed_loc"
+					position = { x = 20 y = 60 }
+					font = "hoi_18mbs"
+					format = left
+					maxWidth = 300
+					text = "govt_national_bank_amount_borrowed_loc"
+					maxHeight = 24
+					fixedsize = yes
+					#alwaystransparent = yes
+					pdx_tooltip = govt_national_bank_amount_borrowed_tt
+				}
+			}
+			containerWindowType = { #Final Budget
+				name = "govt_final_budget_container"
+				position = {x = 698 y = 548 }
+				size = { width = 350 height = 70 }
+				Orientation = upper_left
+			
+				background = {
+					name = "Background"
+					spriteType = "GFX_tiled_decisions_bg_small"
+				}
+
+				instantTextBoxType = {
+					name = "govt_net_budget_title"
+					position = { x = 15 y = 20 }
+					font = "hoi_24header"
+					format = left
+					maxWidth = 160
+					text = "govt_net_budget_title"
+					maxHeight = 24
+					fixedsize = yes
+					#alwaystransparent = yes
+				}
+
+				instantTextBoxType = {
+					name = "govt_net_budget_amount_loc"
+					position = { x = 20 y = 20 }
+					font = "hoi_24header"
+					format = right
+					maxWidth = 300
+					text = "govt_net_budget_amount_loc"
+					maxHeight = 24
+					fixedsize = yes
+					#alwaystransparent = yes
+				}
+			}
 		}
 
 		buttonType = {
@@ -4951,7 +5061,7 @@ guiTypes = {
 				buttonFont = "Main_14_black"
 				Orientation = "UPPER_LEFT"
 				clicksound = click_close
-				#shortcut = "A"
+				shortcut = "A"
 			}
 			instantTextBoxType = {
 				name = "time_button_title"

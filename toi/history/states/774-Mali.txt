@@ -1,19 +1,18 @@
-state=
-{
-	id=774
-	name="STATE_774"
+state = {
+	id =774
+	name = "STATE_774"
 	manpower = 301200
 	
 	state_category = rural
-	resources={
+	resources = {
 	}	
 	
 
 	
-	provinces={
-		   2044 10788 7930
+	provinces = {
+			 2044 10788 7930
 	}
-	history= {
+	history = {
 		buildings = {
 			infrastructure = 1
 		}
@@ -29,7 +28,7 @@ state=
 		add_core_of = MSN
 		add_claim_by = KAD
 		
-		1870.1.1={
+		1870.1.1= {
 			owner = TOU
 			add_core_of = TOU
 		}
@@ -50,6 +49,6 @@ state=
 		add_to_array = { state_culture_array_num = 0.01 }
 
 		add_to_array = { state_religion_array = 8 } 
-	    add_to_array = { state_religion_array_num = 1.00}
+			add_to_array = { state_religion_array_num = 1.00}
 	}
 }
