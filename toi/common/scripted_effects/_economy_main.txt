@@ -11385,6 +11385,7 @@
 		
 		#General Modifiers
 		set_variable = { tech_build_cost = 0 } #Modifier, Negative is good
+		set_variable = { tech_build_speed = 0 } #Modifier, Positive is good
 
 		set_variable = { tech_transport_cost = 0 } #Modifier, Negative is good
 
@@ -11430,28 +11431,25 @@
 						has_tech = iron_railways
 					}
 					#Enables Level 9 Infra
-					#-20% Infra Build Speed
-					#+20% Infra Build Cost
 					set_variable = { infrastructure_max_level = 9 }
-					add_to_variable = { infrastructure_build_cost = 0.2 }
 					
 					if = {
 						limit = {
 							has_tech = steel_railways
 						}
  						#Enables Level 10 Infra
-						#-10% Infra Build Speed
-						#+10% Infra Build Cost
 						set_variable = { infrastructure_max_level = 10 }
-						add_to_variable = { infrastructure_build_cost = 0.10 }
 
 						if = {
 							limit = {
 								has_tech = standardized_gauge
 							}
+							#-5% Infrastructure Build Cost
 							#-5% Infrastructure Maintenance Cost
 							#+25% Infrastructure Transport Cost Reduction
+							#+5% Infra Build Speed
 							#Adds an idea that lasts for 10 years for standardizing rail guage: +20% Infrastructure Maintenance Cost, -25% Infrastructure Transport Cost Reduction
+							add_to_variable = { tech_infrastructure_build_cost = -0.05 }
 							add_to_variable = { tech_infrastructure_maintenance_cost = -0.05 }
 							add_to_variable = { tech_infrastructure_transport_cost_reduction = 0.25 }
 						}
@@ -11487,8 +11485,10 @@
 							limit = {
 								has_tech = traction_engine
 							}
-							#-5% Transport Cost
-							add_to_variable = { tech_transport_cost = -0.05 }
+							#-2.5% Transport Cost
+							#+5% Life Goods Output
+							add_to_variable = { tech_transport_cost = -0.025 }
+							add_to_variable = { tech_life_goods_output = 0.05 }
 
 						}
 						if = {
@@ -11510,6 +11510,16 @@
 					}
 				}
 			#
+			#Infrastructure
+				if = {
+					limit = {
+						has_tech = electric_tramway
+					}
+					#+5% Factory Efficiency Growth
+					#+4% Factory Goods Output
+					add_to_variable = { tech_factory_goods_output = 0.04 }
+				}
+			#
 			#Engines
 				if = {
 					limit = {
@@ -11518,9 +11528,11 @@
 					#+10% Resource Gain Efficiency
 					#+15% Raw Goods Output
 					#+20% Factory Throughput
+					#+10% Factory Build Cost
 					#+50% Factory Industrial Goods Maintenance
 					add_to_variable = { tech_raw_goods_output = 0.15 }
 					add_to_variable = { tech_factory_throughput = 0.20 }
+					add_to_variable = { tech_factory_build_cost = 0.10 }
 					add_to_variable = { tech_factory_industrial_goods_maintenance = 0.50 }
 
 					if = {
@@ -11570,8 +11582,8 @@
 						#Enables Level 8 Civs
 						#+5% Max Factories in a State
 						#+8% Factory Throughput
-						#+5% Factory Size
-						#+5% Factory Build Cost
+						#+10% Factory Size
+						#+10% Factory Build Cost
 						#+12% Factory Industrial Goods Maintenance
 						add_to_variable = { tech_factory_throughput = 0.08 }
 						add_to_variable = { tech_factory_size = 0.10 }
@@ -11673,67 +11685,59 @@
 						has_tech = industrial_era_tools_1
 					}
 					#Enables Level 5 Logging Camp
-					#+5% Production Efficiency Cap
-					#+5% Factory Goods Output
-					add_to_variable = { tech_factory_goods_output = 0.04 }
+					#-5% Build Cost
+					add_to_variable = { tech_build_cost = -0.05 }
 
 					if = {
 						limit = {
 							has_tech = industrial_era_tools_2
 						}
-						#+5% Production Efficiency Cap
-						#+5% Factory Goods Output
-						add_to_variable = { tech_factory_goods_output = 0.02 }
+						#-2.5% Build Cost
+						add_to_variable = { tech_build_cost = -0.025 }
 
 						if = {
 							limit = {
 								has_tech = industrial_era_tools_3
 							}
 							#Enables Level 8 Logging Camp
-							#+5% Production Efficiency Cap
-							#+5% Factory Goods Output
-							add_to_variable = { tech_factory_goods_output = 0.02 }
+							#-2.5% Build Cost
+							add_to_variable = { tech_build_cost = -0.025 }
 
 							if = {
 								limit = {
 									has_tech = industrial_era_tools_4
 								}
-								#+5% Production Efficiency Cap
-								#+5% Factory Goods Output
-								add_to_variable = { tech_factory_goods_output = 0.02 }
+								#-2.5% Build Cost
+								add_to_variable = { tech_build_cost = -0.025 }
 
 								if = {
 									limit = {
 										has_tech = industrial_era_tools_5
 									}
 									#Enables Level 10 Logging Camp
-									#+5% Production Efficiency Cap
-									#+5% Factory Goods Output
-									add_to_variable = { tech_factory_goods_output = 0.02 }
+									#-2.5% Build Cost
+									add_to_variable = { tech_build_cost = -0.025 }
 
 									if = {
 										limit = {
 											has_tech = industrial_era_tools_6
 										}
-										#+5% Production Efficiency Cap
-										#+5% Factory Goods Output
-										add_to_variable = { tech_factory_goods_output = 0.02 }
+										#-2.5% Build Cost
+										add_to_variable = { tech_build_cost = -0.025 }
 
 										if = {
 											limit = {
 												has_tech = industrial_era_tools_7
 											}
-											#+5% Production Efficiency Cap
-											#+5% Factory Goods Output
-											add_to_variable = { tech_factory_goods_output = 0.02 }
+											#-2.5% Build Cost
+											add_to_variable = { tech_build_cost = -0.025 }
 
 											if = {
 												limit = {
 													has_tech = industrial_era_tools_8
 												}
-												#+5% Production Efficiency Cap
-												#+5% Factory Goods Output
-												add_to_variable = { tech_factory_goods_output = 0.02 }
+												#-2.5% Build Cost
+												add_to_variable = { tech_build_cost = -0.025 }
 
 											}
 										}
@@ -11754,8 +11758,8 @@
 					#Enables Level 2 Land Fort
 					#Enables Level 2 Coastal Fort
 					#+5% Construction Speed
-					#-5% Build Cost
-					add_to_variable = { tech_build_cost = -0.05 }
+					#+5% Build Speed
+					add_to_variable = { tech_build_speed = 0.10 }
 
 					if = {
 						limit = {
@@ -11763,9 +11767,9 @@
 						}
 						#Enables Level 4 Land Fort
 						#Enables Level 4 Coastal Fort
-						#+5% Construction Speed
-						#-5% Build Cost
-						add_to_variable = { tech_build_cost = -0.05 }
+						#+2.5% Construction Speed
+						#+5% Build Speed
+						add_to_variable = { tech_build_speed = 0.05 }
 
 						if = {
 							limit = {
@@ -11775,9 +11779,9 @@
 							#Enables Level 10 Naval Base
 							#Enables Level 6 Land Fort
 							#Enables Level 6 Coastal Fort
-							#+5% Construction Speed
-							#-5% Build Cost
-							add_to_variable = { tech_build_cost = -0.05 }
+							#+10% Construction Speed
+							#+20% Build Speed
+							add_to_variable = { tech_build_speed = 0.20 }
 
 							if = {
 								limit = {
@@ -11786,8 +11790,8 @@
 								#Enables Level 8 Land Fort
 								#Enables Level 8 Coastal Fort
 								#+5% Construction Speed
-								#-5% Build Cost
-								add_to_variable = { tech_build_cost = -0.05 }
+								#+10% Build Speed
+								add_to_variable = { tech_build_speed = 0.10 }
 
 							}
 						}
@@ -11803,10 +11807,10 @@
 					#+5% Dockyard Output
 					#+8% Factory Throughput
 					#+4% Everyday Goods Factory Throughput
-					#+8% Factory Industrial Goods Maintenance
+					#-8% Factory Industrial Goods Maintenance
 					add_to_variable = { tech_factory_throughput = 0.08 }
 					add_to_variable = { tech_factory_everyday_goods_throughput = 0.04 }
-					add_to_variable = { tech_factory_industrial_goods_maintenance = 0.08 }
+					add_to_variable = { tech_factory_industrial_goods_maintenance = -0.08 }
 
 					if = {
 						limit = {
@@ -11817,9 +11821,11 @@
 						#+8% Factory Throughput
 						#+4% Everyday Goods Factory Throughput
 						#+8% Factory Industrial Goods Maintenance
+						#+10% Factory Build Cost
 						add_to_variable = { tech_factory_throughput = 0.08 }
 						add_to_variable = { tech_factory_everyday_goods_throughput = 0.04 }
 						add_to_variable = { tech_factory_industrial_goods_maintenance = 0.08 }
+						add_to_variable = { tech_factory_build_cost = 0.10 }
 
 						if = {
 							limit = {
@@ -11830,9 +11836,11 @@
 							#+4% Factory Throughput
 							#+2% Everyday Goods Factory Throughput
 							#+4% Factory Industrial Goods Maintenance
+							#+5% Factory Build Cost
 							add_to_variable = { tech_factory_throughput = 0.04 }
 							add_to_variable = { tech_factory_everyday_goods_throughput = 0.02 }
 							add_to_variable = { tech_factory_industrial_goods_maintenance = 0.04 }
+							add_to_variable = { tech_factory_build_cost = 0.10 }
 
 							if = {
 								limit = {
@@ -11840,12 +11848,14 @@
 								}
 								#+5% Factory Output
 								#+5% Dockyard Output
-								#+4% Factory Throughput
-								#+2% Everyday Goods Factory Throughput
-								#+4% Factory Industrial Goods Maintenance
-								add_to_variable = { tech_factory_throughput = 0.04 }
-								add_to_variable = { tech_factory_everyday_goods_throughput = 0.02 }
-								add_to_variable = { tech_factory_industrial_goods_maintenance = 0.04 }
+								#+8% Factory Throughput
+								#+4% Everyday Goods Factory Throughput
+								#+8% Factory Industrial Goods Maintenance
+								#+10% Factory Build Cost
+								add_to_variable = { tech_factory_throughput = 0.08 }
+								add_to_variable = { tech_factory_everyday_goods_throughput = 0.04 }
+								add_to_variable = { tech_factory_industrial_goods_maintenance = 0.08 }
+								add_to_variable = { tech_factory_build_cost = 0.10 }
 
 							}
 						}
@@ -12012,9 +12022,9 @@
 						#Enables Level 1 Steel Mill
 						#+10% Production Efficiency Cap
 						#+4% Factory Throughput
-						#-8% Factory Raw Goods Input
+						#-4% Factory Raw Goods Input
 						add_to_variable = { tech_factory_throughput = 0.04 }
-						add_to_variable = { tech_factory_raw_goods_input = -0.08 }
+						add_to_variable = { tech_factory_raw_goods_input = -0.04 }
 						
 						if = {
 							limit = {
@@ -12029,7 +12039,7 @@
 									has_tech = dry_puddling_process
 								}
 								#+5% Industrial Goods Output
-								add_to_variable = { tech_factory_industrial_goods_output = 0.05 }
+								add_to_variable = { tech_factory_industrial_goods_output = 0.04 }
 								
 								if = {
 									limit = {
@@ -12071,15 +12081,15 @@
 					limit = {
 						has_tech = industrial_finery_forge
 					}
-					#+5% Industrial Goods Output
-					add_to_variable = { tech_factory_industrial_goods_output = 0.05 }
+					#+4% Industrial Goods Output
+					add_to_variable = { tech_factory_industrial_goods_output = 0.04 }
 					
 					if = {
 						limit = {
 							has_tech = wrought_iron_industrialization
 						}
-						#+5% Industrial Goods Output
-						add_to_variable = { tech_factory_industrial_goods_output = 0.05 }
+						#+4% Industrial Goods Output
+						add_to_variable = { tech_factory_industrial_goods_output = 0.04 }
 						
 					}
 				}
@@ -12089,15 +12099,15 @@
 					limit = {
 						has_tech = regenerative_furnace
 					}
-					#+5% Industrial Goods Output
-					add_to_variable = { tech_factory_industrial_goods_output = 0.05 }
+					#+4% Industrial Goods Output
+					add_to_variable = { tech_factory_industrial_goods_output = 0.04 }
 					
 					if = {
 						limit = {
 							has_tech = siemens_martin_process
 						}
-						#+5% Industrial Goods Output
-						add_to_variable = { tech_factory_industrial_goods_output = 0.05 }
+						#+4% Industrial Goods Output
+						add_to_variable = { tech_factory_industrial_goods_output = 0.04 }
 						
 					}
 				}

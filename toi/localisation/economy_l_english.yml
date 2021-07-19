@@ -432,12 +432,24 @@
   #
 
   #Modifier Tooltips
+    decrease_build_cost_2_5:0 "Build Cost: §G-2.50%§!\n"
     decrease_build_cost_5:0 "Build Cost: §G-5.00%§!\n"
 
+    increase_build_speed_5:0 "Build Speed: §G+5.00%§!\n"
+    increase_build_speed_10:0 "Build Speed: §G+10.00%§!\n"
+    increase_build_speed_20:0 "Build Speed: §G+20.00%§!\n"
+
+    decrease_transport_cost_2_5:0 "Transport Cost: §G-2.50%§!\n"
     decrease_transport_cost_5:0 "Transport Cost: §G-5.00%§!\n"
 
+    increase_life_goods_output_5:0 "Life Goods Output: §G+5.00%§!\n"
+
+    increase_raw_goods_output_2_5:0 "Raw Goods Output: §G+2.50%§!\n"
+    increase_raw_goods_output_5:0 "Raw Goods Output: §G+5.00%§!\n"
     increase_raw_goods_output_10:0 "Raw Goods Output: §G+10.00%§!\n"
     increase_raw_goods_output_15:0 "Raw Goods Output: §G+15.00%§!\n"
+
+    increase_valuable_goods_output_10:0 "Valuable Goods Output: §G+10.00%§!\n"
 
 
     increase_factory_size_5:0 "Factory Size: §G+5.00%§!\n"
@@ -454,15 +466,19 @@
     increase_factory_throughput_10:0 "Factory Throughput: §G+10.00%§!\n"
     increase_factory_throughput_20:0 "Factory Throughput: §G+20.00%§!\n"
     
-    increase_factory_everyday_goods_throughput_2:0 "Factory Everyday Goods Throughput: §G+2.00%§!\n"
-    increase_factory_everyday_goods_throughput_4:0 "Factory Everyday Goods Throughput: §G+4.00%§!\n"
+    increase_factory_everyday_goods_throughput_2:0 "Everyday Goods Factory Throughput: §G+2.00%§!\n"
+    increase_factory_everyday_goods_throughput_4:0 "Everyday Goods Factory Throughput: §G+4.00%§!\n"
     
-    increase_factory_industrial_goods_throughput_4:0 "Factory Industrial Goods Throughput: §G+4.00%§!\n"
-    increase_factory_industrial_goods_throughput_8:0 "Factory Industrial Goods Throughput: §G+8.00%§!\n"
+    increase_factory_industrial_goods_throughput_4:0 "Industrial Goods Factory Throughput: §G+4.00%§!\n"
+    increase_factory_industrial_goods_throughput_8:0 "Industrial Goods Factory Throughput: §G+8.00%§!\n"
+    increase_factory_industrial_goods_throughput_16:0 "Industrial Goods Factory Throughput: §G+16.00%§!\n"
 
     increase_factory_goods_output_2:0 "Factory Goods Output: §G+2.00%§!\n"
     increase_factory_goods_output_4:0 "Factory Goods Output: §G+4.00%§!\n"
+
+    increase_factory_industrial_goods_output_4:0 "Industrial Goods Factory Output: §G+4.00%§!\n"
     
+    decrease_factory_industrial_goods_maintenance_8:0 "Factory Industrial Goods Maintenance: §G-8.00%§!\n"
     decrease_factory_industrial_goods_maintenance_10:0 "Factory Industrial Goods Maintenance: §G-10.00%§!\n"
     increase_factory_industrial_goods_maintenance_2:0 "Factory Industrial Goods Maintenance: §R+2.00%§!\n"
     increase_factory_industrial_goods_maintenance_4:0 "Factory Industrial Goods Maintenance: §R+4.00%§!\n"
@@ -472,6 +488,7 @@
     increase_factory_industrial_goods_maintenance_50:0 "Factory Industrial Goods Maintenance: §R+50.00%§!\n"
 
 
+    decrease_infrastructure_build_cost_5:0 "Infrastructure Build Cost: §G-5.00%§!\n"
     increase_infrastructure_build_cost_10:0 "Infrastructure Build Cost: §R+10.00%§!\n"
     increase_infrastructure_build_cost_20:0 "Infrastructure Build Cost: §R+20.00%§!\n"
     decrease_infrastructure_maintenance_cost_5:0 "Infrastructure Maintenance Cost: §G-5.00%§!\n"

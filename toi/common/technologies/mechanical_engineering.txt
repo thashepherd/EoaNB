@@ -1,9 +1,7 @@
 technologies = {
 
 	iron_railways = {
-		
-		production_speed_infrastructure_factor = 0.05
-		
+				
 		enable_building = {
 			building = infrastructure
 			level = 9
@@ -91,9 +89,7 @@ technologies = {
 	}
 	
 	steel_railways = {
-		
-		production_speed_infrastructure_factor = 0.05
-		
+				
 		enable_building = {
 			building = infrastructure
 			level = 10
@@ -173,8 +169,14 @@ technologies = {
 	
 	standardized_gauge = {
 		
-		line_change_production_efficiency_factor = 0.05
-		
+		production_speed_infrastructure_factor = 0.05
+
+		on_research_complete = {
+			custom_effect_tooltip = decrease_infrastructure_build_cost_5
+			custom_effect_tooltip = decrease_infrastructure_maintenance_cost_5
+			custom_effect_tooltip = increase_infrastructure_transport_cost_reduction_25
+		}
+
 		research_cost = 1.5
 		start_year = 1865
 		folder = {
@@ -253,8 +255,14 @@ technologies = {
 	
 	interchange_parts = {
 		
-		line_change_production_efficiency_factor = 0.05
+		production_factory_efficiency_gain_factor = 0.05
 		
+		on_research_complete = {
+			custom_effect_tooltip = increase_factory_throughput_4
+			custom_effect_tooltip = increase_factory_industrial_goods_throughput_8
+			custom_effect_tooltip = increase_factory_industrial_goods_maintenance_4
+		}
+
 		research_cost = 2
 		start_year = 1850
 		folder = {
@@ -317,9 +325,15 @@ technologies = {
 	
 	corliss_steam_engine = {
 		
-		industrial_capacity_factory = 0.025
-		industrial_capacity_dockyard = 0.025
+		industrial_capacity_factory = 0.05
+		industrial_capacity_dockyard = 0.05
 		
+		on_research_complete = {
+			custom_effect_tooltip = increase_factory_throughput_8
+			custom_effect_tooltip = increase_factory_everyday_goods_throughput_4
+			custom_effect_tooltip = decrease_factory_industrial_goods_maintenance_8
+		}
+
 		research_cost = 1.5
 		start_year = 1850
 		folder = {
@@ -376,9 +390,15 @@ technologies = {
 	
 	mechanical_production_1 = {
 		
-		production_speed_buildings_factor = 0.025
-		industrial_capacity_factory = 0.025
-		industrial_capacity_dockyard = 0.025
+		industrial_capacity_factory = 0.05
+		industrial_capacity_dockyard = 0.05
+
+		on_research_complete = {
+			custom_effect_tooltip = increase_factory_throughput_8
+			custom_effect_tooltip = increase_factory_everyday_goods_throughput_4
+			custom_effect_tooltip = increase_factory_industrial_goods_maintenance_8
+			custom_effect_tooltip = increase_factory_build_cost_10
+		}
 		
 		research_cost = 1.5
 		start_year = 1850
@@ -435,9 +455,15 @@ technologies = {
 	
 	mechanical_production_2 = {
 		
-		production_speed_buildings_factor = 0.025
-		industrial_capacity_factory = 0.025
-		industrial_capacity_dockyard = 0.025
+		industrial_capacity_factory = 0.05
+		industrial_capacity_dockyard = 0.05
+
+		on_research_complete = {
+			custom_effect_tooltip = increase_factory_throughput_4
+			custom_effect_tooltip = increase_factory_everyday_goods_throughput_2
+			custom_effect_tooltip = increase_factory_industrial_goods_maintenance_4
+			custom_effect_tooltip = increase_factory_build_cost_5
+		}
 		
 		research_cost = 1.5
 		start_year = 1865
@@ -470,9 +496,15 @@ technologies = {
 	
 	mechanical_production_3 = {
 		
-		production_speed_buildings_factor = 0.025
-		industrial_capacity_factory = 0.025
-		industrial_capacity_dockyard = 0.025
+		industrial_capacity_factory = 0.05
+		industrial_capacity_dockyard = 0.05
+
+		on_research_complete = {
+			custom_effect_tooltip = increase_factory_throughput_8
+			custom_effect_tooltip = increase_factory_everyday_goods_throughput_4
+			custom_effect_tooltip = increase_factory_industrial_goods_maintenance_8
+			custom_effect_tooltip = increase_factory_build_cost_10
+		}
 		
 		research_cost = 1.5
 		start_year = 1890
@@ -505,8 +537,12 @@ technologies = {
 	
 	manufactories = {
 		
-		global_building_slots_factor = 0.05
 		production_factory_max_efficiency_factor = 0.05
+
+		on_research_complete = {
+			custom_effect_tooltip = increase_factory_throughput_10
+			custom_effect_tooltip = increase_factory_industrial_goods_maintenance_10
+		}
 		
 		enable_building = {
 			building = arms_factory
@@ -589,8 +625,14 @@ technologies = {
 	factory_industry_1 = {
 		
 		global_building_slots_factor = 0.05
-		industrial_capacity_factory = 0.05
-		
+
+		on_research_complete = {
+			custom_effect_tooltip = increase_factory_throughput_8
+			custom_effect_tooltip = increase_factory_size_10
+			custom_effect_tooltip = increase_factory_build_cost_10
+			custom_effect_tooltip = increase_factory_industrial_goods_maintenance_12
+		}
+
 		enable_building = {
 			building = arms_factory
 			level = 8
@@ -636,7 +678,12 @@ technologies = {
 	factory_industry_2 = {
 		
 		global_building_slots_factor = 0.05
-		industrial_capacity_factory = 0.05
+		on_research_complete = {
+			custom_effect_tooltip = increase_factory_throughput_4
+			custom_effect_tooltip = increase_factory_size_5
+			custom_effect_tooltip = increase_factory_build_cost_5
+			custom_effect_tooltip = increase_factory_industrial_goods_maintenance_8
+		}
 		
 		enable_building = {
 			building = arms_factory
@@ -684,7 +731,12 @@ technologies = {
 	factory_industry_3 = {
 		
 		global_building_slots_factor = 0.05
-		industrial_capacity_factory = 0.05
+		on_research_complete = {
+			custom_effect_tooltip = increase_factory_throughput_4
+			custom_effect_tooltip = increase_factory_size_5
+			custom_effect_tooltip = increase_factory_build_cost_5
+			custom_effect_tooltip = increase_factory_industrial_goods_maintenance_8
+		}
 		
 		enable_building = {
 			building = arms_factory
@@ -732,7 +784,12 @@ technologies = {
 	factory_industry_4 = {
 		
 		global_building_slots_factor = 0.05
-		industrial_capacity_factory = 0.05
+		on_research_complete = {
+			custom_effect_tooltip = increase_factory_throughput_4
+			custom_effect_tooltip = increase_factory_size_5
+			custom_effect_tooltip = increase_factory_build_cost_5
+			custom_effect_tooltip = increase_factory_industrial_goods_maintenance_8
+		}
 		
 		enable_building = {
 			building = arms_factory
@@ -780,7 +837,12 @@ technologies = {
 	factory_industry_5 = {
 		
 		global_building_slots_factor = 0.05
-		industrial_capacity_factory = 0.05
+		on_research_complete = {
+			custom_effect_tooltip = increase_factory_throughput_4
+			custom_effect_tooltip = increase_factory_size_5
+			custom_effect_tooltip = increase_factory_build_cost_5
+			custom_effect_tooltip = increase_factory_industrial_goods_maintenance_8
+		}
 		
 		enable_building = {
 			building = arms_factory
@@ -826,7 +888,12 @@ technologies = {
 	factory_industry_6 = {
 		
 		global_building_slots_factor = 0.05
-		industrial_capacity_factory = 0.05
+		on_research_complete = {
+			custom_effect_tooltip = increase_factory_throughput_4
+			custom_effect_tooltip = increase_factory_size_5
+			custom_effect_tooltip = increase_factory_build_cost_5
+			custom_effect_tooltip = increase_factory_industrial_goods_maintenance_8
+		}
 		
 		enable_building = {
 			building = arms_factory
@@ -1258,8 +1325,12 @@ technologies = {
 	
 	machine_tools_1 = {
 		
-		production_factory_max_efficiency_factor = 0.025
-		production_factory_efficiency_gain_factor = 0.025
+		production_factory_efficiency_gain_factor = 0.05
+		on_research_complete = {
+			custom_effect_tooltip = increase_factory_throughput_4
+			custom_effect_tooltip = increase_factory_industrial_goods_throughput_8
+			custom_effect_tooltip = increase_factory_industrial_goods_maintenance_4
+		}
 		
 		enable_building = {
 			building = machine_parts_factory
@@ -1307,8 +1378,12 @@ technologies = {
 	
 	machine_tools_2 = {
 		
-		production_factory_max_efficiency_factor = 0.025
-		production_factory_efficiency_gain_factor = 0.025
+		production_factory_efficiency_gain_factor = 0.05
+		on_research_complete = {
+			custom_effect_tooltip = increase_factory_throughput_2
+			custom_effect_tooltip = increase_factory_industrial_goods_throughput_4
+			custom_effect_tooltip = increase_factory_industrial_goods_maintenance_2
+		}
 		
 		enable_building = {
 			building = machine_parts_factory
@@ -1361,8 +1436,12 @@ technologies = {
 	
 	machine_tools_3 = {
 		
-		production_factory_max_efficiency_factor = 0.025
-		production_factory_efficiency_gain_factor = 0.025
+		production_factory_efficiency_gain_factor = 0.05
+		on_research_complete = {
+			custom_effect_tooltip = increase_factory_throughput_2
+			custom_effect_tooltip = increase_factory_industrial_goods_throughput_4
+			custom_effect_tooltip = increase_factory_industrial_goods_maintenance_2
+		}
 		
 		enable_building = {
 			building = machine_parts_factory
@@ -1408,8 +1487,12 @@ technologies = {
 	}
 	machine_tools_4 = {
 		
-		production_factory_max_efficiency_factor = 0.025
-		production_factory_efficiency_gain_factor = 0.025
+		production_factory_efficiency_gain_factor = 0.05
+		on_research_complete = {
+			custom_effect_tooltip = increase_factory_throughput_2
+			custom_effect_tooltip = increase_factory_industrial_goods_throughput_4
+			custom_effect_tooltip = increase_factory_industrial_goods_maintenance_2
+		}
 		
 		enable_building = {
 			building = machine_parts_factory
@@ -1455,8 +1538,12 @@ technologies = {
 	}
 	machine_tools_5 = {
 		
-		production_factory_max_efficiency_factor = 0.025
-		production_factory_efficiency_gain_factor = 0.025
+		production_factory_efficiency_gain_factor = 0.05
+		on_research_complete = {
+			custom_effect_tooltip = increase_factory_throughput_2
+			custom_effect_tooltip = increase_factory_industrial_goods_throughput_4
+			custom_effect_tooltip = increase_factory_industrial_goods_maintenance_2
+		}
 		
 		enable_building = {
 			building = machine_parts_factory
@@ -1501,8 +1588,12 @@ technologies = {
 	}
 	machine_tools_6 = {
 		
-		production_factory_max_efficiency_factor = 0.025
-		production_factory_efficiency_gain_factor = 0.025
+		production_factory_efficiency_gain_factor = 0.05
+		on_research_complete = {
+			custom_effect_tooltip = increase_factory_throughput_2
+			custom_effect_tooltip = increase_factory_industrial_goods_throughput_4
+			custom_effect_tooltip = increase_factory_industrial_goods_maintenance_2
+		}
 		
 		enable_building = {
 			building = machine_parts_factory
@@ -1543,8 +1634,12 @@ technologies = {
 	}
 	machine_tools_7 = {
 		
-		production_factory_max_efficiency_factor = 0.025
-		production_factory_efficiency_gain_factor = 0.025
+		production_factory_efficiency_gain_factor = 0.05
+		on_research_complete = {
+			custom_effect_tooltip = increase_factory_throughput_2
+			custom_effect_tooltip = increase_factory_industrial_goods_throughput_4
+			custom_effect_tooltip = increase_factory_industrial_goods_maintenance_2
+		}
 		
 		enable_building = {
 			building = machine_parts_factory
@@ -1585,8 +1680,12 @@ technologies = {
 	}
 	machine_tools_8 = {
 		
-		production_factory_max_efficiency_factor = 0.025
-		production_factory_efficiency_gain_factor = 0.025
+		production_factory_efficiency_gain_factor = 0.05
+		on_research_complete = {
+			custom_effect_tooltip = increase_factory_throughput_2
+			custom_effect_tooltip = increase_factory_industrial_goods_throughput_4
+			custom_effect_tooltip = increase_factory_industrial_goods_maintenance_2
+		}
 		
 		enable_building = {
 			building = machine_parts_factory
@@ -1627,8 +1726,12 @@ technologies = {
 	}
 	machine_tools_9 = {
 		
-		production_factory_max_efficiency_factor = 0.025
-		production_factory_efficiency_gain_factor = 0.025
+		production_factory_efficiency_gain_factor = 0.05
+		on_research_complete = {
+			custom_effect_tooltip = increase_factory_throughput_2
+			custom_effect_tooltip = increase_factory_industrial_goods_throughput_4
+			custom_effect_tooltip = increase_factory_industrial_goods_maintenance_2
+		}
 		
 		enable_building = {
 			building = machine_parts_factory
@@ -2896,7 +2999,9 @@ technologies = {
 	
 	industrial_era_tools_1 = {
 	
-		production_factory_max_efficiency_factor = 0.05
+		on_research_complete = {
+			custom_effect_tooltip = decrease_build_cost_5
+		}
 		
 		enable_building = {
 			building = logging_camp
@@ -2958,7 +3063,9 @@ technologies = {
 	
 	industrial_era_tools_2 = {
 	
-		production_factory_max_efficiency_factor = 0.05
+		on_research_complete = {
+			custom_effect_tooltip = decrease_build_cost_2_5
+		}
 		
 		research_cost = 1.5
 		start_year = 1870
@@ -3011,8 +3118,10 @@ technologies = {
 	
 	industrial_era_tools_3 = {
 	
-		production_factory_max_efficiency_factor = 0.05
-		
+		on_research_complete = {
+			custom_effect_tooltip = decrease_build_cost_2_5
+		}
+
 		enable_building = {
 			building = logging_camp
 			level = 8
@@ -3064,8 +3173,10 @@ technologies = {
 	
 	industrial_era_tools_4 = {
 	
-		production_factory_max_efficiency_factor = 0.05
-		
+		on_research_complete = {
+			custom_effect_tooltip = decrease_build_cost_2_5
+		}
+
 		research_cost = 1.5
 		start_year = 1900
 		folder = {
@@ -3112,7 +3223,9 @@ technologies = {
 	
 	industrial_era_tools_5 = {
 	
-		production_factory_max_efficiency_factor = 0.05
+		on_research_complete = {
+			custom_effect_tooltip = decrease_build_cost_2_5
+		}
 		
 		enable_building = {
 			building = logging_camp
@@ -3164,7 +3277,9 @@ technologies = {
 	}
 	industrial_era_tools_6 = {
 	
-		production_factory_max_efficiency_factor = 0.05
+		on_research_complete = {
+			custom_effect_tooltip = decrease_build_cost_2_5
+		}
 		
 		research_cost = 1.5
 		start_year = 1925
@@ -3201,7 +3316,9 @@ technologies = {
 	}
 	industrial_era_tools_7 = {
 	
-		production_factory_max_efficiency_factor = 0.05
+		on_research_complete = {
+			custom_effect_tooltip = decrease_build_cost_2_5
+		}
 		
 		research_cost = 1.5
 		start_year = 1935
@@ -3233,7 +3350,9 @@ technologies = {
 	}
 	industrial_era_tools_8 = {
 	
-		production_factory_max_efficiency_factor = 0.05
+		on_research_complete = {
+			custom_effect_tooltip = decrease_build_cost_2_5
+		}
 		
 		research_cost = 1.5
 		start_year = 1940
@@ -3302,9 +3421,11 @@ technologies = {
 	
 	construction_1 = {
 	
-		production_speed_buildings_factor = 0.025
+		production_speed_buildings_factor = 0.05
 		industry_repair_factor = 0.05
-		
+		on_research_complete = {
+			custom_effect_tooltip = increase_build_speed_10
+		}
 		enable_building = {
 			building = dockyard
 			level = 9
@@ -3365,7 +3486,10 @@ technologies = {
 	
 		production_speed_buildings_factor = 0.025
 		industry_repair_factor = 0.05
-		
+		on_research_complete = {
+			custom_effect_tooltip = increase_build_speed_5
+		}
+
 		enable_building = {
 			building = bunker
 			level = 4
@@ -3411,9 +3535,11 @@ technologies = {
 	
 	construction_3 = {
 	
-		production_speed_buildings_factor = 0.025
+		production_speed_buildings_factor = 0.10
 		industry_repair_factor = 0.05
-		
+		on_research_complete = {
+			custom_effect_tooltip = increase_build_speed_20
+		}
 		enable_building = {
 			building = dockyard
 			level = 10
@@ -3462,9 +3588,12 @@ technologies = {
 	
 	construction_4 = {
 	
-		production_speed_buildings_factor = 0.025
+		production_speed_buildings_factor = 0.05
 		industry_repair_factor = 0.05
-		
+		on_research_complete = {
+			custom_effect_tooltip = increase_build_speed_10
+		}
+
 		enable_building = {
 			building = bunker
 			level = 8
@@ -4074,8 +4203,13 @@ technologies = {
 	
 	steam_engine = {
 	
-		local_resources_factor = 0.05
-		out_of_supply_factor = -0.02
+		local_resources_factor = 0.10
+		on_research_complete = {
+			custom_effect_tooltip = increase_raw_goods_output_10
+			custom_effect_tooltip = increase_factory_throughput_10
+			custom_effect_tooltip = increase_factory_build_cost_10
+			custom_effect_tooltip = increase_factory_industrial_goods_maintenance_50
+		}
 		
 		research_cost = 1.5
 		start_year = 1850
@@ -4153,9 +4287,12 @@ technologies = {
 	
 	high_speed_steam_engine = {
 	
-		local_resources_factor = 0.05
-		out_of_supply_factor = -0.02
-		
+		local_resources_factor = 0.10
+		on_research_complete = {
+			custom_effect_tooltip = increase_raw_goods_output_15
+			custom_effect_tooltip = decrease_factory_raw_goods_input_4
+			custom_effect_tooltip = decrease_factory_industrial_goods_maintenance_10
+		}
 		research_cost = 1.5
 		start_year = 1850
 		folder = {
@@ -4210,8 +4347,9 @@ technologies = {
 	porter_allen_engine = {
 	
 		local_resources_factor = 0.05
-		out_of_supply_factor = -0.02
-		
+		on_research_complete = {
+			custom_effect_tooltip = increase_raw_goods_output_10
+		}
 		research_cost = 1.5
 		start_year = 1860
 		folder = {
@@ -4867,9 +5005,10 @@ technologies = {
 	
 	steam_locomotive = {
 	
-		line_change_production_efficiency_factor = 0.025
-		industrial_capacity_dockyard = 0.025
-		
+		on_research_complete = {
+			custom_effect_tooltip = increase_infrastructure_transport_cost_reduction_10
+		}
+
 		research_cost = 1.5
 		start_year = 1850
 		folder = {
@@ -4907,9 +5046,9 @@ technologies = {
 	
 	steam_locomotive_2 = {
 	
-		line_change_production_efficiency_factor = 0.025
-		industrial_capacity_dockyard = 0.025
-		
+		on_research_complete = {
+			custom_effect_tooltip = increase_infrastructure_transport_cost_reduction_10
+		}
 		research_cost = 1.5
 		start_year = 1850
 		folder = {
@@ -4942,9 +5081,12 @@ technologies = {
 	}
 	
 	traction_engine = {
-	
-		industrial_capacity_factory = 0.1
-		
+
+		on_research_complete = {
+			custom_effect_tooltip = decrease_transport_cost_2_5
+			custom_effect_tooltip = increase_life_goods_output_5
+		}
+
 		research_cost = 1.5
 		start_year = 1855
 		folder = {
@@ -4972,10 +5114,11 @@ technologies = {
 	}
 	
 	steam_locomotive_3 = {
-	
-		line_change_production_efficiency_factor = 0.025
-		industrial_capacity_dockyard = 0.025
 		
+		on_research_complete = {
+			custom_effect_tooltip = increase_infrastructure_transport_cost_reduction_10
+		}
+
 		research_cost = 1.5
 		start_year = 1865
 		folder = {
@@ -5013,10 +5156,10 @@ technologies = {
 	}
 	
 	steam_locomotive_4 = {
-	
-		line_change_production_efficiency_factor = 0.025
-		industrial_capacity_dockyard = 0.025
-		
+			
+		on_research_complete = {
+			custom_effect_tooltip = increase_infrastructure_transport_cost_reduction_10
+		}
 		research_cost = 1.5
 		start_year = 1890
 		folder = {
@@ -5085,10 +5228,10 @@ technologies = {
 	
 	early_electric_trains = {
 	
-		production_factory_efficiency_gain_factor = 0.05
-		conversion_cost_civ_to_mil_factor = -0.05
-		production_speed_buildings_factor = 0.025
-		
+		on_research_complete = {
+			custom_effect_tooltip = increase_infrastructure_transport_cost_reduction_5
+			custom_effect_tooltip = decrease_infrastructure_maintenance_cost_2_5
+		}
 		research_cost = 1.5
 		start_year = 1850
 		folder = {
@@ -5123,9 +5266,9 @@ technologies = {
 	electric_tramway = {
 	
 		production_factory_efficiency_gain_factor = 0.05
-		conversion_cost_civ_to_mil_factor = -0.05
-		production_speed_buildings_factor = 0.025
-		
+		on_research_complete = {
+			custom_effect_tooltip = increase_factory_goods_output_4
+		}
 		research_cost = 1.5
 		start_year = 1880
 		folder = {
