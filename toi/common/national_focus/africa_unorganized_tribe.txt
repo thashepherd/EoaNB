@@ -36,7 +36,6 @@ focus_tree = {
 				tag = MND
 				tag = MMA
 				tag = MAA
-				tag = LUO
 				tag = LGR
 				tag = KRU
 				tag = KTA
