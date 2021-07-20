@@ -57,6 +57,7 @@ focus_tree = {
 				tag = AKA
 				tag = EQA
 				tag = MLW
+				tag = BAT
 			}
 		}
 	}
