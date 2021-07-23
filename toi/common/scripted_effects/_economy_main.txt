@@ -273,6 +273,7 @@
 			set_variable = { actual_industrial_spending = 0 }
 			set_variable = { actual_tariff_revenue = 0 }
 			set_variable = { actual_trade_subsidy_spending = 0 }
+			set_variable = { actual_administration_spending = 0 }
 
 			set_variable = { gdp_amount = 0 }
 			set_variable = { gdp_amount_this_year = 0 }
@@ -323,6 +324,24 @@
 					add_to_variable = { pops_spending = tax_temp }
 					add_to_variable = { PREV.treasury = tax_temp }
 					add_to_variable = { PREV.actual_income_tax_revenue = tax_temp }
+				#
+				#Administration
+					set_temp_variable = { admin_temp = pops_earnings }
+					multiply_temp_variable = { admin_temp = global.administration_base_expense }
+					divide_temp_variable = { admin_temp = 100 }
+					if = {
+						limit = {
+							check_variable = { pops_amount < global.administration_population_expense }
+						}
+						set_temp_variable = { modifier_temp = global.administration_population_expense }
+						subtract_from_temp_variable = { modifier_temp = pops_amount }
+						divide_temp_variable = { modifier_temp = global.administration_population_expense }
+						multiply_temp_variable = { modifier_temp = global.administration_population_expense_modifier }
+						add_to_temp_variable = { modifier_temp = 1 }
+						multiply_temp_variable = { admin_temp = modifier_temp }
+					}
+					subtract_from_variable = { PREV.treasury = admin_temp }
+					add_to_variable = { PREV.actual_administration_spending = admin_temp }
 				#
 				#Reset
 					set_variable = { life_goods_trade_amount = 0 } #Positive: Goods Bought / Negative: Goods Sold - Note, this only applies in this effect. It's always positive elsewhere.
@@ -5394,6 +5413,7 @@
 					set_variable = { actual_spending = actual_subsidy_expense }
 					add_to_variable = { actual_spending = actual_construction_spending }
 					add_to_variable = { actual_spending = national_debt_interest }
+					add_to_variable = { actual_spending = actual_administration_spending }
 					set_variable = { net_budget = actual_revenue }
 					subtract_from_variable = { net_budget = actual_spending }
 
@@ -5666,6 +5686,10 @@
 			#State Categories
 			#
 			#Governments
+				set_variable = { global.administration_base_expense = 0.5 } #Percentage (from 0.0 to 100.0) of pop earnings that are needed for basic administration
+				set_variable = { global.administration_population_expense = 100 } #Below this population amount (in thousands), administration becomes more expensive. Should not be 0
+				set_variable = { global.administration_population_expense_modifier = 9 } #Maximum modifier of admin costs when population is 0
+
 				set_variable = { global.default_interest_rate = 3.0 } #Percent per year - Default national bank interest rate for loans to pops/corporations
 				set_variable = { global.loan_scarcity_rate = 5.0 } #Percent per year - How much interest should be added when you use up all loans you can get
 
@@ -8783,7 +8807,27 @@
 		set_variable = { construction_spending_expense = 0 }
 		set_variable = { industrial_subsidy_expense = 0 }
 		set_variable = { infrastructure_subsidy_expense = 0 }
+
+		set_variable = { administration_spending_expense = 0 }
 		every_controlled_state = {
+			#Administration
+			set_temp_variable = { admin_temp = pops_earnings }
+			multiply_temp_variable = { admin_temp = global.administration_base_expense }
+			divide_temp_variable = { admin_temp = 100 }
+			if = {
+				limit = {
+					check_variable = { pops_amount < global.administration_population_expense }
+				}
+				set_temp_variable = { modifier_temp = global.administration_population_expense }
+				subtract_from_temp_variable = { modifier_temp = pops_amount }
+				divide_temp_variable = { modifier_temp = global.administration_population_expense }
+				multiply_temp_variable = { modifier_temp = global.administration_population_expense_modifier }
+				add_to_temp_variable = { modifier_temp = 1 }
+				multiply_temp_variable = { admin_temp = modifier_temp }
+			}
+			add_to_variable = { PREV.administration_spending_expense = admin_temp }
+
+			#Industrial
 			set_temp_variable = { raw_goods_temp = factory_raw_goods_need }
 			multiply_temp_variable = { raw_goods_temp = raw_goods_price }
 			set_temp_variable = { industrial_goods_temp = factory_industrial_goods_need }
@@ -8801,6 +8845,7 @@
 			divide_temp_variable = { infrastructure_money_temp = 100 }
 			add_to_variable = { PREV.infrastructure_subsidy_expense = infrastructure_money_temp }
 
+			#Infra & Construction
 			if = {
 				limit = {
 					has_state_flag = infrastructure_construction_government_subsidized
@@ -9000,6 +9045,7 @@
 		add_to_variable = { discretionary_spending = construction_spending_expense }
 
 		set_variable = { mandatory_spending = national_debt_interest }
+		add_to_variable = { mandatory_spending = administration_spending_expense }
 
 		net_budget_update = yes
 	}

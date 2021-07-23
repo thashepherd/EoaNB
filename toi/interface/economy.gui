@@ -4953,6 +4953,76 @@ guiTypes = {
 					fixedsize = yes
 					#alwaystransparent = yes
 				}
+
+				containerWindowType = { #Administration
+					name = "govt_administration_spending_container"
+					position = {x = 57 y = 32 }
+					size = { width = 300 height = 50 }
+					Orientation = upper_left
+					instantTextBoxType = {
+						name = "govt_administration_spending_title"
+						position = { x = -30 y = 4 }
+						font = "hoi_18mbs"
+						format = left
+						maxWidth = 300
+						text = "govt_administration_spending_title"
+						maxHeight = 24
+						fixedsize = yes
+						#alwaystransparent = yes
+					}
+					
+					instantTextBoxType = {
+						name = "govt_administration_spending_amount_loc"
+						position = { x = 186 y = 4 }
+						font = "hoi_18mbs"
+						format = left
+						maxWidth = 100
+						text = "govt_administration_spending_amount_loc"
+						maxHeight = 24
+						fixedsize = yes
+						#alwaystransparent = yes
+					}
+				}
+				containerWindowType = { #Interest
+					name = "govt_interest_spending_container"
+					position = {x = 57 y = 242 }
+					size = { width = 300 height = 50 }
+					Orientation = upper_left
+					instantTextBoxType = {
+						name = "govt_interest_spending_title"
+						position = { x = -30 y = 4 }
+						font = "hoi_18mbs"
+						format = left
+						maxWidth = 300
+						text = "govt_interest_spending_title"
+						maxHeight = 24
+						fixedsize = yes
+						#alwaystransparent = yes
+					}
+					
+					instantTextBoxType = {
+						name = "govt_interest_spending_amount_loc"
+						position = { x = 186 y = 4 }
+						font = "hoi_18mbs"
+						format = left
+						maxWidth = 100
+						text = "govt_interest_spending_amount_loc"
+						maxHeight = 24
+						fixedsize = yes
+						#alwaystransparent = yes
+					}
+				}
+				instantTextBoxType = {
+					name = "govt_mandatory_spending_amount_loc"
+					position = { x = 20 y = 295 }
+					font = "hoi_24header"
+					format = right
+					maxWidth = 300
+					text = "govt_mandatory_spending_amount_loc"
+					maxHeight = 24
+					fixedsize = yes
+					#alwaystransparent = yes
+				}
 			}
 			containerWindowType = { #National Bank
 				name = "govt_national_bank_container"
