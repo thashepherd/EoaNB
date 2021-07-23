@@ -281,8 +281,8 @@
 
 			set_variable = { total_money = 0 }
 
-			set_variable = { pops_savings = 0 }
-			set_variable = { national_bank_amount = 0 }
+			set_variable = { pops_savings_k = 0 }
+			set_variable = { national_bank_interest_gain = 0 }
 
 			calibrate_tech_bonuses = yes
 
@@ -346,6 +346,7 @@
 					set_variable = { pops_earnings = 0 }
 
 					set_variable = { pops_savings_deposits = 0 }
+					set_variable = { pops_savings_interest = 0 }
 					set_variable = { pops_savings_withdrawals = 0 }
 
 					set_variable = { artisans_earnings = 0 }
@@ -454,6 +455,17 @@
 						subtract_from_variable = { pops_savings = pops_savings_temp }
 						add_to_variable = { pops_money = pops_savings_temp }
 						add_to_variable = { pops_savings_withdrawals = pops_savings_temp }
+					}
+					if = {
+						limit = {
+							check_variable = { pops_savings > pops_savings_goal }
+						}
+						set_temp_variable = { withdraw_temp = pops_savings }
+						subtract_from_temp_variable = { withdraw_temp = pops_savings_goal }
+						divide_temp_variable = { withdraw_temp = 10 }
+						subtract_from_variable = { pops_savings = withdraw_temp }
+						add_to_variable = { pops_money = withdraw_temp }
+						add_to_variable = { pops_savings_withdrawals = withdraw_temp }
 					}
 				#
 
@@ -4523,7 +4535,24 @@
 				add_to_variable = { pops_earnings = pops_rgos_valuable_goods_production } #Gold in dem hills
 				add_to_variable = { rgos_earnings = pops_rgos_valuable_goods_production }
 
-				#Pops put money into Savings
+				#Pops & National Bank put money into Savings
+					#National Bank Interest
+						set_temp_variable = { interest_temp = pops_savings }
+						divide_temp_variable = { interest_temp = PREV.national_bank_amount_k }
+						multiply_temp_variable = { interest_temp = PREV.national_bank_money }
+						set_variable = { var1 = interest_temp }
+						divide_temp_variable = { interest_temp = 100 }
+						if = {
+							limit = {
+								check_variable = { interest_temp > PREV.national_bank_money }
+							}
+							set_temp_variable = { interest_temp = PREV.national_bank_money}
+						}
+						subtract_from_variable = { PREV.national_bank_money = interest_temp }
+						add_to_variable = { pops_savings = interest_temp }
+						add_to_variable = { pops_savings_interest = interest_temp }
+					#
+
 					set_temp_variable = { pops_savings_temp = pops_money }
 					multiply_temp_variable = { pops_savings_temp = global.pops_savings_spending }
 					
@@ -4537,6 +4566,7 @@
 						add_to_variable = { pops_savings_deposits = pops_savings_temp }
 						subtract_from_variable = { pops_money = pops_savings_temp }
 					}
+					
 				#
 
 				#RGO Revenue into Aristocrats
@@ -4574,6 +4604,11 @@
 					divide_variable = { pops_natural_death_amount = 100 }
 					multiply_variable = { pops_natural_death_amount = global.pops_natural_death_base_rate }
 					divide_variable = { pops_natural_death_amount = 12 }
+
+					set_temp_variable = { disease_temp = pops_disease_death_amount }
+					divide_temp_variable = { disease_temp = 1000 }
+					add_to_variable = { pops_natural_death_amount = disease_temp }
+					set_variable = { pops_disease_death_amount = 0 }
 
 					set_variable = { pops_accidents_death_amount = pops_amount }
 					divide_variable = { pops_accidents_death_amount = 100 }
@@ -4765,6 +4800,10 @@
 					#
 				#
 			}
+
+			#National Bank
+				set_variable = { national_bank_amount_k = 0 }
+			#
 
 			set_variable = { private_factory_amount = 0 }
 			every_controlled_state = {
@@ -5140,20 +5179,44 @@
 					#Pop Spending
 					add_to_variable = { pops_spending = pops_goods_spending }
 
-					#Bank
-					add_to_variable = { PREV.pops_savings = pops_savings }
+					#National Bank
+					set_temp_variable = { pops_savings_temp = pops_savings }
+					divide_temp_variable = { pops_savings_temp = 1000 }
+					add_to_variable = { PREV.pops_savings_k = pops_savings_temp }
 				#
 			}
-			
+
 			#National Bank
-				set_variable = { national_bank_amount = pops_savings }
+				set_variable = { national_bank_amount_k = pops_savings_k } #This is in thousands
+				multiply_variable = { national_bank_amount_k = 10 }
 			#
 
 			#Government Debt
 				#How much money can you borrow?
-					set_temp_variable = { borrow_limit_temp = national_bank_amount_left }
-				#
+				set_temp_variable = { borrow_limit_temp = national_bank_amount_left_k }
+				
+				#INTEREST
+				set_variable = { national_debt_interest = debt_to_national_bank }
+				divide_variable = { national_debt_interest = 100 } #100x as upcoming rate is a % which goes from 0.0 to 100.0
+				#Ability to pay AKA Credit Rating
+				set_variable = { national_debt_interest_rate = global.credit_rating_AAA_base_interest_rate } #TODO
 
+				#Expensiveness of debt due to scarcity
+				set_temp_variable = { expensiveness_temp = national_debt }
+				divide_temp_variable = { expensiveness_temp = 1000}
+				set_temp_variable = { total_debt_temp = national_debt }
+				divide_temp_variable = { total_debt_temp = 1000}
+				add_to_temp_variable = { total_debt_temp = borrow_limit_temp }
+				divide_temp_variable = { expensiveness_temp = total_debt_temp }
+				multiply_temp_variable = { expensiveness_temp = global.loan_scarcity_rate }
+				add_to_variable = { national_debt_interest_rate = expensiveness_temp }
+
+				multiply_variable = { national_debt_interest = national_debt_interest_rate }
+				divide_variable = { national_debt_interest = 12 } #12x for monthly rate instead of yearly.
+
+				subtract_from_variable = { treasury = national_debt_interest }
+
+				#BORROWING
 				if = {
 					limit = {
 						check_variable = { treasury < 0 }
@@ -5164,13 +5227,19 @@
 					
 					#TODO - Credit Rating
 					#Borrow from Locals
+					set_temp_variable = { borrow_temp_k = borrow_temp }
+					divide_temp_variable = { borrow_temp_k = 1000 }
+					add_to_temp_variable = { borrow_temp_k = 0.001 }
 					if = {
 						limit = {
-							check_variable = { borrow_temp > national_bank_amount_left }
+							check_variable = { borrow_temp_k > national_bank_amount_left_k }
 						}
-						set_temp_variable = { borrow_temp = national_bank_amount_left }
+						set_temp_variable = { borrow_temp_k = national_bank_amount_left_k }
 					}
-					subtract_from_temp_variable = { national_bank_amount_left = borrow_temp }
+					subtract_from_variable = { national_bank_amount_left_k = borrow_temp_k }
+
+					set_temp_variable = { borrow_temp = borrow_temp_k }
+					multiply_temp_variable = { borrow_temp = 1000 }
 					add_to_variable = { debt_to_national_bank = borrow_temp }
 					add_to_variable = { treasury = borrow_temp }
 
@@ -5183,25 +5252,39 @@
 						#Bankruptcy
 					}
 				}
+				#PAYING BACK
+				if = {
+					limit = {
+						check_variable = { treasury > 2 }
+					}
+
+					#Paying back to locals
+					set_temp_variable = { repay_temp = treasury }
+					if = {
+						limit = {
+							check_variable = { repay_temp > debt_to_national_bank }
+						}
+						set_temp_variable = { repay_temp = debt_to_national_bank }
+					}
+					set_temp_variable = { repay_temp_k = repay_temp }
+					divide_temp_variable = { repay_temp_k = 1000 }
+					subtract_from_temp_variable = { repay_temp_k = 0.001 }
+					add_to_variable = { national_bank_amount_left_k = repay_temp_k }
+
+					set_temp_variable = { repay_temp = repay_temp_k }
+					multiply_temp_variable = { repay_temp = 1000 }
+					subtract_from_variable = { debt_to_national_bank = repay_temp }
+					subtract_from_variable = { treasury = repay_temp }
+				}
 
 
 				set_variable = { national_debt = debt_to_national_bank }
 
-				set_variable = { national_debt_interest = debt_to_national_bank }
-				#Ability to pay AKA Credit Rating
-				set_variable = { national_debt_interest_rate = global.credit_rating_AAA_base_interest_rate } #TODO
+			#
 
-				#Expensiveness of debt due to scarcity
-				set_temp_variable = { expensiveness_temp = national_debt }
-				set_temp_variable = { total_debt_temp = national_debt }
-				add_to_temp_variable = { total_debt_temp = borrow_limit_temp }
-				divide_temp_variable = { expensiveness_temp = total_debt_temp }
-				multiply_temp_variable = { expensiveness_temp = global.loan_scarcity_rate }
-				add_to_variable = { national_debt_interest_rate = expensiveness_temp }
-
-				multiply_variable = { national_debt_interest = national_debt_interest_rate }
-				divide_variable = { national_debt_interest = 1200 } #100x as thet number is a %, another 12x for monthly rate instead of yearly.
-				
+			#National Bank Total Interest
+				set_variable = { national_bank_interest_gain = national_debt_interest }
+				add_to_variable = { national_bank_money = national_bank_interest_gain }
 			#
 
 			#Country Level Stats
@@ -5310,6 +5393,7 @@
 					add_to_variable = { actual_subsidy_expense = actual_industrial_spending }
 					set_variable = { actual_spending = actual_subsidy_expense }
 					add_to_variable = { actual_spending = actual_construction_spending }
+					add_to_variable = { actual_spending = national_debt_interest }
 					set_variable = { net_budget = actual_revenue }
 					subtract_from_variable = { net_budget = actual_spending }
 
@@ -5320,12 +5404,15 @@
 
 				#Total Money
 				add_to_variable = { total_money = treasury }
+				add_to_variable = { total_money = national_bank_money }
 
 				#National Bank
-					set_variable = { national_bank_amount_lent = debt_to_national_bank }
+					set_temp_variable = { debt_to_national_bank_temp = debt_to_national_bank }
+					divide_temp_variable = { debt_to_national_bank_temp = 1000 }
+					set_variable = { national_bank_amount_lent_k = debt_to_national_bank_temp }
 
-					set_variable = { national_bank_amount_left = national_bank_amount }
-					subtract_from_variable = { national_bank_amount_left = national_bank_amount_lent }
+					set_variable = { national_bank_amount_left_k = national_bank_amount_k }
+					subtract_from_variable = { national_bank_amount_left_k = national_bank_amount_lent_k }
 				#
 			#
 
@@ -5895,9 +5982,10 @@
 			set_variable = { treasury = 0 }
 			set_variable = { debt_to_national_bank = 0 }
 
-			set_variable = { national_bank_amount = 0 }
-			set_variable = { national_bank_amount_left = 0 }
-			set_variable = { national_bank_amount_lent = 0 }
+			set_variable = { national_bank_money = 0 }
+			set_variable = { national_bank_amount_k = 0 }
+			set_variable = { national_bank_amount_left_k = 0 }
+			set_variable = { national_bank_amount_lent_k = 0 }
 			set_variable = { national_bank_interest_rate = global.default_interest_rate }
 			set_variable = { national_bank_interest_income = 0 }
 			
@@ -8905,12 +8993,13 @@
 
 		set_variable = { subsidy_expense = infrastructure_subsidy_expense }
 		add_to_variable = { subsidy_expense = industrial_subsidy_expense }
-		add_to_variable = { subsidy_expense = construction_spending_expense }
 		add_to_variable = { subsidy_expense = export_subsidy_expense }
 		add_to_variable = { subsidy_expense = import_subsidy_expense }
 
 		set_variable = { discretionary_spending = subsidy_expense }
 		add_to_variable = { discretionary_spending = construction_spending_expense }
+
+		set_variable = { mandatory_spending = national_debt_interest }
 
 		net_budget_update = yes
 	}
@@ -9980,6 +10069,19 @@
 
 		#Industrial Goods
 			set_temp_variable = { money_industrial_goods_temp = money_left_temp }
+			
+			set_temp_variable = { money_industrial_goods_temp_govt = infrastructure_industrial_goods_need }
+			multiply_temp_variable = { money_industrial_goods_temp_govt = industrial_goods_price }
+			multiply_temp_variable = { money_industrial_goods_temp_govt = controller:infrastructure_subsidy_percentage }
+			divide_temp_variable = { money_industrial_goods_temp_govt = 100 }
+			subtract_from_temp_variable = { money_industrial_goods_temp = money_industrial_goods_temp_govt }
+			if = {
+				limit = {
+					check_variable = { money_industrial_goods_temp < 0 }
+				}
+				set_temp_variable = { money_industrial_goods_temp = 0 }
+			}
+			add_to_temp_variable = { money_industrial_goods_temp = money_industrial_goods_temp_govt }
 			
 			set_variable = { infrastructure_industrial_goods_demand = money_industrial_goods_temp }
 			divide_variable = { infrastructure_industrial_goods_demand = industrial_goods_price }
