@@ -20,18 +20,8 @@ ideas = {
 				}
 			}
 
-						EOANBSYS_spirit_pandemics = {
-				picture = scourge_of_malaria
-
-				allowed = { always = yes }
-
-				modifier = {
-					monthly_population = -1
-				}
-			}
-
 			EOANBSYS_spirit_pandemics_quarantine_soft = {
-				picture = placeholder
+				picture = generic_oppression
 
 				allowed = { always = yes }
 
@@ -46,7 +36,7 @@ ideas = {
 				}
 			}
 			EOANBSYS_spirit_pandemics_quarantine_medium = {
-				picture = placeholder
+				picture = generic_oppression
 
 				allowed = { always = yes }
 
@@ -61,7 +51,7 @@ ideas = {
 				}
 			}
 			EOANBSYS_spirit_pandemics_quarantine_strong = {
-				picture = placeholder
+				picture = generic_oppression
 
 				allowed = { always = yes }
 

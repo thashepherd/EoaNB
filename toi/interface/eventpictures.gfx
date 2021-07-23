@@ -1872,6 +1872,11 @@ spriteTypes = {
 	
 
 	#### FRENCH EVENTS ####
+	
+	spriteType = {
+		name = "GFX_report_event_iii_france_republic_proclaimed"
+		texturefile = "gfx/event_pictures/france/report_event_iii_france_republic_proclaimed.dds"
+	}
 
 	spriteType = {
 		name = "GFX_report_event_nap_france_amnesty"
@@ -3908,12 +3913,28 @@ spriteTypes = {
 		texturefile = "gfx/event_pictures/japan/report_event_shrine.dds"
 	}
 	spriteType = {
-		name = "GFX_report_event_plague"
+		name = "GFX_report_event_plague_victorian"
 		texturefile = "gfx/event_pictures/generic/report_event_plague.dds"
 	}
 	spriteType = {
-		name = "GFX_news_event_plague"
-		texturefile = "gfx/event_pictures/generic/news_event_plague.dds"
+		name = "GFX_news_event_plague_victorian"
+		texturefile = "gfx/event_pictures/generic/news_event_plague_victorian.dds"
+	}
+	spriteType = {
+		name = "GFX_report_event_kokera_festival"
+		texturefile = "gfx/event_pictures/japan/report_event_kokera_festival.dds"
+	}
+	spriteType = {
+		name = "GFX_report_event_kokera_crematoriums"
+		texturefile = "gfx/event_pictures/japan/report_event_kokera_crematoriums.dds"
+	}
+	spriteType = {
+		name = "GFX_report_event_spirit_kokera"
+		texturefile = "gfx/event_pictures/japan/report_event_spirit_kokera.dds"
+	}
+	spriteType = {
+		name = "GFX_report_event_plague_japanese_report"
+		texturefile = "gfx/event_pictures/japan/report_event_japanese_report.dds"
 	}
 	
 	## Bolivian Events ##
