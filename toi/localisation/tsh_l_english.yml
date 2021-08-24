@@ -480,7 +480,7 @@
  TSH_Meiji_Shogun_Influence_Increase_tt:0 "Increase §GShogun Faction§! support in §Y[THIS.GetName]§! by [?TSH_Meiji_Influence_Change1]%"
  TSH_Meiji_Spread_Influence_Available_tt:0 "§Y[THIS.GetName]§! is susceptible to increased §REmperor Influence§!"
  TSH_Meiji_Emperor_Loyal_State_tt:0 "§OMajority a neighboring state§! supports the §REmperor§!"
- TSH_Any_National_Shogunate_Dissent_tt:0 "Has atleast §R15% Pro-Imperial Support§!"
+ TSH_Any_National_Shogunate_Dissent_tt:0 "Has at least §R15% Pro-Imperial Support§!"
  TSH_Emperor_Shogun_Faction_tt:0 "§GShogunate Faction§!"
  TSH_Emperor_Emperor_Faction_tt:0 "§RImperial Faction§!"
  TSH_Boshin_War_Toggle_View_Decision:0 "View Influence Decisions Toggle"
