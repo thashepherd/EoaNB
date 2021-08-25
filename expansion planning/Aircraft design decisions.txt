@@ -1,0 +1,37 @@
+Aircraft design decisions
+
+Inception: Flying Corps Specifications | Manufacturer Prototype
+
+All powered
+
+    Engine: Inline | Radial | Rotary
+    Induction: Naturally Aspirated | Turbocharged | Supercharged | Turbosupercharged
+
+All heavier-than-air
+
+    Construction: Wood & doped fabric | Metal & doped fabric | Wood monocoque | Monocoque
+    Wing layout: Biplane | Sesquiplane | Monoplane | Triplane
+    Control: Wing warping | Ailerons
+    Engine layout: Pusher | Tractor
+
+Pursuit:
+
+    Armament: Ad hoc | Upper Wing Mount | Foster Mount | Deflector Wedges | Synchronization Gear
+    Combat philosophy: Dogfighting | Boom & Zoom | Energy Fighter
+    Equipment: Auxiliary Fuel Tank | Extra Machine Gun | Radio
+
+Airship:
+
+    Structure: Nonrigid (blimp) | Semi-rigid (Keeled Airship) | Rigid
+    Lifting Gas: Hydrogen | Helium | Blau Gas
+    Design Priority: Payload | Defense | Navigation
+
+Multirole / Heavy Bomber:
+
+    Design Philosophy: Inherent Stability | Fast Bomber (Schnellbomber) | Precision Strike (Bomber Mafia) | Strategic Destruction (Terror Bombing) | 
+    Second Crewmember: Observer | Gunner | Radioman
+    Third Crewmember: None | Bombardier | Navigator | Gunner
+
+Heavy Bomber: 
+
+    Fourth Crewmember: None | Copilot | Mechanic | Gunner

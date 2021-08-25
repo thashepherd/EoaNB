@@ -1,0 +1,32 @@
+EoanB modpack contents
+
+Dream of Flight
+
+    Air tech, equipment, & doctrine rework
+    Aircraft design system
+    Decisions for discovery of controlled, powered flight
+    Decisions for establishment and growth of air force
+    Flight record attempt mechanic
+    Aircraft manufacturer prototypes
+    Air Force Academy mechanic
+
+Sea Power
+
+    Naval tech, equipment, & doctrine rework
+    Decisions for ship and fleet design
+    Doctrine-based fleet composition mechanic (i.e. abstract the parts of Man the Guns people don't like)
+    Naval arms race mechanic
+    Traits & naval terrain rework
+    Naval Academy mechanic
+    Artillery tech rework
+
+Thresher contents
+
+    Military-Industrial Complex mechanic
+    Army tech, equipment, & doctrine rework
+    MHQ update/fixes
+    Unified Military Academy mechanic
+    Politicized leader promition (by event/decision)
+    Terrain, tactic, & leader trait rework
+    War hero, mass casualties, demoralizing defeat, starvation, blockade, terror bombing, etc events/mechanic
+    Home Front decisions
