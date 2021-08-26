@@ -1,0 +1,172 @@
+Early aerospace rework
+
+
+Three tabs:
+MAE Military Aviation Equipment
+AD Aviation Doctrine
+AS Aeronautical Science
+
+
+
+
+    During equipment research, at least 1 event should pop giving choices that impact the result
+    i.e. selecting a rigid vs. nonrigid airship, biplane vs monoplane, radial vs inline vs rotary, yada yada
+    In an ideal tech, that decision also impacts the name of the equipment that's unlocked
+    In an ideal tech, one or two of the options should be gated behind research
+	Specific inventions (such as 'Giffard airship', 'Derwitzer glider') can be implemented as events that fire at some random date after the tech has been researched
+
+	A 'develop a new aircraft' decision would be nice (uses latest current tech but allows new decisions)
+
+1800
+    MAE Equip: Early Observation Balloon (requires doctrine)
+    AS Ballonet
+    MAE Practical mobile tether
+    MAE Mesh suspension
+
+1852
+	AS Nonrigid airship (Giffard)
+	AS Navier-Stokes Equations
+
+1860
+    MAE Equip: 1860 Observation Balloon (requires ballonet)
+    MAE (1861) Shipboard balloon tether
+    MAE Portable hydrogen generators
+    MAE Refined ballast control
+    MAE Dedicated camera mount
+
+1871
+	AS Wind tunnel
+
+1883
+	AS Reynolds Number
+
+1884
+	AS Controllable Airship
+
+1890
+    MAE Equip: 1890 Observation Balloon
+
+1893
+	AS Stable manned glider
+	AS Kite balloon
+
+1894
+	AS Airship keel
+
+1895
+	AS Early launch catapult
+	MAE Equip: Early airship
+
+1897
+	AS Rigid airship
+
+1900
+    MAE Equip: Barrage Balloon (requires doctrine, kite balloon)
+	AS Compact internal combustion engine
+
+1903
+	AS 3-axis flight control system
+
+1905
+	AS Rotary Engine
+
+1909 
+    MAE Equip: Early observation aircraft
+
+1910
+    MAE Equip: 1910 Observation Balloon
+    MAE Equip: Military airship (requires doctrine, rigid or nonrigid airship)
+	MAE Enclosed Gondola
+	MAE Outboard propellors
+
+1912
+    MAE Equip: 1912 observation aircraft (requires same doctrine as early observation balloon)
+    MAE Equip: 1912 pursuit aircraft (requires doctrine)
+	AS Monocoque construction
+
+1913
+    MAE Equip: 1913 multirole aircraft (requires doctrine)
+	AS: Large airframe construction
+
+1914
+    MAE Equip: Early heavy bomber (requires doctrine, large airframe construction)
+    MAE Equip: 1914 military airship
+    MAE Equip: 1914 observation balloon
+    MAE Deflector Wedges
+    MAE Foster Sliding Mount
+	MAE Internal bomb bay
+
+1915 
+    MAE Equip: 1915 observation aircraft
+	MAE Synchronization gear
+    MAE Equip: 1915 pursuit aircraft (requires deflector wedges or foster sliding mount or synchro gear)
+    MAE Equip: 1915 multirole aircraft
+    MAE Equip: 1915 naval airship (requires depth charge)
+	Navy: Equip: Early naval floatplane catapult
+
+1916
+    MAE Equip: 1916 heavy bomber (requires Internal bomb bay)
+    MAE Equip: 1916 pursuit aircraft
+    MAE Scarff ring
+	AS Airborne radio
+
+1917
+    MAE Equip: 1917 multirole aircraft
+
+1918
+    MAE Equip: 1918 reconnaissance aircraft (requires doctrine)
+    MAE Equip: 1918 pursuit aircraft
+    MAE Equip: 1918 multirole aircraft
+    MAE Equip: 1918 heavy bomber
+
+1920
+    MAE Equip: 1920 military airship
+	AS Metal monocoque construction
+	AS Retractable landing gear
+	AS Turbocharger
+
+1925
+    AS Supercharger
+
+1930 
+	AS Scientific airfoil development
+
+1932
+	AS Early parasite fighter experiments
+
+1935
+    MAE Synthetic envelope (requires Nylon)
+
+1940
+    MAE Improved Synthetic envelope (requires Polyethylene terephthalate)
+	AS Laminar Flow Airfoil
+	AS Experimental Turbojet
+
+1943
+	AS Practical Turbojet
+
+1945
+	AS Transonic area rule
+	AS Turboprop
+
+1950
+	AS Jet afterburner
+
+1955
+    MAE Polyurethane sealant
+
+1960
+	AS Afterburning turbofan
+
+1962
+	AS High-bypass turbofan
+
+1965
+	AS Supercritical airfoil
+
+
+
+Aeronautical science
+
+
+
