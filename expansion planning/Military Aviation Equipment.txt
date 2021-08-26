@@ -1,1 +1,105 @@
 Military Aviation Equipment
+
+1800
+    MAE Equip: Early Observation Balloon (requires doctrine)
+
+1850
+    MAE Practical mobile tether
+    MAE Mesh suspension
+
+1860
+    MAE Equip: 1860 Observation Balloon (requires ballonet)
+    MAE (1861) Shipboard balloon tether
+
+1870
+    MAE Portable hydrogen generators
+    MAE Refined ballast control
+    MAE Dedicated camera mount
+
+1890
+    MAE Equip: 1890 Observation Balloon (+ small bonus for non-La Resistance)
+
+1895
+	MAE Equip: Early airship
+
+1900
+    MAE Equip: Barrage Balloon (requires doctrine, kite balloon)
+
+1909 
+    MAE Equip: Early observation aircraft
+
+1910
+    MAE Equip: 1910 Observation Balloon
+    MAE Equip: Military airship (requires doctrine, rigid or nonrigid airship)
+	MAE Enclosed Gondola
+	MAE Outboard propellors
+
+1912
+    MAE Equip: 1912 observation aircraft (requires same doctrine as early observation balloon)
+    MAE Equip: 1912 pursuit aircraft (requires doctrine)
+
+1913
+    MAE Equip: 1913 multirole aircraft (requires doctrine)
+
+1914
+    MAE Equip: Early heavy bomber (requires doctrine, large airframe construction)
+    MAE Equip: 1914 military airship
+    MAE Equip: 1914 observation balloon
+    MAE Deflector Wedges
+    MAE Foster Sliding Mount
+	MAE Internal bomb bay
+
+1915 
+    MAE Equip: 1915 observation aircraft
+	MAE Synchronization gear
+    MAE Equip: 1915 pursuit aircraft (requires deflector wedges or foster sliding mount or synchro gear)
+    MAE Equip: 1915 multirole aircraft
+    MAE Equip: 1915 naval airship (requires depth charge)
+	Navy: Equip: Early naval floatplane catapult
+
+1916
+    MAE Equip: 1916 heavy bomber (requires Internal bomb bay)
+    MAE Equip: 1916 pursuit aircraft
+    MAE Scarff ring
+
+1917
+    MAE Equip: 1917 multirole aircraft
+
+1918
+    MAE Equip: 1918 reconnaissance aircraft (requires doctrine)
+    MAE Equip: 1918 pursuit aircraft
+    MAE Equip: 1918 multirole aircraft
+    MAE Equip: 1918 heavy bomber
+
+1920
+    MAE Equip: 1920 military airship
+
+1925
+
+1930 
+
+1932
+
+1935
+    MAE Synthetic envelope (requires Nylon)
+
+1940
+    MAE Improved Synthetic envelope (requires Polyethylene terephthalate)
+
+1943
+
+1945
+
+1950
+
+1955
+    MAE Polyurethane sealant
+
+1960
+
+1962
+
+1965
+
+
+

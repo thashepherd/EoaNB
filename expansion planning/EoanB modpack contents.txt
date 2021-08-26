@@ -10,6 +10,14 @@ Dream of Flight
     Aircraft manufacturer prototypes
     Air Force Academy mechanic
 
+    During equipment research, at least 1 event should pop giving choices that impact the result
+    i.e. selecting a rigid vs. nonrigid airship, biplane vs monoplane, radial vs inline vs rotary, yada yada
+    In an ideal tech, that decision also impacts the name of the equipment that's unlocked
+    In an ideal tech, one or two of the options should be gated behind research
+	Specific inventions (such as 'Giffard airship', 'Derwitzer glider') can be implemented as events that fire at some random date after the tech has been researched
+
+	A 'develop a new aircraft' decision would be nice (uses latest current tech but allows new decisions)
+
 Sea Power
 
     Naval tech, equipment, & doctrine rework

@@ -1,23 +1,111 @@
 Aeronautical Theory & Practice
 
-Ballonet
-Experimental Nonrigid Airship
-Experimental Controllable Airship
-Kite Balloon
-Experimental Keeled Airship
-Experimental Rigid Airship
-    Blau Gas
+1800
+    AS Ballonet
 
-Navier-Stokes Equations
-Wind Tunnel
-Reynolds Number
-Experimental Manned Glider
-Practical Manned Glider
-    Early Launch Catapult
-3-Axis Flight Control
+1850
+    AS Aerial Steam Engine Experiments
 
-(Steam Engine)
-Compact Internal Combustion Engine
-    Water-Cooled Inline Engine
-    Air-Cooled Radial Engine
-Rotary Engine
+1852
+	AS Experimental Nonrigid airship (Giffard)
+	AS Navier-Stokes Equations
+
+1871
+	AS Wind tunnel
+
+1883
+	AS Reynolds Number
+    AS Experimental Manned Glider
+
+1884
+	AS Experimental Controllable Airship
+
+1893
+	AS Stable manned glider
+	AS Kite balloon
+
+1894
+	AS Experimental Keeled Airship
+
+1895
+	AS Early launch catapult
+    AS Blau gas
+
+1897
+	AS Experimental Rigid airship
+
+1900
+	AS Compact internal combustion engine
+
+1903
+	AS 3-axis flight control
+
+1904
+    AS Practical Radial Engine
+    AS Practical Water Cooling
+
+1905
+	AS Rotary Engine
+
+1909 
+
+1910
+
+1912
+	AS Monocoque construction
+
+1913
+	AS: Large airframe construction
+
+1914
+
+1915 
+
+1916
+	AS Airborne radio
+
+1917
+
+1918
+
+1920
+	AS Metal monocoque construction
+	AS Retractable landing gear
+	AS Turbocharger
+
+1925
+    AS Supercharger
+
+1930 
+	AS Scientific airfoil development
+
+1932
+	AS Early parasite fighter experiments
+
+1935
+
+1940
+	AS Laminar Flow Airfoil
+	AS Experimental Turbojet
+
+1943
+	AS Practical Turbojet
+
+1945
+	AS Transonic area rule
+	AS Turboprop
+
+1950
+	AS Jet afterburner
+
+1955
+    MAE Polyurethane sealant
+
+1960
+	AS Afterburning turbofan
+
+1962
+	AS High-bypass turbofan
+
+1965
+	AS Supercritical airfoil
