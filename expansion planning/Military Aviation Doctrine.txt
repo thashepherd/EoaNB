@@ -1,34 +1,40 @@
 Military Aviation Doctrine
 
-1909 Military Aviation Concept
+1850 Observation Balloon Deployment (unlocks support bat, ticking air experience gain)
 
-Army Cooperation doctrine
+    Horse-Mobile Balloon Company (unlocks cav-speed support bat)
+    Gas Generator Logistics (morale recovery or hp) + Untethered Balloon Concept (unlocks very early recon plane)
+    Practical Static Mooring (airbase construction, air accident chance) | Aerial Semaphore (recon, initiative)
 
-    Frontline Combat Air Patrol
-    Flechette Armament | Engine Armor Plate
-    Fighter-Bomber | Dedicated Zeppelin Interceptor
-    Interbranch Radio Standards + Phonetic Alphabet + Parachute Culture
-    Infantry Support Priority | Frontline Destruction Priority
-    Barnstormers + Crop Dusting
+1909 Military Aviation Concept (air superiority, air experience gain)
+
+Army Cooperation doctrine (air support)
+
+    Frontline Combat Air Patrol (air superiority, air support)
+    Flechette Armament (ground attack) | Engine Armor Plate (hp, aa defense)
+    Fighter-Bomber (pursuit plane ground attack) | Dedicated Zeppelin Interceptor (new equipment type)
+    Interbranch Radio Standards (recon/observation recon) + Phonetic Alphabet (signal company initiative, recon/observation initiative) + Parachute Culture (air experience game, air ace generation)
+    Infantry Support Priority (air support) | Frontline Destruction Priority (ground attack)
+    Barnstormers (air agility) + Crop Dusting (farm construction speed, population gain)
 
 
 Operational Recon doctrine
 
-    Balloon AA Defenses | Anti-Balloon Role
-    Battlefield Recon Escort + Dawn Patrols + Strike Mission Planning
-    Wingman Culture + Combat Instructor Rotation + Squadron Formation Training
-    Information Superiority Priority | Rear Echelon Target Priority
-    Offensive Counter Air
-    Schneider Trophy + Air Mail Service
+    Balloon AA Defenses (balloon air defense) | Anti-Balloon Role (air attack, LTA attack)
+    Battlefield Recon Escort (escort efficiency) + Dawn Patrols (air superiority) + Strike Mission Planning (ground attack, max planning)
+    Wingman Culture (air defense) + Combat Instructor Rotation (air experience gain, -ace generation) + Squadron Formation Training (air superiority)
+    Information Superiority Priority (pursuit air attack, multirole recon) | Rear Echelon Target Priority (multirole ground targeting, escort efficiency)
+    Offensive Counter Air (multirole recon air attack)
+    Schneider Trophy (decision, air speed) + Air Mail Service (decision, low infrastructure improvement)
 
 
 Terror Bombing doctrine
 
-    Strategic Range Priority | Civic Destruction Studies
-    Extra Ammunition + Incendiary Ammunition | Additional Wing Hardpoints + Avent Garde Explosives
-    Reputation Management | Drop Everything Culture
-    A Bloody Paralyzer of an Aircraft | Massive Zeppelins
-    Polar Expeditions + Global Circumnavigation
+    Strategic Range Priority (range) | Civic Destruction Studies (strategic attack)
+    Extra Ammunition (air defense) + Incendiary Ammunition (air attack) | Additional Wing Hardpoints (ground attack) + Avent Garde Explosives (ground attack, strategic attack)
+    Reputation Management (diplo relationship bonus, ground targeting, strategic attack malus) | Drop Everything Culture (strategic attack, diplo replationship malus)
+    A Bloody Paralyzer of an Aircraft (heavy bomber tech bonus, free design) | Massive Zeppelins (airship tech bonus, free design)
+    Polar Expeditions (decision, bad weather) + Global Circumnavigation (decision, range)
 
 
 1912 Naval Aviation Concept
@@ -36,23 +42,23 @@ Terror Bombing doctrine
 Maritime Patrol Priority
 
     # Establish Coast Guard Flying Corps
-    Floatplane Tenders
-    Anti-Submarine Tactics
-    Fleet Shadowing
-    Clipper Liners
+    Floatplane Tenders (floatplane range, morale recovery, air accident chance)
+    Anti-Submarine Tactics (naval targeting)
+    Fleet Shadowing (naval targeting, naval spotting)
+    Clipper Liners (new air wing created, range, hp)
 
 Naval Strike Priority
 
     # Bomb an old Warship
-    Early Naval AA
-    Armor-Piercing Bombs
-    Scout Bombers
-    Experimental Aircraft Carrier
+    Early Naval AA (naval AA, new naval module)
+    Armor-Piercing Bombs (naval attack)
+    Scout Bombers (multirole recon, range)
+    Experimental Aircraft Carrier (new ship created, naval sortie rate)
 
 Gunfire Spotting Priority
 
     # Conduct FLeet Maneuvers
-    Turret Catapult
-    Floatplane Self-Defense
+    Turret Catapult (new naval module, ship AA)
+    Floatplane Self-Defense (floatplane air defense)
     # SINKEX
-    Smokescreen Deployment Role
+    Smokescreen Deployment Role (large naval bonus from air support (?))
