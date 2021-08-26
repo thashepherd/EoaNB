@@ -1,43 +1,58 @@
 Military Aviation Doctrine
 
-1850 Observation Balloon Deployment (unlocks support bat, ticking air experience gain)
+1850 (requires Early Observation Balloon)
+Observation Balloon Deployment (unlocks support bat, 0.003 ticking air experience gain)
 
+    (Requires Establish Army Balloon Corps decision)
     Horse-Mobile Balloon Company (unlocks cav-speed support bat)
     Gas Generator Logistics (morale recovery or hp) + Untethered Balloon Concept (unlocks very early recon plane)
     Practical Static Mooring (airbase construction, air accident chance) | Aerial Semaphore (recon, initiative)
 
-1909 Military Aviation Concept (air superiority, air experience gain)
+(requires First Powered, Controlled Flight decision)
+1909 
+Military Aviation Concept (air superiority, air experience gain)
+(requires Establish Army Flying Corps decision)
+
+1914
+    Barrage Balloon Concept (air XP cost)
 
 Army Cooperation doctrine (air support)
 
-    Frontline Combat Air Patrol (air superiority, air support)
+    Frontline Combat Air Patrol (air superiority, air support, early pursuit craft unlock))
+    Infantry Support Priority (air support) | Frontline Destruction Priority (ground attack)
     Flechette Armament (ground attack) | Engine Armor Plate (hp, aa defense)
     Fighter-Bomber (pursuit plane ground attack) | Dedicated Zeppelin Interceptor (new equipment type)
     Interbranch Radio Standards (recon/observation recon) + Phonetic Alphabet (signal company initiative, recon/observation initiative) + Parachute Culture (air experience game, air ace generation)
-    Infantry Support Priority (air support) | Frontline Destruction Priority (ground attack)
     Barnstormers (air agility) + Crop Dusting (farm construction speed, population gain)
 
 
 Operational Recon doctrine
 
-    Balloon AA Defenses (balloon air defense) | Anti-Balloon Role (air attack, LTA attack)
+    Balloon AA Defenses (balloon air defense, early 1910 observation balloon unlock) | Anti-Balloon Role (air attack, LTA attack)
+    Information Superiority Priority (pursuit air attack, multirole recon) | Rear Echelon Target Priority (multirole ground targeting, escort efficiency) (early multirole unlock)
     Battlefield Recon Escort (escort efficiency) + Dawn Patrols (air superiority) + Strike Mission Planning (ground attack, max planning)
     Wingman Culture (air defense) + Combat Instructor Rotation (air experience gain, -ace generation) + Squadron Formation Training (air superiority)
-    Information Superiority Priority (pursuit air attack, multirole recon) | Rear Echelon Target Priority (multirole ground targeting, escort efficiency)
     Offensive Counter Air (multirole recon air attack)
     Schneider Trophy (decision, air speed) + Air Mail Service (decision, low infrastructure improvement)
 
 
 Terror Bombing doctrine
 
-    Strategic Range Priority (range) | Civic Destruction Studies (strategic attack)
+    Persistent Surveillance (LTA recon, early Militay Airship unlock)
+    Strategic Range Priority (range) | Civic Destruction Studies (strategic attack) (early heavy bomber unlock)
     Extra Ammunition (air defense) + Incendiary Ammunition (air attack) | Additional Wing Hardpoints (ground attack) + Avent Garde Explosives (ground attack, strategic attack)
     Reputation Management (diplo relationship bonus, ground targeting, strategic attack malus) | Drop Everything Culture (strategic attack, diplo replationship malus)
     A Bloody Paralyzer of an Aircraft (heavy bomber tech bonus, free design) | Massive Zeppelins (airship tech bonus, free design)
     Polar Expeditions (decision, bad weather) + Global Circumnavigation (decision, range)
 
+1919
+    Post-war Doctrine Consolidation
 
-1912 Naval Aviation Concept
+
+(Requires Warship Catapult Experiment)
+1912 
+Naval Aviation Concept
+(requires Establish Navy Flying Corps decision)
 
 Maritime Patrol Priority
 
@@ -57,8 +72,26 @@ Naval Strike Priority
 
 Gunfire Spotting Priority
 
-    # Conduct FLeet Maneuvers
+    # Conduct Fleet Maneuvers
     Turret Catapult (new naval module, ship AA)
     Floatplane Self-Defense (floatplane air defense)
     # SINKEX
     Smokescreen Deployment Role (large naval bonus from air support (?))
+
+
+Interwar Doctrine
+
+    Fast Bomber ('Schnellbomber') ('The Bomber Will Always Get Through' event chain)
+        Streamlined Defensive Emplacements | Advanced Construction Techniques | Speed Priority
+        Self-Escort Culture
+        Interceptor Effort
+
+    Precision Bombing ('The Bomber Mafia' event chain)
+        Pickle Barrel | Massed Formations | Target Marking Squadrons
+        Precision Strike Culture
+        Anti-Shipping Exercises
+
+    Dive Bomber ('Hell's Angels' event chain)
+        Jericho Trumpets | Automated Pullout Mechanism | Bomb Release Cradle
+        Army Cooperation Culture
+        Forward Observers

@@ -1,111 +1,116 @@
 Aeronautical Theory & Practice
 
-1800
-    AS Ballonet
-
 1850
-    AS Aerial Steam Engine Experiments
+    Ballonet
+    (requires steam engine) Aerial Steam Engine Experiments
 
 1852
-	AS Experimental Nonrigid airship (Giffard)
-	AS Navier-Stokes Equations
+	Experimental Nonrigid airship (Giffard)
+	Navier-Stokes Equations
 
 1871
-	AS Wind tunnel
+	Wind tunnel
 
 1883
-	AS Reynolds Number
-    AS Experimental Manned Glider
+	Reynolds Number
+    Experimental Manned Glider
 
 1884
-	AS Experimental Controllable Airship
+	Experimental Controllable Airship
 
 1893
-	AS Stable manned glider
-	AS Kite balloon
+	(requires Controlled Glider) Stable manned glider
+	(requires Controlled Balloon Flight) Kite balloon
 
 1894
-	AS Experimental Keeled Airship
+	(requires Controlled Airship Flight) Experimental Keeled Airship
 
 1895
-	AS Early launch catapult
-    AS Blau gas
+	(requires Controlled Glider) Early launch catapult
+    (requires some sort of chemical tech) Blau gas
 
 1897
-	AS Experimental Rigid airship
+	(requires Powered Airship) Experimental Rigid airship
 
 1900
-	AS Compact internal combustion engine
+	(requires some sort of engine tech) Compact internal combustion engine
 
 1903
-	AS 3-axis flight control
+	(requires Controlled Glider) 3-axis flight control
 
 1904
-    AS Practical Radial Engine
-    AS Practical Water Cooling
+    Practical Radial Engine
+    Practical Water Cooling
 
 1905
-	AS Rotary Engine
+	Rotary Engine
 
 1909 
 
 1910
 
 1912
-	AS Monocoque construction
+	Monocoque construction
 
 1913
-	AS: Large airframe construction
+	Large Airframe Construction
 
 1914
 
 1915 
 
 1916
-	AS Airborne radio
+	Airborne radio
 
 1917
 
 1918
 
 1920
-	AS Metal monocoque construction
-	AS Retractable landing gear
-	AS Turbocharger
+	Metal monocoque construction
+	Retractable landing gear
+	Turbocharger
 
 1925
-    AS Supercharger
+    Supercharger
+    Townsend Ring
+	Cockpit Pressurization
 
 1930 
-	AS Scientific airfoil development
+	Scientific airfoil development
+    NACA Cowling
+	Controllable Pitch Propeller
 
 1932
-	AS Early parasite fighter experiments
+	Early Parasite Fighter Experiments
 
 1935
+	High Performance Aerial Engine
+	Flush Rivets
 
 1940
-	AS Laminar Flow Airfoil
-	AS Experimental Turbojet
+	Laminar Flow Airfoil
+	Experimental Turbojet
+	High Octane Fuel
 
 1943
-	AS Practical Turbojet
+	Practical Turbojet
 
 1945
-	AS Transonic area rule
-	AS Turboprop
+	Transonic area rule
+	Turboprop
 
 1950
-	AS Jet afterburner
+	Jet afterburner
 
 1955
-    MAE Polyurethane sealant
+    Polyurethane sealant
 
 1960
-	AS Afterburning turbofan
+	Afterburning turbofan
 
 1962
-	AS High-bypass turbofan
+	High-bypass turbofan
 
 1965
-	AS Supercritical airfoil
+	Supercritical airfoil

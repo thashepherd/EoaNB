@@ -1,78 +1,82 @@
 Military Aviation Equipment
 
 1800
-    MAE Equip: Early Observation Balloon (requires doctrine)
+    Equip: Early Observation Balloon
 
 1850
-    MAE Practical mobile tether
-    MAE Mesh suspension
+    Practical mobile tether
+    Mesh suspension
 
 1860
-    MAE Equip: 1860 Observation Balloon (requires ballonet)
-    MAE (1861) Shipboard balloon tether
+    Equip: 1860 Observation Balloon (requires Ballonet)
+    (1861) Shipboard balloon tether
 
 1870
-    MAE Portable hydrogen generators
-    MAE Refined ballast control
-    MAE Dedicated camera mount
+    Portable hydrogen generators
+    Refined ballast control
+    Dedicated camera mount
 
 1890
-    MAE Equip: 1890 Observation Balloon (+ small bonus for non-La Resistance)
+    (requires all of the above)
+    Equip: 1890 Observation Balloon (+ small bonus for non-La Resistance)
 
 1895
-	MAE Equip: Early airship
+    (requires Airship 10km Circuit success)
+	Equip: Early airship
 
 1900
-    MAE Equip: Barrage Balloon (requires doctrine, kite balloon)
+    Equip: Barrage Balloon (requires Barrage Balloon doctrine, Kite Balloon)
 
-1909 
-    MAE Equip: Early observation aircraft
+1909
+    (requires First Powered, Controlled Flight)
+    Equip: Early observation aircraft (requires tier 2 doctrine)
 
 1910
-    MAE Equip: 1910 Observation Balloon
-    MAE Equip: Military airship (requires doctrine, rigid or nonrigid airship)
-	MAE Enclosed Gondola
-	MAE Outboard propellors
+    Equip: 1910 Observation Balloon (requires tier 2 doctrine)
+    Equip: Military airship (requires tier 2 doctrine, Experimental Keeled Airship)
+	Enclosed Gondola
+	Outboard propellors
 
 1912
-    MAE Equip: 1912 observation aircraft (requires same doctrine as early observation balloon)
-    MAE Equip: 1912 pursuit aircraft (requires doctrine)
+    Equip: 1912 observation aircraft
+    Equip: 1912 pursuit aircraft (requires tier 2 doctrine)
+    Equip: 1912 Floatplane (requires Naval Aviation doctrine)
 
 1913
-    MAE Equip: 1913 multirole aircraft (requires doctrine)
+    Equip: 1913 multirole aircraft (requires tier 3 doctrine)
 
 1914
-    MAE Equip: Early heavy bomber (requires doctrine, large airframe construction)
-    MAE Equip: 1914 military airship
-    MAE Equip: 1914 observation balloon
-    MAE Deflector Wedges
-    MAE Foster Sliding Mount
-	MAE Internal bomb bay
+    Equip: Early heavy bomber (requires tier 3 doctrine, large airframe construction)
+    Equip: 1914 military airship
+    Equip: 1914 observation balloon
+    Deflector Wedges
+    Foster Sliding Mount
+	Internal bomb bay
 
 1915 
-    MAE Equip: 1915 observation aircraft
-	MAE Synchronization gear
-    MAE Equip: 1915 pursuit aircraft (requires deflector wedges or foster sliding mount or synchro gear)
-    MAE Equip: 1915 multirole aircraft
-    MAE Equip: 1915 naval airship (requires depth charge)
+    Equip: 1915 observation aircraft
+	Synchronization gear
+    Equip: 1915 pursuit aircraft (requires deflector wedges or foster sliding mount or synchro gear)
+    Equip: 1915 multirole aircraft
+    Equip: 1915 naval airship (requires depth charge)
 	Navy: Equip: Early naval floatplane catapult
 
 1916
-    MAE Equip: 1916 heavy bomber (requires Internal bomb bay)
-    MAE Equip: 1916 pursuit aircraft
-    MAE Scarff ring
+    Equip: 1916 heavy bomber (requires Internal bomb bay)
+    Equip: 1916 pursuit aircraft
+    Scarff ring
 
 1917
-    MAE Equip: 1917 multirole aircraft
+    Equip: 1917 multirole aircraft
 
 1918
-    MAE Equip: 1918 reconnaissance aircraft (requires doctrine)
-    MAE Equip: 1918 pursuit aircraft
-    MAE Equip: 1918 multirole aircraft
-    MAE Equip: 1918 heavy bomber
+    Equip: 1918 reconnaissance aircraft (requires doctrine)
+    Equip: 1918 pursuit aircraft
+    Equip: 1918 multirole aircraft
+    Equip: 1918 heavy bomber
 
 1920
-    MAE Equip: 1920 military airship
+    Equip: 1920 military airship
 
 1925
 
@@ -81,10 +85,10 @@ Military Aviation Equipment
 1932
 
 1935
-    MAE Synthetic envelope (requires Nylon)
+    Synthetic envelope (requires Nylon)
 
 1940
-    MAE Improved Synthetic envelope (requires Polyethylene terephthalate)
+    Improved Synthetic envelope (requires Polyethylene terephthalate)
 
 1943
 
@@ -93,7 +97,7 @@ Military Aviation Equipment
 1950
 
 1955
-    MAE Polyurethane sealant
+    Polyurethane sealant
 
 1960
 

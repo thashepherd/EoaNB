@@ -1,22 +1,52 @@
 Air force establishment decisions
 
-Establish Army Balloon Corps
+Establish Army Balloon Corps (5 air XP, unlocks doctrine)
+(tech) Untethered Balloon Drills (observation balloon equipment, gives XP)
+
+The Dream of Flight (100 pp, unlocks AS tech)
+(tech)
+    Lionize Pioneers (5 air XP, + discovery chance)
+    Create Correspondence Club (5 air XP, 25 PP, gives tech bonus)
+    (tech) Fund University Wind Tunnels (civ factories, gives tech bonus + discovery chance)
+    Sponsor Glider Clubs (5 air XP, 25 PP, gives discovery chance)
+    Signal Leadership Interest (50 PP, gives discovery chance + tech bonus)
+    Military Motorization Experiments (10 army XP, gives good engine tech bonus)
+
 Make Flight Record Attempt (mechanic)
-(tech) Untethered Balloon Experiments
-(tech) Early Glider Experiments
-Sponsor Glider CLubs
-Signal Leadership Interest
-Fund University Wind Tunnels
-Army Motorization Experiments
-(tech) First Powered, Controlled Flight
-Establish Army Flying Corps
-Establish Navy Flying Corps
-Establish Air Mail Service
-Build National Aerodrome
-Establish Civil Air Travel Service
-Army/Air Force simple_fighter
-General Staff Air Marshal
-Air Force Ministry
-Bomb an Old Warship
-Conduct Polar Expedition
-Circumnavigate the Globe
+    Controlled Balloon Flight
+    Controlled Airship Flight
+    Powered Airship
+    Airship 10km Circuit
+    Balloon Altitude Record Attempt
+    Controlled Glider
+    First Powered, Controlled Flight
+    10km Circuit
+    Airspeed Record Attempt
+    Altitude Record Attempt
+    Payload Record Attempt
+    Time-to-altitude Record Attempt
+
+Warship Catapult Experiment (5 air XP, 5 naval XP, 1 dockyard)
+Establish Army Flying Corps (10 air XP, 10 army XP, 10 PP)
+Establish Navy Flying Corps (10 air XP, 10 naval XP, 10 PP)
+Establish Air Service Medal (at least one ace, ticking air XP)
+Establish Flight Training Schools (25 air XP, ticking air XP)
+Establish Advanced Flight Training Schools (50 air XP, ticking air XP)
+Emergency Aircraft Production (25pp, 1 civ-to-mil)
+
+Require Post-war Doctrine Consolidation
+    Establish Air Mail Service (10 air XP, 25 PP, 2 civ factories)
+    Build National Aerodrome (2 civ factories)
+    Establish Civil Air Travel Service (2 civ factories, 25 PP, 10 air XP)
+    Establish Civil Air Patrol (25 air XP, 25 PP)
+    Establish National Advisory Committee for Aeronautics
+    
+Require High Performance Aerial Engine
+    1000 HP Engine Project
+
+    Army/Air Force Split (10 air XP, 75 PP)
+    General Staff Air Marshal (50 PP)
+    Air Force Ministry (50 PP)
+    Bomb an Old Warship (CL/CA/B/BB/BC, gives air and naval experience)
+    Conduct Polar Expedition (5 air/naval/army XP, 10 PP, 1 civ factory)
+    Circumnavigate the Globe (10 air XP, 10 PP, 1 civ factory)
