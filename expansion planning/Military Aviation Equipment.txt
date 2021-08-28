@@ -77,15 +77,27 @@ Military Aviation Equipment
 
 1920
     Equip: 1920 military airship
+    Equip: 1920 floatplane
 
 1925
+    Equip: 1925 pursuit aircraft
+    Equip: 1925 multirole aircraft
+    Equip: 1925 heavy bomber
 
-1930 
-
-1932
+1930
+    Equip: 1930 pursuit aircraft
+    Equip: 1930 multirole aircraft
+    Equip: 1930 heavy bomber
 
 1935
     Synthetic envelope (requires Nylon)
+    Equip: 1935 CAS
+    Equip: 1935 floatplane
+
+1936
+    Equip: 1936 pursuit aircraft
+    Equip: 1936 multirole aircraft
+    Equip: 1936 heavy bomber
 
 1940
     Improved Synthetic envelope (requires Polyethylene terephthalate)

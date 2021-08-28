@@ -7,7 +7,7 @@ The Dream of Flight (100 pp, unlocks AS tech)
 (tech)
     Lionize Pioneers (5 air XP, + discovery chance)
     Create Correspondence Club (5 air XP, 25 PP, gives tech bonus)
-    (tech) Fund University Wind Tunnels (civ factories, gives tech bonus + discovery chance)
+    (tech) Fund University Wind Tunnels (civ factories, gives air XP)
     Sponsor Glider Clubs (5 air XP, 25 PP, gives discovery chance)
     Signal Leadership Interest (50 PP, gives discovery chance + tech bonus)
     Military Motorization Experiments (10 army XP, gives good engine tech bonus)
@@ -32,6 +32,7 @@ Establish Navy Flying Corps (10 air XP, 10 naval XP, 10 PP)
 Establish Air Service Medal (at least one ace, ticking air XP)
 Establish Flight Training Schools (25 air XP, ticking air XP)
 Establish Advanced Flight Training Schools (50 air XP, ticking air XP)
+Establish Air Force Academy
 Emergency Aircraft Production (25pp, 1 civ-to-mil)
 
 Require Post-war Doctrine Consolidation
@@ -40,7 +41,10 @@ Require Post-war Doctrine Consolidation
     Establish Civil Air Travel Service (2 civ factories, 25 PP, 10 air XP)
     Establish Civil Air Patrol (25 air XP, 25 PP)
     Establish National Advisory Committee for Aeronautics
-    
+
+Conduct Polar Expedition (5 air/naval/army XP, 10 PP, 1 civ factory)
+Circumnavigate the Globe (10 air XP, 10 PP, 1 civ factory)
+
 Require High Performance Aerial Engine
     1000 HP Engine Project
 
@@ -48,5 +52,3 @@ Require High Performance Aerial Engine
     General Staff Air Marshal (50 PP)
     Air Force Ministry (50 PP)
     Bomb an Old Warship (CL/CA/B/BB/BC, gives air and naval experience)
-    Conduct Polar Expedition (5 air/naval/army XP, 10 PP, 1 civ factory)
-    Circumnavigate the Globe (10 air XP, 10 PP, 1 civ factory)

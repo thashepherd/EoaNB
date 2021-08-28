@@ -81,17 +81,17 @@ Aeronautical Theory & Practice
     NACA Cowling
 	Controllable Pitch Propeller
 
-1932
-	Early Parasite Fighter Experiments
-
 1935
 	High Performance Aerial Engine
 	Flush Rivets
 
+1936
+	Stepless Cockpit
+	High Octane Fuel
+
 1940
 	Laminar Flow Airfoil
 	Experimental Turbojet
-	High Octane Fuel
 
 1943
 	Practical Turbojet

@@ -18,10 +18,10 @@ Military Aviation Concept (air superiority, air experience gain)
 
 Army Cooperation doctrine (air support)
 
-    Frontline Combat Air Patrol (air superiority, air support, early pursuit craft unlock))
+    Contact Air Patrols (air support, early pursuit craft unlock))
     Infantry Support Priority (air support) | Frontline Destruction Priority (ground attack)
     Flechette Armament (ground attack) | Engine Armor Plate (hp, aa defense)
-    Fighter-Bomber (pursuit plane ground attack) | Dedicated Zeppelin Interceptor (new equipment type)
+    Early CAS (new equipment type) | Dedicated Zeppelin Interceptor (new equipment type)
     Interbranch Radio Standards (recon/observation recon) + Phonetic Alphabet (signal company initiative, recon/observation initiative) + Parachute Culture (air experience game, air ace generation)
     Barnstormers (air agility) + Crop Dusting (farm construction speed, population gain)
 
@@ -30,7 +30,7 @@ Operational Recon doctrine
 
     Balloon AA Defenses (balloon air defense, early 1910 observation balloon unlock) | Anti-Balloon Role (air attack, LTA attack)
     Information Superiority Priority (pursuit air attack, multirole recon) | Rear Echelon Target Priority (multirole ground targeting, escort efficiency) (early multirole unlock)
-    Battlefield Recon Escort (escort efficiency) + Dawn Patrols (air superiority) + Strike Mission Planning (ground attack, max planning)
+    Battlefield Recon Escort (escort efficiency) + Aerial Divisions (air superiority) + Strike Mission Planning (ground attack, max planning)
     Wingman Culture (air defense) + Combat Instructor Rotation (air experience gain, -ace generation) + Squadron Formation Training (air superiority)
     Offensive Counter Air (multirole recon air attack)
     Schneider Trophy (decision, air speed) + Air Mail Service (decision, low infrastructure improvement)
@@ -40,14 +40,16 @@ Terror Bombing doctrine
 
     Persistent Surveillance (LTA recon, early Militay Airship unlock)
     Strategic Range Priority (range) | Civic Destruction Studies (strategic attack) (early heavy bomber unlock)
-    Extra Ammunition (air defense) + Incendiary Ammunition (air attack) | Additional Wing Hardpoints (ground attack) + Avent Garde Explosives (ground attack, strategic attack)
-    Reputation Management (diplo relationship bonus, ground targeting, strategic attack malus) | Drop Everything Culture (strategic attack, diplo replationship malus)
-    A Bloody Paralyzer of an Aircraft (heavy bomber tech bonus, free design) | Massive Zeppelins (airship tech bonus, free design)
-    Polar Expeditions (decision, bad weather) + Global Circumnavigation (decision, range)
+    Extra Ammunition (air defense) + Incendiary Ammunition (air attack) | Additional Hardpoints (ground attack) + Avent Garde Explosives (ground attack, strategic attack)
+    Reputation Management (diplo relationship bonus, ground targeting, strategic attack malus) | The Ends Justify the Means (strategic attack, diplo replationship malus)
+    A Bloody Paralyzer of an Aircraft (heavy bomber tech bonus, free design) | The Obliterator (event chain - meme zeppelin battleship)
+    Dirigism (factory output bonus, - recruitable pop) | Single Leg Missions (+range, +escort, big mallus to survival)
+    Early Parasite Fighter Experiments
 
 1919
     Post-war Doctrine Consolidation
 
+        Combat Air Patrol + Escorted Tactical Strike + Coastal Patrols
 
 (Requires Warship Catapult Experiment)
 1912 
