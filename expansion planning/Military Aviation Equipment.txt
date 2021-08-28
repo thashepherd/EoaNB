@@ -49,13 +49,13 @@ Military Aviation Equipment
     Equip: Early heavy bomber (requires tier 3 doctrine, large airframe construction)
     Equip: 1914 military airship
     Equip: 1914 observation balloon
-    Deflector Wedges
-    Foster Sliding Mount
-	Internal bomb bay
+    Deflector Wedges (design option, pursuit air attack)
+    Foster Sliding Mount (design option, pursuit air attack)
+	Internal bomb bay (multirole+heavy bomber ground attack, strategic bombing)
 
 1915 
     Equip: 1915 observation aircraft
-	Synchronization gear
+	Synchronization gear (design option, pursuit air attack)
     Equip: 1915 pursuit aircraft (requires deflector wedges or foster sliding mount or synchro gear)
     Equip: 1915 multirole aircraft
     Equip: 1915 naval airship (requires depth charge)
@@ -64,10 +64,12 @@ Military Aviation Equipment
 1916
     Equip: 1916 heavy bomber (requires Internal bomb bay)
     Equip: 1916 pursuit aircraft
-    Scarff ring
+    Equip: 1916 Zeppelin Interceptor (unlocked via doctrine)
+    Scarff ring (design option, multirole+heavy bomber air defense)
 
 1917
     Equip: 1917 multirole aircraft
+    Equip: 1917 CAS (unlocked via doctrine)
 
 1918
     Equip: 1918 reconnaissance aircraft (requires doctrine)
@@ -90,7 +92,7 @@ Military Aviation Equipment
     Equip: 1930 heavy bomber
 
 1935
-    Synthetic envelope (requires Nylon)
+    Synthetic envelope (requires Nylon, airship air defense, airship hp)
     Equip: 1935 CAS
     Equip: 1935 floatplane
 
@@ -100,7 +102,7 @@ Military Aviation Equipment
     Equip: 1936 heavy bomber
 
 1940
-    Improved Synthetic envelope (requires Polyethylene terephthalate)
+    Improved Synthetic envelope (requires Polyethylene terephthalate, airship air defense, airship hp)
 
 1943
 
@@ -109,7 +111,7 @@ Military Aviation Equipment
 1950
 
 1955
-    Polyurethane sealant
+    Polyurethane sealant (airship org, airship hp)
 
 1960
 

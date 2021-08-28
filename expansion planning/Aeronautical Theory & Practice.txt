@@ -1,116 +1,120 @@
 Aeronautical Theory & Practice
 
 1850
-    Ballonet
+    Ballonet (balloon hp, org)
     (requires steam engine) Aerial Steam Engine Experiments
 
 1852
-	Experimental Nonrigid airship (Giffard)
-	Navier-Stokes Equations
+	Experimental Nonrigid airship (Unlock flight milestone, innovation)
+	Navier-Stokes Equations (research bonus)
 
 1871
-	Wind tunnel
+	Wind tunnel (ticking innovation)
 
 1883
-	Reynolds Number
-    Experimental Manned Glider
+	Reynolds Number (research bonus)
+    Experimental Manned Glider (Unlock flight milestone, innovation)
 
 1884
-	Experimental Controllable Airship
+	Experimental Controllable Airship (Unlock flight milestone, innovation)
 
 1893
-	(requires Controlled Glider) Stable manned glider
-	(requires Controlled Balloon Flight) Kite balloon
+	(requires Controlled Glider) Stable manned glider (Unlock flight milestone, innovation)
+	(requires Controlled Balloon Flight) Kite balloon (unlocks equipment, balloon air agility)
 
 1894
-	(requires Controlled Airship Flight) Experimental Keeled Airship
+	(requires Controlled Airship Flight) Experimental Keeled Airship (airship hp, speed, innovation)
 
 1895
-	(requires Controlled Glider) Early launch catapult
-    (requires some sort of chemical tech) Blau gas
+	(requires Controlled Glider) Early launch catapult (innovation)
+    (requires some sort of chemical tech) Blau gas (airship speed, design option)
 
 1897
-	(requires Powered Airship) Experimental Rigid airship
+	(requires Powered Airship) Experimental Rigid airship (airship hp, defense, innovation)
 
 1900
-	(requires some sort of engine tech) Compact internal combustion engine
+	(requires some sort of engine tech) Compact internal combustion engine (air speed, innovation)
 
 1903
-	(requires Controlled Glider) 3-axis flight control
+	(requires Controlled Glider) 3-axis flight control (air accident chance, innovation, unlock flight milestone)
 
 1904
-    Practical Radial Engine
-    Practical Water Cooling
+    Practical Radial Engine (design option, air defense)
+    Practical Water Cooling (design option, air speed)
 
 1905
-	Rotary Engine
+	Rotary Engine (design option, air agility)
 
 1909 
 
 1910
 
 1912
-	Monocoque construction
+	Monocoque construction (design option, air speed)
 
 1913
-	Large Airframe Construction
+	Large Airframe Construction (unlock heavy bomber, design option, air hp)
 
 1914
 
 1915 
 
 1916
-	Airborne radio
+	Early Airborne radio (ground support)
 
 1917
 
 1918
 
 1920
-	Metal monocoque construction
-	Retractable landing gear
-	Turbocharger
+	Metal monocoque construction (design option, air speed)
+	Retractable landing gear (design option, air speed)
+	Turbocharger (design option, air speed)
 
 1925
-    Supercharger
-    Townsend Ring
-	Cockpit Pressurization
+    Supercharger (design option, air speed)
+    Townsend Ring (air speed)
+	Cockpit Pressurization (air org, air agility)
+
+1929
+	Tricycle landing gear (design option, air accident chance)
+	# Need stuff for night fighters, all weather aircraft
 
 1930 
-	Scientific airfoil development
-    NACA Cowling
-	Controllable Pitch Propeller
+	Scientific airfoil development (ticking innovation, air agility)
+    NACA Cowling (air speed)
+	Controllable Pitch Propeller (air speed, air agility, air org)
 
 1935
-	High Performance Aerial Engine
-	Flush Rivets
+	High Performance Aerial Engine (unlock decision, air speed)
+	Flush Rivets (air speed, production cost)
 
 1936
-	Stepless Cockpit
-	High Octane Fuel
+	Stepless Cockpit (heavy bomber speed, heavy bomber org)
+	High Octane Fuel (air speed, fuel usage)
 
 1940
-	Laminar Flow Airfoil
-	Experimental Turbojet
+	Laminar Flow Airfoil (air speed, range)
+	Experimental Turbojet (innovation, unlocks decision)
 
 1943
-	Practical Turbojet
+	Practical Turbojet (unlocks equipment)
 
 1945
-	Transonic area rule
-	Turboprop
+	Transonic area rule (air speed)
+	Turboprop (unlock design option, range)
 
 1950
-	Jet afterburner
+	Jet afterburner (air speed, air agility, range)
 
 1955
-    Polyurethane sealant
+    Polyurethane sealant (airship hp, airship org)
 
 1960
-	Afterburning turbofan
+	Afterburning turbofan (air range, fuel usage)
 
 1962
-	High-bypass turbofan
+	High-bypass turbofan (air range, fuel usage)
 
 1965
-	Supercritical airfoil
+	Supercritical airfoil (design option, range, fuel usage)

@@ -6,6 +6,7 @@ All powered
 
     Engine: Inline | Radial | Rotary
     Induction: Naturally Aspirated | Turbocharged | Supercharged | Turbosupercharged
+    Landing Gear: Basic | Streamlined | Retractable | Tricycle
 
 All heavier-than-air
 
