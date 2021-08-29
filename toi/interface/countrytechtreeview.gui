@@ -8115,7 +8115,7 @@ guiTypes = {
 			}
 
 			gridboxtype = {
-				name = "mongolfiere_tree"
+				name = "ballonet_tree"
 				position = { x = 100 y = 140 }
 				size = { width = 800 height = 800 }
 				slotsize = { width = 60 height = 60 }
@@ -8123,7 +8123,7 @@ guiTypes = {
 			}
 
 			gridboxtype = {
-				name = "ornithopter_tree"
+				name = "aerial_steam_engine_experiments_tree"
 				position = { x = 100 y = 140 }
 				size = { width = 800 height = 800 }
 				slotsize = { width = 60 height = 60 }

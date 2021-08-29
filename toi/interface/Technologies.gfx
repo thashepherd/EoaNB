@@ -5448,6 +5448,79 @@ spriteTypes = {
 
 	### Aviation ###
 
+	### Dream of Flight placeholders ###
+
+	SpriteType = {
+		name = "GFX_ballonet_medium"
+		texturefile = "gfx/interface/technologies/aviation/giffard_airship.dds"
+	}
+	SpriteType = {
+		name = "GFX_aerial_steam_engine_experiments_medium"
+		texturefile = "gfx/interface/technologies/aviation/giffard_airship.dds"
+	}
+
+	SpriteType = {
+		name = "GFX_experimental_nonrigid_airship_medium"
+		texturefile = "gfx/interface/technologies/aviation/giffard_airship.dds"
+	}
+
+	SpriteType = {
+		name = "GFX_navier_stokes_equations_medium"
+		texturefile = "gfx/interface/technologies/aviation/giffard_airship.dds"
+	}
+
+	SpriteType = {
+		name = "GFX_wind_tunnel_medium"
+		texturefile = "gfx/interface/technologies/aviation/giffard_airship.dds"
+	}
+
+	SpriteType = {
+		name = "GFX_reynolds_number_medium"
+		texturefile = "gfx/interface/technologies/aviation/giffard_airship.dds"
+	}
+
+	SpriteType = {
+		name = "GFX_experimental_manned_glider_medium"
+		texturefile = "gfx/interface/technologies/aviation/giffard_airship.dds"
+	}
+
+	SpriteType = {
+		name = "GFX_experimental_controllable_airship_medium"
+		texturefile = "gfx/interface/technologies/aviation/giffard_airship.dds"
+	}
+
+	SpriteType = {
+		name = "GFX_stable_manned_glider_medium"
+		texturefile = "gfx/interface/technologies/aviation/giffard_airship.dds"
+	}
+
+	SpriteType = {
+		name = "GFX_kite_balloon_medium"
+		texturefile = "gfx/interface/technologies/aviation/giffard_airship.dds"
+	}
+
+	SpriteType = {
+		name = "GFX_experimental_keeled_airship_medium"
+		texturefile = "gfx/interface/technologies/aviation/giffard_airship.dds"
+	}
+
+	SpriteType = {
+		name = "GFX_early_launch_catapult_medium"
+		texturefile = "gfx/interface/technologies/aviation/giffard_airship.dds"
+	}
+
+	SpriteType = {
+		name = "GFX_blau_gas_medium"
+		texturefile = "gfx/interface/technologies/aviation/giffard_airship.dds"
+	}
+
+	SpriteType = {
+		name = "GFX_experimental_rigid_airship_medium"
+		texturefile = "gfx/interface/technologies/aviation/giffard_airship.dds"
+	}
+
+	### Old ###
+
 	SpriteType = {
 		name = "GFX_aders_avion_medium"
 		texturefile = "gfx/interface/technologies/aviation/aders_avion.dds"
