@@ -3,16 +3,12 @@
 
 technology_categories = {
 	infantry_weapons
-	light_air
-	medium_air
-	heavy_air
 	armor
 	cat_light_armor
 	cat_medium_armor
 	cat_heavy_armor
 	artillery
 	#cat_anti_tank
-	naval_air
 	motorized_equipment
 	cat_mechanized_equipment
 	naval_equipment
@@ -21,20 +17,12 @@ technology_categories = {
 	industry
 	electronics
 	land_doctrine
-	air_doctrine
 	naval_doctrine
 	#strategic_destruction_tree
 	#battlefield_support_tree
 	#operational_integrity_tree
-	jet_technology
 	#trade_interdiction_tree
 	#convoy_defense_tree
-	light_fighter
-	cat_heavy_fighter
-	tactical_bomber
-	cat_strategic_bomber
-	naval_bomber
-	cas_bomber
 	rifle_equipment_techs
 	plasma_tech
 	railgun_tech
@@ -59,7 +47,6 @@ technology_categories = {
 	#construction_tech
 	excavation_tech
 	#submarine_doctrine
-	air_equipment
 	cat_mobile_warfare
 	cat_superior_firepower
 	cat_grand_battle_plan
@@ -84,16 +71,12 @@ technology_categories = {
 	signal_company_tech
 	maintenance_company_tech
 	#civilian_tech
-	aviation_tech
 	#projects_tech
 	health_tech
-	engine_tech
-	zeppelin_tech
 	#science_tech
 	explosives_tech
 	comms_tech
 	trains_tech
-	balloons_tech
 	mechanical_engineering_tech
 	process_engineering_tech
 	biochemistry_tech
@@ -229,9 +212,37 @@ technology_categories = {
 	robot_tech
 	pa_tech
 	pre_industrial_tech
-	helicopter_tech
 	melee_weapons_tech
 	#inf_weapons_techs
+
+	# Legacy aviation tech categories
+	engine_tech
+	aviation_tech
+	zeppelin_tech
+	light_air
+	medium_air
+	heavy_air
+	naval_air
+	air_doctrine
+	jet_technology
+	light_fighter
+	cat_heavy_fighter
+	tactical_bomber
+	cat_strategic_bomber
+	naval_bomber
+	cas_bomber
+	helicopter_tech
+	balloons_tech
+	air_equipment
+
+	# Dream of Flight tech categories
+	lighter_than_air_tech
+	heavier_than_air_tech
+	pursuit_aircraft_tech
+	multirole_aircraft_tech
+	heavy_bomber_tech
+	air_doctrine_tech
+	aeronatical_science_tech
 }
 
 technology_folders = {
