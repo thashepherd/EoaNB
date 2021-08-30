@@ -6252,20 +6252,34 @@ guiTypes = {
 				quadTextureSprite = "GFX_tiled_window_2b_border"
 			}
 
-			containerWindowType = {
-				name = "size_filler"
-				position = { x = 0 y = 0 }
-				size = { width = 1565 height = 100% }
-			}
-
 			gridboxtype = {
 				name = "naval_doctrine_victorian_tree"
 				position = { x = 80 y = 172 }
+				size = { width = 478 height = 1350 }
+				slotsize = { width = 60 height = 60 }
+				format = "UP"
+			}
+			gridboxtype = {
+				name = "doctrine_victorian_naval_light_tree"
+				position = { x = 160 y = 172 }
+				size = { width = 478 height = 1350 }
+				slotsize = { width = 60 height = 60 }
+				format = "UP"
+			}
+			gridboxtype = {
+				name = "doctrine_victorian_naval_heavy_tree"
+				position = { x = 160 y = 172 }
+				size = { width = 478 height = 1350 }
+				slotsize = { width = 60 height = 60 }
+				format = "UP"
+			}
+			gridboxtype = {
+				name = "naval_aviation_concept_tree"
+				position = { x = 160 y = 250 }
 				size = { width = 478 height = 1000 }
 				slotsize = { width = 60 height = 60 }
 				format = "UP"
 			}
-
 		}
 
 		containerWindowType = {
@@ -7699,7 +7713,7 @@ guiTypes = {
 
 			instantTextBoxType = {
 				name = "lighter_than_air_title"
-				position = { x = 250 y = 35 }
+				position = { x = 370 y = 35 }
 				textureFile = ""
 				font = "hoi_22tech"
 				borderSize = { x = 0 y = 4 }
@@ -7712,7 +7726,7 @@ guiTypes = {
 
 			gridboxtype = {
 				name = "ballonet_tree"
-				position = { x = 200 y = 200 }
+				position = { x = 370 y = 200 }
 				size = { width = 478 height = 1350 }
 				slotsize = { width = 60 height = 60 }
 				format = "UP"
@@ -7720,7 +7734,7 @@ guiTypes = {
 
 			instantTextBoxType = {
 				name = "heavier_than_air_title"
-				position = { x = 550 y = 35 }
+				position = { x = 850 y = 35 }
 				textureFile = ""
 				font = "hoi_22tech"
 				borderSize = { x = 0 y = 4 }
@@ -7733,7 +7747,7 @@ guiTypes = {
 
 			gridboxtype = {
 				name = "experimental_manned_glider_tree"
-				position = { x = 500 y = 200 }
+				position = { x = 850 y = 200 }
 				size = { width = 478 height = 1350 }
 				slotsize = { width = 60 height = 60 }
 				format = "UP"
@@ -7741,7 +7755,7 @@ guiTypes = {
 
 			instantTextBoxType = {
 				name = "aviation_engine_title"
-				position = { x = 850 y = 35 }
+				position = { x = 1350 y = 35 }
 				textureFile = ""
 				font = "hoi_22tech"
 				borderSize = { x = 0 y = 4 }
@@ -7754,7 +7768,7 @@ guiTypes = {
 
 			gridboxtype = {
 				name = "aerial_steam_engine_experiments_tree"
-				position = { x = 800 y = 200 }
+				position = { x = 1350 y = 200 }
 				size = { width = 478 height = 1350 }
 				slotsize = { width = 60 height = 60 }
 				format = "UP"
@@ -7762,7 +7776,7 @@ guiTypes = {
 
 			instantTextBoxType = {
 				name = "aeronautical_theory_title"
-				position = { x = 1150 y = 35 }
+				position = { x = 1810 y = 35 }
 				textureFile = ""
 				font = "hoi_22tech"
 				borderSize = { x = 0 y = 4 }
@@ -7775,7 +7789,7 @@ guiTypes = {
 
 			gridboxtype = {
 				name = "navier_stokes_equations_tree"
-				position = { x = 1100 y = 200 }
+				position = { x = 1810 y = 200 }
 				size = { width = 478 height = 1350 }
 				slotsize = { width = 60 height = 60 }
 				format = "UP"

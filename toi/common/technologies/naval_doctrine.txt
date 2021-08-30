@@ -902,5 +902,228 @@ ai_will_do = { modifier = { factor = 0 afr_is_tribal = yes  date < 1875.1.1 } mo
 			naval_doctrine
 		}
 	}
+
+	# Naval aviation
+
+	naval_aviation_concept = {
+		
+		spotting_chance = 0.02
+		
+		research_cost = 4
+		start_year = 1912
+		doctrine = yes
+		folder = {
+			name = naval_doctrine_folder
+			position = { x = 0 y = 0 }
+		}
+		
+		ai_will_do = { modifier = { factor = 0 afr_is_tribal = yes  date < 1920.1.1 } modifier = { factor = 0 num_of_naval_factories < 3 } modifier = { factor = 1.5 num_of_naval_factories > 4 } modifier = { factor = 0.5 is_major = yes has_war = no } modifier = { factor = 0.25 is_major = no has_war = no } modifier = { factor = 1.5 has_war = yes }
+			factor = 1
+			
+			modifier = {
+				factor = 1.5
+				is_major = yes
+			}
+		}
+
+		path = {
+			leads_to_tech = maritime_patrol_0
+			research_cost_coeff = 1
+		}
+		path = {
+			leads_to_tech = naval_strike_0
+			research_cost_coeff = 1
+		}
+		path = {
+			leads_to_tech = gunfire_spotting_0
+			research_cost_coeff = 1
+		}
+		
+		categories = {
+			naval_doctrine
+			aviation_doctrine
+		}
+	}
+
+	maritime_patrol_0 = {
+		
+		spotting_chance = 0.02
+		
+		research_cost = 3.5
+		doctrine = yes
+		folder = {
+			name = naval_doctrine_folder
+			position = { x = 0 y = 0 }
+		}
+		
+		ai_will_do = { modifier = { factor = 0 afr_is_tribal = yes  date < 1920.1.1 } modifier = { factor = 0 num_of_naval_factories < 3 } modifier = { factor = 1.5 num_of_naval_factories > 4 } modifier = { factor = 0.5 is_major = yes has_war = no } modifier = { factor = 0.25 is_major = no has_war = no } modifier = { factor = 1.5 has_war = yes }
+			factor = 1
+			
+			modifier = {
+				factor = 1.5
+				is_major = yes
+			}
+		}
+
+		path = {
+			leads_to_tech = maritime_patrol_1
+			research_cost_coeff = 1
+		}
+		
+		categories = {
+			naval_doctrine
+			aviation_doctrine
+		}
+	}
+
+	maritime_patrol_1 = {
+		
+		spotting_chance = 0.02
+		
+		research_cost = 3.5
+		doctrine = yes
+		folder = {
+			name = naval_doctrine_folder
+			position = { x = 0 y = 0 }
+		}
+		
+		ai_will_do = { modifier = { factor = 0 afr_is_tribal = yes  date < 1920.1.1 } modifier = { factor = 0 num_of_naval_factories < 3 } modifier = { factor = 1.5 num_of_naval_factories > 4 } modifier = { factor = 0.5 is_major = yes has_war = no } modifier = { factor = 0.25 is_major = no has_war = no } modifier = { factor = 1.5 has_war = yes }
+			factor = 1
+			
+			modifier = {
+				factor = 1.5
+				is_major = yes
+			}
+		}
+
+		path = {
+			leads_to_tech = maritime_patrol_2
+			research_cost_coeff = 1
+		}
+		
+		categories = {
+			naval_doctrine
+			aviation_doctrine
+		}
+	}
+
+	maritime_patrol_2 = {
+		
+		spotting_chance = 0.02
+		
+		research_cost = 3.5
+		doctrine = yes
+		folder = {
+			name = naval_doctrine_folder
+			position = { x = 0 y = 0 }
+		}
+		
+		ai_will_do = { modifier = { factor = 0 afr_is_tribal = yes  date < 1920.1.1 } modifier = { factor = 0 num_of_naval_factories < 3 } modifier = { factor = 1.5 num_of_naval_factories > 4 } modifier = { factor = 0.5 is_major = yes has_war = no } modifier = { factor = 0.25 is_major = no has_war = no } modifier = { factor = 1.5 has_war = yes }
+			factor = 1
+			
+			modifier = {
+				factor = 1.5
+				is_major = yes
+			}
+		}
+
+		path = {
+			leads_to_tech = maritime_patrol_3
+			research_cost_coeff = 1
+		}
+		
+		categories = {
+			naval_doctrine
+			aviation_doctrine
+		}
+	}
+
+	maritime_patrol_3 = {
+		
+		spotting_chance = 0.02
+		
+		research_cost = 3.5
+		doctrine = yes
+		folder = {
+			name = naval_doctrine_folder
+			position = { x = 0 y = 0 }
+		}
+		
+		ai_will_do = { modifier = { factor = 0 afr_is_tribal = yes  date < 1920.1.1 } modifier = { factor = 0 num_of_naval_factories < 3 } modifier = { factor = 1.5 num_of_naval_factories > 4 } modifier = { factor = 0.5 is_major = yes has_war = no } modifier = { factor = 0.25 is_major = no has_war = no } modifier = { factor = 1.5 has_war = yes }
+			factor = 1
+			
+			modifier = {
+				factor = 1.5
+				is_major = yes
+			}
+		}
+
+		path = {
+			leads_to_tech = maritime_patrol_4
+			research_cost_coeff = 1
+		}
+		
+		categories = {
+			naval_doctrine
+			aviation_doctrine
+		}
+	}
+
+	maritime_patrol_4 = {
+		
+		spotting_chance = 0.02
+		
+		research_cost = 3.5
+		doctrine = yes
+		folder = {
+			name = naval_doctrine_folder
+			position = { x = 0 y = 0 }
+		}
+		
+		ai_will_do = { modifier = { factor = 0 afr_is_tribal = yes  date < 1920.1.1 } modifier = { factor = 0 num_of_naval_factories < 3 } modifier = { factor = 1.5 num_of_naval_factories > 4 } modifier = { factor = 0.5 is_major = yes has_war = no } modifier = { factor = 0.25 is_major = no has_war = no } modifier = { factor = 1.5 has_war = yes }
+			factor = 1
+			
+			modifier = {
+				factor = 1.5
+				is_major = yes
+			}
+		}
+
+		path = {
+			leads_to_tech = maritime_patrol_5
+			research_cost_coeff = 1
+		}
+		
+		categories = {
+			naval_doctrine
+			aviation_doctrine
+		}
+	}
+
+	maritime_patrol_5 = {
+		
+		spotting_chance = 0.02
+		
+		research_cost = 3.5
+		doctrine = yes
+		folder = {
+			name = naval_doctrine_folder
+			position = { x = 0 y = 0 }
+		}
+		
+		ai_will_do = { modifier = { factor = 0 afr_is_tribal = yes  date < 1920.1.1 } modifier = { factor = 0 num_of_naval_factories < 3 } modifier = { factor = 1.5 num_of_naval_factories > 4 } modifier = { factor = 0.5 is_major = yes has_war = no } modifier = { factor = 0.25 is_major = no has_war = no } modifier = { factor = 1.5 has_war = yes }
+			factor = 1
+			
+			modifier = {
+				factor = 1.5
+				is_major = yes
+			}
+		}
+		
+		categories = {
+			naval_doctrine
+			aviation_doctrine
+		}
+	}
 	
 }
