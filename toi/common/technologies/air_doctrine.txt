@@ -1,5 +1,15 @@
 technologies = {
 
+	@1850 = 0
+	@1909 = 8
+	@1912 = 10
+	@1914 = 12
+	@1916 = 14
+	@1919 = 24
+	@1920 = 26
+	@1925 = 28
+	@1930 = 30
+
 	air_doctrine_victorian = {
 		
 		experience_gain_air_factor = 0.05
