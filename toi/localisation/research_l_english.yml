@@ -1365,7 +1365,9 @@
  alexanderson_alternator:0 "Alexanderson Alternator"
  alexanderson_alternator_desc:0 "A rotating machine for the generation of high-frequency AC for use as a radio transmitter."
 
-# Dream of Flight tech loc
+### Dream of Flight tech loc
+
+## Aeronautical engineering
  ballonet:0 "Ballonet"
  aerial_steam_engine_experiments:0 "Aerial Steam Engine Experiments"
  experimental_nonrigid_airship:0 "Experimental Non-rigid Airship"
@@ -1412,6 +1414,188 @@
  turbofan_afterburner:0 "Afterburning Turbofan"
  high_bypass_turbofan:0 "High-Bypass Turbofan"
  supercritical_airfoil:0 "Supercritical Airfoil"
+
+## Naval aviation doctrine
+ naval_aviation_concept:0 "Naval Aviation Concept"
+ maritime_patrol_0:0 "Maritime Patrol Priority"
+ maritime_patrol_1:0 "Establish Coast Guard Flying Corps"
+ maritime_patrol_2:0 "Purpose-Built Floatplane Tenders"
+ maritime_patrol_3:0 "Early Anti-Submarine Tactics"
+ maritime_patrol_4:0 "Fleet Shadowing Role"
+ maritime_patrol_5:0 "Queens of the Sky"
+ naval_strike_0:0 "Naval Strike Priority"
+ naval_strike_1:0 "Demonstrate Air Attack Feasibility"
+ naval_strike_2:0 "Early Naval Air Defenses"
+ naval_strike_3:0 "Armor-Piercing Bombs"
+ naval_strike_4:0 "Scout Bomber Role"
+ naval_strike_5:0 "Aircraft Carrier Experiments"
+ gunfire_spotting_0:0 "Gunfire Spotting Priority"
+ gunfire_spotting_1:0 "Fleet Coordination Exercises"
+ gunfire_spotting_2:0 "Turret Catapult"
+ gunfire_spotting_3:0 "Floatplane Self-Defense"
+ gunfire_spotting_4:0 "Fleet Gunnery Exercises"
+ gunfire_spotting_5:0 "Smokescreen Deployment Role"
+
+## Military aviation doctrine
+
+## Early balloon tree
+ observation_balloon_0:0 "Observation Balloon Deployment"
+ observation_balloon_1a:0 "Horse-Mobile Balloon Company"
+ observation_balloon_1b:0 "Gas Generator Logistics"
+ observation_balloon_1c:0 "Practical Static Mooring"
+ observation_balloon_2:0 "Barrage Balloon Concept"
+
+ military_aviation_concept:0 "Military Aviation Concept"
+
+ # Army Cooperation tree
+ army_cooperation_0:0 "Army Cooperation Doctrine"
+ army_cooperation_1:0 "Contact Air Patrols"
+ army_cooperation_2a:0 "Infantry Support Priority"
+ army_cooperation_2b:0 "Frontline Destruction Priority"
+ army_cooperation_3a:0 "Flechette Armament"
+ army_cooperation_3b:0 "Engine Armor Plating"
+ army_cooperation_4a:0 "Armored Army Support Plane"
+ army_cooperation_4b:0 "Rocket-Armed Zeppelin Interceptor"
+ army_cooperation_5a:0 "Inter-Branch Radio Standards"
+ army_cooperation_5b:0 "Phonetic Alphabet"
+ army_cooperation_5c:0 "Wingman Culture"
+
+ army_cooperation_6a:0 "Barnstormers"
+ army_cooperation_6b:0 "Crop Dusting"
+
+ # Operational Reconnaissance tree
+ operational_recon_0:0 "Operational Reconnaissance Doctrine"
+ operational_recon_1a:0 "Balloon Anti-Aircraft Defenses"
+ operational_recon_1b:0 "Anti-Balloon Role"
+ operational_recon_2a:0 "Information Denial Priority "
+ operational_recon_2b:0 "Rear Echelon Target Priority"
+ operational_recon_3a:0 "Battlefield Recon Escort"
+ operational_recon_3b:0 "Aerial Divisions"
+ operational_recon_3c:0 "Strike Mission Planning"
+ operational_recon_4a:0 "Parachute Culture"
+ operational_recon_4b:0 "Combat Instructor Rotation"
+ operational_recon_4c:0 "Squadron Formation Training"
+ operational_recon_5a:0 "Offensive Counter-Air"
+
+ operational_recon_6a:0 "Schneider Trophy"
+ operational_recon_6b:0 "Air Mail Service"
+
+ # Homeland Strike tree
+ homeland_strike_0:0 "Homeland Strike doctrine"
+ homeland_strike_1:0 "Persistent Surveillance"
+ homeland_strike_2a:0 "Strategic Range Priority "
+ homeland_strike_2b:0 "Civic Destruction Priority"
+ homeland_strike_3a:0 "Extra Ammunition"
+ homeland_strike_3b:0 "Additional Hardpoints"
+ homeland_strike_4a:0 "Incendiary Ammunition"
+ homeland_strike_4b:0 "Avant-Garde Explosives"
+ homeland_strike_5a:0 "Reputation Management"
+ homeland_strike_5b:0 "Any Means Necessary"
+ homeland_strike_6a:0 "A Bloody Paralyzer Of An Aircraft"
+ homeland_strike_6b:0 "Zeppelin Battleship"
+ homeland_strike_7a:0 "One Way Missions"
+ homeland_strike_7b:0 "Parasite Fighter Experiments"
+
+ homeland_strike_8:0 "Dirigism"
+
+ # Interwar doctrine
+ postwar_doctrine:0 "Post-War Doctrine Consolidation"
+ postwar_doctrine_1a:0 "Combat Air Patrol"
+ postwar_doctrine_1b:0 "Escorted Tactical Strike"
+ postwar_doctrine_2:0 "Civil Aviation"
+ 
+ interwar_doctrine:0 "Interwar"
+
+ fast_bomber_0:0 "Fast Bomber Focus"
+ fast_bomber_1a:0 "Streamlined Defensive Emplacements"
+ fast_bomber_1b:0 "Advanced Construction Techniques"
+ fast_bomber_1c:0 "Speed Priority"
+ fast_bomber_2:0 "The Bomber Will Always Get Through"
+ fast_bomber_3:0 "Interceptor Effort"
+
+ precision_bombing_0:0 "Precision Bombing Focus"
+ precision_bombing_1a:0 "Top Secret Bombsight"
+ precision_bombing_1b:0 "Massed Formations"
+ precision_bombing_1c:0 "Target Marking Squadrons"
+ precision_bombing_2:0 "The Bomber Mafia"
+ precision_bombing_3:0 "Anti-Shipping Exercies"
+
+ dive_bombing_0:0 "Dive Bombing Focus"
+ dive_bombing_1a:0 "Jericho Trumpets"
+ dive_bombing_1b:0 "Automated Pullout Mechanism"
+ dive_bombing_1c:0 "Bomb Release Cradle"
+ dive_bombing_2:0 "Hell's Angels"
+ dive_bombing_3:0 "Forward Observers"
+ 
+ # Military Aviation Equipment
+ observation_balloon_early:0 "Early Observation Balloon"
+ observation_balloon_equip_1a:0 "Practical Mobile Tether"
+ observation_balloon_equip_1b:0 "Mesh Suspension"
+ observation_balloon_1860:0 "1860 Observation Balloon"
+ observation_balloon_equip_2a:0 "Portable Hydrogen Generators"
+ observation_balloon_equip_2b:0 "Refined Ballast Control"
+ observation_balloon_equip_2c:0 "Dedicated Camera Mount"
+ observation_balloon_1890:0 "1890 Observation Balloon"
+ observation_balloon_1910:0 "1910 Observation Balloon"
+ observation_balloon_1914:0 "1914 Observation Balloon"
+ barrage_balloon:0 "Barrage Balloon"
+
+ airship_early:0 "Early Airship"
+ airship_1910:0 "1910 Military Airship"
+ airship_equip_1a:0 "Enclosed Gondola"
+ airship_equip_1b:0 "Outboard Propellors"
+ airship_1914:0 "Great War Military Airship"
+ airship_1914_naval:0 "Great War Naval Airship"
+ airship_1920:0 "1920s Military Airship"
+ airship_1920_naval:0 "1920s Naval Airship"
+ airship_interwar:0 "Interwar Military Airship"
+  airship_interwar_naval:0 "Interwar Naval Airship"
+ airship_equip_2:0 "Synthetic Envelope"
+ airship_equip_3:0 "Improved Synthetic Envelope"
+ airship_equip_4:0 "Polyurethane Sealant"
+
+ recon_aircraft_early:0 "Early Observation Aircraft"
+ recon_aircraft_1912:0 "1912 Observation Aircraft"
+ recon_aircraft_1915:0 "1915 Observation Aircraft"
+ recon_aircraft_1918:0 "Early Reconnaissance Aircraft"
+ recon_aircraft_interwar:0 "Interwar Reconnaissance Aircraft"
+
+ pursuit_aircraft_early:0 "Early Pursuit Aircraft"
+ pursuit_aircraft_equip_1a:0 "Deflector Wedges"
+ pursuit_aircraft_equip_1b:0 "Floster Sliding Mount"
+ pursuit_aircraft_equip_1c:0 "Synchronization Gear"
+ pursuit_aircraft_1915:0 "1915 Pursuit Aircraft"
+ pursuit_aircraft_1916:0 "1916 Pursuit Aircraft"
+ pursuit_aircraft_1918:0 "1918 Pursuit Aircraft"
+ pursuit_aircraft_1925:0 "1925 Pursuit Aircraft"
+ pursuit_aircraft_interwar:0 "Interwar Pursuit Aircraft"
+
+ floatplane_early:0 "Early Floatplane"
+ floatplane_1920:0 "1920 Floatplane"
+ floatplane_interwar:0 "Interwar Floatplane"
+
+ multirole_early:0 "Early Multirole Aircraft"
+ multirole_1915:0 "1915 Multirole Aircraft"
+ multirole_1917:0 "1917 Multirole Aircraft"
+ multirole_1918:0 "1918 Multirole Aircraft"
+ multirole_1925:0 "1925 Multirole Aircraft"
+ multirole_interwar:0 "Interwar Multirole Aircraft"
+
+ heavy_bomber_early:0 "Early Heavy Bomber"
+ heavy_bomber_equip_1:0 "Internal Bomb Bay"
+ heavy_bomber_1916:0 "1916 Heavy Bomber"
+ heavy_bomber_1918:0 "1918 Heavy Bomber"
+ heavy_bomber_1925:0 "1925 Heavy Bomber"
+ heavy_bomber_interwar:0 "Interwar Heavy Bomber"
+
+ # WW1 Special
+ zeppelin_interceptor:0 "1917 Zeppelin Interceptor"
+ zeppelin_battleship:0 "The Obliterator"
+
+ cas_early:0 "Early CAS"
+ cas_1935:0 "1935 CAS"
+ 
+
 
 # Old
  mongolfiere:0 "Mongolfiere"
