@@ -1,5 +1,49 @@
 technologies = {
 
+	@1850 = -1
+	@1852 = -0.5
+	@1860 = 1
+	@1863 = 1
+	@1865 = 1
+	@1868 = 2
+	@1870 = 3
+	@1871 = 3.25
+	@1875 = 4
+	@1878 = 4
+	@1880 = 5
+	@1883 = 5.4
+	@1884 = 5.5
+	@1885 = 6
+	@1890 = 7
+	@1893 = 7.4
+	@1894 = 7.5
+	@1895 = 8
+	@1897 = 8.8
+	@1900 = 9
+	@1903 = 9.5
+	@1904 = 10
+	@1905 = 10
+	@1910 = 11
+	@1912 = 11
+	@1913 = 12
+	@1916 = 12
+	@1920 = 13
+	@1925 = 14
+	@1929 = 16
+	@1930 = 15
+	@1935 = 16
+	@1936 = 16
+	@1940 = 17
+	@1943 = 17.5
+	@1945 = 18
+	@1950 = 19
+	@1960 = 21
+	@1962 = 21
+	@1965 = 22
+	@1970 = 23
+	@2000 = 29
+	@2050 = 39
+
 	ballonet = {
 		# experience_gain_air_factor = 0.05
 		# Give lighter_than_air hp, org
@@ -8,37 +52,21 @@ technologies = {
 		start_year = 1850
 		folder = {
 			name = aviation_folder
-			position = { x = -2 y = 2 }
+			position = { x = -2 y = @1850 }
 		}
 		
 		path = {
 			leads_to_tech = experimental_nonrigid_airship
+			research_cost_coeff = 1
+		}
+		path = {
+			leads_to_tech = kite_balloon
 			research_cost_coeff = 1
 		}
 		
 		categories = {
 			lighter_than_air_tech
 			aeronatical_science_tech
-		}	
-	}
-
-	aerial_steam_engine_experiments = {
-		
-		research_cost = 1
-		start_year = 1850
-		folder = {
-			name = aviation_folder
-			position = { x = 6 y = 2 }
-		}
-		
-		path = {
-			leads_to_tech = experimental_nonrigid_airship
-			research_cost_coeff = 1
-		}
-
-		categories = {
-			aeronatical_science_tech
-			engine_tech
 		}	
 	}
 
@@ -49,11 +77,15 @@ technologies = {
 		start_year = 1852
 		folder = {
 			name = aviation_folder
-			position = { x = -2 y = 4 }
+			position = { x = 0 y = @1852 }
 		}
 		
 		path = {
 			leads_to_tech = experimental_controllable_airship
+			research_cost_coeff = 1
+		}
+		path = {
+			leads_to_tech = blau_gas
 			research_cost_coeff = 1
 		}
 
@@ -62,87 +94,6 @@ technologies = {
 			aeronatical_science_tech
 		}	
 	}
-
-	navier_stokes_equations = {
-		# Research bonus
-		
-		research_cost = 1
-		start_year = 1852
-		folder = {
-			name = aviation_folder
-			position = { x = 2 y = 4 }
-		}
-		
-		path = {
-			leads_to_tech = wind_tunnel
-			research_cost_coeff = 1
-		}
-
-		categories = {
-			aeronatical_science_tech
-		}	
-	}
-
-	wind_tunnel = {
-		# Unlocks decisions, ticking innovation
-		
-		research_cost = 1
-		start_year = 1871
-		folder = {
-			name = aviation_folder
-			position = { x = 2 y = 8 }
-		}
-		
-		path = {
-			leads_to_tech = reynolds_number
-			research_cost_coeff = 1
-		}
-
-		categories = {
-			aeronatical_science_tech
-		}	
-	}
-
-	reynolds_number = {
-		# Research bonus
-		
-		research_cost = 1
-		start_year = 1883
-		folder = {
-			name = aviation_folder
-			position = { x = 2 y = 12 }
-		}
-		
-		path = {
-			leads_to_tech = stable_manned_glider
-			research_cost_coeff = 1
-		}
-
-		categories = {
-			aeronatical_science_tech
-		}	
-	}
-
-	experimental_manned_glider = {
-		# Unlocks flight milestone, innovation
-		
-		research_cost = 1
-		start_year = 1883
-		folder = {
-			name = aviation_folder
-			position = { x = 6 y = 12 }
-		}
-		
-		path = {
-			leads_to_tech = stable_manned_glider
-			research_cost_coeff = 1
-		}
-
-		categories = {
-			aeronatical_science_tech
-			heavier_than_air_tech
-		}	
-	}	
 
 	experimental_controllable_airship = {
 		# Unlocks flight milestone, innovation
@@ -151,38 +102,20 @@ technologies = {
 		start_year = 1884
 		folder = {
 			name = aviation_folder
-			position = { x = -2 y = 14 }
+			position = { x = 0 y = @1884 }
 		}
 		
 		path = {
 			leads_to_tech = experimental_keeled_airship
 			research_cost_coeff = 1
 		}
+		dependencies = {
+			aerial_steam_engine_experiments = 1
+		}
 
 		categories = {
 			lighter_than_air_tech
 			aeronatical_science_tech
-		}	
-	}
-
-	stable_manned_glider = {
-		# Unlocks flight milestone, innovation
-		
-		research_cost = 1.5
-		start_year = 1893
-		folder = {
-			name = aviation_folder
-			position = { x = 6 y = 16 }
-		}
-		
-		path = {
-			leads_to_tech = three_axis_flight_control
-			research_cost_coeff = 1
-		}
-
-		categories = {
-			aeronatical_science_tech
-			heavier_than_air_tech
 		}	
 	}
 
@@ -193,7 +126,7 @@ technologies = {
 		start_year = 1893
 		folder = {
 			name = aviation_folder
-			position = { x = -2 y = 16 }
+			position = { x = -2 y = @1893 }
 		}
 
 		categories = {
@@ -209,7 +142,7 @@ technologies = {
 		start_year = 1894
 		folder = {
 			name = aviation_folder
-			position = { x = -2 y = 18 }
+			position = { x = 0 y = @1894 }
 		}
 		
 		path = {
@@ -219,26 +152,6 @@ technologies = {
 
 		categories = {
 			lighter_than_air_tech
-			aeronatical_science_tech
-		}	
-	}
-
-	early_launch_catapult = {
-		# innovation
-
-		dependencies = {
-			stable_manned_glider = 1
-		}
-		
-		research_cost = 0.8
-		start_year = 1895
-		folder = {
-			name = aviation_folder
-			position = { x = 2 y = 20 }
-		}
-		
-		categories = {
-			heavier_than_air_tech
 			aeronatical_science_tech
 		}	
 	}
@@ -254,7 +167,7 @@ technologies = {
 		start_year = 1895
 		folder = {
 			name = aviation_folder
-			position = { x = -2 y = 20 }
+			position = { x = 2 y = @1895 }
 		}
 		
 		categories = {
@@ -270,7 +183,7 @@ technologies = {
 		start_year = 1897
 		folder = {
 			name = aviation_folder
-			position = { x = -2 y = 22 }
+			position = { x = 0 y = @1897 }
 		}
 
 		categories = {
@@ -279,26 +192,90 @@ technologies = {
 		}	
 	}
 
-	compact_internal_combustion_engine = {
-		# air speed, innovation
+	polyurethane_sealant = {
+		# airship hp, airship org
 		
-		research_cost = 1
-		start_year = 1900
+		research_cost = 0.8
+		start_year = 1955
 		folder = {
 			name = aviation_folder
-			position = { x = 6 y = 24 }
+			position = { x = 2 y = @1955 }
 		}
-
-		dependencies = {
-			internal_combustion_engine = 1
-		}
-
+		
 		categories = {
-			engine_tech
+			lighter_than_air_tech
+			biochemistry_tech
 			aeronatical_science_tech
 		}
 	}
 
+	experimental_manned_glider = {
+		# Unlocks flight milestone, innovation
+		
+		research_cost = 1
+		start_year = 1883
+		folder = {
+			name = aviation_folder
+			position = { x = 0 y = @1883 }
+		}
+		
+		path = {
+			leads_to_tech = stable_manned_glider
+			research_cost_coeff = 1
+		}
+		path = {
+			leads_to_tech = early_launch_catapult
+			research_cost_coeff = 1
+		}
+
+		categories = {
+			aeronatical_science_tech
+			heavier_than_air_tech
+		}	
+	}	
+
+	stable_manned_glider = {
+		# Unlocks flight milestone, innovation
+		
+		research_cost = 1.5
+		start_year = 1893
+		folder = {
+			name = aviation_folder
+			position = { x = 0 y = @1893 }
+		}
+		
+		path = {
+			leads_to_tech = three_axis_flight_control
+			research_cost_coeff = 1
+		}
+		path = {
+			leads_to_tech = monocoque_construction
+			research_cost_coeff = 1
+		}
+
+
+		categories = {
+			aeronatical_science_tech
+			heavier_than_air_tech
+		}	
+	}
+
+	early_launch_catapult = {
+		# innovation
+
+		research_cost = 0.8
+		start_year = 1895
+		folder = {
+			name = aviation_folder
+			position = { x = 2 y = @1895 }
+		}
+		
+		categories = {
+			heavier_than_air_tech
+			aeronatical_science_tech
+		}	
+	}
+	
 	three_axis_flight_control = {
 		# air accident chance, innovation, flight milestone unlock
 		
@@ -306,7 +283,16 @@ technologies = {
 		start_year = 1903
 		folder = {
 			name = aviation_folder
-			position = { x = 6 y = 26 }
+			position = { x = 0 y = @1903 }
+		}
+
+		path = {
+			leads_to_tech = early_airborne_radio
+			research_cost_coeff = 1
+		}
+		path = {
+			leads_to_tech = retractable_landing_gear
+			research_cost_coeff = 1
 		}
 
 		categories = {
@@ -315,69 +301,6 @@ technologies = {
 		}
 	}
 
-
-	practical_radial_engine = {
-		# design option, air defense
-
-		dependencies = {
-			compact_internal_combustion_engine = 1
-		}
-		
-		research_cost = 0.8
-		start_year = 1904
-		folder = {
-			name = aviation_folder
-			position = { x = 2 y = 28 }
-		}
-		
-		categories = {
-			engine_tech
-			aeronatical_science_tech
-		}	
-	}
-
-	practical_water_cooling = {
-		# design option, air speed
-
-		dependencies = {
-			compact_internal_combustion_engine = 1
-		}
-		
-		research_cost = 0.8
-		start_year = 1904
-		folder = {
-			name = aviation_folder
-			position = { x = 4 y = 28 }
-		}
-		
-		categories = {
-			engine_tech
-			aeronatical_science_tech
-		}	
-	}
-
-	rotary_engine = {
-		# design option, air agility
-
-		dependencies = {
-			compact_internal_combustion_engine = 1
-		}
-		
-		research_cost = 0.8
-		start_year = 1905
-		folder = {
-			name = aviation_folder
-			position = { x = 6 y = 29 }
-		}
-		
-		categories = {
-			engine_tech
-			aeronatical_science_tech
-		}	
-	}
-
-	# Very unfinished
-
 	monocoque_construction = {
 		# design option, air speed
 		
@@ -385,7 +308,15 @@ technologies = {
 		start_year = 1912
 		folder = {
 			name = aviation_folder
-			position = { x = 8 y = 32 }
+			position = { x = 2 y = @1912 }
+		}
+		path = {
+			leads_to_tech = large_airframe_construction
+			research_cost_coeff = 1
+		}
+		path = {
+			leads_to_tech = metal_monocoque_construction
+			research_cost_coeff = 1
 		}
 		
 		categories = {
@@ -401,7 +332,7 @@ technologies = {
 		start_year = 1913
 		folder = {
 			name = aviation_folder
-			position = { x = 8 y = 34 }
+			position = { x = 2 y = @1913 }
 		}
 		
 		categories = {
@@ -417,7 +348,7 @@ technologies = {
 		start_year = 1916
 		folder = {
 			name = aviation_folder
-			position = { x = 8 y = 36 }
+			position = { x = 8 y = @1916 }
 		}
 		
 		categories = {
@@ -433,7 +364,20 @@ technologies = {
 		start_year = 1920
 		folder = {
 			name = aviation_folder
-			position = { x = 8 y = 40 }
+			position = { x = 8 y = @1920 }
+		}
+
+		path = {
+			leads_to_tech = townend_ring
+			research_cost_coeff = 1
+		}
+		path = {
+			leads_to_tech = cockpit_pressurization
+			research_cost_coeff = 1
+		}
+		path = {
+			leads_to_tech = flush_rivets
+			research_cost_coeff = 1
 		}
 		
 		categories = {
@@ -449,43 +393,15 @@ technologies = {
 		start_year = 1920
 		folder = {
 			name = aviation_folder
-			position = { x = 8 y = 40 }
+			position = { x = 8 y = @1920 }
+		}
+		path = {
+			leads_to_tech = tricycle_landing_gear
+			research_cost_coeff = 1
 		}
 		
 		categories = {
 			heavier_than_air_tech
-			aeronatical_science_tech
-		}
-	}
-
-	turbocharger = {
-		# design option, air speed
-		
-		research_cost = 1
-		start_year = 1920
-		folder = {
-			name = aviation_folder
-			position = { x = 8 y = 40 }
-		}
-		
-		categories = {
-			engine_tech
-			aeronatical_science_tech
-		}
-	}
-
-	supercharger = {
-		# design option, air speed
-		
-		research_cost = 1
-		start_year = 1925
-		folder = {
-			name = aviation_folder
-			position = { x = 8 y = 44 }
-		}
-		
-		categories = {
-			engine_tech
 			aeronatical_science_tech
 		}
 	}
@@ -497,7 +413,12 @@ technologies = {
 		start_year = 1925
 		folder = {
 			name = aviation_folder
-			position = { x = 8 y = 44 }
+			position = { x = 8 y = @1925 }
+		}
+
+		path = {
+			leads_to_tech = naca_cowling
+			research_cost_coeff = 1
 		}
 		
 		categories = {
@@ -512,7 +433,12 @@ technologies = {
 		start_year = 1925
 		folder = {
 			name = aviation_folder
-			position = { x = 8 y = 44 }
+			position = { x = 8 y = @1925 }
+		}
+
+		path = {
+			leads_to_tech = stepless_cockpit
+			research_cost_coeff = 1
 		}
 		
 		categories = {
@@ -527,23 +453,7 @@ technologies = {
 		start_year = 1929
 		folder = {
 			name = aviation_folder
-			position = { x = 8 y = 46 }
-		}
-		
-		categories = {
-			heavier_than_air_tech
-			aeronatical_science_tech
-		}
-	}
-
-	scientific_airfoil_development = {
-		# air agility, innovation
-		
-		research_cost = 1
-		start_year = 1930
-		folder = {
-			name = aviation_folder
-			position = { x = 8 y = 48 }
+			position = { x = 8 y = @1929 }
 		}
 		
 		categories = {
@@ -559,48 +469,10 @@ technologies = {
 		start_year = 1930
 		folder = {
 			name = aviation_folder
-			position = { x = 8 y = 48 }
+			position = { x = 8 y = @1930 }
 		}
 		
 		categories = {
-			aeronatical_science_tech
-		}
-	}
-
-	controllable_pitch_propeller = {
-		# air speed, air agility, air org
-		
-		research_cost = 1
-		start_year = 1930
-		folder = {
-			name = aviation_folder
-			position = { x = 8 y = 48 }
-		}
-		
-		categories = {
-			engine_tech
-			aeronatical_science_tech
-		}
-	}
-
-	high_performance_aerial_engine = {
-		# unlock decision, air speed
-
-		dependencies = {
-			practical_radial_engine = 1
-			practical_water_cooling = 1
-			radial_engines = 1
-		}
-		
-		research_cost = 1.5
-		start_year = 1935
-		folder = {
-			name = aviation_folder
-			position = { x = 8 y = 52 }
-		}
-		
-		categories = {
-			engine_tech
 			aeronatical_science_tech
 		}
 	}
@@ -612,7 +484,7 @@ technologies = {
 		start_year = 1935
 		folder = {
 			name = aviation_folder
-			position = { x = 8 y = 52 }
+			position = { x = 8 y = @1935 }
 		}
 		
 		categories = {
@@ -628,11 +500,220 @@ technologies = {
 		start_year = 1936
 		folder = {
 			name = aviation_folder
-			position = { x = 8 y = 54 }
+			position = { x = 8 y = @1936 }
 		}
 		
 		categories = {
 			heavier_than_air_tech
+			aeronatical_science_tech
+		}
+	}
+
+	aerial_steam_engine_experiments = {
+		
+		research_cost = 1
+		start_year = 1850
+		folder = {
+			name = aviation_folder
+			position = { x = -1 y = @1850 }
+		}
+		
+		path = {
+			leads_to_tech = compact_internal_combustion_engine
+			research_cost_coeff = 1
+		}
+
+		categories = {
+			aeronatical_science_tech
+			engine_tech
+		}	
+	}
+
+	compact_internal_combustion_engine = {
+		# air speed, innovation
+		
+		research_cost = 1
+		start_year = 1900
+		folder = {
+			name = aviation_folder
+			position = { x = 6 y = @1900 }
+		}
+
+		dependencies = {
+			internal_combustion_engine = 1
+		}
+
+		path = {
+			leads_to_tech = practical_radial_engine
+			research_cost_coeff = 1
+		}
+		path = {
+			leads_to_tech = practical_water_cooling
+			research_cost_coeff = 1
+		}
+		path = {
+			leads_to_tech = rotary_engine
+			research_cost_coeff = 1
+		}
+
+		categories = {
+			engine_tech
+			aeronatical_science_tech
+		}
+	}
+
+	practical_radial_engine = {
+		# design option, air defense
+
+		research_cost = 0.8
+		start_year = 1904
+		folder = {
+			name = aviation_folder
+			position = { x = 2 y = @1904 }
+		}
+
+		path = {
+			leads_to_tech = supercharger
+			research_cost_coeff = 1
+		}
+		path = {
+			leads_to_tech = controllable_pitch_propeller
+			research_cost_coeff = 1
+		}
+		
+		categories = {
+			engine_tech
+			aeronatical_science_tech
+		}	
+	}
+
+	practical_water_cooling = {
+		# design option, air speed
+
+		research_cost = 0.8
+		start_year = 1904
+		folder = {
+			name = aviation_folder
+			position = { x = 4 y = @1904 }
+		}
+		
+		path = {
+			leads_to_tech = aerial_turbocharger
+			research_cost_coeff = 1
+		}
+		path = {
+			leads_to_tech = controllable_pitch_propeller
+			research_cost_coeff = 1
+		}
+
+		categories = {
+			engine_tech
+			aeronatical_science_tech
+		}	
+	}
+
+	rotary_engine = {
+		# design option, air agility
+
+		research_cost = 0.8
+		start_year = 1905
+		folder = {
+			name = aviation_folder
+			position = { x = 6 y = @1905 }
+		}
+		
+		categories = {
+			engine_tech
+			aeronatical_science_tech
+		}	
+	}
+
+	aerial_turbocharger = {
+		# design option, air speed
+		
+		research_cost = 1
+		start_year = 1920
+		folder = {
+			name = aviation_folder
+			position = { x = 8 y = @1920 }
+		}
+
+		path = {
+			leads_to_tech = high_performance_aerial_engine
+			research_cost_coeff = 1
+		}
+		
+		categories = {
+			engine_tech
+			aeronatical_science_tech
+		}
+	}
+
+	supercharger = {
+		# design option, air speed
+		
+		research_cost = 1
+		start_year = 1925
+		folder = {
+			name = aviation_folder
+			position = { x = 8 y = @1925 }
+		}
+
+		path = {
+			leads_to_tech = high_performance_aerial_engine
+			research_cost_coeff = 1
+		}
+		
+		categories = {
+			engine_tech
+			aeronatical_science_tech
+		}
+	}
+
+	controllable_pitch_propeller = {
+		# air speed, air agility, air org
+		
+		research_cost = 1
+		start_year = 1930
+		folder = {
+			name = aviation_folder
+			position = { x = 8 y = @1930 }
+		}
+
+		path = {
+			leads_to_tech = high_performance_aerial_engine
+			research_cost_coeff = 1
+		}
+		
+		categories = {
+			engine_tech
+			aeronatical_science_tech
+		}
+	}
+
+	high_performance_aerial_engine = {
+		# unlock decision, air speed
+
+		dependencies = {
+			aerial_turbocharger = 1
+			supercharger = 1
+			controllable_pitch_propeller = 1
+		}
+
+		path = {
+			leads_to_tech = high_octane_fuel
+			research_cost_coeff = 1
+		}
+		
+		research_cost = 1.5
+		start_year = 1935
+		folder = {
+			name = aviation_folder
+			position = { x = 8 y = @1935 }
+		}
+		
+		categories = {
+			engine_tech
 			aeronatical_science_tech
 		}
 	}
@@ -648,28 +729,17 @@ technologies = {
 		start_year = 1936
 		folder = {
 			name = aviation_folder
-			position = { x = 8 y = 54 }
+			position = { x = 8 y = @1936 }
+		}
+
+		path = {
+			leads_to_tech = experimental_turbojet
+			research_cost_coeff = 1
 		}
 		
 		categories = {
 			engine_tech
 			synth_resources
-			aeronatical_science_tech
-		}
-	}
-
-	laminar_flow_airfoil = {
-		# air speed, range
-		
-		research_cost = 1
-		start_year = 1940
-		folder = {
-			name = aviation_folder
-			position = { x = 8 y = 60 }
-		}
-		
-		categories = {
-			heavier_than_air_tech
 			aeronatical_science_tech
 		}
 	}
@@ -686,7 +756,7 @@ technologies = {
 		start_year = 1940
 		folder = {
 			name = aviation_folder
-			position = { x = 8 y = 60 }
+			position = { x = 8 y = @1940 }
 		}
 		
 		categories = {
@@ -703,28 +773,25 @@ technologies = {
 		start_year = 1943
 		folder = {
 			name = aviation_folder
-			position = { x = 8 y = 62 }
+			position = { x = 8 y = @1943 }
+		}
+
+		path = {
+			leads_to_tech = turboprop
+			research_cost_coeff = 1
+		}
+		path = {
+			leads_to_tech = high_bypass_turbofan
+			research_cost_coeff = 1
+		}
+		path = {
+			leads_to_tech = turbojet_afterburner
+			research_cost_coeff = 1
 		}
 		
 		categories = {
 			jet_technology
 			engine_tech
-			aeronatical_science_tech
-		}
-	}
-
-	transonic_area_rule = {
-		# air speed
-		
-		research_cost = 1
-		start_year = 1945
-		folder = {
-			name = aviation_folder
-			position = { x = 8 y = 64 }
-		}
-		
-		categories = {
-			heavier_than_air_tech
 			aeronatical_science_tech
 		}
 	}
@@ -736,7 +803,7 @@ technologies = {
 		start_year = 1945
 		folder = {
 			name = aviation_folder
-			position = { x = 8 y = 64 }
+			position = { x = 8 y = @1945 }
 		}
 		
 		categories = {
@@ -753,29 +820,17 @@ technologies = {
 		start_year = 1950
 		folder = {
 			name = aviation_folder
-			position = { x = 8 y = 68 }
+			position = { x = 8 y = @1950 }
+		}
+
+		path = {
+			leads_to_tech = turbofan_afterburner
+			research_cost_coeff = 1
 		}
 		
 		categories = {
 			jet_technology
 			engine_tech
-			aeronatical_science_tech
-		}
-	}
-
-	polyurethane_sealant = {
-		# airship hp, airship org
-		
-		research_cost = 0.8
-		start_year = 1955
-		folder = {
-			name = aviation_folder
-			position = { x = 8 y = 72 }
-		}
-		
-		categories = {
-			lighter_than_air_tech
-			biochemistry_tech
 			aeronatical_science_tech
 		}
 	}
@@ -787,7 +842,7 @@ technologies = {
 		start_year = 1960
 		folder = {
 			name = aviation_folder
-			position = { x = 8 y = 76 }
+			position = { x = 8 y = @1960 }
 		}
 		
 		categories = {
@@ -804,7 +859,7 @@ technologies = {
 		start_year = 1962
 		folder = {
 			name = aviation_folder
-			position = { x = 8 y = 78 }
+			position = { x = 8 y = @1962 }
 		}
 		
 		categories = {
@@ -814,6 +869,139 @@ technologies = {
 		}
 	}
 
+	navier_stokes_equations = {
+		# Research bonus
+		
+		research_cost = 1
+		start_year = 1852
+		folder = {
+			name = aviation_folder
+			position = { x = 0 y = @1852 }
+		}
+		
+		path = {
+			leads_to_tech = wind_tunnel
+			research_cost_coeff = 1
+		}
+		path = {
+			leads_to_tech = reynolds_number
+			research_cost_coeff = 1
+		}
+
+		categories = {
+			aeronatical_science_tech
+		}	
+	}
+
+	wind_tunnel = {
+		# Unlocks decisions, ticking innovation
+		
+		research_cost = 1
+		start_year = 1871
+		folder = {
+			name = aviation_folder
+			position = { x = 2 y = @1871 }
+		}
+		
+		path = {
+			leads_to_tech = reynolds_number
+			research_cost_coeff = 1
+		}
+		path = {
+			leads_to_tech = stable_manned_glider
+			research_cost_coeff = 1
+		}
+
+		categories = {
+			aeronatical_science_tech
+		}	
+	}
+
+	reynolds_number = {
+		# Research bonus
+		
+		research_cost = 1
+		start_year = 1883
+		folder = {
+			name = aviation_folder
+			position = { x = 0 y = @1883 }
+		}
+		dependencies={
+			wind_tunnel = 1
+			navier_stokes_equations = 1
+		}
+
+		path = {
+			leads_to_tech = scientific_airfoil_development
+			research_cost_coeff = 1
+		}
+
+		categories = {
+			aeronatical_science_tech
+		}	
+	}
+
+	scientific_airfoil_development = {
+		# air agility, innovation
+		
+		research_cost = 1
+		start_year = 1930
+		folder = {
+			name = aviation_folder
+			position = { x = 0 y = @1930 }
+		}
+		path = {
+			leads_to_tech = laminar_flow_airfoil
+			research_cost_coeff = 1
+		}
+		
+		categories = {
+			heavier_than_air_tech
+			aeronatical_science_tech
+		}
+	}
+
+	laminar_flow_airfoil = {
+		# air speed, range
+		
+		research_cost = 1
+		start_year = 1940
+		folder = {
+			name = aviation_folder
+			position = { x = 0 y = @1940 }
+		}
+
+		path = {
+			leads_to_tech = transonic_area_rule
+			research_cost_coeff = 1
+		}
+		
+		categories = {
+			heavier_than_air_tech
+			aeronatical_science_tech
+		}
+	}
+
+	transonic_area_rule = {
+		# air speed
+		
+		research_cost = 1
+		start_year = 1945
+		folder = {
+			name = aviation_folder
+			position = { x = 0 y = @1945 }
+		}
+
+		path = {
+			leads_to_tech = supercritical_airfoil
+			research_cost_coeff = 1
+		}
+		
+		categories = {
+			heavier_than_air_tech
+			aeronatical_science_tech
+		}
+	}
 
 	supercritical_airfoil = {
 		# range, fuel usage
@@ -822,7 +1010,7 @@ technologies = {
 		start_year = 1965
 		folder = {
 			name = aviation_folder
-			position = { x = 8 y = 80 }
+			position = { x = 0 y = @1965 }
 		}
 		
 		categories = {

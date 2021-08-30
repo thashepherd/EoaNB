@@ -7687,7 +7687,7 @@ guiTypes = {
 
 		}
 
-		#Aviation
+		#Aeronautical Theory & Practice
 		containerWindowType = {
 			name = "aviation_folder"
 			position = { x = 0 y = 47 }
@@ -7696,6 +7696,90 @@ guiTypes = {
 			drag_scroll = { left middle }
 			verticalScrollbar = "right_vertical_slider"
 			horizontalScrollbar = "bottom_horizontal_slider"
+
+			instantTextBoxType = {
+				name = "lighter_than_air_title"
+				position = { x = 250 y = 35 }
+				textureFile = ""
+				font = "hoi_22tech"
+				borderSize = { x = 0 y = 4 }
+				text = "aviation_lta_label"
+				maxWidth = 400
+				maxHeight = 122
+				format = center
+				Orientation = "UPPER_LEFT"
+			}
+
+			gridboxtype = {
+				name = "ballonet_tree"
+				position = { x = 200 y = 200 }
+				size = { width = 478 height = 1350 }
+				slotsize = { width = 60 height = 60 }
+				format = "UP"
+			}
+
+			instantTextBoxType = {
+				name = "heavier_than_air_title"
+				position = { x = 550 y = 35 }
+				textureFile = ""
+				font = "hoi_22tech"
+				borderSize = { x = 0 y = 4 }
+				text = "aviation_hta_label"
+				maxWidth = 400
+				maxHeight = 122
+				format = center
+				Orientation = "UPPER_LEFT"
+			}
+
+			gridboxtype = {
+				name = "experimental_manned_glider_tree"
+				position = { x = 500 y = 200 }
+				size = { width = 478 height = 1350 }
+				slotsize = { width = 60 height = 60 }
+				format = "UP"
+			}
+
+			instantTextBoxType = {
+				name = "aviation_engine_title"
+				position = { x = 850 y = 35 }
+				textureFile = ""
+				font = "hoi_22tech"
+				borderSize = { x = 0 y = 4 }
+				text = "aviation_engine_label"
+				maxWidth = 400
+				maxHeight = 122
+				format = center
+				Orientation = "UPPER_LEFT"
+			}
+
+			gridboxtype = {
+				name = "aerial_steam_engine_experiments_tree"
+				position = { x = 800 y = 200 }
+				size = { width = 478 height = 1350 }
+				slotsize = { width = 60 height = 60 }
+				format = "UP"
+			}
+
+			instantTextBoxType = {
+				name = "aeronautical_theory_title"
+				position = { x = 1150 y = 35 }
+				textureFile = ""
+				font = "hoi_22tech"
+				borderSize = { x = 0 y = 4 }
+				text = "aviation_theory_label"
+				maxWidth = 400
+				maxHeight = 122
+				format = center
+				Orientation = "UPPER_LEFT"
+			}
+
+			gridboxtype = {
+				name = "navier_stokes_equations_tree"
+				position = { x = 1100 y = 200 }
+				size = { width = 478 height = 1350 }
+				slotsize = { width = 60 height = 60 }
+				format = "UP"
+			}
 
 			background = {
 				name = "Background"
@@ -7723,7 +7807,7 @@ guiTypes = {
 
 				instantTextBoxType = {
 					name = "aviation_year1"
-					position = { x = 0 y = 20 }
+					position = { x = 0 y = 100 }
 					textureFile = ""
 					font = "hoi_36header"
 					borderSize = { x = 0 y = 4 }
@@ -7740,32 +7824,6 @@ guiTypes = {
 					textureFile = ""
 					font = "hoi_36header"
 					borderSize = { x = 0 y = 4 }
-					text = "1855"
-					maxWidth = 130
-					maxHeight = 32
-					format = left
-					Orientation = "UPPER_LEFT"
-				}
-
-				instantTextBoxType = {
-					name = "aviation_year3"
-					position = { x = 0 y = 692 }
-					textureFile = ""
-					font = "hoi_36header"
-					borderSize = { x = 0 y = 4 }
-					text = "1860"
-					maxWidth = 130
-					maxHeight = 32
-					format = left
-					Orientation = "UPPER_LEFT"
-				}
-
-				instantTextBoxType = {
-					name = "aviation_year4"
-					position = { x = 0 y = 968 }
-					textureFile = ""
-					font = "hoi_36header"
-					borderSize = { x = 0 y = 4 }
 					text = "1870"
 					maxWidth = 130
 					maxHeight = 32
@@ -7774,21 +7832,8 @@ guiTypes = {
 				}
 
 				instantTextBoxType = {
-					name = "aviation_year5"
-					position = { x = 0 y = 1244 }
-					textureFile = ""
-					font = "hoi_36header"
-					borderSize = { x = 0 y = 4 }
-					text = "1880"
-					maxWidth = 130
-					maxHeight = 32
-					format = left
-					Orientation = "UPPER_LEFT"
-				}
-
-				instantTextBoxType = {
-					name = "aviation_year6"
-					position = { x = 0 y = 1520 }
+					name = "aviation_year3"
+					position = { x = 0 y = 600 }
 					textureFile = ""
 					font = "hoi_36header"
 					borderSize = { x = 0 y = 4 }
@@ -7800,20 +7845,8 @@ guiTypes = {
 				}
 
 				instantTextBoxType = {
-					name = "aviation_year7"
-					position = { x = 0 y = 1670 }
-					textureFile = ""
-					font = "hoi_36header"
-					borderSize = { x = 0 y = 4 }
-					text = "1900"
-					maxWidth = 130
-					maxHeight = 32
-					format = left
-					Orientation = "UPPER_LEFT"
-				}
-				instantTextBoxType = {
-					name = "aviation_year8"
-					position = { x = 0 y = 1910 }
+					name = "aviation_year4"
+					position = { x = 0 y = 850 }
 					textureFile = ""
 					font = "hoi_36header"
 					borderSize = { x = 0 y = 4 }
@@ -7823,57 +7856,10 @@ guiTypes = {
 					format = left
 					Orientation = "UPPER_LEFT"
 				}
+
 				instantTextBoxType = {
-					name = "aviation_year9"
-					position = { x = 0 y = 2150 }
-					textureFile = ""
-					font = "hoi_36header"
-					borderSize = { x = 0 y = 4 }
-					text = "1915"
-					maxWidth = 130
-					maxHeight = 32
-					format = left
-					Orientation = "UPPER_LEFT"
-				}
-				instantTextBoxType = {
-					name = "aviation_year10"
-					position = { x = 0 y = 2390 }
-					textureFile = ""
-					font = "hoi_36header"
-					borderSize = { x = 0 y = 4 }
-					text = "1917"
-					maxWidth = 130
-					maxHeight = 32
-					format = left
-					Orientation = "UPPER_LEFT"
-				}
-				instantTextBoxType = {
-					name = "aviation_year11"
-					position = { x = 0 y = 2510 }
-					textureFile = ""
-					font = "hoi_36header"
-					borderSize = { x = 0 y = 4 }
-					text = "1920"
-					maxWidth = 130
-					maxHeight = 32
-					format = left
-					Orientation = "UPPER_LEFT"
-				}
-				instantTextBoxType = {
-					name = "aviation_year12"
-					position = { x = 0 y = 2630 }
-					textureFile = ""
-					font = "hoi_36header"
-					borderSize = { x = 0 y = 4 }
-					text = "1925"
-					maxWidth = 130
-					maxHeight = 32
-					format = left
-					Orientation = "UPPER_LEFT"
-				}
-				instantTextBoxType = {
-					name = "aviation_year13"
-					position = { x = 0 y = 2750 }
+					name = "aviation_year5"
+					position = { x = 0 y = 1100 }
 					textureFile = ""
 					font = "hoi_36header"
 					borderSize = { x = 0 y = 4 }
@@ -7883,33 +7869,10 @@ guiTypes = {
 					format = left
 					Orientation = "UPPER_LEFT"
 				}
+
 				instantTextBoxType = {
-					name = "aviation_year14"
-					position = { x = 0 y = 2870 }
-					textureFile = ""
-					font = "hoi_36header"
-					borderSize = { x = 0 y = 4 }
-					text = "1940"
-					maxWidth = 130
-					maxHeight = 32
-					format = left
-					Orientation = "UPPER_LEFT"
-				}
-				instantTextBoxType = {
-					name = "aviation_year15"
-					position = { x = 0 y = 2990 }
-					textureFile = ""
-					font = "hoi_36header"
-					borderSize = { x = 0 y = 4 }
-					text = "1945"
-					maxWidth = 130
-					maxHeight = 32
-					format = left
-					Orientation = "UPPER_LEFT"
-				}
-				instantTextBoxType = {
-					name = "aviation_year16"
-					position = { x = 0 y = 3110 }
+					name = "aviation_year6"
+					position = { x = 0 y = 1350 }
 					textureFile = ""
 					font = "hoi_36header"
 					borderSize = { x = 0 y = 4 }
@@ -7919,33 +7882,10 @@ guiTypes = {
 					format = left
 					Orientation = "UPPER_LEFT"
 				}
+
 				instantTextBoxType = {
-					name = "aviation_year17"
-					position = { x = 0 y = 3230 }
-					textureFile = ""
-					font = "hoi_36header"
-					borderSize = { x = 0 y = 4 }
-					text = "1955"
-					maxWidth = 130
-					maxHeight = 32
-					format = left
-					Orientation = "UPPER_LEFT"
-				}
-				instantTextBoxType = {
-					name = "aviation_year18"
-					position = { x = 0 y = 3350 }
-					textureFile = ""
-					font = "hoi_36header"
-					borderSize = { x = 0 y = 4 }
-					text = "1960"
-					maxWidth = 130
-					maxHeight = 32
-					format = left
-					Orientation = "UPPER_LEFT"
-				}
-				instantTextBoxType = {
-					name = "aviation_year19"
-					position = { x = 0 y = 3470 }
+					name = "aviation_year7"
+					position = { x = 0 y = 1600 }
 					textureFile = ""
 					font = "hoi_36header"
 					borderSize = { x = 0 y = 4 }
@@ -7956,32 +7896,8 @@ guiTypes = {
 					Orientation = "UPPER_LEFT"
 				}
 				instantTextBoxType = {
-					name = "aviation_year20"
-					position = { x = 0 y = 3590 }
-					textureFile = ""
-					font = "hoi_36header"
-					borderSize = { x = 0 y = 4 }
-					text = "1975"
-					maxWidth = 130
-					maxHeight = 32
-					format = left
-					Orientation = "UPPER_LEFT"
-				}
-				instantTextBoxType = {
-					name = "aviation_year21"
-					position = { x = 0 y = 3710 }
-					textureFile = ""
-					font = "hoi_36header"
-					borderSize = { x = 0 y = 4 }
-					text = "1980"
-					maxWidth = 130
-					maxHeight = 32
-					format = left
-					Orientation = "UPPER_LEFT"
-				}
-				instantTextBoxType = {
-					name = "aviation_year22"
-					position = { x = 0 y = 3830 }
+					name = "aviation_year8"
+					position = { x = 0 y = 1850 }
 					textureFile = ""
 					font = "hoi_36header"
 					borderSize = { x = 0 y = 4 }
@@ -7992,32 +7908,8 @@ guiTypes = {
 					Orientation = "UPPER_LEFT"
 				}
 				instantTextBoxType = {
-					name = "aviation_year23"
-					position = { x = 0 y = 3950 }
-					textureFile = ""
-					font = "hoi_36header"
-					borderSize = { x = 0 y = 4 }
-					text = "2000"
-					maxWidth = 130
-					maxHeight = 32
-					format = left
-					Orientation = "UPPER_LEFT"
-				}
-				instantTextBoxType = {
-					name = "aviation_year24"
-					position = { x = 0 y = 4070 }
-					textureFile = ""
-					font = "hoi_36header"
-					borderSize = { x = 0 y = 4 }
-					text = "2005"
-					maxWidth = 130
-					maxHeight = 32
-					format = left
-					Orientation = "UPPER_LEFT"
-				}
-				instantTextBoxType = {
-					name = "aviation_year25"
-					position = { x = 0 y = 4190 }
+					name = "aviation_year9"
+					position = { x = 0 y = 2100 }
 					textureFile = ""
 					font = "hoi_36header"
 					borderSize = { x = 0 y = 4 }
@@ -8028,44 +7920,8 @@ guiTypes = {
 					Orientation = "UPPER_LEFT"
 				}
 				instantTextBoxType = {
-					name = "aviation_year26"
-					position = { x = 0 y = 4310 }
-					textureFile = ""
-					font = "hoi_36header"
-					borderSize = { x = 0 y = 4 }
-					text = "2015"
-					maxWidth = 130
-					maxHeight = 32
-					format = left
-					Orientation = "UPPER_LEFT"
-				}
-				instantTextBoxType = {
-					name = "aviation_year27"
-					position = { x = 0 y = 4430 }
-					textureFile = ""
-					font = "hoi_36header"
-					borderSize = { x = 0 y = 4 }
-					text = "2020"
-					maxWidth = 130
-					maxHeight = 32
-					format = left
-					Orientation = "UPPER_LEFT"
-				}
-				instantTextBoxType = {
-					name = "aviation_year28"
-					position = { x = 0 y = 4550 }
-					textureFile = ""
-					font = "hoi_36header"
-					borderSize = { x = 0 y = 4 }
-					text = "2025"
-					maxWidth = 130
-					maxHeight = 32
-					format = left
-					Orientation = "UPPER_LEFT"
-				}
-				instantTextBoxType = {
-					name = "aviation_year29"
-					position = { x = 0 y = 4670 }
+					name = "aviation_year10"
+					position = { x = 0 y = 2350 }
 					textureFile = ""
 					font = "hoi_36header"
 					borderSize = { x = 0 y = 4 }
@@ -8076,36 +7932,12 @@ guiTypes = {
 					Orientation = "UPPER_LEFT"
 				}
 				instantTextBoxType = {
-					name = "aviation_year30"
-					position = { x = 0 y = 4790 }
+					name = "aviation_year11"
+					position = { x = 0 y = 2600 }
 					textureFile = ""
 					font = "hoi_36header"
 					borderSize = { x = 0 y = 4 }
-					text = "2035"
-					maxWidth = 130
-					maxHeight = 32
-					format = left
-					Orientation = "UPPER_LEFT"
-				}
-				instantTextBoxType = {
-					name = "aviation_year31"
-					position = { x = 0 y = 4910 }
-					textureFile = ""
-					font = "hoi_36header"
-					borderSize = { x = 0 y = 4 }
-					text = "2040"
-					maxWidth = 130
-					maxHeight = 32
-					format = left
-					Orientation = "UPPER_LEFT"
-				}
-				instantTextBoxType = {
-					name = "aviation_year32"
-					position = { x = 0 y = 5030 }
-					textureFile = ""
-					font = "hoi_36header"
-					borderSize = { x = 0 y = 4 }
-					text = "2045"
+					text = "2050"
 					maxWidth = 130
 					maxHeight = 32
 					format = left
@@ -8113,23 +7945,6 @@ guiTypes = {
 				}
 
 			}
-
-			gridboxtype = {
-				name = "ballonet_tree"
-				position = { x = 100 y = 140 }
-				size = { width = 800 height = 800 }
-				slotsize = { width = 60 height = 60 }
-				format = "UP"
-			}
-
-			gridboxtype = {
-				name = "aerial_steam_engine_experiments_tree"
-				position = { x = 100 y = 140 }
-				size = { width = 800 height = 800 }
-				slotsize = { width = 60 height = 60 }
-				format = "UP"
-			}
-
 		}
 
 		#Electronics and Instruments
