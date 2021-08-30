@@ -48,7 +48,8 @@ Military Aviation Equipment
 1914
     Equip: Early heavy bomber (requires tier 3 doctrine, large airframe construction)
     Equip: 1914 military airship
-    Equip: 1914 observation balloon
+        Equip: 1915 naval airship (requires depth charge)
+        Equip: 1914 observation balloon
     Deflector Wedges (design option, pursuit air attack)
     Foster Sliding Mount (design option, pursuit air attack)
 	Internal bomb bay (multirole+heavy bomber ground attack, strategic bombing)
@@ -58,18 +59,18 @@ Military Aviation Equipment
 	Synchronization gear (design option, pursuit air attack)
     Equip: 1915 pursuit aircraft (requires deflector wedges or foster sliding mount or synchro gear)
     Equip: 1915 multirole aircraft
-    Equip: 1915 naval airship (requires depth charge)
 	Navy: Equip: Early naval floatplane catapult
 
 1916
     Equip: 1916 heavy bomber (requires Internal bomb bay)
     Equip: 1916 pursuit aircraft
-    Equip: 1916 Zeppelin Interceptor (unlocked via doctrine)
     Scarff ring (design option, multirole+heavy bomber air defense)
 
 1917
     Equip: 1917 multirole aircraft
     Equip: 1917 CAS (unlocked via doctrine)
+    Equip: 1917 Zeppelin Interceptor (unlocked via doctrine)
+
 
 1918
     Equip: 1918 reconnaissance aircraft (requires doctrine)

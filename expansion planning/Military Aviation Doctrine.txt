@@ -23,6 +23,7 @@ Army Cooperation doctrine (air support)
     Flechette Armament (ground attack) | Engine Armor Plate (hp, aa defense)
     Early CAS (new equipment type) | Dedicated Zeppelin Interceptor (new equipment type)
     Interbranch Radio Standards (recon/observation recon) + Phonetic Alphabet (signal company initiative, recon/observation initiative) + Parachute Culture (air experience game, air ace generation)
+ 
     Barnstormers (air agility) + Crop Dusting (farm construction speed, population gain)
 
 
@@ -33,6 +34,7 @@ Operational Recon doctrine
     Battlefield Recon Escort (escort efficiency) + Aerial Divisions (air superiority) + Strike Mission Planning (ground attack, max planning)
     Wingman Culture (air defense) + Combat Instructor Rotation (air experience gain, -ace generation) + Squadron Formation Training (air superiority)
     Offensive Counter Air (multirole recon air attack)
+
     Schneider Trophy (decision, air speed) + Air Mail Service (decision, low infrastructure improvement)
 
 
@@ -43,13 +45,15 @@ Terror Bombing doctrine
     Extra Ammunition (air defense) + Incendiary Ammunition (air attack) | Additional Hardpoints (ground attack) + Avent Garde Explosives (ground attack, strategic attack)
     Reputation Management (diplo relationship bonus, ground targeting, strategic attack malus) | The Ends Justify the Means (strategic attack, diplo replationship malus)
     A Bloody Paralyzer of an Aircraft (heavy bomber tech bonus, free design) | The Obliterator (event chain - meme zeppelin battleship)
-    Dirigism (factory output bonus, - recruitable pop) | Single Leg Missions (+range, +escort, big mallus to survival)
-    Early Parasite Fighter Experiments
+    Early Parasite Fighter Experiments | Single Leg Missions (+range, +escort, big mallus to survival)
+
+    Dirigism (factory output bonus, - recruitable pop)
 
 1919
     Post-war Doctrine Consolidation
 
-        Combat Air Patrol + Escorted Tactical Strike + Coastal Patrols
+        Combat Air Patrol + Escorted Tactical Strike
+        Civil Aviation (unlocks crop dusting, air mail, etc if not already unlocked)
 
 (Requires Warship Catapult Experiment)
 1912 
