@@ -241,7 +241,7 @@ technology_categories = {
 	pursuit_aircraft_tech
 	multirole_aircraft_tech
 	heavy_bomber_tech
-	air_doctrine_tech
+	air_doctrine
 	aeronatical_science_tech
 }
 

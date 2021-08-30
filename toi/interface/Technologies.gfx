@@ -5450,6 +5450,8 @@ spriteTypes = {
 
 	### Dream of Flight placeholders ###
 
+	## Aeronautical engineering
+
 	SpriteType = {
 		name = "GFX_ballonet_medium"
 		texturefile = "gfx/interface/technologies/aviation/giffard_airship.dds"
@@ -5620,7 +5622,7 @@ spriteTypes = {
 	}
 
 	SpriteType = {
-		name = "GFX_high_performance_aerial_engine_large"
+		name = "GFX_high_performance_aerial_engine_medium"
 		texturefile = "gfx/interface/technologies/aviation/giffard_airship.dds"
 	}
 
@@ -5635,7 +5637,7 @@ spriteTypes = {
 	}
 
 	SpriteType = {
-		name = "GFX_practical_turbojet_large"
+		name = "GFX_practical_turbojet_medium"
 		texturefile = "gfx/interface/technologies/aviation/giffard_airship.dds"
 	}
 
@@ -8001,6 +8003,14 @@ spriteTypes = {
 		name = "GFX_naval_doctrine_victorian_medium"
 		texturefile = "gfx/interface/technologies/naval_doctrine/naval_doctrine_victorian.dds"
 	}
+
+	## Early Naval Aviation Doctrine
+
+	SpriteType = {
+		name = "GFX_naval_aviation_concept_medium"
+		texturefile = "gfx/interface/technologies/naval_doctrine/naval_doctrine_victorian.dds"
+	}
+
 	### MTG naval techs
 
 	SpriteType = {
