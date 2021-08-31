@@ -1440,19 +1440,28 @@
 
 ## Early balloon tree
  observation_balloon_0:0 "Observation Balloon Deployment"
+ observation_balloon_0_desc:0 "A forward-thinking commander has suggested using hydrogen balloons to observe enemy troop movements from a distance. Only time will tell if the idea has merit."
  observation_balloon_1a:0 "Horse-Mobile Balloon Company"
- observation_balloon_1b:0 "Gas Generator Logistics"
+ observation_balloon_1a_desc:0 "Our early balloon companies weren't suited for rapid cross-country movement. The Army will need to develop specialized carriages for transporting balloons and their equipment in order to avoid slowing down attached infantry."
+ observation_balloon_1b:0 "Gas Generator Improvements"
+ observation_balloon_1b_desc:0 "The beating heart of a balloon observation company is its fragile, priceless hydrogen generator. Field-expedient tricks, manufacturing improvements, and operational experience have resulted in a dramatic improvement in how quickly we can ready balloons for flight."
  observation_balloon_1c:0 "Practical Static Mooring"
+ observation_balloon_1c_desc:0 "Ad hoc or portable moorings for tethered balloon flight have quickly proven unworkable in a military context, sometimes being tugged out of the ground at the first sign of wind. Our army will need to develop ways to rapidly construct static moorings on the march to improve our balloon's woeful reliability."
  observation_balloon_2:0 "Barrage Balloon Concept"
+ observation_balloon_2_desc:0 "It might be cost-effective to use mass-produced kite ballons with steel tethers as military obstacles for hostile aircraft. We can commission a study to develop a working design and plans for deployment around strategic targets."
 
  military_aviation_concept:0 "Military Aviation Concept"
+ military_aviation_concept_desc:0 "§LThe aeroplane will prevent war by making it too expensive, too slow, too difficult, too long drawn out. - Orville Wright§!\n\nAll but the most obstinate members of the old guard are coming to believe that military air power shows great promise. It is time for us to discuss the sort of role these newfangled aircraft will play in our army."" 
 
  # Army Cooperation tree
  army_cooperation_0:0 "Army Cooperation Doctrine"
+ army_cooperation_0_desc:0 "Our aircraft will work closely with friendly troops in combat with the enemy at the direction of low-level army commanders. This doctrine prioritizes army effectiveness and an air force composed of pursuit, and later CAS, aircraft at a moderate industrial cost."
  army_cooperation_1:0 "Contact Air Patrols"
+ army_cooperation_1_desc:0 "Aircraft are faster than motorcycle couriers, and can fly over most terrain. We can dedicate pools of aircraft to rapidly relay orders from HQ to forward-deployed troops and conduct regular patrols to monitor the their location."
  army_cooperation_2a:0 "Infantry Support Priority"
  army_cooperation_2b:0 "Frontline Destruction Priority"
  army_cooperation_3a:0 "Flechette Armament"
+ army_cooperation_3a_desc:0 "Our aircraft take off loaded to the brim with mass-produced boxes of mass-produced teardrop darts, simple shiny things that make a bloody mess of massed infantry if dropped just so."
  army_cooperation_3b:0 "Engine Armor Plating"
  army_cooperation_4a:0 "Armored Army Support Plane"
  army_cooperation_4b:0 "Rocket-Armed Zeppelin Interceptor"
@@ -1465,23 +1474,29 @@
 
  # Operational Reconnaissance tree
  operational_recon_0:0 "Operational Reconnaissance Doctrine"
+ operational_recon_0_desc:0 "Our aircraft will cross over enemy lines to destroy their balloons and observe their troop movements, while simultaneously patrolling our own lines to ensure that the enemy cannot do the same. This should contribute to our army having more awareness on the operational level. This doctrine prioritizes the development of a well-rounded offensive air force at a high, but reasonable, industrial cost."
  operational_recon_1a:0 "Balloon Anti-Aircraft Defenses"
+ operational_recon_1a_desc:0 "Observation balloons are critical to our army's battlefield awareness, so it is only natural that our future enemies will try to shoot them down. We will add an anti-aircraft section to our balloon detachments in order to make that far more difficult."
  operational_recon_1b:0 "Anti-Balloon Role"
- operational_recon_2a:0 "Information Denial Priority "
+ operational-recon_1b_desc:0 "We will train our pilots in rapid, slashing attacks behind enemy lines to shoot down observation balloons."
+ operational_recon_2a:0 "Information Denial Priority"
  operational_recon_2b:0 "Rear Echelon Target Priority"
  operational_recon_3a:0 "Battlefield Recon Escort"
  operational_recon_3b:0 "Aerial Divisions"
  operational_recon_3c:0 "Strike Mission Planning"
  operational_recon_4a:0 "Parachute Culture"
+ operational_recon_4a_desc:0 "Planes are cheap. Men - husbands, sons - are not. Fastidiously packing one's parachute is a solemnly-upheld ritual across all of our squadrons."
  operational_recon_4b:0 "Combat Instructor Rotation"
  operational_recon_4c:0 "Squadron Formation Training"
  operational_recon_5a:0 "Offensive Counter-Air"
+ operational_recon_5a_desc:0 "We know where their airbases are and we've plotted their patrols down to the minute. Every morning our pilots wake up before dawn, raring for the hunt.\n\n§BIt'll be just like a turkey shoot.$!"
 
  operational_recon_6a:0 "Schneider Trophy"
  operational_recon_6b:0 "Air Mail Service"
 
  # Homeland Strike tree
  homeland_strike_0:0 "Homeland Strike doctrine"
+ homeland_strike_0_desc:0 "The most effective way to wage war requires targeting an enemy's most valuable assets in the core of their homeland. We must throw our nation's industrial efforts into a massive air fleet to rain destruction on our enemies."
  homeland_strike_1:0 "Persistent Surveillance"
  homeland_strike_2a:0 "Strategic Range Priority "
  homeland_strike_2b:0 "Civic Destruction Priority"
@@ -1500,11 +1515,16 @@
 
  # Interwar doctrine
  postwar_doctrine:0 "Post-War Doctrine Consolidation"
- postwar_doctrine_1a:0 "Combat Air Patrol"
- postwar_doctrine_1b:0 "Escorted Tactical Strike"
+ postwar_doctrine_desc:0 "The guns had hardly fallen silent when the armies of the world "
+ postwar_doctrine_1a:0 "Great War Airspace Defense"
+ postwar_doctrine_1a_desc:0 "Preventing enemy air attacks on our troops and factories is one of the fundamental competencies of any air force. By the end of the Great War a roughly similar set of best practices and operational patterns had been widely adopted, even by noncombatant countries."
+ postwar_doctrine_1b:0 "Great War Tactical Strike"
+ postwar_doctrine_1b_desc:0 "Conducting a basic, escorted bombing attack against an enemy battlefield target is one of the fundamental competencies of any air force. By the end of the Great War a roughly similar set of best practices and operational patterns had been widely adopted, even by noncombatant countries."
  postwar_doctrine_2:0 "Civil Aviation"
+ postwar_doctrine_2_desc:0 "When the Great Powers demobilized their air forces after the war, the civilian market was flooded with cheap surplus aircraft. Flight is no longer a dream for rich inventors, but a fact of life for the common man."
  
  interwar_doctrine:0 "Interwar"
+ interwar_doctrine_desc:0 "The dust of the Great War has fully settled, but military aviation continues to evolve at a breakneck pace. In salons and universities across the nation a new generation of aerial warfare theorists contemplate the clay of the nation's rapidly evolving aerial forces, arguing over what sort of form to mold them into."
 
  fast_bomber_0:0 "Fast Bomber Focus"
  fast_bomber_1a:0 "Streamlined Defensive Emplacements"
@@ -1521,10 +1541,13 @@
  precision_bombing_3:0 "Anti-Shipping Exercies"
 
  dive_bombing_0:0 "Dive Bombing Focus"
- dive_bombing_1a:0 "Jericho Trumpets"
- dive_bombing_1b:0 "Automated Pullout Mechanism"
- dive_bombing_1c:0 "Bomb Release Cradle"
- dive_bombing_2:0 "Hell's Angels"
+ dive_bombing_0_desc:0 ""
+ dive_bombing_1a:0 "Automated Pullout Mechanism"
+ dive_bombing_1b:0 "Bomb Release Cradle"
+ dive_bombing_2a:0 "Flies Like A Truck"
+ dive_bombing_2a_desc:0 "When you get down to it, it's not any harder to fly an attack plane than it is to drive a truck."
+ dive_bombing_2b:0 "Jericho Trumpets & Shark's Teeth'"
+ dive_bombing_2b_desc:0 "Our attack pilots are the elite of our air force and they know it."
  dive_bombing_3:0 "Forward Observers"
  
  # Military Aviation Equipment
@@ -1562,7 +1585,7 @@
 
  pursuit_aircraft_early:0 "Early Pursuit Aircraft"
  pursuit_aircraft_equip_1a:0 "Deflector Wedges"
- pursuit_aircraft_equip_1b:0 "Floster Sliding Mount"
+ pursuit_aircraft_equip_1b:0 "Foster Sliding Mount"
  pursuit_aircraft_equip_1c:0 "Synchronization Gear"
  pursuit_aircraft_1915:0 "1915 Pursuit Aircraft"
  pursuit_aircraft_1916:0 "1916 Pursuit Aircraft"
