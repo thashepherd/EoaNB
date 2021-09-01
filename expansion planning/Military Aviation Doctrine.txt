@@ -40,7 +40,7 @@ Operational Recon doctrine
 
 Terror Bombing doctrine
 
-    Persistent Surveillance (LTA recon, early Militay Airship unlock)
+    Persistent Surveillance (LTA recon, early Military Airship unlock)
     Strategic Range Priority (range) | Civic Destruction Studies (strategic attack) (early heavy bomber unlock)
     Extra Ammunition (air defense) + Incendiary Ammunition (air attack) | Additional Hardpoints (ground attack) + Avent Garde Explosives (ground attack, strategic attack)
     Reputation Management (diplo relationship bonus, ground targeting, strategic attack malus) | The Ends Justify the Means (strategic attack, diplo replationship malus)
