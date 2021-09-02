@@ -228,6 +228,10 @@ country_event = {
 		1060 = { set_state_name = "Wilhelmshaven" }
 		set_province_name = { id = 13562 name = "Wilhelmshaven"}
 		1060 = { add_dynamic_modifier = { modifier = dynmod_PRS_wilhelmshaven } }
+		set_victory_points = {
+			province = 13562
+			value = 5
+		}
 	}
 }
 
@@ -1434,6 +1438,91 @@ country_event = {
 			popularity = 0.08
 		}
 		swap_ideas = { remove_idea = PRS_idea_political_catholicism_1 add_idea = PRS_idea_political_catholicism_2 }
+	}
+}
+
+#Krupp - Health Insurance - 1857
+country_event = {
+	id = prussia.51
+	title = prussia.51.t
+	desc = prussia.51.d
+	picture = GFX_event_alfred_krupp_portrait
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+		name = prussia.51.a
+		ai_chance = { base = 100 }
+		add_stability = 0.01
+	}
+}
+
+#Krupp - Pension, Accident Insurance, and Widow's Annuity - 1858
+country_event = {
+	id = prussia.52
+	title = prussia.52.t
+	desc = prussia.52.d
+	picture = GFX_event_krupp_wheels
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+		name = prussia.52.a
+		ai_chance = { base = 100 }
+		add_stability = 0.01
+	}
+}
+
+#Krupp - Employer-built Employee Housing - 1861
+country_event = {
+	id = prussia.53
+	title = prussia.53.t
+	desc = prussia.53.d
+	picture = GFX_event_krupp_wohnungen
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+		name = prussia.53.a
+		ai_chance = { base = 100 }
+		add_stability = 0.01
+	}
+}
+
+#Krupp - Further Measures to Improve Social Situation of Workers - 1863
+country_event = {
+	id = prussia.54
+	title = prussia.54.t
+	desc = prussia.54.d
+	picture = GFX_event_krupp_logo
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+		name = prussia.54.a
+		ai_chance = { base = 100 }
+		add_stability = 0.01
+	}
+}
+
+#Krupp - Flipside of Krupp's Social Benevolence - 1865
+country_event = {
+	id = prussia.55
+	title = prussia.55.t
+	desc = prussia.55.d
+	picture = GFX_event_krupp_streik
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+		name = prussia.55.a
+		ai_chance = { base = 100 }
+		add_stability = -0.01
 	}
 }
 
@@ -4595,6 +4684,84 @@ country_event = {
 	}
 }
 
+#PRS - Full Polizeiverein Collaboration
+country_event = {
+	id = prussiaforeign.46
+	title = prussiaforeign.46.t
+	desc = prussiaforeign.46.d
+	picture = GFX_event_wilhelmstrasse_staatsministerium
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = prussiaforeign.46.a
+		ai_chance = { base = 100 }
+		add_political_power = 50
+		add_stability = 0.05
+		increase_ps_by_one = yes
+		hidden_effect = {
+			if = {
+				limit = {
+					AUS = { has_idea = GEC_Polizeiverein_leader }
+				}
+				AUS = { country_event = { days = 1 id = prussiaforeign.47 } }
+			}
+			if = {
+				limit = {
+					BAD = { has_idea = GEC_Polizeiverein_member }
+				}
+				BAD = { country_event = { days = 1 id = prussiaforeign.47 } }
+			}
+			if = {
+				limit = {
+					BAV = { has_idea = GEC_Polizeiverein_member }
+				}
+				BAV = { country_event = { days = 1 id = prussiaforeign.47 } }
+			}
+			if = {
+				limit = {
+					HAN = { has_idea = GEC_Polizeiverein_member }
+				}
+				HAN = { country_event = { days = 1 id = prussiaforeign.47 } }
+			}
+			if = {
+				limit = {
+					SAX = { has_idea = GEC_Polizeiverein_member }
+				}
+				SAX = { country_event = { days = 1 id = prussiaforeign.47 } }
+			}
+			if = {
+				limit = {
+					WUR = { has_idea = GEC_Polizeiverein_member }
+				}
+				WUR = { country_event = { days = 1 id = prussiaforeign.47 } }
+			}
+			clear_variable = PRS_polizeiverein_collaboration
+		}
+	}
+}
+
+#GEC - Full Polizeiverein Collaboration
+country_event = {
+	id = prussiaforeign.47
+	title = prussiaforeign.47.t
+	desc = prussiaforeign.47.d
+	picture = GFX_event_wilhelmstrasse_staatsministerium
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = prussiaforeign.47.a
+		ai_chance = { base = 100 }
+		add_political_power = 50
+		add_stability = 0.05
+		increase_ps_by_one = yes
+		add_opinion_modifier = { target = PRS modifier = PRS_POLIZEIVEREIN_COLLABORATION_REL }
+		reverse_add_opinion_modifier = { target = PRS modifier = PRS_POLIZEIVEREIN_COLLABORATION_REL }
+	}
+}
+
 ### PRUSSIAN ELECTIONS ###
 
 #1858 Election
@@ -4616,6 +4783,7 @@ country_event = {
 		}
 		hidden_effect = {
 			PRS = { country_event = { id = prussiaelection.2 days = 1108 } }
+			compute_national_vote = yes
 		}
 	}
 }
@@ -4655,6 +4823,7 @@ country_event = {
 		}
 		hidden_effect = {
 			set_country_flag = PRS_1861_election_happened
+			compute_national_vote = yes
 		}
 	}
 }	
@@ -4678,6 +4847,7 @@ country_event = {
 		}
 		hidden_effect = {
 			clear_variable = PRS_election_campaign_success
+			compute_national_vote = yes
 		}
 	}
 }
@@ -4701,6 +4871,7 @@ country_event = {
 		}
 		hidden_effect = {
 			clear_variable = PRS_election_campaign_success
+			compute_national_vote = yes
 		}
 	}
 }
@@ -4724,6 +4895,7 @@ country_event = {
 		}
 		hidden_effect = {
 			clear_variable = PRS_election_campaign_success
+			compute_national_vote = yes
 		}
 	}
 }
@@ -4762,6 +4934,9 @@ country_event = {
 				remove_idea = state_controlled_press
 				add_idea = censored_press
 			}
+		}
+		hidden_effect = {
+			compute_national_vote = yes
 		}
 	}
 }
@@ -4802,6 +4977,7 @@ country_event = {
 		}
 		hidden_effect = {
 			set_country_flag = PRS_constitutive_parliament_elected_flag
+			compute_national_vote = yes
 		}
 	}
 }
@@ -4855,6 +5031,9 @@ country_event = {
 		add_popularity = {
 		    ideology = fundamentalism
 			popularity = 0.02
+		}
+		hidden_effect = {
+			compute_national_vote = yes
 		}
 	}
 }
@@ -5911,6 +6090,131 @@ country_event = {
 	}
 }
 
+#BAD/BAV/HSD/WUR - Military Convention with Prussia
+country_event = {
+	id = prussiaconstitutionngc.16
+	title = prussiaconstitutionngc.16.t
+	desc = prussiaconstitutionngc.16.d
+	picture = GFX_event_north_german_confederation_gathering
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = prussiaconstitutionngc.16.a
+		ai_chance = { base = 97 }
+		add_political_power = 10
+		add_timed_idea = {
+			idea = GEC_military_convention_with_PRS
+			days = 720
+		}
+		PRS = { country_event = { id = prussiaconstitutionngc.17 days = 2 } }
+	}
+	
+	option = {
+		name = prussiaconstitutionngc.16.b
+		ai_chance = { 
+			base = 3
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+			}
+		}
+		decrease_ps_by_one = yes
+		add_stability = -0.05
+		PRS = { country_event = { id = prussiaconstitutionngc.18 days = 2 } }
+	}
+}
+
+#PRS - BAD/BAV/HSD/WUR Accepted Military Convention
+country_event = {
+	id = prussiaconstitutionngc.17
+	title = prussiaconstitutionngc.17.t
+	desc = prussiaconstitutionngc.17.d
+	picture = GFX_event_north_german_confederation_gathering
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = prussiaconstitutionngc.17.a
+		ai_chance = { base = 100 }
+		army_experience = 25
+		hidden_effect = {
+			if = {
+				limit = {
+				}
+				PRS = { country_event = { id = prussiaconstitutionngc.19 days = 60 } }
+			}
+		}
+	}
+}
+
+#PRS - BAD/BAV/HSD/WUR Refused Military Convention
+country_event = {
+	id = prussiaconstitutionngc.18
+	title = prussiaconstitutionngc.18.t
+	desc = prussiaconstitutionngc.18.d
+	picture = GFX_event_north_german_confederation_gathering
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = prussiaconstitutionngc.18.a
+		ai_chance = { base = 50 }
+	}
+	
+	option = {
+		name = prussiaconstitutionngc.18.b
+		ai_chance = { base = 50 }
+	}
+}
+
+#PRS - Who Should Supervise the Reorganization?
+country_event = {
+	id = prussiaconstitutionngc.19
+	title = prussiaconstitutionngc.19.t
+	desc = prussiaconstitutionngc.19.d
+	picture = GFX_event_north_german_confederation_gathering
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+		name = prussiaconstitutionngc.19.a
+		trigger = {
+			NOT = { has_idea = PRS_Friedrich_III }
+		}
+		ai_chance = { base = 70 }
+		remove_unit_leader = 1978
+		add_political_power = 100
+	}
+	
+	option = {
+		name = prussiaconstitutionngc.19.b
+		ai_chance = { 
+			base = 25 
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+			}
+		}
+		remove_unit_leader = 1961
+		add_political_power = 75
+	}
+	
+	option = {
+		name = prussiaconstitutionngc.19.c
+		ai_chance = { 
+			base = 5 
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+			}
+		}
+		remove_unit_leader = 1953
+		add_political_power = 25
+	}
+}
+
 ### REIGN OF FRIEDRICH III ###
 
 #Sack Prime Minister zu Hohenlohe-Ingelfingen
@@ -6068,6 +6372,7 @@ country_event = {
 				traits = { }
 			}
 			PRS = { set_country_flag = PRS_new_prime_minister_flag }
+			compute_national_vote = yes
 		}
 	}
 	
@@ -6329,6 +6634,8 @@ country_event = {
 					swap_ideas = { remove_idea = human_rights add_idea = constitution_adopted }
 				}
 			}
+		}
+		PRS = {
 			if = {
 				limit = {
 					has_idea = absolute_monarchy

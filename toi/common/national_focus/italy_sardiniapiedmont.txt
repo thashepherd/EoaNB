@@ -1213,26 +1213,14 @@ focus_tree = {
 		available = {
 		}
 		completion_reward = {
-			#country_event = {
-			#	id = sardinia.27
-			#	days = 483
-			#	random_days = 10
-			#}
-			#TUS = {
-			#	country_event = {
-			#		id = sardinia.57
-			#	}
-			#}
-			#PRM = {
-			#	country_event = {
-			#		id = sardinia.57
-			#	}
-			#}
-			#MOD = {
-			#	country_event = {
-			#		id = sardinia.57
-			#	}
-			#}
+			country_event = {
+				id = sardinia.91
+			}
+			FRA = {
+				country_event = {
+					id = sardinia.91
+				}
+			}
 		}
 	}
 	focus = {
@@ -1250,12 +1238,30 @@ focus_tree = {
 				limit = {
 					has_country_flag = PIE_FRA_Plombieres_Happening
 				}
-				has_completed_focus = PIE_Plan_for_Plombieres
+				has_country_flag = PIE_Plombieres_complete
 			}
 		}
 		x = 17
 		y = 6
 		completion_reward = {
+			if = {
+				limit = {
+					has_country_flag = PIE_Plombieres_War_Leader
+				}
+				country_event = {
+					id = sardinia.108
+				}
+			}
+			else_if = {
+				limit = {
+					FRA = {
+						has_country_flag = PIE_Plombieres_War_Leader
+					}
+				}
+				country_event = {
+					id = sardinia.108
+				}
+			}
 			AUS = {
 				country_event = {
 					id = sardinia.88

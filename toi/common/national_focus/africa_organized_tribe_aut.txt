@@ -11,7 +11,6 @@ focus_tree = {
 				tag = ARO
 				tag = BAO
 				tag = BKM
-				tag = BKW
 				tag = BNG
 				tag = BNY
 				tag = BST
@@ -21,13 +20,11 @@ focus_tree = {
 				tag = FNG
 				tag = HER
 				tag = KAA
-				tag = KAB
 				tag = KOY
                                 tag = LUO
 				tag = KRG
 				tag = KUB
 				tag = KVG
-				tag = LNG
 				tag = LUB
 				tag = LUN
 				tag = TYO
@@ -36,9 +33,7 @@ focus_tree = {
 				tag = MOS
 				tag = MRN
 				tag = MSI
-				tag = MSN
 				tag = NYG
-				tag = OOR
 				tag = OVB
 				tag = RWD
 				tag = SHK
@@ -54,6 +49,9 @@ focus_tree = {
                                 tag = IJW
                                 tag = ARR
                                 tag = TGN
+                                tag = GGL
+                                tag = MED
+                                tag = BTS
 			}
 		}
 	}
@@ -241,6 +239,7 @@ focus_tree = {
 		}
 		completion_reward = {
 			add_stability = 0.02
+			hidden_effect = { country_event = { id = africa.10 random_days = 700 } }
 		}
 	}
 	focus = {
