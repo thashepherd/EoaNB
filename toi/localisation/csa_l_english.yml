@@ -76,7 +76,7 @@
  CSA_convention_organize:0 "Organize the Convention"
  CSA_convention_organize_desc:0 "We must begin to plan the convention, which we have selected to take place in the Richmond. We must select our building, and set up the proper amenities for the meeting."
  CSA_constitutional_convention:0 "The Constitutional Convention"
- CSA_constitutional_convention_desc:0 "We have finalized our preperations, and now we can finally begin our constitutional convention. It is time that we decide the fate of our future."
+ CSA_constitutional_convention_desc:0 "We have finalized our preparations, and now we can finally begin our constitutional convention. It is time that we decide the fate of our future."
  CSA_convention_confederate:0 "Confederate the Confederacy"
  CSA_convention_confederate_desc:0 "The nation is named the Confederate States of America. Unless we implement a confederation, we betray the meaning of ourselves."
  CSA_convention_federalize:0 "Reform the Constitution"
@@ -227,7 +227,7 @@
  CSA_paying_civilwar_debt:0 "Paying Civil War Debt"
  CSA_greyback_currency:0 "Greyback Dollar"
 
- CSA_fort_sumter:0 "§RSiege of Sumter§! has occured"
+ CSA_fort_sumter:0 "§RSiege of Sumter§! has occurred"
  CSA_American_Civil_War:0 "The War of Northern Aggression has erupted!"
  CSAIndependence_Loss:0 "The Confederacy has collapsed against the Union!"
  CSAIndependence_Won:0 "The Confederacy has gained its independence!"

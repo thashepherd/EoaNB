@@ -219,7 +219,7 @@
  
  afr_empire_politics_foreign_diplomacy_set_target_decision_tooltip:0 "§WOpens a §!§GForeign Diplomacy§!§W menu with [FROM.GetName].§!\n\n§YHelpful Informtion:§!\n§WActivate the §!§YForeign Diplomacy Wiki§!§W decision to learn how to use this mechanic.§!"
  afr_empire_politics_state_autonomy_decision_tooltip:0 "§WOpens a §!§GState Management§!§W menu for [FROM.GetName].§!\n\n§YHelpful Informtion:§!\n§WActivate the §!§YEmpire Politics Wiki§!§W decision to learn how to use this mechanic.§!"
- #afr_empire_politics_state_autonomy_decision_tooltip:0 "§WOpens a menu related to management choices for a player. The important activities may be done in a less micro management way be selecting decisions indicated with '§Ymacro management§!§W'.\n\nThese macro management decisions are recomended for players that do not enjoy the manual management method.§!"
+ #afr_empire_politics_state_autonomy_decision_tooltip:0 "§WOpens a menu related to management choices for a player. The important activities may be done in a less micro management way be selecting decisions indicated with '§Ymacro management§!§W'.\n\nThese macro management decisions are recommended for players that do not enjoy the manual management method.§!"
  afr_empire_politics_state_macro_decision_tooltip:0 "§YMacro Management Decision§!"
  
  afr_empire_state_loyalty_var_0_2_scripted:0 "§R[?FROM.afr_empire_state_loyalty_var@ROOT]§!"
@@ -318,7 +318,7 @@
  afr_empire_politics_state_luxury_localization_ivory:0 "Ivory"
  afr_empire_politics_state_luxury_localization_none:0 "Nothing"
  
- afr_empire_politics_state_manager_market_luxury_event_gold_investments_tooltip:0 "§YGold Deposits§! will recieve §CInvestments§! that will increase §YHarvesting Efficiency§! by §G+15%§!."
+ afr_empire_politics_state_manager_market_luxury_event_gold_investments_tooltip:0 "§YGold Deposits§! will receive §CInvestments§! that will increase §YHarvesting Efficiency§! by §G+15%§!."
  afr_empire_politics_state_luxury_gold_acquisition_fully_aquired_tooltip:0 "Gold acquisition is maximized"
  afr_empire_politics_state_economy_status_investment_none_tooltip:0 "Does not have §CInvestments§! underway"
  
@@ -413,7 +413,7 @@
  afr_empire_politics_subject_send_tribute_to_overlord_event.1.d:0 "[FROM.GetName] is going through an economic boom, and has sent tribute as proof towards their worth as a subject. This is certainly a notible instance of [FROM.GetAdjective] autonomy."
  afr_empire_politics_subject_send_tribute_to_overlord_event.1.a:0 "A welcomed tribute."
  afr_empire_politics_subject_send_tribute_to_overlord_event.2.t:0 "[FROM.GetName] Welcomes the Tribute"
- afr_empire_politics_subject_send_tribute_to_overlord_event.2.d:0 "[FROM.GetName] has noted our ability to aquire such prosperity, and acknowledged our autonomy as a subject within the grand [FROM.GetAdjective] Empire."
+ afr_empire_politics_subject_send_tribute_to_overlord_event.2.d:0 "[FROM.GetName] has noted our ability to acquire such prosperity, and acknowledged our autonomy as a subject within the grand [FROM.GetAdjective] Empire."
  afr_empire_politics_subject_send_tribute_to_overlord_event.2.a:0 "Wonderful!"
  afr_empire_politics_subject_send_tribute_to_overlord_event.2.b:0 "Inshallah!"
  afr_empire_politics_subject_send_tribute_to_overlord_tooltip:0 "Sent Tribute to Overlord"
@@ -613,7 +613,7 @@
  afr_empire_politics_independence_struggle_revolt_tooltip:0 "\n§RThis will require us to take a core of§! §Y[THIS.GetName]§!§R to win!§!\n"
  
  afr_empire_politics_subject_demotion_demand.6.t:0 "[FROM.GetAdjective] Insurrection!"
- afr_empire_politics_subject_demotion_demand.6.d:0 "[FROM.GetName] have revolted against us to maintain their [FROM.afr_empire_politics_subject_autonomy_level_scripted] status and prove their autonomy!\n\nIf they manage to take any cores of our homeland we will be forced to capitulate to their demands. We must protect them at all costs!\n\nWe believe the [FROM.GetAdjective] Insurgents will only have a year of supplies before capitulating to our demands. Even if the insurgents aquire extra supplies, they can only prolong the war by another year at best."
+ afr_empire_politics_subject_demotion_demand.6.d:0 "[FROM.GetName] have revolted against us to maintain their [FROM.afr_empire_politics_subject_autonomy_level_scripted] status and prove their autonomy!\n\nIf they manage to take any cores of our homeland we will be forced to capitulate to their demands. We must protect them at all costs!\n\nWe believe the [FROM.GetAdjective] Insurgents will only have a year of supplies before capitulating to our demands. Even if the insurgents acquire extra supplies, they can only prolong the war by another year at best."
  afr_empire_politics_subject_demotion_demand.6.a:0 "We must subdue this revolt!"
  afr_empire_politics_subject_demotion_demand.6.b:0 "We cannot risk a civil war in our empire! Capitulate the demands!"
  
@@ -703,13 +703,13 @@
  afr_empire_politics_subject_levy_mission_event.3.c:0 "Good to hear."
  
  afr_empire_politics_subject_levy_mission_event_loc_horse_high:0 "We had issued a large levy to [FROM.GetName] this time, which they have graciously fulfilled by providing 3000 Horse Riders who will ride into battle under our empire's flag."
- afr_empire_politics_subject_levy_mission_event_loc_horse_med:0 "We had issued a standard levy to [FROM.GetName], which they have succesfully paid. They have provided us with 2000 Horse Riders that will ride into battle under our empire's flag."
- afr_empire_politics_subject_levy_mission_event_loc_horse_low:0 "A small levy was issued to [FROM.GetName] and thay have succesfully paid it. As part of their tribute, they have sent 1000 Horse Riders that will ride into battle under our empire's flag."
+ afr_empire_politics_subject_levy_mission_event_loc_horse_med:0 "We had issued a standard levy to [FROM.GetName], which they have successfully paid. They have provided us with 2000 Horse Riders that will ride into battle under our empire's flag."
+ afr_empire_politics_subject_levy_mission_event_loc_horse_low:0 "A small levy was issued to [FROM.GetName] and thay have successfully paid it. As part of their tribute, they have sent 1000 Horse Riders that will ride into battle under our empire's flag."
  afr_empire_politics_subject_levy_mission_event_loc_warrior_high:0 "We had issued a large levy to [FROM.GetName] this time, which they have fulfilled by bolstering our empire's army with an outstanding 6000 Warriors."
- afr_empire_politics_subject_levy_mission_event_loc_warrior_med:0 "We had issued a standard levy to [FROM.GetName], which they have succesfully paid. They have provided us with 4000 Warriors that will serve within our empire's army."
- afr_empire_politics_subject_levy_mission_event_loc_warrior_low:0 "A small levy was issued to [FROM.GetName] and thay have succesfully paid it. As part of their tribute, they have sent 2000 Warriors to serve within our empire's army."
+ afr_empire_politics_subject_levy_mission_event_loc_warrior_med:0 "We had issued a standard levy to [FROM.GetName], which they have successfully paid. They have provided us with 4000 Warriors that will serve within our empire's army."
+ afr_empire_politics_subject_levy_mission_event_loc_warrior_low:0 "A small levy was issued to [FROM.GetName] and thay have successfully paid it. As part of their tribute, they have sent 2000 Warriors to serve within our empire's army."
  afr_empire_politics_subject_levy_mission_event_loc_prosperity_high:0 "We issued a large levy to [FROM.GetName], from which [FROM.GetLeader] had graciously fulfilled it with a luxurious."
- afr_empire_politics_subject_levy_mission_event_loc_prosperity_med:0 "We issued a standard levy to [FROM.GetName], from which [FROM.GetLeader] had succesfully fulfilled it with a valuable gift."
+ afr_empire_politics_subject_levy_mission_event_loc_prosperity_med:0 "We issued a standard levy to [FROM.GetName], from which [FROM.GetLeader] had successfully fulfilled it with a valuable gift."
  afr_empire_politics_subject_levy_mission_event_loc_prosperity_low:0 "We issued a small levy to [FROM.GetName], from which [FROM.GetLeader] had fulfilled it with a quaint gift of little value."
  
  afr_empire_politics_subject_levy_mission_event.4.t:0 "[FROM.GetName] Failed to Pay Our Levy"
@@ -791,7 +791,7 @@
  
  afr_empire_politics_state_send_loyalty_gift_decision:0 "Macro Management: Send Gift"
  afr_empire_politics_state_send_loyalty_gift_decision_desc:0 "We can temporarily increase the public opinion of one of our states with a grand gift from the Empire! Good public opinion will increase that state's loyalty to our empire."
- afr_empire_politics_state_send_loyalty_gift_decision_tooltip:0 "§LWe will visit a state that has not recieved a gift from the Empire in a while.§!\n"
+ afr_empire_politics_state_send_loyalty_gift_decision_tooltip:0 "§LWe will visit a state that has not received a gift from the Empire in a while.§!\n"
  
  afr_empire_politics_state_manager_local_rumor_ignore_tooltip:0 "§RIf we ignore this rumor, we will have to wait for a new rumor!§!"
  
