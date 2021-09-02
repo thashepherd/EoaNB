@@ -18,6 +18,14 @@ Dream of Flight
 
 	A 'develop a new aircraft' decision would be nice (uses latest current tech but allows new decisions)
 
+    Realistically:
+        Adds a new type of air mana! Yay!
+        Creates sense of pride and accomplishment for unlocking the ability to fly
+        Accurate portrayal of kooky interwar air theory
+        Research meme doctrine, become proto-LeMay, join the dark side
+        Zeppelin battleship superevent
+        Several new ways to cuck France
+
 Sea Power
 
     Naval tech, equipment, & doctrine rework
@@ -27,6 +35,12 @@ Sea Power
     Traits & naval terrain rework
     Naval Academy mechanic
     Artillery tech rework
+
+    Realistically
+        Completely rework of your least favorite part of HOI4
+        Automates that stuff so you never get to experience the love and effort the mod's author poured into it
+        Other shit no streamer will ever pay attention to
+        Flavor update for artillery-only playthroughs
 
 Thresher contents
 
@@ -38,3 +52,9 @@ Thresher contents
     Terrain, tactic, & leader trait rework
     War hero, mass casualties, demoralizing defeat, starvation, blockade, terror bombing, etc events/mechanic
     Home Front decisions
+
+    Realistically
+        All sorts of demonitization fodder
+        Basically the CK3 roleplay experience
+        West Point anime dating sim mechanic
+        Extremely tactical

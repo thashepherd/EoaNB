@@ -88,19 +88,31 @@ Military Aviation Equipment
     Equip: 1925 heavy bomber
 
 1930
-    Equip: 1930 pursuit aircraft
     Equip: 1930 multirole aircraft
     Equip: 1930 heavy bomber
+    Equip: Interwar floatplane
+
+1933
+    Equip: Interwar fighter
 
 1935
     Synthetic envelope (requires Nylon, airship air defense, airship hp)
-    Equip: 1935 CAS
-    Equip: 1935 floatplane
+    Equip: Interwar light bomber
+    Equip: Interwar CAS (doctrine)
+
+    Equip: Interwar bomber
+    Equip: Interwar fast bomber (doctrine)
+    Equip: Interwar precision bomber (doctrine)
 
 1936
-    Equip: 1936 pursuit aircraft
-    Equip: 1936 multirole aircraft
-    Equip: 1936 heavy bomber
+    Equip: 1936 fighter
+
+1937
+    Equip: 1937 Light Bomber
+
+1938
+    Equip: 1938 tactical bomber
+    Equip: 1938 strategic bomber
 
 1940
     Improved Synthetic envelope (requires Polyethylene terephthalate, airship air defense, airship hp)
