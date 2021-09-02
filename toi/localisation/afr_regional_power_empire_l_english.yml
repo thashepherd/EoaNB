@@ -19,7 +19,7 @@
  afr_empire_politics_wiki_main_menu.2.c:0 "Empire Politics Wiki (Page 1)"
  
  afr_empire_politics_wiki_menu_autonomy.1.t:0 "State Autonomy Wiki"
- afr_empire_politics_wiki_menu_autonomy.1.desc:0 "§B(§!§bState Autonomy§!§B)§!\nThis measures how autonomous a state is within our empire, at 100% autonomy the state will ask to be a subject. Having an autonomy of under 50% will remove any negative resource or recruitment modifiers.\n\n§B(§!§bMartial Law§!§B)§!\nIf state autonomy becomes critically high in autonomy, you can enable 'martial law' in that state. Though enabling martial law will cause the public opinion of that state to decrease, use when absolutely needed."
+ afr_empire_politics_wiki_menu_autonomy.1.desc:0 "§B(§!§bState Autonomy§!§B)§!\nThis measures how autonomous a state is within our empire, at 100% autonomy the state will ask to be a subject. Having an autonomy of under 50% will remove any negative resource or recruitment modifiers.\n\n§B(§!§bEmpire Rule: Decentralized§!§B)§!\nDecentralized empire rule means the country has limited rulership over a particular state. States with decentralized empire rule will have a minimum autonomy cap of 75%. Thus, any effort to reduce the autonomy of a decentralized state below 75% is impossible, until Decentralized Empire Rule is removed from that state.\n\n§B(§!§bMartial Law§!§B)§!\nIf state autonomy becomes critically high in autonomy, you can enable 'martial law' in that state. Though enabling martial law will cause the public opinion of that state to decrease, use when absolutely needed."
  
  afr_empire_politics_wiki_menu_loyalty.1.t:0 "State Loyalty Wiki"
  afr_empire_politics_wiki_menu_loyalty.1.desc:0 "§B(§!§bState Loyalty§!§B)§!\nThis measures how loyal a state is to our empire. If a state's loyalty drops below zero, they will revolt against us. States will provide our empire with better recruitment for non-core and cored states if their loyalty is high. Additionally compliance and resistance modifiers will be positive if loyalty is high and negative is loyalty is low.\n\n§B(§!§bState Coring§!§B)§!\nWhen loyalty has reached 10 on a non-core state, it has the option to become a core through maintaining atleast level 9 loyalty for 360 days."
@@ -317,6 +317,10 @@
  afr_empire_politics_state_luxury_localization_spice:0 "Spice"
  afr_empire_politics_state_luxury_localization_ivory:0 "Ivory"
  afr_empire_politics_state_luxury_localization_none:0 "Nothing"
+ 
+ afr_empire_politics_state_manager_market_luxury_event_gold_investments_tooltip:0 "§YGold Deposits§! will recieve §CInvestments§! that will increase §YHarvesting Efficiency§! by §G+15%§!."
+ afr_empire_politics_state_luxury_gold_acquisition_fully_aquired_tooltip:0 "Gold acquisition is maximized"
+ afr_empire_politics_state_economy_status_investment_none_tooltip:0 "Does not have §CInvestments§! underway"
  
  afr_empire_politics_minor_economic_boom_effect:0 "Every owned state will temporarily undergo an economic §CBoom§! cycle.\n\n"
  afr_empire_politics_bountiful_harvest_boom_effect:0 "Every owned state will be temporarily §Gimmune to famines§! and undergo an economic §CBoom§! cycle.\n\n"

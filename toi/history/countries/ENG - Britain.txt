@@ -279,11 +279,6 @@
 			freedom_level = 0.2
 		}
 		set_autonomy = {
-			target = ION
-			autonomous_state = autonomy_afr_colony
-			freedom_level = 0.2
-		}
-		set_autonomy = {
 			target = NSW
 			autonomous_state = autonomy_afr_colony
 			freedom_level = 0.2
@@ -313,16 +308,16 @@
 			autonomous_state = autonomy_afr_colony
 			freedom_level = 0.1
 		}
-		set_autonomy = {
-			target = QCI
-			autonomous_state = autonomy_afr_colony
-			freedom_level = 0.1
-		}
-		set_autonomy = {
-			target = VAN
-			autonomous_state = autonomy_afr_colonial_company
-			freedom_level = 0.1
-		}
+		# set_autonomy = {
+		# 	target = QCI
+		# 	autonomous_state = autonomy_afr_colony
+		# 	freedom_level = 0.1
+		# }
+		# set_autonomy = {
+		# 	target = VAN
+		# 	autonomous_state = autonomy_afr_colonial_company
+		# 	freedom_level = 0.1
+		# }
 		set_autonomy = {
 			target = HBC
 			autonomous_state = autonomy_afr_colonial_company
@@ -347,16 +342,15 @@
 		puppet = NFL
 		puppet = BRK
 		puppet = NZL
-		puppet = ION
 		puppet = NSW
 		puppet = TSM
 		puppet = SAS
 		puppet = TCS
 		puppet = HBC
 		puppet = NVS
-		puppet = VAN
+		# puppet = VAN
 		puppet = SRC
-		puppet = QCI
+		# puppet = QCI
 		puppet = NAT
 		puppet = SAF
 		puppet = MDV
