@@ -291,7 +291,7 @@
     liberia.10.d:0 ""
     liberia.10.a:0 "Call the troops!"
 
-    liberia.11.t:0 "Raid Succesful"
+    liberia.11.t:0 "Raid Successful"
     liberia.11.d:0 ""
     liberia.11.a:0 "Excellent."
     liberia.11.b:0 "Promote him to tribe leader!"
@@ -359,7 +359,7 @@
 
     lib_border_conflict.2.t:0 ""
     lib_border_conflict.2.desc:0 ""
-    lib_border_conflict.2.a:0 "A succesful raid!"
+    lib_border_conflict.2.a:0 "A successful raid!"
 
     lib_border_conflict.3:0 ""
     lib_border_conflict.3.t:0 ""

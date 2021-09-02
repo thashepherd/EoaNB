@@ -1456,7 +1456,7 @@
  observation_balloon_1c:0 "Practical Static Mooring"
  observation_balloon_1c_desc:0 "Ad hoc or portable moorings for tethered balloon flight have quickly proven unworkable in a military context, sometimes being tugged out of the ground at the first sign of wind. Our army will need to develop ways to rapidly construct static moorings on the march to improve our balloon's woeful reliability."
  observation_balloon_2:0 "Barrage Balloon Concept"
- observation_balloon_2_desc:0 "It might be cost-effective to use mass-produced kite ballons with steel tethers as military obstacles for hostile aircraft. We can commission a study to develop a working design and plans for deployment around strategic targets."
+ observation_balloon_2_desc:0 "It might be cost-effective to use mass-produced kite balloons with steel tethers as military obstacles for hostile aircraft. We can commission a study to develop a working design and plans for deployment around strategic targets."
 
  military_aviation_concept:0 "Military Aviation Concept"
  military_aviation_concept_desc:0 "§LThe aeroplane will prevent war by making it too expensive, too slow, too difficult, too long drawn out. - Orville Wright§!\n\nAll but the most obstinate members of the old guard are coming to believe that military air power shows great promise. It is time for us to discuss the sort of role these newfangled aircraft will play in our army."" 
