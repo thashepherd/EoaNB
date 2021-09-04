@@ -8008,7 +8008,82 @@ spriteTypes = {
 
 	SpriteType = {
 		name = "GFX_naval_aviation_concept_medium"
-		texturefile = "gfx/interface/technologies/naval_doctrine/naval_doctrine_victorian.dds"
+		texturefile = "gfx/interface/technologies/air_doctrine/dream_flight.dds"
+	}
+
+	SpriteType = {
+		name = "GFX_maritime_patrol_priority_0_medium"
+		texturefile = "gfx/interface/technologies/air/cv_seaplane_fighter_1.dds"
+	}
+	SpriteType = {
+		name = "GFX_maritime_patrol_priority_1_medium"
+		texturefile = "gfx/interface/technologies/air/cv_seaplane_fighter_1.dds"
+	}
+	SpriteType = {
+		name = "GFX_maritime_patrol_priority_2_medium"
+		texturefile = "gfx/interface/technologies/air/cv_seaplane_fighter_1.dds"
+	}
+	SpriteType = {
+		name = "GFX_maritime_patrol_priority_3_medium"
+		texturefile = "gfx/interface/technologies/air/cv_seaplane_fighter_1.dds"
+	}
+	SpriteType = {
+		name = "GFX_maritime_patrol_priority_4_medium"
+		texturefile = "gfx/interface/technologies/air/cv_seaplane_fighter_1.dds"
+	}
+	SpriteType = {
+		name = "GFX_maritime_patrol_priority_5_medium"
+		texturefile = "gfx/interface/technologies/air/cv_seaplane_fighter_1.dds"
+	}
+
+	SpriteType = {
+		name = "GFX_naval_strike_0_medium"
+		texturefile = "gfx/interface/technologies/air_doctrine/naval_strike.dds"
+	}
+	SpriteType = {
+		name = "GFX_naval_strike_1_medium"
+		texturefile = "gfx/interface/technologies/air_doctrine/naval_strike.dds"
+	}
+	SpriteType = {
+		name = "GFX_naval_strike_2_medium"
+		texturefile = "gfx/interface/technologies/air_doctrine/early_naval_air_defenses.dds"
+	}
+	SpriteType = {
+		name = "GFX_naval_strike_3_medium"
+		texturefile = "gfx/interface/technologies/air_doctrine/naval_strike.dds"
+	}
+	SpriteType = {
+		name = "GFX_naval_strike_4_medium"
+		texturefile = "gfx/interface/technologies/air_doctrine/naval_strike.dds"
+	}
+	SpriteType = {
+		name = "GFX_naval_strike_5_medium"
+		texturefile = "gfx/interface/technologies/air_doctrine/naval_strike.dds"
+	}
+
+	SpriteType = {
+		name = "GFX_gunfire_spotting_0_medium"
+		texturefile = "gfx/interface/technologies/air_doctrine/gunfire_spotting.dds"
+	}
+	SpriteType = {
+		name = "GFX_gunfire_spotting_1_medium"
+		texturefile = "gfx/interface/technologies/air_doctrine/gunfire_spotting.dds"
+	}
+	SpriteType = {
+		name = "GFX_gunfire_spotting_2_medium"
+		texturefile = "gfx/interface/technologies/air_doctrine/turret_catapult.dds"
+	}
+	SpriteType = {
+		name = "GFX_gunfire_spotting_3_medium"
+		texturefile = "gfx/interface/technologies/air_doctrine/gunfire_spotting.dds"
+	}
+	SpriteType = {
+		name = "GFX_gunfire_spotting_4_medium"
+		texturefile = "gfx/interface/technologies/air_doctrine/gunfire_spotting.dds"
+	}
+	SpriteType = {
+		name = "GFX_gunfire_spotting_5_medium"
+		texturefile = "gfx/interface/technologies/air_doctrine/gunfire_spotting.dds"
 	}
 
 	### MTG naval techs
