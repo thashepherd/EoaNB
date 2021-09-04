@@ -19,7 +19,7 @@
  balkanized_american_states_core_states_decision_tooltip_effect_house:0 "§Y[FROM.GetName]§! gains §b1 House Seats§!\n"
  balkanized_american_states_core_states_decision_tooltip_1:0 "[FROM.GetName] is an §YEligible State§!"
  balkanized_american_states_core_states_decision_tooltip_2:0 "There is no §YResistant Populace§! in [FROM.GetName]"
- balkanized_american_states_core_states_decision_tooltip_3:0 "The population of [FROM.GetName] is atleast §Y40,000§!"
+ balkanized_american_states_core_states_decision_tooltip_3:0 "The population of [FROM.GetName] is at least §Y40,000§!"
  balkanized_american_states_core_states_decision_tooltip_4:0 "[Root.Capital.GetName] is connected to [FROM.GetName]"
  balkanized_american_states_core_states_decision_tooltip_effect:0 "becomes a state and core of the [ROOT.GetName]!\n"
  USA_admit_state_add_stars_tt:0 "§Y[Root.GetNameWithFlag]§! gains §b+1 State§!\n"
