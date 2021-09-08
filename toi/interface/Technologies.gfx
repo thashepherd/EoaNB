@@ -886,14 +886,107 @@ spriteTypes = {
 
 	### air doctrines	###
 
+	## Dream of Flight
+
+	# Early balloon tree
+
+	SpriteType = {
+		name = "GFX_observation_balloon_0_medium"
+		texturefile = "gfx/interface/technologies/aviation/aders_avion.dds"
+	}
+
+	SpriteType = {
+		name = "GFX_observation_balloon_1a_medium"
+		texturefile = "gfx/interface/technologies/aviation/aders_avion.dds"
+	}
+
+	SpriteType = {
+		name = "GFX_observation_balloon_1b_medium"
+		texturefile = "gfx/interface/technologies/aviation/aders_avion.dds"
+	}
+
+	SpriteType = {
+		name = "GFX_observation_balloon_1c_medium"
+		texturefile = "gfx/interface/technologies/aviation/aders_avion.dds"
+	}
+
+	SpriteType = {
+		name = "GFX_observation_balloon_2_medium"
+		texturefile = "gfx/interface/technologies/aviation/aders_avion.dds"
+	}
+
+	# Early military aviation
+
+	SpriteType = {
+		name = "GFX_military_aviation_concept_medium"
+		texturefile = "gfx/interface/technologies/aviation/aders_avion.dds"
+	}
+
+	SpriteType = {
+		name = "GFX_army_cooperation_0_medium"
+		texturefile = "gfx/interface/technologies/aviation/aders_avion.dds"
+	}
+
+	SpriteType = {
+		name = "GFX_army_cooperation_1_medium"
+		texturefile = "gfx/interface/technologies/aviation/aders_avion.dds"
+	}
+
+	SpriteType = {
+		name = "GFX_army_cooperation_2a_medium"
+		texturefile = "gfx/interface/technologies/aviation/aders_avion.dds"
+	}
+
+	SpriteType = {
+		name = "GFX_army_cooperation_2b_medium"
+		texturefile = "gfx/interface/technologies/aviation/aders_avion.dds"
+	}
+
+	SpriteType = {
+		name = "GFX_army_cooperation_3a_medium"
+		texturefile = "gfx/interface/technologies/aviation/aders_avion.dds"
+	}
+
+	SpriteType = {
+		name = "GFX_army_cooperation_3b_medium"
+		texturefile = "gfx/interface/technologies/aviation/aders_avion.dds"
+	}
+
+	SpriteType = {
+		name = "GFX_army_cooperation_4a_medium"
+		texturefile = "gfx/interface/technologies/aviation/aders_avion.dds"
+	}
+
+	SpriteType = {
+		name = "GFX_army_cooperation_4b_medium"
+		texturefile = "gfx/interface/technologies/aviation/aders_avion.dds"
+	}
+
+	SpriteType = {
+		name = "GFX_army_cooperation_5a_medium"
+		texturefile = "gfx/interface/technologies/aviation/aders_avion.dds"
+	}
+
+	SpriteType = {
+		name = "GFX_army_cooperation_5b_medium"
+		texturefile = "gfx/interface/technologies/aviation/aders_avion.dds"
+	}
+
+	SpriteType = {
+		name = "GFX_army_cooperation_5c_medium"
+		texturefile = "gfx/interface/technologies/aviation/aders_avion.dds"
+	}
+
+	## Legacy
+
 	SpriteType = {
 		name = "GFX_naval_strike_torpedo_tactics_medium"
-		texturefile = "gfx/interface/technologies/naval_strike_torpedo_tactics.dds"
+		texturefile = "gfx/interface/technologies/aviation/aders_avion.dds"
 	}
 
 	SpriteType = {
 		name = "GFX_naval_strike_torpedo_tactics_oi_medium"
-		texturefile = "gfx/interface/technologies/naval_strike_torpedo_tactics.dds"
+		texturefile = "gfx/interface/technologies/aviation/aders_avion.dds"
 	}
 
 	SpriteType = {
@@ -8004,7 +8097,7 @@ spriteTypes = {
 		texturefile = "gfx/interface/technologies/naval_doctrine/naval_doctrine_victorian.dds"
 	}
 
-	## Early Naval Aviation Doctrine
+	## Dream of Flight Early Naval Aviation Doctrine
 
 	SpriteType = {
 		name = "GFX_naval_aviation_concept_medium"

@@ -6303,12 +6303,12 @@ guiTypes = {
 			}
 
 			instantTextBoxType = {
-				name = "dream_of_flight_title"
-				position = { x = 1045 y = 120 }
+				name = "early_observation_balloon_doctrine_tree_title"
+				position = { x = 200 y = 120 }
 				textureFile = ""
 				font = "hoi_22tech"
 				borderSize = { x = 0 y = 4 }
-				text = "VICTORIAN_AIR_DOCTRINE_LABEL"
+				text = "EARLY_OBSERVATION_BALLOON_DOCTRINE_TREE_LABEL"
 				maxWidth = 400
 				maxHeight = 122
 				format = center
@@ -6316,8 +6316,37 @@ guiTypes = {
 			}
 
 			gridboxtype = {
-				name = "air_doctrine_victorian_tree"
+				name = "observation_balloon_0_tree"
+				position = { x = 0 y = 172 }
+				size = { width = 400 height = 600 }
+				slotsize = { width = 60 height = 60 }
+				format = "UP"
+			}
+
+			instantTextBoxType = {
+				name = "early_military_aviation_tree_title"
+				position = { x = 1045 y = 120 }
+				textureFile = ""
+				font = "hoi_22tech"
+				borderSize = { x = 0 y = 4 }
+				text = "EARLY_MILITARY_AVIATION_TREE_LABEL"
+				maxWidth = 400
+				maxHeight = 122
+				format = center
+				Orientation = "UPPER_LEFT"
+			}
+
+			gridboxtype = {
+				name = "military_aviation_concept_tree"
 				position = { x = 80 y = 172 }
+				size = { width = 400 height = 1050 }
+				slotsize = { width = 60 height = 60 }
+				format = "UP"
+			}
+
+			gridboxtype = {
+				name = "air_doctrine_victorian_tree"
+				position = { x = 80 y = 472 }
 				size = { width = 400 height = 1050 }
 				slotsize = { width = 60 height = 60 }
 				format = "UP"
