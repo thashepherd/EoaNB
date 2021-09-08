@@ -150,7 +150,7 @@ technologies = {
 	military_aviation_concept = {
 		folder = {
 			name = air_doctrine_folder
-			position = { x = 16 y = 2 }
+			position = { x = 16 y = 0 }
 		}
 
 		path = {
@@ -181,7 +181,7 @@ technologies = {
 	army_cooperation_0 = {
 		folder = {
 			name = air_doctrine_folder
-			position = { x = 12 y = 4 }
+			position = { x = 11 y = 4 }
 		}
 
 		path = {
@@ -202,7 +202,7 @@ technologies = {
 	army_cooperation_1 = {
 		folder = {
 			name = air_doctrine_folder
-			position = { x = 12 y = 4 }
+			position = { x = 11 y = 6 }
 		}
 
 		dependencies = {
@@ -232,7 +232,7 @@ technologies = {
 	army_cooperation_2a = {
 		folder = {
 			name = air_doctrine_folder
-			position = { x = 10 y = 6 }
+			position = { x = 10 y = 8 }
 		}
 
 		XOR = {
@@ -262,7 +262,7 @@ technologies = {
 	army_cooperation_2b = {
 		folder = {
 			name = air_doctrine_folder
-			position = { x = 12 y = 6 }
+			position = { x = 12 y = 8 }
 		}
 
 		XOR = {
@@ -292,7 +292,7 @@ technologies = {
 	army_cooperation_3a = {
 		folder = {
 			name = air_doctrine_folder
-			position = { x = 10 y = 8 }
+			position = { x = 10 y = 10 }
 		}
 
 		XOR = {
@@ -322,7 +322,7 @@ technologies = {
 	army_cooperation_3b = {
 		folder = {
 			name = air_doctrine_folder
-			position = { x = 12 y = 8 }
+			position = { x = 12 y = 10 }
 		}
 
 		XOR = {
@@ -352,7 +352,7 @@ technologies = {
 	army_cooperation_4a = {
 		folder = {
 			name = air_doctrine_folder
-			position = { x = 10 y = 10 }
+			position = { x = 10 y = 12 }
 		}
 
 		XOR = {
@@ -387,7 +387,7 @@ technologies = {
 	army_cooperation_4b = {
 		folder = {
 			name = air_doctrine_folder
-			position = { x = 12 y = 10 }
+			position = { x = 12 y = 12 }
 		}
 
 		XOR = {
@@ -422,7 +422,7 @@ technologies = {
 	army_cooperation_5a = {
 		folder = {
 			name = air_doctrine_folder
-			position = { x = 10 y = 12 }
+			position = { x = 9 y = 14 }
 		}
 
 		xp_research_type = air
@@ -438,7 +438,7 @@ technologies = {
 	army_cooperation_5b = {
 		folder = {
 			name = air_doctrine_folder
-			position = { x = 12 y = 12 }
+			position = { x = 11 y = 14 }
 		}
 
 		xp_research_type = air
@@ -454,7 +454,7 @@ technologies = {
 	army_cooperation_5c = {
 		folder = {
 			name = air_doctrine_folder
-			position = { x = 14 y = 12 }
+			position = { x = 13 y = 14 }
 		}
 
 		xp_research_type = air
@@ -466,6 +466,696 @@ technologies = {
 			air_doctrine
 		}
 	}
+
+	# Operational recon
+
+	operational_recon_0 = {
+		folder = {
+			name = air_doctrine_folder
+			position = { x = 16 y = 2 }
+		}
+
+		path = {
+			leads_to_tech = operational_recon_1a
+			research_cost_coeff = 1
+		}
+
+		path = {
+			leads_to_tech = operational_recon_1b
+			research_cost_coeff = 1
+		}
+
+		xp_research_type = air
+		xp_research_cost = 100
+		xp_research_bonus = 1
+		research_cost = 4
+		doctrine = yes
+		categories = {
+			air_doctrine
+		}
+	}
+
+	operational_recon_1a = {
+		folder = {
+			name = air_doctrine_folder
+			position = { x = 15 y = 4 }
+		}
+
+		XOR = {
+			operational_recon_1b = 1
+		}
+
+		path = {
+			leads_to_tech = operational_recon_2a
+			research_cost_coeff = 1
+		}
+
+		path = {
+			leads_to_tech = operational_recon_2b
+			research_cost_coeff = 1
+		}
+
+		xp_research_type = air
+		xp_research_cost = 100
+		xp_research_bonus = 1
+		research_cost = 4
+		doctrine = yes
+		categories = {
+			air_doctrine
+		}
+	}
+
+	operational_recon_1b = {
+		folder = {
+			name = air_doctrine_folder
+			position = { x = 17 y = 4 }
+		}
+
+		XOR = {
+			operational_recon_1a = 1
+		}
+
+		path = {
+			leads_to_tech = operational_recon_2a
+			research_cost_coeff = 1
+		}
+
+		path = {
+			leads_to_tech = operational_recon_2b
+			research_cost_coeff = 1
+		}
+
+		xp_research_type = air
+		xp_research_cost = 100
+		xp_research_bonus = 1
+		research_cost = 4
+		doctrine = yes
+		categories = {
+			air_doctrine
+		}
+	}
+
+	operational_recon_2a = {
+		folder = {
+			name = air_doctrine_folder
+			position = { x = 15 y = 6 }
+		}
+
+		XOR = {
+			operational_recon_2b = 1
+		}
+
+		path = {
+			leads_to_tech = operational_recon_3a
+			research_cost_coeff = 1
+		}
+
+		path = {
+			leads_to_tech = operational_recon_3b
+			research_cost_coeff = 1
+		}
+
+		path = {
+			leads_to_tech = operational_recon_3c
+			research_cost_coeff = 1
+		}
+
+		xp_research_type = air
+		xp_research_cost = 100
+		xp_research_bonus = 1
+		research_cost = 4
+		doctrine = yes
+		categories = {
+			air_doctrine
+		}
+	}
+
+	operational_recon_2b = {
+		folder = {
+			name = air_doctrine_folder
+			position = { x = 17 y = 6 }
+		}
+
+		XOR = {
+			operational_recon_2a = 1
+		}
+
+		path = {
+			leads_to_tech = operational_recon_3a
+			research_cost_coeff = 1
+		}
+
+		path = {
+			leads_to_tech = operational_recon_3b
+			research_cost_coeff = 1
+		}
+
+		path = {
+			leads_to_tech = operational_recon_3c
+			research_cost_coeff = 1
+		}
+
+		xp_research_type = air
+		xp_research_cost = 100
+		xp_research_bonus = 1
+		research_cost = 4
+		doctrine = yes
+		categories = {
+			air_doctrine
+		}
+	}
+
+	operational_recon_3a = {
+		folder = {
+			name = air_doctrine_folder
+			position = { x = 14 y = 8 }
+		}
+
+		path = {
+			leads_to_tech = operational_recon_4a
+			research_cost_coeff = 1
+		}
+
+		path = {
+			leads_to_tech = operational_recon_4b
+			research_cost_coeff = 1
+		}
+
+		path = {
+			leads_to_tech = operational_recon_4c
+			research_cost_coeff = 1
+		}
+
+		xp_research_type = air
+		xp_research_cost = 100
+		xp_research_bonus = 1
+		research_cost = 4
+		doctrine = yes
+		categories = {
+			air_doctrine
+		}
+	}
+
+	operational_recon_3b = {
+		folder = {
+			name = air_doctrine_folder
+			position = { x = 16 y = 8 }
+		}
+
+		path = {
+			leads_to_tech = operational_recon_4a
+			research_cost_coeff = 1
+		}
+
+		path = {
+			leads_to_tech = operational_recon_4b
+			research_cost_coeff = 1
+		}
+
+		path = {
+			leads_to_tech = operational_recon_4c
+			research_cost_coeff = 1
+		}
+
+		xp_research_type = air
+		xp_research_cost = 100
+		xp_research_bonus = 1
+		research_cost = 4
+		doctrine = yes
+		categories = {
+			air_doctrine
+		}
+	}
+
+	operational_recon_3c = {
+		folder = {
+			name = air_doctrine_folder
+			position = { x = 18 y = 8 }
+		}
+
+		path = {
+			leads_to_tech = operational_recon_4a
+			research_cost_coeff = 1
+		}
+
+		path = {
+			leads_to_tech = operational_recon_4b
+			research_cost_coeff = 1
+		}
+
+		path = {
+			leads_to_tech = operational_recon_4c
+			research_cost_coeff = 1
+		}
+
+		xp_research_type = air
+		xp_research_cost = 100
+		xp_research_bonus = 1
+		research_cost = 4
+		doctrine = yes
+		categories = {
+			air_doctrine
+		}
+	}
+
+	operational_recon_4a = {
+		folder = {
+			name = air_doctrine_folder
+			position = { x = 14 y = 10 }
+		}
+
+		dependencies = {
+			operational_recon_3a = 1
+			operational_recon_3b = 1
+			operational_recon_3c = 1
+		}
+
+		path = {
+			leads_to_tech = operational_recon_5
+			research_cost_coeff = 1
+		}
+
+		xp_research_type = air
+		xp_research_cost = 100
+		xp_research_bonus = 1
+		research_cost = 4
+		doctrine = yes
+		categories = {
+			air_doctrine
+		}
+	}
+
+	operational_recon_4b = {
+		folder = {
+			name = air_doctrine_folder
+			position = { x = 16 y = 10 }
+		}
+
+		dependencies = {
+			operational_recon_3a = 1
+			operational_recon_3b = 1
+			operational_recon_3c = 1
+		}
+
+		path = {
+			leads_to_tech = operational_recon_5
+			research_cost_coeff = 1
+		}
+
+		xp_research_type = air
+		xp_research_cost = 100
+		xp_research_bonus = 1
+		research_cost = 4
+		doctrine = yes
+		categories = {
+			air_doctrine
+		}
+	}
+
+	operational_recon_4c = {
+		folder = {
+			name = air_doctrine_folder
+			position = { x = 18 y = 10 }
+		}
+
+		dependencies = {
+			operational_recon_3a = 1
+			operational_recon_3b = 1
+			operational_recon_3c = 1
+		}
+
+		path = {
+			leads_to_tech = operational_recon_5
+			research_cost_coeff = 1
+		}
+
+		xp_research_type = air
+		xp_research_cost = 100
+		xp_research_bonus = 1
+		research_cost = 4
+		doctrine = yes
+		categories = {
+			air_doctrine
+		}
+	}
+
+	operational_recon_5 = {
+		folder = {
+			name = air_doctrine_folder
+			position = { x = 16 y = 12 }
+		}
+
+		xp_research_type = air
+		xp_research_cost = 100
+		xp_research_bonus = 1
+		research_cost = 4
+		doctrine = yes
+		categories = {
+			air_doctrine
+		}
+	}
+
+	# Evil bastard meme doctrine
+	homeland_strike_0 = {
+		folder = {
+			name = air_doctrine_folder
+			position = { x = 21 y = 2 }
+		}
+
+		path = {
+			leads_to_tech = homeland_strike_1
+			research_cost_coeff = 1
+		}
+
+		xp_research_type = air
+		xp_research_cost = 100
+		xp_research_bonus = 1
+		research_cost = 4
+		doctrine = yes
+		categories = {
+			air_doctrine
+		}
+	}
+
+	homeland_strike_1 = {
+		folder = {
+			name = air_doctrine_folder
+			position = { x = 21 y = 4 }
+		}
+
+		path = {
+			leads_to_tech = homeland_strike_2a
+			research_cost_coeff = 1
+		}
+
+		path = {
+			leads_to_tech = homeland_strike_2b
+			research_cost_coeff = 1
+		}
+
+		xp_research_type = air
+		xp_research_cost = 100
+		xp_research_bonus = 1
+		research_cost = 4
+		doctrine = yes
+		categories = {
+			air_doctrine
+		}
+	}
+
+	homeland_strike_2a = {
+		folder = {
+			name = air_doctrine_folder
+			position = { x = 20 y = 6 }
+		}
+
+		XOR = {
+			homeland_strike_2b = 1
+		}
+
+		path = {
+			leads_to_tech = homeland_strike_3a
+			research_cost_coeff = 1
+		}
+
+		xp_research_type = air
+		xp_research_cost = 100
+		xp_research_bonus = 1
+		research_cost = 4
+		doctrine = yes
+		categories = {
+			air_doctrine
+		}
+	}
+
+	homeland_strike_3a = {
+		folder = {
+			name = air_doctrine_folder
+			position = { x = 20 y = 8 }
+		}
+
+		path = {
+			leads_to_tech = homeland_strike_4a
+			research_cost_coeff = 1
+		}
+
+		xp_research_type = air
+		xp_research_cost = 100
+		xp_research_bonus = 1
+		research_cost = 4
+		doctrine = yes
+		categories = {
+			air_doctrine
+		}
+	}
+	
+	homeland_strike_4a = {
+		folder = {
+			name = air_doctrine_folder
+			position = { x = 20 y = 10 }
+		}
+
+		path = {
+			leads_to_tech = homeland_strike_5a
+			research_cost_coeff = 1
+		}
+
+		path = {
+			leads_to_tech = homeland_strike_5b
+			research_cost_coeff = 1
+		}
+
+		xp_research_type = air
+		xp_research_cost = 100
+		xp_research_bonus = 1
+		research_cost = 4
+		doctrine = yes
+		categories = {
+			air_doctrine
+		}
+	}
+
+	homeland_strike_2b = {
+		folder = {
+			name = air_doctrine_folder
+			position = { x = 22 y = 6 }
+		}
+
+		path = {
+			leads_to_tech = homeland_strike_3b
+			research_cost_coeff = 1
+		}
+
+		xp_research_type = air
+		xp_research_cost = 100
+		xp_research_bonus = 1
+		research_cost = 4
+		doctrine = yes
+		categories = {
+			air_doctrine
+		}
+	}
+
+	homeland_strike_3b = {
+		folder = {
+			name = air_doctrine_folder
+			position = { x = 22 y = 8 }
+		}
+
+		path = {
+			leads_to_tech = homeland_strike_4b
+			research_cost_coeff = 1
+		}
+
+		xp_research_type = air
+		xp_research_cost = 100
+		xp_research_bonus = 1
+		research_cost = 4
+		doctrine = yes
+		categories = {
+			air_doctrine
+		}
+	}
+	
+	homeland_strike_4b = {
+		folder = {
+			name = air_doctrine_folder
+			position = { x = 22 y = 10 }
+		}
+
+		path = {
+			leads_to_tech = homeland_strike_5a
+			research_cost_coeff = 1
+		}
+
+		path = {
+			leads_to_tech = homeland_strike_5b
+			research_cost_coeff = 1
+		}
+
+		xp_research_type = air
+		xp_research_cost = 100
+		xp_research_bonus = 1
+		research_cost = 4
+		doctrine = yes
+		categories = {
+			air_doctrine
+		}
+	}
+
+	homeland_strike_5a = {
+		folder = {
+			name = air_doctrine_folder
+			position = { x = 20 y = 12 }
+		}
+
+		path = {
+			leads_to_tech = homeland_strike_6a
+			research_cost_coeff = 1
+		}
+
+		path = {
+			leads_to_tech = homeland_strike_6b
+			research_cost_coeff = 1
+		}
+
+		xp_research_type = air
+		xp_research_cost = 100
+		xp_research_bonus = 1
+		research_cost = 4
+		doctrine = yes
+		categories = {
+			air_doctrine
+		}
+	}
+
+	homeland_strike_5b = {
+		folder = {
+			name = air_doctrine_folder
+			position = { x = 22 y = 12 }
+		}
+
+		path = {
+			leads_to_tech = homeland_strike_6a
+			research_cost_coeff = 1
+		}
+
+		path = {
+			leads_to_tech = homeland_strike_6b
+			research_cost_coeff = 1
+		}
+
+		xp_research_type = air
+		xp_research_cost = 100
+		xp_research_bonus = 1
+		research_cost = 4
+		doctrine = yes
+		categories = {
+			air_doctrine
+		}
+	}
+
+	homeland_strike_6a = {
+		folder = {
+			name = air_doctrine_folder
+			position = { x = 20 y = 14 }
+		}
+
+		XOR = {
+			homeland_strike_6b = 1
+		}
+
+		path = {
+			leads_to_tech = homeland_strike_7a
+			research_cost_coeff = 1
+		}
+
+		path = {
+			leads_to_tech = homeland_strike_7b
+			research_cost_coeff = 1
+		}
+
+		xp_research_type = air
+		xp_research_cost = 100
+		xp_research_bonus = 1
+		research_cost = 4
+		doctrine = yes
+		categories = {
+			air_doctrine
+		}
+	}
+
+	homeland_strike_6b = {
+		folder = {
+			name = air_doctrine_folder
+			position = { x = 22 y = 14 }
+		}
+
+		XOR = {
+			homeland_strike_6a = 1
+		}
+
+		path = {
+			leads_to_tech = homeland_strike_7a
+			research_cost_coeff = 1
+		}
+
+		path = {
+			leads_to_tech = homeland_strike_7b
+			research_cost_coeff = 1
+		}
+
+		xp_research_type = air
+		xp_research_cost = 100
+		xp_research_bonus = 1
+		research_cost = 4
+		doctrine = yes
+		categories = {
+			air_doctrine
+		}
+	}
+
+	homeland_strike_7a = {
+		folder = {
+			name = air_doctrine_folder
+			position = { x = 20 y = 16 }
+		}
+
+		XOR = {
+			homeland_strike_7b = 1
+		}
+
+		xp_research_type = air
+		xp_research_cost = 100
+		xp_research_bonus = 1
+		research_cost = 4
+		doctrine = yes
+		categories = {
+			air_doctrine
+		}
+	}
+
+	homeland_strike_7b = {
+		folder = {
+			name = air_doctrine_folder
+			position = { x = 22 y = 16 }
+		}
+
+		XOR = {
+			homeland_strike_7a = 1
+		}
+
+		xp_research_type = air
+		xp_research_cost = 100
+		xp_research_bonus = 1
+		research_cost = 4
+		doctrine = yes
+		categories = {
+			air_doctrine
+		}
+	}
+
+	## Legacy
 
 	air_doctrine_victorian = {
 		

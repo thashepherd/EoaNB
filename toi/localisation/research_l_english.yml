@@ -1510,8 +1510,8 @@
  operational_recon_4b_desc:0 "We will rotate pilots back home after a certain number of combat missions instead of forcing them to fight until they die. We'll use these seasoned veterans to train a new crop of pilots."
  operational_recon_4c:0 "Bombardier Training"
  operational_recon_4c_desc:0 "After graduating from basic flying school, but before they're sent to the front, our bomber pilots are sent to a remote airbase surrounded by uninhabited government land. They're taught the fundamentals of bombing using targets painted on hillsides and mockups of trenches, with flour sacks and then dummy bombs and then, if they're lucky, the real thing."
- operational_recon_5a:0 "Offensive Counter-Air"
- operational_recon_5a_desc:0 "We know where their airbases are and we've plotted their patrols down to the minute. Every morning our pilots wake up before dawn, raring for the hunt.\n\n§BIt'll be just like a turkey shoot.$!"
+ operational_recon_5:0 "Offensive Counter-Air"
+ operational_recon_5_desc:0 "We know where their airbases are and we've plotted their patrols down to the minute. Every morning our pilots wake up before dawn, raring for the hunt.\n\n§BIt'll be just like a turkey shoot.$!"
 
  operational_recon_6a:0 "Schneider Trophy"
  operational_recon_6b:0 "Air Mail Service"
