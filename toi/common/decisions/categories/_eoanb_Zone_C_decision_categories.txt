@@ -216,7 +216,9 @@ GER_category_southern_generals = {
 	
 }
 
-GER_category_industrialization = {
+#### German Confederation Decision Categories ####
+
+GEC_category_industrialization = {
 	icon = generic_industry
 	
 	allowed = { 
@@ -228,7 +230,7 @@ GER_category_industrialization = {
 	}
 }
 
-GER_category_trade = {
+GEC_category_trade = {
 	icon = navy
 	
 	allowed = { 
@@ -240,7 +242,7 @@ GER_category_trade = {
 	}
 }
 
-GER_hansa_cities_decision_category = {
+GEC_hansa_cities_decision_category = {
     icon = navy
 	
 	allowed = { 
@@ -252,7 +254,7 @@ GER_hansa_cities_decision_category = {
 	}
 }
 
-GER_polizeiverein_decision_category = {
+GEC_polizeiverein_decision_category = {
 	icon = usa_congress
 	
 	priority = 20
@@ -272,6 +274,20 @@ GER_polizeiverein_decision_category = {
 				centrism < 0.45
 			}
 		}
+	}
+}
+
+GEC_military_conventions_decision_category = {
+	icon = PRS_army_reform
+
+	priority = 25
+	
+	allowed = {
+		OR = { tag = BAD tag = BAV tag = HSD tag = WUR } 
+	}
+	
+	visible = {
+		has_idea = GEC_military_convention_with_PRS
 	}
 }
 
@@ -394,6 +410,10 @@ DEN_decision_category_industry = {
 	icon = generic_political_actions
 	
 	allowed = { tag = DEN }
+	
+	visible = {
+		has_completed_focus = DEN_renovate_the_borsen_building
+	}
 }
 
 DEN_decision_category_second_schleswig_war = {
@@ -890,10 +910,6 @@ POL_january_uprising_descision = {
 		tag = POL
 	}
 
-	available = {
-		has_war_with = RUS
-	}
-
 	visible = {
 		has_completed_focus = POL_vic_Establish_The_Polish_National_Goverment
 		RUS = { has_country_flag = POL_January }
@@ -909,7 +925,6 @@ POL_recruit_generals_descision = {
 
 	visible = {
 		has_completed_focus = POL_vic_Appoint_A_Cabinet
-		date < 1870.01.01
 	}
 }
 
@@ -925,7 +940,6 @@ POL_art_patronage_descision_category_hab = {
 	visible = {
 		has_completed_focus = POL_vic_Patronage_Of_Art
 		tag = POL
-		date < 1885.01.01
 	}
 }
 
