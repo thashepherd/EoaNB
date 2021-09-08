@@ -1553,8 +1553,8 @@
  postwar_doctrine_1a_desc:0 "Preventing enemy air attacks on our troops and factories is one of the fundamental competencies of any air force. By the end of the Great War a roughly similar set of best practices and operational patterns had been widely adopted, even by noncombatant countries."
  postwar_doctrine_1b:0 "Great War Tactical Strike"
  postwar_doctrine_1b_desc:0 "Conducting a basic, escorted bombing attack against an enemy battlefield target is one of the fundamental competencies of any air force. By the end of the Great War a roughly similar set of best practices and operational patterns had been widely adopted, even by noncombatant countries."
- postwar_doctrine_2:0 "Civil Aviation"
- postwar_doctrine_2_desc:0 "When the Great Powers demobilized their air forces after the war, the civilian market was flooded with cheap surplus aircraft. Flight is no longer a dream for rich inventors, but a fact of life for the common man."
+ postwar_doctrine_1c:0 "Civil Aviation"
+ postwar_doctrine_1c_desc:0 "When the Great Powers demobilized their air forces after the war, the civilian market was flooded with cheap surplus aircraft. Flight is no longer a dream for rich inventors, but a fact of life for the common man."
  
  interwar_doctrine:0 "Interwar"
  interwar_doctrine_desc:0 "The dust of the Great War has fully settled, but military aviation continues to evolve at a breakneck pace. In salons and universities across the nation a new generation of aerial warfare theorists contemplate the clay of the nation's rapidly evolving aerial forces, arguing over what sort of form to mold them into."

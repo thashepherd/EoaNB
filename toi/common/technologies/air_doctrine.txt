@@ -1,6 +1,15 @@
 technologies = {
 
-	@1850 = 0
+	@ObservationBalloonTier1 = 0
+	@ObservationBalloonTier2 = 2
+	@ObservationBalloonTier3 = 4
+	@WW1Tier1 = 8
+	@WW1Tier2 = 10
+	@WW1Tier3 = 12
+	@WW1Tier4 = 14
+	@WW1Tier5 = 16
+	@WW1Tier6 = 18
+	@WW1Tier7 = 20
 	@1909 = 8
 	@1912 = 10
 	@1914 = 12
@@ -17,7 +26,7 @@ technologies = {
 
 		folder = {
 			name = air_doctrine_folder
-			position = { x = 4 y = 0 }
+			position = { x = 8 y = @ObservationBalloonTier1 }
 		}
 
 		path = {
@@ -53,7 +62,7 @@ technologies = {
 
 		folder = {
 			name = air_doctrine_folder
-			position = { x = 2 y = 2 }
+			position = { x = 6 y = @ObservationBalloonTier2 }
 		}
 
 		path = {
@@ -79,7 +88,7 @@ technologies = {
 
 		folder = {
 			name = air_doctrine_folder
-			position = { x = 4 y = 2 }
+			position = { x = 8 y = @ObservationBalloonTier2 }
 		}
 
 		path = {
@@ -105,7 +114,7 @@ technologies = {
 
 		folder = {
 			name = air_doctrine_folder
-			position = { x = 6 y = 2 }
+			position = { x = 10 y = @ObservationBalloonTier2 }
 		}
 
 		path = {
@@ -133,7 +142,7 @@ technologies = {
 
 		folder = {
 			name = air_doctrine_folder
-			position = { x = 4 y = 4 }
+			position = { x = 6 y = @ObservationBalloonTier3 }
 		}
 
 		xp_research_type = air
@@ -150,7 +159,7 @@ technologies = {
 	military_aviation_concept = {
 		folder = {
 			name = air_doctrine_folder
-			position = { x = 16 y = 0 }
+			position = { x = 8 y = 8 }
 		}
 
 		path = {
@@ -181,7 +190,7 @@ technologies = {
 	army_cooperation_0 = {
 		folder = {
 			name = air_doctrine_folder
-			position = { x = 11 y = 4 }
+			position = { x = 3 y = 12 }
 		}
 
 		path = {
@@ -202,7 +211,7 @@ technologies = {
 	army_cooperation_1 = {
 		folder = {
 			name = air_doctrine_folder
-			position = { x = 11 y = 6 }
+			position = { x = 3 y = 14 }
 		}
 
 		dependencies = {
@@ -232,7 +241,7 @@ technologies = {
 	army_cooperation_2a = {
 		folder = {
 			name = air_doctrine_folder
-			position = { x = 10 y = 8 }
+			position = { x = 2 y = 16 }
 		}
 
 		XOR = {
@@ -262,7 +271,7 @@ technologies = {
 	army_cooperation_2b = {
 		folder = {
 			name = air_doctrine_folder
-			position = { x = 12 y = 8 }
+			position = { x = 4 y = 16 }
 		}
 
 		XOR = {
@@ -292,7 +301,7 @@ technologies = {
 	army_cooperation_3a = {
 		folder = {
 			name = air_doctrine_folder
-			position = { x = 10 y = 10 }
+			position = { x = 2 y = 18 }
 		}
 
 		XOR = {
@@ -322,7 +331,7 @@ technologies = {
 	army_cooperation_3b = {
 		folder = {
 			name = air_doctrine_folder
-			position = { x = 12 y = 10 }
+			position = { x = 4 y = 18 }
 		}
 
 		XOR = {
@@ -352,7 +361,7 @@ technologies = {
 	army_cooperation_4a = {
 		folder = {
 			name = air_doctrine_folder
-			position = { x = 10 y = 12 }
+			position = { x = 2 y = 20 }
 		}
 
 		XOR = {
@@ -387,7 +396,7 @@ technologies = {
 	army_cooperation_4b = {
 		folder = {
 			name = air_doctrine_folder
-			position = { x = 12 y = 12 }
+			position = { x = 4 y = 20 }
 		}
 
 		XOR = {
@@ -422,7 +431,7 @@ technologies = {
 	army_cooperation_5a = {
 		folder = {
 			name = air_doctrine_folder
-			position = { x = 9 y = 14 }
+			position = { x = 1 y = 22 }
 		}
 
 		xp_research_type = air
@@ -438,7 +447,7 @@ technologies = {
 	army_cooperation_5b = {
 		folder = {
 			name = air_doctrine_folder
-			position = { x = 11 y = 14 }
+			position = { x = 3 y = 22 }
 		}
 
 		xp_research_type = air
@@ -454,7 +463,7 @@ technologies = {
 	army_cooperation_5c = {
 		folder = {
 			name = air_doctrine_folder
-			position = { x = 13 y = 14 }
+			position = { x = 5 y = 22 }
 		}
 
 		xp_research_type = air
@@ -472,7 +481,7 @@ technologies = {
 	operational_recon_0 = {
 		folder = {
 			name = air_doctrine_folder
-			position = { x = 16 y = 2 }
+			position = { x = 8 y = 12 }
 		}
 
 		path = {
@@ -498,7 +507,7 @@ technologies = {
 	operational_recon_1a = {
 		folder = {
 			name = air_doctrine_folder
-			position = { x = 15 y = 4 }
+			position = { x = 15 y = 6 }
 		}
 
 		XOR = {
@@ -528,7 +537,7 @@ technologies = {
 	operational_recon_1b = {
 		folder = {
 			name = air_doctrine_folder
-			position = { x = 17 y = 4 }
+			position = { x = 17 y = 6 }
 		}
 
 		XOR = {
@@ -558,7 +567,7 @@ technologies = {
 	operational_recon_2a = {
 		folder = {
 			name = air_doctrine_folder
-			position = { x = 15 y = 6 }
+			position = { x = 15 y = 8 }
 		}
 
 		XOR = {
@@ -593,7 +602,7 @@ technologies = {
 	operational_recon_2b = {
 		folder = {
 			name = air_doctrine_folder
-			position = { x = 17 y = 6 }
+			position = { x = 17 y = 8 }
 		}
 
 		XOR = {
@@ -628,7 +637,7 @@ technologies = {
 	operational_recon_3a = {
 		folder = {
 			name = air_doctrine_folder
-			position = { x = 14 y = 8 }
+			position = { x = 14 y = 10 }
 		}
 
 		path = {
@@ -659,7 +668,7 @@ technologies = {
 	operational_recon_3b = {
 		folder = {
 			name = air_doctrine_folder
-			position = { x = 16 y = 8 }
+			position = { x = 16 y = 10 }
 		}
 
 		path = {
@@ -690,7 +699,7 @@ technologies = {
 	operational_recon_3c = {
 		folder = {
 			name = air_doctrine_folder
-			position = { x = 18 y = 8 }
+			position = { x = 18 y = 10 }
 		}
 
 		path = {
@@ -721,7 +730,7 @@ technologies = {
 	operational_recon_4a = {
 		folder = {
 			name = air_doctrine_folder
-			position = { x = 14 y = 10 }
+			position = { x = 14 y = 12 }
 		}
 
 		dependencies = {
@@ -748,7 +757,7 @@ technologies = {
 	operational_recon_4b = {
 		folder = {
 			name = air_doctrine_folder
-			position = { x = 16 y = 10 }
+			position = { x = 16 y = 12 }
 		}
 
 		dependencies = {
@@ -775,7 +784,7 @@ technologies = {
 	operational_recon_4c = {
 		folder = {
 			name = air_doctrine_folder
-			position = { x = 18 y = 10 }
+			position = { x = 18 y = 12 }
 		}
 
 		dependencies = {
@@ -802,7 +811,7 @@ technologies = {
 	operational_recon_5 = {
 		folder = {
 			name = air_doctrine_folder
-			position = { x = 16 y = 12 }
+			position = { x = 16 y = 14 }
 		}
 
 		xp_research_type = air
@@ -1145,6 +1154,123 @@ technologies = {
 			homeland_strike_7a = 1
 		}
 
+		xp_research_type = air
+		xp_research_cost = 100
+		xp_research_bonus = 1
+		research_cost = 4
+		doctrine = yes
+		categories = {
+			air_doctrine
+		}
+	}
+
+	# Interwar
+
+	postwar_doctrine_0 = {
+		folder = {
+			name = air_doctrine_folder
+			position = { x = 16 y = 18 }
+		}
+
+		path = {
+			leads_to_tech = postwar_doctrine_1a
+			research_cost_coeff = 1
+		}
+
+		path = {
+			leads_to_tech = postwar_doctrine_1b
+			research_cost_coeff = 1
+		}
+
+		path = {
+			leads_to_tech = postwar_doctrine_1c
+			research_cost_coeff = 1
+		}
+
+		start_year = 1919
+		xp_research_type = air
+		xp_research_cost = 100
+		xp_research_bonus = 1
+		research_cost = 4
+		doctrine = yes
+		categories = {
+			air_doctrine
+		}
+	}
+
+	postwar_doctrine_1a = {
+		folder = {
+			name = air_doctrine_folder
+			position = { x = 14 y = 20 }
+		}
+
+		start_year = 1919
+		xp_research_type = air
+		xp_research_cost = 100
+		xp_research_bonus = 1
+		research_cost = 4
+		doctrine = yes
+		categories = {
+			air_doctrine
+		}
+	}
+
+	postwar_doctrine_1b = {
+		folder = {
+			name = air_doctrine_folder
+			position = { x = 16 y = 20 }
+		}
+
+		start_year = 1919
+		xp_research_type = air
+		xp_research_cost = 100
+		xp_research_bonus = 1
+		research_cost = 4
+		doctrine = yes
+		categories = {
+			air_doctrine
+		}
+	}
+
+	postwar_doctrine_1c = {
+		folder = {
+			name = air_doctrine_folder
+			position = { x = 18 y = 20 }
+		}
+
+		start_year = 1919
+		xp_research_type = air
+		xp_research_cost = 100
+		xp_research_bonus = 1
+		research_cost = 4
+		doctrine = yes
+		categories = {
+			air_doctrine
+		}
+	}
+
+	interwar_doctrine = {
+		folder = {
+			name = air_doctrine_folder
+			position = { x = 18 y = 20 }
+		}
+
+		path = {
+			leads_to_tech = fast_bomber_0
+			research_cost_coeff = 1
+		}
+
+		path = {
+			leads_to_tech = precision_bombing_0
+			research_cost_coeff = 1
+		}
+
+		path = {
+			leads_to_tech = dive_bombing_0
+			research_cost_coeff = 1
+		}
+
+		start_year = 1925
 		xp_research_type = air
 		xp_research_cost = 100
 		xp_research_bonus = 1
