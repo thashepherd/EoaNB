@@ -1107,6 +1107,168 @@ spriteTypes = {
 		texturefile = "gfx/interface/technologies/aviation/aders_avion.dds"
 	}
 
+	## Interwar
+
+	SpriteType = {
+		name = "GFX_postwar_doctrine_0_medium"
+		texturefile = "gfx/interface/technologies/aviation/aders_avion.dds"
+	}
+
+	SpriteType = {
+		name = "GFX_postwar_doctrine_1a_medium"
+		texturefile = "gfx/interface/technologies/aviation/aders_avion.dds"
+	}
+
+	SpriteType = {
+		name = "GFX_postwar_doctrine_1b_medium"
+		texturefile = "gfx/interface/technologies/aviation/aders_avion.dds"
+	}
+
+	SpriteType = {
+		name = "GFX_postwar_doctrine_1c_medium"
+		texturefile = "gfx/interface/technologies/aviation/aders_avion.dds"
+	}
+
+	SpriteType = {
+		name = "GFX_postwar_doctrine_2_medium"
+		texturefile = "gfx/interface/technologies/aviation/aders_avion.dds"
+	}
+
+	SpriteType = {
+		name = "GFX_interwar_doctrine_medium"
+		texturefile = "gfx/interface/technologies/aviation/aders_avion.dds"
+	}
+
+	SpriteType = {
+		name = "GFX_fast_bomber_0_medium"
+		texturefile = "gfx/interface/technologies/aviation/aders_avion.dds"
+	}
+
+	SpriteType = {
+		name = "GFX_fast_bomber_1_medium"
+		texturefile = "gfx/interface/technologies/aviation/aders_avion.dds"
+	}
+
+	SpriteType = {
+		name = "GFX_fast_bomber_2a_medium"
+		texturefile = "gfx/interface/technologies/aviation/aders_avion.dds"
+	}
+
+	SpriteType = {
+		name = "GFX_fast_bomber_2b_medium"
+		texturefile = "gfx/interface/technologies/aviation/aders_avion.dds"
+	}
+
+	SpriteType = {
+		name = "GFX_fast_bomber_3a_medium"
+		texturefile = "gfx/interface/technologies/aviation/aders_avion.dds"
+	}
+
+	SpriteType = {
+		name = "GFX_fast_bomber_3b_medium"
+		texturefile = "gfx/interface/technologies/aviation/aders_avion.dds"
+	}
+
+	SpriteType = {
+		name = "GFX_fast_bomber_3c_medium"
+		texturefile = "gfx/interface/technologies/aviation/aders_avion.dds"
+	}
+
+	SpriteType = {
+		name = "GFX_fast_bomber_4_medium"
+		texturefile = "gfx/interface/technologies/aviation/aders_avion.dds"
+	}
+
+	SpriteType = {
+		name = "GFX_precision_bombing_0_medium"
+		texturefile = "gfx/interface/technologies/aviation/aders_avion.dds"
+	}
+
+	SpriteType = {
+		name = "GFX_precision_bombing_1_medium"
+		texturefile = "gfx/interface/technologies/aviation/aders_avion.dds"
+	}
+
+	SpriteType = {
+		name = "GFX_precision_bombing_2a_medium"
+		texturefile = "gfx/interface/technologies/aviation/aders_avion.dds"
+	}
+
+	SpriteType = {
+		name = "GFX_precision_bombing_2b_medium"
+		texturefile = "gfx/interface/technologies/aviation/aders_avion.dds"
+	}
+
+	SpriteType = {
+		name = "GFX_precision_bombing_3a_medium"
+		texturefile = "gfx/interface/technologies/aviation/aders_avion.dds"
+	}
+
+	SpriteType = {
+		name = "GFX_precision_bombing_3b_medium"
+		texturefile = "gfx/interface/technologies/aviation/aders_avion.dds"
+	}
+
+	SpriteType = {
+		name = "GFX_precision_bombing_3c_medium"
+		texturefile = "gfx/interface/technologies/aviation/aders_avion.dds"
+	}
+
+	SpriteType = {
+		name = "GFX_precision_bombing_4_medium"
+		texturefile = "gfx/interface/technologies/aviation/aders_avion.dds"
+	}
+
+	SpriteType = {
+		name = "GFX_dive_bombing_0_medium"
+		texturefile = "gfx/interface/technologies/aviation/aders_avion.dds"
+	}
+
+	SpriteType = {
+		name = "GFX_dive_bombing_1_medium"
+		texturefile = "gfx/interface/technologies/aviation/aders_avion.dds"
+	}
+
+	SpriteType = {
+		name = "GFX_dive_bombing_2a_medium"
+		texturefile = "gfx/interface/technologies/aviation/aders_avion.dds"
+	}
+
+	SpriteType = {
+		name = "GFX_dive_bombing_2b_medium"
+		texturefile = "gfx/interface/technologies/aviation/aders_avion.dds"
+	}
+
+	SpriteType = {
+		name = "GFX_dive_bombing_3a_medium"
+		texturefile = "gfx/interface/technologies/aviation/aders_avion.dds"
+	}
+
+	SpriteType = {
+		name = "GFX_dive_bombing_3b_medium"
+		texturefile = "gfx/interface/technologies/aviation/aders_avion.dds"
+	}
+
+	SpriteType = {
+		name = "GFX_dive_bombing_3c_medium"
+		texturefile = "gfx/interface/technologies/aviation/aders_avion.dds"
+	}
+
+	SpriteType = {
+		name = "GFX_dive_bombing_4a_medium"
+		texturefile = "gfx/interface/technologies/aviation/aders_avion.dds"
+	}
+
+	SpriteType = {
+		name = "GFX_dive_bombing_4b_medium"
+		texturefile = "gfx/interface/technologies/aviation/aders_avion.dds"
+	}
+
+	SpriteType = {
+		name = "GFX_dive_bombing_5_medium"
+		texturefile = "gfx/interface/technologies/aviation/aders_avion.dds"
+	}
+
 	## Legacy
 
 	SpriteType = {

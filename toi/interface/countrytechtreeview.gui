@@ -6346,7 +6346,7 @@ guiTypes = {
 
 			gridboxtype = {
 				name = "air_doctrine_victorian_tree"
-				position = { x = 80 y = 472 }
+				position = { x = 80 y = 1072 }
 				size = { width = 400 height = 1050 }
 				slotsize = { width = 60 height = 60 }
 				format = "UP"
