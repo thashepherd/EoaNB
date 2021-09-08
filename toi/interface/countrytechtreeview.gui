@@ -6304,44 +6304,70 @@ guiTypes = {
 
 			instantTextBoxType = {
 				name = "early_observation_balloon_doctrine_tree_title"
-				position = { x = 200 y = 120 }
+				position = { x = 50 y = 120 }
 				textureFile = ""
 				font = "hoi_22tech"
 				borderSize = { x = 0 y = 4 }
 				text = "EARLY_OBSERVATION_BALLOON_DOCTRINE_TREE_LABEL"
 				maxWidth = 400
 				maxHeight = 122
-				format = center
+				format = left
 				Orientation = "UPPER_LEFT"
 			}
 
 			gridboxtype = {
 				name = "observation_balloon_0_tree"
 				position = { x = 0 y = 172 }
-				size = { width = 400 height = 600 }
-				slotsize = { width = 60 height = 60 }
+				size = { width = 400 height = 400 }
+				slotsize = { width = 65 height = 65 }
 				format = "UP"
 			}
 
 			instantTextBoxType = {
 				name = "early_military_aviation_tree_title"
-				position = { x = 1045 y = 120 }
+				position = { x = 50 y = 600 }
 				textureFile = ""
 				font = "hoi_22tech"
 				borderSize = { x = 0 y = 4 }
 				text = "EARLY_MILITARY_AVIATION_TREE_LABEL"
 				maxWidth = 400
 				maxHeight = 122
-				format = center
+				format = left
 				Orientation = "UPPER_LEFT"
 			}
 
 			gridboxtype = {
 				name = "military_aviation_concept_tree"
-				position = { x = 80 y = 172 }
+				position = { x = 0 y = 172 }
 				size = { width = 400 height = 1050 }
-				slotsize = { width = 60 height = 60 }
+				slotsize = { width = 65 height = 65 }
 				format = "UP"
+			}
+
+			instantTextBoxType = {
+				name = "postwar_tree_title"
+				position = { x = 50 y = 1600 }
+				textureFile = ""
+				font = "hoi_22tech"
+				borderSize = { x = 0 y = 4 }
+				text = "POSTWAR_AVIATION_TREE_LABEL"
+				maxWidth = 400
+				maxHeight = 122
+				format = left
+				Orientation = "UPPER_LEFT"
+			}
+
+			instantTextBoxType = {
+				name = "interwar_tree_title"
+				position = { x = 50 y = 1900 }
+				textureFile = ""
+				font = "hoi_22tech"
+				borderSize = { x = 0 y = 4 }
+				text = "INTERWAR_AVIATION_TREE_LABEL"
+				maxWidth = 400
+				maxHeight = 122
+				format = left
+				Orientation = "UPPER_LEFT"
 			}
 
 			gridboxtype = {
