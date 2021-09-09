@@ -12,6 +12,13 @@ technologies = {
 	@WW1Tier7 = 20
 	@WW1Tier8 = 22
 	@WW1Tier9 = 24
+	@NavalAviationTier1 = 10
+	@NavalAviationTier2 = 12
+	@NavalAviationTier3 = 14
+	@NavalAviationTier4 = 16
+	@NavalAviationTier5 = 18
+	@NavalAviationTier6 = 20
+	@NavalAviationTier7 = 22
 	@PostwarTier1 = 24
 	@PostwarTier2 = 26
 	@InterwarTier1 = 30
@@ -195,6 +202,11 @@ technologies = {
 		folder = {
 			name = air_doctrine_folder
 			position = { x = 3 y = @WW1Tier2 }
+		}
+
+		XOR = {
+			operational_recon_0
+			homeland_strike_0
 		}
 
 		path = {
@@ -486,6 +498,11 @@ technologies = {
 		folder = {
 			name = air_doctrine_folder
 			position = { x = 9 y = @WW1Tier2 }
+		}
+
+		XOR = {
+			army_cooperation_0
+			homeland_strike_0
 		}
 
 		path = {
@@ -833,6 +850,11 @@ technologies = {
 		folder = {
 			name = air_doctrine_folder
 			position = { x = 15 y = @WW1Tier2 }
+		}
+
+		XOR = {
+			army_cooperation_0
+			operational_recon_0
 		}
 
 		path = {
