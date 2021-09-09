@@ -146,7 +146,7 @@ technologies = {
 
 		folder = {
 			name = air_doctrine_folder
-			position = { x = 7 y = @ObservationBalloonTier3 }
+			position = { x = 9 y = @ObservationBalloonTier3 }
 		}
 
 		xp_research_type = air
