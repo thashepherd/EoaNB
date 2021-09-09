@@ -24,9 +24,9 @@ technologies = {
 	@WW2Tier1 = 46
 
 	observation_balloon_0 = {
-		dependencies = {
-			early_observation_balloon = 1
-		}
+		# dependencies = {
+		# 	early_observation_balloon = 1
+		# }
 
 		folder = {
 			name = air_doctrine_folder
@@ -249,7 +249,7 @@ technologies = {
 		}
 
 		XOR = {
-			army_cooperation_2b = 1
+			army_cooperation_2b
 		}
 
 		path = {
@@ -279,7 +279,7 @@ technologies = {
 		}
 
 		XOR = {
-			army_cooperation_2a = 1
+			army_cooperation_2a
 		}
 
 		path = {
@@ -309,7 +309,7 @@ technologies = {
 		}
 
 		XOR = {
-			army_cooperation_3b = 1
+			army_cooperation_3b
 		}
 
 		path = {
@@ -339,7 +339,7 @@ technologies = {
 		}
 
 		XOR = {
-			army_cooperation_3a = 1
+			army_cooperation_3a
 		}
 
 		path = {
@@ -369,7 +369,7 @@ technologies = {
 		}
 
 		XOR = {
-			army_cooperation_4b = 1
+			army_cooperation_4b
 		}
 
 		path = {
@@ -404,7 +404,7 @@ technologies = {
 		}
 
 		XOR = {
-			army_cooperation_4a = 1
+			army_cooperation_4a
 		}
 
 		path = {
@@ -515,7 +515,7 @@ technologies = {
 		}
 
 		XOR = {
-			operational_recon_1b = 1
+			operational_recon_1b
 		}
 
 		path = {
@@ -545,7 +545,7 @@ technologies = {
 		}
 
 		XOR = {
-			operational_recon_1a = 1
+			operational_recon_1a
 		}
 
 		path = {
@@ -575,7 +575,7 @@ technologies = {
 		}
 
 		XOR = {
-			operational_recon_2b = 1
+			operational_recon_2b
 		}
 
 		path = {
@@ -610,7 +610,7 @@ technologies = {
 		}
 
 		XOR = {
-			operational_recon_2a = 1
+			operational_recon_2a
 		}
 
 		path = {
@@ -883,7 +883,7 @@ technologies = {
 		}
 
 		XOR = {
-			homeland_strike_2b = 1
+			homeland_strike_2b
 		}
 
 		path = {
@@ -952,6 +952,10 @@ technologies = {
 		folder = {
 			name = air_doctrine_folder
 			position = { x = 16 y = @WW1Tier4 }
+		}
+
+		XOR = {
+			homeland_strike_2a
 		}
 
 		path = {
@@ -1075,7 +1079,7 @@ technologies = {
 		}
 
 		XOR = {
-			homeland_strike_6b = 1
+			homeland_strike_6b
 		}
 
 		path = {
@@ -1105,7 +1109,7 @@ technologies = {
 		}
 
 		XOR = {
-			homeland_strike_6a = 1
+			homeland_strike_6a
 		}
 
 		path = {
@@ -1135,7 +1139,7 @@ technologies = {
 		}
 
 		XOR = {
-			homeland_strike_7b = 1
+			homeland_strike_7b
 		}
 
 		xp_research_type = air
@@ -1155,7 +1159,7 @@ technologies = {
 		}
 
 		XOR = {
-			homeland_strike_7a = 1
+			homeland_strike_7a
 		}
 
 		xp_research_type = air
