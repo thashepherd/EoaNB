@@ -1,5 +1,11 @@
 ideas = {
+	
+	##### COUNTRY IDEAS #####
+	
 	country = {
+		
+		### GENERAL SPIRITS ###
+		
 		DEN_idea_london_protocol = {
 			allowed = {
 				original_tag = DEN
@@ -176,10 +182,155 @@ ideas = {
 				army_morale_factor = -0.06
 			}
 		}
+		
+		### ECONOMIC SPIRITS ###
 
+		DEN_idea_sound_toll_compensation = {
+			allowed = {
+				original_tag = DEN
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			picture = spr_seize_the_gold_reserves
+
+			modifier = {
+				consumer_goods_factor = -0.1
+				political_power_factor = 0.1
+			}
+		}
+		
+		DEN_idea_infrastructure_projects = {
+			allowed = {
+				original_tag = DEN
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			picture = generic_build_infrastructure
+
+			modifier = {
+				production_speed_infrastructure_factor = 0.15
+			}
+		}
+		
+		DEN_idea_dense_railway_network = {
+			allowed = {
+				original_tag = DEN
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			picture = generic_build_infrastructure
+
+			modifier = {
+				production_speed_infrastructure_factor = 0.05
+				production_speed_buildings_factor = 0.05
+				political_power_factor = 0.05
+				consumer_goods_factor = -0.03
+			}
+		}
+		
+		DEN_idea_infrastructure_projects_helstaten = {
+			allowed = {
+				original_tag = DEN
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			picture = generic_build_infrastructure
+
+			modifier = {
+				consumer_goods_factor = 0.05
+			}
+		}
+		
+		DEN_idea_danish_demographics_1 = {
+			allowed = {
+				original_tag = DEN
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			picture = SCH_major_danish_population
+
+			modifier = {
+				MONTHLY_POPULATION = 0.04
+			}
+			
+			research_bonus = {
+				biochemistry_tech = 0.02
+			}
+		}
+		
+		DEN_idea_danish_demographics_2 = {
+			allowed = {
+				original_tag = DEN
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			picture = SCH_major_danish_population
+
+			modifier = {
+				MONTHLY_POPULATION = 0.08
+			}
+			
+			research_bonus = {
+				biochemistry_tech = 0.04
+			}
+		}
+		
+		DEN_idea_danske_bank = {
+			allowed = {
+				original_tag = DEN
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			picture = FRA_profits_gold_rush
+
+			modifier = {
+				consumer_goods_factor = -0.03
+				political_power_factor = -0.03
+			}
+			
+			research_bonus = {
+				humanities_tech = 0.02
+			}
+		}
+		
 		DEN_the_scanidavian_monatry_union = {
 			allowed = {
-				always = no
+				original_tag = DEN
 			}
 
 			allowed_civil_war = {
@@ -195,7 +346,7 @@ ideas = {
 			}
 		}
 
-		DEN_schleswig_is_dannish = {
+		DEN_idea_schleswig_is_danish_1 = {
 			allowed = {
 				always = no
 			}
@@ -209,7 +360,7 @@ ideas = {
 			}
 		}
 
-		DEN_schleswig_is_dannish2 = {
+		DEN_idea_schleswig_is_danish_2 = {
 			allowed = {
 				always = no
 			}
@@ -349,7 +500,7 @@ ideas = {
 			}
 		}
 
-		DEN_buy_west_aro = {
+		DEN_focus_buy_west_aro = {
 			allowed = {
 				always = no
 			}
@@ -612,7 +763,7 @@ ideas = {
 			}
 
 			visible = {
-				has_completed_focus = DEN_hassel_teudt
+				has_completed_focus = DEN_focus_hassel_teudt
 			}
 		}
 
@@ -721,4 +872,39 @@ ideas = {
 			}
 		}
     }
+	
+	##### THEORISTS #####
+
+	theorist = {
+		
+		DEN_theorist_army_hans_nikolai_thestrup = {
+
+			allowed = {
+				original_tag = DEN
+			}
+
+			cost = 150
+
+			research_bonus = {
+				land_doctrine = 0.1
+			}
+
+			traits = { military_theorist }
+		}
+		
+		DEN_theorist_navy_steen_andersen_bille = {
+
+			allowed = {
+				original_tag = DEN
+			}
+
+			cost = 150
+
+			research_bonus = {
+				naval_doctrine = 0.1
+			}
+
+			traits = { naval_theorist }
+		}
+	}
 }

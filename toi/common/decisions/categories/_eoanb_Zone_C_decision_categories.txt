@@ -406,13 +406,13 @@ WUR_shifting_flow = {
 
 #### Denmark Decision Categories ####
 
-DEN_decision_category_industry = {
+DEN_decision_category_economy = {
 	icon = generic_political_actions
 	
 	allowed = { tag = DEN }
 	
 	visible = {
-		has_completed_focus = DEN_renovate_the_borsen_building
+		has_completed_focus = DEN_focus_danish_economy
 	}
 }
 

@@ -53,11 +53,11 @@ political_actions = {
 			}
 		}
 	}
-	
 }
-DEN_decision_category_industry = {
 
-	DEN_railway_upgrade = {
+DEN_decision_category_economy = {
+
+	DEN_decision_railway_upgrade = {
 
 		icon = railway
 		
@@ -66,7 +66,6 @@ DEN_decision_category_industry = {
 		}
 
 		available = {
-			has_idea = NA_B_small_scale_railways
 			has_tech = steam_locomotive_3
 			has_tech = standardized_gauge
 			has_tech = tech_humanities_traffic_signals
@@ -74,26 +73,537 @@ DEN_decision_category_industry = {
 				has_idea = inframain_well_maintaned_infrastructure
 				has_idea = inframain_steady_network_expansion
 			}
+			has_idea = DEN_idea_dense_railway_network
 		}
 
 		visible = {
-			#
+			has_idea = NA_B_small_scale_railways
 		}
 
 		fire_only_once = yes
-		cost = 100
-		days_remove = 180
+		
+		cost = 50
+		
+		days_remove = 365
 		 
 		modifier = {
 			political_power_gain = -0.05
 			consumer_goods_factor = 0.05
 			production_speed_buildings_factor = -0.05
-		}        
+		}
 	   
 		remove_effect = {
 			swap_ideas = { remove_idea = NA_B_small_scale_railways add_idea = NA_B_medium_scale_railways }
 		}
 	   
+		ai_will_do = {
+			base = 1000
+		}
+	}
+	
+	DEN_mission_improve_danish_infrastructure = {
+		
+		icon = railway
+		
+		allowed = {
+			always = no
+		}
+		
+		available = {
+			owns_state = 37
+			37 = {
+				infrastructure > 6
+			}
+			owns_state = 99
+			99 = {
+				infrastructure > 6
+			}
+		}
+		
+		activation = {
+			always = no
+		}
+		
+		fire_only_once = yes
+		
+		is_good = no
+		
+		days_mission_timeout = 7300
+		
+		timeout_effect = {
+			if = {
+				limit = {
+					is_ai = no
+				}
+				add_political_power = -100
+				add_stability = -0.05
+			}
+		}
+		
+		complete_effect = {
+			37 = { add_extra_state_shared_building_slots = 1 }
+			99 = { add_extra_state_shared_building_slots = 1 }
+			add_tech_bonus = { bonus = 0.5 uses = 2 category = transport_tech }
+			swap_ideas = {
+				remove_idea = DEN_idea_infrastructure_projects
+				add_idea = DEN_idea_dense_railway_network
+			}
+		}
+		
+		ai_will_do = {
+			base = 100
+		}
+	}
+	
+	DEN_decision_aarhus_randers_railway = { 
+
+		icon = railway
+
+		highlight_states = {
+			state = 99
+		}
+		
+		allowed = { tag = DEN }
+
+		available = {
+			NOT = { has_country_flag = DEN_railway_project_ongoing_flag }
+			num_of_civilian_factories_available_for_projects > 1
+			has_completed_focus = DEN_focus_aarhus_randers_railway
+		}
+
+		visible = {
+			99 = { is_owned_by = DEN }
+		}
+
+		fire_only_once = yes
+
+		cost = 50
+		
+		days_remove = 365
+
+		modifier = {
+			consumer_goods_factor = 0.1
+			production_speed_buildings_factor = -0.05
+		}
+		
+		cancel_trigger = {
+			NOT = { owns_state = 99 }
+		}
+		
+		complete_effect = {
+			hidden_effect = {
+				set_country_flag = DEN_railway_project_ongoing_flag
+			}
+		}
+
+		remove_effect = {	
+			99 = { add_building_construction = { type = infrastructure level = 1 instant_build = yes } }
+			99 = { add_extra_state_shared_building_slots = 1 }
+			hidden_effect = {
+				clr_country_flag = DEN_railway_project_ongoing_flag
+			}
+		}
+
+		ai_will_do = {
+			base = 1000
+		}
+	}
+	
+	DEN_decision_lille_syd_railway = { 
+
+		icon = railway
+
+		highlight_states = {
+			state = 99
+		}
+		
+		allowed = { tag = DEN }
+
+		available = {
+			NOT = { has_country_flag = DEN_railway_project_ongoing_flag }
+			num_of_civilian_factories_available_for_projects > 1
+			has_completed_focus = DEN_focus_lille_syd_railway
+		}
+
+		visible = {
+			99 = { is_owned_by = DEN }
+		}
+
+		fire_only_once = yes
+
+		cost = 50
+		
+		days_remove = 365
+
+		modifier = {
+			consumer_goods_factor = 0.1
+			production_speed_buildings_factor = -0.05
+		}
+		
+		cancel_trigger = {
+			NOT = { owns_state = 99 }
+		}
+		
+		complete_effect = {
+			hidden_effect = {
+				set_country_flag = DEN_railway_project_ongoing_flag
+			}
+		}
+
+		remove_effect = { 
+			99 = { add_building_construction = { type = infrastructure level = 1 instant_build = yes } }
+			99 = { add_extra_state_shared_building_slots = 1 }
+			hidden_effect = {
+				clr_country_flag = DEN_railway_project_ongoing_flag
+			}
+		}
+
+		ai_will_do = {
+			base = 1000
+		}
+	}
+	
+	DEN_decision_odense_svendborg_railway = { 
+
+		icon = railway
+
+		highlight_states = {
+			state = 37
+		}
+		
+		allowed = { tag = DEN }
+
+		available = {
+			NOT = { has_country_flag = DEN_railway_project_ongoing_flag }
+			num_of_civilian_factories_available_for_projects > 1
+			has_completed_focus = DEN_focus_odense_svendborg_railway
+		}
+
+		visible = {
+			37 = { is_owned_by = DEN }
+		}
+
+		fire_only_once = yes
+
+		cost = 50
+		
+		days_remove = 365
+
+		modifier = {
+			consumer_goods_factor = 0.1
+			production_speed_buildings_factor = -0.05
+		}
+		
+		cancel_trigger = {
+			NOT = { owns_state = 37 }
+		}
+		
+		complete_effect = {
+			hidden_effect = {
+				set_country_flag = DEN_railway_project_ongoing_flag
+			}
+		}
+
+		remove_effect = { 
+			add_tech_bonus = { bonus = 0.5 uses = 1 category = transport_tech }
+			37 = { add_building_construction = { type = infrastructure level = 1 instant_build = yes } }
+			37 = { add_extra_state_shared_building_slots = 1 }
+			hidden_effect = {
+				clr_country_flag = DEN_railway_project_ongoing_flag
+			}
+		}
+
+		ai_will_do = {
+			base = 1000
+		}
+	}
+	
+	DEN_decision_aarhus_grenaa_railway = { 
+
+		icon = railway
+
+		highlight_states = {
+			state = 99
+		}
+		
+		allowed = { tag = DEN }
+
+		available = {
+			NOT = { has_country_flag = DEN_railway_project_ongoing_flag }
+			num_of_civilian_factories_available_for_projects > 1
+			has_completed_focus = DEN_focus_aarhus_grenaa_railway
+		}
+
+		visible = {
+			99 = { is_owned_by = DEN }
+		}
+
+		fire_only_once = yes
+
+		cost = 50
+		
+		days_remove = 365
+
+		modifier = {
+			consumer_goods_factor = 0.1
+			production_speed_buildings_factor = -0.05
+		}
+		
+		cancel_trigger = {
+			NOT = { owns_state = 99 }
+		}
+		
+		complete_effect = {
+			hidden_effect = {
+				set_country_flag = DEN_railway_project_ongoing_flag
+			}
+		}
+
+		remove_effect = { 
+			add_tech_bonus = { bonus = 0.5 uses = 1 category = transport_tech }
+			99 = { add_extra_state_shared_building_slots = 1 }
+			99 = { add_building_construction = { type = infrastructure level = 1 instant_build = yes } }
+			hidden_effect = {
+				clr_country_flag = DEN_railway_project_ongoing_flag
+			}
+		}
+
+		ai_will_do = {
+			base = 1000
+		}
+	}
+	
+	DEN_decision_copenhagen_sewerage = { 
+
+		icon = generic_construction
+
+		highlight_states = {
+			state = 37
+		}
+		
+		allowed = { tag = DEN }
+
+		available = {
+			num_of_civilian_factories_available_for_projects > 0
+			has_completed_focus = DEN_focus_copenhagen_sewerage
+		}
+
+		visible = {
+			37 = { is_owned_by = DEN }
+		}
+
+		fire_only_once = yes
+
+		cost = 10
+		
+		days_remove = 180
+
+		modifier = {
+			consumer_goods_factor = 0.03
+		}
+		
+		cancel_trigger = {
+			NOT = { owns_state = 37 }
+		}
+		
+		remove_effect = { 
+			add_tech_bonus = { bonus = 0.5 uses = 1 category = humanities_tech }
+			add_tech_bonus = { bonus = 0.5 uses = 1 category = biochemistry_tech }
+			37 = { add_extra_state_shared_building_slots = 1 }
+			if = {
+				limit = {
+					has_government = centrism
+				}
+				add_popularity = { 
+					ideology = centrism
+					popularity = 0.02
+				}
+			}
+			else_if = {
+				limit = {
+					has_government = traditional_conservatism
+				}
+				add_popularity = { 
+					ideology = traditional_conservatism
+					popularity = 0.02
+				}
+			}
+		}
+
+		ai_will_do = {
+			base = 1000
+		}
+	}
+	
+	DEN_decision_copenhagen_zoo = { 
+
+		icon = generic_operation
+
+		highlight_states = {
+			state = 37
+		}
+		
+		allowed = { tag = DEN }
+
+		available = {
+			num_of_civilian_factories_available_for_projects > 0
+			has_completed_focus = DEN_focus_rapid_urbanization
+		}
+
+		visible = {
+			37 = { is_owned_by = DEN }
+		}
+
+		fire_only_once = yes
+
+		cost = 10
+		
+		days_remove = 60
+
+		modifier = {
+			consumer_goods_factor = 0.02
+		}
+		
+		cancel_trigger = {
+			NOT = { owns_state = 37 }
+		}
+		
+		remove_effect = { 
+			add_stability = 0.02
+			if = {
+				limit = {
+					has_government = centrism
+				}
+				add_popularity = { 
+					ideology = centrism
+					popularity = 0.02
+				}
+			}
+			else_if = {
+				limit = {
+					has_government = traditional_conservatism
+				}
+				add_popularity = { 
+					ideology = traditional_conservatism
+					popularity = 0.02
+				}
+			}
+		}
+
+		ai_will_do = {
+			base = 1000
+		}
+	}
+	
+	DEN_decision_aarhus_botanical_garden = { 
+
+		icon = generic_operation
+
+		highlight_states = {
+			state = 99
+		}
+		
+		allowed = { tag = DEN }
+
+		available = {
+			num_of_civilian_factories_available_for_projects > 0
+		}
+
+		visible = {
+			99 = { is_owned_by = DEN }
+			date > 1875.1.1
+		}
+
+		fire_only_once = yes
+
+		cost = 10
+		
+		days_remove = 60
+
+		modifier = {
+			consumer_goods_factor = 0.02
+		}
+		
+		cancel_trigger = {
+			NOT = { owns_state = 99 }
+		}
+		
+		remove_effect = { 
+			add_stability = 0.02
+			if = {
+				limit = {
+					has_government = centrism
+				}
+				add_popularity = { 
+					ideology = centrism
+					popularity = 0.02
+				}
+			}
+			else_if = {
+				limit = {
+					has_government = traditional_conservatism
+				}
+				add_popularity = { 
+					ideology = traditional_conservatism
+					popularity = 0.02
+				}
+			}
+		}
+
+		ai_will_do = {
+			base = 1000
+		}
+	}
+	
+	DEN_decision_danske_bank = { 
+
+		icon = money
+
+		highlight_states = {
+			state = 37
+		}
+		
+		allowed = { tag = DEN }
+
+		available = {
+			NOT = { has_country_flag = DEN_fiscal_project_ongoing_flag }
+			num_of_civilian_factories_available_for_projects > 0
+			has_completed_focus = DEN_focus_found_the_danske_bank
+		}
+
+		visible = {
+			37 = { is_owned_by = DEN }
+		}
+
+		fire_only_once = yes
+
+		cost = 25
+		
+		days_remove = 180
+
+		modifier = {
+			consumer_goods_factor = 0.05
+		}
+		
+		cancel_trigger = {
+			NOT = { owns_state = 37 }
+		}
+		
+		complete_effect = {
+			hidden_effect = {
+				set_country_flag = DEN_fiscal_project_ongoing_flag
+			}
+		}
+		
+		remove_effect = { 
+			add_ideas = DEN_idea_danske_bank
+			add_tech_bonus = { bonus = 0.5 uses = 1 category = humanities_tech }
+			37 = { add_extra_state_shared_building_slots = 1 }
+			hidden_effect = {
+				clr_country_flag = DEN_fiscal_project_ongoing_flag
+			}
+		}
+
 		ai_will_do = {
 			base = 1000
 		}
@@ -112,7 +622,7 @@ DEN_decision_category_industry = {
 				}
 			}
 			num_of_civilian_factories_available_for_projects > 1
-			has_completed_focus = DEN_hassel_teudt
+			has_completed_focus = DEN_focus_hassel_teudt
 			DEN = { controls_state = 37 }
 		}
 
@@ -143,7 +653,7 @@ DEN_decision_category_industry = {
 		}
 		
 		cancel_trigger = {
-			DEN = { NOT = { owns_state = 37 } }
+			NOT = { owns_state = 37 }
 		}
 
 		ai_will_do = {
@@ -164,7 +674,7 @@ DEN_decision_category_industry = {
 				}
 			}
 			num_of_civilian_factories_available_for_projects > 1
-			has_completed_focus = DEN_hansen_writing_ball_factory
+			has_completed_focus = DEN_focus_hansen_writing_ball
 			DEN = { controls_state = 37 }
 		}
 
@@ -195,7 +705,7 @@ DEN_decision_category_industry = {
 		}
 		
 		cancel_trigger = {
-			DEN = { NOT = { owns_state = 37 } }
+			NOT = { owns_state = 37 }
 		}
 
 		ai_will_do = {
@@ -216,7 +726,7 @@ DEN_decision_category_industry = {
 				}
 			}
 			num_of_civilian_factories_available_for_projects > 1
-			has_completed_focus = DEN_farm_on_the_islands
+			has_completed_focus = DEN_focus_develop_nicobar_islands
 			DEN = { controls_state = 37 }
 		}
 
@@ -247,7 +757,7 @@ DEN_decision_category_industry = {
 		}
 		
 		cancel_trigger = {
-			DEN = { NOT = { owns_state = 1307 } }
+			NOT = { owns_state = 1307 }
 		}
 
 		ai_will_do = {
@@ -268,7 +778,7 @@ DEN_decision_category_industry = {
 				}
 			}
 			num_of_civilian_factories_available_for_projects > 1
-			has_completed_focus = DEN_produce_cotton_in_new_colony
+			has_completed_focus = DEN_focus_produce_cotton_in_africa
 			DEN = { controls_state = 798 }
 		}
 
@@ -299,7 +809,7 @@ DEN_decision_category_industry = {
 		}
 		
 		cancel_trigger = {
-			DEN = { NOT = { owns_state = 1307 } }
+			NOT = { owns_state = 1307 }
 		}
 
 		ai_will_do = {
@@ -316,7 +826,7 @@ DEN_decision_category_industry = {
 		}
 
 		available = {
-		   has_completed_focus = DEN_renovate_the_borsen_building
+		   has_completed_focus = DEN_focus_danish_economy
 		   check_variable = { current_reform_id = 0 }
 		}
 
@@ -346,7 +856,7 @@ DEN_decision_category_industry = {
 		}
 
 		available = {
-		   has_completed_focus = DEN_the_stooulog_law
+		   has_completed_focus = DEN_focus_stooulog_law
 		   check_variable = { current_reform_id = 0 }
 		}
 
@@ -376,7 +886,7 @@ DEN_decision_category_industry = {
 		}
 
 		available = {
-		   has_completed_focus = DEN_renew_our_naval_tactics
+		   has_completed_focus = DEN_focus_navy_modernization
 		   check_variable = { current_reform_id = 0 }
 		}
 
@@ -390,352 +900,6 @@ DEN_decision_category_industry = {
 
 		complete_effect = {
 			DEN = { country_event = { id = danish_votes.3 days = 10 } }
-		}
-
-		ai_will_do = {
-			base = 1000
-		}
-	}
-	
-	DEN_decision_railway_line_aarhus_randers = { 
-
-		icon = railway
-
-		highlight_states = {
-			state = 99
-		}
-		
-		allowed = { tag = DEN }
-
-		available = {
-			NOT = { 
-				OR = { 
-					has_country_flag = DEN_industry
-				}
-			}
-			num_of_civilian_factories_available_for_projects > 1
-			99 = { is_controlled_by = DEN }
-			has_completed_focus = DEN_railway_line_aarhus_randers
-		}
-
-		visible = {
-			#
-		}
-
-		fire_only_once = yes
-		is_good = yes
-
-		cost = 25
-		days_remove = 120
-
-		modifier = {
-			political_power_gain = -0.05
-			consumer_goods_factor = 0.05
-			production_speed_buildings_factor = -0.05
-		}
-		
-		cancel_trigger = {
-			DEN = { NOT = { owns_state = 99 } }
-		}
-		
-		cancel_trigger = {
-			DEN = { NOT = { owns_state = 99 } }
-		}
-
-		remove_effect = {
-			hidden_effect = {
-				set_country_flag = { flag = DEN_industry value = 1 days = 60 }
-			}		
-			99 = {
-				add_building_construction = { type = infrastructure level = 1 instant_build = yes } 
-			}
-			99 = { add_extra_state_shared_building_slots = 1 }
-		}
-
-		ai_will_do = {
-			base = 1000
-		}
-	}
-	
-	DEN_decision_expand_the_lille_syd_railway = { 
-
-		icon = railway
-
-		highlight_states = {
-			state = 99
-		}
-		
-		allowed = { tag = DEN }
-
-		available = {
-			NOT = { 
-				OR = { 
-					has_country_flag = DEN_industry
-				}
-			}
-			num_of_civilian_factories_available_for_projects > 1
-			99 = { is_controlled_by = DEN }
-			has_completed_focus = DEN_expand_the_lille_syd_railway
-		}
-
-		visible = {
-			#
-		}
-
-		fire_only_once = yes
-		is_good = yes
-
-		cost = 25
-		days_remove = 120
-
-		modifier = {
-			political_power_gain = -0.05
-			consumer_goods_factor = 0.05
-			production_speed_buildings_factor = -0.05
-		}
-		
-		cancel_trigger = {
-			DEN = { NOT = { owns_state = 99 } }
-		}
-
-		remove_effect = { 
-			hidden_effect = {
-				set_country_flag = { flag = DEN_industry value = 1 days = 60 }
-			}
-			99 = {
-				add_building_construction = { type = infrastructure level = 1 instant_build = yes } 
-			}
-			99 = { add_extra_state_shared_building_slots = 1 }
-		}
-
-		ai_will_do = {
-			base = 1000
-		}
-	}
-	
-	#DEN_decision_basic_roads_on_bornholm = { 
-#
-	#	icon = generic_construction
-#
-	#	highlight_states = {
-	#		state = 1128
-	#	}
-	#	
-	#	allowed = { tag = DEN }
-#
-	#	available = {
-	#		NOT = { 
-	#			OR = { 
-	#				has_country_flag = DEN_industry
-	#			}
-	#		}
-	#		num_of_civilian_factories_available_for_projects > 1
-	#		1128 = { is_controlled_by = DEN }
-	#		has_completed_focus = DEN_basic_roads_on_bornholm
-	#	}
-#
-	#	visible = {
-	#		has_completed_focus = DEN_basic_roads_on_bornholm
-	#	}
-#
-	#	fire_only_once = yes
-	#	is_good = yes
-#
-	#	cost = 25
-	#	days_remove = 120
-#
-	#	modifier = {
-	#		political_power_gain = -0.05
-	#		consumer_goods_factor = 0.05
-	#		production_speed_buildings_factor = -0.05
-	#	}
-	#	
-	#	cancel_trigger = {
-	#		DEN = { NOT = { owns_state = 1128 } }
-	#	}
-#
-	#	remove_effect = { 
-	#		hidden_effect = {
-	#			set_country_flag = { flag = DEN_industry value = 1 days = 60 }
-	#		}
-	#		1128 = {
-	#			add_building_construction = { type = infrastructure level = 1 instant_build = yes } 
-	#		}
-	#		1128 = { add_extra_state_shared_building_slots = 1 }
-	#	}
-#
-	#	ai_will_do = {
-	#		base = 1000
-	#	}
-	#}
-	
-	DEN_decision_develop_faroe_islands = { 
-
-		icon = generic_construction
-
-		highlight_states = {
-			state = 337
-		}
-		
-		allowed = { tag = DEN }
-
-		available = {
-			NOT = { 
-				OR = { 
-					has_country_flag = DEN_industry
-				}
-			}
-			num_of_civilian_factories_available_for_projects > 1
-			337 = { is_controlled_by = DEN }
-			has_completed_focus = DEN_develop_faroe_islands
-		}
-
-		visible = {
-			#
-		}
-
-		fire_only_once = yes
-		is_good = yes
-
-		cost = 25
-		days_remove = 120
-
-		modifier = {
-			political_power_gain = -0.05
-			consumer_goods_factor = 0.05
-			production_speed_buildings_factor = -0.05
-		}
-		
-		cancel_trigger = {
-			DEN = { NOT = { owns_state = 337 } }
-		}
-
-		remove_effect = { 
-			hidden_effect = {
-				set_country_flag = { flag = DEN_industry value = 1 days = 60 }
-			}
-			337 = {
-				add_building_construction = { type = infrastructure level = 1 instant_build = yes } 
-			}
-			337 = { add_extra_state_shared_building_slots = 1 }
-			337 = {
-				add_manpower = 500
-			}
-		}
-
-		ai_will_do = {
-			base = 1000
-		}
-	}
-	
-	DEN_decision_svendborg_railway_line = { 
-
-		icon = railway
-
-		highlight_states = {
-			state = 37
-		}
-		
-		allowed = { tag = DEN }
-
-		available = {
-			NOT = { 
-				OR = { 
-					has_country_flag = DEN_industry
-				}
-			}
-			num_of_civilian_factories_available_for_projects > 1
-			37 = { is_controlled_by = DEN }
-			has_completed_focus = DEN_svendborg_railway_line
-		}
-
-		visible = {
-			#
-		}
-
-		fire_only_once = yes
-		is_good = yes
-
-		cost = 25
-		days_remove = 120
-
-		modifier = {
-			political_power_gain = -0.05
-			consumer_goods_factor = 0.05
-			production_speed_buildings_factor = -0.05
-		}
-		
-		cancel_trigger = {
-			DEN = { NOT = { owns_state = 37 } }
-		}
-
-		remove_effect = { 
-			hidden_effect = {
-				set_country_flag = { flag = DEN_industry value = 1 days = 60 }
-			}
-			37 = {
-				add_building_construction = { type = infrastructure level = 1 instant_build = yes } 
-			}
-			37 = { add_extra_state_shared_building_slots = 1 }
-			add_tech_bonus = { bonus = 0.1 uses = 1 category = transport_tech }
-		}
-
-		ai_will_do = {
-			base = 1000
-		}
-	}
-	
-	DEN_decision_grenaa_railway_line = { 
-
-		icon = railway
-
-		highlight_states = {
-			state = 99
-		}
-		
-		allowed = { tag = DEN }
-
-		available = {
-			NOT = { 
-				OR = { 
-					has_country_flag = DEN_industry
-				}
-			}
-			num_of_civilian_factories_available_for_projects > 1
-			99 = { is_controlled_by = DEN }
-			has_completed_focus = DEN_grenaa_railway_line
-		}
-
-		visible = {
-			#
-		}
-
-		fire_only_once = yes
-		is_good = yes
-
-		cost = 25
-		days_remove = 120
-
-		modifier = {
-			political_power_gain = -0.05
-			consumer_goods_factor = 0.05
-			production_speed_buildings_factor = -0.05
-		}
-		
-		cancel_trigger = {
-			DEN = { NOT = { owns_state = 99 } }
-		}
-
-		remove_effect = { 
-			hidden_effect = {
-				set_country_flag = { flag = DEN_industry value = 1 days = 60 }
-			}
-			add_tech_bonus = { bonus = 0.1 uses = 1 category = transport_tech }
-			99 = { add_extra_state_shared_building_slots = 1 }
-			99 = { add_building_construction = { type = naval_base level = 1 instant_build = yes province = 408 } }
-			add_tech_bonus = {
-				bonus = 0.5 uses = 1 category = naval_doctrine
-			}
 		}
 
 		ai_will_do = {
@@ -760,13 +924,12 @@ DEN_decision_category_industry = {
 				}
 			}
 			num_of_civilian_factories_available_for_projects > 1
-			99 = { is_controlled_by = DEN }
-			has_completed_focus = DEN_build_esbjerg_port
+			has_completed_focus = DEN_focus_build_esbjerg_harbour
 			NOT = { has_idea = SCH_idea_profits_from_altona_1 }
 		}
 
 		visible = {
-			#
+			99 = { is_owned_by = DEN }
 		}
 
 		fire_only_once = yes
@@ -782,7 +945,7 @@ DEN_decision_category_industry = {
 		}
 		
 		cancel_trigger = {
-			DEN = { NOT = { owns_state = 99 } }
+			NOT = { owns_state = 99 }
 		}
 
 		remove_effect = { 
@@ -945,11 +1108,11 @@ DEN_decision_category_foreign_relations = {
 		}
 		
 		available = {
-			has_completed_focus = DEN_befriend_hamburg
+			has_completed_focus = DEN_focus_befriend_hanseatic_cities
 		}
 
 		visible = {
-			has_completed_focus = DEN_befriend_hamburg
+			has_completed_focus = DEN_focus_befriend_hanseatic_cities
 		}
 
 		fire_only_once = yes
@@ -959,7 +1122,7 @@ DEN_decision_category_foreign_relations = {
 		days_remove = 1
 
 		complete_effect = {	
-			JAP = { country_event = denmark_focus.4 }
+			JAP = { country_event = denmark_foreign.4 }
 		}
 
 		ai_will_do = {
@@ -992,7 +1155,7 @@ DEN_decision_category_foreign_relations = {
 		days_remove = 1
 
 		complete_effect = {	
-			country_event = denmark_focus.5 
+			country_event = denmark_foreign.5 
 		}
 
 		ai_will_do = {
@@ -1017,7 +1180,7 @@ DEN_army_reform  = {
 			has_tech = improved_handguns
 			has_idea = three_percent
 			has_country_flag = DEN_comision_ended
-			has_completed_focus = DEN_recruitment_posters_in_our_towns
+			has_completed_focus = DEN_focus_recruitment_posters
 		}
 		
 		activation = { always = no }
@@ -1060,7 +1223,7 @@ DEN_army_reform  = {
 		}
 
 		visible = {
-			has_completed_focus = DEN_thestrup_army_reforms
+			has_completed_focus = DEN_focus_thestrup_army_reforms
 		}
 
 		fire_only_once = yes
@@ -1111,7 +1274,7 @@ DEN_army_reform  = {
 		}
 
 		visible = {
-			has_completed_focus = DEN_thestrup_army_reforms
+			has_completed_focus = DEN_focus_thestrup_army_reforms
 		}
 
 		fire_only_once = yes
@@ -1162,7 +1325,7 @@ DEN_army_reform  = {
 		}
 
 		visible = {
-			has_completed_focus = DEN_thestrup_army_reforms
+			has_completed_focus = DEN_focus_thestrup_army_reforms
 		}
 
 		fire_only_once = yes
